@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { mainNavigation } from "@/config/navigation";
 import { BrandLogo } from "@/components/layout/BrandLogo";
+import { HomeLink } from "@/components/layout/HomeLink";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdown } from "@/components/layout/NavDropdown";
 import { cn } from "@/lib/utils";
+import { isHomeHref } from "@/lib/scroll";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,16 +29,29 @@ export function Header() {
                   <NavDropdown key={item.label} item={item} />
                 ) : (
                   <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "relative px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-white/82 transition-colors hover:text-white",
-                        item.variant === "cta" &&
-                          "ml-2 bg-gold px-6 py-2.5 font-extrabold text-forest-deep hover:bg-[#e09d10]",
-                      )}
-                    >
-                      {item.label}
-                    </Link>
+                    {isHomeHref(item.href) ? (
+                      <HomeLink
+                        href={item.href}
+                        className={cn(
+                          "relative px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-white/82 transition-colors hover:text-white",
+                          item.variant === "cta" &&
+                            "ml-2 bg-gold px-6 py-2.5 font-extrabold text-forest-deep hover:bg-[#e09d10]",
+                        )}
+                      >
+                        {item.label}
+                      </HomeLink>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "relative px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-white/82 transition-colors hover:text-white",
+                          item.variant === "cta" &&
+                            "ml-2 bg-gold px-6 py-2.5 font-extrabold text-forest-deep hover:bg-[#e09d10]",
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ),
               )}

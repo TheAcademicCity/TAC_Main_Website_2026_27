@@ -107,7 +107,7 @@ export const pillarsContent = {
       description:
         "Separate AC hostels, pastoral care, 24-hour doctor on-call and home-like celebrations create a safe, joyful home away from home, shaped by Indic values and structured living.",
       image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Boarding life"),
-      href: "/campus",
+      href: "/boarding",
       accent: "forest",
     },
     {
@@ -143,7 +143,7 @@ export const academicsContent = {
       image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "CBSE academics at TACS"),
       imageTag: "CBSE · Grades 5–12 · 1:10 Mentoring",
       chips: ["CBSE — New Delhi", "Grades 5–12", "1:10 Mentoring", "Personalised Plans"],
-      cta: { label: "Explore Academics", href: "/contact" },
+      cta: { label: "Explore Academics", href: "/academics" },
     },
     {
       label: "Career-First Learning",
@@ -168,7 +168,7 @@ export const academicsContent = {
       image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports at TACS"),
       imageTag: "90 Min/Day · District to National",
       chips: ["Football", "Basketball", "Swimming", "Cricket", "Badminton", "Kho-Kho"],
-      cta: { label: "Explore Campus Life", href: "/campus" },
+      cta: { label: "Explore Campus Life", href: "/boarding" },
     },
   ] satisfies FeatureRow[],
   band: {
@@ -185,7 +185,7 @@ export const academicsContent = {
       "Management",
       "Study Abroad",
     ],
-    cta: { label: "Enquire Now", href: "/contact" },
+    cta: { label: "Enquire Now", href: "/#contact" },
   },
 } as const;
 
@@ -294,7 +294,7 @@ export const campusContent = {
         { value: "6 Meals/Day", label: "Veg & Jain options" },
         { value: "AC Hostels", label: "Separate boys & girls" },
       ],
-      cta: { label: "Book a Campus Visit", href: "/contact" },
+      cta: { label: "Book a Campus Visit", href: "/#contact" },
     },
     {
       id: "indore",
@@ -448,7 +448,7 @@ export const admissionsContent = {
     },
   ] satisfies AdmissionStep[],
   ctas: [
-    { label: "Start Your Enquiry", href: "/contact", variant: "gold" as const },
+    { label: "Start Your Enquiry", href: "/#contact", variant: "gold" as const },
     { label: "+91 96064 88347", href: "tel:+919606488347", variant: "outline" as const },
     {
       label: "WhatsApp",

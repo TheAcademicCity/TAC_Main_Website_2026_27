@@ -4,8 +4,13 @@ export const siteConfig = {
   tagline: "Boarding School · Bengaluru",
   description:
     "India's first career-oriented boarding school — where academics, Indic values and future-readiness grow together.",
-  admissionsBadge: "⚡ Admissions Open 2026–27",
+  admissionsBadge: "Admissions Open 2026–27",
   brandPalette: ["#185850", "#2d945c", "#f6ab16", "#6816a4", "#6fdcef"],
+  utilityBar: {
+    phone: "08047092273",
+    phoneDisplay: "080-47092273",
+    email: "admissions@theacademiccity.com",
+  },
   contact: {
     phone: "+919606488347",
     phoneDisplay: "+91 96064 88347",

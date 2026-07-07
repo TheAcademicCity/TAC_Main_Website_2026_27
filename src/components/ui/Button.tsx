@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "gold" | "gold-outline" | "forest" | "outline-white" | "link";
@@ -59,9 +59,9 @@ export function Button({
     }
 
     return (
-      <Link href={href} className={classes}>
+      <SiteLink href={href} className={classes}>
         {children}
-      </Link>
+      </SiteLink>
     );
   }
 

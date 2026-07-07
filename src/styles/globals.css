@@ -25,6 +25,10 @@
     scroll-behavior: smooth;
   }
 
+  [id] {
+    scroll-margin-top: calc(30px + 5rem);
+  }
+
   body {
     @apply overflow-x-hidden bg-white text-ink;
   }

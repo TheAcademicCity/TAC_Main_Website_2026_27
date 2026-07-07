@@ -1,9 +1,9 @@
-import Link from "next/link";
+import { HomeLink } from "@/components/layout/HomeLink";
 import { siteConfig } from "@/config/site";
 
 export function BrandLogo() {
   return (
-    <Link href="/" className="flex items-center gap-3">
+    <HomeLink href="/" className="flex items-center gap-3" aria-label="The Academic City — go to home">
       <div className="grid h-[52px] w-[52px] flex-none place-items-center rounded-full bg-gold shadow-[0_0_0_3px_rgba(246,171,22,0.25)]">
         <svg viewBox="0 0 24 24" className="h-7 w-7 fill-forest-deep" aria-hidden="true">
           <path d="M12 3 2 9l10 5 10-5-10-6Z" />
@@ -18,6 +18,6 @@ export function BrandLogo() {
           {siteConfig.tagline}
         </span>
       </div>
-    </Link>
+    </HomeLink>
   );
 }

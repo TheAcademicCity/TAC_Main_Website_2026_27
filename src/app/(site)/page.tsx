@@ -13,6 +13,7 @@ import {
   PillarsSection,
   StatsBar,
 } from "@/components/sections/home";
+import { HashScrollOnLoad } from "@/components/layout/HashScrollOnLoad";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main id="top">
+    <>
+      <HashScrollOnLoad />
+      <main id="top" tabIndex={-1} className="outline-none">
       <HeroSection />
       <StatsBar />
       <PillarsSection />
@@ -35,6 +38,7 @@ export default function HomePage() {
       <NewsSection />
       <AdmissionsSection />
       <ContactSection />
-    </main>
+      </main>
+    </>
   );
 }

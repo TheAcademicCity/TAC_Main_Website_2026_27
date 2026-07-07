@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { footerNavigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { BrandLogo } from "@/components/layout/BrandLogo";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -37,9 +37,9 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {group.links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="transition-colors hover:text-gold">
+                  <SiteLink href={link.href} className="transition-colors hover:text-gold">
                     {link.label}
-                  </Link>
+                  </SiteLink>
                 </li>
               ))}
             </ul>

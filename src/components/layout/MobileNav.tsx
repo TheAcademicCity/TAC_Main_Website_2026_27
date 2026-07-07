@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { mobileNavigation } from "@/config/navigation";
+import { HomeLink } from "@/components/layout/HomeLink";
 import { cn } from "@/lib/utils";
+import { isHomeHref } from "@/lib/scroll";
 
 type MobileNavProps = {
   open: boolean;
@@ -16,21 +20,28 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       )}
       aria-hidden={!open}
     >
-      {mobileNavigation.map((item) => (
-        <Link
-          key={item.label}
-          href={item.href}
-          onClick={onClose}
-          className={cn(
-            "block border-b border-white/10 py-4 font-montserrat text-xl font-semibold uppercase tracking-wide text-white",
-            item.variant === "cta" &&
-              "mt-6 inline-block border-0 bg-gold px-8 py-3 text-sm font-extrabold text-forest-deep",
-          )}
-        >
-          {item.label}
-          {item.variant === "cta" ? " →" : ""}
-        </Link>
-      ))}
+      {mobileNavigation.map((item) => {
+        const className = cn(
+          "block border-b border-white/10 py-4 font-montserrat text-xl font-semibold uppercase tracking-wide text-white",
+          item.variant === "cta" &&
+            "mt-6 inline-block border-0 bg-gold px-8 py-3 text-sm font-extrabold text-forest-deep",
+        );
+
+        if (isHomeHref(item.href)) {
+          return (
+            <HomeLink key={item.label} href={item.href} onClick={onClose} className={className}>
+              {item.label}
+            </HomeLink>
+          );
+        }
+
+        return (
+          <Link key={item.label} href={item.href} onClick={onClose} className={className}>
+            {item.label}
+            {item.variant === "cta" ? " →" : ""}
+          </Link>
+        );
+      })}
     </nav>
   );
 }

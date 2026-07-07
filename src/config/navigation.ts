@@ -8,72 +8,67 @@ export type NavItem = {
   }>;
 };
 
+/** The 8 primary site pages. */
+export const sitePages = {
+  home: { path: "/", label: "Home" },
+  about: { path: "/about", label: "About Us" },
+  academics: { path: "/academics", label: "Academics" },
+  coCurricular: { path: "/co-curricular", label: "Co-curricular" },
+  boarding: { path: "/boarding", label: "Boarding" },
+  careerGuidance: { path: "/career-guidance", label: "Career Guidance" },
+  admissions: { path: "/admissions", label: "Admissions" },
+  blog: { path: "/blog", label: "Blogs & Newsletters" },
+} as const;
+
 export const mainNavigation: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: sitePages.home.label, href: sitePages.home.path },
+  { label: sitePages.about.label, href: sitePages.about.path },
   {
     label: "Explore TACS",
-    href: "/academics",
+    href: sitePages.academics.path,
     children: [
-      { label: "Academics", href: "/academics" },
-      { label: "Co-curricular", href: "/co-curricular" },
-      { label: "Boarding", href: "/campus" },
-      { label: "Career Guidance", href: "/career-guidance" },
+      { label: sitePages.academics.label, href: sitePages.academics.path },
+      { label: sitePages.coCurricular.label, href: sitePages.coCurricular.path },
+      { label: sitePages.boarding.label, href: sitePages.boarding.path },
+      { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
     ],
   },
-  { label: "Admissions", href: "/admissions" },
-  { label: "Blog", href: "/blog" },
-  { label: "Apply Now", href: "/contact", variant: "cta" },
+  { label: sitePages.admissions.label, href: sitePages.admissions.path },
+  { label: sitePages.blog.label, href: sitePages.blog.path },
+  { label: "Apply Now", href: sitePages.admissions.path, variant: "cta" },
 ];
 
 export const mobileNavigation: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Explore TACS", href: "/academics" },
-  { label: "Academics", href: "/academics" },
-  { label: "Campus", href: "/campus" },
-  { label: "Leadership", href: "/about#leadership" },
-  { label: "Admissions", href: "/admissions" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-  { label: "Apply Now", href: "/contact", variant: "cta" },
+  { label: sitePages.home.label, href: sitePages.home.path },
+  { label: sitePages.about.label, href: sitePages.about.path },
+  { label: sitePages.academics.label, href: sitePages.academics.path },
+  { label: sitePages.coCurricular.label, href: sitePages.coCurricular.path },
+  { label: sitePages.boarding.label, href: sitePages.boarding.path },
+  { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
+  { label: sitePages.admissions.label, href: sitePages.admissions.path },
+  { label: sitePages.blog.label, href: sitePages.blog.path },
+  { label: "Apply Now", href: sitePages.admissions.path, variant: "cta" },
 ];
 
 export const footerNavigation = [
   {
     title: "Explore",
     links: [
-      { label: "Home", href: "/" },
-      { label: "About Us", href: "/about" },
-      { label: "Academics", href: "/academics" },
+      { label: sitePages.home.label, href: sitePages.home.path },
+      { label: sitePages.about.label, href: sitePages.about.path },
+      { label: sitePages.academics.label, href: sitePages.academics.path },
       { label: "Gallery", href: "/#gallery" },
-      { label: "Blog", href: "/blog" },
+      { label: sitePages.blog.label, href: sitePages.blog.path },
     ],
   },
   {
     title: "Admissions",
     links: [
-      { label: "How to Apply", href: "/admissions" },
-      { label: "Our Campus", href: "/campus" },
-      { label: "Leadership", href: "/about#leadership" },
+      { label: "How to Apply", href: sitePages.admissions.path },
+      { label: "Boarding Life", href: sitePages.boarding.path },
+      { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
       { label: "Awards", href: "/#awards" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "Contact Us", href: "/#contact" },
     ],
   },
-] as const;
-
-/**
- * Planned routes — page.tsx files will be added when each page is built.
- * Route group: src/app/(site)/
- */
-export const plannedRoutes = [
-  { path: "/", name: "Home", status: "in-progress" },
-  { path: "/about", name: "About Us", status: "planned" },
-  { path: "/academics", name: "Academics", status: "planned" },
-  { path: "/co-curricular", name: "Co-curricular", status: "planned" },
-  { path: "/campus", name: "Campus & Boarding", status: "planned" },
-  { path: "/career-guidance", name: "Career Guidance", status: "planned" },
-  { path: "/admissions", name: "Admissions", status: "planned" },
-  { path: "/blog", name: "Blog", status: "planned" },
-  { path: "/contact", name: "Contact", status: "planned" },
 ] as const;

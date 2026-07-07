@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
 
@@ -71,13 +72,13 @@ export function SideWidgets() {
         >
           <Icon name="mail" className="h-5 w-5" />
         </a>
-        <Link
-          href="/contact"
+        <SiteLink
+          href="/#contact"
           title="Find us"
           className="grid h-12 w-12 place-items-center bg-forest-deep text-white transition-colors hover:bg-gold hover:text-forest-deep"
         >
           <Icon name="pin" className="h-5 w-5" />
-        </Link>
+        </SiteLink>
       </div>
     </>
   );
