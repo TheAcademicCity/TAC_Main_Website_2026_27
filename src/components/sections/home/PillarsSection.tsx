@@ -15,10 +15,10 @@ export function PillarsSection() {
         label={pillarsContent.label}
         title={pillarsContent.title}
         description={pillarsContent.description}
-        className="relative z-[1] mb-12"
+        className="relative z-[1] mb-14 [&_p]:text-[1rem] [&_p]:leading-relaxed"
       />
 
-      <div className="relative z-[1] grid border border-line sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-[1] grid items-stretch border border-line sm:grid-cols-2 lg:grid-cols-4">
         {pillarsContent.items.map((pillar, index) => (
           <PillarCard key={pillar.number} pillar={pillar} delay={delays[index]} />
         ))}

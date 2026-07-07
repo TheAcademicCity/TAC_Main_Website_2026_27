@@ -77,7 +77,7 @@ export const pillarsContent = {
       title: "Academics",
       tagline: "Concept clarity across all grades",
       description:
-        "Focused, subject-wise academic planning ensures consistent growth from Grade 5 through 12. CBSE curriculum delivered with a 1:10 student–teacher ratio and personalised Student Progression Plans.",
+        "Focused, subject-wise academic planning ensures consistent growth from Grade 5 through 12. CBSE curriculum delivered with a 1:10 student-teacher ratio and personalised Student Progression Plans.",
       image: createImage(
         "/images/home/pillars/academics.png",
         remote.pillars.academics,
@@ -91,7 +91,7 @@ export const pillarsContent = {
       title: "Co-curricular & Extra-curricular",
       tagline: "All-round personality development",
       description:
-        "Art, dance, theatre, music and pottery foster creativity and collaboration. Our Life Readiness programme adds martial arts, financial literacy, first aid, cooking and public speaking.",
+        "Art, dance, theatre and music foster creativity and collaboration. Our Life Readiness programme adds financial literacy, first aid, cooking and public speaking.",
       image: createImage(
         "/images/home/pillars/curriculum.png",
         remote.pillars.curriculum,
@@ -115,7 +115,7 @@ export const pillarsContent = {
       title: "Career Orientation",
       tagline: "Early, continuous career discovery",
       description:
-        'From Grade 5 to 12, students explore 600+ career options through industry interactions, psychometric assessments and expert mentoring — turning the daunting "what next?" into a confident, clear answer.',
+        'From Grade 5 to 12, students explore 600+ career options through industry interactions, psychometric assessments and expert mentoring - turning the daunting "what next?" into a confident, clear answer.',
       image: createImage("/images/home/pillars/career.png", remote.pillars.career, "Career orientation"),
       href: "/career-guidance",
       accent: "violet",
