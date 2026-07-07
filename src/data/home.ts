@@ -58,10 +58,10 @@ export const heroContent = {
 } as const;
 
 export const statsContent: StatItem[] = [
-  { value: "Grades 5–12", label: "Residential boarding" },
+  { value: "Grades 5 - 12", label: "Residential boarding" },
   { value: "CBSE", label: "New Delhi curriculum" },
-  { value: "1 : 10", label: "Student–teacher ratio" },
   { value: "600+", label: "Career paths explored" },
+  { value: "Indore", label: "Mohankheda campus" },
   { value: "Bengaluru", label: "Nelamangala campus" },
 ];
 
@@ -69,7 +69,7 @@ export const pillarsContent = {
   label: "Our Core Delivery Framework",
   title: "Four Pillars That Shape Every Child",
   description:
-    "Every day at TACS follows one deliberate path — from academic clarity, to creative growth, to a values-led boarding life, to a clear career direction.",
+    "Every day at TACS follows one deliberate path - from academic clarity, to creative growth, to a values-led boarding life, to a clear career direction.",
   watermark: ["CORE", "DELIVERY", "FRAMEWORK"],
   items: [
     {

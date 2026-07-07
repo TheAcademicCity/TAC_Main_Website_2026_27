@@ -6,9 +6,9 @@ export function StatsBar() {
   return (
     <div id="about" className="bg-forest-deep">
       <Container>
-        <div className="grid grid-cols-2 border-l border-white/10 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 items-stretch border-l border-white/10 min-[601px]:grid-cols-3 lg:grid-cols-5">
           {statsContent.map((item) => (
-            <StatItem key={item.label} item={item} />
+            <StatItem key={`${item.value}-${item.label}`} item={item} />
           ))}
         </div>
       </Container>
