@@ -52,6 +52,12 @@ export const siteConfig = {
       href: "https://www.youtube.com/@TheAcademicCitySchool",
     },
   ],
+  downloads: {
+    brochure: {
+      href: "/downloads/tac-brochure-2026.pdf",
+      filename: "TAC Brochure 2026.pdf",
+    },
+  },
   sideTabs: [
     { label: "Latest Updates", href: "/blog" },
     {

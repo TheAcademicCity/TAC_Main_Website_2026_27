@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { mobileNavigation } from "@/config/navigation";
 import { HomeLink } from "@/components/layout/HomeLink";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { mobileNavLinkClasses } from "@/components/layout/NavLink";
 import { cn } from "@/lib/utils";
-import { isHomeHref } from "@/lib/scroll";
+import { getSectionIdFromHref, isHomeHref } from "@/lib/scroll";
 
 type MobileNavProps = {
   open: boolean;
@@ -30,6 +31,15 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             <HomeLink key={item.label} href={item.href} onClick={onClose} className={className}>
               {item.label}
             </HomeLink>
+          );
+        }
+
+        if (getSectionIdFromHref(item.href)) {
+          return (
+            <SiteLink key={item.label} href={item.href} onClick={onClose} className={className}>
+              {item.label}
+              {item.variant === "cta" ? " →" : ""}
+            </SiteLink>
           );
         }
 

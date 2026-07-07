@@ -126,8 +126,8 @@ export const pillarsContent = {
 export const brochureContent = {
   title: "Discover Everything TACS Has to Offer",
   description:
-    "Download our school brochure for a complete guide to academics, campus life, admissions and fees.",
-  cta: { label: "Download Brochure", href: "https://theacademiccity.com/admission" },
+    "Download our school brochure for a complete guide to academics, campus life and co-curriculars.",
+  cta: { label: "Download Brochure", href: "/?intent=brochure#enquiry" },
   background: createImage("/images/home/brochure/overview.png", remote.heroPoster, ""),
 } as const;
 
@@ -448,7 +448,7 @@ export const admissionsContent = {
     },
   ] satisfies AdmissionStep[],
   ctas: [
-    { label: "Start Your Enquiry", href: "/#contact", variant: "gold" as const },
+    { label: "Start Your Enquiry", href: "/#enquiry", variant: "gold" as const },
     { label: "+91 96064 88347", href: "tel:+919606488347", variant: "outline" as const },
     {
       label: "WhatsApp",
@@ -457,6 +457,29 @@ export const admissionsContent = {
       external: true,
     },
   ],
+} as const;
+
+export const enquiryContent = {
+  label: "Enquire Now",
+  title: "Come, let's craft a happy future for your child",
+  subtitle:
+    "Share your details and our admissions team will reach out with guidance on grades, campus visits and boarding.",
+  brochureSubtitle:
+    "Complete the form below and your brochure download will begin automatically.",
+  fields: {
+    grades: [
+      "Class 4",
+      "Class 5",
+      "Class 6",
+      "Class 7",
+      "Class 8",
+      "Class 9",
+      "Class 10",
+      "Class 11",
+      "Class 12",
+    ],
+    campuses: ["Bangalore", "Indore"],
+  },
 } as const;
 
 export const contactContent = {

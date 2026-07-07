@@ -18,6 +18,7 @@ export const sitePages = {
   careerGuidance: { path: "/career-guidance", label: "Career Guidance" },
   admissions: { path: "/admissions", label: "Admissions" },
   blog: { path: "/blog", label: "Blogs & Newsletters" },
+  enquiry: { path: "/#enquiry", label: "Enquiry" },
 } as const;
 
 export const mainNavigation: NavItem[] = [
@@ -35,7 +36,7 @@ export const mainNavigation: NavItem[] = [
   },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
   { label: sitePages.blog.label, href: sitePages.blog.path },
-  { label: "Apply Now", href: sitePages.admissions.path, variant: "cta" },
+  { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
 ];
 
 export const mobileNavigation: NavItem[] = [
@@ -47,7 +48,7 @@ export const mobileNavigation: NavItem[] = [
   { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
   { label: sitePages.blog.label, href: sitePages.blog.path },
-  { label: "Apply Now", href: sitePages.admissions.path, variant: "cta" },
+  { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
 ];
 
 export const footerNavigation = [

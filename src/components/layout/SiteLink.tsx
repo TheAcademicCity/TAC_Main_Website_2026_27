@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { ComponentProps, MouseEvent } from "react";
 import {
+  getSearchFromHref,
   getSectionIdFromHref,
   isHomeHref,
   smoothScrollToSection,
@@ -34,7 +35,7 @@ export function SiteLink({ href, onClick, ...props }: SiteLinkProps) {
 
     if (pathname === "/") {
       event.preventDefault();
-      smoothScrollToSection(sectionId);
+      smoothScrollToSection(sectionId, getSearchFromHref(href));
       return;
     }
 

@@ -14,8 +14,10 @@ export function HashScrollOnLoad() {
     const hash = window.location.hash.replace("#", "");
     if (!hash) return;
 
+    const search = window.location.search.replace(/^\?/, "");
+
     requestAnimationFrame(() => {
-      smoothScrollToSection(hash);
+      smoothScrollToSection(hash, search);
     });
   }, [pathname]);
 

@@ -9,4 +9,5 @@ export { CampusSliderSection } from "@/components/sections/home/CampusSliderSect
 export { FoundersSection } from "@/components/sections/home/FoundersSection";
 export { NewsSection } from "@/components/sections/home/NewsSection";
 export { AdmissionsSection } from "@/components/sections/home/AdmissionsSection";
+export { EnquirySection } from "@/components/sections/home/EnquirySection";
 export { ContactSection } from "@/components/sections/home/ContactSection";

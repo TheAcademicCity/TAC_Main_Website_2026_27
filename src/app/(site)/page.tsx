@@ -6,6 +6,7 @@ import {
   BrochureBanner,
   CampusSliderSection,
   ContactSection,
+  EnquirySection,
   FoundersSection,
   GallerySection,
   HeroSection,
@@ -37,6 +38,7 @@ export default function HomePage() {
       <FoundersSection />
       <NewsSection />
       <AdmissionsSection />
+      <EnquirySection />
       <ContactSection />
       </main>
     </>

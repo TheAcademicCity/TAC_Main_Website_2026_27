@@ -19,7 +19,6 @@ export function BrochureBanner() {
           <p className="mb-8 text-[1.02rem] text-white/72">{brochureContent.description}</p>
           <Button
             href={brochureContent.cta.href}
-            external
             className="shadow-[0_10px_30px_rgba(246,171,22,0.35)]"
           >
             <Icon name="download" className="h-4 w-4" />
