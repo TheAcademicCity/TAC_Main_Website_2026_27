@@ -132,7 +132,7 @@ export const brochureContent = {
 } as const;
 
 export const academicsContent = {
-  label: "Academics & Campus Life",
+  label: "A QUICK INSIGHT INTO OUR STUDENTS' LEARNING PATH",
   title: "Academic eminence. Career focus. Holistic growth.",
   rows: [
     {
@@ -142,20 +142,20 @@ export const academicsContent = {
         "Our Bengaluru campus follows the CBSE curriculum with a 1:10 student–teacher ratio and individualised Student Progression Plans — so every child moves at the right pace, builds genuine concept clarity and walks into Grades 11 and 12 fully prepared.",
       image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "CBSE academics at TACS"),
       imageTag: "CBSE · Grades 5–12 · 1:10 Mentoring",
-      chips: ["CBSE — New Delhi", "Grades 5–12", "1:10 Mentoring", "Personalised Plans"],
-      cta: { label: "Explore Academics", href: "/academics" },
+      chips: [],
+      cta: { label: "Explore Academics", href: "/academics", size: "lg" },
     },
     {
       label: "Career-First Learning",
       title: "Helping every child discover the right path, early",
       description:
-        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 5 onwards. Structured preparation is available for Grades 11 & 12 — covering engineering, medicine, law, design, CA, management and study abroad.",
+        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 — covering engineering, medicine, law, design, CA, management and study abroad.",
       image: createImage(
         "/images/home/academics/career.png",
         remote.pillars.career,
         "Career guidance",
       ),
-      imageTag: "Grades 5–12 · 600+ Career Paths",
+      imageTag: "Grades 6 - 12 · 600+ Career Paths",
       chips: ["600+ Career Options", "Psychometric Tests", "Industry Mentors", "LEAP & IDC Programmes"],
       cta: { label: "Explore Career Programme", href: "/career-guidance" },
       flipped: true,
@@ -185,7 +185,7 @@ export const academicsContent = {
       "Management",
       "Study Abroad",
     ],
-    cta: { label: "Enquire Now", href: "/#contact" },
+    cta: { label: "Enquire Now", href: "/#enquiry" },
   },
 } as const;
 

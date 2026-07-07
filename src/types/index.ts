@@ -22,7 +22,7 @@ export type FeatureRow = {
   image: import("@/types/images").SiteImage;
   imageTag: string;
   chips: string[];
-  cta: { label: string; href: string };
+  cta: { label: string; href: string; size?: "lg" };
   flipped?: boolean;
 };
 

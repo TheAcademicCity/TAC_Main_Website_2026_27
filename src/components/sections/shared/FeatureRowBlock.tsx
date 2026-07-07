@@ -35,18 +35,22 @@ export function FeatureRowBlock({ row }: FeatureRowBlockProps) {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center">
+        <div className="flex max-w-xl flex-col justify-center lg:max-w-none">
           <SectionLabel className="mb-3">{row.label}</SectionLabel>
           <h3 className="mb-4 font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold leading-tight text-forest-deep">
             {row.title}
           </h3>
-          <p className="mb-5 text-[0.98rem] leading-relaxed text-slate">{row.description}</p>
-          <div className="mb-4 flex flex-wrap gap-2">
-            {row.chips.map((chip) => (
-              <Chip key={chip}>{chip}</Chip>
-            ))}
-          </div>
-          <CtaLink href={row.cta.href}>{row.cta.label}</CtaLink>
+          <p className="mb-6 text-[0.98rem] leading-[1.7] text-slate">{row.description}</p>
+          {row.chips.length > 0 ? (
+            <div className="mb-5 flex flex-wrap gap-2">
+              {row.chips.map((chip) => (
+                <Chip key={chip}>{chip}</Chip>
+              ))}
+            </div>
+          ) : null}
+          <CtaLink href={row.cta.href} size={row.cta.size ?? "default"} className="self-start">
+            {row.cta.label}
+          </CtaLink>
         </div>
       </div>
     </RevealOnScroll>
