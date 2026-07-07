@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>The Academic City School | India's First Career-Oriented Boarding School</title>
+<meta name="description" content="The Academic City School — a CBSE residential boarding school in Nelamangala, Bengaluru for Grades 5–12, where academics, Indic values, sport and early career discovery shape future-ready children."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#185850;--forest-deep:#0f3d38;--forest-dark:#0a2c28;
+  --emerald:#2d945c;--gold:#f6ab16;--gold-dark:#c4880e;
+  --violet:#6816a4;--cyan:#6fdcef;--ink:#1a2830;
+  --slate:#5a6a72;--line:#dce8e4;--paper:#f4f8f6;--white:#fff;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--forest-deep)}
+h1,h2,h3,h4,h5{font-family:'Montserrat',sans-serif;line-height:1.1;letter-spacing:-.02em}
+.w{width:min(1200px,92vw);margin-inline:auto}
+.sec{padding:clamp(60px,8vw,110px) 0}
+.sec-label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--emerald);display:inline-flex;align-items:center;gap:.6rem;margin-bottom:.9rem}
+.sec-label::before{content:'';width:28px;height:2px;background:var(--gold)}
+.sec-title{font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:800;color:var(--forest-deep)}
+
+/* ===== UTIL BAR ===== */
+.util{background:var(--forest-dark);color:#b8d4cc;font-size:.8rem;font-weight:500;position:fixed;top:0;left:0;right:0;z-index:101}
+.util .w{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:.42rem 0}
+.util-left{display:flex;align-items:center;gap:1.4rem}
+.util-right{display:flex;align-items:center;gap:1.4rem}
+.util a{color:#b8d4cc;display:inline-flex;align-items:center;gap:.4rem;transition:color .2s;font-size:.78rem}
+.util a:hover{color:var(--gold)}
+.util .sep{opacity:.25;font-size:.9rem}
+.util .adm-badge{color:var(--gold);font-weight:700;font-size:.78rem;letter-spacing:.04em}
+
+/* ===== HEADER ===== */
+#hdr{position:fixed;top:30px;left:0;right:0;z-index:100;background:rgba(10,44,40,.97);box-shadow:0 4px 30px rgba(0,0,0,.4);border-bottom:1px solid rgba(255,255,255,.08);transition:top .3s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.8rem}
+.brand-emblem{width:52px;height:52px;border-radius:50%;background:var(--gold);display:grid;place-items:center;flex:none;box-shadow:0 0 0 3px rgba(246,171,22,.25)}
+.brand-emblem svg{width:28px;height:28px;fill:var(--forest-deep)}
+.brand-text b{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.08rem;color:#fff;display:block;line-height:1.1;letter-spacing:-.01em}
+.brand-text span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.main-nav{display:flex;align-items:center;gap:.1rem;list-style:none}
+.main-nav a{color:rgba(255,255,255,.82);font-weight:600;font-size:.88rem;padding:.55rem .85rem;border-radius:0;position:relative;transition:color .2s;letter-spacing:.02em;text-transform:uppercase;font-size:.78rem}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:.85rem;right:.85rem;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s var(--ease)}
+.main-nav a:hover{color:#fff}
+.main-nav a:hover::after{transform:scaleX(1)}
+.nav-apply{background:var(--gold)!important;color:var(--forest-deep)!important;font-weight:800!important;padding:.6rem 1.5rem!important;font-size:.8rem!important;letter-spacing:.06em!important;margin-left:.5rem}
+.nav-apply::after{display:none!important}
+.nav-apply:hover{background:#e09d10!important;transform:translateY(-1px);color:var(--forest-deep)!important}
+.burger{display:none;width:44px;height:44px;background:transparent;border:1.5px solid rgba(255,255,255,.3);border-radius:0;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:20px;height:1.8px;background:#fff;border-radius:0;transition:.3s}
+.burger.x span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+.mob-drawer{position:fixed;inset:0;z-index:99;background:var(--forest-dark);transform:translateX(100%);transition:transform .38s var(--ease);overflow-y:auto;padding:8rem 2rem 3rem}
+.mob-drawer.open{transform:none}
+.mob-drawer a{display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:1.2rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.1);letter-spacing:.04em;text-transform:uppercase}
+.mob-drawer .mob-apply{display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--forest-deep);padding:.8rem 2rem;font-size:.9rem;font-weight:800;letter-spacing:.06em}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;flex-direction:column;overflow:hidden;margin-top:30px}
+.hero-media{position:absolute;inset:0;background:var(--forest-deep)}
+.hero-media video,.hero-media img.hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.9) 0%,rgba(5,22,18,.5) 40%,rgba(5,22,18,.2) 100%)}
+.hero-bottom{position:relative;z-index:2;margin-top:auto;padding-bottom:clamp(3.5rem,8vh,6rem);color:#fff;text-align:center}
+.hero-bottom .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.hero-bottom h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-weight:900;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.4);max-width:16ch;margin-inline:auto;line-height:1.04}
+.hero-bottom h1 em{font-style:normal;color:var(--gold)}
+.hero-bottom p{margin-top:1rem;font-size:clamp(1rem,1.8vw,1.18rem);color:rgba(255,255,255,.78);font-weight:300}
+.hero-scroll{position:absolute;z-index:2;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.4);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.hero-scroll .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollpulse 2s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.4;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ===== STATS BAR ===== */
+.stats-bar{background:var(--forest-deep)}
+.stats-inner{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid rgba(255,255,255,.1)}
+.stat-item{padding:1.5rem 1rem;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.stat-item .sn{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.4rem,2.2vw,2rem);color:var(--gold);line-height:1}
+.stat-item .sl{font-size:.76rem;color:rgba(255,255,255,.6);margin-top:.35rem;font-weight:500;letter-spacing:.02em}
+
+/* ===== PILLARS ===== */
+.pillars-sec{background:#fff;padding:clamp(60px,8vw,110px) 0;position:relative;overflow:hidden}
+.cdf-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;display:flex;flex-direction:column;align-items:center;gap:0;user-select:none}
+.cdf-watermark .wm-line1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(5rem,12vw,11rem);color:transparent;-webkit-text-stroke:1.5px rgba(24,88,80,.07);letter-spacing:-.04em;line-height:.88;white-space:nowrap}
+.cdf-watermark .wm-line2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(3rem,7.5vw,7rem);color:transparent;-webkit-text-stroke:1.5px rgba(24,88,80,.07);letter-spacing:.12em;line-height:.88;white-space:nowrap}
+.cdf-watermark .wm-line3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(5rem,12vw,11rem);color:transparent;-webkit-text-stroke:1.5px rgba(24,88,80,.07);letter-spacing:-.04em;line-height:.88;white-space:nowrap}
+.pillars-head{position:relative;z-index:1;margin-bottom:3rem}
+.pillars-head h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:800;color:var(--ink)}
+.pillars-head p{color:var(--slate);margin-top:.7rem;max-width:58ch;font-size:1rem}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);position:relative;z-index:1}
+.pillar-card{position:relative;overflow:hidden;cursor:pointer;background:#fff;border-right:1px solid var(--line)}
+.pillar-card:last-child{border-right:none}
+.pillar-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;line-height:1;padding:1.2rem 1.2rem .5rem;transition:color .3s}
+.pillar-photo{width:100%;aspect-ratio:3/4;overflow:hidden;position:relative}
+.pillar-photo .ph{width:100%;height:100%;background:linear-gradient(135deg,var(--forest-deep),var(--forest));position:relative}
+.pillar-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pillar-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,44,40,.75) 0%,transparent 55%);z-index:1;opacity:0;transition:opacity .4s}
+.pillar-card:hover .pillar-photo::after{opacity:1}
+.pillar-card:hover .pillar-photo img{transform:scale(1.05)}
+.pillar-info{padding:1.2rem 1.2rem 0}
+.pillar-info h3{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem}
+.pillar-info .tagline{font-size:.87rem;color:var(--slate)}
+.pillar-expand{max-height:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s;opacity:0;padding:0 1.2rem}
+.pillar-card:hover .pillar-expand{max-height:280px;opacity:1;padding:0 1.2rem}
+.pillar-expand p{font-size:.87rem;color:var(--slate);line-height:1.68;padding:.8rem 0 .5rem}
+.pillar-expand .pl-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--forest-deep);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1.1rem;margin-bottom:1.2rem;transition:background .2s}
+.pillar-expand .pl-btn:hover{background:var(--emerald)}
+.pillar-card.c1 .pillar-num,.pillar-card.c1 .pillar-info h3{color:var(--emerald)}
+.pillar-card.c2 .pillar-num,.pillar-card.c2 .pillar-info h3{color:var(--gold-dark)}
+.pillar-card.c3 .pillar-num,.pillar-card.c3 .pillar-info h3{color:var(--forest)}
+.pillar-card.c4 .pillar-num,.pillar-card.c4 .pillar-info h3{color:var(--violet)}
+
+/* ===== BROCHURE DIVIDER ===== */
+.div-brochure{position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden;background:var(--forest-deep)}
+.div-brochure .bg{position:absolute;inset:0}
+.div-brochure .bg img{width:100%;height:100%;object-fit:cover;opacity:.25}
+.div-brochure .inner{position:relative;z-index:2;width:min(900px,92vw);margin-inline:auto;text-align:center;padding:4rem 1rem}
+.div-brochure h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;margin-bottom:.8rem}
+.div-brochure p{color:rgba(255,255,255,.72);font-size:1.02rem;margin-bottom:2rem}
+.btn-brochure{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.4rem;transition:background .2s,transform .2s;box-shadow:0 10px 30px rgba(246,171,22,.35)}
+.btn-brochure:hover{background:#e09d10;transform:translateY(-2px)}
+
+/* ===== ACADEMICS — ALTERNATING ROWS ===== */
+.academics{background:var(--paper)}
+.acad-rows-wrap{display:flex;flex-direction:column;gap:clamp(2.5rem,4vw,4rem)}
+.acad-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.acad-row.flip .acad-img{order:2}
+.acad-img{position:relative;overflow:hidden;background:var(--forest-deep);border-radius:4px}
+.acad-img-inner{aspect-ratio:4/3;overflow:hidden;position:relative}
+.acad-img-inner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.acad-img:hover .acad-img-inner img{transform:scale(1.04)}
+.acad-img .tag-strip{background:var(--gold);padding:.6rem 1.2rem}
+.acad-img .tag-strip span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-deep)}
+.acad-copy{display:flex;flex-direction:column;justify-content:center}
+.acad-copy .sec-label{margin-bottom:.8rem}
+.acad-copy h3{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;color:var(--forest-deep);margin-bottom:1rem;line-height:1.15}
+.acad-copy p{color:var(--slate);line-height:1.78;font-size:.98rem;margin-bottom:1.3rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.chip{background:#fff;border:1.5px solid var(--line);padding:.4rem .9rem;font-size:.82rem;font-weight:600;color:var(--forest-deep);display:inline-flex;align-items:center;gap:.4rem}
+.cta-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);transition:gap .2s,color .2s}
+.cta-link:hover{gap:.8rem;color:var(--emerald)}
+.acad-divider{height:1px;background:var(--line);margin:0}
+.acad-band{background:var(--forest-deep);border-radius:4px;padding:2.2rem 2.4rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;margin-top:clamp(2rem,3vw,3rem)}
+.acad-band h3{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:800;color:#fff}
+.acad-band p{color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem;max-width:60ch}
+.acad-band .sc-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.acad-band .sc-chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.35rem .85rem;font-size:.76rem;color:rgba(255,255,255,.82)}
+.acad-band .btn-band{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;padding:.75rem 1.6rem;white-space:nowrap;transition:background .2s}
+.acad-band .btn-band:hover{background:#e09d10}
+
+/* ===== GALLERY — TABBED MASONRY ===== */
+.gallery{background:#fff}
+.gallery-tabs{display:flex;gap:0;margin-top:2rem;border-bottom:2px solid var(--line)}
+.gtab{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.6rem;cursor:pointer;color:var(--slate);border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;background:none;border-top:none;border-left:none;border-right:none}
+.gtab:hover{color:var(--forest)}
+.gtab.active{color:var(--forest-deep);border-bottom-color:var(--gold)}
+.masonry-wrap{margin-top:1.5rem}
+.masonry{columns:4;column-gap:8px;display:none}
+.masonry.active{display:block}
+.masonry-item{break-inside:avoid;margin-bottom:8px;overflow:hidden;position:relative;cursor:pointer}
+.masonry-item .ph-box{width:100%;background:linear-gradient(135deg,var(--forest-deep) 0%,var(--forest) 100%);position:relative;display:flex;align-items:flex-end;justify-content:flex-start}
+.masonry-item .ph-box::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(111,220,239,.15),transparent 60%),repeating-radial-gradient(circle at 20% 80%,rgba(255,255,255,.04) 0 1px,transparent 1px 20px)}
+.masonry-item .ph-lbl{position:relative;z-index:2;padding:.8rem 1rem;color:rgba(255,255,255,.7);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.masonry-item:hover .ph-box{filter:brightness(.85)}
+.masonry-item .overlay{position:absolute;inset:0;background:rgba(10,44,40,.6);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;z-index:3}
+.masonry-item:hover .overlay{opacity:1}
+.overlay-icon{width:44px;height:44px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;color:#fff}
+.overlay-icon svg{width:1.2rem;height:1.2rem}
+
+/* ===== AWARDS — BEAUTIFUL FULL WIDTH ===== */
+.awards-sec{background:var(--forest-deep);padding:clamp(50px,7vw,90px) 0;position:relative;overflow:hidden}
+.awards-sec::before{content:'RECOGNITION';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(4rem,14vw,13rem);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.04);letter-spacing:-.04em;white-space:nowrap;pointer-events:none;user-select:none}
+.awards-head{text-align:center;margin-bottom:3rem;position:relative;z-index:1}
+.awards-head .sec-label{color:var(--gold);justify-content:center}
+.awards-head .sec-label::before{background:var(--gold)}
+.awards-head h2{color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800}
+.awards-track{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;position:relative;z-index:1;background:rgba(255,255,255,.08)}
+.award-tile{background:var(--forest-deep);padding:2.2rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;position:relative;transition:background .3s}
+.award-tile:hover{background:rgba(255,255,255,.06)}
+.award-tile::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%) scaleX(0);width:40px;height:3px;background:var(--gold);transition:transform .3s;transform-origin:center}
+.award-tile:hover::after{transform:translateX(-50%) scaleX(1)}
+.award-icon{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(246,171,22,.15) 0%,rgba(246,171,22,.05) 100%);border:1.5px solid rgba(246,171,22,.35);display:grid;place-items:center;transition:border-color .3s,box-shadow .3s}
+.award-tile:hover .award-icon{border-color:var(--gold);box-shadow:0 0 24px rgba(246,171,22,.2)}
+.award-icon svg{width:36px;height:36px;fill:var(--gold)}
+.award-icon img{width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg)}
+.award-tile .award-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.04em;color:#fff;line-height:1.4}
+.award-tile .award-year{font-size:.72rem;color:var(--gold);font-weight:600;letter-spacing:.1em}
+
+/* ===== CAMPUS FULL BLEED ===== */
+.campus-sec{position:relative;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
+.campus-bg{position:absolute;inset:0;background:var(--forest-deep)}
+.campus-bg img{width:100%;height:100%;object-fit:cover}
+.campus-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.95) 0%,rgba(5,22,18,.7) 45%,rgba(5,22,18,.2) 100%)}
+.campus-badge{position:absolute;top:2rem;right:2rem;z-index:3;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.1rem}
+.campus-content{position:relative;z-index:2;width:100%;padding:0 0 clamp(2.5rem,5vw,4rem)}
+.campus-content .w{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:end}
+.campus-left .sec-label{color:var(--gold)}
+.campus-left .sec-label::before{background:var(--gold)}
+.campus-left h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem;line-height:1.08}
+.campus-left p{color:rgba(255,255,255,.72);line-height:1.75;font-size:1rem;max-width:42ch}
+.campus-facts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+.cf-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.9rem 1rem;backdrop-filter:blur(4px)}
+.cf-val{font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;font-size:1rem}
+.cf-key{font-size:.76rem;color:rgba(255,255,255,.58);margin-top:.2rem}
+.btn-visit{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.8rem;transition:background .2s,transform .2s}
+.btn-visit:hover{background:#e09d10;transform:translateX(3px)}
+
+/* ===== FOUNDERS — ASYMMETRIC ===== */
+.founders-sec{background:#fff}
+.founders-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:3px;margin-top:3rem;border-radius:4px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(10,44,40,.35)}
+/* Left — big Sripal Jain card */
+.f-main{position:relative;overflow:hidden;background:var(--forest-deep);min-height:640px;display:flex;flex-direction:column;justify-content:flex-end}
+.f-main-photo{position:absolute;inset:0}
+.f-main-photo .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:6rem;color:rgba(255,255,255,.3);z-index:0}
+.f-main-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(20%);position:relative;z-index:1;transition:transform .6s var(--ease)}
+.f-main:hover .f-main-photo img{transform:scale(1.04)}
+.f-main::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.95) 0%,rgba(5,22,18,.5) 45%,transparent 80%);z-index:2}
+.f-main-content{position:relative;z-index:3;padding:2.2rem 2.4rem}
+.f-main-content .role-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.38rem .85rem;margin-bottom:.9rem}
+.f-main-content h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.f-main-content blockquote{border-left:3px solid var(--gold);padding-left:1.1rem;color:rgba(255,255,255,.78);font-size:clamp(.9rem,1.3vw,1rem);line-height:1.78;font-style:italic;max-width:46ch}
+.f-main-content .f-sig{display:flex;align-items:center;gap:.6rem;margin-top:1.2rem}
+.f-main-content .sig-line{width:28px;height:1.5px;background:var(--gold)}
+.f-main-content .sig-name{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+/* Right — two stacked cards */
+.f-stack{display:grid;grid-template-rows:1fr 1fr;gap:2px}
+.f-card{position:relative;overflow:hidden;background:var(--forest-deep);display:flex;flex-direction:column;justify-content:flex-end}
+.f-card-photo{position:absolute;inset:0}
+.f-card-photo .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:4rem;color:rgba(255,255,255,.3);z-index:0}
+.f-card-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(20%);position:relative;z-index:1;transition:transform .6s var(--ease)}
+.f-card:hover .f-card-photo img{transform:scale(1.05)}
+.f-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.92) 0%,rgba(5,22,18,.4) 55%,transparent 100%);z-index:2}
+.f-card-content{position:relative;z-index:3;padding:1.4rem 1.6rem}
+.f-card-content .role-tag{display:inline-flex;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;margin-bottom:.6rem}
+.f-card-content h4{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:.7rem}
+.f-card-content blockquote{border-left:2px solid var(--gold);padding-left:.8rem;color:rgba(255,255,255,.72);font-size:.85rem;line-height:1.68;font-style:italic}
+
+/* ===== NEWS ===== */
+.news-sec{background:var(--paper)}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.news-card{background:#fff;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.news-card:hover{transform:translateY(-5px);box-shadow:0 24px 50px -18px rgba(15,61,56,.22)}
+.news-photo{aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--forest-deep)}
+.news-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.news-card:hover .news-photo img{transform:scale(1.06)}
+.news-date{position:absolute;top:.9rem;left:.9rem;background:var(--gold);color:var(--forest-deep);padding:.35rem .65rem;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;line-height:1.2;text-align:center}
+.news-date b{display:block;font-size:1.25rem}
+.news-body{padding:1.2rem 1.3rem 1.6rem}
+.news-body h4{font-size:1.02rem;font-weight:700;color:var(--forest-deep);margin-bottom:.45rem;line-height:1.3}
+.news-body p{font-size:.87rem;color:var(--slate);line-height:1.65}
+
+/* ===== ADMISSIONS ===== */
+.admissions{background:var(--forest-deep);color:#fff;position:relative;overflow:hidden;padding:clamp(60px,8vw,110px) 0}
+.admissions::before{content:'';position:absolute;right:-180px;top:-180px;width:500px;height:500px;border-radius:50%;border:60px solid rgba(246,171,22,.06)}
+.admissions::after{content:'';position:absolute;left:-120px;bottom:-120px;width:350px;height:350px;border-radius:50%;border:40px solid rgba(111,220,239,.05)}
+.admissions .sec-label{color:var(--gold)}
+.admissions .sec-label::before{background:var(--gold)}
+.admissions .sec-title{color:#fff}
+.admissions .sub{color:rgba(255,255,255,.65);margin-top:.6rem;max-width:52ch;font-size:.98rem}
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:3rem;position:relative}
+.steps-grid::before{content:'';position:absolute;top:21px;left:10%;right:10%;height:1px;background:rgba(255,255,255,.15);z-index:0}
+.step-card{position:relative;z-index:1;padding:0 1rem 2rem}
+.step-n{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:900;font-size:.95rem;display:grid;place-items:center;margin-bottom:1.2rem}
+.step-card h4{font-size:.98rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.step-card p{font-size:.84rem;color:rgba(255,255,255,.58);line-height:1.65}
+.adm-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.8rem}
+.btn-gold{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 2rem;transition:background .2s,transform .2s}
+.btn-gold:hover{background:#e09d10;transform:translateY(-2px)}
+.btn-outline-w{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 2rem;transition:border-color .2s,background .2s}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ===== CONTACT ===== */
+.contact-band{background:var(--ink);padding:clamp(60px,8vw,110px) 0}
+.contact-top{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:2.5rem;align-items:start}
+.contact-band .sec-label{color:var(--gold)}
+.contact-band .sec-label::before{background:var(--gold)}
+.contact-band .sec-title{color:#fff}
+.contact-band .sub{color:rgba(255,255,255,.62);margin-top:.6rem;font-size:.98rem}
+.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.cboxes{display:flex;flex-direction:column;gap:1rem}
+.cbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.3rem 1.5rem}
+.cbox h5{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--gold);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem}
+.cbox p,.cbox a{color:rgba(255,255,255,.68);font-size:.9rem;line-height:1.7;display:block}
+.cbox a:hover{color:var(--cyan)}
+/* maps */
+.maps-row{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.map-col{display:flex;flex-direction:column}
+.map-col-header{padding:1.2rem 1.5rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:.6rem}
+.map-col-header svg{width:1rem;height:1rem;color:var(--gold);flex:none}
+.map-col-header h5{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--gold);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.map-col-header span{color:rgba(255,255,255,.5);font-size:.78rem;margin-left:auto}
+.map-col:first-child{border-right:1px solid rgba(255,255,255,.08)}
+.map-frame{width:100%;height:280px;border:0;display:block;filter:saturate(.7) brightness(.9)}
+
+/* ===== FOOTER ===== */
+footer{background:#061c19;color:rgba(255,255,255,.55);font-size:.87rem}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;padding:3.5rem 0}
+.foot-brand p{color:rgba(255,255,255,.45);max-width:30ch;margin-top:.9rem;line-height:1.72}
+.foot-brand .socials{display:flex;gap:.5rem;margin-top:1.3rem}
+.foot-brand .socials a{width:36px;height:36px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:rgba(255,255,255,.6);transition:.2s}
+.foot-brand .socials a:hover{background:var(--gold);color:var(--forest-deep)}
+footer h5{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+footer ul a{color:rgba(255,255,255,.5);transition:color .2s;font-size:.86rem}
+footer ul a:hover{color:var(--gold)}
+.fc-item{display:flex;gap:.6rem;margin-bottom:.85rem;align-items:flex-start;font-size:.86rem}
+.fc-item svg{width:.95rem;height:.95rem;color:var(--gold);flex:none;margin-top:.2rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.foot-bottom .palette{display:flex;gap:4px}
+.foot-bottom .palette i{width:11px;height:11px;border-radius:50%}
+
+
+/* ===== DROPDOWN ===== */
+.has-drop{position:relative}
+.has-drop>a{display:flex;align-items:center;gap:.3rem}
+.has-drop>a .chev{width:.75rem;height:.75rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.has-drop:hover>a .chev{transform:rotate(180deg)}
+.drop-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);background:rgba(10,44,40,.98);border:1px solid rgba(255,255,255,.1);min-width:200px;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;transform-origin:top center;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:200}
+.has-drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.drop-menu a{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.78);font-family:'Montserrat',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.07);transition:background .2s,color .2s}
+.drop-menu a:last-child{border-bottom:none}
+.drop-menu a:hover{background:rgba(255,255,255,.08);color:var(--gold)}
+.drop-menu a::after{display:none!important}
+.drop-arrow{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;overflow:hidden}
+.drop-arrow::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%) rotate(45deg);width:8px;height:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.1)}
+
+/* ===== SIDE WIDGETS ===== */
+.side-left{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column}
+.side-tab{display:flex;align-items:center;background:var(--forest-deep);color:#fff;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem .6rem;cursor:pointer;transition:background .2s,padding .2s;border-bottom:1px solid rgba(255,255,255,.1);white-space:nowrap}
+.side-tab:hover{background:var(--emerald);padding:.9rem .8rem}
+.side-tab svg{width:.85rem;height:.85rem;transform:rotate(180deg);margin-bottom:.45rem;flex:none}
+.side-right{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column}
+.side-icon{width:48px;height:48px;background:var(--forest-deep);display:grid;place-items:center;color:#fff;border-bottom:1px solid rgba(255,255,255,.1);transition:background .2s;cursor:pointer}
+.side-icon:hover{background:var(--gold);color:var(--forest-deep)}
+.side-icon svg{width:1.2rem;height:1.2rem}
+.side-icon.wa-btn{background:var(--emerald)}
+.side-icon.wa-btn:hover{background:#22c55e}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.stagger-1{transition-delay:.1s}.reveal.stagger-2{transition-delay:.2s}.reveal.stagger-3{transition-delay:.3s}.reveal.stagger-4{transition-delay:.4s}
+.reveal.in{opacity:1;transform:none}
+
+
+/* ===== CAMPUS SLIDER ===== */
+#campus{background:var(--paper);padding:clamp(50px,7vw,90px) 0}
+#campus .campus-sec-head{text-align:center;margin-bottom:2.5rem}
+#campus .campus-sec-head .sec-label{justify-content:center}
+.campus-slider{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(10,44,40,.4)}
+.campus-slide{display:none;position:relative;min-height:580px}
+.campus-slide.active{display:flex;align-items:flex-end}
+.campus-slide .campus-bg{position:absolute;inset:0;background:var(--forest-deep)}
+.campus-slide .campus-bg img{width:100%;height:100%;object-fit:cover}
+.campus-slide .campus-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.97) 0%,rgba(5,22,18,.75) 40%,rgba(5,22,18,.2) 100%)}
+.campus-inner{position:relative;z-index:2;width:100%;padding:clamp(2rem,4vw,3.5rem) clamp(2rem,5vw,4rem);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,5rem);align-items:end}
+.campus-left-txt .sec-label{color:var(--gold);margin-bottom:.6rem}
+.campus-left-txt .sec-label::before{background:var(--gold)}
+.campus-left-txt h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:900;color:#fff;margin-bottom:.9rem;line-height:1.1}
+.campus-left-txt p{color:rgba(255,255,255,.7);line-height:1.75;font-size:.96rem;max-width:44ch}
+.campus-right-info .campus-facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:1.4rem}
+.campus-right-info .cf-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:.8rem 1rem;backdrop-filter:blur(4px)}
+.campus-right-info .cf-val{font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;font-size:.95rem}
+.campus-right-info .cf-key{font-size:.73rem;color:rgba(255,255,255,.55);margin-top:.2rem}
+.campus-controls{position:absolute;bottom:0;left:0;right:0;z-index:10;display:flex;align-items:center;gap:0;background:rgba(10,44,40,.6);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.1)}
+.campus-tab{flex:1;padding:.85rem 1rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);cursor:pointer;text-align:center;border-right:1px solid rgba(255,255,255,.1);transition:color .2s,background .2s;background:none;border-top:none;border-left:none;border-bottom:none}
+.campus-tab:last-child{border-right:none}
+.campus-tab.active{color:var(--gold);background:rgba(246,171,22,.08)}
+.campus-badge-abs{position:absolute;top:1.4rem;right:1.4rem;z-index:5;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .9rem}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .main-nav{display:none}.burger{display:flex}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:repeat(3,1fr)}
+  .steps-grid::before{display:none}
+}
+@media(max-width:860px){
+  .acad-row{grid-template-columns:1fr!important}
+  .acad-row.flip .acad-img{order:0}
+  .acad-img{order:-1;min-height:300px}
+  .campus-inner{grid-template-columns:1fr!important}
+  .maps-row{grid-template-columns:1fr}
+  .map-col:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .founders-layout{grid-template-columns:1fr}
+  .f-main{min-height:480px}
+  .f-stack{grid-template-rows:auto auto}
+  .campus-content .w{grid-template-columns:1fr}
+  .contact-top{grid-template-columns:1fr}
+  .maps-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .side-left,.side-right{display:none}
+}
+@media(max-width:600px){
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .stat-item:nth-child(2){border-right:none}
+  .news-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr}
+  .pillar-grid{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- SVG SPRITE -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M10 14v3M14 14v3M8 20h8M9 17h6"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.7 6.2.6-4.7 4.1 1.4 6.1L12 16.9 6.5 19.6l1.4-6.1L3.2 9.3l6.2-.6L12 3Z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-5 7-8 7-11a7 7 0 0 0-14 0c0 3 2 6 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-news" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></symbol>
+  <symbol id="ic-event" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><circle cx="12" cy="15" r="2"/></symbol>
+  <symbol id="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-wa" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.5 14.4c-.3-.15-1.8-.88-2.07-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6l.44-.5c.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.8.37C7.3 7.05 6.5 7.8 6.5 9.3s1.1 2.93 1.25 3.13c.15.2 2.15 3.28 5.2 4.6.73.3 1.3.5 1.74.63.73.22 1.4.19 1.92.12.59-.09 1.8-.74 2.06-1.45.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.57-.35Z"/><path d="M12 2a10 10 0 0 0-8.59 15.1L2 22l5.06-1.38A10 10 0 1 0 12 2Zm0 18.18a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31A8.18 8.18 0 1 1 12 20.18Z"/></symbol>
+  <symbol id="ic-fb" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.5C13.5 9.2 13.7 9 14 9Z"/></symbol>
+  <symbol id="ic-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-yt" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.5 8s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.8C16.4 5 12 5 12 5s-4.4 0-6.8.2c-.4 0-1.2 0-1.9.8-.6.6-.8 2-.8 2S2.3 9.6 2.3 11.2v1.5C2.3 14.4 2.5 16 2.5 16s.2 1.4.8 2c.7.8 1.7.8 2.1.9C6.8 19 12 19 12 19s4.4 0 6.8-.2c.4 0 1.2 0 1.9-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C21.7 9.6 21.5 8 21.5 8ZM10 14.5v-5l4.5 2.5-4.5 2.5Z"/></symbol>
+  <symbol id="ic-li" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M7 9v9H4V9h3ZM5.5 7.5A1.5 1.5 0 1 1 5.5 4.5a1.5 1.5 0 0 1 0 3ZM20 18h-3v-4.8c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V18h-3V9h3v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 3.3 1.3 3.3 4V18Z"/></symbol>
+  <symbol id="ic-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></symbol>
+</svg>
+
+<!-- SIDE WIDGETS -->
+<div class="side-left" id="sideLeft">
+  <a class="side-tab" href="#news"><svg><use href="#ic-news"/></svg>Latest News</a>
+  <a class="side-tab" href="#news"><svg><use href="#ic-event"/></svg>Upcoming Events</a>
+  <a class="side-tab" href="#admissions"><svg><use href="#ic-cal"/></svg>Calendar</a>
+</div>
+<div class="side-right" id="sideRight">
+  <a class="side-icon" href="tel:+919606488347" title="Call"><svg><use href="#ic-phone"/></svg></a>
+  <a class="side-icon wa-btn" href="https://wa.me/919364898405" target="_blank" rel="noopener" title="WhatsApp"><svg><use href="#ic-wa"/></svg></a>
+  <a class="side-icon" href="mailto:admissions@theacademiccity.com" title="Email"><svg><use href="#ic-mail"/></svg></a>
+  <a class="side-icon" href="#contact" title="Find us"><svg><use href="#ic-pin"/></svg></a>
+</div>
+
+<!-- UTIL BAR -->
+<div class="util">
+  <div class="w">
+    <div class="util-left">
+      <a href="tel:+919606488347"><svg style="width:.85rem;height:.85rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-phone"/></svg>+91 96064 88347</a>
+      <span class="sep">|</span>
+      <a href="mailto:admissions@theacademiccity.com"><svg style="width:.85rem;height:.85rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-mail"/></svg>admissions@theacademiccity.com</a>
+    </div>
+    <div class="util-right">
+      <span class="adm-badge">⚡ Admissions Open 2026–27</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="w nav-inner">
+    <a class="brand" href="#top">
+      <div class="brand-emblem"><svg viewBox="0 0 24 24"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+      <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+    </a>
+    <nav><ul class="main-nav">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li class="has-drop">
+        <a href="#pillars">Explore TACS <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="drop-menu">
+          <div class="drop-arrow"></div>
+          <a href="#academics">Academics</a>
+          <a href="#academics">Co-curricular</a>
+          <a href="#campus">Boarding</a>
+          <a href="#academics">Career Guidance</a>
+        </div>
+      </li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#news">Blog</a></li>
+      <li><a href="#contact" class="nav-apply">Apply Now</a></li>
+    </ul></nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<nav class="mob-drawer" id="mobDrawer">
+  <a href="#top">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#pillars">Explore TACS</a>
+  <a href="#academics">Academics</a>
+  <a href="#campus">Campus</a>
+  <a href="#founders">Leadership</a>
+  <a href="#admissions">Admissions</a>
+  <a href="#news">Blog</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="mob-apply">Apply Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="https://theacademiccity.com/images/homepage/overview.png">
+      <source src="https://the-academic-city-boarding-school.s3.ap-south-1.amazonaws.com/Videos/Reel+4.mp4" type="video/mp4">
+    </video>
+    <img class="hero-poster" src="https://theacademiccity.com/images/homepage/overview.png" alt="TACS Bengaluru campus" style="display:none" id="heroPoster">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-bottom">
+    <div class="w">
+      <p class="eyebrow">⭐ Best Boarding School 2024 · Oxford, UK</p>
+      <h1>India's First <em>Career-Oriented</em> Boarding School</h1>
+      <p>Instilling 21st Century Skills · Bengaluru, Nelamangala</p>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar" id="about">
+  <div class="w">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="sn">Grades 5–12</div><div class="sl">Residential boarding</div></div>
+      <div class="stat-item"><div class="sn">CBSE</div><div class="sl">New Delhi curriculum</div></div>
+      <div class="stat-item"><div class="sn">1 : 10</div><div class="sl">Student–teacher ratio</div></div>
+      <div class="stat-item"><div class="sn">600+</div><div class="sl">Career paths explored</div></div>
+      <div class="stat-item"><div class="sn">Bengaluru</div><div class="sl">Nelamangala campus</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section class="pillars-sec" id="pillars">
+  <div class="cdf-watermark" aria-hidden="true">
+    <div class="wm-line1">CORE</div>
+    <div class="wm-line2">DELIVERY</div>
+    <div class="wm-line3">FRAMEWORK</div>
+  </div>
+  <div class="w">
+    <div class="pillars-head reveal">
+      <span class="sec-label">Our Core Delivery Framework</span>
+      <h2>Four Pillars That Shape Every Child</h2>
+      <p>Every day at TACS follows one deliberate path — from academic clarity, to creative growth, to a values-led boarding life, to a clear career direction.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card c1 reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-photo"><div class="ph"><img src="https://theacademiccity.com/images/Home/nav/academics.png" alt="Academics" loading="lazy" onerror="this.style.display='none'"></div></div>
+        <div class="pillar-info"><h3>Academics</h3><p class="tagline">Concept clarity across all grades</p></div>
+        <div class="pillar-expand"><p>Focused, subject-wise academic planning ensures consistent growth from Grade 5 through 12. CBSE curriculum delivered with a 1:10 student–teacher ratio and personalised Student Progression Plans.</p><a class="pl-btn" href="#academics">Learn More <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a></div>
+      </div>
+      <div class="pillar-card c2 reveal stagger-1">
+        <div class="pillar-num">02</div>
+        <div class="pillar-photo"><div class="ph"><img src="https://theacademiccity.com/images/Home/nav/curriculam.png" alt="Co-curricular" loading="lazy" onerror="this.style.display='none'"></div></div>
+        <div class="pillar-info"><h3>Co-curricular &amp; Extra-curricular</h3><p class="tagline">All-round personality development</p></div>
+        <div class="pillar-expand"><p>Art, dance, theatre, music and pottery foster creativity and collaboration. Our Life Readiness programme adds martial arts, financial literacy, first aid, cooking and public speaking.</p><a class="pl-btn" href="#academics">Learn More <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a></div>
+      </div>
+      <div class="pillar-card c3 reveal stagger-2">
+        <div class="pillar-num">03</div>
+        <div class="pillar-photo"><div class="ph"><img src="https://theacademiccity.com/images/Home/nav/boarding.png" alt="Boarding life" loading="lazy" onerror="this.style.display='none'"></div></div>
+        <div class="pillar-info"><h3>Indic Value-Based Boarding Life</h3><p class="tagline">Discipline, values and self-leadership</p></div>
+        <div class="pillar-expand"><p>Separate AC hostels, pastoral care, 24-hour doctor on-call and home-like celebrations create a safe, joyful home away from home, shaped by Indic values and structured living.</p><a class="pl-btn" href="#campus">Learn More <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a></div>
+      </div>
+      <div class="pillar-card c4 reveal stagger-3">
+        <div class="pillar-num">04</div>
+        <div class="pillar-photo"><div class="ph"><img src="https://theacademiccity.com/images/Home/nav/career1.png" alt="Career orientation" loading="lazy" onerror="this.style.display='none'"></div></div>
+        <div class="pillar-info"><h3>Career Orientation</h3><p class="tagline">Early, continuous career discovery</p></div>
+        <div class="pillar-expand"><p>From Grade 5 to 12, students explore 600+ career options through industry interactions, psychometric assessments and expert mentoring — turning the daunting "what next?" into a confident, clear answer.</p><a class="pl-btn" href="#academics">Learn More <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BROCHURE DIVIDER -->
+<div class="div-brochure">
+  <div class="bg"><img src="https://theacademiccity.com/images/homepage/overview.png" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none'"></div>
+  <div class="inner reveal">
+    <h2>Discover Everything TACS Has to Offer</h2>
+    <p>Download our school brochure for a complete guide to academics, campus life, admissions and fees.</p>
+    <a class="btn-brochure" href="https://theacademiccity.com/admission" target="_blank" rel="noopener"><svg style="width:1.1rem;height:1.1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-dl"/></svg>Download Brochure</a>
+  </div>
+</div>
+
+<!-- ACADEMICS — ALTERNATING ROWS CONTAINED IN .w -->
+<section class="academics sec" id="academics">
+  <div class="w">
+    <div style="margin-bottom:2.5rem">
+      <span class="sec-label reveal">Academics &amp; Campus Life</span>
+      <h2 class="sec-title reveal">Academic eminence. Career focus. Holistic growth.</h2>
+    </div>
+    <div class="acad-rows-wrap">
+      <!-- Row 1: CBSE Foundation -->
+      <div class="acad-row reveal">
+        <div class="acad-img">
+          <div class="acad-img-inner"><img src="https://theacademiccity.com/images/Home/nav/academics.png" alt="CBSE academics at TACS" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tag-strip"><span>CBSE · Grades 5–12 · 1:10 Mentoring</span></div>
+        </div>
+        <div class="acad-copy">
+          <span class="sec-label">Academic Excellence</span>
+          <h3>A rigorous CBSE foundation, built for every child</h3>
+          <p>Our Bengaluru campus follows the CBSE curriculum with a 1:10 student–teacher ratio and individualised Student Progression Plans — so every child moves at the right pace, builds genuine concept clarity and walks into Grades 11 and 12 fully prepared.</p>
+          <div class="chips">
+            <span class="chip">CBSE — New Delhi</span>
+            <span class="chip">Grades 5–12</span>
+            <span class="chip">1:10 Mentoring</span>
+            <span class="chip">Personalised Plans</span>
+          </div>
+          <a class="cta-link" href="#contact">Explore Academics <svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="acad-divider"></div>
+      <!-- Row 2: Career Guidance (flipped) -->
+      <div class="acad-row flip reveal">
+        <div class="acad-img">
+          <div class="acad-img-inner"><img src="https://theacademiccity.com/images/Home/nav/career1.png" alt="Career guidance" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tag-strip"><span>Grades 5–12 · 600+ Career Paths</span></div>
+        </div>
+        <div class="acad-copy">
+          <span class="sec-label">Career-First Learning</span>
+          <h3>Helping every child discover the right path, early</h3>
+          <p>Students explore over 600 career options through industry workshops and psychometric assessments from Grade 5 onwards. Structured preparation is available for Grades 11 &amp; 12 — covering engineering, medicine, law, design, CA, management and study abroad.</p>
+          <div class="chips">
+            <span class="chip">600+ Career Options</span>
+            <span class="chip">Psychometric Tests</span>
+            <span class="chip">Industry Mentors</span>
+            <span class="chip">LEAP &amp; IDC Programmes</span>
+          </div>
+          <a class="cta-link" href="#contact">Explore Career Programme <svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="acad-divider"></div>
+      <!-- Row 3: Sport & Life -->
+      <div class="acad-row reveal">
+        <div class="acad-img">
+          <div class="acad-img-inner"><img src="https://theacademiccity.com/images/Home/nav/sports.png" alt="Sports at TACS" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="tag-strip"><span>90 Min/Day · District to National</span></div>
+        </div>
+        <div class="acad-copy">
+          <span class="sec-label">Sport &amp; Life Readiness</span>
+          <h3>90 minutes of sport, every single day</h3>
+          <p>Every student plays daily — with dedicated coaches for football, basketball, swimming, cricket, badminton and more. Talented athletes are nurtured from district to national level. Our Life Readiness programme adds first aid, cooking, financial literacy and public speaking.</p>
+          <div class="chips">
+            <span class="chip">Football</span>
+            <span class="chip">Basketball</span>
+            <span class="chip">Swimming</span>
+            <span class="chip">Cricket</span>
+            <span class="chip">Badminton</span>
+            <span class="chip">Kho-Kho</span>
+          </div>
+          <a class="cta-link" href="#contact">Explore Campus Life <svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+    </div><!-- end acad-rows-wrap -->
+    <!-- Grades 11-12 band -->
+    <div class="acad-band reveal">
+    <div>
+      <h3>Focused preparation for Grades 11 &amp; 12</h3>
+      <p>Whether a student is aiming for engineering, medicine, law, design, architecture, CA, management or study abroad — we provide structured academic support so every aspiration has a clear plan behind it.</p>
+      <div class="sc-chips">
+        <span>Engineering</span><span>Medicine</span><span>Law</span><span>Design</span><span>Architecture</span><span>CA</span><span>Management</span><span>Study Abroad</span>
+      </div>
+    </div>
+    <a class="btn-band" href="#contact">Enquire Now <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+  </div>
+  </div><!-- end .w -->
+</section>
+
+<!-- GALLERY — TABBED MASONRY -->
+<section class="gallery sec" id="gallery">
+  <div class="w">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem" class="reveal">
+      <div><span class="sec-label">Life on Campus</span><h2 class="sec-title">A glimpse into everyday TACS</h2></div>
+      <a href="https://www.instagram.com/the_academic_city/" target="_blank" rel="noopener" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:.4rem">Follow on Instagram <svg style="width:.85rem;height:.85rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+    </div>
+    <div class="gallery-tabs reveal">
+      <button class="gtab active" data-tab="campus">Campus</button>
+      <button class="gtab" data-tab="academics">Academics</button>
+      <button class="gtab" data-tab="extra">Extra-curriculars</button>
+      <button class="gtab" data-tab="boarding">Boarding Life</button>
+    </div>
+    <div class="masonry-wrap">
+      <!-- CAMPUS -->
+      <div class="masonry active" id="tab-campus">
+        <div class="masonry-item"><div class="ph-box" style="height:280px"><div class="ph-lbl">Aerial Campus View</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Sports Arena</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:340px"><div class="ph-lbl">Main Building</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:220px"><div class="ph-lbl">Running Track</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:260px"><div class="ph-lbl">Swimming Pool</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Hostel Block</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:300px"><div class="ph-lbl">Farm &amp; Goshala</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:180px"><div class="ph-lbl">Dining Hall</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+      </div>
+      <!-- ACADEMICS -->
+      <div class="masonry" id="tab-academics">
+        <div class="masonry-item"><div class="ph-box" style="height:260px"><div class="ph-lbl">Smart Classroom</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:320px"><div class="ph-lbl">Career Guidance Session</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Science Lab</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:280px"><div class="ph-lbl">Library</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:220px"><div class="ph-lbl">Investiture Ceremony</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:300px"><div class="ph-lbl">Industry Interaction</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:180px"><div class="ph-lbl">Psychometric Assessment</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:240px"><div class="ph-lbl">Student Progression Plan</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+      </div>
+      <!-- EXTRA -->
+      <div class="masonry" id="tab-extra">
+        <div class="masonry-item"><div class="ph-box" style="height:300px"><div class="ph-lbl">Basketball</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:220px"><div class="ph-lbl">Dance Performance</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:260px"><div class="ph-lbl">Theatre Production</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Art &amp; Craft</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:280px"><div class="ph-lbl">Football Match</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:240px"><div class="ph-lbl">Music Class</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Cooking Class</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:320px"><div class="ph-lbl">Sports Day</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+      </div>
+      <!-- BOARDING -->
+      <div class="masonry" id="tab-boarding">
+        <div class="masonry-item"><div class="ph-box" style="height:260px"><div class="ph-lbl">Hostel Room</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Dining Experience</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:320px"><div class="ph-lbl">Independence Day Celebration</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:220px"><div class="ph-lbl">Ganesh Chaturthi</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:280px"><div class="ph-lbl">Pastoral Care</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:200px"><div class="ph-lbl">Teachers' Day</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:240px"><div class="ph-lbl">Evening Study Hall</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+        <div class="masonry-item"><div class="ph-box" style="height:300px"><div class="ph-lbl">Morning Assembly</div></div><div class="overlay"><div class="overlay-icon"><svg><use href="#ic-zoom"/></svg></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS — BEAUTIFUL FULL WIDTH -->
+<section class="awards-sec" id="awards">
+  <div class="w">
+    <div class="awards-head reveal">
+      <span class="sec-label">Awards &amp; Recognitions</span>
+      <h2>Recognised for excellence, nationally &amp; globally</h2>
+    </div>
+  </div>
+  <div class="awards-track reveal">
+    <div class="award-tile">
+      <div class="award-icon"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.7 6.2.6-4.7 4.1 1.4 6.1L12 16.9 6.5 19.6l1.4-6.1L3.2 9.3l6.2-.6L12 3Z"/></svg></div>
+      <div class="award-name">Education Leaders Awards</div>
+      <div class="award-year">2024</div>
+    </div>
+    <div class="award-tile">
+      <div class="award-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <div class="award-name">Brainfeed Top 500 Schools of India</div>
+      <div class="award-year">2022–23</div>
+    </div>
+    <div class="award-tile">
+      <div class="award-icon"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M10 14v3M14 14v3M8 20h8M9 17h6"/></svg></div>
+      <div class="award-name">India School Merit Awards</div>
+      <div class="award-year">National Recognition</div>
+    </div>
+    <div class="award-tile">
+      <div class="award-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M8 17h8"/></svg></div>
+      <div class="award-name">21CL ISLE Awards Bengaluru</div>
+      <div class="award-year">2022</div>
+    </div>
+    <div class="award-tile">
+      <div class="award-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="award-name">Best Boarding School · Oxford University UK</div>
+      <div class="award-year">2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUS SLIDER -->
+<section id="campus">
+  <div class="w">
+    <div class="campus-sec-head reveal">
+      <span class="sec-label">Our Campuses</span>
+      <h2 class="sec-title">Two campuses. One philosophy.</h2>
+    </div>
+  </div>
+  <div class="w">
+    <div class="campus-slider reveal">
+      <!-- Slide 1: Bengaluru -->
+      <div class="campus-slide active" id="campusSlide0">
+        <div class="campus-bg"><img src="https://theacademiccity.com/images/homepage/campus/1.png" alt="TACS Bengaluru" loading="lazy" onerror="this.style.display='none'"></div>
+        <span class="campus-badge-abs">Admissions Open 2026–27</span>
+        <div class="campus-inner">
+          <div class="campus-left-txt">
+            <span class="sec-label">Bengaluru Campus</span>
+            <h2>A serene campus in Bengaluru's countryside</h2>
+            <p>Set in the green calm of Nelamangala, TACS Bengaluru is a fully residential boarding campus where every day moves between focused learning, sport, creativity and a home life shaped by Indic values.</p>
+          </div>
+          <div class="campus-right-info">
+            <div class="campus-facts-grid">
+              <div class="cf-item"><div class="cf-val">Grades 5–12</div><div class="cf-key">Residential boarding</div></div>
+              <div class="cf-item"><div class="cf-val">CBSE</div><div class="cf-key">New Delhi curriculum</div></div>
+              <div class="cf-item"><div class="cf-val">1 : 10</div><div class="cf-key">Student–teacher ratio</div></div>
+              <div class="cf-item"><div class="cf-val">24h Doctor</div><div class="cf-key">On-call medical care</div></div>
+              <div class="cf-item"><div class="cf-val">6 Meals/Day</div><div class="cf-key">Veg &amp; Jain options</div></div>
+              <div class="cf-item"><div class="cf-val">AC Hostels</div><div class="cf-key">Separate boys &amp; girls</div></div>
+            </div>
+            <a class="btn-visit" href="#contact">Book a Campus Visit <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="campus-controls">
+          <button class="campus-tab active" data-slide="0">Bengaluru</button>
+          <button class="campus-tab" data-slide="1">Indore</button>
+        </div>
+      </div>
+      <!-- Slide 2: Indore -->
+      <div class="campus-slide" id="campusSlide1">
+        <div class="campus-bg"><img src="https://theacademiccity.com/images/homepage/campus/2.png" alt="TACS Indore" loading="lazy" onerror="this.style.display='none'"></div>
+        <span class="campus-badge-abs">Admissions Open 2026–27</span>
+        <div class="campus-inner">
+          <div class="campus-left-txt">
+            <span class="sec-label">Indore Campus</span>
+            <h2>A scenic campus in Madhya Pradesh</h2>
+            <p>Located in Mohankheda Jain Tirth, Rajgarh (Dhar), the Indore campus offers the same TACS philosophy — structured boarding, strong academics and career-first learning — in the peaceful landscape of Madhya Pradesh.</p>
+          </div>
+          <div class="campus-right-info">
+            <div class="campus-facts-grid">
+              <div class="cf-item"><div class="cf-val">Grades 5–12</div><div class="cf-key">Residential boarding</div></div>
+              <div class="cf-item"><div class="cf-val">CBSE</div><div class="cf-key">New Delhi curriculum</div></div>
+              <div class="cf-item"><div class="cf-val">1 : 12</div><div class="cf-key">Student–teacher ratio</div></div>
+              <div class="cf-item"><div class="cf-val">24h Doctor</div><div class="cf-key">On-call medical care</div></div>
+              <div class="cf-item"><div class="cf-val">6 Meals/Day</div><div class="cf-key">Veg &amp; Jain options</div></div>
+              <div class="cf-item"><div class="cf-val">AC Hostels</div><div class="cf-key">Separate boys &amp; girls</div></div>
+            </div>
+            <a class="btn-visit" href="mailto:Admission.mk@theacademiccity.com">Enquire about Indore <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="campus-controls">
+          <button class="campus-tab" data-slide="0">Bengaluru</button>
+          <button class="campus-tab active" data-slide="1">Indore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS — ASYMMETRIC OPTION A -->
+<section class="founders-sec sec" id="founders">
+  <div class="w">
+    <div class="reveal" style="text-align:center;max-width:52ch;margin-inline:auto;margin-bottom:0">
+      <span class="sec-label" style="justify-content:center">The Visionaries</span>
+      <h2 class="sec-title">The founders who built a different kind of school</h2>
+      <p style="color:var(--slate);margin-top:.7rem">A boarding school built on a bold belief — that schooling should prepare children for life, not just for exams.</p>
+    </div>
+  </div>
+  <div class="w"><div class="founders-layout reveal">
+    <!-- Left: Sripal Jain — large anchor -->
+    <div class="f-main">
+      <div class="f-main-photo">
+        <div class="mono">SJ</div>
+        <img src="https://theacademiccity.com/images/homepage/visionary/1.png" alt="Sripal Jain" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="f-main-content">
+        <div class="role-tag">Founder</div>
+        <h3>Sripal Jain</h3>
+        <blockquote>"We built this school because we believed every child deserves to know not just what to learn, but why — and where it leads. Career discovery isn't a post-school thought; it should be woven into every single year of a child's education."</blockquote>
+        <div class="f-sig"><span class="sig-line"></span><span class="sig-name">Founder, The Academic City School</span></div>
+      </div>
+    </div>
+    <!-- Right: two stacked -->
+    <div class="f-stack">
+      <div class="f-card">
+        <div class="f-card-photo">
+          <div class="mono">AR</div>
+          <img src="https://theacademiccity.com/images/homepage/visionary/3.png" alt="Abhay Ranka" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="f-card-content">
+          <div class="role-tag">Co-Founder</div>
+          <h4>Abhay Ranka</h4>
+          <blockquote>"India has thousands of good schools. We wanted to build a great one — where children grow up rooted in values, confident in who they are and clear about the future they are walking towards."</blockquote>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-card-photo">
+          <div class="mono">MK</div>
+          <img src="https://theacademiccity.com/images/homepage/visionary/2.png" alt="Mahipal Kawad" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="f-card-content">
+          <div class="role-tag">Director</div>
+          <h4>Mahipal Kawad</h4>
+          <blockquote>"Every child who comes to us carries a unique potential. Our job is to see it, nurture it and send them into the world not as students who passed exams, but as young people genuinely ready for what comes next."</blockquote>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- NEWS -->
+<section class="news-sec sec" id="news">
+  <div class="w">
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <span class="sec-label">School Updates</span>
+      <h2 class="sec-title">Life on campus, week by week</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/1.png" loading="lazy" alt="National Sports Day" onerror="this.style.display='none'"><div class="news-date"><b>29</b>Aug</div></div><div class="news-body"><h4>National Sports Day</h4><p>Fitness challenges and sportsmanship celebrated in honour of hockey legend Major Dhyan Chand's inspiring legacy.</p></div></div>
+      <div class="news-card reveal stagger-1"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/3.png" loading="lazy" alt="Independence Day" onerror="this.style.display='none'"><div class="news-date"><b>15</b>Aug</div></div><div class="news-body"><h4>Independence Day</h4><p>Flag-hoisting, house-wise march past and vibrant cultural performances celebrating unity and national pride.</p></div></div>
+      <div class="news-card reveal stagger-2"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/5.png" loading="lazy" alt="Ganesh Chaturthi" onerror="this.style.display='none'"><div class="news-date"><b>07</b>Sep</div></div><div class="news-body"><h4>Ganesh Chaturthi</h4><p>Decorations, traditional music and a student-led prayer ceremony filled with joy and cultural spirit.</p></div></div>
+      <div class="news-card reveal"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/2.png" loading="lazy" alt="Cooking Classes" onerror="this.style.display='none'"><div class="news-date"><b>21</b>Aug</div></div><div class="news-body"><h4>Cooking Classes</h4><p>Teamwork, time management and nutrition explored as students cooked diverse cuisines together.</p></div></div>
+      <div class="news-card reveal stagger-1"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/4.png" loading="lazy" alt="Teachers Day" onerror="this.style.display='none'"><div class="news-date"><b>05</b>Sep</div></div><div class="news-body"><h4>Teachers' Day</h4><p>Students expressed their gratitude through performances, surprise tributes and thoughtful gifts for mentors.</p></div></div>
+      <div class="news-card reveal stagger-2"><div class="news-photo"><img src="https://theacademiccity.com/images/homepage/updates/6.png" loading="lazy" alt="Investiture Ceremony" onerror="this.style.display='none'"><div class="news-date"><b>05</b>Aug</div></div><div class="news-body"><h4>Investiture Ceremony</h4><p>Student council took its oath to lead with integrity and responsibility for a thriving school community.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS — 5 STEPS -->
+<section class="admissions" id="admissions">
+  <div class="w">
+    <div class="reveal">
+      <span class="sec-label">Admissions 2026–27</span>
+      <h2 class="sec-title">Joining TACS is simple</h2>
+      <p class="sub">Five clear steps from your first enquiry to welcoming your child to campus.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-n">01</div><h4>Enquire</h4><p>Share a few details and the grade you're applying for. Our admissions team responds within a day.</p></div>
+      <div class="step-card reveal stagger-1"><div class="step-n">02</div><h4>Campus Visit</h4><p>Tour Nelamangala, meet our team and see boarding life first-hand — in person or virtually.</p></div>
+      <div class="step-card reveal stagger-2"><div class="step-n">03</div><h4>Entrance Exam</h4><p>A simple age-appropriate assessment to help us understand your child's academic starting point.</p></div>
+      <div class="step-card reveal stagger-3"><div class="step-n">04</div><h4>Interaction</h4><p>A warm conversation with your child to understand their interests, strengths and goals.</p></div>
+      <div class="step-card reveal stagger-4"><div class="step-n">05</div><h4>Enrolment</h4><p>Complete the formalities and secure your child's place for the upcoming academic year.</p></div>
+    </div>
+    <div class="adm-cta reveal">
+      <a class="btn-gold" href="#contact">Start Your Enquiry <svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-arrow"/></svg></a>
+      <a class="btn-outline-w" href="tel:+919606488347"><svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-phone"/></svg> +91 96064 88347</a>
+      <a class="btn-outline-w" href="https://wa.me/919364898405" target="_blank" rel="noopener"><svg style="width:1rem;height:1rem;fill:currentColor;stroke:none"><use href="#ic-wa"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT + MAPS -->
+<section class="contact-band" id="contact">
+  <div class="w">
+    <div class="contact-top">
+      <div class="reveal">
+        <span class="sec-label">Get in Touch</span>
+        <h2 class="sec-title">Come, let's craft a happy future for your child</h2>
+        <p class="sub">Talk to our Bengaluru admissions team about grades, campus visits, fees and boarding.</p>
+        <div class="contact-actions">
+          <a class="btn-gold" href="tel:+919606488347"><svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-phone"/></svg> Call Admissions</a>
+          <a class="btn-outline-w" href="https://wa.me/919364898405" target="_blank" rel="noopener"><svg style="width:1rem;height:1rem;fill:currentColor;stroke:none"><use href="#ic-wa"/></svg> WhatsApp</a>
+        </div>
+      </div>
+      <div class="cboxes reveal stagger-1">
+        <div class="cbox">
+          <h5><svg style="width:1rem;height:1rem"><use href="#ic-pin"/></svg> Bengaluru Campus</h5>
+          <p>Bairegowdanahalli Bus Stop, Venkatapura, Sondekoppa Main Rd, Nelamangala Town, Karnataka 562123</p>
+          <a href="tel:08047092273" style="margin-top:.5rem">080-47092273 (Admissions)</a>
+          <a href="mailto:admissions@theacademiccity.com">admissions@theacademiccity.com</a>
+        </div>
+        <div class="cbox">
+          <h5><svg style="width:1rem;height:1rem"><use href="#ic-pin"/></svg> Corporate Office</h5>
+          <p>#2, Krishna Rajendra Rd, Basavanagudi, Bengaluru, Karnataka 560004</p>
+          <a href="tel:+919606488347" style="margin-top:.5rem">+91 96064 88347 (General)</a>
+        </div>
+      </div>
+    </div>
+    <!-- Maps -->
+    <div class="maps-row reveal">
+      <div class="map-col">
+        <div class="map-col-header">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><use href="#ic-pin"/></svg>
+          <h5>Bengaluru Campus</h5>
+          <span>Nelamangala, KA 562123</span>
+        </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1!2d77.3886!3d13.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb18b8a5a0b5a89%3A0x1234567890abcdef!2sNelamangala%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="TACS Bengaluru Campus"></iframe>
+      </div>
+      <div class="map-col">
+        <div class="map-col-header">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><use href="#ic-pin"/></svg>
+          <h5>Corporate Office</h5>
+          <span>Basavanagudi, KA 560004</span>
+        </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5!2d77.5738!3d12.9454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158d1d9e3d6b%3A0x1234!2s%232%2C%20Krishna%20Rajendra%20Rd%2C%20Basavanagudi%2C%20Bengaluru%2C%20Karnataka%20560004!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="TACS Corporate Office"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w foot-top">
+    <div class="foot-brand">
+      <div class="brand" style="margin-bottom:.8rem">
+        <div class="brand-emblem" style="width:44px;height:44px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--forest-deep)"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+        <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+      </div>
+      <p>India's first career-oriented boarding school — where academics, Indic values and future-readiness grow together.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/people/The-Academic-City-School/61551006306504/" target="_blank" rel="noopener" aria-label="Facebook"><svg style="width:1rem;height:1rem;fill:currentColor;stroke:none"><use href="#ic-fb"/></svg></a>
+        <a href="https://www.instagram.com/the_academic_city/" target="_blank" rel="noopener" aria-label="Instagram"><svg style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:1.8"><use href="#ic-ig"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-academic-citybangalore/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg style="width:1rem;height:1rem;fill:currentColor;stroke:none"><use href="#ic-li"/></svg></a>
+        <a href="https://www.youtube.com/@TheAcademicCitySchool" target="_blank" rel="noopener" aria-label="YouTube"><svg style="width:1rem;height:1rem;fill:currentColor;stroke:none"><use href="#ic-yt"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="has-drop">
+        <a href="#pillars">Explore TACS <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="drop-menu">
+          <div class="drop-arrow"></div>
+          <a href="#academics">Academics</a>
+          <a href="#academics">Co-curricular</a>
+          <a href="#campus">Boarding</a>
+          <a href="#academics">Career Guidance</a>
+        </div>
+      </li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#news">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Admissions</h5>
+      <ul>
+        <li><a href="#admissions">How to Apply</a></li>
+        <li><a href="#campus">Our Campus</a></li>
+        <li><a href="#founders">Leadership</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach Us</h5>
+      <div class="fc-item"><svg><use href="#ic-pin"/></svg><span>Nelamangala, Bengaluru, Karnataka 562123</span></div>
+      <div class="fc-item"><svg><use href="#ic-phone"/></svg><span>+91 96064 88347</span></div>
+      <div class="fc-item"><svg><use href="#ic-mail"/></svg><span>admissions@theacademiccity.com</span></div>
+    </div>
+  </div>
+  <div class="w foot-bottom">
+    <span>© <span id="yr"></span> The Academic City School. All rights reserved.</span>
+    <div class="palette">
+      <i style="background:#185850"></i><i style="background:#2d945c"></i>
+      <i style="background:#f6ab16"></i><i style="background:#6816a4"></i><i style="background:#6fdcef"></i>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header always sticky, no hide
+  var hdr = document.getElementById('hdr');
+  // util bar height = ~30px, header sits below it always
+  // no hide logic per brief
+
+  // mobile drawer
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('mobDrawer');
+  burger.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    burger.classList.toggle('x', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      burger.classList.remove('x');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // hero video fallback
+  var vid = document.querySelector('.hero-media video');
+  var poster = document.getElementById('heroPoster');
+  if(vid){
+    vid.addEventListener('error', function(){ vid.style.display='none'; poster.style.display='block'; });
+    setTimeout(function(){ if(vid.readyState===0){ vid.style.display='none'; poster.style.display='block'; } }, 3500);
+  }
+
+  // reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // gallery tabs
+  document.querySelectorAll('.gtab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.gtab').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.masonry').forEach(function(m){ m.classList.remove('active'); });
+      btn.classList.add('active');
+      var tab = document.getElementById('tab-' + btn.dataset.tab);
+      if(tab){ tab.classList.add('active'); }
+    });
+  });
+
+  // campus slider
+  var slides = document.querySelectorAll('.campus-slide');
+  var cur = 0;
+  var campusTimer;
+  function goSlide(n){
+    slides[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    // sync all tab buttons
+    document.querySelectorAll('.campus-tab').forEach(function(t){
+      t.classList.toggle('active', parseInt(t.dataset.slide)===cur);
+    });
+  }
+  function startTimer(){ campusTimer = setInterval(function(){ goSlide(cur+1); }, 5000); }
+  function resetTimer(){ clearInterval(campusTimer); startTimer(); }
+  document.querySelectorAll('.campus-tab').forEach(function(t){
+    t.addEventListener('click',function(){ goSlide(parseInt(t.dataset.slide)); resetTimer(); });
+  });
+  startTimer();
+
+  // side widget hide near footer
+
+  var sL = document.getElementById('sideLeft');
+  var sR = document.getElementById('sideRight');
+  var ft = document.querySelector('footer');
+  if(ft && sL && sR){
+    window.addEventListener('scroll', function(){
+      var hide = ft.getBoundingClientRect().top < window.innerHeight - 60;
+      [sL,sR].forEach(function(el){ el.style.opacity = hide?'0':'1'; el.style.pointerEvents = hide?'none':''; });
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
