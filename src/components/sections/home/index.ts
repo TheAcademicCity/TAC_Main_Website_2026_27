@@ -1,0 +1,12 @@
+export { HeroSection } from "@/components/sections/home/HeroSection";
+export { StatsBar } from "@/components/sections/home/StatsBar";
+export { PillarsSection } from "@/components/sections/home/PillarsSection";
+export { BrochureBanner } from "@/components/sections/home/BrochureBanner";
+export { AcademicsSection } from "@/components/sections/home/AcademicsSection";
+export { GallerySection } from "@/components/sections/home/GallerySection";
+export { AwardsSection } from "@/components/sections/home/AwardsSection";
+export { CampusSliderSection } from "@/components/sections/home/CampusSliderSection";
+export { FoundersSection } from "@/components/sections/home/FoundersSection";
+export { NewsSection } from "@/components/sections/home/NewsSection";
+export { AdmissionsSection } from "@/components/sections/home/AdmissionsSection";
+export { ContactSection } from "@/components/sections/home/ContactSection";
