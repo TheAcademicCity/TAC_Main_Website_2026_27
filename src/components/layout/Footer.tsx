@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {group.links.map((link) => (
                 <li key={link.label}>
-                  <SiteLink href={link.href} className="transition-colors hover:text-gold">
+                  <SiteLink href={link.href} className="transition-colors duration-200 hover:text-gold hover:underline hover:underline-offset-4 hover:decoration-gold/60">
                     {link.label}
                   </SiteLink>
                 </li>

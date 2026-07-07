@@ -2,6 +2,22 @@ export const siteConfig = {
   name: "The Academic City",
   legalName: "The Academic City School",
   tagline: "Boarding School · Bengaluru",
+  brand: {
+    /** White logo for dark header/footer backgrounds (PNG with transparency, 1024×295) */
+    logo: {
+      src: "/images/brand/logo-white.png",
+      alt: "The Academic City School",
+      width: 1024,
+      height: 295,
+    },
+    /** Full-colour logo for light backgrounds (PNG, 1024×295) */
+    logoDark: {
+      src: "/images/brand/logo.png",
+      alt: "The Academic City School",
+      width: 1024,
+      height: 295,
+    },
+  },
   description:
     "India's first career-oriented boarding school — where academics, Indic values and future-readiness grow together.",
   admissionsBadge: "Admissions Open 2026–27",
@@ -37,8 +53,16 @@ export const siteConfig = {
     },
   ],
   sideTabs: [
-    { label: "Latest News", href: "/blog" },
-    { label: "Upcoming Events", href: "/blog" },
-    { label: "Calendar", href: "/admissions" },
+    { label: "Latest Updates", href: "/blog" },
+    {
+      label: "Watch Our Reels",
+      href: "https://www.instagram.com/the_academic_city/",
+      external: true,
+    },
+    {
+      label: "Calendar",
+      href: "/downloads/academic-calendar-ay-26-27.pdf",
+      download: "Academic Calendar AY 26-27.pdf",
+    },
   ],
 } as const;

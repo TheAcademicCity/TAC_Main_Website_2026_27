@@ -32,15 +32,43 @@ export function SideWidgets() {
           hiddenNearFooter && "pointer-events-none opacity-0",
         )}
       >
-        {siteConfig.sideTabs.map((tab) => (
-          <Link
-            key={tab.label}
-            href={tab.href}
-            className="flex items-center border-b border-white/10 bg-forest-deep px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition-colors [writing-mode:vertical-rl] hover:bg-emerald"
-          >
-            {tab.label}
-          </Link>
-        ))}
+        {siteConfig.sideTabs.map((tab) => {
+          const className =
+            "flex items-center border-b border-white/10 bg-forest-deep px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition-colors [writing-mode:vertical-rl] hover:bg-emerald";
+
+          if ("external" in tab && tab.external) {
+            return (
+              <a
+                key={tab.label}
+                href={tab.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+              >
+                {tab.label}
+              </a>
+            );
+          }
+
+          if ("download" in tab && tab.download) {
+            return (
+              <a
+                key={tab.label}
+                href={tab.href}
+                download={tab.download}
+                className={className}
+              >
+                {tab.label}
+              </a>
+            );
+          }
+
+          return (
+            <Link key={tab.label} href={tab.href} className={className}>
+              {tab.label}
+            </Link>
+          );
+        })}
       </div>
 
       <div

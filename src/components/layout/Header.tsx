@@ -1,14 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { mainNavigation } from "@/config/navigation";
 import { BrandLogo } from "@/components/layout/BrandLogo";
-import { HomeLink } from "@/components/layout/HomeLink";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdown } from "@/components/layout/NavDropdown";
+import { NavLink } from "@/components/layout/NavLink";
 import { cn } from "@/lib/utils";
-import { isHomeHref } from "@/lib/scroll";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,7 +18,7 @@ export function Header() {
         className="fixed inset-x-0 top-[30px] z-[100] border-b border-white/8 bg-[rgba(10,44,40,0.97)] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
       >
         <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-4 px-[4vw] py-3">
-          <BrandLogo />
+          <BrandLogo priority />
 
           <nav className="hidden lg:block" aria-label="Main navigation">
             <ul className="flex items-center">
@@ -29,29 +27,9 @@ export function Header() {
                   <NavDropdown key={item.label} item={item} />
                 ) : (
                   <li key={item.label}>
-                    {isHomeHref(item.href) ? (
-                      <HomeLink
-                        href={item.href}
-                        className={cn(
-                          "relative px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-white/82 transition-colors hover:text-white",
-                          item.variant === "cta" &&
-                            "ml-2 bg-gold px-6 py-2.5 font-extrabold text-forest-deep hover:bg-[#e09d10]",
-                        )}
-                      >
-                        {item.label}
-                      </HomeLink>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "relative px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-white/82 transition-colors hover:text-white",
-                          item.variant === "cta" &&
-                            "ml-2 bg-gold px-6 py-2.5 font-extrabold text-forest-deep hover:bg-[#e09d10]",
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
+                    <NavLink href={item.href} variant={item.variant === "cta" ? "cta" : "default"}>
+                      {item.label}
+                    </NavLink>
                   </li>
                 ),
               )}
@@ -60,7 +38,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border-[1.5px] border-white/30 lg:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border-[1.5px] border-white/30 transition-colors hover:border-white/60 hover:bg-white/5 lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
