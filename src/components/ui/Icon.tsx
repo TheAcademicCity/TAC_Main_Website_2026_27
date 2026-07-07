@@ -39,6 +39,32 @@ const icons = {
   star: (
     <path d="m12 3 2.6 5.7 6.2.6-4.7 4.1 1.4 6.1L12 16.9 6.5 19.6l1.4-6.1L3.2 9.3l6.2-.6L12 3Z" />
   ),
+  medallion: (
+    <>
+      <circle cx="12" cy="9" r="5" />
+      <path d="M8.5 13.5 7 20l5-2.5L17 20l-1.5-6.5" />
+    </>
+  ),
+  ribbon: (
+    <>
+      <path d="M7 3h10a2 2 0 0 1 2 2v14l-5-3-5 3V5a2 2 0 0 1 2-2z" />
+      <circle cx="12" cy="9" r="2" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="8" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="12" cy="12" r="1.25" />
+    </>
+  ),
+  building: (
+    <>
+      <path d="M6 21V9l6-4 6 4v12" />
+      <path d="M9 21v-6h6v6" />
+      <path d="M9 11h1.5M12 11h1.5M15 11h1.5M9 14h1.5M12 14h1.5M15 14h1.5" />
+    </>
+  ),
   trophy: (
     <>
       <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" />
@@ -79,6 +105,6 @@ export function Icon({ name, className, ...props }: IconProps) {
 }
 
 export function AwardIcon({ index }: { index: number }) {
-  const names: Array<keyof typeof icons> = ["star", "star", "trophy", "medal", "home"];
+  const names: Array<keyof typeof icons> = ["star", "medallion", "ribbon", "target", "building"];
   return <Icon name={names[index] ?? "star"} className="h-9 w-9 fill-gold stroke-gold" />;
 }
