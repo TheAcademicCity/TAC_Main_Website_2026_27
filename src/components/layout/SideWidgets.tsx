@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Icon } from "@/components/ui/Icon";
+import { getGmailComposeUrl } from "@/lib/email";
 import { cn } from "@/lib/utils";
 
 const sideTabClassName =
@@ -111,7 +112,9 @@ export function SideWidgets() {
           <Icon name="whatsapp" className="h-5 w-5" />
         </a>
         <a
-          href={`mailto:${utilityBar.email}`}
+          href={getGmailComposeUrl(utilityBar.email)}
+          target="_blank"
+          rel="noopener noreferrer"
           title={`Email ${utilityBar.email}`}
           aria-label={`Email ${utilityBar.email}`}
           className={cn(sideIconClassName, "bg-forest-deep hover:bg-gold hover:text-forest-deep")}
