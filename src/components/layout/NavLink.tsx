@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { HomeLink } from "@/components/layout/HomeLink";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { cn } from "@/lib/utils";
-import { getSectionIdFromHref, isHomeHref } from "@/lib/scroll";
+import { isHomeHref } from "@/lib/scroll";
 
 type NavLinkProps = {
   href: string;
@@ -32,11 +32,7 @@ export function NavLink({ href, children, className, variant = "default", onClic
     className,
   );
 
-  const LinkComponent = isHomeHref(href)
-    ? HomeLink
-    : getSectionIdFromHref(href)
-      ? SiteLink
-      : Link;
+  const LinkComponent = isHomeHref(href) ? HomeLink : SiteLink;
 
   return (
     <LinkComponent href={href} className={classes} onClick={onClick}>

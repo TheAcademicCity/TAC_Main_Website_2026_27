@@ -13,7 +13,7 @@ export function smoothScrollToTop() {
   }
 
   if (window.location.hash) {
-    window.history.replaceState(null, "", window.location.pathname);
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
   }
 }
 
@@ -52,4 +52,13 @@ export function getSearchFromHref(href: string): string {
 
 export function isHomeHref(href: string): boolean {
   return href === "/" || href === "/#top";
+}
+
+export function getPathFromHref(href: string): string {
+  const path = href.split("#")[0]?.split("?")[0] ?? "/";
+  return path.length > 0 ? path : "/";
+}
+
+export function isSamePageHref(href: string, pathname: string): boolean {
+  return getPathFromHref(href) === pathname;
 }

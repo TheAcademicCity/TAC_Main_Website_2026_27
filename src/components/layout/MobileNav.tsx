@@ -1,12 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { mobileNavigation } from "@/config/navigation";
 import { HomeLink } from "@/components/layout/HomeLink";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { mobileNavLinkClasses } from "@/components/layout/NavLink";
 import { cn } from "@/lib/utils";
-import { getSectionIdFromHref, isHomeHref } from "@/lib/scroll";
+import { isHomeHref } from "@/lib/scroll";
 
 type MobileNavProps = {
   open: boolean;
@@ -25,29 +24,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       {mobileNavigation.map((item) => {
         const variant = item.variant === "cta" ? "cta" : "default";
         const className = mobileNavLinkClasses(variant);
-
-        if (isHomeHref(item.href)) {
-          return (
-            <HomeLink key={item.label} href={item.href} onClick={onClose} className={className}>
-              {item.label}
-            </HomeLink>
-          );
-        }
-
-        if (getSectionIdFromHref(item.href)) {
-          return (
-            <SiteLink key={item.label} href={item.href} onClick={onClose} className={className}>
-              {item.label}
-              {item.variant === "cta" ? " →" : ""}
-            </SiteLink>
-          );
-        }
+        const LinkComponent = isHomeHref(item.href) ? HomeLink : SiteLink;
 
         return (
-          <Link key={item.label} href={item.href} onClick={onClose} className={className}>
+          <LinkComponent key={item.label} href={item.href} onClick={onClose} className={className}>
             {item.label}
             {item.variant === "cta" ? " →" : ""}
-          </Link>
+          </LinkComponent>
         );
       })}
     </nav>

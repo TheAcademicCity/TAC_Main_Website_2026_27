@@ -7,6 +7,7 @@ import {
   getSearchFromHref,
   getSectionIdFromHref,
   isHomeHref,
+  isSamePageHref,
   smoothScrollToSection,
   smoothScrollToTop,
 } from "@/lib/scroll";
@@ -31,16 +32,22 @@ export function SiteLink({ href, onClick, ...props }: SiteLinkProps) {
     }
 
     const sectionId = getSectionIdFromHref(href);
-    if (!sectionId) return;
+    if (sectionId) {
+      if (pathname === "/") {
+        event.preventDefault();
+        smoothScrollToSection(sectionId, getSearchFromHref(href));
+        return;
+      }
 
-    if (pathname === "/") {
       event.preventDefault();
-      smoothScrollToSection(sectionId, getSearchFromHref(href));
+      router.push(href);
       return;
     }
 
-    event.preventDefault();
-    router.push(href);
+    if (isSamePageHref(href, pathname)) {
+      event.preventDefault();
+      smoothScrollToTop();
+    }
   };
 
   return <Link href={href} onClick={handleClick} {...props} />;
