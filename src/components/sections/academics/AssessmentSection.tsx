@@ -24,7 +24,7 @@ function CommItem({ item }: { item: AssessmentCommItem }) {
       </span>
       <div>
         <h5 className="font-montserrat text-[0.86rem] font-bold text-forest-deep">{item.title}</h5>
-        <p className="text-[0.82rem] leading-relaxed text-slate">{item.description}</p>
+        <p className="mt-2 text-[0.82rem] leading-[1.55] text-slate">{item.description}</p>
       </div>
     </div>
   );

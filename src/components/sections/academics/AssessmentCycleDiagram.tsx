@@ -157,13 +157,6 @@ export function AssessmentCycleDiagram() {
         </tspan>
       </text>
 
-      {NODES.map((node) => (
-        <g key={node.lines[0]}>
-          <circle cx={node.cx} cy={node.cy} r={node.r} fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-          <BubbleLabel {...node} />
-        </g>
-      ))}
-
       {cyclePaths.map((path, index) => (
         <path
           key={`cycle-${index}`}
@@ -184,6 +177,25 @@ export function AssessmentCycleDiagram() {
           strokeWidth="1.5"
           strokeDasharray="4 3"
         />
+      ))}
+
+      {NODES.map((node) => (
+        <g
+          key={node.lines[0]}
+          className="group cursor-default transition-transform duration-300 ease-out hover:scale-[1.06]"
+          style={{ transformOrigin: `${node.cx}px ${node.cy}px` }}
+        >
+          <circle
+            cx={node.cx}
+            cy={node.cy}
+            r={node.r}
+            fill="#fff"
+            stroke="#dce8e4"
+            strokeWidth="1.5"
+            className="transition-[filter,stroke] duration-300 ease-out group-hover:stroke-emerald/35 group-hover:drop-shadow-[0_10px_24px_rgba(15,61,56,0.14)]"
+          />
+          <BubbleLabel {...node} />
+        </g>
       ))}
 
       <line
