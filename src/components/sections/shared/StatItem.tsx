@@ -29,9 +29,9 @@ export function StatItem({ item, variant = "bar", className }: StatItemProps) {
         className,
       )}
     >
-      {/* Fixed-height value row keeps labels aligned when a stat wraps (e.g. Grades 5 - 12) */}
-      <div className="flex min-h-[calc(2*clamp(1.4rem,2.2vw,2rem))] w-full items-start justify-center lg:min-h-[clamp(1.4rem,2.2vw,2rem)] lg:items-center">
-        <span className="font-montserrat text-[clamp(1.4rem,2.2vw,2rem)] font-black leading-none text-gold lg:whitespace-nowrap">
+      {/* Fixed-height value row keeps all stat values and labels aligned */}
+      <div className="flex min-h-[calc(2*clamp(1.25rem,2vw,2rem)*1.15)] w-full items-center justify-center px-1 min-[601px]:min-h-[clamp(1.4rem,2.2vw,2rem)]">
+        <span className="text-center font-montserrat text-[clamp(1.25rem,2vw,2rem)] font-black leading-[1.15] text-gold min-[601px]:leading-none min-[601px]:whitespace-nowrap">
           {item.value}
         </span>
       </div>

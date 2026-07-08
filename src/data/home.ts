@@ -58,7 +58,7 @@ export const heroContent = {
 } as const;
 
 export const statsContent: StatItem[] = [
-  { value: "Grades 5 - 12", label: "Residential boarding" },
+  { value: "Grades 5–12", label: "Residential boarding" },
   { value: "CBSE", label: "New Delhi curriculum" },
   { value: "600+", label: "Career paths explored" },
   { value: "Indore", label: "Mohankheda campus" },
