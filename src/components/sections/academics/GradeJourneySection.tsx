@@ -25,7 +25,7 @@ function JourneyStep({ step }: { step: GradeJourneyStep }) {
   const styles = stepStyles[step.accent];
 
   return (
-    <article className="relative z-[1] text-center">
+    <article className="relative z-[1] flex h-full flex-col text-center">
       <div className="mb-5 flex justify-center">
         <div
           className={cn(
@@ -47,16 +47,18 @@ function JourneyStep({ step }: { step: GradeJourneyStep }) {
       <h4 className="px-2 font-montserrat text-[0.94rem] font-extrabold text-forest-deep">
         {step.title}
       </h4>
-      <p className="mt-2 px-3 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
-      <div className="mt-3 flex flex-wrap justify-center gap-1.5 px-2">
-        {step.chips.map((chip) => (
-          <span
-            key={chip}
-            className="border border-line bg-paper px-2.5 py-1 text-[0.72rem] font-semibold text-forest-deep"
-          >
-            {chip}
-          </span>
-        ))}
+      <div className="mt-2 flex flex-1 flex-col">
+        <p className="flex-1 px-3 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
+        <div className="mt-3 flex flex-wrap justify-center gap-1.5 px-2">
+          {step.chips.map((chip) => (
+            <span
+              key={chip}
+              className="border border-line bg-paper px-2.5 py-1 text-[0.72rem] font-semibold text-forest-deep"
+            >
+              {chip}
+            </span>
+          ))}
+        </div>
       </div>
     </article>
   );
@@ -74,7 +76,7 @@ export function GradeJourneySection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="relative mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="relative mt-10 grid items-stretch gap-8 md:grid-cols-2 xl:grid-cols-4">
           <div
             aria-hidden
             className="pointer-events-none absolute left-[6%] right-[6%] top-7 hidden h-0.5 bg-gradient-to-r from-emerald via-gold to-violet xl:block"

@@ -1,4 +1,106 @@
+type CircleNode = {
+  cx: number;
+  cy: number;
+  r: number;
+  lines: [string, string, string];
+};
+
+const CENTER = { cx: 260, cy: 240, r: 62 };
+
+const OUTER_NODE_R = 54;
+
+const NODES: CircleNode[] = [
+  { cx: 260, cy: 100, r: OUTER_NODE_R, lines: ["CONTINUOUS", "ASSESSMENT", "Tests · Projects · CA"] },
+  { cx: 420, cy: 195, r: OUTER_NODE_R, lines: ["TERM", "EXAMS", "2× per year"] },
+  { cx: 380, cy: 358, r: OUTER_NODE_R, lines: ["INDIVIDUAL", "ANALYSIS", "Gap identification"] },
+  { cx: 140, cy: 358, r: OUTER_NODE_R, lines: ["REMEDIATION", "& ENRICHMENT", "Targeted support"] },
+  { cx: 100, cy: 195, r: OUTER_NODE_R, lines: ["PARENT", "FEEDBACK", "Transparent reports"] },
+];
+
+function circleEdge(from: CircleNode, to: CircleNode) {
+  const angle = Math.atan2(to.cy - from.cy, to.cx - from.cx);
+
+  return {
+    start: {
+      x: from.cx + from.r * Math.cos(angle),
+      y: from.cy + from.r * Math.sin(angle),
+    },
+    end: {
+      x: to.cx + to.r * Math.cos(angle + Math.PI),
+      y: to.cy + to.r * Math.sin(angle + Math.PI),
+    },
+  };
+}
+
+function spokeEdge(node: CircleNode) {
+  const angle = Math.atan2(node.cy - CENTER.cy, node.cx - CENTER.cx);
+
+  return {
+    start: {
+      x: CENTER.cx + CENTER.r * Math.cos(angle),
+      y: CENTER.cy + CENTER.r * Math.sin(angle),
+    },
+    end: {
+      x: node.cx + node.r * Math.cos(angle + Math.PI),
+      y: node.cy + node.r * Math.sin(angle + Math.PI),
+    },
+  };
+}
+
+function curvedPath(
+  start: { x: number; y: number },
+  end: { x: number; y: number },
+  bulge = 26,
+) {
+  const midX = (start.x + end.x) / 2;
+  const midY = (start.y + end.y) / 2;
+  const dx = midX - CENTER.cx;
+  const dy = midY - CENTER.cy;
+  const len = Math.hypot(dx, dy) || 1;
+  const ctrlX = midX + (dx / len) * bulge;
+  const ctrlY = midY + (dy / len) * bulge;
+
+  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} Q ${ctrlX.toFixed(1)} ${ctrlY.toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+}
+
+function straightPath(start: { x: number; y: number }, end: { x: number; y: number }) {
+  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} L ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+}
+
+function BubbleLabel({ cx, cy, lines }: CircleNode) {
+  return (
+    <text
+      x={cx}
+      y={cy - 10}
+      textAnchor="middle"
+      fontFamily="Montserrat, sans-serif"
+      fill="#0f3d38"
+    >
+      <tspan x={cx} dy="0" fontSize="10" fontWeight="800">
+        {lines[0]}
+      </tspan>
+      <tspan x={cx} dy="14" fontSize="10" fontWeight="800">
+        {lines[1]}
+      </tspan>
+      <tspan x={cx} dy="13" fontSize="9" fill="#5a6a72">
+        {lines[2]}
+      </tspan>
+    </text>
+  );
+}
+
 export function AssessmentCycleDiagram() {
+  const cyclePaths = NODES.map((node, index) => {
+    const next = NODES[(index + 1) % NODES.length]!;
+    const edge = circleEdge(node, next);
+    return curvedPath(edge.start, edge.end);
+  });
+
+  const spokePaths = NODES.map((node) => {
+    const edge = spokeEdge(node);
+    return straightPath(edge.start, edge.end);
+  });
+
   return (
     <svg
       viewBox="0 0 520 480"
@@ -8,8 +110,16 @@ export function AssessmentCycleDiagram() {
       aria-label="Assessment cycle diagram showing continuous assessment, term exams, individual analysis, remediation and parent feedback feeding into the Student Progression Plan"
     >
       <defs>
-        <marker id="assess-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0 0 L6 3 L0 6 Z" fill="#dce8e4" />
+        <marker
+          id="assess-arr"
+          markerWidth="8"
+          markerHeight="8"
+          refX="7"
+          refY="4"
+          orient="auto"
+          markerUnits="strokeWidth"
+        >
+          <path d="M0 0 L8 4 L0 8 Z" fill="#dce8e4" />
         </marker>
       </defs>
 
@@ -19,6 +129,7 @@ export function AssessmentCycleDiagram() {
         x="260"
         y="36"
         textAnchor="middle"
+        fontFamily="Montserrat, sans-serif"
         fontSize="13"
         fontWeight="800"
         letterSpacing="2"
@@ -27,120 +138,68 @@ export function AssessmentCycleDiagram() {
         ASSESSMENT CYCLE
       </text>
 
-      <circle cx="260" cy="240" r="62" fill="#185850" />
-      <text x="260" y="233" textAnchor="middle" fontSize="11" fontWeight="700" fill="#fff">
-        STUDENT
-      </text>
-      <text x="260" y="249" textAnchor="middle" fontSize="11" fontWeight="700" fill="#fff">
-        PROGRESSION
-      </text>
-      <text x="260" y="265" textAnchor="middle" fontSize="11" fontWeight="700" fill="#f6ab16">
-        PLAN
-      </text>
-
-      <circle cx="260" cy="100" r="48" fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-      <text x="260" y="110" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        CONTINUOUS
-      </text>
-      <text x="260" y="124" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        ASSESSMENT
-      </text>
-      <text x="260" y="138" textAnchor="middle" fontSize="9" fill="#5a6a72">
-        Tests · Projects · CA
+      <circle cx={CENTER.cx} cy={CENTER.cy} r={CENTER.r} fill="#185850" />
+      <text
+        x={CENTER.cx}
+        y={CENTER.cy - 14}
+        textAnchor="middle"
+        fontFamily="Montserrat, sans-serif"
+        fill="#fff"
+      >
+        <tspan x={CENTER.cx} dy="0" fontSize="11" fontWeight="700">
+          STUDENT
+        </tspan>
+        <tspan x={CENTER.cx} dy="16" fontSize="11" fontWeight="700">
+          PROGRESSION
+        </tspan>
+        <tspan x={CENTER.cx} dy="16" fontSize="11" fontWeight="700" fill="#f6ab16">
+          PLAN
+        </tspan>
       </text>
 
-      <circle cx="420" cy="195" r="48" fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-      <text x="420" y="200" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        TERM
-      </text>
-      <text x="420" y="214" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        EXAMS
-      </text>
-      <text x="420" y="228" textAnchor="middle" fontSize="9" fill="#5a6a72">
-        2× per year
-      </text>
+      {NODES.map((node) => (
+        <g key={node.lines[0]}>
+          <circle cx={node.cx} cy={node.cy} r={node.r} fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
+          <BubbleLabel {...node} />
+        </g>
+      ))}
 
-      <circle cx="380" cy="358" r="48" fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-      <text x="380" y="363" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        INDIVIDUAL
-      </text>
-      <text x="380" y="377" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        ANALYSIS
-      </text>
-      <text x="380" y="391" textAnchor="middle" fontSize="9" fill="#5a6a72">
-        Gap identification
-      </text>
+      {cyclePaths.map((path, index) => (
+        <path
+          key={`cycle-${index}`}
+          d={path}
+          fill="none"
+          stroke="#dce8e4"
+          strokeWidth="2"
+          markerEnd="url(#assess-arr)"
+        />
+      ))}
 
-      <circle cx="140" cy="358" r="48" fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-      <text x="140" y="363" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        REMEDIATION
-      </text>
-      <text x="140" y="377" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        &amp; ENRICHMENT
-      </text>
-      <text x="140" y="391" textAnchor="middle" fontSize="9" fill="#5a6a72">
-        Targeted support
-      </text>
+      {spokePaths.map((path, index) => (
+        <path
+          key={`spoke-${index}`}
+          d={path}
+          fill="none"
+          stroke="#f6ab16"
+          strokeWidth="1.5"
+          strokeDasharray="4 3"
+        />
+      ))}
 
-      <circle cx="100" cy="195" r="48" fill="#fff" stroke="#dce8e4" strokeWidth="1.5" />
-      <text x="100" y="200" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        PARENT
-      </text>
-      <text x="100" y="214" textAnchor="middle" fontSize="10" fontWeight="800" fill="#0f3d38">
-        FEEDBACK
-      </text>
-      <text x="100" y="228" textAnchor="middle" fontSize="9" fill="#5a6a72">
-        Transparent reports
-      </text>
-
-      <path
-        d="M300 118 Q375 130 380 152"
-        fill="none"
+      <line
+        x1="60"
+        y1="458"
+        x2="90"
+        y2="458"
         stroke="#dce8e4"
         strokeWidth="2"
         markerEnd="url(#assess-arr)"
       />
-      <path
-        d="M418 242 Q430 300 410 318"
-        fill="none"
-        stroke="#dce8e4"
-        strokeWidth="2"
-        markerEnd="url(#assess-arr)"
-      />
-      <path
-        d="M335 375 Q260 400 185 375"
-        fill="none"
-        stroke="#dce8e4"
-        strokeWidth="2"
-        markerEnd="url(#assess-arr)"
-      />
-      <path
-        d="M112 317 Q95 280 105 242"
-        fill="none"
-        stroke="#dce8e4"
-        strokeWidth="2"
-        markerEnd="url(#assess-arr)"
-      />
-      <path
-        d="M140 150 Q175 120 218 115"
-        fill="none"
-        stroke="#dce8e4"
-        strokeWidth="2"
-        markerEnd="url(#assess-arr)"
-      />
-
-      <line x1="260" y1="178" x2="260" y2="148" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <line x1="322" y1="210" x2="368" y2="192" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <line x1="304" y1="280" x2="336" y2="316" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <line x1="216" y1="280" x2="184" y2="316" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <line x1="198" y1="210" x2="148" y2="190" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-
-      <line x1="60" y1="458" x2="90" y2="458" stroke="#dce8e4" strokeWidth="2" markerEnd="url(#assess-arr)" />
-      <text x="96" y="462" fontSize="9" fill="#5a6a72" fontWeight="600">
+      <text x="96" y="462" fontFamily="Montserrat, sans-serif" fontSize="9" fill="#5a6a72" fontWeight="600">
         Assessment flow
       </text>
       <line x1="200" y1="458" x2="230" y2="458" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <text x="236" y="462" fontSize="9" fill="#5a6a72" fontWeight="600">
+      <text x="236" y="462" fontFamily="Montserrat, sans-serif" fontSize="9" fill="#5a6a72" fontWeight="600">
         Feeds into SPP
       </text>
     </svg>

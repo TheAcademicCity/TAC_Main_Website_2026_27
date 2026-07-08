@@ -145,7 +145,7 @@ export const academicsPageContent = {
         phase: "Foundation",
         title: "Building the base",
         description:
-          "Language, maths, science — strong foundations in a nurturing, exploratory environment.",
+          "Language, Maths, Science — Strong foundations in a nurturing, exploratory environment.",
         chips: ["Core CBSE", "Curiosity-led"],
         accent: "emerald",
       },
