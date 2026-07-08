@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { BrandLogo } from "@/components/layout/BrandLogo";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -23,7 +24,7 @@ export function Footer() {
                 aria-label={social.label}
                 className="grid h-9 w-9 place-items-center bg-white/7 text-white/60 transition-colors hover:bg-gold hover:text-forest-deep"
               >
-                {social.label.slice(0, 1)}
+                <Icon name={social.icon} className="h-4 w-4" />
               </a>
             ))}
           </div>

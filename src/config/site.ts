@@ -28,8 +28,8 @@ export const siteConfig = {
     email: "admissions@theacademiccity.com",
   },
   contact: {
-    phone: "+919606488347",
-    phoneDisplay: "+91 96064 88347",
+    phone: "08047092273",
+    phoneDisplay: "080-47092273",
     email: "admissions@theacademiccity.com",
     whatsapp: "https://wa.me/919364898405",
     address: "Nelamangala, Bengaluru, Karnataka 562123",
@@ -38,18 +38,22 @@ export const siteConfig = {
     {
       label: "Facebook",
       href: "https://www.facebook.com/people/The-Academic-City-School/61551006306504/",
+      icon: "facebook",
     },
     {
       label: "Instagram",
       href: "https://www.instagram.com/the_academic_city/",
+      icon: "instagram",
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/company/the-academic-citybangalore/",
+      icon: "linkedin",
     },
     {
       label: "YouTube",
       href: "https://www.youtube.com/@TheAcademicCitySchool",
+      icon: "youtube",
     },
   ],
   downloads: {
