@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { SiteLink } from "@/components/layout/SiteLink";
@@ -77,9 +76,9 @@ export function SideWidgets() {
           }
 
           return (
-            <Link key={tab.label} href={tab.href} className={sideTabClassName}>
+            <SiteLink key={tab.label} href={tab.href} className={sideTabClassName}>
               {tab.label}
-            </Link>
+            </SiteLink>
           );
         })}
       </div>

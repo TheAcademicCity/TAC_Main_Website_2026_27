@@ -327,7 +327,7 @@ export const foundersContent = {
       name: "Sripal Jain",
       role: "Founder",
       quote:
-        "We built this school because we believed every child deserves to know not just what to learn, but why — and where it leads. Career discovery isn't a post-school thought; it should be woven into every single year of a child's education.",
+        "We built this school because we believed every child deserves to know not just what to learn, but why - and where it leads. Career discovery isn't a post-school thought; it should be woven into every single year of a child's education.",
       image: createImage("/images/home/founders/sripal.png", remote.founders.sripal, "Sripal Jain"),
       initials: "SJ",
       variant: "featured",
@@ -336,7 +336,7 @@ export const foundersContent = {
       name: "Abhay Ranka",
       role: "Co-Founder",
       quote:
-        "India has thousands of good schools. We wanted to build a great one — where children grow up rooted in values, confident in who they are and clear about the future they are walking towards.",
+        "India has thousands of good schools. We wanted to build a great one - where children grow up rooted in values, confident in who they are and clear about the future they are walking towards.",
       image: createImage("/images/home/founders/abhay.png", remote.founders.abhay, "Abhay Ranka"),
       initials: "AR",
       variant: "compact",

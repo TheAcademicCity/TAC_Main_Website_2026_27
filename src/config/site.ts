@@ -59,7 +59,7 @@ export const siteConfig = {
     },
   },
   sideTabs: [
-    { label: "Latest Updates", href: "/blog" },
+    { label: "Latest Updates", href: "/#news" },
     {
       label: "Watch Our Reels",
       href: "https://www.instagram.com/the_academic_city/",
