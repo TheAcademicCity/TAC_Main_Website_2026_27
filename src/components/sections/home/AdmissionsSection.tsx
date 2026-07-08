@@ -39,7 +39,7 @@ export function AdmissionsSection() {
             variant={cta.variant === "gold" ? "gold" : "outline-white"}
           >
             {cta.label.includes("WhatsApp") ? (
-              <span className="text-base">WA</span>
+              <Icon name="whatsapp" className="h-4 w-4" />
             ) : cta.href.startsWith("tel:") ? (
               <Icon name="phone" className="h-4 w-4" />
             ) : null}

@@ -108,7 +108,7 @@ export function SideWidgets() {
           aria-label="WhatsApp"
           className={cn(sideIconClassName, "bg-emerald hover:bg-[#22c55e]")}
         >
-          <span className="text-xs font-bold">WA</span>
+          <Icon name="whatsapp" className="h-5 w-5" />
         </a>
         <a
           href={`mailto:${utilityBar.email}`}

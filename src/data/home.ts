@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { createImage } from "@/lib/images";
 import type { SiteVideo } from "@/types/images";
 import type {
@@ -449,10 +450,14 @@ export const admissionsContent = {
   ] satisfies AdmissionStep[],
   ctas: [
     { label: "Start Your Enquiry", href: "/#enquiry", variant: "gold" as const },
-    { label: "+91 96064 88347", href: "tel:+919606488347", variant: "outline" as const },
+    {
+      label: siteConfig.utilityBar.phoneDisplay,
+      href: `tel:${siteConfig.utilityBar.phone}`,
+      variant: "outline" as const,
+    },
     {
       label: "WhatsApp",
-      href: "https://wa.me/919364898405",
+      href: siteConfig.contact.whatsapp,
       variant: "outline" as const,
       external: true,
     },
@@ -490,7 +495,7 @@ export const contactContent = {
     { label: "Call Admissions", href: "tel:+919606488347", variant: "gold" as const },
     {
       label: "WhatsApp",
-      href: "https://wa.me/919364898405",
+      href: siteConfig.contact.whatsapp,
       variant: "outline" as const,
       external: true,
     },
@@ -504,7 +509,7 @@ export const contactContent = {
       phoneHref: "tel:08047092273",
       email: "admissions@theacademiccity.com",
       mapEmbedUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1!2d77.3886!3d13.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb18b8a5a0b5a89%3A0x1234567890abcdef!2sNelamangala%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.25!2d77.3986306!3d13.0571618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae254ef3b18d5b%3A0xda079052c6df77cc!2sThe%20Academic%20City%20School%20(CBSE%20Residential%20School)!5e0!3m2!1sen!2sin!4v1741459200",
       mapLabel: "Nelamangala, KA 562123",
     },
     {
@@ -513,7 +518,7 @@ export const contactContent = {
       phone: "+91 96064 88347 (General)",
       phoneHref: "tel:+919606488347",
       mapEmbedUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5!2d77.5738!3d12.9454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158d1d9e3d6b%3A0x1234!2s%232%2C%20Krishna%20Rajendra%20Rd%2C%20Basavanagudi%2C%20Bengaluru%2C%20Karnataka%20560004!5e0!3m2!1sen!2sin!4v1234567890",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5!2d77.5736803!3d12.9396443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15003b63c91b%3A0x15e056babff94fd0!2sK2%20Learning%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1741459200",
       mapLabel: "Basavanagudi, KA 560004",
     },
   ] satisfies ContactLocation[],

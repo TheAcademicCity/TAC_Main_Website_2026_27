@@ -32,7 +32,7 @@ export function ContactSection() {
                 {cta.label === "Call Admissions" ? (
                   <Icon name="phone" className="h-4 w-4" />
                 ) : (
-                  <span>WA</span>
+                  <Icon name="whatsapp" className="h-4 w-4" />
                 )}
                 {cta.label}
               </Button>
