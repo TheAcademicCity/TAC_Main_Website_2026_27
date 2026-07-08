@@ -19,7 +19,7 @@ export const metadata = createPageMetadata(
 
 export default function AcademicsPage() {
   return (
-    <main id="top" tabIndex={-1} className="outline-none">
+    <main id="top" tabIndex={-1} className="academics-page outline-none has-page-subnav">
       <AcademicsHeroSection />
       <PageSubnav items={academicsPageContent.subnav} />
       <CdfOverviewSection />

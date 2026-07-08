@@ -18,6 +18,11 @@
   --font-outfit: var(--font-outfit);
 
   --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Fixed utility bar + main header — keep in sync with Header / PageSubnav */
+  --site-utility-height: 30px;
+  --site-header-height: 72px;
+  --site-nav-stack: calc(var(--site-utility-height) + var(--site-header-height));
 }
 
 @layer base {
@@ -26,7 +31,11 @@
   }
 
   [id] {
-    scroll-margin-top: calc(30px + 5rem);
+    scroll-margin-top: var(--site-nav-stack);
+  }
+
+  .has-page-subnav [id] {
+    scroll-margin-top: calc(var(--site-nav-stack) + var(--page-subnav-height, 52px));
   }
 
   body {

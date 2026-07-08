@@ -7,7 +7,7 @@ export function AcademicsHeroSection() {
   const { hero } = academicsPageContent;
 
   return (
-    <section className="relative flex min-h-[clamp(360px,50vh,480px)] items-end overflow-hidden bg-forest-deep pt-[calc(30px+5rem)]">
+    <section className="relative flex min-h-[clamp(360px,50vh,480px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
       <div className="absolute inset-0">
         <ImageWithFallback
           image={hero.image}
