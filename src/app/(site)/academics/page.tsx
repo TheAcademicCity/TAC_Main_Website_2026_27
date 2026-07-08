@@ -1,36 +1,34 @@
 import { academicsPageContent } from "@/data/academics";
 import {
-  AcademicCareerBridgeSection,
-  AcademicCareerCalloutSection,
-  AcademicGrowthSection,
-  AcademicLeadersSection,
-  AcademicTestimonialsSection,
-  AcademicsIntroSection,
+  AcademicsCtaSection,
+  AcademicsHeroSection,
+  AssessmentSection,
+  CdfOverviewSection,
   CurriculumSection,
-  ProgressionPlanSection,
+  GradeJourneySection,
+  ProgressionBandSection,
+  StreamsSection,
 } from "@/components/sections/academics";
-import { PageHero } from "@/components/sections/shared/PageHero";
+import { PageSubnav } from "@/components/sections/shared/PageSubnav";
 import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Academics",
-  "CBSE and Cambridge academics at The Academic City School — rigorous foundation, personalised mentoring and Student Progression Plans for Grades 4–12.",
+  "CBSE academics at The Academic City School — concept-driven learning, 1:10 mentoring, structured assessment and career-aligned preparation for Grades 5–12.",
 );
 
 export default function AcademicsPage() {
-  const { hero } = academicsPageContent;
-
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} image={hero.image} />
-      <AcademicsIntroSection />
-      <AcademicLeadersSection />
+      <AcademicsHeroSection />
+      <PageSubnav items={academicsPageContent.subnav} />
+      <CdfOverviewSection />
       <CurriculumSection />
-      <AcademicCareerCalloutSection />
-      <AcademicGrowthSection />
-      <ProgressionPlanSection />
-      <AcademicTestimonialsSection />
-      <AcademicCareerBridgeSection />
+      <ProgressionBandSection />
+      <GradeJourneySection />
+      <AssessmentSection />
+      <StreamsSection />
+      <AcademicsCtaSection />
     </>
   );
 }

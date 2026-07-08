@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Academics | The Academic City School · Bengaluru</title>
+<meta name="description" content="CBSE academics at The Academic City School — concept-driven learning, 1:10 mentoring, structured assessment and career-aligned preparation for Grades 5–12."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#185850;--forest-deep:#0f3d38;--forest-dark:#0a2c28;
+  --emerald:#2d945c;--gold:#f6ab16;--gold-dark:#c4880e;
+  --violet:#6816a4;--cyan:#6fdcef;--ink:#1a2830;
+  --slate:#5a6a72;--line:#dce8e4;--paper:#f4f8f6;--white:#fff;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:calc(30px + 72px)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.12;letter-spacing:-.02em}
+.w{width:min(1200px,92vw);margin-inline:auto}
+.sec{padding:clamp(56px,7vw,88px) 0}
+.lbl{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--emerald);display:inline-flex;align-items:center;gap:.55rem;margin-bottom:.8rem}
+.lbl::before{content:'';width:24px;height:2px;background:var(--gold);flex:none}
+.lbl.center{justify-content:center}
+.lbl.light{color:var(--gold)}.lbl.light::before{background:var(--gold)}
+.h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--forest-deep)}
+.lead{color:var(--slate);font-size:.98rem;line-height:1.72;margin-top:.6rem}
+
+/* UTIL */
+.util{background:var(--forest-dark);color:#b8d4cc;font-size:.78rem;font-weight:500;position:fixed;top:0;left:0;right:0;z-index:101;height:30px;display:flex;align-items:center}
+.util .w{display:flex;justify-content:space-between;align-items:center}
+.util-left{display:flex;gap:1.2rem}
+.util a{color:#b8d4cc;display:inline-flex;align-items:center;gap:.35rem;transition:color .2s;font-size:.77rem}
+.util a:hover{color:var(--gold)}
+.util .sep{opacity:.25}
+.util .badge{color:var(--gold);font-weight:700}
+
+/* HEADER */
+#hdr{position:fixed;top:30px;left:0;right:0;z-index:100;background:rgba(10,44,40,.97);box-shadow:0 4px 30px rgba(0,0,0,.4);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-emblem{width:50px;height:50px;border-radius:50%;background:var(--gold);display:grid;place-items:center;flex:none}
+.brand-emblem svg{width:26px;height:26px;fill:var(--forest-deep)}
+.brand-text b{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;color:#fff;display:block;line-height:1.1}
+.brand-text span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.main-nav{display:flex;align-items:center;list-style:none;gap:.1rem}
+.main-nav a{color:rgba(255,255,255,.78);font-weight:600;font-size:.74rem;padding:.5rem .8rem;position:relative;transition:color .2s;letter-spacing:.04em;text-transform:uppercase}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:.8rem;right:.8rem;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s var(--ease)}
+.main-nav a:hover,.main-nav a.active{color:#fff}
+.main-nav a.active::after,.main-nav a:hover::after{transform:scaleX(1)}
+.has-drop{position:relative}
+.has-drop>a{display:flex;align-items:center;gap:.3rem}
+.chev{width:.72rem;height:.72rem;fill:none;stroke:currentColor;stroke-width:2;transition:transform .25s}
+.has-drop:hover .chev{transform:rotate(180deg)}
+.drop-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,44,40,.98);border:1px solid rgba(255,255,255,.1);min-width:190px;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:200}
+.has-drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.drop-menu a{display:block;color:rgba(255,255,255,.78);font-family:'Montserrat',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.78rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.07);transition:background .2s,color .2s}
+.drop-menu a:last-child{border-bottom:none}
+.drop-menu a:hover,.drop-menu a.active{background:rgba(255,255,255,.08);color:var(--gold)}
+.drop-menu a::after{display:none!important}
+.nav-apply{background:var(--gold)!important;color:var(--forest-deep)!important;font-weight:800!important;padding:.55rem 1.3rem!important;margin-left:.4rem}
+.nav-apply::after{display:none!important}
+.nav-apply:hover{background:#e09d10!important;color:var(--forest-deep)!important}
+.burger{display:none;width:42px;height:42px;background:transparent;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:18px;height:1.8px;background:#fff;transition:.3s}
+.burger.x span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+.mob-drawer{position:fixed;inset:0;z-index:99;background:var(--forest-dark);transform:translateX(100%);transition:transform .38s var(--ease);overflow-y:auto;padding:7.5rem 2rem 3rem}
+.mob-drawer.open{transform:none}
+.mob-drawer a{display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:1.1rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.1);letter-spacing:.04em;text-transform:uppercase}
+.mob-drawer .mob-sub{padding-left:1rem;font-size:.95rem;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-apply{display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--forest-deep)!important;padding:.75rem 1.8rem;font-size:.88rem;font-weight:800;border-bottom:none!important}
+
+/* ── PAGE HERO ── */
+.hero{position:relative;min-height:clamp(360px,50vh,480px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-deep)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.96) 0%,rgba(5,22,18,.65) 45%,rgba(5,22,18,.22) 100%)}
+.hero-inner{position:relative;z-index:2;padding:2.5rem 0 clamp(2rem,4vw,3.5rem);width:100%}
+.breadcrumb{display:flex;align-items:center;gap:.45rem;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.9rem}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .2s}.breadcrumb a:hover{color:var(--gold)}
+.hero-inner h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:#fff;line-height:1.06;max-width:16ch}
+.hero-inner h1 em{font-style:normal;color:var(--gold)}
+.hero-inner p{color:rgba(255,255,255,.7);font-size:clamp(.95rem,1.5vw,1.06rem);margin-top:.7rem;max-width:54ch;line-height:1.68;font-weight:300}
+.hero-stats{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.hs .n{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;color:var(--gold);line-height:1}
+.hs .l{font-size:.74rem;color:rgba(255,255,255,.55);margin-top:.2rem;font-weight:500}
+
+/* ── STICKY SUBNAV ── */
+.subnav{position:sticky;top:calc(30px + 72px);z-index:80;background:#fff;border-bottom:2px solid var(--line);box-shadow:0 3px 16px -8px rgba(15,61,56,.12)}
+.subnav-inner{display:flex;overflow-x:auto;scrollbar-width:none}
+.subnav-inner::-webkit-scrollbar{display:none}
+.subnav a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);padding:.95rem 1.3rem;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.subnav a:hover{color:var(--forest)}
+.subnav a.active{color:var(--forest-deep);border-bottom-color:var(--gold)}
+
+/* ── CDF OVERVIEW ── */
+.cdf{background:var(--white)}
+.cdf-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.2rem}
+.cdf-col{background:var(--paper);border:1px solid var(--line);padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.cdf-col:hover{transform:translateY(-4px);box-shadow:0 20px 40px -18px rgba(15,61,56,.2)}
+.cdf-col::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.cdf-col.c1::before{background:var(--emerald)}.cdf-col.c2::before{background:var(--gold)}.cdf-col.c3::before{background:var(--violet)}
+.col-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem}
+.col-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;flex:none}
+.cdf-col.c1 .col-icon{background:rgba(45,148,92,.1)}.cdf-col.c2 .col-icon{background:rgba(246,171,22,.1)}.cdf-col.c3 .col-icon{background:rgba(104,22,164,.1)}
+.col-icon svg{width:1.3rem;height:1.3rem}
+.cdf-col.c1 .col-icon svg{color:var(--emerald)}.cdf-col.c2 .col-icon svg{color:var(--gold-dark)}.cdf-col.c3 .col-icon svg{color:var(--violet)}
+.col-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.6rem;color:rgba(24,88,80,.07);line-height:1;position:absolute;top:1rem;right:1.2rem}
+.cdf-col h3{font-size:1rem;font-weight:800;color:var(--forest-deep)}
+.cdf-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.cdf-col ul li{display:flex;align-items:flex-start;gap:.55rem;font-size:.88rem;color:var(--slate);line-height:1.5}
+.cdf-col ul li::before{content:'';width:5px;height:5px;border-radius:50%;flex:none;margin-top:.42rem}
+.cdf-col.c1 li::before{background:var(--emerald)}.cdf-col.c2 li::before{background:var(--gold-dark)}.cdf-col.c3 li::before{background:var(--violet)}
+
+/* ── CURRICULUM + APPROACH ── */
+.curr{background:var(--paper)}
+.curr-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.curr-img{position:relative;border-radius:3px;overflow:hidden}
+.curr-img .ph{aspect-ratio:4/3;background:var(--forest-deep);overflow:hidden}
+.curr-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.curr-img:hover img{transform:scale(1.04)}
+.curr-img .tag{background:var(--gold);padding:.5rem 1.1rem}
+.curr-img .tag span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-deep)}
+.curr-copy h2{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;color:var(--forest-deep);margin-bottom:.85rem}
+.curr-copy p{color:var(--slate);line-height:1.75;font-size:.96rem;margin-bottom:1.2rem}
+.feat-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.2rem}
+.feat-item{display:flex;align-items:flex-start;gap:.7rem}
+.feat-dot{width:26px;height:26px;border-radius:50%;background:rgba(45,148,92,.1);display:grid;place-items:center;flex:none;margin-top:.05rem}
+.feat-dot svg{width:.88rem;height:.88rem;color:var(--emerald)}
+.feat-item h5{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;color:var(--forest-deep);margin-bottom:.15rem}
+.feat-item p{font-size:.84rem;color:var(--slate);margin:0}
+.cta-link{display:inline-flex;align-items:center;gap:.45rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);transition:gap .2s,color .2s}
+.cta-link:hover{gap:.7rem;color:var(--emerald)}
+/* approach cards */
+.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem}
+.ap-card{background:#fff;border:1px solid var(--line);padding:1.5rem 1.3rem;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.ap-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(15,61,56,.18)}
+.ap-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:rgba(24,88,80,.06);line-height:1;position:absolute;top:.8rem;right:1rem}
+.ap-icon{width:42px;height:42px;border-radius:10px;background:rgba(24,88,80,.07);display:grid;place-items:center;margin-bottom:.9rem}
+.ap-icon svg{width:1.25rem;height:1.25rem;color:var(--emerald)}
+.ap-card h4{font-size:.94rem;font-weight:800;color:var(--forest-deep);margin-bottom:.4rem}
+.ap-card p{font-size:.84rem;color:var(--slate);line-height:1.6}
+
+/* dark band */
+.dark-band{background:var(--forest-deep);padding:2rem 0}
+.dark-band-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.dark-band-inner h3{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:800;color:#fff}
+.dark-band-inner p{color:rgba(255,255,255,.6);font-size:.9rem;margin-top:.3rem;max-width:54ch}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.7rem;transition:background .2s,transform .2s;white-space:nowrap}
+.btn-gold:hover{background:#e09d10;transform:translateY(-2px)}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.7rem;transition:border-color .2s,background .2s;white-space:nowrap}
+.btn-ghost-w:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ── GRADE PROGRESSION (HORIZONTAL TIMELINE) ── */
+.progression{background:var(--white)}
+.prog-head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:2.5rem}
+.prog-timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.prog-timeline::before{content:'';position:absolute;top:28px;left:6%;right:6%;height:2px;background:linear-gradient(to right,var(--emerald),var(--gold),var(--gold-dark),var(--violet));z-index:0}
+.prog-step{position:relative;z-index:1;text-align:center;padding-top:0}
+.prog-dot-wrap{display:flex;justify-content:center;margin-bottom:1.2rem}
+.prog-dot{width:56px;height:56px;border-radius:50%;border:2px solid;display:grid;place-items:center;background:#fff;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.85rem}
+.prog-step.s1 .prog-dot{border-color:var(--emerald);color:var(--emerald)}
+.prog-step.s2 .prog-dot{border-color:var(--gold-dark);color:var(--gold-dark)}
+.prog-step.s3 .prog-dot{border-color:var(--gold-dark);color:var(--gold-dark)}
+.prog-step.s4 .prog-dot{border-color:var(--violet);color:var(--violet)}
+.prog-step .phase{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
+.prog-step.s1 .phase{color:var(--emerald)}.prog-step.s2 .phase{color:var(--gold-dark)}.prog-step.s3 .phase{color:var(--gold-dark)}.prog-step.s4 .phase{color:var(--violet)}
+.prog-step h4{font-size:.94rem;font-weight:800;color:var(--forest-deep);margin-bottom:.4rem;padding:0 .5rem}
+.prog-step p{font-size:.82rem;color:var(--slate);line-height:1.55;padding:0 .8rem}
+.prog-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin-top:.7rem;padding:0 .5rem}
+.prog-chip{background:var(--paper);border:1px solid var(--line);padding:.25rem .6rem;font-size:.72rem;font-weight:600;color:var(--forest-deep)}
+
+/* ── ASSESSMENT INFOGRAPHIC ── */
+.assessment{background:var(--paper)}
+.assess-inner{margin-top:2.2rem;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+/* SVG infographic */
+.assess-svg-wrap{position:relative}
+.assess-svg-wrap svg.infog{width:100%;height:auto;display:block}
+/* Right: how we communicate */
+.assess-right h3{font-size:1.1rem;font-weight:800;color:var(--forest-deep);margin-bottom:1.2rem}
+.assess-items{display:flex;flex-direction:column;gap:.85rem}
+.assess-item{display:flex;gap:.85rem;align-items:flex-start;background:#fff;border:1px solid var(--line);padding:1rem 1.1rem}
+.assess-item .ai-icon{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;flex:none;background:var(--paper)}
+.assess-item .ai-icon svg{width:1.1rem;height:1.1rem;color:var(--emerald)}
+.assess-item.gold .ai-icon svg{color:var(--gold-dark)}
+.assess-item.violet .ai-icon svg{color:var(--violet)}
+.assess-item h5{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.86rem;color:var(--forest-deep);margin-bottom:.15rem}
+.assess-item p{font-size:.82rem;color:var(--slate);line-height:1.55}
+
+/* ── STREAMS ── */
+.streams{background:var(--forest-deep);position:relative;overflow:hidden}
+.streams::before{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.04)}
+.streams .lbl{color:var(--gold)}.streams .lbl::before{background:var(--gold)}
+.streams-head{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:2.2rem}
+.streams-head h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;color:#fff;margin-top:.4rem}
+.streams-head p{color:rgba(255,255,255,.62);font-size:.93rem;margin-top:.5rem;max-width:46ch}
+.streams-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative;z-index:1}
+.stream-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:1.6rem 1.3rem;transition:background .3s,transform .3s}
+.stream-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.s-icon{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;margin-bottom:1rem}
+.s-icon svg{width:1.3rem;height:1.3rem;color:var(--gold)}
+.stream-card h4{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.55rem}
+.stream-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.stream-card li{font-size:.82rem;color:rgba(255,255,255,.58);display:flex;gap:.4rem;line-height:1.4}
+.stream-card li::before{content:'→';color:var(--gold);flex:none;font-size:.68rem;margin-top:.12rem}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--ink);padding:clamp(48px,6vw,80px) 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.04)}
+.cta-band h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:#fff;margin-bottom:.7rem}
+.cta-band p{color:rgba(255,255,255,.6);font-size:.96rem;max-width:46ch;margin-inline:auto;margin-bottom:1.8rem}
+.cta-acts{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:#061c19;color:rgba(255,255,255,.52);font-size:.86rem}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding:3rem 0}
+.foot-brand p{color:rgba(255,255,255,.42);max-width:28ch;margin-top:.8rem;line-height:1.7}
+.foot-brand .socials{display:flex;gap:.5rem;margin-top:1.2rem}
+.foot-brand .socials a{width:34px;height:34px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:rgba(255,255,255,.55);transition:.2s}
+.foot-brand .socials a:hover{background:var(--gold);color:var(--forest-deep)}
+footer h5{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:.9rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+footer ul a{color:rgba(255,255,255,.48);transition:color .2s;font-size:.84rem}
+footer ul a:hover{color:var(--gold)}
+.fc{display:flex;gap:.55rem;margin-bottom:.8rem;align-items:flex-start;font-size:.84rem}
+.fc svg{width:.9rem;height:.9rem;color:var(--gold);flex:none;margin-top:.18rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.2rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.7rem;color:rgba(255,255,255,.35);font-size:.78rem}
+.pal{display:flex;gap:3px}
+.pal i{width:10px;height:10px;border-radius:50%}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.s1{transition-delay:.1s}.reveal.s2{transition-delay:.2s}.reveal.s3{transition-delay:.3s}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .main-nav{display:none}.burger{display:flex}
+  .approach-grid{grid-template-columns:1fr 1fr}
+  .streams-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .cdf-cols{grid-template-columns:1fr}
+  .curr-row{grid-template-columns:1fr}.curr-img{order:-1}
+  .assess-inner{grid-template-columns:1fr}
+  .streams-head{grid-template-columns:1fr}
+  .prog-timeline{grid-template-columns:1fr 1fr}
+  .prog-timeline::before{display:none}
+  body{padding-top:calc(30px + 64px)}
+}
+@media(max-width:600px){
+  .approach-grid{grid-template-columns:1fr}
+  .streams-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .prog-timeline{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ICONS -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V5Z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V5Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 0 1 0 6M21 20c0-2.5-1.5-4.6-3.7-5.5"/></symbol>
+  <symbol id="i-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.66Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-1.66Z"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45L14 10V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+  <symbol id="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v4h4M10 13h6M10 16h6"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-5 7-8 7-11a7 7 0 0 0-14 0c0 3 2 6 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.5 14.4c-.3-.15-1.8-.88-2.07-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6l.44-.5c.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.8.37C7.3 7.05 6.5 7.8 6.5 9.3s1.1 2.93 1.25 3.13c.15.2 2.15 3.28 5.2 4.6.73.3 1.3.5 1.74.63.73.22 1.4.19 1.92.12.59-.09 1.8-.74 2.06-1.45.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.57-.35Z"/><path d="M12 2a10 10 0 0 0-8.59 15.1L2 22l5.06-1.38A10 10 0 1 0 12 2Zm0 18.18a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31A8.18 8.18 0 1 1 12 20.18Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.5C13.5 9.2 13.7 9 14 9Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.5 8s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.8C16.4 5 12 5 12 5s-4.4 0-6.8.2c-.4 0-1.2 0-1.9.8-.6.6-.8 2-.8 2S2.3 9.6 2.3 11.2v1.5C2.3 14.4 2.5 16 2.5 16s.2 1.4.8 2c.7.8 1.7.8 2.1.9C6.8 19 12 19 12 19s4.4 0 6.8-.2c.4 0 1.2 0 1.9-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C21.7 9.6 21.5 8 21.5 8ZM10 14.5v-5l4.5 2.5-4.5 2.5Z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M7 9v9H4V9h3ZM5.5 7.5A1.5 1.5 0 1 1 5.5 4.5a1.5 1.5 0 0 1 0 3ZM20 18h-3v-4.8c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V18h-3V9h3v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 3.3 1.3 3.3 4V18Z"/></symbol>
+</svg>
+
+<!-- UTIL -->
+<div class="util">
+  <div class="w">
+    <div class="util-left">
+      <a href="tel:+919606488347"><svg style="width:.82rem;height:.82rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-phone"/></svg>+91 96064 88347</a>
+      <span class="sep">|</span>
+      <a href="mailto:admissions@theacademiccity.com"><svg style="width:.82rem;height:.82rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-mail"/></svg>admissions@theacademiccity.com</a>
+    </div>
+    <span class="badge">⚡ Admissions Open 2026–27</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="w nav-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-emblem"><svg viewBox="0 0 24 24"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+      <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+    </a>
+    <nav><ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li class="has-drop">
+        <a href="#" class="active">Explore TACS <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="drop-menu">
+          <a href="academics.html" class="active">Academics</a>
+          <a href="cocurricular.html">Co-curricular</a>
+          <a href="boarding.html">Boarding</a>
+          <a href="career-guidance.html">Career Guidance</a>
+        </div>
+      </li>
+      <li><a href="index.html#admissions">Admissions</a></li>
+      <li><a href="index.html#news">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-apply">Apply Now</a></li>
+    </ul></nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<nav class="mob-drawer" id="mobDrawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About Us</a>
+  <a href="academics.html" class="mob-sub active">Academics</a>
+  <a href="cocurricular.html" class="mob-sub">Co-curricular</a>
+  <a href="boarding.html" class="mob-sub">Boarding</a>
+  <a href="career-guidance.html" class="mob-sub">Career Guidance</a>
+  <a href="index.html#admissions">Admissions</a>
+  <a href="index.html#news">Blog</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="mob-apply">Apply Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://theacademiccity.com/images/Home/nav/academics.png" alt="TACS Academics" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-inner">
+    <div class="w">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Academics</span></div>
+      <h1>Academics at <em>TACS</em></h1>
+      <p>CBSE Grades 5–12 · Concept-driven learning, personalised mentoring and structured preparation for every child's future.</p>
+      <div class="hero-stats">
+        <div class="hs"><div class="n">CBSE</div><div class="l">New Delhi curriculum</div></div>
+        <div class="hs"><div class="n">1 : 10</div><div class="l">Student–teacher ratio</div></div>
+        <div class="hs"><div class="n">Grades 5–12</div><div class="l">Residential boarding</div></div>
+        <div class="hs"><div class="n">600+</div><div class="l">Career paths aligned</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY SUBNAV -->
+<nav class="subnav" id="subnav">
+  <div class="w subnav-inner">
+    <a href="#overview" class="active">Overview</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#progression">Grade Journey</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#streams">Grades 11 &amp; 12</a>
+  </div>
+</nav>
+
+<!-- 1. OVERVIEW — CDF 3 PILLARS -->
+<section class="cdf sec" id="overview">
+  <div class="w">
+    <div class="reveal">
+      <span class="lbl center">Core Delivery Framework — Academics</span>
+      <h2 class="h2" style="text-align:center;margin-top:.3rem">Three pillars. Every lesson. Every day.</h2>
+      <p class="lead" style="text-align:center;max-width:56ch;margin-inline:auto">A structured, concept-driven programme supported by personalised teaching and continuous assessment — so every child grows consistently.</p>
+    </div>
+    <div class="cdf-cols">
+      <div class="cdf-col c1 reveal">
+        <div class="col-num">01</div>
+        <div class="col-top">
+          <div class="col-icon"><svg><use href="#i-book"/></svg></div>
+          <h3>Academic Framework</h3>
+        </div>
+        <ul>
+          <li>CBSE-aligned, concept-based curriculum</li>
+          <li>Structured yearly academic planning</li>
+          <li>Focus on application &amp; problem-solving</li>
+          <li>Foundational to advanced learning integration</li>
+          <li>Subject-wise progression maps per grade</li>
+        </ul>
+      </div>
+      <div class="cdf-col c2 reveal s1">
+        <div class="col-num">02</div>
+        <div class="col-top">
+          <div class="col-icon"><svg><use href="#i-users"/></svg></div>
+          <h3>Teaching &amp; Support</h3>
+        </div>
+        <ul>
+          <li>Student-centric, interactive classrooms</li>
+          <li>Regular doubt-solving &amp; supervised study</li>
+          <li>Remedial support + enrichment programmes</li>
+          <li>Personalised mentoring &amp; guidance</li>
+          <li>1:10 ratio across all grades</li>
+        </ul>
+      </div>
+      <div class="cdf-col c3 reveal s2">
+        <div class="col-num">03</div>
+        <div class="col-top">
+          <div class="col-icon"><svg><use href="#i-bar"/></svg></div>
+          <h3>Assessment &amp; Tracking</h3>
+        </div>
+        <ul>
+          <li>Continuous assessments + term exams</li>
+          <li>Regular testing for concept reinforcement</li>
+          <li>Individual performance tracking &amp; analysis</li>
+          <li>Transparent feedback to students &amp; parents</li>
+          <li>Student Progression Plans reviewed termly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CURRICULUM + APPROACH -->
+<section class="curr sec" id="curriculum">
+  <div class="w">
+    <div class="curr-row reveal">
+      <div class="curr-img">
+        <div class="ph"><img src="https://theacademiccity.com/images/Home/nav/academics.png" alt="Classroom at TACS" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="tag"><span>CBSE · Grades 5–12 · Bengaluru</span></div>
+      </div>
+      <div class="curr-copy reveal s1">
+        <span class="lbl">Curriculum</span>
+        <h2>Built for understanding, not just marks</h2>
+        <p>Every subject is taught for depth — not rote recall. Students build genuine conceptual foundations and are encouraged to question, apply and think independently.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <span class="feat-dot"><svg><use href="#i-check"/></svg></span>
+            <div><h5>Concept-first, always</h5><p>Topics taught through understanding before application — every student moves at the right pace.</p></div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-dot"><svg><use href="#i-check"/></svg></span>
+            <div><h5>Nightly supervised study</h5><p>Evenings at TACS mean structured study with teachers on hand — a distinct advantage of boarding.</p></div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-dot"><svg><use href="#i-check"/></svg></span>
+            <div><h5>Enrichment for high achievers</h5><p>Advanced challenges, Olympiad preparation and project-based learning for students ready to go further.</p></div>
+          </div>
+        </div>
+        <a class="cta-link" href="index.html#contact">Ask about our curriculum <svg style="width:.95rem;height:.95rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <!-- Approach cards -->
+    <div style="margin-top:2.8rem">
+      <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--forest-deep);margin-bottom:0;text-align:center" class="reveal">How we teach</h3>
+    </div>
+    <div class="approach-grid">
+      <div class="ap-card reveal"><div class="ap-num">01</div><div class="ap-icon"><svg><use href="#i-brain"/></svg></div><h4>Concept-First</h4><p>The "why" before the "how" — so knowledge sticks for life, not just the exam.</p></div>
+      <div class="ap-card reveal s1"><div class="ap-num">02</div><div class="ap-icon"><svg><use href="#i-users"/></svg></div><h4>Personalised Mentoring</h4><p>1:10 ratio means every student has an academic mentor who tracks their progress closely.</p></div>
+      <div class="ap-card reveal s2"><div class="ap-num">03</div><div class="ap-icon"><svg><use href="#i-lab"/></svg></div><h4>Practical &amp; Experiential</h4><p>Labs, workshops and real-world problem sets — learning that is tactile and memorable.</p></div>
+      <div class="ap-card reveal s3"><div class="ap-num">04</div><div class="ap-icon"><svg><use href="#i-light"/></svg></div><h4>Inquiry &amp; Critical Thinking</h4><p>Students are taught to question, debate and reason — skills that serve them long after school.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK BAND -->
+<div class="dark-band">
+  <div class="w dark-band-inner reveal">
+    <div><h3>Every child gets a Student Progression Plan</h3><p>Tailored to their pace and goals — reviewed every term by their academic mentor.</p></div>
+    <a class="btn-gold" href="index.html#contact">Speak to Admissions <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+  </div>
+</div>
+
+<!-- 3. GRADE PROGRESSION — HORIZONTAL TIMELINE -->
+<section class="progression sec" id="progression">
+  <div class="w">
+    <div class="prog-head reveal">
+      <div>
+        <span class="lbl">Grade Journey</span>
+        <h2 class="h2" style="margin-top:.3rem">Grade 5 to Grade 12 — a clear path</h2>
+        <p class="lead">Each phase has a deliberate purpose — building foundations, broadening horizons, then sharpening focus.</p>
+      </div>
+    </div>
+    <div class="prog-timeline reveal">
+      <div class="prog-step s1">
+        <div class="prog-dot-wrap"><div class="prog-dot">5–6</div></div>
+        <div class="phase">Foundation</div>
+        <h4>Building the base</h4>
+        <p>Language, maths, science — strong foundations in a nurturing, exploratory environment.</p>
+        <div class="prog-chips"><span class="prog-chip">Core CBSE</span><span class="prog-chip">Curiosity-led</span></div>
+      </div>
+      <div class="prog-step s2">
+        <div class="prog-dot-wrap"><div class="prog-dot">7–8</div></div>
+        <div class="phase">Middle</div>
+        <h4>Broadening &amp; deepening</h4>
+        <p>Subjects deepen. Students begin discovering what they love — strengths are spotted early.</p>
+        <div class="prog-chips"><span class="prog-chip">Project learning</span><span class="prog-chip">Career exposure</span></div>
+      </div>
+      <div class="prog-step s3">
+        <div class="prog-dot-wrap"><div class="prog-dot">9–10</div></div>
+        <div class="phase">Exploration</div>
+        <h4>Board preparation</h4>
+        <p>Full CBSE board prep — mock exams, analysis sessions, individual tracking.</p>
+        <div class="prog-chips"><span class="prog-chip">Mock tests</span><span class="prog-chip">1:1 mentoring</span></div>
+      </div>
+      <div class="prog-step s4">
+        <div class="prog-dot-wrap"><div class="prog-dot">11–12</div></div>
+        <div class="phase">Focused</div>
+        <h4>Career-aligned specialisation</h4>
+        <p>Stream + competitive exam preparation, from JEE to NEET to CLAT, alongside boards.</p>
+        <div class="prog-chips"><span class="prog-chip">Stream choice</span><span class="prog-chip">Exam prep</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ASSESSMENT — INFOGRAPHIC + COMMS -->
+<section class="assessment sec" id="assessment">
+  <div class="w">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <span class="lbl center">Assessment &amp; Tracking</span>
+      <h2 class="h2">No child falls through the cracks</h2>
+      <p class="lead" style="max-width:52ch;margin-inline:auto">A continuous system that identifies gaps early — and closes them before they become problems.</p>
+    </div>
+    <div class="assess-inner">
+      <!-- LEFT: SVG INFOGRAPHIC — Assessment Cycle -->
+      <div class="assess-svg-wrap reveal">
+        <svg class="infog" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif">
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#dce8e4"/></marker>
+            <marker id="arr-gold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#f6ab16"/></marker>
+          </defs>
+
+          <!-- Background -->
+          <rect width="520" height="480" rx="8" fill="#f4f8f6"/>
+
+          <!-- Title -->
+          <text x="260" y="36" text-anchor="middle" font-size="13" font-weight="800" letter-spacing="2" fill="#185850" text-transform="uppercase">ASSESSMENT CYCLE</text>
+
+          <!-- Center circle -->
+          <circle cx="260" cy="240" r="62" fill="#185850"/>
+          <text x="260" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">STUDENT</text>
+          <text x="260" y="249" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">PROGRESSION</text>
+          <text x="260" y="265" text-anchor="middle" font-size="11" font-weight="700" fill="#f6ab16">PLAN</text>
+
+          <!-- Node 1: Top — Continuous Assessment -->
+          <circle cx="260" cy="100" r="48" fill="#fff" stroke="#dce8e4" stroke-width="1.5"/>
+          <circle cx="260" cy="85" r="14" fill="rgba(45,148,92,.12)"/>
+          <text x="260" y="90" text-anchor="middle" font-size="12" fill="#2d945c">📋</text>
+          <text x="260" y="110" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">CONTINUOUS</text>
+          <text x="260" y="124" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">ASSESSMENT</text>
+          <text x="260" y="138" text-anchor="middle" font-size="9" fill="#5a6a72">Tests · Projects · CA</text>
+
+          <!-- Node 2: Right — Term Exams -->
+          <circle cx="420" cy="195" r="48" fill="#fff" stroke="#dce8e4" stroke-width="1.5"/>
+          <text x="420" y="180" text-anchor="middle" font-size="16">📝</text>
+          <text x="420" y="200" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">TERM</text>
+          <text x="420" y="214" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">EXAMS</text>
+          <text x="420" y="228" text-anchor="middle" font-size="9" fill="#5a6a72">2× per year</text>
+
+          <!-- Node 3: Bottom-right — Analysis -->
+          <circle cx="380" cy="358" r="48" fill="#fff" stroke="#dce8e4" stroke-width="1.5"/>
+          <text x="380" y="343" text-anchor="middle" font-size="16">📊</text>
+          <text x="380" y="363" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">INDIVIDUAL</text>
+          <text x="380" y="377" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">ANALYSIS</text>
+          <text x="380" y="391" text-anchor="middle" font-size="9" fill="#5a6a72">Gap identification</text>
+
+          <!-- Node 4: Bottom-left — Remediation -->
+          <circle cx="140" cy="358" r="48" fill="#fff" stroke="#dce8e4" stroke-width="1.5"/>
+          <text x="140" y="343" text-anchor="middle" font-size="16">🎯</text>
+          <text x="140" y="363" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">REMEDIATION</text>
+          <text x="140" y="377" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">&amp; ENRICHMENT</text>
+          <text x="140" y="391" text-anchor="middle" font-size="9" fill="#5a6a72">Targeted support</text>
+
+          <!-- Node 5: Left — Parent Feedback -->
+          <circle cx="100" cy="195" r="48" fill="#fff" stroke="#dce8e4" stroke-width="1.5"/>
+          <text x="100" y="180" text-anchor="middle" font-size="16">👨‍👩‍👧</text>
+          <text x="100" y="200" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">PARENT</text>
+          <text x="100" y="214" text-anchor="middle" font-size="10" font-weight="800" fill="#0f3d38">FEEDBACK</text>
+          <text x="100" y="228" text-anchor="middle" font-size="9" fill="#5a6a72">Transparent reports</text>
+
+          <!-- Curved arrows between nodes (clockwise) -->
+          <!-- Top → Right -->
+          <path d="M300 118 Q375 130 380 152" fill="none" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Right → Bottom-right -->
+          <path d="M418 242 Q430 300 410 318" fill="none" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Bottom-right → Bottom-left -->
+          <path d="M335 375 Q260 400 185 375" fill="none" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Bottom-left → Left -->
+          <path d="M112 317 Q95 280 105 242" fill="none" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Left → Top -->
+          <path d="M140 150 Q175 120 218 115" fill="none" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+
+          <!-- Gold spoke from center to SPP label -->
+          <line x1="260" y1="178" x2="260" y2="148" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="322" y1="210" x2="368" y2="192" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="304" y1="280" x2="336" y2="316" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="216" y1="280" x2="184" y2="316" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="198" y1="210" x2="148" y2="190" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+          <!-- Legend bottom -->
+          <line x1="60" y1="458" x2="90" y2="458" stroke="#dce8e4" stroke-width="2" marker-end="url(#arr)"/>
+          <text x="96" y="462" font-size="9" fill="#5a6a72" font-weight="600">Assessment flow</text>
+          <line x1="200" y1="458" x2="230" y2="458" stroke="#f6ab16" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="236" y="462" font-size="9" fill="#5a6a72" font-weight="600">Feeds into SPP</text>
+        </svg>
+      </div>
+
+      <!-- RIGHT: How we communicate progress -->
+      <div class="assess-right reveal s1">
+        <h3>How we communicate progress</h3>
+        <div class="assess-items">
+          <div class="assess-item">
+            <div class="ai-icon"><svg><use href="#i-doc"/></svg></div>
+            <div><h5>Student Progression Plan (SPP)</h5><p>Each child's personalised academic road map — reviewed termly, shared with parents.</p></div>
+          </div>
+          <div class="assess-item">
+            <div class="ai-icon"><svg><use href="#i-users"/></svg></div>
+            <div><h5>Parent–Teacher Connect</h5><p>Regular scheduled interactions, not just PTMs. Parents contacted proactively when concerns arise.</p></div>
+          </div>
+          <div class="assess-item gold">
+            <div class="ai-icon"><svg style="color:var(--gold-dark)"><use href="#i-bar"/></svg></div>
+            <div><h5>Digital Report Cards</h5><p>Subject-wise reports after each assessment, with teacher comments — accessible digitally.</p></div>
+          </div>
+          <div class="assess-item violet">
+            <div class="ai-icon"><svg style="color:var(--violet)"><use href="#i-compass"/></svg></div>
+            <div><h5>Academic Mentor Reviews</h5><p>One-on-one sessions between each student and their mentor, every term.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. STREAMS / GRADES 11–12 -->
+<section class="streams sec" id="streams">
+  <div class="w">
+    <div class="streams-head reveal">
+      <div>
+        <span class="lbl">Grades 11 &amp; 12</span>
+        <h2>Focused preparation for the future</h2>
+        <p>Stream + board prep + competitive exam support — structured from Day 1 of Grade 11.</p>
+      </div>
+      <a class="btn-gold" href="index.html#contact" style="align-self:flex-end">Discuss your child's path <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="streams-grid">
+      <div class="stream-card reveal">
+        <div class="s-icon"><svg><use href="#i-lab"/></svg></div>
+        <h4>Science — Engineering</h4>
+        <ul>
+          <li>Physics, Chemistry, Mathematics</li>
+          <li>JEE Main &amp; Advanced preparation</li>
+          <li>BITSAT, VIT, KCET guidance</li>
+        </ul>
+      </div>
+      <div class="stream-card reveal s1">
+        <div class="s-icon"><svg><use href="#i-globe"/></svg></div>
+        <h4>Science — Medical</h4>
+        <ul>
+          <li>Physics, Chemistry, Biology</li>
+          <li>NEET UG structured preparation</li>
+          <li>AIIMS &amp; medical college guidance</li>
+        </ul>
+      </div>
+      <div class="stream-card reveal s2">
+        <div class="s-icon"><svg><use href="#i-book"/></svg></div>
+        <h4>Commerce &amp; Humanities</h4>
+        <ul>
+          <li>Accountancy, Economics, Business</li>
+          <li>CUET preparation</li>
+          <li>CA Foundation, CLAT pathways</li>
+        </ul>
+      </div>
+      <div class="stream-card reveal s3">
+        <div class="s-icon"><svg><use href="#i-compass"/></svg></div>
+        <h4>Design, Architecture &amp; Abroad</h4>
+        <ul>
+          <li>Portfolio building for NID / NIFT</li>
+          <li>Study abroad — SAT / IELTS</li>
+          <li>University shortlisting &amp; applications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="w" style="position:relative;z-index:1">
+    <span class="lbl light center" style="justify-content:center;margin-bottom:.6rem">Admissions 2026–27</span>
+    <h2>Ready to know more?</h2>
+    <p>Talk to our admissions team — ask anything about curriculum, study hours, exam preparation or how we'll support your child specifically.</p>
+    <div class="cta-acts">
+      <a class="btn-gold" href="index.html#contact">Start your enquiry <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+      <a class="btn-ghost-w" href="tel:+919606488347"><svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-phone"/></svg> +91 96064 88347</a>
+      <a class="btn-ghost-w" href="https://wa.me/919364898405" target="_blank" rel="noopener"><svg style="width:.9rem;height:.9rem;fill:currentColor;stroke:none"><use href="#i-wa"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w foot-top">
+    <div class="foot-brand">
+      <div class="brand" style="margin-bottom:.7rem">
+        <div class="brand-emblem" style="width:42px;height:42px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:var(--forest-deep)"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+        <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+      </div>
+      <p>India's first career-oriented boarding school — academics, values and future-readiness together.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/people/The-Academic-City-School/61551006306504/" target="_blank" rel="noopener" aria-label="Facebook"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/the_academic_city/" target="_blank" rel="noopener" aria-label="Instagram"><svg style="width:.95rem;height:.95rem;fill:none;stroke:currentColor;stroke-width:1.8"><use href="#i-ig"/></svg></a>
+        <a href="https://www.youtube.com/@TheAcademicCitySchool" target="_blank" rel="noopener" aria-label="YouTube"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-yt"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-academic-citybangalore/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-li"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="cocurricular.html">Co-curricular</a></li>
+        <li><a href="boarding.html">Boarding Life</a></li>
+        <li><a href="career-guidance.html">Career Guidance</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Admissions</h5>
+      <ul>
+        <li><a href="index.html#admissions">How to Apply</a></li>
+        <li><a href="index.html#campus">Our Campus</a></li>
+        <li><a href="index.html#founders">Leadership</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Reach Us</h5>
+      <div class="fc"><svg><use href="#i-pin"/></svg><span>Nelamangala, Bengaluru, KA 562123</span></div>
+      <div class="fc"><svg><use href="#i-phone"/></svg><span>+91 96064 88347</span></div>
+      <div class="fc"><svg><use href="#i-mail"/></svg><span>admissions@theacademiccity.com</span></div>
+    </div>
+  </div>
+  <div class="w foot-bottom">
+    <span>© <span id="yr"></span> The Academic City School. All rights reserved.</span>
+    <div class="pal"><i style="background:#185850"></i><i style="background:#2d945c"></i><i style="background:#f6ab16"></i><i style="background:#6816a4"></i><i style="background:#6fdcef"></i></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Mobile burger
+  var burger=document.getElementById('burger'),drawer=document.getElementById('mobDrawer');
+  burger.addEventListener('click',function(){
+    var o=drawer.classList.toggle('open');burger.classList.toggle('x',o);document.body.style.overflow=o?'hidden':'';
+  });
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drawer.classList.remove('open');burger.classList.remove('x');document.body.style.overflow='';});});
+  // Subnav active on scroll
+  var secs=['overview','curriculum','progression','assessment','streams'];
+  var links=document.querySelectorAll('.subnav a');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('active');});
+        var l=document.querySelector('.subnav a[href="#'+e.target.id+'"]');
+        if(l)l.classList.add('active');
+      }
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  // Reveal
+  var rio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){rio.observe(el);});
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
-export { AcademicsIntroSection } from "@/components/sections/academics/AcademicsIntroSection";
-export { AcademicLeadersSection } from "@/components/sections/academics/AcademicLeadersSection";
+export { AcademicsHeroSection } from "@/components/sections/academics/AcademicsHeroSection";
+export { CdfOverviewSection } from "@/components/sections/academics/CdfOverviewSection";
 export { CurriculumSection } from "@/components/sections/academics/CurriculumSection";
-export { AcademicCareerCalloutSection } from "@/components/sections/academics/AcademicCareerCalloutSection";
-export { AcademicGrowthSection } from "@/components/sections/academics/AcademicGrowthSection";
-export { ProgressionPlanSection } from "@/components/sections/academics/ProgressionPlanSection";
-export { AcademicTestimonialsSection } from "@/components/sections/academics/AcademicTestimonialsSection";
-export { AcademicCareerBridgeSection } from "@/components/sections/academics/AcademicCareerBridgeSection";
+export { ProgressionBandSection } from "@/components/sections/academics/ProgressionBandSection";
+export { GradeJourneySection } from "@/components/sections/academics/GradeJourneySection";
+export { AssessmentSection } from "@/components/sections/academics/AssessmentSection";
+export { StreamsSection } from "@/components/sections/academics/StreamsSection";
+export { AcademicsCtaSection } from "@/components/sections/academics/AcademicsCtaSection";
