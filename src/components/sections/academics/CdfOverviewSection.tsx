@@ -25,6 +25,39 @@ const accentStyles = {
   },
 } as const;
 
+const pillarIconSizeClass = "h-5 w-5 shrink-0";
+
+const pillarIconMasks = {
+  book: "/images/academics/icon-book.png",
+  users: "/images/academics/icon-teaching-support.png",
+} as const satisfies Partial<Record<CdfPillar["icon"], string>>;
+
+function MaskedPillarIcon({ src, className }: { src: string; className?: string }) {
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        pillarIconSizeClass,
+        "bg-current [mask-position:center] [mask-repeat:no-repeat] [mask-size:122%]",
+        className,
+      )}
+      style={{
+        maskImage: `url("${src}")`,
+        WebkitMaskImage: `url("${src}")`,
+      }}
+    />
+  );
+}
+
+function PillarIcon({ icon, className }: { icon: CdfPillar["icon"]; className?: string }) {
+  const maskSrc = pillarIconMasks[icon as keyof typeof pillarIconMasks];
+  if (maskSrc) {
+    return <MaskedPillarIcon src={maskSrc} className={className} />;
+  }
+
+  return <Icon name={icon} className={cn(pillarIconSizeClass, className)} />;
+}
+
 function PillarCard({ pillar }: { pillar: CdfPillar }) {
   const styles = accentStyles[pillar.accent];
 
@@ -36,7 +69,7 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
       </span>
       <div className="mb-4 flex items-center gap-3">
         <span className={cn("grid h-11 w-11 place-items-center rounded-[10px]", styles.icon)}>
-          <Icon name={pillar.icon} className="h-5 w-5" />
+          <PillarIcon icon={pillar.icon} />
         </span>
         <h3 className="font-montserrat text-base font-extrabold text-forest-deep">{pillar.title}</h3>
       </div>
