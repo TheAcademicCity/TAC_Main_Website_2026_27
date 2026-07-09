@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
 
@@ -35,9 +36,9 @@ export function CtaLink({ href, children, className, external, size = "default" 
   }
 
   return (
-    <Link href={href} className={classes}>
+    <SiteLink href={href} className={classes}>
       {children}
       <Icon name="arrow" className={iconClassName} />
-    </Link>
+    </SiteLink>
   );
 }

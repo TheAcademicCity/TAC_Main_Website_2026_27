@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { ComponentProps, MouseEvent } from "react";
+import { useEnquiryModal } from "@/components/layout/EnquiryModalProvider";
+import { getEnquiryIntentFromHref, isEnquiryHref } from "@/lib/enquiry";
 import {
   getSearchFromHref,
   getSectionIdFromHref,
@@ -19,9 +21,16 @@ type SiteLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
 export function SiteLink({ href, onClick, ...props }: SiteLinkProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const { openEnquiryModal } = useEnquiryModal();
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(event);
+
+    if (isEnquiryHref(href)) {
+      event.preventDefault();
+      openEnquiryModal(getEnquiryIntentFromHref(href));
+      return;
+    }
 
     if (isHomeHref(href)) {
       if (pathname === "/") {

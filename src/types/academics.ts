@@ -47,7 +47,7 @@ export type AssessmentCommItem = {
 };
 
 export type StreamCard = {
-  icon: "lab" | "globe" | "book" | "compass";
+  icon: "wrench" | "stethoscope" | "scrollText" | "compass";
   title: string;
   items: readonly string[];
 };

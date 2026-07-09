@@ -219,7 +219,7 @@ export const academicsPageContent = {
     cta: { label: "Discuss your child's path", href: "/#enquiry" },
     cards: [
       {
-        icon: "lab",
+        icon: "wrench",
         title: "Science — Engineering",
         items: [
           "Physics, Chemistry, Mathematics",
@@ -228,7 +228,7 @@ export const academicsPageContent = {
         ],
       },
       {
-        icon: "globe",
+        icon: "stethoscope",
         title: "Science — Medical",
         items: [
           "Physics, Chemistry, Biology",
@@ -237,7 +237,7 @@ export const academicsPageContent = {
         ],
       },
       {
-        icon: "book",
+        icon: "scrollText",
         title: "Commerce & Humanities",
         items: ["Accountancy, Economics, Business", "CUET preparation", "CA Foundation, CLAT pathways"],
       },
