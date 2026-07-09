@@ -6,12 +6,12 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 export function BrochureBanner() {
   return (
-    <div className="relative flex min-h-[300px] items-center overflow-hidden bg-forest-deep">
+    <div className="relative flex min-h-[300px] w-full items-center justify-center overflow-hidden bg-forest-deep">
       <div className="absolute inset-0 opacity-25">
         <ImageWithFallback image={brochureContent.background} fill sizes="100vw" />
       </div>
 
-      <RevealOnScroll>
+      <RevealOnScroll className="w-full">
         <div className="relative z-[2] mx-auto w-full max-w-[900px] px-4 py-16 text-center">
           <h2 className="mb-3 font-montserrat text-[clamp(1.8rem,3.5vw,2.8rem)] font-black text-white">
             {brochureContent.title}
