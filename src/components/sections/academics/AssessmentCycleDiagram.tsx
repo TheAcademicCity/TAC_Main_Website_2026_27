@@ -10,12 +10,14 @@ const CENTER = { cx: 260, cy: 240, r: 62 };
 const OUTER_NODE_R = 54;
 
 const NODES: CircleNode[] = [
-  { cx: 260, cy: 100, r: OUTER_NODE_R, lines: ["CONTINUOUS", "ASSESSMENT", "Tests · Projects · CA"] },
+  { cx: 260, cy: 100, r: OUTER_NODE_R, lines: ["CONTINUOUS", "ASSESSMENT", "Tests & Projects"] },
   { cx: 420, cy: 195, r: OUTER_NODE_R, lines: ["TERM", "EXAMS", "2× per year"] },
   { cx: 380, cy: 358, r: OUTER_NODE_R, lines: ["INDIVIDUAL", "ANALYSIS", "Gap identification"] },
   { cx: 140, cy: 358, r: OUTER_NODE_R, lines: ["REMEDIATION", "& ENRICHMENT", "Targeted support"] },
   { cx: 100, cy: 195, r: OUTER_NODE_R, lines: ["PARENT", "FEEDBACK", "Transparent reports"] },
 ];
+
+const CYCLE_ARC_RADIUS = 130;
 
 function circleEdge(from: CircleNode, to: CircleNode) {
   const angle = Math.atan2(to.cy - from.cy, to.cx - from.cx);
@@ -47,20 +49,25 @@ function spokeEdge(node: CircleNode) {
   };
 }
 
-function curvedPath(
+/** Circular arc with a shared radius for every cycle arrow. */
+function circularArcPath(
   start: { x: number; y: number },
   end: { x: number; y: number },
-  bulge = 26,
+  radius = CYCLE_ARC_RADIUS,
 ) {
   const midX = (start.x + end.x) / 2;
   const midY = (start.y + end.y) / 2;
-  const dx = midX - CENTER.cx;
-  const dy = midY - CENTER.cy;
-  const len = Math.hypot(dx, dy) || 1;
-  const ctrlX = midX + (dx / len) * bulge;
-  const ctrlY = midY + (dy / len) * bulge;
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
 
-  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} Q ${ctrlX.toFixed(1)} ${ctrlY.toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+  // Pick the sweep that bulges outward (away from the SPP center).
+  const perpX = dy;
+  const perpY = -dx;
+  const towardCenterX = CENTER.cx - midX;
+  const towardCenterY = CENTER.cy - midY;
+  const sweep = perpX * towardCenterX + perpY * towardCenterY < 0 ? 1 : 0;
+
+  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} A ${radius} ${radius} 0 0 ${sweep} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
 }
 
 function straightPath(start: { x: number; y: number }, end: { x: number; y: number }) {
@@ -93,7 +100,7 @@ export function AssessmentCycleDiagram() {
   const cyclePaths = NODES.map((node, index) => {
     const next = NODES[(index + 1) % NODES.length]!;
     const edge = circleEdge(node, next);
-    return curvedPath(edge.start, edge.end);
+    return circularArcPath(edge.start, edge.end);
   });
 
   const spokePaths = NODES.map((node) => {
@@ -103,7 +110,7 @@ export function AssessmentCycleDiagram() {
 
   return (
     <svg
-      viewBox="0 0 520 480"
+      viewBox="0 0 520 450"
       xmlns="http://www.w3.org/2000/svg"
       className="h-auto w-full"
       role="img"
@@ -112,18 +119,25 @@ export function AssessmentCycleDiagram() {
       <defs>
         <marker
           id="assess-arr"
-          markerWidth="8"
-          markerHeight="8"
-          refX="7"
-          refY="4"
+          markerWidth="12"
+          markerHeight="12"
+          refX="9"
+          refY="6"
           orient="auto"
-          markerUnits="strokeWidth"
+          markerUnits="userSpaceOnUse"
         >
-          <path d="M0 0 L8 4 L0 8 Z" fill="#dce8e4" />
+          <path
+            d="M2.5 2.5 L9 6 L2.5 9.5"
+            fill="none"
+            stroke="#c5d5d0"
+            strokeWidth="2.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </marker>
       </defs>
 
-      <rect width="520" height="480" rx="8" fill="#f4f8f6" />
+      <rect width="520" height="450" rx="8" fill="#f4f8f6" />
 
       <text
         x="260"
@@ -164,6 +178,8 @@ export function AssessmentCycleDiagram() {
           fill="none"
           stroke="#dce8e4"
           strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           markerEnd="url(#assess-arr)"
         />
       ))}
@@ -197,23 +213,6 @@ export function AssessmentCycleDiagram() {
           <BubbleLabel {...node} />
         </g>
       ))}
-
-      <line
-        x1="60"
-        y1="458"
-        x2="90"
-        y2="458"
-        stroke="#dce8e4"
-        strokeWidth="2"
-        markerEnd="url(#assess-arr)"
-      />
-      <text x="96" y="462" fontFamily="Montserrat, sans-serif" fontSize="9" fill="#5a6a72" fontWeight="600">
-        Assessment flow
-      </text>
-      <line x1="200" y1="458" x2="230" y2="458" stroke="#f6ab16" strokeWidth="1.5" strokeDasharray="4 3" />
-      <text x="236" y="462" fontFamily="Montserrat, sans-serif" fontSize="9" fill="#5a6a72" fontWeight="600">
-        Feeds into SPP
-      </text>
     </svg>
   );
 }

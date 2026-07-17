@@ -15,8 +15,8 @@ export function SupwSection() {
         className="pointer-events-none absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border-[40px] border-white/4"
       />
 
-      <div className="relative z-[1] grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <RevealOnScroll>
+      <div className="relative z-[1] flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+        <RevealOnScroll className="min-w-0 flex-1">
           <SectionLabel tone="gold">{supw.label}</SectionLabel>
           <h2 className="font-montserrat text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold text-white">
             {supw.title}
@@ -38,13 +38,13 @@ export function SupwSection() {
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={1}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-white/8">
+        <RevealOnScroll delay={1} className="min-w-0 flex-1">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-white/8">
             <ImageWithFallback
               image={supw.image}
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </RevealOnScroll>

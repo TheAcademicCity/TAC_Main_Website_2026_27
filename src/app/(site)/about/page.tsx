@@ -1,18 +1,38 @@
+import { aboutPageContent } from "@/data/about";
 import {
-  createPageMetadata,
-  PagePlaceholder,
-} from "@/components/layout/PagePlaceholder";
+  AboutAwardsSection,
+  AboutCampusBandSection,
+  AboutCtaSection,
+  AboutHeroSection,
+  AboutValuesSection,
+  DifferentSection,
+  LeadershipSection,
+  VisionMissionSection,
+  WhoWeAreSection,
+  WhyTacsSection,
+} from "@/components/sections/about";
+import { PageSubnav } from "@/components/sections/shared/PageSubnav";
+import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "About Us",
-  "Learn about The Academic City School — India's first career-oriented boarding school in Bengaluru.",
+  "About The Academic City School — India's first career-oriented boarding school in Bengaluru. Our vision, mission, leadership and what makes TACS different.",
 );
 
 export default function AboutPage() {
   return (
-    <PagePlaceholder
-      title="About Us"
-      description="This page is under construction. Content will be added in a future update."
-    />
+    <main id="top" tabIndex={-1} className="about-page outline-none has-page-subnav">
+      <AboutHeroSection />
+      <PageSubnav items={aboutPageContent.subnav} />
+      <WhoWeAreSection />
+      <VisionMissionSection />
+      <AboutValuesSection />
+      <AboutCampusBandSection />
+      <LeadershipSection />
+      <DifferentSection />
+      <WhyTacsSection />
+      <AboutAwardsSection />
+      <AboutCtaSection />
+    </main>
   );
 }

@@ -95,6 +95,10 @@ export type AcademicsPageContent = {
     description: string;
     cta: { label: string; href: string };
     cards: readonly StreamCard[];
+    partners: {
+      label: string;
+      logos: readonly { src: string; alt: string }[];
+    };
   };
   ctaBand: {
     label: string;

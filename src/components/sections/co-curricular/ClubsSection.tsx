@@ -15,7 +15,7 @@ export function ClubsSection() {
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
           {clubs.title}
         </h2>
-        <p className="mt-2 max-w-[52ch] text-[0.96rem] text-slate">{clubs.description}</p>
+        <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{clubs.description}</p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>

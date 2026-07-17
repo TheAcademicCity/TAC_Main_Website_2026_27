@@ -16,7 +16,9 @@ export function SportBandSection() {
               <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.2rem)] font-extrabold text-white">
                 {sportBand.title}
               </h3>
-              <p className="mt-1 max-w-[52ch] text-[0.88rem] text-white/58">{sportBand.description}</p>
+              <p className="mt-1 whitespace-nowrap text-[0.88rem] text-white/58">
+                {sportBand.description}
+              </p>
             </div>
             <Button href={sportBand.cta.href} variant="outline-white" className="px-7 py-3 text-[0.78rem]">
               {sportBand.cta.label}

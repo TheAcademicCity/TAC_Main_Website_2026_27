@@ -14,7 +14,7 @@ const remote = {
 
 export const coCurricularPageContent = {
   hero: {
-    title: "Beyond the Classroom at",
+    title: "Beyond the Classroom\nat",
     titleHighlight: "TACS",
     description:
       "Sport, clubs, events and community service — built into every day, all year round.",
@@ -24,10 +24,10 @@ export const coCurricularPageContent = {
       "Co-curricular at TACS",
     ),
     stats: [
-      { value: "4 Pillars", label: "Sports · Clubs · Events · SUPW" },
-      { value: "90 min", label: "Sport, daily" },
-      { value: "20+", label: "Activities available" },
-      { value: "Daily", label: "In the timetable" },
+      { value: "Learn by Doing", label: "Hands-on experiences every day" },
+      { value: "Lead with Purpose", label: "Opportunities to take initiative" },
+      { value: "Think Creatively", label: "Ideas beyond the classroom" },
+      { value: "Grow Together", label: "Friendships, teamwork & respect" },
     ],
   },
   subnav: [
@@ -67,7 +67,7 @@ export const coCurricularPageContent = {
       "Athletics",
       "Badminton",
       "Kho-Kho",
-      "Martial Arts",
+      "Pickleball",
     ],
     stats: [
       { value: "90 min", label: "Daily sport" },
@@ -75,7 +75,7 @@ export const coCurricularPageContent = {
       { value: "Expert", label: "Coach per sport" },
     ],
     image: createImage("/images/co-curricular/sports.png", remote.sports, "Sports at TACS"),
-    imageTag: "90 Min/Day · District to National",
+    imageTag: "",
   },
   facilities: {
     label: "Sports Facilities",
@@ -323,9 +323,9 @@ export const coCurricularPageContent = {
       },
       {
         icon: "shieldCheck",
-        title: "Martial Arts",
+        title: "Swimming",
         description:
-          "Physical discipline, self-defence and a fitness routine students carry with them for life.",
+          "A practical life skill that builds fitness, focus and essential water safety.",
       },
       {
         icon: "trophy",

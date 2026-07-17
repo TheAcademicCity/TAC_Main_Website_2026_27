@@ -3,12 +3,12 @@ export const siteConfig = {
   legalName: "The Academic City School",
   tagline: "Boarding School · Bengaluru",
   brand: {
-    /** White logo for dark header/footer backgrounds (PNG with transparency, 1024×295) */
+    /** White logo for dark header/footer backgrounds (PNG with transparency, 1024×302) */
     logo: {
       src: "/images/brand/logo-white.png",
       alt: "The Academic City School",
       width: 1024,
-      height: 295,
+      height: 302,
     },
     /** Full-colour logo for light backgrounds (PNG, 1024×295) */
     logoDark: {
@@ -21,7 +21,6 @@ export const siteConfig = {
   description:
     "India's first career-oriented boarding school — where academics, Indic values and future-readiness grow together.",
   admissionsBadge: "Admissions Open 2026–27",
-  brandPalette: ["#185850", "#2d945c", "#f6ab16", "#6816a4", "#6fdcef"],
   utilityBar: {
     phone: "08047092273",
     phoneDisplay: "080-47092273",

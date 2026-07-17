@@ -11,10 +11,10 @@ export const academicsPageContent = {
     title: "Academics at",
     titleHighlight: "TACS",
     description:
-      "CBSE Grades 5–12 · Concept-driven learning, personalised mentoring and structured preparation for every child's future.",
+      "NEP 2020 aligned curriculum, concept-driven learning, personalised mentoring and structured preparation for every child's future.",
     image: createImage("/images/academics/hero.png", remote.hero, "TACS Academics"),
     stats: [
-      { value: "CBSE", label: "New Delhi curriculum" },
+      { value: "CBSE", label: "NCERT curriculum" },
       { value: "1 : 10", label: "Student–teacher ratio" },
       { value: "Grades 5–12", label: "Residential boarding" },
       { value: "600+", label: "Career paths aligned" },
@@ -25,11 +25,11 @@ export const academicsPageContent = {
     { id: "curriculum", label: "Curriculum" },
     { id: "progression", label: "Grade Journey" },
     { id: "assessment", label: "Assessment" },
-    { id: "streams", label: "Grades 11 & 12" },
+    { id: "streams", label: "School Integrated Programme" },
   ],
   overview: {
     label: "Core Delivery Framework — Academics",
-    title: "Three pillars. Every lesson. Every day.",
+    title: "Three pillars. Every lesson.\nEvery day.",
     description:
       "A structured, concept-driven programme supported by personalised teaching and continuous assessment — so every child grows consistently.",
     pillars: [
@@ -76,7 +76,7 @@ export const academicsPageContent = {
   },
   curriculum: {
     image: createImage("/images/academics/classroom.png", remote.hero, "Classroom at TACS"),
-    imageTag: "CBSE · Grades 5–12 · Bengaluru",
+    imageTag: "",
     label: "Curriculum",
     title: "Built for understanding, not just marks",
     description:
@@ -132,7 +132,7 @@ export const academicsPageContent = {
   progressionBand: {
     title: "Every child gets a Student Progression Plan",
     description: "Tailored to their pace and goals — reviewed every term by their academic mentor.",
-    cta: { label: "Speak to Admissions", href: "/#enquiry" },
+    cta: { label: "Connect with us", href: "/#enquiry" },
   },
   gradeJourney: {
     label: "Grade Journey",
@@ -162,7 +162,7 @@ export const academicsPageContent = {
         grades: "9–10",
         phase: "Exploration",
         title: "Board preparation",
-        description: "Full CBSE board prep — mock exams, analysis sessions, individual tracking.",
+        description: "Full CBSE board prep —\nmock exams, analysis sessions,\nindividual tracking.",
         chips: ["Mock tests", "1:1 mentoring"],
         accent: "gold",
       },
@@ -192,9 +192,9 @@ export const academicsPageContent = {
       },
       {
         icon: "users",
-        title: "Parent–Teacher Connect",
+        title: "ERP-Based Parent Connect",
         description:
-          "Regular scheduled interactions, not just PTMs. Parents contacted proactively when concerns arise.",
+          "Consistent communication beyond PTMs, with concerns shared promptly through the ERP.",
       },
       {
         icon: "chart",
@@ -212,7 +212,7 @@ export const academicsPageContent = {
     ],
   },
   streams: {
-    label: "Grades 11 & 12",
+    label: "School Integrated Programme",
     title: "Focused preparation for the future",
     description:
       "Stream + board prep + competitive exam support — structured from Day 1 of Grade 11.",
@@ -251,6 +251,19 @@ export const academicsPageContent = {
         ],
       },
     ],
+    partners: {
+      label: "Academic Assistance partners",
+      logos: [
+        {
+          src: "/images/home/campus/partners/allen-white.png",
+          alt: "Allen Career Institute",
+        },
+        {
+          src: "/images/home/campus/partners/trisha-classes-white.png",
+          alt: "Trisha Classes",
+        },
+      ],
+    },
   },
   ctaBand: {
     label: siteConfig.admissionsBadge,

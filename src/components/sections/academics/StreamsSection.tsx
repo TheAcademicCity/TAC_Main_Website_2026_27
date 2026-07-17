@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { academicsPageContent } from "@/data/academics";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -9,7 +10,7 @@ export function StreamsSection() {
   const { streams } = academicsPageContent;
 
   return (
-    <Section id="streams" background="forest-deep" className="relative overflow-hidden">
+    <Section id="streams" background="forest-deep" className="relative overflow-hidden pb-10">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border-[40px] border-white/4"
@@ -21,7 +22,7 @@ export function StreamsSection() {
           <h2 className="mt-2 font-montserrat text-[clamp(1.7rem,3vw,2.3rem)] font-extrabold text-white">
             {streams.title}
           </h2>
-          <p className="mt-2 max-w-[46ch] text-[0.93rem] text-white/62">{streams.description}</p>
+          <p className="mt-2 whitespace-nowrap text-[0.93rem] text-white/62">{streams.description}</p>
         </RevealOnScroll>
 
         <RevealOnScroll delay={1}>
@@ -52,6 +53,26 @@ export function StreamsSection() {
           </RevealOnScroll>
         ))}
       </div>
+
+      <RevealOnScroll className="relative z-[1] mt-10">
+        <div className="border-t border-white/10 pt-7">
+          <p className="font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/55">
+            {streams.partners.label}
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
+            {streams.partners.logos.map((logo) => (
+              <Image
+                key={logo.src}
+                src={logo.src}
+                alt={logo.alt}
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain object-left opacity-90 transition-opacity duration-300 hover:opacity-100"
+              />
+            ))}
+          </div>
+        </div>
+      </RevealOnScroll>
     </Section>
   );
 }

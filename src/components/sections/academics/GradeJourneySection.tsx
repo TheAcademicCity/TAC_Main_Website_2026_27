@@ -48,7 +48,9 @@ function JourneyStep({ step }: { step: GradeJourneyStep }) {
         {step.title}
       </h4>
       <div className="mt-2 flex flex-1 flex-col">
-        <p className="flex-1 px-3 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
+        <p className="flex-1 whitespace-pre-line px-3 text-[0.82rem] leading-relaxed text-slate">
+          {step.description}
+        </p>
         <div className="mt-3 flex flex-wrap justify-center gap-1.5 px-2">
           {step.chips.map((chip) => (
             <span

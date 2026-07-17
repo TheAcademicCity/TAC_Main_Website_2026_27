@@ -64,7 +64,7 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
   return (
     <article className="group relative overflow-hidden border border-line bg-paper p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,61,56,0.2)]">
       <span className={cn("absolute inset-x-0 top-0 h-[3px]", styles.bar)} />
-      <span className="absolute right-5 top-4 font-montserrat text-[2.6rem] font-black leading-none text-forest/7">
+      <span className="absolute right-5 top-4 font-montserrat text-[2.08rem] font-black leading-none text-forest/7">
         {pillar.number}
       </span>
       <div className="mb-4 flex items-center gap-3">
@@ -93,7 +93,7 @@ export function CdfOverviewSection() {
       <RevealOnScroll>
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel centered>{overview.label}</SectionLabel>
-          <SectionTitle className="mt-1 text-center">{overview.title}</SectionTitle>
+          <SectionTitle className="mt-1 whitespace-pre-line text-center">{overview.title}</SectionTitle>
           <p className="mx-auto mt-3 max-w-[56ch] text-slate">{overview.description}</p>
         </div>
       </RevealOnScroll>

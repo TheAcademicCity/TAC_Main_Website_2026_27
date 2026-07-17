@@ -57,13 +57,8 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="flex flex-wrap items-center justify-between gap-3 border-t border-white/8 py-5">
+      <Container className="border-t border-white/8 py-5">
         <span>© {year} {siteConfig.legalName}. All rights reserved.</span>
-        <div className="flex gap-1">
-          {siteConfig.brandPalette.map((color) => (
-            <i key={color} className="h-[11px] w-[11px] rounded-full" style={{ background: color }} />
-          ))}
-        </div>
       </Container>
     </footer>
   );

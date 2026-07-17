@@ -39,7 +39,7 @@ export function AssessmentSection() {
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <SectionLabel centered>{assessment.label}</SectionLabel>
           <SectionTitle className="mt-1 text-center">{assessment.title}</SectionTitle>
-          <p className="mx-auto mt-3 max-w-[52ch] text-slate">{assessment.description}</p>
+          <p className="mx-auto mt-3 whitespace-nowrap text-slate">{assessment.description}</p>
         </div>
       </RevealOnScroll>
 

@@ -1,11 +1,11 @@
-import { academicsPageContent } from "@/data/academics";
+import { aboutPageContent } from "@/data/about";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { Container } from "@/components/ui/Container";
 
-export function ProgressionBandSection() {
-  const { progressionBand } = academicsPageContent;
+export function AboutCampusBandSection() {
+  const { campusBand } = aboutPageContent;
 
   return (
     <div className="bg-forest-deep py-8">
@@ -14,14 +14,16 @@ export function ProgressionBandSection() {
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div>
               <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.3rem)] font-extrabold text-white">
-                {progressionBand.title}
+                {campusBand.title}
               </h3>
-              <p className="mt-1 whitespace-nowrap text-[0.9rem] text-white/60">
-                {progressionBand.description}
-              </p>
+              <p className="mt-1 max-w-[54ch] text-[0.9rem] text-white/60">{campusBand.description}</p>
             </div>
-            <Button href={progressionBand.cta.href} className="px-7 py-3 text-[0.78rem]">
-              {progressionBand.cta.label}
+            <Button
+              href={campusBand.cta.href}
+              variant="outline-white"
+              className="px-7 py-3 text-[0.78rem]"
+            >
+              {campusBand.cta.label}
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </Button>
           </div>
