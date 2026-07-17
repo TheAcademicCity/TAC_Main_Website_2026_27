@@ -8,7 +8,7 @@ export function SportBandSection() {
   const { sportBand } = coCurricularPageContent;
 
   return (
-    <div className="bg-forest-deep py-7">
+    <div className="bg-forest-deep py-5">
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-center justify-between gap-6">

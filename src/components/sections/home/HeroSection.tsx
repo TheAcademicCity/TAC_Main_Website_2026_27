@@ -6,7 +6,7 @@ import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallbac
 import { Container } from "@/components/ui/Container";
 
 export function HeroSection() {
-  const { video, eyebrow, title, titleHighlight, titleSuffix, subtitle } = heroContent;
+  const { video, title, titleHighlight, titleSuffix, subtitle } = heroContent;
   const [videoSrc, setVideoSrc] = useState(video.src);
   const [showPoster, setShowPoster] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -42,7 +42,7 @@ export function HeroSection() {
             loop
             playsInline
             poster={video.poster.fallbackSrc}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover brightness-[1.18] contrast-[0.92]"
             data-placeholder={video.isPlaceholder ? "true" : undefined}
             onError={handleVideoError}
           >
@@ -54,18 +54,15 @@ export function HeroSection() {
             fill
             priority
             sizes="100vw"
-            className="absolute inset-0"
+            className="absolute inset-0 brightness-[1.18] contrast-[0.92]"
           />
         )}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.9)] via-[rgba(5,22,18,0.5)] to-[rgba(5,22,18,0.2)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.82)] via-[rgba(5,22,18,0.38)] to-[rgba(5,22,18,0.12)]" />
 
-      <div className="relative z-[2] mt-auto pb-[clamp(3.5rem,8vh,6rem)] text-center text-white">
+      <div className="relative z-[2] mt-auto pb-[clamp(5.5rem,12vh,8rem)] text-center text-white">
         <Container>
-          <p className="mb-4 inline-flex items-center gap-2 text-[0.76rem] font-bold uppercase tracking-[0.24em] text-gold">
-            {eyebrow}
-          </p>
           <h1 className="mx-auto max-w-[16ch] font-montserrat text-[clamp(2.6rem,6.5vw,4.8rem)] font-black leading-[1.04] text-white [text-shadow:0_2px_40px_rgba(0,0,0,0.4)]">
             {title} <em className="not-italic text-gold">{titleHighlight}</em> {titleSuffix}
           </h1>
@@ -73,9 +70,8 @@ export function HeroSection() {
         </Container>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 z-[2] flex -translate-x-1/2 flex-col items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-white/40">
-        <div className="hero-scroll-line h-9 w-px bg-gradient-to-b from-white/50 to-transparent" />
-        <span>Scroll</span>
+      <div className="pointer-events-none absolute bottom-5 left-1/2 z-[2] -translate-x-1/2 text-[0.68rem] uppercase tracking-[0.14em] text-white/40">
+        <span className="hero-scroll-label">Scroll</span>
       </div>
     </section>
   );

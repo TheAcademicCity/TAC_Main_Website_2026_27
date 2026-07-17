@@ -107,7 +107,7 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="enquiry-modal-panel relative z-[1] max-h-[min(88vh,820px)] w-full max-w-xl overflow-y-auto border border-line/80 bg-paper/98 shadow-[0_24px_64px_-28px_rgba(15,61,56,0.38)]"
+            className="enquiry-modal-panel relative z-[1] max-h-[min(88vh,820px)] w-full max-w-xl overflow-y-auto overflow-x-hidden rounded-2xl border border-line/80 bg-paper/98 shadow-[0_24px_64px_-28px_rgba(15,61,56,0.38)]"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="sticky top-0 z-[1] flex items-start justify-between gap-3 border-b border-line/80 bg-paper/98 px-4 py-3.5 sm:px-5">
@@ -126,7 +126,7 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
               <button
                 type="button"
                 onClick={closeEnquiryModal}
-                className="grid h-8 w-8 shrink-0 place-items-center border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald"
+                className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald"
                 aria-label="Close enquiry form"
               >
                 <span aria-hidden className="text-[1.25rem] leading-none">
@@ -142,7 +142,7 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
                 intent={intent}
                 formId="enquiry-form-modal"
                 compact
-                className="border-line/80 bg-white shadow-none"
+                className="border-line/80 bg-white shadow-none !rounded-xl"
               />
             </div>
           </div>

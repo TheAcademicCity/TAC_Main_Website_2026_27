@@ -9,7 +9,7 @@ export function PhilosophySection() {
   const { philosophy } = coCurricularPageContent;
 
   return (
-    <Section id="overview">
+    <Section id="overview" spacing="compact">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
         <RevealOnScroll>
           <div className="overflow-hidden rounded-sm">

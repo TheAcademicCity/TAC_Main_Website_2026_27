@@ -7,7 +7,7 @@ export function EventsSection() {
   const { events } = coCurricularPageContent;
 
   return (
-    <Section id="events" background="paper">
+    <Section id="events" background="paper" spacing="compact">
       <RevealOnScroll>
         <SectionLabel>{events.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">

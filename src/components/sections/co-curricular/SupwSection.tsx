@@ -9,7 +9,7 @@ export function SupwSection() {
   const { supw } = coCurricularPageContent;
 
   return (
-    <Section id="supw" background="forest-deep" className="relative overflow-hidden">
+    <Section id="supw" background="forest-deep" spacing="compact" className="relative overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border-[40px] border-white/4"

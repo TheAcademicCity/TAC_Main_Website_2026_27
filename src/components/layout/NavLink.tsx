@@ -26,7 +26,7 @@ export function NavLink({ href, children, className, variant = "default", onClic
       underlineClasses,
     ],
     variant === "cta" && [
-      "ml-2 bg-gold px-6 py-2.5 text-[0.8rem] font-extrabold tracking-wider text-forest-deep",
+      "ml-2 rounded-lg bg-gold px-6 py-2.5 text-[0.8rem] font-extrabold tracking-wider text-forest-deep",
       "hover:-translate-y-0.5 hover:bg-[#e09d10] hover:text-forest-deep",
     ],
     className,
@@ -64,7 +64,7 @@ export function mobileNavLinkClasses(variant: "default" | "cta" = "default", cla
     "block border-b border-white/10 py-4 font-montserrat text-xl font-semibold uppercase tracking-wide transition-all duration-200",
     variant === "default" && "text-white hover:border-gold/40 hover:pl-2 hover:text-gold",
     variant === "cta" &&
-      "mt-6 inline-block border-0 bg-gold px-8 py-3 text-sm font-extrabold text-forest-deep hover:-translate-y-0.5 hover:bg-[#e09d10]",
+      "mt-6 inline-block rounded-lg border-0 bg-gold px-8 py-3 text-sm font-extrabold text-forest-deep hover:-translate-y-0.5 hover:bg-[#e09d10]",
     className,
   );
 }

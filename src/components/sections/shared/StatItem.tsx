@@ -5,34 +5,41 @@ type StatItemProps = {
   item: StatItemType;
   variant?: "bar" | "card";
   className?: string;
+  /** Span a grid cell edge-to-edge without overflowing (campus SPP chip). */
+  fill?: boolean;
 };
 
-export function StatItem({ item, variant = "bar", className }: StatItemProps) {
+export function StatItem({ item, variant = "bar", className, fill }: StatItemProps) {
   if (variant === "card") {
     const featured = Boolean(item.featured);
 
     return (
       <div
         className={cn(
-          "flex w-fit max-w-full flex-col justify-center border border-white/14 bg-white/8 backdrop-blur-sm",
+          "flex flex-col justify-center border border-white/14 bg-white/8 backdrop-blur-sm",
+          fill ? "h-full w-full min-w-0 max-w-full items-center text-center" : "w-fit max-w-full",
           featured ? "px-3.5 py-1.5" : "px-3 py-1",
           className,
         )}
       >
         <div
           className={cn(
-            "font-montserrat font-extrabold leading-none whitespace-nowrap text-white",
+            "font-montserrat font-extrabold text-white",
             featured
-              ? "text-[clamp(0.78rem,1.1vw,0.92rem)]"
-              : "text-[clamp(0.68rem,0.95vw,0.8rem)]",
+              ? fill
+                ? "text-[clamp(0.62rem,0.85vw,0.82rem)] leading-tight"
+                : "text-[clamp(0.78rem,1.1vw,0.92rem)] leading-none"
+              : "text-[clamp(0.68rem,0.95vw,0.8rem)] leading-none",
+            fill ? "max-w-full whitespace-normal" : "whitespace-nowrap",
           )}
         >
           {item.value}
         </div>
         <div
           className={cn(
-            "mt-0.5 leading-none whitespace-nowrap text-white/55",
+            "mt-0.5 text-white/55",
             featured ? "text-[0.62rem]" : "text-[0.6rem]",
+            fill ? "max-w-full whitespace-normal leading-tight" : "leading-none whitespace-nowrap",
           )}
         >
           {item.label}

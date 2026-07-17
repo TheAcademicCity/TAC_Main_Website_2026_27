@@ -22,7 +22,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center gap-2 font-montserrat text-[0.82rem] font-extrabold uppercase tracking-[0.08em] transition-all";
+  "inline-flex items-center gap-2 rounded-lg font-montserrat text-[0.82rem] font-extrabold uppercase tracking-[0.08em] transition-all";
 
 function isExternalHref(href: string) {
   return href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");

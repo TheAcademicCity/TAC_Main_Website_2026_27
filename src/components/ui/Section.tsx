@@ -8,6 +8,7 @@ type SectionProps = {
   className?: string;
   containerClassName?: string;
   background?: "white" | "paper" | "forest" | "forest-deep" | "ink";
+  spacing?: "default" | "compact";
 };
 
 const backgroundClasses = {
@@ -18,17 +19,23 @@ const backgroundClasses = {
   ink: "bg-ink text-white",
 } as const;
 
+const spacingClasses = {
+  default: "py-[clamp(60px,8vw,110px)]",
+  compact: "py-[clamp(32px,4.5vw,56px)]",
+} as const;
+
 export function Section({
   id,
   children,
   className,
   containerClassName,
   background = "white",
+  spacing = "default",
 }: SectionProps) {
   return (
     <section
       id={id}
-      className={cn("py-[clamp(60px,8vw,110px)]", backgroundClasses[background], className)}
+      className={cn(spacingClasses[spacing], backgroundClasses[background], className)}
     >
       <Container className={containerClassName}>{children}</Container>
     </section>

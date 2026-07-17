@@ -8,7 +8,7 @@ export function LifeReadinessSection() {
   const { lifeReadiness } = coCurricularPageContent;
 
   return (
-    <Section id="life-ready">
+    <Section id="life-ready" spacing="compact">
       <RevealOnScroll className="text-center">
         <SectionLabel centered>{lifeReadiness.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">

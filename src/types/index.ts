@@ -29,13 +29,15 @@ export type FeatureRow = {
 };
 
 export type AwardItem = {
-  name: string;
-  year: string;
+  image: import("@/types/images").SiteImage;
 };
 
 export type CampusPartnerLogo = {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
 };
 
 export type CampusSlide = {
@@ -51,6 +53,10 @@ export type CampusSlide = {
     logos: CampusPartnerLogo[];
   };
   cta: { label: string; href: string };
+  campusVideo?: {
+    label: string;
+    youtubeId: string;
+  };
 };
 
 export type FounderProfile = {

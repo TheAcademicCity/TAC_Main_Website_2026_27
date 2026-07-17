@@ -28,7 +28,7 @@ const initialState: FormState = {
 };
 
 const fieldClassName =
-  "w-full border border-line bg-white px-4 py-3 text-[0.95rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15";
+  "w-full rounded-lg border border-line bg-white px-4 py-3 text-[0.95rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15";
 
 const labelClassName =
   "mb-1.5 block font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.12em] text-forest";
@@ -51,7 +51,7 @@ export function EnquiryForm({
     intent === "brochure" || (!intent && searchParams.get("intent") === "brochure");
 
   const inputClassName = compact
-    ? "w-full border border-line bg-white px-3.5 py-2.5 text-[0.9rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15"
+    ? "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[0.9rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15"
     : fieldClassName;
 
   const fieldLabelClassName = compact
@@ -118,7 +118,7 @@ export function EnquiryForm({
       id={formId}
       onSubmit={handleSubmit}
       className={cn(
-        "border border-line bg-white shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)]",
+        "rounded-xl border border-line bg-white shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)]",
         formPaddingClassName,
         isBrochureIntent && "ring-2 ring-gold/35",
         className,
@@ -128,7 +128,7 @@ export function EnquiryForm({
       {isBrochureIntent ? (
         <p
           className={cn(
-            "border-l-4 border-gold bg-paper px-4 py-3 text-[0.92rem] leading-relaxed text-slate",
+            "rounded-lg border-l-4 border-gold bg-paper px-4 py-3 text-[0.92rem] leading-relaxed text-slate",
             compact ? "mb-4" : "mb-6",
           )}
         >

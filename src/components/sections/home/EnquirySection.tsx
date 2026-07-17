@@ -8,18 +8,18 @@ import { Section } from "@/components/ui/Section";
 
 function EnquiryFormFallback() {
   return (
-    <div className="border border-line bg-white p-4 shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)] sm:p-5">
-      <div className="h-5 w-40 animate-pulse bg-line" />
+    <div className="rounded-xl border border-line bg-white p-4 shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)] sm:p-5">
+      <div className="h-5 w-40 animate-pulse rounded bg-line" />
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <div className="h-10 animate-pulse bg-line" />
-        <div className="h-10 animate-pulse bg-line" />
+        <div className="h-10 animate-pulse rounded-lg bg-line" />
+        <div className="h-10 animate-pulse rounded-lg bg-line" />
       </div>
-      <div className="mt-4 h-10 animate-pulse bg-line" />
+      <div className="mt-4 h-10 animate-pulse rounded-lg bg-line" />
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <div className="h-10 animate-pulse bg-line" />
-        <div className="h-10 animate-pulse bg-line" />
+        <div className="h-10 animate-pulse rounded-lg bg-line" />
+        <div className="h-10 animate-pulse rounded-lg bg-line" />
       </div>
-      <div className="mt-4 h-10 animate-pulse bg-line" />
+      <div className="mt-4 h-10 animate-pulse rounded-lg bg-line" />
     </div>
   );
 }

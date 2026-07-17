@@ -51,7 +51,6 @@ export const heroContent = {
     poster: createImage("/images/home/hero/poster.png", remote.heroPoster, "TACS Bengaluru campus"),
     isPlaceholder: true,
   } satisfies SiteVideo,
-  eyebrow: "⭐ Best Boarding School 2024 · Oxford, UK",
   title: "India's First",
   titleHighlight: "Career-Oriented",
   titleSuffix: "Boarding School",
@@ -125,7 +124,9 @@ export const pillarsContent = {
 } as const;
 
 export const brochureContent = {
-  title: "Discover Everything TACS Has to Offer",
+  titleLine1: "Discover Everything",
+  titleHighlight: "TACS",
+  titleLine2: "Has to Offer",
   description:
     "Download our school brochure for a complete guide to academics, campus life and co-curriculars.",
   cta: { label: "Download Brochure", href: "/?intent=brochure#enquiry" },
@@ -260,13 +261,42 @@ export const galleryContent = {
 export const awardsContent = {
   label: "Awards & Recognitions",
   title: "Recognised for excellence, nationally & globally",
-  watermark: "Recognition",
   items: [
-    { name: "Education Leaders Awards", year: "2024" },
-    { name: "Brainfeed Top 500 Schools of India", year: "2022–23" },
-    { name: "India School Merit Awards", year: "National Recognition" },
-    { name: "21CL ISLE Awards Bengaluru", year: "2022" },
-    { name: "Best Boarding School · Oxford University UK", year: "2024" },
+    {
+      image: createImage(
+        "/images/home/awards/award-1.png",
+        "/images/home/awards/award-1.png",
+        "Education Leaders Awards",
+      ),
+    },
+    {
+      image: createImage(
+        "/images/home/awards/award-2.png",
+        "/images/home/awards/award-2.png",
+        "Brainfeed Top 500 Schools of India",
+      ),
+    },
+    {
+      image: createImage(
+        "/images/home/awards/award-3.png",
+        "/images/home/awards/award-3.png",
+        "India School Merit Awards",
+      ),
+    },
+    {
+      image: createImage(
+        "/images/home/awards/award-4.png",
+        "/images/home/awards/award-4.png",
+        "21CL ISLE Awards Bengaluru",
+      ),
+    },
+    {
+      image: createImage(
+        "/images/home/awards/award-5.png",
+        "/images/home/awards/award-5.png",
+        "Best Boarding School · Oxford University UK",
+      ),
+    },
   ] satisfies AwardItem[],
 } as const;
 
@@ -304,14 +334,22 @@ export const campusContent = {
           {
             src: "/images/home/campus/partners/allen-white.png",
             alt: "Allen Career Institute",
+            width: 305,
+            height: 83,
           },
           {
             src: "/images/home/campus/partners/trisha-classes-white.png",
             alt: "Trisha Classes",
+            width: 904,
+            height: 231,
           },
         ],
       },
       cta: { label: "Book a Campus Visit", href: "/#contact" },
+      campusVideo: {
+        label: "View our campus",
+        youtubeId: "nh75X9a2e2g",
+      },
     },
     {
       id: "indore",
@@ -338,6 +376,9 @@ export const campusContent = {
           {
             src: "/images/home/campus/partners/nahata.png",
             alt: "Nahata Professional Academy",
+            width: 1009,
+            height: 365,
+            className: "h-12",
           },
         ],
       },

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { PillarItem } from "@/types";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { Icon } from "@/components/ui/Icon";
-import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { cn } from "@/lib/utils";
 
 const accentClasses = {
@@ -12,17 +11,57 @@ const accentClasses = {
   violet: "text-violet",
 } as const;
 
+const dividerClasses = {
+  emerald: "group-hover:via-emerald/50",
+  gold: "group-hover:via-gold/55",
+  forest: "group-hover:via-forest/50",
+  violet: "group-hover:via-violet/50",
+} as const;
+
 const easeBrand = "ease-[cubic-bezier(0.22,0.61,0.36,1)]";
 
 type PillarCardProps = {
   pillar: PillarItem;
-  delay?: 0 | 1 | 2 | 3 | 4;
+  showDivider?: boolean;
+  showLeftDivider?: boolean;
+  dividerClassName?: string;
 };
 
-export function PillarCard({ pillar, delay = 0 }: PillarCardProps) {
+export function PillarCard({
+  pillar,
+  showDivider = false,
+  showLeftDivider = false,
+  dividerClassName,
+}: PillarCardProps) {
   return (
-    <RevealOnScroll delay={delay}>
-      <article className="group relative flex h-full flex-col overflow-hidden border-r border-line bg-white last:border-r-0">
+    <article className="group relative flex h-full flex-col overflow-hidden bg-white">
+        {showDivider ? (
+          <div
+            aria-hidden
+            className={cn(
+              "pointer-events-none absolute right-0 top-[8%] z-10 hidden h-[84%] w-px sm:block",
+              "bg-gradient-to-b from-transparent via-line/30 to-transparent",
+              "opacity-60 transition-all duration-500",
+              easeBrand,
+              "group-hover:opacity-100",
+              dividerClasses[pillar.accent],
+              dividerClassName,
+            )}
+          />
+        ) : null}
+        {showLeftDivider ? (
+          <div
+            aria-hidden
+            className={cn(
+              "pointer-events-none absolute left-0 top-[8%] z-10 hidden h-[84%] w-px sm:block",
+              "bg-gradient-to-b from-transparent via-line/0 to-transparent",
+              "opacity-0 transition-all duration-500",
+              easeBrand,
+              "group-hover:via-line/30 group-hover:opacity-100",
+              dividerClasses[pillar.accent],
+            )}
+          />
+        ) : null}
         {/* Number — extra bottom padding separates it from the image */}
         <div
           className={cn(
@@ -36,21 +75,24 @@ export function PillarCard({ pillar, delay = 0 }: PillarCardProps) {
           {pillar.number}
         </div>
 
-        <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-forest-deep to-forest" />
-          <ImageWithFallback
-            image={pillar.image}
-            fill
-            sizes="(max-width: 768px) 50vw, 25vw"
-            className={cn(
-              "opacity-95 transition-all duration-300",
-              easeBrand,
-              "group-hover:scale-[1.04] group-hover:opacity-100",
-            )}
-          />
+        <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-neutral-900">
           <div
             className={cn(
-              "absolute inset-0 z-[1] bg-gradient-to-t from-[rgba(10,44,40,0.78)] to-transparent",
+              "absolute inset-0 origin-center transition-transform duration-500 will-change-transform",
+              easeBrand,
+              "scale-[1.03] group-hover:scale-[1.08]",
+            )}
+          >
+            <ImageWithFallback
+              image={pillar.image}
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover object-center"
+            />
+          </div>
+          <div
+            className={cn(
+              "pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[rgba(10,44,40,0.45)] to-transparent",
               "opacity-0 transition-opacity duration-300",
               easeBrand,
               "group-hover:opacity-100",
@@ -115,6 +157,5 @@ export function PillarCard({ pillar, delay = 0 }: PillarCardProps) {
           </div>
         </div>
       </article>
-    </RevealOnScroll>
   );
 }

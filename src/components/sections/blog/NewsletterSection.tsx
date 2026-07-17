@@ -56,7 +56,7 @@ export function NewsletterSection() {
             <div className="font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white/55">
               {newsletter.subscribeLabel}
             </div>
-            <div className="mt-2 flex">
+            <div className="mt-2 flex overflow-hidden rounded-lg">
               <input
                 type="email"
                 value={email}
@@ -70,7 +70,7 @@ export function NewsletterSection() {
                 onClick={handleSubscribe}
                 disabled={subscribed}
                 className={cn(
-                  "whitespace-nowrap px-5 py-3 font-montserrat text-[0.75rem] font-extrabold uppercase tracking-[0.08em] transition-colors",
+                  "whitespace-nowrap rounded-none px-5 py-3 font-montserrat text-[0.75rem] font-extrabold uppercase tracking-[0.08em] transition-colors",
                   subscribed ? "bg-emerald text-white" : "bg-gold text-forest-deep hover:bg-[#e09d10]",
                 )}
               >

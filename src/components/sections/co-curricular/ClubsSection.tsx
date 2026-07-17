@@ -9,7 +9,7 @@ export function ClubsSection() {
   const { clubs } = coCurricularPageContent;
 
   return (
-    <Section id="clubs">
+    <Section id="clubs" spacing="compact">
       <RevealOnScroll>
         <SectionLabel>{clubs.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">

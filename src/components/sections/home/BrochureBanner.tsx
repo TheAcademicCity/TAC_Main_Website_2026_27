@@ -13,8 +13,9 @@ export function BrochureBanner() {
 
       <RevealOnScroll className="w-full">
         <div className="relative z-[2] mx-auto w-full max-w-[900px] px-4 py-16 text-center">
-          <h2 className="mb-3 font-montserrat text-[clamp(1.8rem,3.5vw,2.8rem)] font-black text-white">
-            {brochureContent.title}
+          <h2 className="mb-3 whitespace-nowrap font-montserrat text-[clamp(1.8rem,3.5vw,2.8rem)] font-black text-white">
+            {brochureContent.titleLine1}{" "}
+            <span className="text-gold">{brochureContent.titleHighlight}</span> {brochureContent.titleLine2}
           </h2>
           <p className="mb-8 text-[1.02rem] text-white/72">{brochureContent.description}</p>
           <Button

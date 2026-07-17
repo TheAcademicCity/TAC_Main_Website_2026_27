@@ -10,7 +10,7 @@ export function FacilitiesSection() {
   const { facilities } = coCurricularPageContent;
 
   return (
-    <Section id="facilities" background="paper" className="pt-0">
+    <Section id="facilities" background="paper" spacing="compact" className="pt-0">
       <RevealOnScroll>
         <SectionLabel>{facilities.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">

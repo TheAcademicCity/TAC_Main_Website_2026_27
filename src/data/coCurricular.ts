@@ -331,7 +331,7 @@ export const coCurricularPageContent = {
         icon: "trophy",
         title: "Leadership Roles",
         description:
-          "House captaincies, student council and the prefect system — real responsibility from Grade 8.",
+          "House captaincies, student council and the perfect system — real responsibility from Grade 8.",
       },
     ],
   },

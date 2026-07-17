@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 import { campusContent } from "@/data/home";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { StatItem } from "@/components/sections/shared/StatItem";
+import { YouTubeVideoModal } from "@/components/sections/shared/YouTubeVideoModal";
 import { TabGroup } from "@/components/sections/shared/TabGroup";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { Button } from "@/components/ui/Button";
@@ -17,6 +19,7 @@ const AUTO_ROTATE_MS = 5000;
 
 export function CampusSliderSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeVideo, setActiveVideo] = useState<{ youtubeId: string; title: string } | null>(null);
   const slides = campusContent.slides;
 
   const goToSlide = useCallback((index: number) => {
@@ -24,12 +27,16 @@ export function CampusSliderSection() {
   }, [slides.length]);
 
   useEffect(() => {
+    if (activeVideo) {
+      return;
+    }
+
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, AUTO_ROTATE_MS);
 
     return () => window.clearInterval(timer);
-  }, [slides.length]);
+  }, [activeVideo, slides.length]);
 
   return (
     <section id="campus" className="bg-paper py-[clamp(50px,7vw,90px)]">
@@ -92,28 +99,21 @@ export function CampusSliderSection() {
                         const [mealsFact, hostelsFact, curriculumFact] = otherFacts.slice(1);
 
                         return (
-                          <div className="grid w-max grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2">
-                            <div className="col-span-2 w-max">
-                              {featuredFacts.map((fact) => (
-                                <StatItem key={fact.label} item={fact} variant="card" />
-                              ))}
-                            </div>
-                            {topCompanion ? (
-                              <StatItem
-                                key={topCompanion.label}
-                                item={{ ...topCompanion, featured: true }}
-                                variant="card"
-                              />
-                            ) : null}
+                          <div className="grid w-max grid-cols-[auto_auto_auto] grid-rows-[1fr_1fr] items-stretch gap-2">
                             {mealsFact ? (
-                              <StatItem key={mealsFact.label} item={mealsFact} variant="card" />
+                              <StatItem
+                                key={mealsFact.label}
+                                item={mealsFact}
+                                variant="card"
+                                className="col-start-1 row-start-2 h-full"
+                              />
                             ) : null}
                             {hostelsFact ? (
                               <StatItem
                                 key={hostelsFact.label}
                                 item={hostelsFact}
                                 variant="card"
-                                className="w-full"
+                                className="col-start-2 row-start-2 h-full"
                               />
                             ) : null}
                             {curriculumFact ? (
@@ -121,6 +121,20 @@ export function CampusSliderSection() {
                                 key={curriculumFact.label}
                                 item={curriculumFact}
                                 variant="card"
+                                className="col-start-3 row-start-2 h-full"
+                              />
+                            ) : null}
+                            <div className="col-span-2 col-start-1 row-start-1 h-full min-w-0">
+                              {featuredFacts.map((fact) => (
+                                <StatItem key={fact.label} item={fact} variant="card" fill />
+                              ))}
+                            </div>
+                            {topCompanion ? (
+                              <StatItem
+                                key={topCompanion.label}
+                                item={{ ...topCompanion, featured: true }}
+                                variant="card"
+                                className="col-start-3 row-start-1 h-full"
                               />
                             ) : null}
                           </div>
@@ -143,22 +157,44 @@ export function CampusSliderSection() {
                           key={logo.src}
                           src={logo.src}
                           alt={logo.alt}
-                          width={140}
-                          height={40}
-                          className="h-7 w-auto object-contain object-left"
+                          width={logo.width ?? 140}
+                          height={logo.height ?? 40}
+                          className={cn(
+                            "h-7 w-auto object-contain object-left",
+                            "className" in logo ? logo.className : undefined,
+                          )}
                         />
                       ))}
                     </div>
                   </div>
 
-                  <Button
-                    href={slide.cta.href}
-                    external={slide.cta.href.startsWith("mailto:")}
-                    className="self-start text-[0.82rem]"
-                  >
-                    {slide.cta.label}
-                    <Icon name="arrow" className="h-3.5 w-3.5" />
-                  </Button>
+                  <div className="flex flex-wrap items-center gap-3 self-start">
+                    <Button
+                      href={slide.cta.href}
+                      external={slide.cta.href.startsWith("mailto:")}
+                      className="text-[0.82rem]"
+                    >
+                      {slide.cta.label}
+                      <Icon name="arrow" className="h-3.5 w-3.5" />
+                    </Button>
+                    {slide.campusVideo ? (
+                      <Button
+                        type="button"
+                        variant="outline-white"
+                        className="text-[0.82rem]"
+                        onClick={() => {
+                          flushSync(() => {
+                            setActiveVideo({
+                              youtubeId: slide.campusVideo!.youtubeId,
+                              title: slide.campusVideo!.label,
+                            });
+                          });
+                        }}
+                      >
+                        {slide.campusVideo.label}
+                      </Button>
+                    ) : null}
+                  </div>
                 </div>
               </Container>
             </div>
@@ -169,13 +205,27 @@ export function CampusSliderSection() {
               <TabGroup
                 tabs={slides.map((slide, index) => ({ id: String(index), label: slide.name }))}
                 activeId={String(activeIndex)}
-                onChange={(id) => goToSlide(Number(id))}
+                onChange={(id) => {
+                  if (activeVideo) {
+                    return;
+                  }
+
+                  goToSlide(Number(id));
+                }}
                 variant="panel"
               />
             </Container>
           </div>
         </div>
       </RevealOnScroll>
+
+      {activeVideo ? (
+        <YouTubeVideoModal
+          videoId={activeVideo.youtubeId}
+          title={activeVideo.title}
+          onClose={() => setActiveVideo(null)}
+        />
+      ) : null}
     </section>
   );
 }
