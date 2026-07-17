@@ -1,7 +1,19 @@
+import { boardingPageContent } from "@/data/boarding";
 import {
-  createPageMetadata,
-  PagePlaceholder,
-} from "@/components/layout/PagePlaceholder";
+  BoardingBandSection,
+  BoardingCtaSection,
+  BoardingHeroSection,
+  CareSection,
+  CommunicationSection,
+  DisciplineSection,
+  DormSection,
+  GallerySection,
+  OutpassSection,
+  ScheduleSection,
+  ValuesSection,
+} from "@/components/sections/boarding";
+import { PageSubnav } from "@/components/sections/shared/PageSubnav";
+import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Boarding",
@@ -10,9 +22,19 @@ export const metadata = createPageMetadata(
 
 export default function BoardingPage() {
   return (
-    <PagePlaceholder
-      title="Boarding"
-      description="Learn about our residential boarding experience, hostels, pastoral care, and campus life."
-    />
+    <main id="top" tabIndex={-1} className="boarding-page outline-none has-page-subnav">
+      <BoardingHeroSection />
+      <PageSubnav items={boardingPageContent.subnav} />
+      <ValuesSection />
+      <BoardingBandSection />
+      <DormSection />
+      <ScheduleSection />
+      <CommunicationSection />
+      <OutpassSection />
+      <DisciplineSection />
+      <CareSection />
+      <GallerySection />
+      <BoardingCtaSection />
+    </main>
   );
 }

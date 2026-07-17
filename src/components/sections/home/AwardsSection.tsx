@@ -7,22 +7,25 @@ import { Container } from "@/components/ui/Container";
 export function AwardsSection() {
   return (
     <section id="awards" className="relative overflow-hidden bg-forest-deep py-[clamp(50px,7vw,90px)]">
-      <WatermarkText lines={[awardsContent.watermark]} />
-
-      <Container>
+      <Container className="relative z-10">
         <SectionHeader
           label={awardsContent.label}
           title={awardsContent.title}
           centered
           labelTone="gold"
-          className="relative z-[1] mb-12"
+          titleLight
+          className="mb-12"
         />
       </Container>
 
-      <div className="relative z-[1] grid grid-cols-2 gap-px bg-white/8 lg:grid-cols-5">
-        {awardsContent.items.map((award, index) => (
-          <AwardTile key={award.name} award={award} index={index} />
-        ))}
+      <div className="relative min-h-[280px]">
+        <WatermarkText lines={[awardsContent.watermark]} variant="recognition" />
+
+        <div className="relative z-10 grid grid-cols-2 gap-px bg-white/8 lg:grid-cols-5">
+          {awardsContent.items.map((award, index) => (
+            <AwardTile key={award.name} award={award} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );

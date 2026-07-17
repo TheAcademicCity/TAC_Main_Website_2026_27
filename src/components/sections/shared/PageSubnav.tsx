@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { PageSubnavItem } from "@/types/academics";
+import type { PageSubnavItem } from "@/types/page";
 import { cn } from "@/lib/utils";
 
 type PageSubnavProps = {

@@ -3,18 +3,22 @@
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { SiteLink } from "@/components/layout/SiteLink";
+import { InstagramLogo } from "@/components/ui/InstagramLogo";
 import { Icon } from "@/components/ui/Icon";
 import { getGmailComposeUrl } from "@/lib/email";
 import { cn } from "@/lib/utils";
 
 const sideTabClassName =
-  "flex rotate-180 items-center border-b border-white/10 bg-forest-deep px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition-colors [text-orientation:mixed] [writing-mode:vertical-rl] hover:bg-emerald";
+  "flex rotate-180 items-center border-b border-white/10 bg-forest-deep px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition-colors last:border-b-0 [text-orientation:mixed] [writing-mode:vertical-rl] hover:bg-emerald";
+
+const sideTabReelsClassName =
+  "flex rotate-180 items-center border-b border-white/10 bg-gold px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-forest-deep transition-colors last:border-b-0 [text-orientation:mixed] [writing-mode:vertical-rl] hover:bg-white hover:text-forest-deep";
 
 const sideIconClassName =
-  "grid h-12 w-12 place-items-center border-b border-white/10 text-white transition-colors";
+  "grid h-12 w-12 place-items-center border-b border-white/10 text-white transition-colors last:border-b-0";
 
 const widgetStackClassName =
-  "fixed top-1/2 z-[80] flex -translate-y-1/2 flex-col transition-opacity duration-300 ease-out";
+  "fixed top-1/2 z-[80] flex -translate-y-1/2 flex-col overflow-hidden shadow-lg transition-opacity duration-300 ease-out";
 
 export function SideWidgets() {
   const [hiddenNearFooter, setHiddenNearFooter] = useState(false);
@@ -43,12 +47,23 @@ export function SideWidgets() {
       <div
         className={cn(
           widgetStackClassName,
-          "left-0 hidden xl:flex",
+          "left-0 hidden rounded-r-xl xl:flex",
           fadeClass,
         )}
         aria-hidden={hiddenNearFooter}
       >
         {siteConfig.sideTabs.map((tab) => {
+          const isReels = "icon" in tab && tab.icon === "instagram";
+          const tabClassName = isReels ? sideTabReelsClassName : sideTabClassName;
+          const content = isReels ? (
+            <span className="inline-block [text-orientation:mixed]">
+              <InstagramLogo className="mb-1.5 inline-block h-4 w-4" />
+              {tab.label}
+            </span>
+          ) : (
+            tab.label
+          );
+
           if ("external" in tab && tab.external) {
             return (
               <a
@@ -56,9 +71,9 @@ export function SideWidgets() {
                 href={tab.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={sideTabClassName}
+                className={tabClassName}
               >
-                {tab.label}
+                {content}
               </a>
             );
           }
@@ -69,16 +84,16 @@ export function SideWidgets() {
                 key={tab.label}
                 href={tab.href}
                 download={tab.download}
-                className={sideTabClassName}
+                className={tabClassName}
               >
-                {tab.label}
+                {content}
               </a>
             );
           }
 
           return (
-            <SiteLink key={tab.label} href={tab.href} className={sideTabClassName}>
-              {tab.label}
+            <SiteLink key={tab.label} href={tab.href} className={tabClassName}>
+              {content}
             </SiteLink>
           );
         })}
@@ -88,7 +103,7 @@ export function SideWidgets() {
       <div
         className={cn(
           widgetStackClassName,
-          "right-0 hidden xl:flex",
+          "right-0 hidden rounded-l-xl xl:flex",
           fadeClass,
         )}
         aria-hidden={hiddenNearFooter}
@@ -125,7 +140,7 @@ export function SideWidgets() {
           href="/#contact"
           title="Find us"
           aria-label="Find us"
-          className={cn(sideIconClassName, "border-b-0 bg-forest-deep hover:bg-gold hover:text-forest-deep")}
+          className={cn(sideIconClassName, "bg-forest-deep hover:bg-gold hover:text-forest-deep")}
         >
           <Icon name="pin" className="h-5 w-5" />
         </SiteLink>

@@ -29,7 +29,7 @@ export function ContactSection() {
                 external={"external" in cta ? cta.external : false}
                 variant={cta.variant === "gold" ? "gold" : "outline-white"}
               >
-                {cta.label === "Call Admissions" ? (
+                {cta.label === "Connect with us" ? (
                   <Icon name="phone" className="h-4 w-4" />
                 ) : (
                   <Icon name="whatsapp" className="h-4 w-4" />

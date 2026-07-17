@@ -3,6 +3,8 @@ export type { SiteImage, SiteVideo } from "@/types/images";
 export type StatItem = {
   value: string;
   label: string;
+  /** Wider emphasis chip (e.g. Student Progression Plan on campus slides) */
+  featured?: boolean;
 };
 
 export type PillarItem = {
@@ -31,6 +33,11 @@ export type AwardItem = {
   year: string;
 };
 
+export type CampusPartnerLogo = {
+  src: string;
+  alt: string;
+};
+
 export type CampusSlide = {
   id: string;
   name: string;
@@ -39,6 +46,10 @@ export type CampusSlide = {
   description: string;
   image: import("@/types/images").SiteImage;
   facts: StatItem[];
+  academicPartners: {
+    label: string;
+    logos: CampusPartnerLogo[];
+  };
   cta: { label: string; href: string };
 };
 

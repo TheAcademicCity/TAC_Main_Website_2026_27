@@ -1,18 +1,24 @@
 import {
-  createPageMetadata,
-  PagePlaceholder,
-} from "@/components/layout/PagePlaceholder";
+  BlogArticlesSection,
+  BlogFilterProvider,
+  BlogPageHeader,
+  NewsletterSection,
+} from "@/components/sections/blog";
+import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Blogs & Newsletters",
-  "School updates and campus life at The Academic City School — news, events, and stories from TACS.",
+  "Insights on boarding school life, career guidance, holistic education and parenting — from The Academic City School, Bengaluru.",
 );
 
 export default function BlogPage() {
   return (
-    <PagePlaceholder
-      title="Blogs & Newsletters"
-      description="Read the latest news, events, and updates from life on campus."
-    />
+    <BlogFilterProvider>
+      <main id="top" tabIndex={-1} className="blog-page outline-none">
+        <BlogPageHeader />
+        <NewsletterSection />
+        <BlogArticlesSection />
+      </main>
+    </BlogFilterProvider>
   );
 }

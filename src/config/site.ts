@@ -65,14 +65,14 @@ export const siteConfig = {
   sideTabs: [
     { label: "Latest Updates", href: "/#news" },
     {
-      label: "Watch Our Reels",
+      label: "Reels",
       href: "https://www.instagram.com/the_academic_city/",
       external: true,
+      icon: "instagram",
     },
     {
-      label: "Calendar",
-      href: "/downloads/academic-calendar-ay-26-27.pdf",
-      download: "Academic Calendar AY 26-27.pdf",
+      label: "Newsletters",
+      href: "/blog",
     },
   ],
 } as const;

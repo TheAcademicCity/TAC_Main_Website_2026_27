@@ -9,15 +9,34 @@ type StatItemProps = {
 
 export function StatItem({ item, variant = "bar", className }: StatItemProps) {
   if (variant === "card") {
+    const featured = Boolean(item.featured);
+
     return (
       <div
         className={cn(
-          "border border-white/14 bg-white/8 px-4 py-3 backdrop-blur-sm",
+          "flex w-fit max-w-full flex-col justify-center border border-white/14 bg-white/8 backdrop-blur-sm",
+          featured ? "px-3.5 py-1.5" : "px-3 py-1",
           className,
         )}
       >
-        <div className="font-montserrat text-[0.95rem] font-extrabold text-white">{item.value}</div>
-        <div className="mt-0.5 text-[0.73rem] text-white/55">{item.label}</div>
+        <div
+          className={cn(
+            "font-montserrat font-extrabold leading-none whitespace-nowrap text-white",
+            featured
+              ? "text-[clamp(0.78rem,1.1vw,0.92rem)]"
+              : "text-[clamp(0.68rem,0.95vw,0.8rem)]",
+          )}
+        >
+          {item.value}
+        </div>
+        <div
+          className={cn(
+            "mt-0.5 leading-none whitespace-nowrap text-white/55",
+            featured ? "text-[0.62rem]" : "text-[0.6rem]",
+          )}
+        >
+          {item.label}
+        </div>
       </div>
     );
   }

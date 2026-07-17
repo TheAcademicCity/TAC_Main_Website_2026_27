@@ -1,45 +1,69 @@
 import { Suspense } from "react";
 import { enquiryContent } from "@/data/home";
 import { EnquiryForm } from "@/components/sections/shared/EnquiryForm";
+import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 
 function EnquiryFormFallback() {
   return (
-    <div className="border border-line bg-white p-8 shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)]">
-      <div className="h-6 w-48 animate-pulse bg-line" />
-      <div className="mt-6 grid gap-5 sm:grid-cols-2">
-        <div className="h-12 animate-pulse bg-line" />
-        <div className="h-12 animate-pulse bg-line" />
+    <div className="border border-line bg-white p-4 shadow-[0_24px_60px_-32px_rgba(15,61,56,0.28)] sm:p-5">
+      <div className="h-5 w-40 animate-pulse bg-line" />
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div className="h-10 animate-pulse bg-line" />
+        <div className="h-10 animate-pulse bg-line" />
       </div>
-      <div className="mt-5 h-12 animate-pulse bg-line" />
-      <div className="mt-5 grid gap-5 sm:grid-cols-2">
-        <div className="h-12 animate-pulse bg-line" />
-        <div className="h-12 animate-pulse bg-line" />
+      <div className="mt-4 h-10 animate-pulse bg-line" />
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div className="h-10 animate-pulse bg-line" />
+        <div className="h-10 animate-pulse bg-line" />
       </div>
-      <div className="mt-5 h-12 animate-pulse bg-line" />
+      <div className="mt-4 h-10 animate-pulse bg-line" />
     </div>
   );
 }
 
 export function EnquirySection() {
   return (
-    <Section id="enquiry" background="paper" className="relative overflow-hidden">
-      <RevealOnScroll>
-        <SectionHeader
-          label={enquiryContent.label}
-          title={enquiryContent.title}
-          description={enquiryContent.subtitle}
-          className="mb-10 max-w-3xl [&_p]:text-[0.98rem] [&_p]:leading-relaxed"
-        />
-      </RevealOnScroll>
+    <Section
+      id="enquiry"
+      background="paper"
+      className="relative overflow-hidden py-[clamp(32px,4vw,56px)]"
+    >
+      <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-8">
+        <div className="min-w-0">
+          <RevealOnScroll>
+            <SectionHeader
+              label={enquiryContent.label}
+              title={enquiryContent.title}
+              description={enquiryContent.subtitle}
+              className="mb-4 max-w-xl text-left [&_h2]:text-[clamp(1.25rem,2.2vw,1.7rem)] [&_p]:text-[0.86rem] [&_p]:leading-relaxed"
+            />
+          </RevealOnScroll>
 
-      <RevealOnScroll delay={1}>
-        <Suspense fallback={<EnquiryFormFallback />}>
-          <EnquiryForm />
-        </Suspense>
-      </RevealOnScroll>
+          <RevealOnScroll delay={1}>
+            <Suspense fallback={<EnquiryFormFallback />}>
+              <EnquiryForm compact className="!p-3.5 sm:!p-4" />
+            </Suspense>
+          </RevealOnScroll>
+        </div>
+
+        <RevealOnScroll
+          delay={2}
+          className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-0"
+        >
+          <div className="absolute inset-0 overflow-hidden">
+            <ImageWithFallback
+              image={enquiryContent.image}
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/35 via-transparent to-transparent" />
+          </div>
+        </RevealOnScroll>
+      </div>
     </Section>
   );
 }

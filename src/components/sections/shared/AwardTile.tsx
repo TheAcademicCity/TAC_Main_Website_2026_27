@@ -10,7 +10,7 @@ type AwardTileProps = {
 export function AwardTile({ award, index }: AwardTileProps) {
   return (
     <RevealOnScroll delay={(index % 5) as 0 | 1 | 2 | 3 | 4}>
-      <article className="group relative flex flex-col items-center gap-4 bg-forest-deep px-6 py-9 text-center transition-colors hover:bg-white/6">
+      <article className="group relative z-10 flex flex-col items-center gap-4 bg-forest-deep/78 px-6 py-9 text-center transition-colors hover:bg-forest-deep">
         <div className="grid h-20 w-20 place-items-center rounded-full border border-gold/35 bg-gradient-to-br from-gold/15 to-gold/5 transition-all group-hover:border-gold group-hover:shadow-[0_0_24px_rgba(246,171,22,0.2)]">
           <AwardIcon index={index} />
         </div>

@@ -1,0 +1,314 @@
+import { siteConfig } from "@/config/site";
+import { createImage } from "@/lib/images";
+import type { BlogPageContent, NewsletterIssue } from "@/types/blog";
+
+const remote = {
+  academics: "https://theacademiccity.com/images/Home/nav/academics.png",
+  career: "https://theacademiccity.com/images/Home/nav/career1.png",
+  curriculum: "https://theacademiccity.com/images/Home/nav/curriculam.png",
+  boarding: "https://theacademiccity.com/images/Home/nav/boarding.png",
+  sports: "https://theacademiccity.com/images/Home/nav/sports.png",
+  campus: "https://theacademiccity.com/images/homepage/campus/1.png",
+} as const;
+
+const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
+  {
+    page: 1,
+    issues: [
+      {
+        month: "June 2025 · Issue #06",
+        issue: "June 2025",
+        title: "How do boarding school students manage stress before exams?",
+        description:
+          "A behind-the-scenes look at how the TACS evening prep schedule, study habits and pastoral care combine to keep students calm and focused.",
+        tags: ["Boarding Life", "Academics"],
+        gradient: "linear-gradient(150deg,#0a3028 0%,#185850 60%,#2d945c 100%)",
+        coverHeadline: "Managing Exam Stress",
+        coverTag: "Boarding Life · Academics",
+        coverTagBg: "#2d945c",
+        coverImage: createImage("/images/blog/nl-june.png", remote.academics, ""),
+        mailSubject: "June 2025",
+      },
+      {
+        month: "May 2025 · Issue #05",
+        issue: "May 2025",
+        title: "Career Utsav 2025 — what students discovered about themselves",
+        description:
+          "Highlights from this year's TACS career fair — the conversations, the surprises, and why Grade 7 students already have a sense of direction.",
+        tags: ["Career & LEAP", "Campus Life"],
+        gradient: "linear-gradient(150deg,#7a4b00 0%,#c4880e 70%,#f6ab16 100%)",
+        coverHeadline: "Career Utsav 2025",
+        coverTag: "Career & LEAP",
+        coverTagBg: "#0f3d38",
+        coverImage: createImage("/images/blog/nl-may.png", remote.career, ""),
+        mailSubject: "May 2025",
+      },
+      {
+        month: "April 2025 · Issue #04",
+        issue: "April 2025",
+        title: "What parents worry about most — and what actually happens",
+        description:
+          "Food, friendships, safety, homesickness. We asked TACS parents what they worried about before enrolling, and whether those worries came true.",
+        tags: ["For Parents", "Boarding Life"],
+        gradient: "linear-gradient(150deg,#3d0d63 0%,#6816a4 60%,#9040c8 100%)",
+        coverHeadline: "Parent Worries — The Reality",
+        coverTag: "For Parents",
+        coverTagBg: "#2d945c",
+        coverImage: createImage("/images/blog/nl-april.png", remote.campus, ""),
+        mailSubject: "April 2025",
+      },
+    ],
+  },
+  {
+    page: 2,
+    issues: [
+      {
+        month: "March 2025 · Issue #03",
+        issue: "March 2025",
+        title: "The first 30 days: how new boarders settle in at TACS",
+        description:
+          "Homesickness is real — and short-lived for most. Here's what the first month looks like, and how dorm parents and house systems make the difference.",
+        tags: ["For Parents", "Student Life"],
+        gradient: "linear-gradient(150deg,#0f3d38 0%,#185850 60%,#2d945c 100%)",
+        coverHeadline: "The First 30 Days",
+        coverTag: "For Parents",
+        coverTagBg: "#6816a4",
+        coverImage: createImage("/images/blog/nl-march.png", remote.boarding, ""),
+        mailSubject: "March 2025",
+      },
+      {
+        month: "February 2025 · Issue #02",
+        issue: "February 2025",
+        title: "CBSE vs competitive exams — how TACS prepares students for both",
+        description:
+          "Structured preparation for JEE, NEET, NIFT and more — without sacrificing CBSE performance. How TACS makes both possible on one campus.",
+        tags: ["Academics", "Exams"],
+        gradient: "linear-gradient(150deg,#1a2830 0%,#2d6060 100%)",
+        coverHeadline: "Academics + Competitive Exams",
+        coverTag: "Academics",
+        coverTagBg: "#c4880e",
+        coverImage: createImage("/images/blog/nl-feb.png", remote.academics, ""),
+        mailSubject: "February 2025",
+      },
+      {
+        month: "January 2025 · Issue #01",
+        issue: "January 2025",
+        title: "Why students who play sport daily get better grades",
+        description:
+          "The research is clear — but seeing it in action is something else. How TACS's 90-minute daily sport block measurably impacts academic performance.",
+        tags: ["Boarding Life", "Academics"],
+        gradient: "linear-gradient(150deg,#0a2c28 0%,#185850 100%)",
+        coverHeadline: "Sport & Academic Success",
+        coverTag: "Boarding Life",
+        coverTagBg: "#2d945c",
+        coverImage: createImage("/images/blog/nl-jan.png", remote.sports, ""),
+        mailSubject: "January 2025",
+      },
+    ],
+  },
+  {
+    page: 3,
+    issues: [
+      {
+        month: "December 2024 · Issue #12",
+        issue: "December 2024",
+        title: "Year in review: what TACS students accomplished in 2024",
+        description:
+          "From Career Utsav to MUN, from sporting achievements to CBSE results — a full picture of what a year at TACS looks like for students and parents.",
+        tags: ["Campus Life", "Year in Review"],
+        gradient: "linear-gradient(150deg,#6816a4 0%,#3d0d63 100%)",
+        coverHeadline: "2024 Year in Review",
+        coverTag: "Campus Life",
+        coverTagBg: "#f6ab16",
+        coverImage: createImage("/images/blog/nl-dec.png", remote.campus, ""),
+        mailSubject: "December 2024",
+      },
+      {
+        month: "November 2024 · Issue #11",
+        issue: "November 2024",
+        title: "How TACS builds emotional resilience in boarding students",
+        description:
+          "Structured routines, dorm parents, circle time and counselling — the layered system that helps students grow emotionally, not just academically.",
+        tags: ["Boarding Life", "Wellbeing"],
+        gradient: "linear-gradient(150deg,#c4880e 0%,#7a4b00 100%)",
+        coverHeadline: "Emotional Resilience",
+        coverTag: "Wellbeing",
+        coverTagBg: "#185850",
+        coverImage: createImage("/images/blog/nl-nov.png", remote.boarding, ""),
+        mailSubject: "November 2024",
+      },
+      {
+        month: "October 2024 · Issue #10",
+        issue: "October 2024",
+        title: "What LEAP teaches Grade 9 students about making career decisions",
+        description:
+          "The Explore phase of LEAP opens students to 600+ career options through workshops, panel discussions and self-assessment — changing how they think about the future.",
+        tags: ["Career & LEAP", "Grade 9"],
+        gradient: "linear-gradient(150deg,#185850 0%,#0f3d38 100%)",
+        coverHeadline: "LEAP at Grade 9",
+        coverTag: "Career & LEAP",
+        coverTagBg: "#c4880e",
+        coverImage: createImage("/images/blog/nl-oct.png", remote.career, ""),
+        mailSubject: "October 2024",
+      },
+    ],
+  },
+];
+
+export const blogPageContent = {
+  header: {
+    title: "Insights &",
+    titleHighlight: "Perspectives",
+    description:
+      "Thoughts on education, boarding school life, career guidance and raising confident, curious children — from the TACS community.",
+    filters: [
+      { id: "all", label: "All" },
+      { id: "boarding", label: "Boarding Life" },
+      { id: "career", label: "Career & LEAP" },
+      { id: "academics", label: "Academics" },
+      { id: "life", label: "Student Life" },
+      { id: "parenting", label: "For Parents" },
+    ],
+  },
+  newsletter: {
+    brand: "Patashala Patrika",
+    tag: "The TACS Parent Newsletter",
+    title: "Insights for parents,",
+    titleHighlight: "delivered monthly",
+    description:
+      "One thoughtful email a month — boarding life, career guidance and what it really means to raise a confident child.",
+    subscribeLabel: "Subscribe to Patashala Patrika",
+    privacyNote: "No spam. One email a month. Unsubscribe any time.",
+    pastIssuesLabel: "Past issues",
+    pages: newsletterPages,
+  },
+  articles: {
+    label: "All Articles",
+    title: "From the TACS editorial desk",
+    posts: [
+      {
+        category: "life",
+        categoryLabel: "Student Life",
+        title: "Digital Detox for Students – The Paradox of Unplugging to Connect Better",
+        description:
+          "Screens are everywhere — classrooms, homes, leisure. How do residential schools build healthy balance between digital learning and real-life connection?",
+        readTime: "5 min read",
+        href: "https://theacademiccity.com/blog/digital-detox-for-students-the-paradox-of-unplugging-to-connect-better",
+        image: createImage("/images/blog/post-digital.png", remote.boarding, ""),
+        gradient: "linear-gradient(135deg,#0f3d38,#185850)",
+        badgeClass: "bg-forest text-white",
+      },
+      {
+        category: "life",
+        categoryLabel: "Boarding Life",
+        title: "Strong Bodies & Steady Minds: The Power of Sports in Student Life",
+        description:
+          "Exercise improves health — but for children it goes deeper. How daily sport in residential schools builds resilience, emotional stability and academic focus.",
+        readTime: "5 min read",
+        href: "https://theacademiccity.com/blog/strong-bodies-steady-minds-the-power-of-sports-in-student-life",
+        image: createImage("/images/blog/post-sports.png", remote.sports, ""),
+        gradient: "linear-gradient(135deg,#0a3028,#2d945c)",
+        badgeClass: "bg-emerald text-white",
+      },
+      {
+        category: "academics",
+        categoryLabel: "Academics",
+        title: "How Boarding Schools Teach Students to Learn From Exams",
+        description:
+          "Exams as checkpoints, not finish lines. How structured residential environments turn assessments into tools for growth instead of sources of fear.",
+        readTime: "6 min read",
+        href: "https://theacademiccity.com/blog/how-boarding-schools-teach-students-to-learn-from-exams",
+        image: createImage("/images/blog/post-exams.png", remote.academics, ""),
+        gradient: "linear-gradient(135deg,#3d0d63,#6816a4)",
+        badgeClass: "bg-violet text-white",
+      },
+      {
+        category: "academics",
+        categoryLabel: "Academics",
+        title: "From Chalkboards to Smartboards: Technology's Role in Academic Success",
+        description:
+          "How CBSE boarding schools are integrating technology not as a trend, but as a genuine driver of academic understanding and career readiness.",
+        readTime: "5 min read",
+        href: "https://theacademiccity.com/blog/from-chalkboards-to-smartboards-technology-role-in-academic-success",
+        image: createImage("/images/blog/post-tech.png", remote.curriculum, ""),
+        gradient: "linear-gradient(135deg,#3d0d63,#6816a4)",
+        badgeClass: "bg-violet text-white",
+      },
+      {
+        category: "academics",
+        categoryLabel: "Academics",
+        title: "STEM to Stories: Why a Balanced Curriculum Shapes Smarter Thinkers",
+        description:
+          "Knowledge without creativity falls short, and creativity without discipline loses direction. How TACS blends STEM, arts and sport into one cohesive whole.",
+        readTime: "6 min read",
+        href: "https://theacademiccity.com/blog/stem-to-stories-why-a-balanced-curriculum-shapes-smarter-thinkers",
+        image: createImage("/images/blog/post-stem.png", remote.career, ""),
+        gradient: "linear-gradient(135deg,#7a4b00,#c4880e)",
+        badgeClass: "bg-violet text-white",
+      },
+      {
+        category: "career",
+        categoryLabel: "Career & LEAP",
+        title: "Why Early Career Guidance Matters More Than Ever",
+        description:
+          "Students who engage in career exploration during school are significantly more likely to land work aligned with their interests. Starting at Grade 6 is the TACS way.",
+        readTime: "6 min read",
+        href: "https://theacademiccity.com/blog/why-early-career-guidance-matters-more-than-ever",
+        image: createImage("/images/blog/post-career.png", remote.career, ""),
+        gradient: "linear-gradient(135deg,#7a4b00,#c4880e)",
+        badgeClass: "bg-gold text-forest-deep",
+      },
+    ],
+    externalBlogUrl: "https://theacademiccity.com/blog",
+    popularPosts: [
+      {
+        number: "01",
+        title: "Why Early Career Guidance Matters More Than Ever",
+        meta: "Career & LEAP · 6 min",
+        href: "https://theacademiccity.com/blog/why-early-career-guidance-matters-more-than-ever",
+      },
+      {
+        number: "02",
+        title: "Strong Bodies & Steady Minds: The Power of Sports",
+        meta: "Boarding Life · 5 min",
+        href: "https://theacademiccity.com/blog/strong-bodies-steady-minds-the-power-of-sports-in-student-life",
+      },
+      {
+        number: "03",
+        title: "The Secret to Academic Success",
+        meta: "Career & LEAP · 7 min",
+        href: "https://theacademiccity.com/blog/the-secret-to-academic-success-strategies-students-actually-use",
+      },
+      {
+        number: "04",
+        title: "How Boarding Schools Teach Students to Learn From Exams",
+        meta: "Academics · 6 min",
+        href: "https://theacademiccity.com/blog/how-boarding-schools-teach-students-to-learn-from-exams",
+      },
+      {
+        number: "05",
+        title: "Holistic Growth: The Boarding School Advantage",
+        meta: "Boarding Life · 5 min",
+        href: "https://theacademiccity.com/blog/holistic-growth-in-focus-the-boarding-school-advantage-in-bangalore-and-karnataka",
+      },
+    ],
+    topics: [
+      { id: "boarding", label: "Boarding Life" },
+      { id: "career", label: "Career & LEAP" },
+      { id: "academics", label: "Academics" },
+      { id: "life", label: "Student Life" },
+      { id: "parenting", label: "For Parents" },
+      { id: "all", label: "All Posts" },
+    ],
+    sidebarCta: {
+      label: siteConfig.admissionsBadge,
+      description:
+        "Interested in TACS? Come visit campus or speak with our admissions team — no commitment, just a conversation.",
+      href: "/admissions",
+      buttonLabel: "Learn more",
+    },
+  },
+} satisfies BlogPageContent;
+
+export const newsletterMailto = (subject: string) =>
+  `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Patashala Patrika - ${subject} Issue`)}`;

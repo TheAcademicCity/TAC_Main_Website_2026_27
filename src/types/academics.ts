@@ -1,14 +1,7 @@
 import type { SiteImage } from "@/types/images";
+import type { HeroStat, PageSubnavItem } from "@/types/page";
 
-export type HeroStat = {
-  value: string;
-  label: string;
-};
-
-export type PageSubnavItem = {
-  id: string;
-  label: string;
-};
+export type { HeroStat, PageSubnavItem };
 
 export type CdfPillar = {
   number: string;

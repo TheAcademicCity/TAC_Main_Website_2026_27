@@ -1,7 +1,18 @@
+import { admissionsPageContent } from "@/data/admissions";
 import {
-  createPageMetadata,
-  PagePlaceholder,
-} from "@/components/layout/PagePlaceholder";
+  AdmissionsCtaSection,
+  AdmissionsHeroSection,
+  ClaritySection,
+  CriteriaSection,
+  EligibilitySection,
+  FaqSection,
+  OnlineBandSection,
+  OverviewSection,
+  ProcessSection,
+  ScholarshipsSection,
+} from "@/components/sections/admissions";
+import { PageSubnav } from "@/components/sections/shared/PageSubnav";
+import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Admissions",
@@ -10,9 +21,18 @@ export const metadata = createPageMetadata(
 
 export default function AdmissionsPage() {
   return (
-    <PagePlaceholder
-      title="Admissions"
-      description="Learn how to apply, book a campus visit, and secure a place for the upcoming academic year."
-    />
+    <main id="top" tabIndex={-1} className="admissions-page outline-none has-page-subnav">
+      <AdmissionsHeroSection />
+      <PageSubnav items={admissionsPageContent.subnav} />
+      <OverviewSection />
+      <ProcessSection />
+      <CriteriaSection />
+      <OnlineBandSection />
+      <EligibilitySection />
+      <ScholarshipsSection />
+      <ClaritySection />
+      <FaqSection />
+      <AdmissionsCtaSection />
+    </main>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { campusContent } from "@/data/home";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
@@ -61,7 +62,7 @@ export function CampusSliderSection() {
                 {campusContent.badge}
               </span>
 
-              <Container className="relative z-[2] grid w-full items-end gap-8 pt-10 pb-[4.75rem] lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pt-14">
+              <Container className="relative z-[2] grid w-full items-end gap-8 pt-10 pb-[4.75rem] lg:grid-cols-[1fr_1fr] lg:gap-10 lg:pt-14">
                 <div className="self-end">
                   <p className="mb-2 inline-flex items-center gap-2 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.22em] text-gold before:h-0.5 before:w-7 before:bg-gold before:content-['']">
                     {slide.label}
@@ -74,12 +75,82 @@ export function CampusSliderSection() {
                   </p>
                 </div>
 
-                <div className="flex w-full flex-col gap-6">
-                  <div className="grid grid-cols-2 gap-2">
-                    {slide.facts.map((fact) => (
-                      <StatItem key={fact.label} item={fact} variant="card" />
-                    ))}
+                <div className="-mt-3 flex w-full flex-col gap-5 lg:-mt-5">
+                  <div
+                    className={cn(
+                      "gap-2",
+                      slide.facts.some((fact) => fact.featured)
+                        ? "flex flex-col items-start"
+                        : "flex flex-wrap items-start",
+                    )}
+                  >
+                    {slide.facts.some((fact) => fact.featured) ? (
+                      (() => {
+                        const featuredFacts = slide.facts.filter((fact) => fact.featured);
+                        const otherFacts = slide.facts.filter((fact) => !fact.featured);
+                        const topCompanion = otherFacts[0];
+                        const [mealsFact, hostelsFact, curriculumFact] = otherFacts.slice(1);
+
+                        return (
+                          <div className="grid w-max grid-cols-[auto_minmax(0,1fr)_auto] items-stretch gap-2">
+                            <div className="col-span-2 w-max">
+                              {featuredFacts.map((fact) => (
+                                <StatItem key={fact.label} item={fact} variant="card" />
+                              ))}
+                            </div>
+                            {topCompanion ? (
+                              <StatItem
+                                key={topCompanion.label}
+                                item={{ ...topCompanion, featured: true }}
+                                variant="card"
+                              />
+                            ) : null}
+                            {mealsFact ? (
+                              <StatItem key={mealsFact.label} item={mealsFact} variant="card" />
+                            ) : null}
+                            {hostelsFact ? (
+                              <StatItem
+                                key={hostelsFact.label}
+                                item={hostelsFact}
+                                variant="card"
+                                className="w-full"
+                              />
+                            ) : null}
+                            {curriculumFact ? (
+                              <StatItem
+                                key={curriculumFact.label}
+                                item={curriculumFact}
+                                variant="card"
+                              />
+                            ) : null}
+                          </div>
+                        );
+                      })()
+                    ) : (
+                      slide.facts.map((fact) => (
+                        <StatItem key={fact.label} item={fact} variant="card" />
+                      ))
+                    )}
                   </div>
+
+                  <div>
+                    <p className="mb-3 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/65">
+                      {slide.academicPartners.label}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-5">
+                      {slide.academicPartners.logos.map((logo) => (
+                        <Image
+                          key={logo.src}
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={140}
+                          height={40}
+                          className="h-7 w-auto object-contain object-left"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
                   <Button
                     href={slide.cta.href}
                     external={slide.cta.href.startsWith("mailto:")}

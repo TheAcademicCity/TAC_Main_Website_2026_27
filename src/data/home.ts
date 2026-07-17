@@ -157,7 +157,7 @@ export const academicsContent = {
         "Career guidance",
       ),
       imageTag: "Grades 6 - 12 · 600+ Career Paths",
-      chips: ["600+ Career Options", "Psychometric Tests", "Industry Mentors", "LEAP & IDC Programmes"],
+      chips: ["600+ Career Options", "Psychometric Tests", "Industry Mentors", "LEAP Programmes"],
       cta: { label: "Explore Career Programme", href: "/career-guidance" },
       flipped: true,
     },
@@ -260,7 +260,7 @@ export const galleryContent = {
 export const awardsContent = {
   label: "Awards & Recognitions",
   title: "Recognised for excellence, nationally & globally",
-  watermark: "RECOGNITION",
+  watermark: "Recognition",
   items: [
     { name: "Education Leaders Awards", year: "2024" },
     { name: "Brainfeed Top 500 Schools of India", year: "2022–23" },
@@ -288,13 +288,29 @@ export const campusContent = {
         "TACS Bengaluru",
       ),
       facts: [
-        { value: "Grades 5–12", label: "Residential boarding" },
-        { value: "CBSE", label: "New Delhi curriculum" },
-        { value: "1 : 10", label: "Student–teacher ratio" },
-        { value: "24h Doctor", label: "On-call medical care" },
-        { value: "6 Meals/Day", label: "Veg & Jain options" },
-        { value: "AC Hostels", label: "Separate boys & girls" },
+        {
+          value: "Student Progression Plan",
+          label: "Personalised academic tracking",
+          featured: true,
+        },
+        { value: "Grades\u00A05–12", label: "Residential boarding" },
+        { value: "6\u00A0Meals/Day", label: "Veg & Jain options" },
+        { value: "AC\u00A0Hostels", label: "Separate boys & girls" },
+        { value: "CBSE", label: "NCERT curriculum" },
       ],
+      academicPartners: {
+        label: "Academic Assistance partners",
+        logos: [
+          {
+            src: "/images/home/campus/partners/allen-white.png",
+            alt: "Allen Career Institute",
+          },
+          {
+            src: "/images/home/campus/partners/trisha-classes-white.png",
+            alt: "Trisha Classes",
+          },
+        ],
+      },
       cta: { label: "Book a Campus Visit", href: "/#contact" },
     },
     {
@@ -306,13 +322,25 @@ export const campusContent = {
         "Located in Mohankheda Jain Tirth, Rajgarh (Dhar), the Indore campus offers the same TACS philosophy — structured boarding, strong academics and career-first learning — in the peaceful landscape of Madhya Pradesh.",
       image: createImage("/images/home/campus/indore.png", remote.campus.indore, "TACS Indore"),
       facts: [
-        { value: "Grades 5–12", label: "Residential boarding" },
-        { value: "CBSE", label: "New Delhi curriculum" },
-        { value: "1 : 12", label: "Student–teacher ratio" },
-        { value: "24h Doctor", label: "On-call medical care" },
-        { value: "6 Meals/Day", label: "Veg & Jain options" },
-        { value: "AC Hostels", label: "Separate boys & girls" },
+        {
+          value: "Student Progression Plan",
+          label: "Personalised academic tracking",
+          featured: true,
+        },
+        { value: "Grades\u00A05–12", label: "Residential boarding" },
+        { value: "6\u00A0Meals/Day", label: "Only Jain food" },
+        { value: "AC\u00A0Hostels", label: "Separate boys & girls" },
+        { value: "CBSE", label: "NCERT curriculum" },
       ],
+      academicPartners: {
+        label: "Academic Assistance partners",
+        logos: [
+          {
+            src: "/images/home/campus/partners/nahata.png",
+            alt: "Nahata Professional Academy",
+          },
+        ],
+      },
       cta: { label: "Enquire about Indore", href: "mailto:Admission.mk@theacademiccity.com" },
     },
   ] satisfies CampusSlide[],
@@ -471,6 +499,11 @@ export const enquiryContent = {
     "Share your details and our admissions team will reach out with guidance on grades, campus visits and boarding.",
   brochureSubtitle:
     "Complete the form below and your brochure download will begin automatically.",
+  image: createImage(
+    "/images/home/enquiry/campus-visit.png",
+    remote.campus.bengaluru,
+    "Visit The Academic City campus",
+  ),
   fields: {
     grades: [
       "Class 4",
@@ -490,9 +523,9 @@ export const enquiryContent = {
 export const contactContent = {
   label: "Get in Touch",
   title: "Come, let's craft a happy future for your child",
-  subtitle: "Talk to our Bengaluru admissions team about grades, campus visits, fees and boarding.",
+  subtitle: "Talk to our admissions team about grades, campus visits, fees and boarding.",
   ctas: [
-    { label: "Call Admissions", href: "tel:+919606488347", variant: "gold" as const },
+    { label: "Connect with us", href: "tel:+919606488347", variant: "gold" as const },
     {
       label: "WhatsApp",
       href: siteConfig.contact.whatsapp,

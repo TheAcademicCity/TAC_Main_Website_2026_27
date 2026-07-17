@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type WatermarkTextProps = {
   lines: string[];
-  variant?: "cdf" | "single";
+  variant?: "cdf" | "single" | "recognition";
   className?: string;
 };
 
@@ -30,6 +30,29 @@ export function WatermarkText({ lines, variant = "single", className }: Watermar
             {line}
           </span>
         ))}
+      </div>
+    );
+  }
+
+  if (variant === "recognition") {
+    return (
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-0 z-0 flex items-center justify-center select-none px-[3vw]",
+          className,
+        )}
+        aria-hidden="true"
+      >
+        <span
+          className={cn(
+            "whitespace-nowrap text-center font-montserrat font-black uppercase leading-none tracking-[-0.02em]",
+            "text-[clamp(2.5rem,8.5vw,5.75rem)] text-white/[0.14]",
+            "[-webkit-text-stroke:1.5px_rgba(255,255,255,0.17)]",
+            "[paint-order:stroke_fill]",
+          )}
+        >
+          {lines[0]}
+        </span>
       </div>
     );
   }
