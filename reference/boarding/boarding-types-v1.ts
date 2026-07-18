@@ -34,9 +34,7 @@ export type BoardingPageContent = {
     title: string;
     paragraphs: readonly string[];
     image: SiteImage;
-    quote: string;
-    keyItemsLabel: string;
-    keyItems: readonly { icon: IconName; text: string }[];
+    keyItems: readonly string[];
   };
   schedule: {
     label: string;
@@ -45,7 +43,7 @@ export type BoardingPageContent = {
     tabs: readonly {
       id: string;
       label: string;
-      rows: readonly { time: string; activity: string }[];
+      rows: readonly { time: string; activity: string; highlight?: boolean }[];
     }[];
   };
   communication: {
@@ -79,13 +77,13 @@ export type BoardingPageContent = {
     title: string;
     safety: {
       title: string;
-      description: string;
       items: readonly { icon: IconName; title: string; description: string }[];
     };
     nutrition: {
       title: string;
       description: string;
       meals: readonly string[];
+      note: string;
       items: readonly { icon: IconName; title: string; description: string }[];
     };
   };

@@ -45,12 +45,16 @@ export function AdmissionsHeroSection() {
             {hero.primaryCta.label}
             <Icon name="arrow" className="h-3.5 w-3.5" />
           </Button>
-          <Button href={hero.phone.href} variant="outline-white" className="px-7 py-3 text-[0.78rem]">
+          <Button
+            href={hero.phone.href}
+            variant="outline-white"
+            className="hero-call-cta px-7 py-3 text-[0.78rem]"
+          >
             <Icon name="phone" className="h-3.5 w-3.5" />
             {hero.phone.label}
           </Button>
           <Button href={hero.whatsapp.href} external variant="outline-white" className="px-7 py-3 text-[0.78rem]">
-            <Icon name="whatsapp" className="h-3.5 w-3.5" />
+            <Icon name="whatsapp" className="h-3.5 w-3.5 text-[#25D366]" />
             {hero.whatsapp.label}
           </Button>
         </div>

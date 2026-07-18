@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Boarding Life | The Academic City School · Bengaluru</title>
+<meta name="description" content="Boarding life at TACS — Indic value-based residential living in Bengaluru. Structured routines, values, safety and a genuine home away from home for Grades 5–12."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#185850;--forest-deep:#0f3d38;--forest-dark:#0a2c28;
+  --emerald:#2d945c;--gold:#f6ab16;--gold-dark:#c4880e;
+  --violet:#6816a4;--cyan:#6fdcef;--ink:#1a2830;
+  --slate:#5a6a72;--line:#dce8e4;--paper:#f4f8f6;--white:#fff;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:calc(30px + 72px)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.12;letter-spacing:-.02em}
+.w{width:min(1200px,92vw);margin-inline:auto}
+.sec{padding:clamp(56px,7vw,88px) 0}
+.lbl{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--emerald);display:inline-flex;align-items:center;gap:.55rem;margin-bottom:.8rem}
+.lbl::before{content:'';width:24px;height:2px;background:var(--gold);flex:none}
+.lbl.center{justify-content:center}.lbl.light{color:var(--gold)}.lbl.light::before{background:var(--gold)}
+
+/* UTIL + HEADER */
+.util{background:var(--forest-dark);color:#b8d4cc;font-size:.78rem;font-weight:500;position:fixed;top:0;left:0;right:0;z-index:101;height:30px;display:flex;align-items:center}
+.util .w{display:flex;justify-content:space-between;align-items:center}
+.util-left{display:flex;gap:1.2rem}
+.util a{color:#b8d4cc;display:inline-flex;align-items:center;gap:.35rem;transition:color .2s;font-size:.77rem}
+.util a:hover{color:var(--gold)}.util .sep{opacity:.25}.util .badge{color:var(--gold);font-weight:700}
+#hdr{position:fixed;top:30px;left:0;right:0;z-index:100;background:rgba(10,44,40,.97);box-shadow:0 4px 30px rgba(0,0,0,.4);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-emblem{width:50px;height:50px;border-radius:50%;background:var(--gold);display:grid;place-items:center;flex:none}
+.brand-emblem svg{width:26px;height:26px;fill:var(--forest-deep)}
+.brand-text b{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;color:#fff;display:block;line-height:1.1}
+.brand-text span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.main-nav{display:flex;align-items:center;list-style:none;gap:.1rem}
+.main-nav a{color:rgba(255,255,255,.78);font-weight:600;font-size:.74rem;padding:.5rem .8rem;position:relative;transition:color .2s;letter-spacing:.04em;text-transform:uppercase}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:.8rem;right:.8rem;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s var(--ease)}
+.main-nav a:hover,.main-nav a.active{color:#fff}
+.main-nav a.active::after,.main-nav a:hover::after{transform:scaleX(1)}
+.has-drop{position:relative}
+.has-drop>a{display:flex;align-items:center;gap:.3rem}
+.chev{width:.72rem;height:.72rem;fill:none;stroke:currentColor;stroke-width:2;transition:transform .25s}
+.has-drop:hover .chev{transform:rotate(180deg)}
+.drop-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,44,40,.98);border:1px solid rgba(255,255,255,.1);min-width:190px;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:200}
+.has-drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.drop-menu a{display:block;color:rgba(255,255,255,.78);font-family:'Montserrat',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.78rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.07);transition:background .2s,color .2s}
+.drop-menu a:last-child{border-bottom:none}
+.drop-menu a:hover,.drop-menu a.active{background:rgba(255,255,255,.08);color:var(--gold)}
+.drop-menu a::after{display:none!important}
+.nav-apply{background:var(--gold)!important;color:var(--forest-deep)!important;font-weight:800!important;padding:.55rem 1.3rem!important;margin-left:.4rem}
+.nav-apply::after{display:none!important}
+.burger{display:none;width:42px;height:42px;background:transparent;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:18px;height:1.8px;background:#fff;transition:.3s}
+.burger.x span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+.mob-drawer{position:fixed;inset:0;z-index:99;background:var(--forest-dark);transform:translateX(100%);transition:transform .38s var(--ease);overflow-y:auto;padding:7.5rem 2rem 3rem}
+.mob-drawer.open{transform:none}
+.mob-drawer a{display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:1.1rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.1);letter-spacing:.04em;text-transform:uppercase}
+.mob-drawer .mob-sub{padding-left:1rem;font-size:.95rem;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-apply{display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--forest-deep)!important;padding:.75rem 1.8rem;font-size:.88rem;font-weight:800;border-bottom:none!important}
+
+/* HERO */
+.hero{position:relative;min-height:clamp(380px,54vh,520px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-deep)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,22,18,.96) 0%,rgba(5,22,18,.6) 45%,rgba(5,22,18,.18) 100%)}
+.hero-inner{position:relative;z-index:2;padding:2.5rem 0 clamp(2rem,4vw,3.5rem);width:100%}
+.breadcrumb{display:flex;align-items:center;gap:.45rem;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.9rem}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .2s}.breadcrumb a:hover{color:var(--gold)}
+.hero-inner h1{font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.06}
+.hero-inner h1 em{font-style:normal;color:var(--gold)}
+.hero-inner p{color:rgba(255,255,255,.7);font-size:clamp(.93rem,1.4vw,1.04rem);margin-top:.7rem;max-width:50ch;line-height:1.68;font-weight:300}
+.hero-stats{display:flex;gap:2.2rem;margin-top:1.5rem;flex-wrap:wrap}
+.hs .n{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;color:var(--gold);line-height:1}
+.hs .l{font-size:.74rem;color:rgba(255,255,255,.55);margin-top:.2rem}
+
+/* SUBNAV */
+.subnav{position:sticky;top:calc(30px + 72px);z-index:80;background:#fff;border-bottom:2px solid var(--line);box-shadow:0 3px 16px -8px rgba(15,61,56,.12)}
+.subnav-inner{display:flex;overflow-x:auto;scrollbar-width:none}
+.subnav-inner::-webkit-scrollbar{display:none}
+.subnav a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);padding:.95rem 1.3rem;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.subnav a:hover{color:var(--forest)}.subnav a.active{color:var(--forest-deep);border-bottom-color:var(--gold)}
+
+/* ── 1. VALUES — VISUAL TILES ── */
+.values-sec{background:var(--paper)}
+.values-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem}
+.vtile{background:#fff;border:1px solid var(--line);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.vtile:hover{transform:translateY(-5px);box-shadow:0 24px 50px -18px rgba(15,61,56,.2)}
+.vtile::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.vtile.t1::before{background:var(--emerald)}.vtile.t2::before{background:var(--gold)}.vtile.t3::before{background:var(--violet)}
+.vtile.t4::before{background:var(--forest)}.vtile.t5::before{background:var(--gold-dark)}.vtile.t6::before{background:var(--cyan)}
+.vtile-icon{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;margin-bottom:1.1rem}
+.vtile.t1 .vtile-icon{background:rgba(45,148,92,.1)}.vtile.t2 .vtile-icon{background:rgba(246,171,22,.1)}
+.vtile.t3 .vtile-icon{background:rgba(104,22,164,.08)}.vtile.t4 .vtile-icon{background:rgba(24,88,80,.08)}
+.vtile.t5 .vtile-icon{background:rgba(196,136,14,.08)}.vtile.t6 .vtile-icon{background:rgba(111,220,239,.15)}
+.vtile-icon svg{width:1.8rem;height:1.8rem}
+.vtile.t1 .vtile-icon svg{color:var(--emerald)}.vtile.t2 .vtile-icon svg{color:var(--gold-dark)}
+.vtile.t3 .vtile-icon svg{color:var(--violet)}.vtile.t4 .vtile-icon svg{color:var(--forest)}
+.vtile.t5 .vtile-icon svg{color:var(--gold-dark)}.vtile.t6 .vtile-icon svg{color:#3aacbb}
+.vtile h3{font-size:1rem;font-weight:800;color:var(--forest-deep);margin-bottom:.5rem}
+.vtile p{font-size:.88rem;color:var(--slate);line-height:1.62}
+.vtile .ghost-num{position:absolute;bottom:.8rem;right:1.2rem;font-family:'Montserrat',sans-serif;font-weight:900;font-size:3.5rem;color:rgba(24,88,80,.06);line-height:1;pointer-events:none}
+
+/* ── 2. DORM PARENTS ── */
+.dorm-sec{background:var(--white)}
+.dorm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4.5rem);align-items:center;margin-top:2rem}
+.dorm-visual{position:relative}
+.dorm-card{background:var(--forest-deep);border-radius:4px;padding:2.2rem;color:#fff;position:relative;overflow:hidden}
+.dorm-card::before{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:30px solid rgba(255,255,255,.05)}
+.dorm-stat{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3.5rem;color:var(--gold);line-height:1;margin-bottom:.3rem}
+.dorm-stat-lbl{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:1.5rem}
+.dorm-quote{border-left:3px solid var(--gold);padding-left:1rem;font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.65;font-style:italic;position:relative;z-index:1}
+.dorm-copy h2{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;color:var(--forest-deep);margin-bottom:.8rem}
+.dorm-copy p{color:var(--slate);line-height:1.72;font-size:.96rem;margin-bottom:1rem}
+.key-list{display:flex;flex-direction:column;gap:.55rem}
+.key-item{display:flex;align-items:flex-start;gap:.65rem;font-size:.88rem;color:var(--slate);line-height:1.5}
+.key-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;margin-top:.45rem}
+
+/* ── 3. SCHEDULE ── */
+.schedule-sec{background:var(--paper)}
+.schedule-tabs{display:flex;gap:0;border:1.5px solid var(--line);width:fit-content;margin:1.8rem 0;border-radius:3px;overflow:hidden}
+.stab{padding:.65rem 1.6rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);cursor:pointer;transition:background .2s,color .2s;background:#fff;border:none}
+.stab.active{background:var(--forest-deep);color:#fff}
+.schedule-panel{display:none}.schedule-panel.active{display:block}
+.sched-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.sched-row{display:grid;grid-template-columns:160px 1fr;gap:0;background:#fff}
+.sched-row.header{background:var(--forest-deep)}
+.sched-time{padding:.7rem 1rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.82rem;color:var(--forest);border-right:1px solid var(--line)}
+.sched-row.header .sched-time{color:var(--gold);border-right-color:rgba(255,255,255,.15)}
+.sched-act{padding:.7rem 1rem;font-size:.86rem;color:var(--slate)}
+.sched-row.header .sched-act{color:rgba(255,255,255,.8);font-weight:600}
+.sched-row.highlight .sched-time{color:var(--forest-deep);font-weight:900}
+.sched-row.highlight .sched-act{font-weight:700;color:var(--forest-deep)}
+.sched-row.highlight{background:rgba(246,171,22,.07)}
+
+/* ── 4. COMMUNICATION ── */
+.comm-sec{background:var(--white)}
+.comm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2rem}
+.comm-card{background:var(--paper);border:1px solid var(--line);padding:1.6rem 1.2rem;text-align:center;transition:transform .3s,box-shadow .3s}
+.comm-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(15,61,56,.18)}
+.comm-icon{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto .9rem;background:rgba(24,88,80,.08)}
+.comm-icon svg{width:1.5rem;height:1.5rem;color:var(--emerald)}
+.comm-card h4{font-size:.92rem;font-weight:800;color:var(--forest-deep);margin-bottom:.4rem}
+.comm-card p{font-size:.8rem;color:var(--slate);line-height:1.55}
+
+/* ── 5. OUTPASS — FLOW CHART ── */
+.outpass-sec{background:var(--paper)}
+.outpass-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start;margin-top:2rem}
+.outpass-flow{display:flex;flex-direction:column;gap:0}
+.oflow-step{display:flex;align-items:center;gap:1rem;position:relative}
+.oflow-step:not(:last-child)::after{content:'';position:absolute;left:22px;top:44px;bottom:-16px;width:2px;background:linear-gradient(to bottom,var(--gold),var(--line))}
+.oflow-dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.9rem;z-index:1}
+.oflow-step:nth-child(1) .oflow-dot{background:var(--gold);color:var(--forest-deep)}
+.oflow-step:nth-child(2) .oflow-dot{background:rgba(246,171,22,.15);color:var(--gold-dark);border:2px solid var(--gold)}
+.oflow-step:nth-child(3) .oflow-dot{background:rgba(246,171,22,.1);color:var(--gold-dark);border:2px solid var(--gold)}
+.oflow-step:nth-child(4) .oflow-dot{background:rgba(246,171,22,.1);color:var(--gold-dark);border:2px solid var(--gold)}
+.oflow-step:nth-child(5) .oflow-dot{background:var(--emerald);color:#fff}
+.oflow-body{padding:1rem 0}
+.oflow-body h5{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.9rem;color:var(--forest-deep);margin-bottom:.2rem}
+.oflow-body p{font-size:.82rem;color:var(--slate);line-height:1.5}
+.outpass-rules{background:var(--forest-deep);padding:1.8rem;border-radius:3px}
+.outpass-rules h4{font-size:.95rem;font-weight:800;color:var(--gold);margin-bottom:1.1rem;letter-spacing:.04em}
+.rule-item{display:flex;align-items:flex-start;gap:.65rem;margin-bottom:.7rem;font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.55}
+.rule-item svg{width:.9rem;height:.9rem;color:var(--gold);flex:none;margin-top:.15rem}
+.outpass-note{background:rgba(246,171,22,.12);border:1px solid rgba(246,171,22,.3);padding:.9rem 1rem;margin-top:1.1rem;font-size:.84rem;color:rgba(255,255,255,.85);border-radius:2px}
+
+/* ── 6. DISCIPLINE — STEPPED ESCALATION ── */
+.disc-sec{background:var(--white)}
+.disc-note{background:var(--forest-deep);padding:1.1rem 1.8rem;margin-top:2rem;margin-bottom:2rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;color:#fff;letter-spacing:.04em;text-align:center}
+.disc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.disc-steps::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:2px;background:linear-gradient(to right,var(--emerald),var(--gold),var(--gold-dark),#dc2626)}
+.disc-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 1rem;position:relative;z-index:1}
+.disc-badge{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;margin-bottom:1.2rem;font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem}
+.disc-step:nth-child(1) .disc-badge{background:rgba(45,148,92,.12);border:2px solid var(--emerald);color:var(--emerald)}
+.disc-step:nth-child(2) .disc-badge{background:rgba(246,171,22,.12);border:2px solid var(--gold-dark);color:var(--gold-dark)}
+.disc-step:nth-child(3) .disc-badge{background:rgba(220,100,0,.1);border:2px solid #e06000;color:#e06000}
+.disc-step:nth-child(4) .disc-badge{background:rgba(220,38,38,.1);border:2px solid #dc2626;color:#dc2626}
+.disc-step .violation{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
+.disc-step:nth-child(1) .violation{color:var(--emerald)}
+.disc-step:nth-child(2) .violation{color:var(--gold-dark)}
+.disc-step:nth-child(3) .violation{color:#e06000}
+.disc-step:nth-child(4) .violation{color:#dc2626}
+.disc-step h4{font-size:.95rem;font-weight:800;color:var(--forest-deep);margin-bottom:.5rem}
+.disc-step p{font-size:.82rem;color:var(--slate);line-height:1.55}
+
+/* ── 7. SAFETY & NUTRITION SIDE BY SIDE ── */
+.care-sec{background:var(--paper)}
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.care-panel{background:#fff;border:1px solid var(--line);padding:2rem;overflow:hidden;position:relative}
+.care-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.care-panel.safety::before{background:var(--forest)}
+.care-panel.nutrition::before{background:var(--gold)}
+.care-panel-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.4rem}
+.care-panel-head .ph-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;flex:none}
+.care-panel.safety .ph-icon{background:rgba(24,88,80,.08)}.care-panel.nutrition .ph-icon{background:rgba(246,171,22,.1)}
+.care-panel-head svg{width:1.3rem;height:1.3rem}
+.care-panel.safety .ph-icon svg{color:var(--forest)}.care-panel.nutrition .ph-icon svg{color:var(--gold-dark)}
+.care-panel-head h3{font-size:1.05rem;font-weight:800;color:var(--forest-deep)}
+.care-items{display:flex;flex-direction:column;gap:.65rem}
+.care-item{display:flex;align-items:flex-start;gap:.65rem;padding:.75rem .9rem;background:var(--paper);border-left:3px solid transparent}
+.care-panel.safety .care-item{border-left-color:var(--forest)}
+.care-panel.nutrition .care-item{border-left-color:var(--gold)}
+.care-item svg{width:1rem;height:1rem;flex:none;margin-top:.12rem}
+.care-panel.safety .care-item svg{color:var(--forest)}.care-panel.nutrition .care-item svg{color:var(--gold-dark)}
+.care-item-txt h5{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--forest-deep);margin-bottom:.15rem}
+.care-item-txt p{font-size:.8rem;color:var(--slate);line-height:1.5}
+/* meal chips */
+.meal-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1rem}
+.mchip{background:rgba(246,171,22,.08);border:1px solid rgba(246,171,22,.25);padding:.5rem .8rem;font-size:.82rem;font-weight:600;color:var(--forest-deep);text-align:center}
+
+/* PHOTO GALLERY */
+.gallery-sec{background:var(--white)}
+.life-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:220px 180px;gap:6px;margin-top:1.8rem}
+.lg-item{position:relative;overflow:hidden;background:var(--forest-deep)}
+.lg-item.wide{grid-column:span 2}
+.lg-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.lg-item:hover img{transform:scale(1.06)}
+.lg-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,44,40,.65) 0%,transparent 50%);pointer-events:none}
+.lg-item .lg-lbl{position:absolute;bottom:.7rem;left:.9rem;z-index:2;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.lg-item .lg-ph{position:absolute;inset:0}
+.lg-item.c1 .lg-ph{background:linear-gradient(135deg,#0a3028,#2d945c)}
+.lg-item.c2 .lg-ph{background:linear-gradient(135deg,#3d0d63,#6816a4)}
+.lg-item.c3 .lg-ph{background:linear-gradient(135deg,#7a4b00,#c4880e)}
+.lg-item.c4 .lg-ph{background:linear-gradient(135deg,#052012,#185850)}
+.lg-item.c5 .lg-ph{background:linear-gradient(135deg,#1a2830,#2d6060)}
+.lg-item.c6 .lg-ph{background:linear-gradient(135deg,#0f3d38,#185850)}
+
+/* Shared utilities */
+.dark-band{background:var(--forest-deep);padding:1.8rem 0}
+.dark-band-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.dark-band-inner h3{font-size:clamp(1rem,1.8vw,1.2rem);font-weight:800;color:#fff}
+.dark-band-inner p{color:rgba(255,255,255,.58);font-size:.88rem;margin-top:.25rem;max-width:52ch}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--forest-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.7rem;transition:background .2s,transform .2s;white-space:nowrap}
+.btn-gold:hover{background:#e09d10;transform:translateY(-2px)}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.7rem;transition:border-color .2s,background .2s;white-space:nowrap}
+.btn-ghost-w:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.cta-link{display:inline-flex;align-items:center;gap:.45rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);transition:gap .2s,color .2s}
+.cta-link:hover{gap:.7rem;color:var(--emerald)}
+.cta-band{background:var(--ink);padding:clamp(48px,6vw,80px) 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.04)}
+.cta-band h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:#fff;margin-bottom:.7rem}
+.cta-band p{color:rgba(255,255,255,.6);font-size:.96rem;max-width:44ch;margin-inline:auto;margin-bottom:1.8rem}
+.cta-acts{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:#061c19;color:rgba(255,255,255,.52);font-size:.86rem}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding:3rem 0}
+.foot-brand p{color:rgba(255,255,255,.42);max-width:28ch;margin-top:.8rem;line-height:1.7}
+.foot-brand .socials{display:flex;gap:.5rem;margin-top:1.2rem}
+.foot-brand .socials a{width:34px;height:34px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:rgba(255,255,255,.55);transition:.2s}
+.foot-brand .socials a:hover{background:var(--gold);color:var(--forest-deep)}
+footer h5{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:.9rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+footer ul a{color:rgba(255,255,255,.48);transition:color .2s;font-size:.84rem}
+footer ul a:hover{color:var(--gold)}
+.fc{display:flex;gap:.55rem;margin-bottom:.8rem;align-items:flex-start;font-size:.84rem}
+.fc svg{width:.9rem;height:.9rem;color:var(--gold);flex:none;margin-top:.18rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.2rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.7rem;color:rgba(255,255,255,.35);font-size:.78rem}
+.pal{display:flex;gap:3px}.pal i{width:10px;height:10px;border-radius:50%}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.s1{transition-delay:.1s}.reveal.s2{transition-delay:.2s}.reveal.s3{transition-delay:.3s}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .main-nav{display:none}.burger{display:flex}
+  .comm-grid{grid-template-columns:1fr 1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .values-tiles{grid-template-columns:1fr 1fr}
+  .dorm-grid,.outpass-inner,.care-grid{grid-template-columns:1fr}
+  .disc-steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .disc-steps::before{display:none}
+  .sched-wrap{grid-template-columns:1fr}
+  .life-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .lg-item.wide{grid-column:span 1}
+  body{padding-top:calc(30px + 64px)}
+}
+@media(max-width:600px){
+  .values-tiles{grid-template-columns:1fr}
+  .comm-grid{grid-template-columns:1fr 1fr}
+  .disc-steps{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 5 6v5c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-9-9a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c-2 4.5-7 9-7 9Z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 0 12 9 9 0 0 0 9-9 6 6 0 0 0-9-3Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 0 1 0 6M21 20c0-2.5-1.5-4.6-3.7-5.5"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v5"/><path d="M2 20v-5a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v5"/><path d="M2 20h20M2 9h20"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19C4 12 9 5 19 5c0 10-7 15-14 14Z"/><path d="M9 15c2-3 5-5 8-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c5-5 7-8 7-11a7 7 0 0 0-14 0c0 3 2 6 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.5 14.4c-.3-.15-1.8-.88-2.07-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6l.44-.5c.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.8.37C7.3 7.05 6.5 7.8 6.5 9.3s1.1 2.93 1.25 3.13c.15.2 2.15 3.28 5.2 4.6.73.3 1.3.5 1.74.63.73.22 1.4.19 1.92.12.59-.09 1.8-.74 2.06-1.45.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.57-.35Z"/><path d="M12 2a10 10 0 0 0-8.59 15.1L2 22l5.06-1.38A10 10 0 1 0 12 2Zm0 18.18a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31A8.18 8.18 0 1 1 12 20.18Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.5C13.5 9.2 13.7 9 14 9Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.5 8s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.8C16.4 5 12 5 12 5s-4.4 0-6.8.2c-.4 0-1.2 0-1.9.8-.6.6-.8 2-.8 2S2.3 9.6 2.3 11.2v1.5C2.3 14.4 2.5 16 2.5 16s.2 1.4.8 2c.7.8 1.7.8 2.1.9C6.8 19 12 19 12 19s4.4 0 6.8-.2c.4 0 1.2 0 1.9-.8.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C21.7 9.6 21.5 8 21.5 8ZM10 14.5v-5l4.5 2.5-4.5 2.5Z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M7 9v9H4V9h3ZM5.5 7.5A1.5 1.5 0 1 1 5.5 4.5a1.5 1.5 0 0 1 0 3ZM20 18h-3v-4.8c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V18h-3V9h3v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 3.3 1.3 3.3 4V18Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.6 5.7 6.2.6-4.7 4.1 1.4 6.1L12 16.9 6.5 19.6l1.4-6.1L3.2 9.3l6.2-.6L12 3Z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69Z"/></symbol>
+  <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></symbol>
+</svg>
+
+<!-- UTIL -->
+<div class="util">
+  <div class="w">
+    <div class="util-left">
+      <a href="tel:+919606488347"><svg style="width:.82rem;height:.82rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-phone"/></svg>+91 96064 88347</a>
+      <span class="sep">|</span>
+      <a href="mailto:admissions@theacademiccity.com"><svg style="width:.82rem;height:.82rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-mail"/></svg>admissions@theacademiccity.com</a>
+    </div>
+    <span class="badge">⚡ Admissions Open 2026–27</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="w nav-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-emblem"><svg viewBox="0 0 24 24"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+      <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+    </a>
+    <nav><ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li class="has-drop">
+        <a href="#" class="active">Explore TACS <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="drop-menu">
+          <a href="academics.html">Academics</a>
+          <a href="cocurricular.html">Co-curricular</a>
+          <a href="boarding.html" class="active">Boarding</a>
+          <a href="career-guidance.html">Career Guidance</a>
+        </div>
+      </li>
+      <li><a href="index.html#admissions">Admissions</a></li>
+      <li><a href="index.html#news">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-apply">Apply Now</a></li>
+    </ul></nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mob-drawer" id="mobDrawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About Us</a>
+  <a href="academics.html" class="mob-sub">Academics</a>
+  <a href="cocurricular.html" class="mob-sub">Co-curricular</a>
+  <a href="boarding.html" class="mob-sub active">Boarding</a>
+  <a href="career-guidance.html" class="mob-sub">Career Guidance</a>
+  <a href="index.html#admissions">Admissions</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="mob-apply">Apply Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://theacademiccity.com/images/Home/nav/boarding.png" alt="Boarding at TACS" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-inner">
+    <div class="w">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Boarding Life</span></div>
+      <h1>Boarding Life at <em>TACS</em></h1>
+      <p>Indic value-based residential living — structured, safe and genuinely nurturing. A second home where discipline, character and independence grow every day.</p>
+      <div class="hero-stats">
+        <div class="hs"><div class="n">24 × 7</div><div class="l">On-campus care</div></div>
+        <div class="hs"><div class="n">6 Meals</div><div class="l">Daily, veg &amp; Jain</div></div>
+        <div class="hs"><div class="n">30–35</div><div class="l">Students per dorm parent</div></div>
+        <div class="hs"><div class="n">Indic</div><div class="l">Values at the core</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBNAV -->
+<nav class="subnav" id="subnav">
+  <div class="w subnav-inner">
+    <a href="#values" class="active">Values</a>
+    <a href="#dorm">Dorm Life</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#communication">Communication</a>
+    <a href="#outpass">Outpass</a>
+    <a href="#discipline">Discipline</a>
+    <a href="#care">Safety &amp; Food</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+</nav>
+
+<!-- 1. INDIC VALUES — 6 TILES -->
+<section class="values-sec sec" id="values">
+  <div class="w">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+      <span class="lbl center">Indic Value-Based Boarding Life</span>
+      <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--forest-deep)">Instilling discipline, values &amp; self-leadership</h2>
+      <p style="color:var(--slate);font-size:.96rem;margin-top:.6rem;max-width:54ch;margin-inline:auto">Through structured routines and community living, students develop character that lasts long after school.</p>
+    </div>
+    <div class="values-tiles">
+      <div class="vtile t1 reveal">
+        <div class="vtile-icon"><svg><use href="#i-leaf"/></svg></div>
+        <h3>Indian Ethos</h3>
+        <p>Rooted in respect, humility and gratitude. Students live the values of seva, discipline and mindfulness — every single day.</p>
+        <span class="ghost-num">01</span>
+      </div>
+      <div class="vtile t2 reveal s1">
+        <div class="vtile-icon"><svg><use href="#i-sun"/></svg></div>
+        <h3>Mindfulness Daily</h3>
+        <p>Yoga, meditation and morning reflection — a structured start to every day that builds focus, calm and inner awareness.</p>
+        <span class="ghost-num">02</span>
+      </div>
+      <div class="vtile t3 reveal s2">
+        <div class="vtile-icon"><svg><use href="#i-star"/></svg></div>
+        <h3>Resilience</h3>
+        <p>Structured living builds grit. Students balance academics and character, developing self-leadership from Grade 5.</p>
+        <span class="ghost-num">03</span>
+      </div>
+      <div class="vtile t4 reveal">
+        <div class="vtile-icon"><svg><use href="#i-users"/></svg></div>
+        <h3>Community Living</h3>
+        <p>Simple shared spaces, peer learning and the house system foster collaboration, empathy and genuine friendship.</p>
+        <span class="ghost-num">04</span>
+      </div>
+      <div class="vtile t5 reveal s1">
+        <div class="vtile-icon"><svg><use href="#i-home"/></svg></div>
+        <h3>Cultural Awareness</h3>
+        <p>Festivals, performing arts and Indic heritage — students stay connected to tradition while building a global perspective.</p>
+        <span class="ghost-num">05</span>
+      </div>
+      <div class="vtile t6 reveal s2">
+        <div class="vtile-icon"><svg><use href="#i-heart"/></svg></div>
+        <h3>Inner Growth</h3>
+        <p>Character, confidence and clarity — the three outcomes every TACS boarding student carries forward into adult life.</p>
+        <span class="ghost-num">06</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK BAND -->
+<div class="dark-band">
+  <div class="w dark-band-inner reveal">
+    <div><h3>A boarding school where every hour has a purpose</h3><p>From 5:30 AM wake-up to 10:15 PM lights out — the structure is what makes the difference.</p></div>
+    <a class="btn-ghost-w" href="index.html#contact">Book a campus visit <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+  </div>
+</div>
+
+<!-- 2. DORM PARENTS -->
+<section class="dorm-sec sec" id="dorm">
+  <div class="w">
+    <div class="dorm-grid">
+      <!-- Visual card left -->
+      <div class="dorm-visual reveal">
+        <div class="dorm-card">
+          <div class="dorm-stat">30–35</div>
+          <div class="dorm-stat-lbl">Students per dorm parent</div>
+          <div class="dorm-quote">"Dorm parents are the one point of contact for anything that happens on campus. They are there for students through thick and thin."</div>
+        </div>
+        <!-- Key things below the card -->
+        <div style="margin-top:1.2rem;background:var(--paper);border:1px solid var(--line);padding:1.4rem 1.6rem">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-deep);margin-bottom:.9rem">Key things to remember</div>
+          <div class="key-list">
+            <span class="key-item">Laundry twice every week</span>
+            <span class="key-item">Calling family twice a week</span>
+            <span class="key-item">Personal hygiene schedule maintained</span>
+            <span class="key-item">Circle time with dorm parents daily</span>
+            <span class="key-item">Purchases only through Head of Pastoral Care</span>
+            <span class="key-item">Outpass issued only by wardens</span>
+          </div>
+        </div>
+      </div>
+      <!-- Copy right -->
+      <div class="dorm-copy reveal s1">
+        <span class="lbl">Dorm Parents</span>
+        <h2>One dedicated adult for every 30–35 students</h2>
+        <p>Each student is assigned a dorm parent who acts as their primary caregiver, confidant and guide on campus. They supervise daily routines, address concerns immediately and are the single point of contact between students and school management.</p>
+        <p>This isn't just supervision — it's a relationship. Dorm parents know every student by name, temperament and circumstance. They show up when it matters.</p>
+        <!-- Illustrated SVG showing relationship -->
+        <div style="background:var(--paper);border:1px solid var(--line);padding:1.4rem;margin-top:.5rem">
+          <svg viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif" style="width:100%;height:auto">
+            <!-- Dorm Parent central -->
+            <circle cx="70" cy="70" r="40" fill="#0f3d38"/>
+            <text x="70" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#f6ab16">DORM</text>
+            <text x="70" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#f6ab16">PARENT</text>
+            <!-- Connectors -->
+            <line x1="110" y1="55" x2="165" y2="40" stroke="#dce8e4" stroke-width="1.5"/>
+            <line x1="110" y1="70" x2="165" y2="70" stroke="#dce8e4" stroke-width="1.5"/>
+            <line x1="110" y1="85" x2="165" y2="100" stroke="#dce8e4" stroke-width="1.5"/>
+            <!-- Students -->
+            <circle cx="180" cy="35" r="14" fill="rgba(45,148,92,.12)" stroke="#2d945c" stroke-width="1.2"/>
+            <text x="180" y="39" text-anchor="middle" font-size="8" font-weight="600" fill="#185850">Student</text>
+            <circle cx="180" cy="70" r="14" fill="rgba(45,148,92,.12)" stroke="#2d945c" stroke-width="1.2"/>
+            <text x="180" y="74" text-anchor="middle" font-size="8" font-weight="600" fill="#185850">Student</text>
+            <circle cx="180" cy="105" r="14" fill="rgba(45,148,92,.12)" stroke="#2d945c" stroke-width="1.2"/>
+            <text x="180" y="109" text-anchor="middle" font-size="8" font-weight="600" fill="#185850">Student</text>
+            <text x="218" y="74" font-size="9" fill="#5a6a72">· · · up to 35 students</text>
+            <!-- Responsibilities -->
+            <rect x="310" y="10" width="175" height="120" rx="4" fill="#f4f8f6" stroke="#dce8e4" stroke-width="1"/>
+            <text x="322" y="30" font-size="9" font-weight="700" fill="#0f3d38">Dorm Parent Responsibilities</text>
+            <text x="322" y="48" font-size="8.5" fill="#5a6a72">• Daily welfare check-ins</text>
+            <text x="322" y="64" font-size="8.5" fill="#5a6a72">• Supervise routines &amp; hygiene</text>
+            <text x="322" y="80" font-size="8.5" fill="#5a6a72">• Parent communication</text>
+            <text x="322" y="96" font-size="8.5" fill="#5a6a72">• Circle time every evening</text>
+            <text x="322" y="112" font-size="8.5" fill="#5a6a72">• Outpass approvals</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SCHEDULE — TABBED WEEKDAY + SUNDAY -->
+<section class="schedule-sec sec" id="schedule">
+  <div class="w">
+    <div class="reveal">
+      <span class="lbl">Daily Schedule — Senior</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">Every hour has a purpose</h2>
+      <p style="color:var(--slate);font-size:.96rem;margin-top:.5rem;max-width:50ch">Two different schedules — structured weekdays and a relaxed, enriching Sunday.</p>
+    </div>
+    <div class="schedule-tabs reveal">
+      <button class="stab active" onclick="switchTab('weekday')">Weekday</button>
+      <button class="stab" onclick="switchTab('sunday')">Sunday</button>
+    </div>
+
+    <!-- WEEKDAY -->
+    <div class="schedule-panel active reveal" id="tab-weekday">
+      <div class="sched-wrap">
+        <div class="sched-row header">
+          <div class="sched-time">Time</div>
+          <div class="sched-act">Activity</div>
+        </div>
+        <div class="sched-row header">
+          <div class="sched-time">Time</div>
+          <div class="sched-act">Activity</div>
+        </div>
+        <div class="sched-row"><div class="sched-time">5:30 AM</div><div class="sched-act">Wake Up</div></div>
+        <div class="sched-row"><div class="sched-time">6:00 – 6:30 AM</div><div class="sched-act">Yoga / Meditation / Warm-up</div></div>
+        <div class="sched-row"><div class="sched-time">6:30 – 7:30 AM</div><div class="sched-act">Getting Ready</div></div>
+        <div class="sched-row"><div class="sched-time">7:30 – 8:00 AM</div><div class="sched-act">Breakfast</div></div>
+        <div class="sched-row"><div class="sched-time">8:10 – 8:25 AM</div><div class="sched-act">Morning Assembly</div></div>
+        <div class="sched-row highlight"><div class="sched-time">8:30 – 4:20 PM</div><div class="sched-act">School Hours</div></div>
+        <div class="sched-row"><div class="sched-time">4:40 – 5:00 PM</div><div class="sched-act">Evening Snacks</div></div>
+        <div class="sched-row highlight"><div class="sched-time">5:00 – 6:15 PM</div><div class="sched-act">Sports</div></div>
+        <div class="sched-row highlight"><div class="sched-time">6:30 – 8:00 PM</div><div class="sched-act">Evening Prep (Study)</div></div>
+        <div class="sched-row"><div class="sched-time">8:00 – 8:45 PM</div><div class="sched-act">Dinner + Family Calling</div></div>
+        <div class="sched-row highlight"><div class="sched-time">8:45 – 9:30 PM</div><div class="sched-act">Night Prep (Study)</div></div>
+        <div class="sched-row"><div class="sched-time">9:30 – 10:00 PM</div><div class="sched-act">Circle Time + Daily Chores</div></div>
+        <div class="sched-row"><div class="sched-time">10:15 PM</div><div class="sched-act">Lights Off</div></div>
+        <div class="sched-row" style="background:var(--paper)"><div class="sched-time"></div><div class="sched-act"></div></div>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="schedule-panel" id="tab-sunday">
+      <div class="sched-wrap">
+        <div class="sched-row header">
+          <div class="sched-time">Time</div>
+          <div class="sched-act">Activity</div>
+        </div>
+        <div class="sched-row header">
+          <div class="sched-time">Time</div>
+          <div class="sched-act">Activity</div>
+        </div>
+        <div class="sched-row"><div class="sched-time">6:30 AM</div><div class="sched-act">Wake Up</div></div>
+        <div class="sched-row"><div class="sched-time">6:30 – 7:00 AM</div><div class="sched-act">Freshen Up</div></div>
+        <div class="sched-row"><div class="sched-time">7:00 – 8:30 AM</div><div class="sched-act">Morning Playtime</div></div>
+        <div class="sched-row"><div class="sched-time">8:30 – 9:30 AM</div><div class="sched-act">Breakfast</div></div>
+        <div class="sched-row"><div class="sched-time">9:30 – 10:30 AM</div><div class="sched-act">Dorm Cleaning / Shower / Swimming</div></div>
+        <div class="sched-row highlight"><div class="sched-time">10:30 AM – 12:30 PM</div><div class="sched-act">Inter-House Activities</div></div>
+        <div class="sched-row"><div class="sched-time">12:30 – 1:30 PM</div><div class="sched-act">Lunch</div></div>
+        <div class="sched-row"><div class="sched-time">1:30 – 2:30 PM</div><div class="sched-act">Nap Time</div></div>
+        <div class="sched-row"><div class="sched-time">2:30 – 4:00 PM</div><div class="sched-act">Self Study Time</div></div>
+        <div class="sched-row"><div class="sched-time">4:00 – 4:15 PM</div><div class="sched-act">Evening Snacks</div></div>
+        <div class="sched-row highlight"><div class="sched-time">4:15 – 6:00 PM</div><div class="sched-act">Activities / Evening Games / ICT</div></div>
+        <div class="sched-row"><div class="sched-time">6:00 – 8:00 PM</div><div class="sched-act">Movie Time</div></div>
+        <div class="sched-row"><div class="sched-time">8:00 – 8:30 PM</div><div class="sched-act">Dinner</div></div>
+        <div class="sched-row"><div class="sched-time">8:30 – 10:00 PM</div><div class="sched-act">Me Time / Music / Board Games</div></div>
+        <div class="sched-row"><div class="sched-time">10:00 PM</div><div class="sched-act">Lights Off</div></div>
+        <div class="sched-row" style="background:var(--paper)"><div class="sched-time"></div><div class="sched-act"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMMUNICATION -->
+<section class="comm-sec sec" id="communication">
+  <div class="w">
+    <div class="reveal">
+      <span class="lbl">Parent Communication</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">You are always in the loop</h2>
+      <p style="color:var(--slate);font-size:.96rem;margin-top:.5rem;max-width:52ch">Multiple structured channels — so parents are never out of touch with their child's life on campus.</p>
+    </div>
+    <div class="comm-grid">
+      <div class="comm-card reveal">
+        <div class="comm-icon"><svg><use href="#i-phone"/></svg></div>
+        <h4>Calling Schedule</h4>
+        <p>Twice a week for 15 mins + special occasions or sick time (5 mins)</p>
+      </div>
+      <div class="comm-card reveal s1">
+        <div class="comm-icon"><svg><use href="#i-cal"/></svg></div>
+        <h4>Event Updates</h4>
+        <p>Daily / weekly reports, calls, circulars and WhatsApp group announcements</p>
+      </div>
+      <div class="comm-card reveal s2">
+        <div class="comm-icon"><svg><use href="#i-alert"/></svg></div>
+        <h4>Emergency Line</h4>
+        <p>Incident and sickness reporting — parents contacted immediately, no delays</p>
+      </div>
+      <div class="comm-card reveal">
+        <div class="comm-icon"><svg><use href="#i-coffee"/></svg></div>
+        <h4>Coffee Evenings</h4>
+        <p>Class-wise Zoom / Google Meet sessions as per the academic calendar</p>
+      </div>
+      <div class="comm-card reveal s1">
+        <div class="comm-icon"><svg><use href="#i-wa"/></svg></div>
+        <h4>WhatsApp Groups</h4>
+        <p>Class teacher WA group (academics) + Dorm Parent WA group (wellbeing)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. OUTPASS PROTOCOL — FLOWCHART -->
+<section class="outpass-sec sec" id="outpass">
+  <div class="w">
+    <div class="reveal">
+      <span class="lbl">Outpass Protocol</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">A clear process. Every exit, approved.</h2>
+      <p style="color:var(--slate);font-size:.96rem;margin-top:.5rem;max-width:54ch">Students may leave campus only with a pre-approved outpass with 72 hours prior notice.</p>
+    </div>
+    <div class="outpass-inner">
+      <!-- Flowchart -->
+      <div class="outpass-flow reveal">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-deep);margin-bottom:1.2rem">Outpass Request Flow</div>
+        <div class="oflow-step">
+          <div class="oflow-dot">1</div>
+          <div class="oflow-body"><h5>Email Class Teacher</h5><p>Parent submits outpass request via email to class teacher with reason and dates.</p></div>
+        </div>
+        <div style="height:1.2rem"></div>
+        <div class="oflow-step">
+          <div class="oflow-dot">2</div>
+          <div class="oflow-body"><h5>Class Teacher Approval</h5><p>Teacher reviews and approves or flags academic concerns before escalating.</p></div>
+        </div>
+        <div style="height:1.2rem"></div>
+        <div class="oflow-step">
+          <div class="oflow-dot">3</div>
+          <div class="oflow-body"><h5>Dorm Parent Approval</h5><p>Dorm parent confirms student wellbeing status and hostel clearance.</p></div>
+        </div>
+        <div style="height:1.2rem"></div>
+        <div class="oflow-step">
+          <div class="oflow-dot">4</div>
+          <div class="oflow-body"><h5>Management Approval</h5><p>Final sign-off from campus management completes the process.</p></div>
+        </div>
+        <div style="height:1.2rem"></div>
+        <div class="oflow-step">
+          <div class="oflow-dot">✓</div>
+          <div class="oflow-body"><h5>Outpass Granted</h5><p>Physical outpass issued by warden. Student may exit campus with authorised guardian.</p></div>
+        </div>
+      </div>
+      <!-- Rules -->
+      <div class="outpass-rules reveal s1">
+        <h4>Important Rules</h4>
+        <div class="rule-item"><svg><use href="#i-check"/></svg>Only parents or authorised guardians may pick up students.</div>
+        <div class="rule-item"><svg><use href="#i-check"/></svg>Self-outings are not permitted under any circumstances.</div>
+        <div class="rule-item"><svg><use href="#i-check"/></svg>In/out timing restricted to 6:00 AM – 6:00 PM only.</div>
+        <div class="rule-item"><svg><use href="#i-check"/></svg>Emergency exits handled only with management approval.</div>
+        <div class="rule-item"><svg><use href="#i-check"/></svg>72 hours prior intimation mandatory for all outpass requests.</div>
+        <div class="outpass-note">Late return fine: ₹1,000 for the first day, ₹500 per day thereafter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. DISCIPLINE — 4-STEP ESCALATION -->
+<section class="disc-sec sec" id="discipline">
+  <div class="w">
+    <div class="reveal" style="text-align:center">
+      <span class="lbl center">Discipline &amp; Conduct</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">Indiscipline will not be tolerated</h2>
+      <p style="color:var(--slate);font-size:.96rem;margin-top:.5rem;max-width:52ch;margin-inline:auto">A clear, transparent escalation protocol — students and parents know exactly what to expect.</p>
+    </div>
+    <div class="disc-note reveal">INDISCIPLINE AND MISCONDUCT WILL NOT BE TOLERATED UNDER ANY CIRCUMSTANCES</div>
+    <div class="disc-steps">
+      <div class="disc-step reveal">
+        <div class="disc-badge">1st</div>
+        <div class="violation">First Violation</div>
+        <h4>Corrective Action</h4>
+        <p>Corrective measures + Counselling + Self-reflection exercise</p>
+      </div>
+      <div class="disc-step reveal s1">
+        <div class="disc-badge">2nd</div>
+        <div class="violation">Second Violation</div>
+        <h4>Official Warning</h4>
+        <p>Written warning + Corrective measures + Counselling + Self-reflection</p>
+      </div>
+      <div class="disc-step reveal s2">
+        <div class="disc-badge">3rd</div>
+        <div class="violation">Third Violation</div>
+        <h4>Suspension</h4>
+        <p>Suspension + Corrective measures + External counselling as recommended</p>
+      </div>
+      <div class="disc-step reveal s3">
+        <div class="disc-badge">4th</div>
+        <div class="violation">Fourth Violation</div>
+        <h4>Termination</h4>
+        <p>Termination from school on behavioural grounds — no exceptions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SAFETY + NUTRITION SIDE BY SIDE -->
+<section class="care-sec sec" id="care">
+  <div class="w">
+    <div class="reveal" style="margin-bottom:0">
+      <span class="lbl">Safety &amp; Nutrition</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">Safe. Healthy. Always.</h2>
+    </div>
+    <div class="care-grid">
+      <!-- Safety Panel -->
+      <div class="care-panel safety reveal">
+        <div class="care-panel-head">
+          <div class="ph-icon"><svg><use href="#i-shield"/></svg></div>
+          <h3>Safety &amp; Pastoral Care</h3>
+        </div>
+        <div class="care-items">
+          <div class="care-item">
+            <svg><use href="#i-shield"/></svg>
+            <div class="care-item-txt"><h5>24hr Medical Care</h5><p>On-call doctor and nurse on campus at all times. Clinic open round the clock.</p></div>
+          </div>
+          <div class="care-item">
+            <svg><use href="#i-heart"/></svg>
+            <div class="care-item-txt"><h5>Emotional Wellbeing</h5><p>Trained counsellors available for every student — confidential and regular.</p></div>
+          </div>
+          <div class="care-item">
+            <svg><use href="#i-users"/></svg>
+            <div class="care-item-txt"><h5>House Parents Present Overnight</h5><p>Resident wardens in every hostel — first point of contact after lights out.</p></div>
+          </div>
+          <div class="care-item">
+            <svg><use href="#i-star"/></svg>
+            <div class="care-item-txt"><h5>CCTV &amp; Gated Campus</h5><p>Full campus surveillance, 24h security. No unauthorised entry or exit.</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Nutrition Panel -->
+      <div class="care-panel nutrition reveal s1">
+        <div class="care-panel-head">
+          <div class="ph-icon"><svg><use href="#i-droplet"/></svg></div>
+          <h3>Nutrition &amp; Meals</h3>
+        </div>
+        <p style="font-size:.9rem;color:var(--slate);line-height:1.68;margin-bottom:1rem">Six nutritious meals planned by a nutritionist, cooked fresh on campus daily. Vegetarian and Jain options at every meal.</p>
+        <div class="meal-row">
+          <div class="mchip">Early Morning Tea</div>
+          <div class="mchip">Breakfast</div>
+          <div class="mchip">Mid-Morning Snack</div>
+          <div class="mchip">Lunch</div>
+          <div class="mchip">Evening Snack</div>
+          <div class="mchip">Dinner</div>
+        </div>
+        <div style="margin-top:1.2rem;padding:1rem 1.1rem;background:rgba(246,171,22,.07);border:1px solid rgba(246,171,22,.25)">
+          <p style="font-size:.85rem;color:var(--forest-deep)"><strong>Veg &amp; Jain options</strong> — available at every meal. Fresh, nutritionist-designed and cooked daily on campus. No outside food permitted.</p>
+        </div>
+        <div class="care-items" style="margin-top:1.1rem">
+          <div class="care-item">
+            <svg><use href="#i-leaf"/></svg>
+            <div class="care-item-txt"><h5>Farm-fresh produce</h5><p>Our campus farm contributes to the kitchen — students understand where food comes from.</p></div>
+          </div>
+          <div class="care-item">
+            <svg><use href="#i-heart"/></svg>
+            <div class="care-item-txt"><h5>Community dining</h5><p>All meals eaten together — a daily ritual that builds connection and discipline.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GALLERY -->
+<section class="sec" style="background:var(--paper);padding-top:clamp(56px,7vw,88px);padding-bottom:clamp(56px,7vw,88px)" id="gallery">
+  <div class="w">
+    <div class="reveal" style="margin-bottom:.4rem">
+      <span class="lbl">Boarding Life in Pictures</span>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--forest-deep)">See what a day at TACS looks like</h2>
+    </div>
+    <div class="life-grid reveal">
+      <div class="lg-item wide c1">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/homepage/campus/1.png" alt="Campus" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Campus Life</span>
+      </div>
+      <div class="lg-item c2">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/Home/nav/sports.png" alt="Morning sport" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Morning Sport</span>
+      </div>
+      <div class="lg-item c3">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/Home/nav/boarding.png" alt="Hostel" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Hostel Life</span>
+      </div>
+      <div class="lg-item c4">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/Home/nav/agri1.png" alt="Farm" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Farm &amp; Nature</span>
+      </div>
+      <div class="lg-item c5">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/Home/nav/career1.png" alt="Study" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Evening Study</span>
+      </div>
+      <div class="lg-item wide c6">
+        <div class="lg-ph"></div>
+        <img src="https://theacademiccity.com/images/homepage/campus/2.png" alt="Evening campus" loading="lazy" onerror="this.style.display='none'">
+        <span class="lg-lbl">Campus at Evening</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="w" style="position:relative;z-index:1">
+    <span class="lbl light center" style="justify-content:center;margin-bottom:.6rem">Admissions 2026–27</span>
+    <h2>See boarding life for yourself</h2>
+    <p>Walk the dormitories, meet the dorm parents, see the dining hall. Nothing builds trust like being there.</p>
+    <div class="cta-acts">
+      <a class="btn-gold" href="index.html#contact">Book a campus visit <svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-arrow"/></svg></a>
+      <a class="btn-ghost-w" href="tel:+919606488347"><svg style="width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:2"><use href="#i-phone"/></svg> +91 96064 88347</a>
+      <a class="btn-ghost-w" href="https://wa.me/919364898405" target="_blank" rel="noopener"><svg style="width:.9rem;height:.9rem;fill:currentColor;stroke:none"><use href="#i-wa"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w foot-top">
+    <div class="foot-brand">
+      <div class="brand" style="margin-bottom:.7rem">
+        <div class="brand-emblem" style="width:42px;height:42px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:var(--forest-deep)"><path d="M12 3 2 9l10 5 10-5-10-6Z"/><path d="M6 11.5v4.5c0 .8 2.7 2 6 2s6-1.2 6-2v-4.5"/></svg></div>
+        <div class="brand-text"><b>The Academic City</b><span>Boarding School · Bengaluru</span></div>
+      </div>
+      <p>India's first career-oriented boarding school.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/people/The-Academic-City-School/61551006306504/" target="_blank" rel="noopener"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/the_academic_city/" target="_blank" rel="noopener"><svg style="width:.95rem;height:.95rem;fill:none;stroke:currentColor;stroke-width:1.8"><use href="#i-ig"/></svg></a>
+        <a href="https://www.youtube.com/@TheAcademicCitySchool" target="_blank" rel="noopener"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-yt"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-academic-citybangalore/" target="_blank" rel="noopener"><svg style="width:.95rem;height:.95rem;fill:currentColor;stroke:none"><use href="#i-li"/></svg></a>
+      </div>
+    </div>
+    <div><h5>Explore</h5><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="cocurricular.html">Co-curricular</a></li>
+      <li><a href="boarding.html">Boarding Life</a></li>
+      <li><a href="career-guidance.html">Career Guidance</a></li>
+    </ul></div>
+    <div><h5>Admissions</h5><ul>
+      <li><a href="index.html#admissions">How to Apply</a></li>
+      <li><a href="index.html#campus">Our Campus</a></li>
+      <li><a href="index.html#founders">Leadership</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul></div>
+    <div><h5>Reach Us</h5>
+      <div class="fc"><svg><use href="#i-pin"/></svg><span>Nelamangala, Bengaluru, KA 562123</span></div>
+      <div class="fc"><svg><use href="#i-phone"/></svg><span>+91 96064 88347</span></div>
+      <div class="fc"><svg><use href="#i-mail"/></svg><span>admissions@theacademiccity.com</span></div>
+    </div>
+  </div>
+  <div class="w foot-bottom">
+    <span>© <span id="yr"></span> The Academic City School. All rights reserved.</span>
+    <div class="pal"><i style="background:#185850"></i><i style="background:#2d945c"></i><i style="background:#f6ab16"></i><i style="background:#6816a4"></i><i style="background:#6fdcef"></i></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var burger=document.getElementById('burger'),drawer=document.getElementById('mobDrawer');
+  burger.addEventListener('click',function(){var o=drawer.classList.toggle('open');burger.classList.toggle('x',o);document.body.style.overflow=o?'hidden':'';});
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drawer.classList.remove('open');burger.classList.remove('x');document.body.style.overflow='';});});
+
+  // Schedule tabs
+  window.switchTab = function(id){
+    document.querySelectorAll('.schedule-panel').forEach(function(p){p.classList.remove('active');});
+    document.querySelectorAll('.stab').forEach(function(t){t.classList.remove('active');});
+    document.getElementById('tab-'+id).classList.add('active');
+    event.target.classList.add('active');
+  };
+
+  // Subnav active
+  var secs=['values','dorm','schedule','communication','outpass','discipline','care','gallery'];
+  var links=document.querySelectorAll('.subnav a');
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.remove('active');});var l=document.querySelector('.subnav a[href="#'+e.target.id+'"]');if(l)l.classList.add('active');}});},{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+
+  // Reveals
+  var rio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){rio.observe(el);});
+})();
+</script>
+</body>
+</html>

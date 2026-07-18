@@ -4,11 +4,23 @@ import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
-const stepAccentStyles = [
-  { badge: "bg-emerald/10 text-emerald border-emerald/30" },
-  { badge: "bg-gold/10 text-gold-dark border-gold/40" },
-  { badge: "bg-violet/10 text-violet border-violet/30" },
-  { badge: "bg-forest/10 text-forest border-forest/30" },
+const stepStyles = [
+  {
+    badge: "border-emerald bg-[#eef8f2] text-emerald",
+    violation: "text-emerald",
+  },
+  {
+    badge: "border-gold-dark bg-[#fff8eb] text-gold-dark",
+    violation: "text-gold-dark",
+  },
+  {
+    badge: "border-[#e06000] bg-[#fff3ea] text-[#e06000]",
+    violation: "text-[#e06000]",
+  },
+  {
+    badge: "border-red-600 bg-[#fef2f2] text-red-600",
+    violation: "text-red-600",
+  },
 ] as const;
 
 export function DisciplineSection() {
@@ -16,41 +28,53 @@ export function DisciplineSection() {
 
   return (
     <Section id="discipline">
-      <RevealOnScroll className="mx-auto max-w-3xl text-center">
-        <SectionLabel centered>{discipline.label}</SectionLabel>
+      <RevealOnScroll>
+        <SectionLabel>{discipline.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
           {discipline.title}
         </h2>
-        <p className="mx-auto mt-2 max-w-[52ch] text-[0.96rem] text-slate">{discipline.description}</p>
+        <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{discipline.description}</p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-7 border border-gold/30 bg-gold/8 px-5 py-4 text-center">
-          <p className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-gold-dark">
+        <div className="mt-8 bg-forest-deep px-7 py-4 text-center">
+          <p className="font-montserrat text-[0.88rem] font-bold tracking-[0.04em] text-white">
             {discipline.banner}
           </p>
         </div>
       </RevealOnScroll>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[12%] right-[12%] top-10 z-0 hidden h-0.5 bg-gradient-to-r from-emerald via-gold to-red-600 lg:block"
+        />
         {discipline.steps.map((step, index) => {
-          const accent = stepAccentStyles[index] ?? stepAccentStyles[0];
+          const styles = stepStyles[index] ?? stepStyles[0];
 
           return (
             <RevealOnScroll key={step.badge} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-              <article className="flex h-full flex-col border border-line bg-paper p-5">
-                <span
+              <article className="relative flex flex-col items-center px-4 text-center">
+                <div
                   className={cn(
-                    "mb-3 inline-block w-fit border px-2.5 py-1 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-[0.12em]",
-                    accent.badge,
+                    "relative z-10 mb-5 grid h-20 w-20 place-items-center rounded-full border-2 font-montserrat text-[1.3rem] font-black",
+                    styles.badge,
                   )}
                 >
-                  {step.badge} · {step.violation}
-                </span>
+                  {step.badge}
+                </div>
+                <p
+                  className={cn(
+                    "mb-1.5 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-[0.14em]",
+                    styles.violation,
+                  )}
+                >
+                  {step.violation}
+                </p>
                 <h3 className="font-montserrat text-[0.95rem] font-extrabold text-forest-deep">
                   {step.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
+                <p className="mt-2 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
               </article>
             </RevealOnScroll>
           );

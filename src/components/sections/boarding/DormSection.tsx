@@ -1,16 +1,57 @@
 import { boardingPageContent } from "@/data/boarding";
+import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import type { BoardingPageContent } from "@/types/boarding";
+
+type KeyItem = BoardingPageContent["dorm"]["keyItems"][number];
+
+function KeyItemList({ items }: { items: readonly KeyItem[] }) {
+  return (
+    <ul className="flex flex-col gap-2.5">
+      {items.map((item) => (
+        <li key={item.text} className="flex items-center gap-3">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] bg-forest/8">
+            <Icon name={item.icon} className="h-[1.05rem] w-[1.05rem] text-emerald" />
+          </span>
+          <span className="text-[0.84rem] leading-snug text-slate">{item.text}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function DormSection() {
   const { dorm } = boardingPageContent;
+  const leftKeyItems = dorm.keyItems.slice(0, 3);
+  const rightKeyItems = dorm.keyItems.slice(3, 6);
 
   return (
     <Section id="dorm">
-      <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-        <RevealOnScroll>
+      <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+        <RevealOnScroll className="flex h-full min-h-0">
+          <div className="group relative h-full w-full min-h-[320px] overflow-hidden rounded-2xl bg-forest-deep">
+            <ImageWithFallback
+              image={dorm.image}
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"
+            />
+            <div className="absolute inset-x-0 bottom-0 z-[2] px-6 pb-6 pt-16 sm:px-7 sm:pb-7">
+              <blockquote className="border-l-[3px] border-gold pl-4 text-[0.92rem] italic leading-relaxed text-white/90">
+                &ldquo;{dorm.quote}&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={1} className="flex h-full min-h-0 flex-col">
           <SectionLabel>{dorm.label}</SectionLabel>
           <h2 className="font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold text-forest-deep">
             {dorm.title}
@@ -20,31 +61,15 @@ export function DormSection() {
               {paragraph}
             </p>
           ))}
-        </RevealOnScroll>
 
-        <RevealOnScroll delay={1}>
-          <div className="border border-line bg-paper p-6">
-            <div className="border-b border-line pb-5 text-center">
-              <p className="font-montserrat text-[clamp(2.4rem,5vw,3.2rem)] font-black leading-none text-emerald">
-                {dorm.stat}
-              </p>
-              <p className="mt-1 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.12em] text-slate">
-                {dorm.statLabel}
-              </p>
+          <div className="mt-5 w-full border border-line bg-paper px-5 py-4">
+            <p className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-forest-deep">
+              {dorm.keyItemsLabel}
+            </p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 sm:gap-x-6">
+              <KeyItemList items={leftKeyItems} />
+              <KeyItemList items={rightKeyItems} />
             </div>
-
-            <blockquote className="mt-5 border-l-[3px] border-gold pl-4 text-[0.9rem] italic leading-relaxed text-forest-deep">
-              &ldquo;{dorm.quote}&rdquo;
-            </blockquote>
-
-            <ul className="mt-6 flex flex-col gap-2.5">
-              {dorm.keyItems.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-[0.84rem] text-slate">
-                  <Icon name="checkCircle" className="mt-0.5 h-4 w-4 shrink-0 text-emerald" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </RevealOnScroll>
       </div>

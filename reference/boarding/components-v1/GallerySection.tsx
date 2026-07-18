@@ -18,7 +18,7 @@ export function GallerySection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-7 grid grid-cols-2 gap-1.5 md:grid-cols-4 md:grid-rows-[220px_180px]">
+        <div className="mt-7 grid grid-cols-2 gap-1.5 md:grid-cols-4 md:grid-rows-[220px_220px]">
           {gallery.items.map((item) => (
             <div
               key={item.label}
@@ -32,14 +32,14 @@ export function GallerySection() {
                   image={item.image}
                   fill
                   sizes="(min-width: 768px) 25vw, 50vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.06]"
+                  className="object-cover transition duration-500 group-hover:scale-[1.06] group-hover:brightness-[0.85]"
                 />
               </div>
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,44,40,0.65)] via-transparent to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,44,40,0.75)] via-transparent to-transparent"
               />
-              <div className="absolute bottom-3 left-3.5 z-[2] font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white">
+              <div className="absolute bottom-3 left-3.5 z-[2] font-montserrat text-[0.74rem] font-bold uppercase tracking-[0.08em] text-white">
                 {item.label}
               </div>
             </div>

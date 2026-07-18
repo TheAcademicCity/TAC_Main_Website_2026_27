@@ -1,0 +1,11 @@
+export { BoardingHeroSection } from "./BoardingHeroSection";
+export { ValuesSection } from "./ValuesSection";
+export { BoardingBandSection } from "./BoardingBandSection";
+export { DormSection } from "./DormSection";
+export { ScheduleSection } from "./ScheduleSection";
+export { CommunicationSection } from "./CommunicationSection";
+export { OutpassSection } from "./OutpassSection";
+export { DisciplineSection } from "./DisciplineSection";
+export { CareSection } from "./CareSection";
+export { GallerySection } from "./GallerySection";
+export { BoardingCtaSection } from "./BoardingCtaSection";

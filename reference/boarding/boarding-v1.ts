@@ -17,12 +17,12 @@ const weekdaySchedule = [
   { time: "6:30 – 7:30 AM", activity: "Getting Ready" },
   { time: "7:30 – 8:00 AM", activity: "Breakfast" },
   { time: "8:10 – 8:25 AM", activity: "Morning Assembly" },
-  { time: "8:30 – 4:20 PM", activity: "School Hours" },
+  { time: "8:30 – 4:20 PM", activity: "School Hours", highlight: true },
   { time: "4:40 – 5:00 PM", activity: "Evening Snacks" },
-  { time: "5:00 – 6:15 PM", activity: "Sports" },
-  { time: "6:30 – 8:00 PM", activity: "Evening Prep (Study)" },
+  { time: "5:00 – 6:15 PM", activity: "Sports", highlight: true },
+  { time: "6:30 – 8:00 PM", activity: "Evening Prep (Study)", highlight: true },
   { time: "8:00 – 8:45 PM", activity: "Dinner + Family Calling" },
-  { time: "8:45 – 9:30 PM", activity: "Night Prep (Study)" },
+  { time: "8:45 – 9:30 PM", activity: "Night Prep (Study)", highlight: true },
   { time: "9:30 – 10:00 PM", activity: "Circle Time + Daily Chores" },
   { time: "10:15 PM", activity: "Lights Off" },
 ] as const;
@@ -33,12 +33,12 @@ const sundaySchedule = [
   { time: "7:00 – 8:30 AM", activity: "Morning Playtime" },
   { time: "8:30 – 9:30 AM", activity: "Breakfast" },
   { time: "9:30 – 10:30 AM", activity: "Dorm Cleaning / Shower / Swimming" },
-  { time: "10:30 AM – 12:30 PM", activity: "Inter-House Activities" },
+  { time: "10:30 AM – 12:30 PM", activity: "Inter-House Activities", highlight: true },
   { time: "12:30 – 1:30 PM", activity: "Lunch" },
   { time: "1:30 – 2:30 PM", activity: "Nap Time" },
   { time: "2:30 – 4:00 PM", activity: "Self Study Time" },
   { time: "4:00 – 4:15 PM", activity: "Evening Snacks" },
-  { time: "4:15 – 6:00 PM", activity: "Activities / Evening Games / ICT" },
+  { time: "4:15 – 6:00 PM", activity: "Activities / Evening Games / ICT", highlight: true },
   { time: "6:00 – 8:00 PM", activity: "Movie Time" },
   { time: "8:00 – 8:30 PM", activity: "Dinner" },
   { time: "8:30 – 10:00 PM", activity: "Me Time / Music / Board Games" },
@@ -55,7 +55,7 @@ export const boardingPageContent = {
     stats: [
       { value: "24/7", label: "On-campus care" },
       { value: "6 Meals", label: "Daily, Veg & Jain" },
-      { value: "30–35", label: "Students per dorm parent" },
+      { value: "1 : 30", label: "Student-Warden ratio" },
       { value: "Indic", label: "Values at the core" },
     ],
   },
@@ -126,26 +126,23 @@ export const boardingPageContent = {
   },
   dorm: {
     label: "Dorm Parents",
-    title: "One dedicated adult for every 30–35 students",
+    title: "One dedicated dorm parent for every 30–35 students",
     paragraphs: [
       "Each student is assigned a dorm parent who acts as their primary caregiver, confidant and guide on campus. They supervise daily routines, address concerns immediately and are the single point of contact between students and school management.",
       "This isn't just supervision — it's a relationship. Dorm parents know every student by name, temperament and circumstance. They show up when it matters.",
     ],
-    quote:
-      "Dorm parents are the one point of contact for anything that happens on campus. They are there for students through thick and thin.",
     image: createImage(
       "/images/boarding/dorm-parent.png",
       remote.boarding,
       "Dorm parent with students at TACS",
     ),
-    keyItemsLabel: "Key things to remember",
     keyItems: [
-      { icon: "home", text: "Laundry twice every week" },
-      { icon: "phone", text: "Calling family twice a week" },
-      { icon: "droplet", text: "Personal hygiene schedule maintained" },
-      { icon: "users", text: "Circle time with dorm parents daily" },
-      { icon: "wallet", text: "Purchases only through Head of Pastoral Care" },
-      { icon: "document", text: "Outpass issued only by wardens" },
+      "Laundry twice every week",
+      "Calling family twice a week",
+      "Personal hygiene schedule maintained",
+      "Circle time with dorm parents daily",
+      "Purchases only through Head of Pastoral Care",
+      "Outpass issued only by wardens",
     ],
   },
   schedule: {
@@ -268,8 +265,6 @@ export const boardingPageContent = {
     title: "Safe. Healthy. Always.",
     safety: {
       title: "Safety & Pastoral Care",
-      description:
-        "Round-the-clock care, safety and support to ensure every student feels secure and looked after.",
       items: [
         {
           icon: "shieldCheck",
@@ -305,6 +300,7 @@ export const boardingPageContent = {
         "Evening Snack",
         "Dinner",
       ],
+      note: "Veg & Jain options — available at every meal. Fresh, nutritionist-designed and cooked daily on campus. No outside food permitted.",
       items: [
         {
           icon: "leaf",
