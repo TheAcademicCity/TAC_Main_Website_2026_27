@@ -1,40 +1,29 @@
 import { admissionsPageContent } from "@/data/admissions";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
+import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function OverviewSection() {
   const { overview } = admissionsPageContent;
-  const [tallPhoto, ...sidePhotos] = overview.photos;
 
   return (
     <Section id="overview" background="white">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-        <RevealOnScroll>
-          <div className="grid grid-cols-2 gap-1.5">
-            <div className="relative row-span-2 aspect-[3/4] overflow-hidden rounded-sm bg-forest-deep">
-              <ImageWithFallback
-                image={tallPhoto}
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover transition-transform duration-500 ease-out hover:scale-105"
-              />
-            </div>
-            {sidePhotos.map((photo) => (
-              <div key={photo.alt} className="relative aspect-[4/3] overflow-hidden rounded-sm bg-forest-deep">
-                <ImageWithFallback
-                  image={photo}
-                  fill
-                  sizes="(min-width: 1024px) 20vw, 45vw"
-                  className="object-cover transition-transform duration-500 ease-out hover:scale-105"
-                />
-              </div>
-            ))}
+      <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+        <RevealOnScroll className="h-full min-h-0">
+          <div className="relative h-full min-h-[320px] overflow-hidden rounded-sm bg-forest-deep">
+            <ImageWithFallback
+              image={overview.image}
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover transition-transform duration-500 ease-out hover:scale-[1.04]"
+            />
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={1}>
+        <RevealOnScroll delay={1} className="flex flex-col justify-center">
           <SectionLabel>{overview.label}</SectionLabel>
           <h2 className="font-montserrat text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-forest-deep">
             {overview.title}
@@ -45,19 +34,10 @@ export function OverviewSection() {
             </p>
           ))}
 
-          <dl className="mt-5 grid grid-cols-3 gap-3">
-            {overview.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="border border-line bg-paper px-3 py-4 text-center"
-              >
-                <dt className="font-montserrat text-[1.5rem] font-black leading-none text-forest">
-                  {stat.value}
-                </dt>
-                <dd className="mt-1 text-[0.72rem] text-slate">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
+          <Button href={overview.cta.href} className="mt-6 self-start px-7 py-3 text-[0.78rem]">
+            {overview.cta.label}
+            <Icon name="arrow" className="h-3.5 w-3.5" />
+          </Button>
         </RevealOnScroll>
       </div>
     </Section>

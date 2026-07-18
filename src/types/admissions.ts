@@ -1,5 +1,5 @@
 import type { SiteImage } from "@/types/images";
-import type { HeroStat, PageSubnavItem } from "@/types/page";
+import type { PageSubnavItem } from "@/types/page";
 import type { Icon } from "@/components/ui/Icon";
 
 type IconName = Parameters<typeof Icon>[0]["name"];
@@ -19,8 +19,8 @@ export type AdmissionsPageContent = {
     label: string;
     title: string;
     paragraphs: readonly string[];
-    photos: readonly SiteImage[];
-    stats: readonly HeroStat[];
+    image: SiteImage;
+    cta: { label: string; href: string };
   };
   process: {
     label: string;
