@@ -3,7 +3,6 @@ export { OverviewSection } from "./OverviewSection";
 export { ProcessSection } from "./ProcessSection";
 export { CriteriaSection } from "./CriteriaSection";
 export { OnlineBandSection } from "./OnlineBandSection";
-export { EligibilitySection } from "./EligibilitySection";
 export { ScholarshipsSection } from "./ScholarshipsSection";
 export { ClaritySection } from "./ClaritySection";
 export { FaqSection } from "./FaqSection";

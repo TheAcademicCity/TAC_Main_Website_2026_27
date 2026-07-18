@@ -4,7 +4,6 @@ import {
   AdmissionsHeroSection,
   ClaritySection,
   CriteriaSection,
-  EligibilitySection,
   FaqSection,
   OnlineBandSection,
   OverviewSection,
@@ -28,7 +27,6 @@ export default function AdmissionsPage() {
       <ProcessSection />
       <CriteriaSection />
       <OnlineBandSection />
-      <EligibilitySection />
       <ScholarshipsSection />
       <ClaritySection />
       <FaqSection />

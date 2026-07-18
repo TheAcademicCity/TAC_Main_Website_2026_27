@@ -23,7 +23,7 @@ export function AdmissionsCtaSection() {
           <h2 className="font-montserrat text-[clamp(1.6rem,3vw,2.4rem)] font-black text-white">
             {ctaBand.title}
           </h2>
-          <p className="mx-auto mt-3 max-w-[44ch] text-[0.96rem] text-white/60">{ctaBand.description}</p>
+          <p className="mx-auto mt-3 whitespace-nowrap text-[0.96rem] text-white/60">{ctaBand.description}</p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Button href={ctaBand.phone.href} className="px-7 py-3 text-[0.78rem]">

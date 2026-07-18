@@ -28,11 +28,23 @@ export function OverviewSection() {
           <h2 className="font-montserrat text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-forest-deep">
             {overview.title}
           </h2>
-          {overview.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)} className="mt-3 text-[0.96rem] leading-relaxed text-slate">
-              {paragraph}
-            </p>
-          ))}
+          {overview.paragraphs.map((paragraph) => {
+            const [before, after] = paragraph.includes(overview.visitTimings)
+              ? paragraph.split(overview.visitTimings)
+              : [paragraph, ""];
+
+            return (
+              <p key={paragraph.slice(0, 40)} className="mt-3 text-[0.96rem] leading-relaxed text-slate">
+                {before}
+                {after !== "" ? (
+                  <>
+                    <strong className="font-bold text-forest-deep">{overview.visitTimings}</strong>
+                    {after}
+                  </>
+                ) : null}
+              </p>
+            );
+          })}
 
           <Button href={overview.cta.href} className="mt-6 self-start px-7 py-3 text-[0.78rem]">
             {overview.cta.label}

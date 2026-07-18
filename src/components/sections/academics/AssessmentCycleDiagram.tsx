@@ -1,23 +1,67 @@
+import type { ComponentProps } from "react";
+import { Icon } from "@/components/ui/Icon";
+
+type IconName = ComponentProps<typeof Icon>["name"];
+
 type CircleNode = {
   cx: number;
   cy: number;
   r: number;
+  icon: IconName;
+  iconClassName: string;
   lines: [string, string, string];
 };
 
-const CENTER = { cx: 260, cy: 240, r: 62 };
-
-const OUTER_NODE_R = 54;
+const VIEW_WIDTH = 600;
+const VIEW_HEIGHT = 528;
+const TITLE_Y = 36;
+const DIAGRAM_Y_OFFSET = 24;
+const CENTER = { cx: 300, cy: 275 + DIAGRAM_Y_OFFSET, r: 70 };
+const OUTER_NODE_R = 68;
+const CYCLE_ARC_RADIUS = 152;
 
 const NODES: CircleNode[] = [
-  { cx: 260, cy: 100, r: OUTER_NODE_R, lines: ["CONTINUOUS", "ASSESSMENT", "Tests & Projects"] },
-  { cx: 420, cy: 195, r: OUTER_NODE_R, lines: ["TERM", "EXAMS", "2× per year"] },
-  { cx: 380, cy: 358, r: OUTER_NODE_R, lines: ["INDIVIDUAL", "ANALYSIS", "Gap identification"] },
-  { cx: 140, cy: 358, r: OUTER_NODE_R, lines: ["REMEDIATION", "& ENRICHMENT", "Targeted support"] },
-  { cx: 100, cy: 195, r: OUTER_NODE_R, lines: ["PARENT", "FEEDBACK", "Transparent reports"] },
+  {
+    cx: 300,
+    cy: 108 + DIAGRAM_Y_OFFSET,
+    r: OUTER_NODE_R,
+    icon: "document",
+    iconClassName: "h-4 w-4 text-emerald",
+    lines: ["CONTINUOUS", "ASSESSMENT", "Tests & Projects"],
+  },
+  {
+    cx: 488,
+    cy: 220 + DIAGRAM_Y_OFFSET,
+    r: OUTER_NODE_R,
+    icon: "calendar",
+    iconClassName: "h-4 w-4 text-forest-deep",
+    lines: ["TERM", "EXAMS", "2× per year"],
+  },
+  {
+    cx: 442,
+    cy: 418 + DIAGRAM_Y_OFFSET,
+    r: OUTER_NODE_R,
+    icon: "chart",
+    iconClassName: "h-4 w-4 text-emerald",
+    lines: ["INDIVIDUAL", "ANALYSIS", "Gap identification"],
+  },
+  {
+    cx: 158,
+    cy: 418 + DIAGRAM_Y_OFFSET,
+    r: OUTER_NODE_R,
+    icon: "target",
+    iconClassName: "h-4 w-4 text-gold-dark",
+    lines: ["REMEDIATION", "& ENRICHMENT", "Targeted support"],
+  },
+  {
+    cx: 112,
+    cy: 220 + DIAGRAM_Y_OFFSET,
+    r: OUTER_NODE_R,
+    icon: "users",
+    iconClassName: "h-4 w-4 text-violet",
+    lines: ["PARENT", "FEEDBACK", "Transparent reports"],
+  },
 ];
-
-const CYCLE_ARC_RADIUS = 130;
 
 function circleEdge(from: CircleNode, to: CircleNode) {
   const angle = Math.atan2(to.cy - from.cy, to.cx - from.cx);
@@ -49,7 +93,6 @@ function spokeEdge(node: CircleNode) {
   };
 }
 
-/** Circular arc with a shared radius for every cycle arrow. */
 function circularArcPath(
   start: { x: number; y: number },
   end: { x: number; y: number },
@@ -60,7 +103,6 @@ function circularArcPath(
   const dx = end.x - start.x;
   const dy = end.y - start.y;
 
-  // Pick the sweep that bulges outward (away from the SPP center).
   const perpX = dy;
   const perpY = -dx;
   const towardCenterX = CENTER.cx - midX;
@@ -74,25 +116,22 @@ function straightPath(start: { x: number; y: number }, end: { x: number; y: numb
   return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} L ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
 }
 
-function BubbleLabel({ cx, cy, lines }: CircleNode) {
+function NodeContent({ cx, cy, r, icon, iconClassName, lines }: CircleNode) {
+  const diameter = r * 2;
+
   return (
-    <text
-      x={cx}
-      y={cy - 10}
-      textAnchor="middle"
-      fontFamily="Montserrat, sans-serif"
-      fill="#0f3d38"
-    >
-      <tspan x={cx} dy="0" fontSize="10" fontWeight="800">
-        {lines[0]}
-      </tspan>
-      <tspan x={cx} dy="14" fontSize="10" fontWeight="800">
-        {lines[1]}
-      </tspan>
-      <tspan x={cx} dy="13" fontSize="9" fill="#5a6a72">
-        {lines[2]}
-      </tspan>
-    </text>
+    <foreignObject x={cx - r} y={cy - r} width={diameter} height={diameter}>
+      <div className="flex h-full w-full flex-col items-center justify-center gap-2.5 px-2 text-center">
+        <div className="grid h-[30px] w-[30px] shrink-0 place-items-center rounded-full bg-emerald/12">
+          <Icon name={icon} className={iconClassName} />
+        </div>
+        <div className="font-montserrat leading-none">
+          <p className="text-[10px] font-extrabold text-forest-deep">{lines[0]}</p>
+          <p className="mt-1.5 text-[10px] font-extrabold text-forest-deep">{lines[1]}</p>
+          <p className="mt-1.5 text-[9px] text-slate">{lines[2]}</p>
+        </div>
+      </div>
+    </foreignObject>
   );
 }
 
@@ -110,9 +149,9 @@ export function AssessmentCycleDiagram() {
 
   return (
     <svg
-      viewBox="0 0 520 450"
+      viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
       xmlns="http://www.w3.org/2000/svg"
-      className="h-auto w-full"
+      className="mx-auto h-auto w-full max-w-[640px] lg:max-w-none"
       role="img"
       aria-label="Assessment cycle diagram showing continuous assessment, term exams, individual analysis, remediation and parent feedback feeding into the Student Progression Plan"
     >
@@ -137,11 +176,11 @@ export function AssessmentCycleDiagram() {
         </marker>
       </defs>
 
-      <rect width="520" height="450" rx="8" fill="#f4f8f6" />
+      <rect width={VIEW_WIDTH} height={VIEW_HEIGHT} rx="8" fill="#f4f8f6" />
 
       <text
-        x="260"
-        y="36"
+        x={CENTER.cx}
+        y={TITLE_Y}
         textAnchor="middle"
         fontFamily="Montserrat, sans-serif"
         fontSize="13"
@@ -153,23 +192,18 @@ export function AssessmentCycleDiagram() {
       </text>
 
       <circle cx={CENTER.cx} cy={CENTER.cy} r={CENTER.r} fill="#185850" />
-      <text
-        x={CENTER.cx}
-        y={CENTER.cy - 14}
-        textAnchor="middle"
-        fontFamily="Montserrat, sans-serif"
-        fill="#fff"
+      <foreignObject
+        x={CENTER.cx - CENTER.r}
+        y={CENTER.cy - CENTER.r}
+        width={CENTER.r * 2}
+        height={CENTER.r * 2}
       >
-        <tspan x={CENTER.cx} dy="0" fontSize="11" fontWeight="700">
-          STUDENT
-        </tspan>
-        <tspan x={CENTER.cx} dy="16" fontSize="11" fontWeight="700">
-          PROGRESSION
-        </tspan>
-        <tspan x={CENTER.cx} dy="16" fontSize="11" fontWeight="700" fill="#f6ab16">
-          PLAN
-        </tspan>
-      </text>
+        <div className="flex h-full w-full flex-col items-center justify-center text-center font-montserrat text-[11px] font-bold leading-none text-white">
+          <span>STUDENT</span>
+          <span className="mt-1.5">PROGRESSION</span>
+          <span className="mt-1.5 text-gold">PLAN</span>
+        </div>
+      </foreignObject>
 
       {cyclePaths.map((path, index) => (
         <path
@@ -210,7 +244,7 @@ export function AssessmentCycleDiagram() {
             strokeWidth="1.5"
             className="transition-[filter,stroke] duration-300 ease-out group-hover:stroke-emerald/35 group-hover:drop-shadow-[0_10px_24px_rgba(15,61,56,0.14)]"
           />
-          <BubbleLabel {...node} />
+          <NodeContent {...node} />
         </g>
       ))}
     </svg>

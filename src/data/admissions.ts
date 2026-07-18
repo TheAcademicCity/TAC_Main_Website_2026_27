@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { getGmailComposeUrl } from "@/lib/email";
 import { createImage } from "@/lib/images";
 import type { AdmissionsPageContent } from "@/types/admissions";
 
@@ -6,6 +7,7 @@ const remote = {
   career: "https://theacademiccity.com/images/Home/nav/career1.png",
   academics: "https://theacademiccity.com/images/Home/nav/academics.png",
   campus: "https://theacademiccity.com/images/homepage/campus/1.png",
+  bengaluru: "https://theacademiccity.com/images/homepage/campus/1.png",
 } as const;
 
 export const admissionsPageContent = {
@@ -26,16 +28,17 @@ export const admissionsPageContent = {
     { id: "overview", label: "Overview" },
     { id: "process", label: "Process" },
     { id: "criteria", label: "Criteria" },
-    { id: "eligibility", label: "Eligibility" },
+    { id: "scholarships", label: "Scholarships" },
     { id: "clarity", label: "Campus Visit" },
     { id: "faq", label: "FAQs" },
   ],
   overview: {
     label: "Admissions",
     title: "Enrol with us — Manifest the best version of your child",
+    visitTimings: "9 AM to 6 PM",
     paragraphs: [
       "TACS offers a career-oriented residential education from Grades 5 to 12 — blending academic rigour, Indic values and real-world skills in a safe, structured boarding environment.",
-      "Admissions are open now. The entire process can be completed online — application, entrance exam, interaction — or you're welcome to visit us in Nelamangala any day from 9 AM to 3:30 PM.",
+      "Admissions are open now. The entire process can be completed online — application, entrance exam, interaction — or you're welcome to visit us in Nelamangala any day from 9 AM to 6 PM.",
     ],
     image: createImage("/images/admissions/overview-1.png", remote.career, "Students at TACS"),
     cta: { label: "Book your visit today!", href: "/#enquiry" },
@@ -61,7 +64,7 @@ export const admissionsPageContent = {
         number: "03",
         title: "Entrance Exam",
         description:
-          "A simple age-appropriate assessment — online or offline — to understand your child's academic starting point. Grade 11 applicants also get a complimentary psychometric assessment.",
+          "A simple age-appropriate assessment — online or offline — to understand your child's academic starting point.",
       },
       {
         number: "04",
@@ -78,8 +81,8 @@ export const admissionsPageContent = {
       },
     ],
     actions: [
-      { label: "Start your enquiry", href: "/#enquiry", variant: "gold" },
-      { label: "WhatsApp us", href: siteConfig.contact.whatsapp, variant: "outline-white", external: true },
+      { label: "Start your journey", href: "/#enquiry", variant: "gold" },
+      { label: "WhatsApp", href: siteConfig.contact.whatsapp, variant: "outline-white", external: true },
       {
         label: "Email admissions",
         href: `mailto:${siteConfig.contact.email}`,
@@ -125,36 +128,6 @@ export const admissionsPageContent = {
       href: `tel:${siteConfig.contact.phone}`,
     },
   },
-  eligibility: {
-    label: "Eligibility",
-    title: "Who can apply",
-    description:
-      "TACS admits students to Grades 5 through 12. Each grade has a minimum age and academic requirement. Students switching boards (e.g. ICSE to CBSE) are welcome at any grade except 10th and 12th.",
-    checklist: [
-      "All grades admit — online or offline application",
-      "Board switch accepted at most grades",
-      "Special needs assessed case by case",
-      "Exclusively residential — no day boarding",
-      "Airport / railway pickup arranged with prior notice",
-    ],
-    gradeNote:
-      "Grade 11 applicants receive a complimentary psychometric assessment worth ₹5,000+ on completing their application — to identify the right stream and career path before making the decision.",
-    grades: [
-      { grade: "Grade 5", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 6", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 7", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 8", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 9", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 10", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 11", status: "Open", examMode: "Online / Offline" },
-      { grade: "Grade 12", status: "Open", examMode: "Online / Offline" },
-    ],
-    keyDates: [
-      { label: "Applications close", value: "15th February" },
-      { label: "Early bird deadline", value: "15th December", highlight: true },
-      { label: "Commencement", value: "May – June" },
-    ],
-  },
   scholarships: {
     label: "Scholarships",
     title: "Investing in the future of our students",
@@ -184,20 +157,18 @@ export const admissionsPageContent = {
     phoneDisplay: siteConfig.contact.phoneDisplay,
   },
   clarity: {
-    label: "Seeking Clarity?",
-    title: "Come see it for yourself",
+    image: createImage(
+      "/images/home/campus/bengaluru.png",
+      remote.bengaluru,
+      "TACS Bengaluru",
+    ),
     heading: "Visit campus. Ask everything.",
-    description:
-      "No brochure replaces standing in the dining hall, walking the dormitories and watching the afternoon schedule in motion. Visit any day between 9 AM and 3:30 PM.",
-    items: [
-      "Book a campus tour and experience the residential programme first-hand",
-      "Meet our academic head for a deeper understanding of the curriculum",
-      "Meet our career counsellor to map the right career path for your child",
-      "Taste the food, see the dorms, watch the afternoon in action",
-      "Campus open Mon–Sat, 9 AM to 3:30 PM. No appointment required.",
+    description: [
+      "See where your child will learn, live and grow. Explore the campus, experience everyday student life,",
+      "and get all your questions answered in person when you visit us any day between 9 AM and 6 PM.",
     ],
     visitCta: {
-      label: "Book a visit",
+      label: "Schedule a visit",
       href: `tel:${siteConfig.contact.phone}`,
     },
     whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
@@ -268,8 +239,8 @@ export const admissionsPageContent = {
     },
     whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
     email: {
-      label: siteConfig.contact.email,
-      href: `mailto:${siteConfig.contact.email}`,
+      label: "email",
+      href: getGmailComposeUrl(siteConfig.contact.email),
     },
   },
 } satisfies AdmissionsPageContent;

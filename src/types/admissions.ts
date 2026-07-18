@@ -19,6 +19,7 @@ export type AdmissionsPageContent = {
     label: string;
     title: string;
     paragraphs: readonly string[];
+    visitTimings: string;
     image: SiteImage;
     cta: { label: string; href: string };
   };
@@ -45,15 +46,6 @@ export type AdmissionsPageContent = {
     description: string;
     cta: { label: string; href: string };
   };
-  eligibility: {
-    label: string;
-    title: string;
-    description: string;
-    checklist: readonly string[];
-    gradeNote: string;
-    grades: readonly { grade: string; status: string; examMode: string }[];
-    keyDates: readonly { label: string; value: string; highlight?: boolean }[];
-  };
   scholarships: {
     label: string;
     title: string;
@@ -67,11 +59,9 @@ export type AdmissionsPageContent = {
     phoneDisplay: string;
   };
   clarity: {
-    label: string;
-    title: string;
+    image: SiteImage;
     heading: string;
-    description: string;
-    items: readonly string[];
+    description: readonly string[];
     visitCta: { label: string; href: string };
     whatsapp: { label: string; href: string };
   };
