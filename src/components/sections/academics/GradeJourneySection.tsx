@@ -1,4 +1,5 @@
 import { academicsPageContent } from "@/data/academics";
+import { Chip } from "@/components/ui/Chip";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -53,12 +54,9 @@ function JourneyStep({ step }: { step: GradeJourneyStep }) {
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-1.5 px-2">
           {step.chips.map((chip) => (
-            <span
-              key={chip}
-              className="border border-line bg-paper px-2.5 py-1 text-[0.72rem] font-semibold text-forest-deep"
-            >
+            <Chip key={chip} className="px-2.5 py-1 text-[0.72rem]">
               {chip}
-            </span>
+            </Chip>
           ))}
         </div>
       </div>

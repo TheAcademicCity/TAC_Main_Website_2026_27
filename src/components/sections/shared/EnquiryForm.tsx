@@ -4,6 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { FormEvent, useMemo, useState } from "react";
 import { enquiryContent } from "@/data/home";
 import { siteConfig } from "@/config/site";
+import { useEnquiryModal } from "@/components/layout/EnquiryModalProvider";
+import { useThankYouModal } from "@/components/layout/ThankYouModalProvider";
 import { triggerFileDownload } from "@/lib/downloads";
 import { type EnquiryIntent } from "@/lib/enquiry";
 import { Button } from "@/components/ui/Button";
@@ -62,8 +64,11 @@ export function EnquiryForm({
   const gridGapClassName = compact ? "gap-4" : "gap-5";
   const formPaddingClassName = compact ? "p-4 sm:p-5" : "p-6 sm:p-8";
 
+  const { closeEnquiryModal } = useEnquiryModal();
+  const { showThankYouModal } = useThankYouModal();
+
   const [form, setForm] = useState<FormState>(initialState);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
 
   const submitLabel = useMemo(
@@ -99,9 +104,10 @@ export function EnquiryForm({
         return;
       }
 
-      setStatus("success");
-      setMessage("Thank you for your enquiry. We'll get back to you soon.");
+      setStatus("idle");
       setForm(initialState);
+      closeEnquiryModal();
+      showThankYouModal();
 
       if (isBrochureIntent) {
         const { href, filename } = siteConfig.downloads.brochure;
@@ -260,13 +266,7 @@ export function EnquiryForm({
         </Button>
 
         {message ? (
-          <p
-            role="status"
-            className={cn(
-              "text-[0.9rem]",
-              status === "success" ? "text-emerald" : "text-red-700",
-            )}
-          >
+          <p role="alert" className="text-[0.9rem] text-red-700">
             {message}
           </p>
         ) : null}

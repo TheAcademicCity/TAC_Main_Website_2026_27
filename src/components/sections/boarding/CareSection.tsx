@@ -18,9 +18,9 @@ export function CareSection() {
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <RevealOnScroll delay={1}>
-          <article className="relative overflow-hidden border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-forest before:content-['']">
+          <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-forest before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-forest/8">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-forest/8">
                 <Icon name="shieldCheck" className="h-5 w-5 text-forest" />
               </span>
               <h3 className="font-montserrat text-[1.05rem] font-extrabold text-forest-deep">
@@ -33,7 +33,7 @@ export function CareSection() {
               {care.safety.items.map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-2.5 border-l-[3px] border-forest bg-paper px-3.5 py-3"
+                  className="flex items-start gap-2.5 rounded-lg border-l-[3px] border-forest bg-paper px-3.5 py-3"
                 >
                   <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0 text-forest" />
                   <div>
@@ -49,9 +49,9 @@ export function CareSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={2}>
-          <article className="relative overflow-hidden border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gold before:content-['']">
+          <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gold before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] bg-gold/10">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gold/10">
                 <Icon name="heart" className="h-5 w-5 text-gold-dark" />
               </span>
               <h3 className="font-montserrat text-[1.05rem] font-extrabold text-forest-deep">
@@ -64,7 +64,7 @@ export function CareSection() {
               {care.nutrition.meals.map((meal) => (
                 <span
                   key={meal}
-                  className="border border-gold/25 bg-gold/8 px-3 py-2 text-center text-[0.82rem] font-semibold text-forest-deep"
+                  className="rounded-lg border border-gold/25 bg-gold/8 px-3 py-2 text-center text-[0.82rem] font-semibold text-forest-deep"
                 >
                   {meal}
                 </span>
@@ -75,7 +75,7 @@ export function CareSection() {
               {care.nutrition.items.map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-2.5 border-l-[3px] border-gold bg-paper px-3.5 py-3"
+                  className="flex items-start gap-2.5 rounded-lg border-l-[3px] border-gold bg-paper px-3.5 py-3"
                 >
                   <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0 text-gold-dark" />
                   <div>

@@ -1,11 +1,12 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { mobileNavigation } from "@/config/navigation";
 import { HomeLink } from "@/components/layout/HomeLink";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { mobileNavLinkClasses } from "@/components/layout/NavLink";
 import { cn } from "@/lib/utils";
-import { isHomeHref } from "@/lib/scroll";
+import { isHomeHref, isNavLinkActive } from "@/lib/scroll";
 
 type MobileNavProps = {
   open: boolean;
@@ -13,6 +14,8 @@ type MobileNavProps = {
 };
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
+  const pathname = usePathname();
+
   return (
     <nav
       className={cn(
@@ -23,11 +26,18 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     >
       {mobileNavigation.map((item) => {
         const variant = item.variant === "cta" ? "cta" : "default";
-        const className = mobileNavLinkClasses(variant);
+        const active = variant === "default" && isNavLinkActive(item.href, pathname);
+        const className = mobileNavLinkClasses(variant, undefined, active);
         const LinkComponent = isHomeHref(item.href) ? HomeLink : SiteLink;
 
         return (
-          <LinkComponent key={item.label} href={item.href} onClick={onClose} className={className}>
+          <LinkComponent
+            key={item.label}
+            href={item.href}
+            onClick={onClose}
+            className={className}
+            aria-current={active ? "page" : undefined}
+          >
             {item.label}
             {item.variant === "cta" ? " →" : ""}
           </LinkComponent>

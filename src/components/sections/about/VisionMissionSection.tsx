@@ -25,19 +25,19 @@ function highlightText(text: string, highlights: readonly string[]) {
 export function VisionMissionSection() {
   const { visionMission } = aboutPageContent;
   const cards = [
-    { ...visionMission.vision, ghost: "V", accent: "vision" as const },
-    { ...visionMission.mission, ghost: "M", accent: "mission" as const },
+    { ...visionMission.vision, accent: "vision" as const },
+    { ...visionMission.mission, accent: "mission" as const },
   ];
 
   return (
-    <section id="vision" className="relative overflow-hidden bg-forest-deep py-[clamp(56px,7vw,88px)]">
+    <section id="vision" className="section-py-compact relative overflow-hidden bg-forest-deep">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[100px] -bottom-[100px] h-[380px] w-[380px] rounded-full border-[56px] border-white/4"
+        className="pointer-events-none absolute -right-[80px] -bottom-[80px] h-[280px] w-[280px] rounded-full border-[42px] border-white/4"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-[60px] -top-[60px] h-[240px] w-[240px] rounded-full border-[36px] border-white/4"
+        className="pointer-events-none absolute -left-[50px] -top-[50px] h-[180px] w-[180px] rounded-full border-[28px] border-white/4"
       />
 
       <Container className="relative z-[1]">
@@ -48,30 +48,24 @@ export function VisionMissionSection() {
               <RevealOnScroll delay={index === 0 ? 0 : 1}>
                 <article
                   className={cn(
-                    "relative overflow-hidden px-[clamp(1.5rem,3vw,3.2rem)] py-[clamp(2rem,4vw,3.2rem)]",
+                    "relative overflow-hidden px-[clamp(1.25rem,2.5vw,2rem)] py-[clamp(1.25rem,2.5vw,2rem)]",
                     card.accent === "vision" ? "border-t-4 border-gold" : "border-t-4 border-emerald",
                   )}
                 >
                   <div
                     className={cn(
-                      "mb-5 grid h-16 w-16 place-items-center rounded-[18px]",
+                      "mb-3 grid h-12 w-12 place-items-center rounded-[14px]",
                       card.accent === "vision" ? "bg-gold/12 text-gold" : "bg-emerald/12 text-emerald",
                     )}
                   >
-                    <Icon name={card.icon} className="h-8 w-8" />
+                    <Icon name={card.icon} className="h-6 w-6" />
                   </div>
-                  <h2 className="font-montserrat text-[clamp(1.5rem,2.5vw,2.2rem)] font-black text-white">
+                  <h2 className="font-montserrat text-[clamp(1.25rem,2vw,1.75rem)] font-black text-white">
                     {card.title}
                   </h2>
-                  <p className="mt-4 text-[1.02rem] font-light leading-relaxed text-white/68">
+                  <p className="mt-2.5 text-[0.94rem] font-light leading-relaxed text-white/68">
                     {highlightText(card.description, card.highlights)}
                   </p>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute -bottom-4 right-4 font-montserrat text-[7rem] font-black leading-none text-white/4"
-                  >
-                    {card.ghost}
-                  </span>
                 </article>
               </RevealOnScroll>
             </div>

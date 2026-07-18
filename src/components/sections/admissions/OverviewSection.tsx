@@ -13,7 +13,7 @@ export function OverviewSection() {
     <Section id="overview" background="white">
       <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll className="h-full min-h-0">
-          <div className="relative h-full min-h-[320px] overflow-hidden rounded-sm bg-forest-deep">
+          <div className="relative h-full min-h-[320px] overflow-hidden rounded-lg bg-forest-deep">
             <ImageWithFallback
               image={overview.image}
               fill

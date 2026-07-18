@@ -8,7 +8,7 @@ export function FoundersSection() {
   const [featured, ...compact] = foundersContent.profiles;
 
   return (
-    <Section id="founders" className="py-[clamp(40px,5vw,72px)]">
+    <Section id="founders">
       <SectionHeader
         label={foundersContent.label}
         title={foundersContent.title}
@@ -18,7 +18,7 @@ export function FoundersSection() {
       />
 
       <RevealOnScroll>
-        <div className="mt-8 grid overflow-hidden rounded shadow-[0_30px_80px_-30px_rgba(10,44,40,0.35)] lg:grid-cols-[1.1fr_0.9fr] lg:gap-[3px]">
+        <div className="mt-8 grid overflow-hidden rounded-lg shadow-[0_30px_80px_-30px_rgba(10,44,40,0.35)] lg:grid-cols-[1.1fr_0.9fr] lg:gap-[3px]">
           <FounderCard founder={featured} />
           <div className="grid gap-[2px] lg:grid-rows-2">
             {compact.map((founder) => (

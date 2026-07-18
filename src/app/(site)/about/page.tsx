@@ -1,6 +1,5 @@
 import { aboutPageContent } from "@/data/about";
 import {
-  AboutAwardsSection,
   AboutCampusBandSection,
   AboutCtaSection,
   AboutHeroSection,
@@ -9,7 +8,6 @@ import {
   LeadershipSection,
   VisionMissionSection,
   WhoWeAreSection,
-  WhyTacsSection,
 } from "@/components/sections/about";
 import { PageSubnav } from "@/components/sections/shared/PageSubnav";
 import { createPageMetadata } from "@/components/layout/PagePlaceholder";
@@ -30,8 +28,6 @@ export default function AboutPage() {
       <AboutCampusBandSection />
       <LeadershipSection />
       <DifferentSection />
-      <WhyTacsSection />
-      <AboutAwardsSection />
       <AboutCtaSection />
     </main>
   );

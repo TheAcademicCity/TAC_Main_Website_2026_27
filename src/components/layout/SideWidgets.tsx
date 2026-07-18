@@ -124,7 +124,7 @@ export function SideWidgets() {
           aria-label="WhatsApp"
           className={cn(sideIconClassName, "bg-emerald hover:bg-[#22c55e]")}
         >
-          <Icon name="whatsapp" className="h-5 w-5" />
+          <Icon name="whatsapp" className="h-5 w-5 text-white" />
         </a>
         <a
           href={getGmailComposeUrl(utilityBar.email)}

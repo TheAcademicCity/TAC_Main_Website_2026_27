@@ -37,7 +37,7 @@ export function DisciplineSection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-8 bg-forest-deep px-7 py-4 text-center">
+        <div className="mt-8 rounded-lg bg-forest-deep px-7 py-4 text-center">
           <p className="font-montserrat text-[0.88rem] font-bold tracking-[0.04em] text-white">
             {discipline.banner}
           </p>

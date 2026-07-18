@@ -9,7 +9,7 @@ export function BoardingCtaSection() {
   const { ctaBand } = boardingPageContent;
 
   return (
-    <section className="relative overflow-hidden bg-ink py-[clamp(48px,6vw,80px)] text-center">
+    <section className="section-py-band relative overflow-hidden bg-ink text-center">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border-[40px] border-white/4"

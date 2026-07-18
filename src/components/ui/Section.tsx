@@ -20,8 +20,8 @@ const backgroundClasses = {
 } as const;
 
 const spacingClasses = {
-  default: "py-[clamp(60px,8vw,110px)]",
-  compact: "py-[clamp(32px,4.5vw,56px)]",
+  default: "section-py",
+  compact: "section-py-compact",
 } as const;
 
 export function Section({

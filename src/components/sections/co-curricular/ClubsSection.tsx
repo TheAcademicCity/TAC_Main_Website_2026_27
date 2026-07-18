@@ -24,7 +24,7 @@ export function ClubsSection() {
             <article
               key={card.tag}
               className={cn(
-                "group relative overflow-hidden transition-transform duration-300 hover:z-[2] hover:scale-[1.01]",
+                "group relative overflow-hidden rounded-lg transition-transform duration-300 hover:z-[2] hover:scale-[1.01]",
                 card.hero ? "min-h-[320px] lg:row-span-2 lg:min-h-0" : "min-h-[220px] lg:min-h-0",
               )}
               style={{ background: card.gradient }}
@@ -47,7 +47,7 @@ export function ClubsSection() {
                   card.hero ? "p-8" : "p-5 px-6",
                 )}
               >
-                <span className="mb-2 inline-block w-fit border border-white/30 bg-white/15 px-2.5 py-1 font-montserrat text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
+                <span className="mb-2 inline-block w-fit rounded-lg border border-white/30 bg-white/15 px-2.5 py-1 font-montserrat text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
                   {card.tag}
                 </span>
                 <h3
@@ -68,7 +68,7 @@ export function ClubsSection() {
           ))}
         </div>
 
-        <div className="mt-1.5 flex flex-wrap items-center gap-4 bg-ink px-5 py-5 sm:gap-7 sm:px-7">
+        <div className="mt-1.5 flex flex-wrap items-center gap-4 rounded-lg bg-ink px-5 py-5 sm:gap-7 sm:px-7">
           <span className="whitespace-nowrap font-montserrat text-[0.7rem] font-extrabold uppercase tracking-[0.14em] text-gold">
             {clubs.performingArts.label}
           </span>

@@ -34,30 +34,34 @@ export function FaqSection() {
               <article
                 key={item.question}
                 className={cn(
-                  "overflow-hidden border border-line bg-white transition-shadow duration-200",
-                  isOpen && "shadow-[0_8px_30px_-10px_rgba(15,61,56,0.12)]",
+                  "group overflow-hidden rounded-lg border border-line bg-white transition-[transform,box-shadow,border-color] duration-300",
+                  isOpen
+                    ? "shadow-[0_8px_30px_-10px_rgba(15,61,56,0.12)]"
+                    : "hover:-translate-y-0.5 hover:border-forest/20 hover:shadow-[0_10px_28px_-12px_rgba(15,61,56,0.14)]",
                 )}
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200 hover:bg-forest/[0.03]"
                   aria-expanded={isOpen}
                   onClick={() => toggleItem(index)}
                 >
-                  <span className="font-montserrat text-[0.9rem] font-bold leading-snug text-forest-deep">
+                  <span className="font-montserrat text-[0.9rem] font-bold leading-snug text-forest-deep transition-colors duration-200 group-hover:text-forest">
                     {item.question}
                   </span>
                   <span
                     className={cn(
-                      "grid h-6 w-6 shrink-0 place-items-center rounded-full border-[1.5px] transition-[background,border-color] duration-200",
-                      isOpen ? "border-forest-deep bg-forest-deep" : "border-line bg-paper",
+                      "grid h-6 w-6 shrink-0 place-items-center rounded-full border-[1.5px] transition-[background,border-color,transform] duration-300",
+                      isOpen
+                        ? "border-forest-deep bg-forest-deep"
+                        : "border-line bg-paper group-hover:scale-110 group-hover:border-emerald group-hover:bg-emerald/10",
                     )}
                   >
                     <Icon
                       name="plus"
                       className={cn(
                         "h-3.5 w-3.5 transition-[transform,color] duration-300",
-                        isOpen ? "rotate-45 text-white" : "text-slate",
+                        isOpen ? "rotate-45 text-white" : "text-slate group-hover:text-emerald",
                       )}
                     />
                   </span>

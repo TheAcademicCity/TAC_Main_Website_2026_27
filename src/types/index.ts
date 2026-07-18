@@ -28,10 +28,6 @@ export type FeatureRow = {
   flipped?: boolean;
 };
 
-export type AwardItem = {
-  image: import("@/types/images").SiteImage;
-};
-
 export type CampusPartnerLogo = {
   src: string;
   alt: string;

@@ -55,7 +55,7 @@ export function OutpassSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={2}>
-          <aside className="rounded bg-forest-deep px-7 py-7">
+          <aside className="mt-4 rounded-lg bg-forest-deep px-7 py-7 lg:mt-6">
             <h3 className="font-montserrat text-[0.95rem] font-extrabold tracking-[0.04em] text-gold">
               Rules &amp; Guidelines
             </h3>
@@ -70,7 +70,7 @@ export function OutpassSection() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 rounded border border-gold/30 bg-gold/12 px-4 py-3 text-[0.84rem] text-white/85">
+            <p className="mt-4 rounded-lg border border-gold/30 bg-gold/12 px-4 py-3 text-[0.84rem] text-white/85">
               {outpass.note}
             </p>
           </aside>

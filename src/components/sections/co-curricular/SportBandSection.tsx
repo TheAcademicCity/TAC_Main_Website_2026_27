@@ -20,7 +20,7 @@ export function SportBandSection() {
                 {sportBand.description}
               </p>
             </div>
-            <Button href={sportBand.cta.href} variant="outline-white" className="px-7 py-3 text-[0.78rem]">
+            <Button href={sportBand.cta.href} className="px-7 py-3 text-[0.78rem]">
               {sportBand.cta.label}
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </Button>

@@ -4,37 +4,58 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
+import type { SiteImage } from "@/types/images";
+
+function PhotoTile({
+  image,
+  sizes,
+  className,
+}: {
+  image: SiteImage;
+  sizes: string;
+  className?: string;
+}) {
+  return (
+    <div className={cn("relative min-h-0 overflow-hidden rounded-lg bg-forest-deep", className)}>
+      <ImageWithFallback
+        image={image}
+        fill
+        sizes={sizes}
+        className="object-cover transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+  );
+}
 
 export function WhoWeAreSection() {
   const { whoWeAre } = aboutPageContent;
-  const [tall, ...squares] = whoWeAre.photos;
+  const tall = whoWeAre.photos.find((photo) => photo.variant === "tall");
+  const compact = whoWeAre.photos.find((photo) => photo.variant === "compact");
+  const wide = whoWeAre.photos.find((photo) => photo.variant === "wide");
+
+  if (!tall || !compact || !wide) return null;
 
   return (
     <Section id="about" background="white">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="relative row-span-2 aspect-[3/4] overflow-hidden bg-forest-deep">
-              <ImageWithFallback
-                image={tall.image}
-                fill
+          <div className="grid grid-cols-2 items-stretch gap-2">
+            <PhotoTile
+              image={tall.image}
+              sizes="(max-width: 1024px) 50vw, 25vw"
+              className="aspect-[3/4]"
+            />
+
+            <div className="grid min-h-0 grid-rows-[2fr_3fr] gap-2">
+              <PhotoTile
+                image={compact.image}
                 sizes="(max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+              <PhotoTile
+                image={wide.image}
+                sizes="(max-width: 1024px) 50vw, 25vw"
               />
             </div>
-            {squares.map((photo) => (
-              <div
-                key={photo.image.alt}
-                className="relative aspect-square overflow-hidden bg-forest-deep"
-              >
-                <ImageWithFallback
-                  image={photo.image}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            ))}
           </div>
         </RevealOnScroll>
 
@@ -48,14 +69,6 @@ export function WhoWeAreSection() {
               {paragraph}
             </p>
           ))}
-          <span
-            className={cn(
-              "mt-5 inline-block bg-gold px-4 py-1.5 font-montserrat text-[0.72rem]",
-              "font-extrabold uppercase tracking-[0.12em] text-forest-deep",
-            )}
-          >
-            {whoWeAre.badge}
-          </span>
         </RevealOnScroll>
       </div>
     </Section>

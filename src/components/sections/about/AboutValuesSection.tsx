@@ -50,12 +50,6 @@ export function AboutValuesSection() {
                 </div>
                 <h3 className="font-montserrat text-base font-extrabold text-forest-deep">{tile.title}</h3>
                 <p className="mt-2 text-[0.86rem] leading-relaxed text-slate">{tile.description}</p>
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute bottom-2 right-4 font-montserrat text-4xl font-black leading-none text-forest/5"
-                >
-                  {tile.number}
-                </span>
               </article>
             </RevealOnScroll>
           );

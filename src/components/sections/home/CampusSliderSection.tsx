@@ -39,7 +39,7 @@ export function CampusSliderSection() {
   }, [activeVideo, slides.length]);
 
   return (
-    <section id="campus" className="bg-paper py-[clamp(50px,7vw,90px)]">
+    <section id="campus" className="section-py-feature bg-paper">
       <Container>
         <SectionHeader
           label={campusContent.label}
@@ -119,9 +119,9 @@ export function CampusSliderSection() {
                             {curriculumFact ? (
                               <StatItem
                                 key={curriculumFact.label}
-                                item={curriculumFact}
+                                item={{ ...curriculumFact, featured: true }}
                                 variant="card"
-                                className="col-start-3 row-start-2 h-full"
+                                className="col-start-3 row-start-2 h-full w-full"
                               />
                             ) : null}
                             <div className="col-span-2 col-start-1 row-start-1 h-full min-w-0">
@@ -134,7 +134,7 @@ export function CampusSliderSection() {
                                 key={topCompanion.label}
                                 item={{ ...topCompanion, featured: true }}
                                 variant="card"
-                                className="col-start-3 row-start-1 h-full"
+                                className="col-start-3 row-start-1 h-full w-full"
                               />
                             ) : null}
                           </div>

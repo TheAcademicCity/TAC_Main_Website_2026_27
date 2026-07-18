@@ -62,3 +62,37 @@ export function getPathFromHref(href: string): string {
 export function isSamePageHref(href: string, pathname: string): boolean {
   return getPathFromHref(href) === pathname;
 }
+
+/** True when a header nav link matches the current route (ignores hash-only links). */
+export function isNavLinkActive(href: string, pathname: string): boolean {
+  if (getSectionIdFromHref(href)) {
+    return false;
+  }
+
+  if (isHomeHref(href)) {
+    return pathname === "/";
+  }
+
+  return getPathFromHref(href) === pathname;
+}
+
+/** True when a dropdown parent or any of its children matches the current route. */
+export function isNavDropdownActive(
+  item: { href: string; children?: ReadonlyArray<{ href: string }> },
+  pathname: string,
+): boolean {
+  if (item.children?.some((child) => isNavLinkActive(child.href, pathname))) {
+    return true;
+  }
+
+  return isNavLinkActive(item.href, pathname);
+}
+
+/** Dropdown trigger href: current child page when active, otherwise the default parent href. */
+export function getNavDropdownTriggerHref(
+  item: { href: string; children?: ReadonlyArray<{ href: string }> },
+  pathname: string,
+): string {
+  const activeChild = item.children?.find((child) => isNavLinkActive(child.href, pathname));
+  return activeChild?.href ?? item.href;
+}

@@ -11,7 +11,7 @@ type NewsCardProps = {
 function NewsCardContent({ article }: { article: NewsArticle }) {
   return (
     <>
-      <div className="relative aspect-[16/10] overflow-hidden bg-forest-deep">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-t-lg bg-forest-deep">
         <ImageWithFallback
           image={article.image}
           fill
@@ -37,12 +37,12 @@ export function NewsCard({ article, delay = 0 }: NewsCardProps) {
       {article.href ? (
         <Link
           href={article.href}
-          className="group block overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.22)]"
+          className="group block overflow-hidden rounded-lg bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.22)]"
         >
           <NewsCardContent article={article} />
         </Link>
       ) : (
-        <article className="group overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.22)]">
+        <article className="group overflow-hidden rounded-lg bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.22)]">
           <NewsCardContent article={article} />
         </article>
       )}

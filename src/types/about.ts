@@ -9,6 +9,7 @@ export type AboutPageContent = {
     title: string;
     titleHighlight: string;
     description: string;
+    descriptionHighlights: readonly string[];
     image: SiteImage;
     stats: readonly HeroStat[];
   };
@@ -20,7 +21,7 @@ export type AboutPageContent = {
     badge: string;
     photos: readonly {
       image: SiteImage;
-      variant: "tall" | "square";
+      variant: "tall" | "compact" | "wide";
     }[];
   };
   visionMission: {
@@ -44,7 +45,6 @@ export type AboutPageContent = {
     title: string;
     description: string;
     tiles: readonly {
-      number: string;
       icon: IconName;
       accent: "gold" | "emerald" | "violet" | "cyan";
       title: string;
@@ -74,27 +74,9 @@ export type AboutPageContent = {
     label: string;
     title: string;
     cards: readonly {
-      number: string;
       title: string;
       description: string;
-    }[];
-  };
-  whyTacs: {
-    label: string;
-    cards: readonly {
-      icon: IconName;
-      stat: string;
-      title: string;
-      description: string;
-    }[];
-    footerStats: readonly HeroStat[];
-  };
-  awards: {
-    label: string;
-    title: string;
-    items: readonly {
-      name: string;
-      year: string;
+      image: SiteImage;
     }[];
   };
   ctaBand: {

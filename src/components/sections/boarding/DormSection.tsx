@@ -13,7 +13,7 @@ function KeyItemList({ items }: { items: readonly KeyItem[] }) {
     <ul className="flex flex-col gap-2.5">
       {items.map((item) => (
         <li key={item.text} className="flex items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] bg-forest/8">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-forest/8">
             <Icon name={item.icon} className="h-[1.05rem] w-[1.05rem] text-emerald" />
           </span>
           <span className="text-[0.84rem] leading-snug text-slate">{item.text}</span>
@@ -62,7 +62,7 @@ export function DormSection() {
             </p>
           ))}
 
-          <div className="mt-5 w-full border border-line bg-paper px-5 py-4">
+          <div className="mt-5 w-full rounded-lg border border-line bg-paper px-5 py-4">
             <p className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-forest-deep">
               {dorm.keyItemsLabel}
             </p>

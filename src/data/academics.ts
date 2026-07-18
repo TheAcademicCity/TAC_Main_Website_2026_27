@@ -270,7 +270,7 @@ export const academicsPageContent = {
     title: "Ready to know more?",
     description:
       "Talk to our admissions team — ask anything about curriculum, study hours, exam preparation or how we'll support your child specifically.",
-    enquiry: { label: "Start your enquiry", href: "/#enquiry" },
+    enquiry: { label: "Start your journey", href: "/#enquiry" },
     phone: {
       label: siteConfig.contact.phoneDisplay,
       href: `tel:${siteConfig.contact.phone}`,

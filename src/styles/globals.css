@@ -23,6 +23,12 @@
   --site-utility-height: 30px;
   --site-header-height: 72px;
   --site-nav-stack: calc(var(--site-utility-height) + var(--site-header-height));
+
+  /* Section vertical rhythm — tune sitewide spacing here */
+  --section-py: clamp(48px, 6vw, 82px);
+  --section-py-compact: clamp(26px, 3.5vw, 46px);
+  --section-py-band: clamp(40px, 5vw, 66px);
+  --section-py-feature: clamp(42px, 5.5vw, 72px);
 }
 
 @layer base {
@@ -64,6 +70,22 @@
     font-family: var(--font-outfit), system-ui, sans-serif;
   }
 
+  .section-py {
+    padding-block: var(--section-py);
+  }
+
+  .section-py-compact {
+    padding-block: var(--section-py-compact);
+  }
+
+  .section-py-band {
+    padding-block: var(--section-py-band);
+  }
+
+  .section-py-feature {
+    padding-block: var(--section-py-feature);
+  }
+
   .reveal.in {
     @apply translate-y-0 opacity-100;
   }
@@ -86,6 +108,35 @@
 
   .gallery-lightbox-panel {
     animation: enquiry-modal-panel-in 340ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .brand-splash-overlay {
+    will-change: opacity;
+    backface-visibility: hidden;
+  }
+
+  .brand-splash-overlay--fade {
+    animation: brand-splash-overlay-fade 3.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .brand-splash-logo {
+    transform: scale(0.48) translateZ(0);
+    opacity: 0.45;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  .brand-splash-logo--zoom {
+    animation: brand-splash-logo-zoom 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .brand-splash-logo--hold {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  .brand-splash-logo--exit {
+    animation: brand-splash-logo-exit 3.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .hero-call-cta {
@@ -131,6 +182,53 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes brand-splash-logo-zoom {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.48) translateZ(0);
+  }
+
+  40% {
+    opacity: 0.82;
+    transform: scale(0.84) translateZ(0);
+  }
+
+  75% {
+    opacity: 0.97;
+    transform: scale(0.98) translateZ(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+@keyframes brand-splash-logo-exit {
+  0%,
+  35% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: scale(1.015) translateZ(0);
+  }
+}
+
+@keyframes brand-splash-overlay-fade {
+  0%,
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

@@ -30,34 +30,34 @@ export function LeadershipSection() {
   const { leadership } = aboutPageContent;
 
   return (
-    <Section id="leadership" background="white">
+    <Section id="leadership" background="white" spacing="compact">
       <RevealOnScroll>
         <SectionLabel>{leadership.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.35rem,2.2vw,1.75rem)] font-extrabold text-forest-deep">
           {leadership.title}
         </h2>
       </RevealOnScroll>
 
-      <div className="mt-8 flex flex-col">
+      <div className="mt-6 flex flex-col">
         {leadership.leaders.map((leader, index) => (
           <RevealOnScroll key={leader.name} delay={Math.min(index, 2) as 0 | 1 | 2}>
             <article
               className={cn(
-                "grid overflow-hidden border border-line transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(15,61,56,0.15)] lg:grid-cols-[340px_1fr]",
-                leader.altLayout && "lg:grid-cols-[1fr_340px]",
+                "grid overflow-hidden border border-line transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(15,61,56,0.15)] lg:grid-cols-[280px_1fr]",
+                leader.altLayout && "lg:grid-cols-[1fr_280px]",
                 index > 0 && "border-t-0",
               )}
             >
               <div
                 className={cn(
-                  "relative min-h-[320px] overflow-hidden bg-forest-deep",
+                  "relative min-h-[260px] overflow-hidden bg-forest-deep lg:min-h-[280px]",
                   leader.altLayout && "lg:order-2",
                 )}
               >
                 <ImageWithFallback
                   image={leader.image}
                   fill
-                  sizes="340px"
+                  sizes="280px"
                   className="object-cover object-[center_top]"
                 />
                 <div
@@ -68,38 +68,31 @@ export function LeadershipSection() {
                       : "bg-gradient-to-r from-transparent via-transparent to-[rgba(10,44,40,0.35)]",
                   )}
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(5,22,18,0.92)] to-transparent px-5 py-4">
-                  <div className="font-montserrat text-[1.05rem] font-extrabold text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(5,22,18,0.92)] to-transparent px-4 py-3">
+                  <div className="font-montserrat text-[0.98rem] font-extrabold text-white">
                     {leader.name}
                   </div>
-                  <div className="mt-0.5 text-[0.78rem] font-medium text-gold">{leader.role}</div>
+                  <div className="mt-0.5 text-[0.72rem] font-medium text-gold">{leader.role}</div>
                 </div>
               </div>
 
               <div
                 className={cn(
-                  "relative bg-white px-7 py-8 lg:px-10 lg:py-9",
-                  leader.altLayout && "lg:order-1 lg:text-right",
+                  "relative bg-white px-6 py-6 text-left lg:px-8 lg:py-7",
+                  leader.altLayout && "lg:order-1",
                 )}
               >
-                <SectionLabel
-                  className={cn(leader.altLayout && "lg:flex-row-reverse")}
-                >
-                  {leader.messageLabel}
-                </SectionLabel>
+                <SectionLabel>{leader.messageLabel}</SectionLabel>
                 <div
                   aria-hidden
-                  className={cn(
-                    "font-montserrat text-5xl font-black leading-none text-forest/8",
-                    leader.altLayout && "lg:text-right",
-                  )}
+                  className="font-montserrat text-4xl font-black leading-none text-forest/8"
                 >
                   &ldquo;
                 </div>
-                <blockquote className="mt-2 text-[1.02rem] leading-relaxed text-slate">
+                <blockquote className="mt-1.5 text-left text-[0.96rem] leading-relaxed text-slate">
                   {highlightText(leader.quote, leader.quoteHighlights)}
                 </blockquote>
-                <p className="mt-4 text-[0.92rem] leading-relaxed text-slate">{leader.body}</p>
+                <p className="mt-3 text-left text-[0.96rem] leading-relaxed text-slate">{leader.body}</p>
               </div>
             </article>
           </RevealOnScroll>

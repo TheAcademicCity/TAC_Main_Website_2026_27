@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 
 export function PillarsSection() {
   return (
-    <Section id="pillars" className="py-[clamp(60px,8vw,110px)]">
+    <Section id="pillars">
       <SectionHeader
         label={pillarsContent.label}
         title={pillarsContent.title}

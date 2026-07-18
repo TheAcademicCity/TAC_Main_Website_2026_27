@@ -28,7 +28,7 @@ export function ScholarshipsSection() {
 
       <RevealOnScroll delay={1}>
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <article className="overflow-hidden border border-line bg-white">
+          <article className="overflow-hidden rounded-lg border border-line bg-white">
             <div className="flex items-center gap-3 bg-forest-deep px-5 py-4">
               <Icon name="star" className="h-[1.1rem] w-[1.1rem] text-gold" />
               <span className="font-montserrat text-[0.8rem] font-extrabold uppercase tracking-[0.1em] text-white">
@@ -41,7 +41,7 @@ export function ScholarshipsSection() {
                   <div
                     key={slab.percent}
                     className={cn(
-                      "border px-4 py-3.5 text-center",
+                      "rounded-lg border px-4 py-3.5 text-center",
                       slabStyles[index] ?? slabStyles[0],
                     )}
                   >
@@ -55,14 +55,14 @@ export function ScholarshipsSection() {
           </article>
 
           <div className="flex flex-col gap-4">
-            <article className="border border-line bg-white p-6">
+            <article className="rounded-lg border border-line bg-white p-6">
               <h3 className="font-montserrat text-[0.9rem] font-extrabold text-forest-deep">
                 {scholarships.sibling.title}
               </h3>
               <p className="mt-2 text-[0.86rem] leading-relaxed text-slate">{scholarships.sibling.description}</p>
             </article>
 
-            <article className="bg-forest-deep p-6">
+            <article className="rounded-lg bg-forest-deep p-6">
               <h3 className="font-montserrat text-[0.9rem] font-extrabold text-gold">
                 {scholarships.earlyBird.title}
               </h3>
@@ -83,7 +83,7 @@ export function ScholarshipsSection() {
               </p>
             </article>
 
-            <div className="flex items-center gap-3 border border-line bg-paper px-5 py-4">
+            <div className="flex items-center gap-3 rounded-lg border border-line bg-paper px-5 py-4">
               <Icon name="phone" className="h-[1.4rem] w-[1.4rem] shrink-0 text-emerald" />
               <div>
                 <p className="font-montserrat text-[0.82rem] font-bold text-forest-deep">

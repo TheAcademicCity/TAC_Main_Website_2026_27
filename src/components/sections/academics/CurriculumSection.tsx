@@ -68,11 +68,11 @@ export function CurriculumSection() {
       <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {curriculum.approach.map((card, index) => (
           <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-            <article className="relative h-full overflow-hidden border border-line bg-white p-5 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)]">
+            <article className="relative h-full overflow-hidden rounded-lg border border-line bg-white p-5 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)]">
               <span className="absolute right-4 top-3 font-montserrat text-[3rem] font-black leading-none text-forest/6">
                 {card.number}
               </span>
-              <span className="mb-3 grid h-[42px] w-[42px] place-items-center rounded-[10px] bg-forest/7">
+              <span className="mb-3 grid h-[42px] w-[42px] place-items-center rounded-lg bg-forest/7">
                 <Icon name={card.icon} className="h-5 w-5 text-emerald" />
               </span>
               <h4 className="font-montserrat text-[0.94rem] font-extrabold text-forest-deep">

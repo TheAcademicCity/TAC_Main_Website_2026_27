@@ -21,7 +21,7 @@ export function SportsSection() {
             {sports.tags.map((tag) => (
               <span
                 key={tag}
-                className="border-[1.5px] border-line bg-paper px-3 py-1.5 text-[0.82rem] font-semibold text-forest-deep"
+                className="rounded-lg border-[1.5px] border-line bg-paper px-3 py-1.5 text-[0.82rem] font-semibold text-forest-deep"
               >
                 {tag}
               </span>
@@ -32,7 +32,7 @@ export function SportsSection() {
             {sports.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="border border-line bg-paper px-3 py-3.5 text-center"
+                className="rounded-lg border border-line bg-paper px-3 py-3.5 text-center"
               >
                 <div className="font-montserrat text-[1.3rem] font-black leading-none text-forest">
                   {stat.value}

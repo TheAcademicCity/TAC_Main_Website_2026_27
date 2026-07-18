@@ -11,7 +11,7 @@ export function Chip({ children, className, variant = "light" }: ChipProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 border px-3.5 py-1.5 text-[0.82rem] font-semibold",
+        "inline-flex items-center gap-1.5 rounded-lg border px-3.5 py-1.5 text-[0.82rem] font-semibold",
         variant === "light"
           ? "border-line bg-white text-forest-deep"
           : "border-white/20 bg-white/10 text-white/82",

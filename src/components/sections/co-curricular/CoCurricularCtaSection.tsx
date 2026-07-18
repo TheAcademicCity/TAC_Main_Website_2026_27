@@ -9,7 +9,7 @@ export function CoCurricularCtaSection() {
   const { ctaBand } = coCurricularPageContent;
 
   return (
-    <section className="relative overflow-hidden bg-ink py-[clamp(32px,4.5vw,56px)] text-center">
+    <section className="section-py-compact relative overflow-hidden bg-ink text-center">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border-[40px] border-white/4"

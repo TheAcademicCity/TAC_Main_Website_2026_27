@@ -3,6 +3,24 @@ import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallbac
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Container } from "@/components/ui/Container";
 
+function highlightText(text: string, highlights: readonly string[]) {
+  if (!highlights.length) return text;
+
+  const pattern = new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "gi");
+  const parts = text.split(pattern);
+
+  return parts.map((part) => {
+    const isHighlight = highlights.some((h) => h.toLowerCase() === part.toLowerCase());
+    return isHighlight ? (
+      <strong key={part} className="font-bold text-gold">
+        {part}
+      </strong>
+    ) : (
+      <span key={part}>{part}</span>
+    );
+  });
+}
+
 export function AboutHeroSection() {
   const { hero } = aboutPageContent;
 
@@ -35,7 +53,7 @@ export function AboutHeroSection() {
           {hero.title} <em className="not-italic text-gold">{hero.titleHighlight}</em>
         </h1>
         <p className="mt-3 max-w-[52ch] text-[clamp(0.93rem,1.4vw,1.05rem)] font-light leading-relaxed text-white/70">
-          {hero.description}
+          {highlightText(hero.description, hero.descriptionHighlights)}
         </p>
 
         <dl className="mt-6 flex flex-wrap gap-10">

@@ -18,7 +18,7 @@ function CommItem({ item }: { item: AssessmentCommItem }) {
   const tone = item.tone ?? "default";
 
   return (
-    <div className="flex gap-3.5 border border-line bg-white p-4">
+    <div className="flex gap-3.5 rounded-lg border border-line bg-white p-4">
       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-paper">
         <Icon name={item.icon} className={cn("h-[1.1rem] w-[1.1rem]", toneStyles[tone])} />
       </span>

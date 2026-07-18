@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { cn } from "@/lib/utils";
 
 type IconProps = SVGProps<SVGSVGElement> & {
   name: keyof typeof icons;
@@ -59,6 +60,21 @@ const icons = {
       <circle cx="12" cy="12" r="8" />
       <circle cx="12" cy="12" r="4.5" />
       <circle cx="12" cy="12" r="1.25" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  targetArrow: (
+    <>
+      <circle cx="13" cy="13" r="7" />
+      <circle cx="13" cy="13" r="3.5" />
+      <circle cx="13" cy="13" r="1" />
+      <path d="M3 3l4.5 4.5" />
+      <path d="M3 3v4h4" />
     </>
   ),
   building: (
@@ -291,7 +307,7 @@ export function Icon({ name, className, ...props }: IconProps) {
       strokeWidth={filled ? undefined : 2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
+      className={cn(name === "whatsapp" && "text-[#25D366]", className)}
       aria-hidden="true"
       {...props}
     >

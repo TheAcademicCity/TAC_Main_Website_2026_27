@@ -17,7 +17,7 @@ export function StatItem({ item, variant = "bar", className, fill }: StatItemPro
       <div
         className={cn(
           "flex flex-col justify-center border border-white/14 bg-white/8 backdrop-blur-sm",
-          fill ? "h-full w-full min-w-0 max-w-full items-center text-center" : "w-fit max-w-full",
+          fill ? "h-full w-full min-w-0 max-w-full items-start text-left" : "w-fit max-w-full",
           featured ? "px-3.5 py-1.5" : "px-3 py-1",
           className,
         )}

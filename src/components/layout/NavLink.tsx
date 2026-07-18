@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ComponentProps, ReactNode } from "react";
 import { HomeLink } from "@/components/layout/HomeLink";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { cn } from "@/lib/utils";
-import { isHomeHref } from "@/lib/scroll";
+import { isHomeHref, isNavLinkActive } from "@/lib/scroll";
 
 type NavLinkProps = {
   href: string;
@@ -19,11 +22,15 @@ const underlineClasses = [
 ].join(" ");
 
 export function NavLink({ href, children, className, variant = "default", onClick }: NavLinkProps) {
+  const pathname = usePathname();
+  const active = variant === "default" && isNavLinkActive(href, pathname);
+
   const classes = cn(
     "relative inline-flex items-center font-semibold uppercase tracking-wide transition-all duration-200",
     variant === "default" && [
-      "px-3.5 py-2.5 text-[0.78rem] text-white/82 hover:text-white",
+      "px-3.5 py-2.5 text-[0.78rem]",
       underlineClasses,
+      active ? "text-gold after:scale-x-100" : "text-white/82 hover:text-white",
     ],
     variant === "cta" && [
       "ml-2 rounded-lg bg-gold px-6 py-2.5 text-[0.8rem] font-extrabold tracking-wider text-forest-deep",
@@ -35,34 +42,40 @@ export function NavLink({ href, children, className, variant = "default", onClic
   const LinkComponent = isHomeHref(href) ? HomeLink : SiteLink;
 
   return (
-    <LinkComponent href={href} className={classes} onClick={onClick}>
+    <LinkComponent href={href} className={classes} onClick={onClick} aria-current={active ? "page" : undefined}>
       {children}
     </LinkComponent>
   );
 }
 
-export function navTriggerClasses(className?: string) {
+export function navTriggerClasses(className?: string, active = false) {
   return cn(
-    "relative flex items-center gap-1 px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide",
-    "text-white/82 transition-all duration-200 hover:text-white",
+    "relative flex items-center gap-1 px-3.5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide transition-all duration-200",
     underlineClasses,
+    active ? "text-gold after:scale-x-100" : "text-white/82 hover:text-white",
     className,
   );
 }
 
-export function navDropdownItemClasses(className?: string) {
+export function navDropdownItemClasses(className?: string, active = false) {
   return cn(
-    "block border-b border-white/7 px-5 py-3 text-[0.76rem] font-semibold uppercase tracking-wider",
-    "text-white/78 transition-colors last:border-b-0",
-    "hover:bg-white/8 hover:text-gold",
+    "block border-b border-white/7 px-5 py-3 text-[0.76rem] font-semibold uppercase tracking-wider transition-colors last:border-b-0",
+    active ? "bg-white/8 text-gold" : "text-white/78 hover:bg-white/8 hover:text-gold",
     className,
   );
 }
 
-export function mobileNavLinkClasses(variant: "default" | "cta" = "default", className?: string) {
+export function mobileNavLinkClasses(
+  variant: "default" | "cta" = "default",
+  className?: string,
+  active = false,
+) {
   return cn(
     "block border-b border-white/10 py-4 font-montserrat text-xl font-semibold uppercase tracking-wide transition-all duration-200",
-    variant === "default" && "text-white hover:border-gold/40 hover:pl-2 hover:text-gold",
+    variant === "default" &&
+      (active
+        ? "border-gold/40 pl-2 text-gold"
+        : "text-white hover:border-gold/40 hover:pl-2 hover:text-gold"),
     variant === "cta" &&
       "mt-6 inline-block rounded-lg border-0 bg-gold px-8 py-3 text-sm font-extrabold text-forest-deep hover:-translate-y-0.5 hover:bg-[#e09d10]",
     className,

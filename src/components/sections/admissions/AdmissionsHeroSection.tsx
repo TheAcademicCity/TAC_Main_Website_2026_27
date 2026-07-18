@@ -54,7 +54,7 @@ export function AdmissionsHeroSection() {
             {hero.phone.label}
           </Button>
           <Button href={hero.whatsapp.href} external variant="outline-white" className="px-7 py-3 text-[0.78rem]">
-            <Icon name="whatsapp" className="h-3.5 w-3.5 text-[#25D366]" />
+            <Icon name="whatsapp" className="h-3.5 w-3.5" />
             {hero.whatsapp.label}
           </Button>
         </div>

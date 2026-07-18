@@ -30,7 +30,7 @@ function ScheduleColumn({
   rows: readonly { time: string; activity: string }[];
 }) {
   return (
-    <div className="w-full overflow-hidden border border-line">
+    <div className="w-full overflow-hidden rounded-lg border border-line">
       <ScheduleColumnHeader />
       {rows.map((row, index) => (
         <ScheduleRow key={`${row.time}-${row.activity}`} row={row} bordered={index > 0} />
@@ -96,7 +96,7 @@ export function ScheduleSection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-7 inline-flex overflow-hidden rounded border-[1.5px] border-line">
+        <div className="mt-7 inline-flex overflow-hidden rounded-lg border-[1.5px] border-line">
           {schedule.tabs.map((tab) => (
             <button
               key={tab.id}
@@ -116,7 +116,7 @@ export function ScheduleSection() {
           ))}
         </div>
 
-        <div role="tabpanel" aria-label={`${activeTab} schedule`} className="mt-0">
+        <div role="tabpanel" aria-label={`${activeTab} schedule`} className="mt-4">
           <ScheduleGrid rows={activeRows} />
         </div>
       </RevealOnScroll>

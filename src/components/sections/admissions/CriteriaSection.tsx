@@ -27,9 +27,9 @@ function CriteriaCard({ card, index }: { card: CriteriaCard; index: number }) {
   const styles = cardStyles[index] ?? cardStyles[0];
 
   return (
-    <article className="group relative overflow-hidden border border-line bg-white p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]">
+    <article className="group relative overflow-hidden rounded-lg border border-line bg-white p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]">
       <span className={cn("absolute inset-x-0 top-0 h-1", styles.bar)} />
-      <div className={cn("mb-4 grid h-14 w-14 place-items-center rounded-[14px]", styles.icon)}>
+      <div className={cn("mb-4 grid h-14 w-14 place-items-center rounded-lg", styles.icon)}>
         <Icon name={card.icon} className="h-6 w-6" />
       </div>
       <p className="mb-1 font-montserrat text-[0.65rem] font-black uppercase tracking-[0.14em] text-slate">

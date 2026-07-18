@@ -5,6 +5,4 @@ export { AboutValuesSection } from "@/components/sections/about/AboutValuesSecti
 export { AboutCampusBandSection } from "@/components/sections/about/AboutCampusBandSection";
 export { LeadershipSection } from "@/components/sections/about/LeadershipSection";
 export { DifferentSection } from "@/components/sections/about/DifferentSection";
-export { WhyTacsSection } from "@/components/sections/about/WhyTacsSection";
-export { AboutAwardsSection } from "@/components/sections/about/AboutAwardsSection";
 export { AboutCtaSection } from "@/components/sections/about/AboutCtaSection";

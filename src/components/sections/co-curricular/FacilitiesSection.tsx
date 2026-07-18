@@ -24,7 +24,7 @@ export function FacilitiesSection() {
             <div
               key={item.label}
               className={cn(
-                "group relative min-h-[180px] overflow-hidden bg-forest-deep md:min-h-0",
+                "group relative min-h-[180px] overflow-hidden rounded-lg bg-forest-deep md:min-h-0",
                 item.wide && "md:col-span-2",
                 item.tall && "md:row-span-2",
               )}

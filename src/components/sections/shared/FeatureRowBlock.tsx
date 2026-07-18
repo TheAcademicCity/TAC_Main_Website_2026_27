@@ -19,7 +19,7 @@ export function FeatureRowBlock({ row }: FeatureRowBlockProps) {
           row.flipped && "[&>*:first-child]:lg:order-2",
         )}
       >
-        <div className="group relative overflow-hidden rounded bg-forest-deep">
+        <div className="group relative overflow-hidden rounded-lg bg-forest-deep">
           <div className="relative aspect-[4/3] overflow-hidden">
             <ImageWithFallback
               image={row.image}

@@ -75,7 +75,7 @@ export function PillarCard({
           {pillar.number}
         </div>
 
-        <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-neutral-900">
+        <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-lg bg-neutral-900">
           <div
             className={cn(
               "absolute inset-0 origin-center transition-transform duration-500 will-change-transform",
@@ -143,7 +143,7 @@ export function PillarCard({
               <Link
                 href={pillar.href}
                 className={cn(
-                  "mb-1 mt-5 inline-flex items-center gap-1.5 bg-forest-deep px-4 py-2.5",
+                  "mb-1 mt-5 inline-flex items-center gap-1.5 rounded-lg bg-forest-deep px-4 py-2.5",
                   "font-montserrat text-[0.73rem] font-bold uppercase tracking-widest text-white",
                   "transition-all duration-200",
                   easeBrand,

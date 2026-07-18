@@ -29,7 +29,7 @@ export function EnquirySection() {
     <Section
       id="enquiry"
       background="paper"
-      className="relative overflow-hidden py-[clamp(32px,4vw,56px)]"
+      className="section-py-compact relative overflow-hidden"
     >
       <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-8">
         <div className="min-w-0">
@@ -53,7 +53,7 @@ export function EnquirySection() {
           delay={2}
           className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-0"
         >
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden rounded-lg">
             <ImageWithFallback
               image={enquiryContent.image}
               fill

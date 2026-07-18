@@ -62,13 +62,13 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
   const styles = accentStyles[pillar.accent];
 
   return (
-    <article className="group relative overflow-hidden border border-line bg-paper p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,61,56,0.2)]">
+    <article className="group relative overflow-hidden rounded-lg border border-line bg-paper p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,61,56,0.2)]">
       <span className={cn("absolute inset-x-0 top-0 h-[3px]", styles.bar)} />
       <span className="absolute right-5 top-4 font-montserrat text-[2.08rem] font-black leading-none text-forest/7">
         {pillar.number}
       </span>
       <div className="mb-4 flex items-center gap-3">
-        <span className={cn("grid h-11 w-11 place-items-center rounded-[10px]", styles.icon)}>
+        <span className={cn("grid h-11 w-11 place-items-center rounded-lg", styles.icon)}>
           <PillarIcon icon={pillar.icon} />
         </span>
         <h3 className="font-montserrat text-base font-extrabold text-forest-deep">{pillar.title}</h3>

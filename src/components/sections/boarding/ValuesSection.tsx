@@ -41,14 +41,14 @@ export function ValuesSection() {
             <RevealOnScroll key={tile.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
               <article
                 className={cn(
-                  "relative h-full overflow-hidden border border-line bg-white px-7 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.2)]",
+                  "relative h-full overflow-hidden rounded-lg border border-line bg-white px-7 py-8 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-18px_rgba(15,61,56,0.2)]",
                   "before:absolute before:inset-x-0 before:top-0 before:h-1 before:content-['']",
                   styles.border,
                 )}
               >
                 <div
                   className={cn(
-                    "mb-4 grid h-[60px] w-[60px] place-items-center rounded-2xl",
+                    "mb-4 grid h-[60px] w-[60px] place-items-center rounded-lg",
                     styles.iconBg,
                   )}
                 >

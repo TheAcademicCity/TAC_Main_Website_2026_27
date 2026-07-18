@@ -3,7 +3,6 @@ import { createImage } from "@/lib/images";
 import type { SiteVideo } from "@/types/images";
 import type {
   AdmissionStep,
-  AwardItem,
   CampusSlide,
   ContactLocation,
   FeatureRow,
@@ -126,7 +125,7 @@ export const pillarsContent = {
 export const brochureContent = {
   titleLine1: "Discover Everything",
   titleHighlight: "TACS",
-  titleLine2: "Has to Offer",
+  titleLine2: "has to Offer",
   description:
     "Download our school brochure for a complete guide to academics, campus life and co-curriculars.",
   cta: { label: "Download Brochure", href: "/?intent=brochure#enquiry" },
@@ -261,43 +260,11 @@ export const galleryContent = {
 export const awardsContent = {
   label: "Awards & Recognitions",
   title: "Recognised for excellence, nationally & globally",
-  items: [
-    {
-      image: createImage(
-        "/images/home/awards/award-1.png",
-        "/images/home/awards/award-1.png",
-        "Education Leaders Awards",
-      ),
-    },
-    {
-      image: createImage(
-        "/images/home/awards/award-2.png",
-        "/images/home/awards/award-2.png",
-        "Brainfeed Top 500 Schools of India",
-      ),
-    },
-    {
-      image: createImage(
-        "/images/home/awards/award-3.png",
-        "/images/home/awards/award-3.png",
-        "India School Merit Awards",
-      ),
-    },
-    {
-      image: createImage(
-        "/images/home/awards/award-4.png",
-        "/images/home/awards/award-4.png",
-        "21CL ISLE Awards Bengaluru",
-      ),
-    },
-    {
-      image: createImage(
-        "/images/home/awards/award-5.png",
-        "/images/home/awards/award-5.png",
-        "Best Boarding School · Oxford University UK",
-      ),
-    },
-  ] satisfies AwardItem[],
+  banner: createImage(
+    "/images/home/awards/awards-banner.png",
+    "/images/home/awards/awards-banner.png",
+    "TACS awards and recognitions — ISLE, India School Merit, Oxford, QS I-GAUGE, Indo Arab Leaders, Education Today, Brainfeed, and Education Leaders",
+  ),
 } as const;
 
 export const campusContent = {
@@ -518,7 +485,7 @@ export const admissionsContent = {
     },
   ] satisfies AdmissionStep[],
   ctas: [
-    { label: "Start Your Enquiry", href: "/#enquiry", variant: "gold" as const },
+    { label: "Start Your Journey", href: "/#enquiry", variant: "gold" as const },
     {
       label: siteConfig.utilityBar.phoneDisplay,
       href: `tel:${siteConfig.utilityBar.phone}`,

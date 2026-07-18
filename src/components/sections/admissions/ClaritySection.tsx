@@ -8,7 +8,7 @@ export function ClaritySection() {
   const { clarity } = admissionsPageContent;
 
   return (
-    <section id="clarity" className="bg-white pb-[clamp(60px,8vw,110px)]">
+    <section id="clarity" className="bg-white pb-[length:var(--section-py)]">
       <RevealOnScroll>
         <div className="relative w-full min-h-[420px] overflow-hidden">
           <div className="absolute inset-0 bg-forest-deep">
@@ -39,7 +39,7 @@ export function ClaritySection() {
                 variant="outline-white"
                 className="px-7 py-3 text-[0.78rem]"
               >
-                <Icon name="whatsapp" className="h-3.5 w-3.5 text-[#25D366]" />
+                <Icon name="whatsapp" className="h-3.5 w-3.5" />
                 {clarity.whatsapp.label}
               </Button>
             </div>

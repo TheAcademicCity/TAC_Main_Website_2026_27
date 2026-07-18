@@ -18,7 +18,7 @@ export function BoardingBandSection() {
               </h3>
               <p className="mt-1 max-w-[52ch] text-[0.88rem] text-white/58">{scheduleBand.description}</p>
             </div>
-            <Button href={scheduleBand.cta.href} variant="outline-white" className="px-7 py-3 text-[0.78rem]">
+            <Button href={scheduleBand.cta.href} className="px-7 py-3 text-[0.78rem]">
               {scheduleBand.cta.label}
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </Button>
