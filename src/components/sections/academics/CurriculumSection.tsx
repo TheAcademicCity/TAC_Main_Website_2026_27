@@ -32,7 +32,7 @@ export function CurriculumSection() {
 
         <RevealOnScroll delay={1} className="order-1 lg:order-2">
           <SectionLabel>{curriculum.label}</SectionLabel>
-          <h2 className="font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold text-forest-deep">
+          <h2 className="whitespace-pre-line font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold text-forest-deep">
             {curriculum.title}
           </h2>
           <p className="mt-3 text-[0.96rem] leading-relaxed text-slate">{curriculum.description}</p>

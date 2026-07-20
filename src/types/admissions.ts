@@ -8,7 +8,6 @@ export type AdmissionsPageContent = {
   hero: {
     title: string;
     titleHighlight: string;
-    description: string;
     image: SiteImage;
     primaryCta: { label: string; href: string };
     phone: { label: string; href: string };

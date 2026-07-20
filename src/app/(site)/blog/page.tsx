@@ -1,6 +1,5 @@
 import {
   BlogArticlesSection,
-  BlogFilterProvider,
   BlogPageHeader,
   NewsletterSection,
 } from "@/components/sections/blog";
@@ -13,12 +12,10 @@ export const metadata = createPageMetadata(
 
 export default function BlogPage() {
   return (
-    <BlogFilterProvider>
-      <main id="top" tabIndex={-1} className="blog-page outline-none">
-        <BlogPageHeader />
-        <NewsletterSection />
-        <BlogArticlesSection />
-      </main>
-    </BlogFilterProvider>
+    <main id="top" tabIndex={-1} className="blog-page outline-none">
+      <BlogPageHeader />
+      <NewsletterSection />
+      <BlogArticlesSection />
+    </main>
   );
 }

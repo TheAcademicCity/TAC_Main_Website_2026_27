@@ -48,9 +48,11 @@ export function FeatureRowBlock({ row }: FeatureRowBlockProps) {
               ))}
             </div>
           ) : null}
-          <CtaLink href={row.cta.href} size={row.cta.size ?? "default"} className="self-start">
-            {row.cta.label}
-          </CtaLink>
+          {row.cta ? (
+            <CtaLink href={row.cta.href} size={row.cta.size ?? "default"} className="self-start">
+              {row.cta.label}
+            </CtaLink>
+          ) : null}
         </div>
       </div>
     </RevealOnScroll>

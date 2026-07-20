@@ -3,6 +3,7 @@ import { createImage } from "@/lib/images";
 import type { SiteVideo } from "@/types/images";
 import type {
   AdmissionStep,
+  AwardItem,
   CampusSlide,
   ContactLocation,
   FeatureRow,
@@ -58,7 +59,7 @@ export const heroContent = {
 
 export const statsContent: StatItem[] = [
   { value: "Grades 5–12", label: "Residential boarding" },
-  { value: "CBSE", label: "New Delhi curriculum" },
+  { value: "CBSE", label: "NCERT curriculum" },
   { value: "600+", label: "Career paths explored" },
   { value: "Indore", label: "Mohankheda campus" },
   { value: "Bengaluru", label: "Nelamangala campus" },
@@ -66,7 +67,7 @@ export const statsContent: StatItem[] = [
 
 export const pillarsContent = {
   label: "Our Core Delivery Framework",
-  title: "Four Pillars That Shape Every Child",
+  title: "Four Pillars that Shape Every Child",
   description:
     "Every day at TACS follows one deliberate path - from academic clarity, to creative growth, to a values-led boarding life, to a clear career direction.",
   watermark: ["CORE", "DELIVERY", "FRAMEWORK"],
@@ -82,7 +83,6 @@ export const pillarsContent = {
         remote.pillars.academics,
         "Academics",
       ),
-      href: "/academics",
       accent: "emerald",
     },
     {
@@ -96,7 +96,6 @@ export const pillarsContent = {
         remote.pillars.curriculum,
         "Co-curricular",
       ),
-      href: "/co-curricular",
       accent: "gold",
     },
     {
@@ -106,7 +105,6 @@ export const pillarsContent = {
       description:
         "Separate AC hostels, pastoral care, 24-hour doctor on-call and home-like celebrations create a safe, joyful home away from home, shaped by Indic values and structured living.",
       image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Boarding life"),
-      href: "/boarding",
       accent: "forest",
     },
     {
@@ -116,7 +114,6 @@ export const pillarsContent = {
       description:
         'From Grade 5 to 12, students explore 600+ career options through industry interactions, psychometric assessments and expert mentoring - turning the daunting "what next?" into a confident, clear answer.',
       image: createImage("/images/home/pillars/career.png", remote.pillars.career, "Career orientation"),
-      href: "/career-guidance",
       accent: "violet",
     },
   ] satisfies PillarItem[],
@@ -134,7 +131,7 @@ export const brochureContent = {
 
 export const academicsContent = {
   label: "A QUICK INSIGHT INTO OUR STUDENTS' LEARNING PATH",
-  title: "Academic eminence. Career focus. Holistic growth.",
+  title: "Academic eminence. Career focus.\nHolistic growth.",
   rows: [
     {
       label: "Academic Excellence",
@@ -158,7 +155,6 @@ export const academicsContent = {
       ),
       imageTag: "Grades 6 - 12 · 600+ Career Paths",
       chips: ["600+ Career Options", "Psychometric Tests", "Industry Mentors", "LEAP Programmes"],
-      cta: { label: "Explore Career Programme", href: "/career-guidance" },
       flipped: true,
     },
     {
@@ -260,12 +256,105 @@ export const galleryContent = {
 export const awardsContent = {
   label: "Awards & Recognitions",
   title: "Recognised for excellence, nationally & globally",
-  banner: createImage(
-    "/images/home/awards/awards-banner.png",
-    "/images/home/awards/awards-banner.png",
-    "TACS awards and recognitions — ISLE, India School Merit, Oxford, QS I-GAUGE, Indo Arab Leaders, Education Today, Brainfeed, and Education Leaders",
-  ),
-} as const;
+  items: [
+    {
+      name: "21CL ISLE Awards Bengaluru",
+      year: "2022",
+      width: 286,
+      height: 282,
+      image: createImage(
+        "/images/home/awards/isle-2022.png",
+        "/images/home/awards/isle-2022.png",
+        "21CL ISLE Awards Bengaluru 2022",
+        false,
+      ),
+    },
+    {
+      name: "India School Merit Awards",
+      year: "2022–23",
+      width: 262,
+      height: 281,
+      image: createImage(
+        "/images/home/awards/india-school-merit-2022-23.png",
+        "/images/home/awards/india-school-merit-2022-23.png",
+        "India School Merit Awards 2022–23",
+        false,
+      ),
+    },
+    {
+      name: "Brainfeed Top 500 Schools of India",
+      year: "2022–23",
+      width: 277,
+      height: 265,
+      image: createImage(
+        "/images/home/awards/brainfeed-top-500-2022-23.png",
+        "/images/home/awards/brainfeed-top-500-2022-23.png",
+        "Brainfeed Top 500 Schools of India 2022–23",
+        false,
+      ),
+    },
+    {
+      name: "University of Oxford — Best Emerging Residential School",
+      year: "2024",
+      width: 866,
+      height: 361,
+      image: createImage(
+        "/images/home/awards/oxford-2024.png",
+        "/images/home/awards/oxford-2024.png",
+        "University of Oxford Best Emerging Residential School for holistic learning 2024",
+        false,
+      ),
+    },
+    {
+      name: "Indo Arab Leaders Summit & Award",
+      year: "2024",
+      width: 823,
+      height: 574,
+      image: createImage(
+        "/images/home/awards/indo-arab-leaders-2024.png",
+        "/images/home/awards/indo-arab-leaders-2024.png",
+        "Indo Arab Leaders Summit and Award 2024 — Best Promising Career Oriented Boarding School",
+        false,
+      ),
+    },
+    {
+      name: "Education Today — Dynamic School",
+      year: "2024",
+      width: 861,
+      height: 369,
+      image: createImage(
+        "/images/home/awards/education-today-2024.png",
+        "/images/home/awards/education-today-2024.png",
+        "Education Today Dynamic School 2024",
+        false,
+      ),
+    },
+    {
+      name: "Education Leaders Awards",
+      year: "2024",
+      width: 277,
+      height: 265,
+      image: createImage(
+        "/images/home/awards/education-leaders-2024.png",
+        "/images/home/awards/education-leaders-2024.png",
+        "Education Leaders Awards 2024",
+        false,
+      ),
+    },
+    {
+      name: "QS I-GAUGE Institution of Happiness",
+      year: "2025–26",
+      width: 811,
+      height: 827,
+      image: createImage(
+        "/images/home/awards/qs-i-gauge-2025-26.png",
+        "/images/home/awards/qs-i-gauge-2025-26.png",
+        "QS I-GAUGE Institution of Happiness Certified 2025–26",
+        false,
+      ),
+    },
+  ],
+} as const satisfies { label: string; title: string; items: readonly AwardItem[] };
 
 export const campusContent = {
   label: "Our Campuses",

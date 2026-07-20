@@ -72,7 +72,7 @@ export function GradeJourneySection() {
       <RevealOnScroll>
         <SectionLabel>{gradeJourney.label}</SectionLabel>
         <SectionTitle className="mt-1">{gradeJourney.title}</SectionTitle>
-        <p className="mt-3 max-w-[58ch] text-slate">{gradeJourney.description}</p>
+        <p className="mt-3 max-w-none whitespace-nowrap text-slate">{gradeJourney.description}</p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>

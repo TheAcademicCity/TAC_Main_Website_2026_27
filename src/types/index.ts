@@ -7,13 +7,20 @@ export type StatItem = {
   featured?: boolean;
 };
 
+export type AwardItem = {
+  name: string;
+  year: string;
+  width: number;
+  height: number;
+  image: import("@/types/images").SiteImage;
+};
+
 export type PillarItem = {
   number: string;
   title: string;
   tagline: string;
   description: string;
   image: import("@/types/images").SiteImage;
-  href: string;
   accent: "emerald" | "gold" | "forest" | "violet";
 };
 
@@ -24,7 +31,7 @@ export type FeatureRow = {
   image: import("@/types/images").SiteImage;
   imageTag: string;
   chips: string[];
-  cta: { label: string; href: string; size?: "lg" };
+  cta?: { label: string; href: string; size?: "lg" };
   flipped?: boolean;
 };
 

@@ -1,6 +1,7 @@
 import { aboutPageContent } from "@/data/about";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { getImageSrc } from "@/lib/images";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
@@ -29,12 +30,12 @@ export function AboutValuesSection() {
 
   return (
     <Section id="values" background="paper">
-      <RevealOnScroll className="mx-auto max-w-3xl text-center">
+      <RevealOnScroll className="mx-auto max-w-none text-center">
         <SectionLabel centered>{values.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
           {values.title}
         </h2>
-        <p className="mx-auto mt-2 max-w-[48ch] text-[0.96rem] text-slate">{values.description}</p>
+        <p className="mx-auto mt-2 max-w-none whitespace-nowrap text-[0.96rem] text-slate">{values.description}</p>
       </RevealOnScroll>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -46,7 +47,17 @@ export function AboutValuesSection() {
               <article className="relative h-full overflow-hidden border border-line bg-white px-6 py-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]">
                 <span className={cn("absolute inset-x-0 top-0 h-1", styles.bar)} />
                 <div className={cn("mb-4 grid h-[54px] w-[54px] place-items-center rounded-[15px]", styles.iconWrap)}>
-                  <Icon name={tile.icon} className="h-6 w-6" />
+                  {"icon" in tile ? (
+                    <Icon name={tile.icon} className="h-6 w-6" />
+                  ) : (
+                    <img
+                      src={getImageSrc(tile.iconImage)}
+                      alt={tile.iconImage.alt}
+                      className="h-8 w-auto max-w-[34px] object-contain"
+                      width={34}
+                      height={40}
+                    />
+                  )}
                 </div>
                 <h3 className="font-montserrat text-base font-extrabold text-forest-deep">{tile.title}</h3>
                 <p className="mt-2 text-[0.86rem] leading-relaxed text-slate">{tile.description}</p>

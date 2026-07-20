@@ -157,33 +157,28 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
 
 export const blogPageContent = {
   header: {
-    title: "Insights &",
-    titleHighlight: "Perspectives",
+    title: "Blogs &",
+    titleHighlight: "Newsletters",
     description:
-      "Thoughts on education, boarding school life, career guidance and raising confident, curious children — from the TACS community.",
-    filters: [
-      { id: "all", label: "All" },
-      { id: "boarding", label: "Boarding Life" },
-      { id: "career", label: "Career & LEAP" },
-      { id: "academics", label: "Academics" },
-      { id: "life", label: "Student Life" },
-      { id: "parenting", label: "For Parents" },
-    ],
+      "From classrooms to campus life, explore the stories, ideas and experiences that define everyday life at TACS.",
+    image: createImage(
+      "/images/blog/hero.png",
+      remote.campus,
+      "Blogs and newsletters at TACS",
+    ),
   },
   newsletter: {
     brand: "Patashala Patrika",
     tag: "The TACS Parent Newsletter",
     title: "Insights for parents,",
     titleHighlight: "delivered monthly",
-    description:
-      "One thoughtful email a month — boarding life, career guidance and what it really means to raise a confident child.",
     subscribeLabel: "Subscribe to Patashala Patrika",
     privacyNote: "No spam. One email a month. Unsubscribe any time.",
-    pastIssuesLabel: "Past issues",
+    pastIssuesLabel: "Recent Issues",
     pages: newsletterPages,
   },
   articles: {
-    label: "All Articles",
+    label: "All Blogs",
     title: "From the TACS editorial desk",
     posts: [
       {
@@ -291,14 +286,6 @@ export const blogPageContent = {
         meta: "Boarding Life · 5 min",
         href: "https://theacademiccity.com/blog/holistic-growth-in-focus-the-boarding-school-advantage-in-bangalore-and-karnataka",
       },
-    ],
-    topics: [
-      { id: "boarding", label: "Boarding Life" },
-      { id: "career", label: "Career & LEAP" },
-      { id: "academics", label: "Academics" },
-      { id: "life", label: "Student Life" },
-      { id: "parenting", label: "For Parents" },
-      { id: "all", label: "All Posts" },
     ],
     sidebarCta: {
       label: siteConfig.admissionsBadge,

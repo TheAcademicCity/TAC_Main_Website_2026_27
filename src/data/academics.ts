@@ -78,7 +78,7 @@ export const academicsPageContent = {
     image: createImage("/images/academics/classroom.png", remote.hero, "Classroom at TACS"),
     imageTag: "",
     label: "Curriculum",
-    title: "Built for understanding, not just marks",
+    title: "Built for understanding,\nnot just marks",
     description:
       "Every subject is taught for depth — not rote recall. Students build genuine conceptual foundations and are encouraged to question, apply and think independently.",
     features: [

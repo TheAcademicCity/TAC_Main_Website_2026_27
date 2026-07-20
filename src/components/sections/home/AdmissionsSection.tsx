@@ -24,9 +24,16 @@ export function AdmissionsSection() {
       />
 
       <div className="relative z-10 mt-12 grid grid-cols-2 gap-0 lg:grid-cols-5">
-        <div className="pointer-events-none absolute left-[10%] right-[10%] top-[21px] hidden h-px bg-white/15 lg:block" />
         {admissionsContent.steps.map((step, index) => (
-          <StepCard key={step.number} step={step} delay={delays[index]} />
+          <div key={step.number} className="relative">
+            {index < admissionsContent.steps.length - 1 ? (
+              <div
+                aria-hidden
+                className="pointer-events-none absolute left-[calc(1rem+1.375rem)] top-[1.375rem] z-0 hidden h-px w-full bg-white/15 lg:block"
+              />
+            ) : null}
+            <StepCard step={step} delay={delays[index]} />
+          </div>
         ))}
       </div>
 

@@ -25,12 +25,12 @@ export function ValuesSection() {
 
   return (
     <Section id="values" background="paper">
-      <RevealOnScroll className="mx-auto max-w-3xl text-center">
+      <RevealOnScroll className="mx-auto max-w-none text-center">
         <SectionLabel centered>{values.label}</SectionLabel>
         <h2 className="font-montserrat text-[clamp(1.7rem,3vw,2.4rem)] font-extrabold text-forest-deep">
           {values.title}
         </h2>
-        <p className="mx-auto mt-2 max-w-[54ch] text-[0.96rem] text-slate">{values.description}</p>
+        <p className="mx-auto mt-2 max-w-none whitespace-nowrap text-[0.96rem] text-slate">{values.description}</p>
       </RevealOnScroll>
 
       <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

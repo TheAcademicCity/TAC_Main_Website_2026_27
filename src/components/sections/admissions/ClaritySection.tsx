@@ -13,7 +13,8 @@ export function ClaritySection() {
         <div className="relative w-full min-h-[420px] overflow-hidden">
           <div className="absolute inset-0 bg-forest-deep">
             <ImageWithFallback image={clarity.image} fill sizes="100vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.72)] via-[rgba(5,22,18,0.4)] to-[rgba(5,22,18,0.08)]" />
+            <div className="absolute inset-0 bg-[rgba(5,22,18,0.18)]" />
+            <div className="absolute inset-x-0 bottom-0 h-[min(72%,28rem)] bg-gradient-to-t from-[rgba(5,22,18,0.98)] via-[rgba(5,22,18,0.82)] to-transparent" />
           </div>
 
           <div className="relative z-[1] flex min-h-[420px] flex-col items-center justify-end px-[4vw] py-[clamp(2rem,4vw,3.5rem)] text-center">

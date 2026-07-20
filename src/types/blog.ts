@@ -40,14 +40,13 @@ export type BlogPageContent = {
     title: string;
     titleHighlight: string;
     description: string;
-    filters: readonly { id: BlogCategory; label: string }[];
+    image: SiteImage;
   };
   newsletter: {
     brand: string;
     tag: string;
     title: string;
     titleHighlight: string;
-    description: string;
     subscribeLabel: string;
     privacyNote: string;
     pastIssuesLabel: string;
@@ -59,7 +58,6 @@ export type BlogPageContent = {
     posts: readonly BlogPost[];
     externalBlogUrl: string;
     popularPosts: readonly PopularPost[];
-    topics: readonly { id: BlogCategory; label: string }[];
     sidebarCta: {
       label: string;
       description: string;

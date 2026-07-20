@@ -64,7 +64,9 @@ export function HeroSection() {
       <div className="relative z-[2] mt-auto pb-[clamp(5.5rem,12vh,8rem)] text-center text-white">
         <Container>
           <h1 className="mx-auto max-w-[16ch] font-montserrat text-[clamp(2.6rem,6.5vw,4.8rem)] font-black leading-[1.04] text-white [text-shadow:0_2px_40px_rgba(0,0,0,0.4)]">
-            {title} <em className="not-italic text-gold">{titleHighlight}</em> {titleSuffix}
+            <span className="block">{title}</span>
+            <em className="block not-italic text-gold">{titleHighlight}</em>
+            <span className="block">{titleSuffix}</span>
           </h1>
           <p className="mt-4 text-[clamp(1rem,1.8vw,1.18rem)] font-light text-white/78">{subtitle}</p>
         </Container>

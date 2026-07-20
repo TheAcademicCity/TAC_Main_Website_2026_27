@@ -1,5 +1,5 @@
 import { blogPageContent } from "@/data/blog";
-import { BlogFilterPills } from "@/components/sections/blog/BlogFilterPills";
+import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Container } from "@/components/ui/Container";
 
@@ -7,36 +7,37 @@ export function BlogPageHeader() {
   const { header } = blogPageContent;
 
   return (
-    <section className="relative overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_60%,rgba(45,148,92,0.18),transparent_55%)]"
+    <section className="relative flex min-h-[clamp(360px,50vh,480px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
+      <div className="absolute inset-0">
+        <ImageWithFallback
+          image={header.image}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_35%]"
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-20 -right-20 h-[320px] w-[320px] rounded-full border-[50px] border-white/4"
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.96)] via-[rgba(5,22,18,0.65)] to-[rgba(5,22,18,0.22)]" />
+      </div>
 
-        <Container className="relative z-[1] py-[clamp(3rem,6vw,5rem)] pb-[clamp(2.5rem,5vw,4rem)]">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-4 flex items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/45"
-          >
-            <SiteLink href="/" className="text-white/45 transition-colors hover:text-gold">
-              Home
-            </SiteLink>
-            <span aria-hidden>›</span>
-            <span className="text-white/70">Blog & Insights</span>
-          </nav>
+      <Container className="relative z-[2] py-[clamp(2rem,4vw,3.5rem)]">
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-3 flex items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50"
+        >
+          <SiteLink href="/" className="text-white/50 transition-colors hover:text-gold">
+            Home
+          </SiteLink>
+          <span aria-hidden>›</span>
+          <span className="text-white/70">Blogs & Newsletters</span>
+        </nav>
 
-          <h1 className="font-montserrat text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.06] text-white">
-            {header.title} <em className="not-italic text-gold">{header.titleHighlight}</em>
-          </h1>
-          <p className="mt-3 max-w-[50ch] text-[clamp(0.93rem,1.4vw,1.05rem)] font-light leading-relaxed text-white/65">
-            {header.description}
-          </p>
-          <BlogFilterPills />
-        </Container>
-      </section>
+        <h1 className="font-montserrat text-[clamp(2rem,4.5vw,3.2rem)] font-black leading-[1.06] text-white">
+          {header.title} <em className="not-italic text-gold">{header.titleHighlight}</em>
+        </h1>
+        <p className="mt-3 max-w-[54ch] text-[clamp(0.95rem,1.5vw,1.06rem)] font-light leading-relaxed text-white/70">
+          {header.description}
+        </p>
+      </Container>
+    </section>
   );
 }

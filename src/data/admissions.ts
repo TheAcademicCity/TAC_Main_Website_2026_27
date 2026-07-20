@@ -14,8 +14,6 @@ export const admissionsPageContent = {
   hero: {
     title: "Admissions",
     titleHighlight: "",
-    description:
-      "Enroll with us to manifest the best version of yourself.",
     image: createImage("/images/admissions/hero.png", remote.career, "Admissions at TACS"),
     primaryCta: { label: "See the process", href: "#process" },
     phone: {
@@ -34,7 +32,7 @@ export const admissionsPageContent = {
   ],
   overview: {
     label: "Admissions",
-    title: "Enrol with us — Manifest the best version of your child",
+    title: "Enroll with us — Manifest the best version of your child",
     visitTimings: "9 AM to 6 PM",
     paragraphs: [
       "TACS offers a career-oriented residential education from Grades 5 to 12 — blending academic rigour, Indic values and real-world skills in a safe, structured boarding environment.",

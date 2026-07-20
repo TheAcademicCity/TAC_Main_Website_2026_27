@@ -16,7 +16,7 @@ export function BoardingBandSection() {
               <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.2rem)] font-extrabold text-white">
                 {scheduleBand.title}
               </h3>
-              <p className="mt-1 max-w-[52ch] text-[0.88rem] text-white/58">{scheduleBand.description}</p>
+              <p className="mt-1 whitespace-nowrap text-[0.88rem] text-white/58">{scheduleBand.description}</p>
             </div>
             <Button href={scheduleBand.cta.href} className="px-7 py-3 text-[0.78rem]">
               {scheduleBand.cta.label}

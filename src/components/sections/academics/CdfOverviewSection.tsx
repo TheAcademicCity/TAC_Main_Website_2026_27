@@ -91,10 +91,10 @@ export function CdfOverviewSection() {
   return (
     <Section id="overview" background="white">
       <RevealOnScroll>
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-none text-center">
           <SectionLabel centered>{overview.label}</SectionLabel>
           <SectionTitle className="mt-1 whitespace-pre-line text-center">{overview.title}</SectionTitle>
-          <p className="mx-auto mt-3 max-w-[56ch] text-slate">{overview.description}</p>
+          <p className="mx-auto mt-3 max-w-none whitespace-nowrap text-slate">{overview.description}</p>
         </div>
       </RevealOnScroll>
 

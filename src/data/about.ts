@@ -21,8 +21,6 @@ export const aboutPageContent = {
     descriptionHighlights: ["India's first career-oriented boarding school"],
     image: createImage("/images/about/hero.png", remote.campus, "TACS Campus"),
     stats: [
-      { value: "2022", label: "Founded" },
-      { value: "Gr. 5–12", label: "CBSE Boarding" },
       { value: "Bengaluru", label: "Nelamangala" },
       { value: "Indore", label: "Mohankheda" },
     ],
@@ -83,14 +81,19 @@ export const aboutPageContent = {
       "Every decision at TACS — academic, pastoral, residential — traces back to these four foundations.",
     tiles: [
       {
-        icon: "compass",
+        icon: "briefcase",
         accent: "gold",
         title: "Career First",
         description:
           "Every child should leave school knowing their direction. Career clarity isn't an afterthought — it's the entire architecture of our programme, from Grade 6.",
       },
       {
-        icon: "leaf",
+        iconImage: createImage(
+          "/images/about/india-map-icon.svg",
+          "/images/about/india-map-icon.svg",
+          "India map outline",
+          false,
+        ),
         accent: "emerald",
         title: "Indic Roots",
         description:

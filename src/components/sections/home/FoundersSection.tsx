@@ -13,8 +13,9 @@ export function FoundersSection() {
         label={foundersContent.label}
         title={foundersContent.title}
         description={foundersContent.description}
+        descriptionClassName="max-w-none whitespace-nowrap"
         centered
-        className="mb-0"
+        className="mb-0 max-w-none"
       />
 
       <RevealOnScroll>

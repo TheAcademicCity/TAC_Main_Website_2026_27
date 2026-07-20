@@ -1,7 +1,5 @@
-import Link from "next/link";
 import type { PillarItem } from "@/types";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
-import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
 
 const accentClasses = {
@@ -140,19 +138,6 @@ export function PillarCard({
               >
                 {pillar.description}
               </p>
-              <Link
-                href={pillar.href}
-                className={cn(
-                  "mb-1 mt-5 inline-flex items-center gap-1.5 rounded-lg bg-forest-deep px-4 py-2.5",
-                  "font-montserrat text-[0.73rem] font-bold uppercase tracking-widest text-white",
-                  "transition-all duration-200",
-                  easeBrand,
-                  "hover:gap-2 hover:bg-emerald",
-                )}
-              >
-                Learn More
-                <Icon name="arrow" className="h-3.5 w-3.5" />
-              </Link>
             </div>
           </div>
         </div>

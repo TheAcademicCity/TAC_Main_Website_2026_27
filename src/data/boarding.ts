@@ -55,7 +55,7 @@ export const boardingPageContent = {
     stats: [
       { value: "24/7", label: "On-campus care" },
       { value: "6 Meals", label: "Daily, Veg & Jain" },
-      { value: "30–35", label: "Students per dorm parent" },
+      { value: "1 : 30", label: "Student-dorm parent ratio" },
       { value: "Indic", label: "Values at the core" },
     ],
   },

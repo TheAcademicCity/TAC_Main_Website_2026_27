@@ -44,12 +44,14 @@ export type AboutPageContent = {
     label: string;
     title: string;
     description: string;
-    tiles: readonly {
-      icon: IconName;
+    tiles: readonly ({
       accent: "gold" | "emerald" | "violet" | "cyan";
       title: string;
       description: string;
-    }[];
+    } & (
+      | { icon: IconName; iconImage?: never }
+      | { iconImage: SiteImage; icon?: never }
+    ))[];
   };
   campusBand: {
     title: string;

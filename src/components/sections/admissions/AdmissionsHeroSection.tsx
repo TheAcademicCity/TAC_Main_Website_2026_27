@@ -36,9 +36,6 @@ export function AdmissionsHeroSection() {
         <h1 className="max-w-[18ch] font-montserrat text-[clamp(1.9rem,4.5vw,3.4rem)] font-black leading-[1.06] text-white">
           {hero.title} <em className="not-italic text-gold">{hero.titleHighlight}</em>
         </h1>
-        <p className="mt-3 max-w-[48ch] text-[clamp(0.93rem,1.4vw,1.05rem)] font-light leading-relaxed text-white/70">
-          {hero.description}
-        </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
           <Button href={hero.primaryCta.href} className="px-7 py-3 text-[0.78rem]">

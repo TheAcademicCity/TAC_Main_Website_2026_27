@@ -44,12 +44,9 @@ export function NewsletterSection() {
               </span>
             </div>
             <h2 className="mt-4 font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-white">
-              {newsletter.title}{" "}
-              <em className="not-italic text-gold">{newsletter.titleHighlight}</em>
+              {newsletter.title}
+              <em className="block not-italic text-gold">{newsletter.titleHighlight}</em>
             </h2>
-            <p className="mt-2 max-w-[40ch] text-[0.93rem] leading-relaxed text-white/60">
-              {newsletter.description}
-            </p>
           </RevealOnScroll>
 
           <RevealOnScroll delay={1}>
@@ -93,49 +90,19 @@ export function NewsletterSection() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {currentIssues.map((issue, index) => (
               <RevealOnScroll key={issue.month} delay={Math.min(index, 2) as 0 | 1 | 2}>
-                <article className="flex h-full flex-col overflow-hidden border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-gold/35 hover:shadow-[0_22px_50px_-16px_rgba(0,0,0,0.4)]">
-                  <div className="relative aspect-video overflow-hidden">
-                    <div className="absolute inset-0" style={{ background: issue.gradient }}>
-                      <div className="absolute inset-0 z-[2] flex flex-col justify-end p-4">
-                        <div className="font-montserrat text-[0.6rem] font-black uppercase tracking-[0.2em] text-white/50">
-                          {newsletter.brand}
-                        </div>
-                        <div className="mt-1 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.12em] text-gold">
-                          {issue.issue}
-                        </div>
-                        <div className="mt-2 font-montserrat text-base font-extrabold leading-tight text-white">
-                          {issue.coverHeadline}
-                        </div>
-                        <span
-                          className="mt-2 inline-block w-fit px-2.5 py-1 font-montserrat text-[0.6rem] font-bold uppercase tracking-[0.1em] text-white"
-                          style={{ background: issue.coverTagBg }}
-                        >
-                          {issue.coverTag}
-                        </span>
+                <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-gold/35 hover:shadow-[0_22px_50px_-16px_rgba(0,0,0,0.4)]">
+                  <div className="relative aspect-square w-full overflow-hidden bg-forest-deep">
+                    <ImageWithFallback
+                      image={issue.coverImage}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.68)] via-[rgba(5,22,18,0.22)] to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 z-[1] px-4 pb-3.5 pt-12">
+                      <div className="font-montserrat text-[0.76rem] font-bold uppercase tracking-[0.12em] text-white/90">
+                        {issue.month}
                       </div>
-                      <ImageWithFallback
-                        image={issue.coverImage}
-                        fill
-                        sizes="(min-width: 1024px) 33vw, 100vw"
-                        className="object-cover opacity-[0.18] transition-opacity duration-400 group-hover:opacity-[0.26]"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-1 flex-col gap-2 p-4">
-                    <div className="font-montserrat text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white/40">
-                      {issue.month}
-                    </div>
-                    <h4 className="text-[0.9rem] font-bold leading-snug text-white">{issue.title}</h4>
-                    <p className="flex-1 text-[0.8rem] leading-relaxed text-white/52">{issue.description}</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {issue.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="border border-white/10 bg-white/7 px-2 py-0.5 font-montserrat text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-white/45"
-                        >
-                          {tag}
-                        </span>
-                      ))}
                     </div>
                   </div>
                   <a
@@ -157,7 +124,7 @@ export function NewsletterSection() {
                 type="button"
                 onClick={() => setPage(p.page)}
                 className={cn(
-                  "grid h-10 w-10 place-items-center border-[1.5px] font-montserrat text-[0.82rem] font-bold transition-colors",
+                  "grid h-10 w-10 place-items-center rounded-lg border-[1.5px] font-montserrat text-[0.82rem] font-bold transition-colors",
                   page === p.page
                     ? "border-gold bg-gold text-forest-deep"
                     : "border-white/20 bg-white/6 text-white/55 hover:border-white/40 hover:bg-white/12 hover:text-white",

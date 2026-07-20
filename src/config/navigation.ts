@@ -8,14 +8,13 @@ export type NavItem = {
   }>;
 };
 
-/** The 8 primary site pages. */
+/** The primary site pages. */
 export const sitePages = {
   home: { path: "/", label: "Home" },
   about: { path: "/about", label: "About Us" },
   academics: { path: "/academics", label: "Academics" },
   coCurricular: { path: "/co-curricular", label: "Co-curricular" },
   boarding: { path: "/boarding", label: "Boarding" },
-  careerGuidance: { path: "/career-guidance", label: "Career Guidance" },
   admissions: { path: "/admissions", label: "Admissions" },
   blog: { path: "/blog", label: "Blogs & Newsletters" },
   enquiry: { path: "/#enquiry", label: "Enquiry" },
@@ -31,7 +30,6 @@ export const mainNavigation: NavItem[] = [
       { label: sitePages.academics.label, href: sitePages.academics.path },
       { label: sitePages.coCurricular.label, href: sitePages.coCurricular.path },
       { label: sitePages.boarding.label, href: sitePages.boarding.path },
-      { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
     ],
   },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
@@ -45,7 +43,6 @@ export const mobileNavigation: NavItem[] = [
   { label: sitePages.academics.label, href: sitePages.academics.path },
   { label: sitePages.coCurricular.label, href: sitePages.coCurricular.path },
   { label: sitePages.boarding.label, href: sitePages.boarding.path },
-  { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
   { label: sitePages.blog.label, href: sitePages.blog.path },
   { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
@@ -67,7 +64,6 @@ export const footerNavigation = [
     links: [
       { label: "How to Apply", href: sitePages.admissions.path },
       { label: "Boarding Life", href: sitePages.boarding.path },
-      { label: sitePages.careerGuidance.label, href: sitePages.careerGuidance.path },
       { label: "Awards", href: "/#awards" },
       { label: "Contact Us", href: "/#contact" },
     ],
