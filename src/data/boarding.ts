@@ -148,7 +148,7 @@ export const boardingPageContent = {
     ],
   },
   schedule: {
-    label: "Daily Schedule — Senior",
+    label: "Daily Schedule",
     title: "Every hour has a purpose",
     description: "Two different schedules - structured weekdays and a relaxed, enriching Sunday.",
     tabs: [
@@ -183,16 +183,17 @@ export const boardingPageContent = {
         description: "Class-wise Zoom / Google Meet sessions as per the academic calendar",
       },
       {
-        icon: "whatsapp",
-        title: "WhatsApp Groups",
-        description: "Class teacher WA group (academics) + Dorm Parent WA group (wellbeing)",
+        icon: "users",
+        title: "ERP Parent Connect",
+        description: "One portal for academics, wellbeing and reports - always up to date",
       },
     ],
   },
   outpass: {
     label: "Outpass Protocol",
-    title: "A clear process. Every exit, approved.",
-    description: "Students may leave campus only with a pre-approved outpass with 72 hours prior notice.",
+    title: "Outings follow a clear, safety-first process",
+    description:
+      "Every campus exit passes through multiple checkpoints, so students are always accounted for and safe.",
     steps: [
       {
         number: "1",
@@ -211,13 +212,14 @@ export const boardingPageContent = {
       },
       {
         number: "4",
-        title: "Management Approval",
-        description: "Final sign-off from campus management completes the process.",
+        title: "Principal Approval",
+        description: "Final sign-off from the principal completes the process.",
       },
       {
         number: "✓",
         title: "Outpass Granted",
-        description: "Physical outpass issued by warden. Student may exit campus with authorised guardian.",
+        description:
+          "Physical outpass issued by the warden; student exits only with an authorised guardian.",
       },
     ],
     rules: [
@@ -227,7 +229,6 @@ export const boardingPageContent = {
       "Emergency exits handled only with management approval.",
       "72 hours prior intimation mandatory for all outpass requests.",
     ],
-    note: "Late return fine: ₹1,000 for the first day, ₹500 per day thereafter.",
   },
   discipline: {
     label: "Discipline & Conduct",
@@ -278,11 +279,11 @@ export const boardingPageContent = {
         {
           icon: "heart",
           title: "Emotional Wellbeing",
-          description: "Trained counsellors available for every student - confidential and regular.",
+          description: "Professional counsellors available for every student - confidential and regular.",
         },
         {
           icon: "users",
-          title: "House Parents Present Overnight",
+          title: "Overnight Supervision by House Parents",
           description: "Resident wardens in every hostel - first point of contact after lights out.",
         },
         {
@@ -297,9 +298,9 @@ export const boardingPageContent = {
       description:
         "Six nutritious meals planned by a nutritionist, cooked fresh on campus daily. Vegetarian and Jain options at every meal.",
       meals: [
-        "Early Morning Tea",
+        "Morning Milk + Soaked Almonds",
         "Breakfast",
-        "Mid-Morning Snack",
+        "Mid-Morning Fruit Break",
         "Lunch",
         "Evening Snack",
         "Dinner",

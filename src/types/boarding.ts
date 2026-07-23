@@ -60,7 +60,6 @@ export type BoardingPageContent = {
     description: string;
     steps: readonly { number: string; title: string; description: string }[];
     rules: readonly string[];
-    note: string;
   };
   discipline: {
     label: string;

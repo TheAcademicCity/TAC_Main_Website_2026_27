@@ -170,8 +170,8 @@ export const blogPageContent = {
   newsletter: {
     brand: "Patashala Patrika",
     tag: "The TACS Parent Newsletter",
-    title: "Insights for parents,",
-    titleHighlight: "delivered monthly",
+    title: "Monthly Insights into",
+    titleHighlight: "Your Child's Journey",
     subscribeLabel: "Subscribe to Patashala Patrika",
     privacyNote: "No spam. One email a month. Unsubscribe any time.",
     pastIssuesLabel: "Recent Issues",

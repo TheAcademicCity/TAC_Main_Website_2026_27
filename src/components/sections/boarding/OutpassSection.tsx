@@ -26,7 +26,7 @@ export function OutpassSection() {
         <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{outpass.description}</p>
       </RevealOnScroll>
 
-      <div className="mt-8 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="mt-8 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll delay={1}>
           <ol className="relative flex flex-col gap-8">
             <div
@@ -55,7 +55,7 @@ export function OutpassSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={2}>
-          <aside className="mt-4 rounded-lg bg-forest-deep px-7 py-7 lg:mt-6">
+          <aside className="rounded-lg bg-forest-deep px-7 py-7">
             <h3 className="font-montserrat text-[0.95rem] font-extrabold tracking-[0.04em] text-gold">
               Rules &amp; Guidelines
             </h3>
@@ -70,9 +70,6 @@ export function OutpassSection() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 rounded-lg border border-gold/30 bg-gold/12 px-4 py-3 text-[0.84rem] text-white/85">
-              {outpass.note}
-            </p>
           </aside>
         </RevealOnScroll>
       </div>
