@@ -75,7 +75,7 @@ export function NewsletterSection() {
               </button>
             </div>
             {subscribed ? (
-              <p className="mt-2 text-[0.82rem] text-gold">✓ You&apos;re subscribed — thank you!</p>
+              <p className="mt-2 text-[0.82rem] text-gold">✓ You&apos;re subscribed - thank you!</p>
             ) : null}
             <p className="mt-2 text-[0.74rem] text-white/30">{newsletter.privacyNote}</p>
           </RevealOnScroll>

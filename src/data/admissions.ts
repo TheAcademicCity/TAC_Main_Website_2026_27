@@ -32,11 +32,11 @@ export const admissionsPageContent = {
   ],
   overview: {
     label: "Admissions",
-    title: "Enroll with us — Manifest the best version of your child",
+    title: "Enrol with us - Manifest the best version of your child",
     visitTimings: "9 AM to 6 PM",
     paragraphs: [
-      "TACS offers a career-oriented residential education from Grades 5 to 12 — blending academic rigour, Indic values and real-world skills in a safe, structured boarding environment.",
-      "Admissions are open now. The entire process can be completed online — application, entrance exam, interaction — or you're welcome to visit us in Nelamangala any day from 9 AM to 6 PM.",
+      "TACS offers a career-oriented residential education from Grades 5 to 12 - blending academic rigour, Indic values and real-world skills in a safe, structured boarding environment.",
+      "Admissions are open now. The entire process can be completed online - application, entrance exam, interaction - or you're welcome to visit us in Nelamangala any day from 9 AM to 6 PM.",
     ],
     image: createImage("/images/admissions/overview-1.png", remote.career, "Students at TACS"),
     cta: { label: "Book your visit today!", href: "/#enquiry" },
@@ -50,31 +50,31 @@ export const admissionsPageContent = {
         number: "01",
         title: "Enquire",
         description:
-          "Share a few details and the grade you're applying for. Our admissions team responds within a day — call, WhatsApp or fill the form online.",
+          "Share a few details and the grade you're applying for. Our admissions team responds within a day - call, WhatsApp or fill the form online.",
       },
       {
         number: "02",
         title: "Campus Visit",
         description:
-          "Tour Nelamangala, meet our team and see boarding life first-hand — in person or virtually. Taste the food, walk the dorms, ask every question.",
+          "Tour Nelamangala, meet our team and see boarding life first-hand - in person or virtually. Taste the food, walk the dorms, ask every question.",
       },
       {
         number: "03",
         title: "Entrance Exam",
         description:
-          "A simple age-appropriate assessment — online or offline — to understand your child's academic starting point.",
+          "A simple age-appropriate assessment - online or offline - to understand your child's academic starting point.",
       },
       {
         number: "04",
         title: "Interaction",
         description:
-          "A warm conversation with your child to understand their interests, strengths and goals. Can be done online or on campus — flexible to suit your schedule.",
+          "A warm conversation with your child to understand their interests, strengths and goals. Can be done online or on campus - flexible to suit your schedule.",
       },
       {
         number: "05",
         title: "Enrolment",
         description:
-          "Complete the formalities and secure your child's place for the upcoming academic year. Seats are limited — earlier is better.",
+          "Complete the formalities and secure your child's place for the upcoming academic year. Seats are limited - earlier is better.",
         alt: true,
       },
     ],
@@ -99,14 +99,14 @@ export const admissionsPageContent = {
         icon: "book",
         title: "Entrance Exam",
         description:
-          "A consistent academic record and a good performance in our entrance assessment. The exam is age-appropriate and can be taken online or on campus — it measures starting point, not perfection.",
+          "A consistent academic record and a good performance in our entrance assessment. The exam is age-appropriate and can be taken online or on campus - it measures starting point, not perfection.",
       },
       {
         number: "02 · Residential Fit",
         icon: "users",
         title: "Interview & Fit",
         description:
-          "Students and parents who appreciate the value of residential education — its structure, community and independence. We assess suitability through a warm, conversational interaction.",
+          "Students and parents who appreciate the value of residential education - its structure, community and independence. We assess suitability through a warm, conversational interaction.",
       },
       {
         number: "03 · Career Mindset",
@@ -120,7 +120,7 @@ export const admissionsPageContent = {
   onlineBand: {
     title: "Can't visit? Complete the entire process online.",
     description:
-      "Application, entrance exam, career counselling, interaction with principal — everything can be done from home. Call us to get started.",
+      "Application, entrance exam, career counselling, interaction with principal - everything can be done from home. Call us to get started.",
     cta: {
       label: siteConfig.contact.phoneDisplay,
       href: `tel:${siteConfig.contact.phone}`,
@@ -178,7 +178,7 @@ export const admissionsPageContent = {
       {
         question: "Can I complete the entire admission process online?",
         answer:
-          "Yes — application, entrance exam, career counselling and the interaction with the principal can all be completed online. You never need to visit campus to complete admissions, though we encourage you to.",
+          "Yes - application, entrance exam, career counselling and the interaction with the principal can all be completed online. You never need to visit campus to complete admissions, though we encourage you to.",
       },
       {
         question: "Is TACS a fully residential school? Are there day boarders?",
@@ -191,7 +191,7 @@ export const admissionsPageContent = {
           "You can visit on any working day between 9 AM and 3:30 PM. No appointment is needed, but calling ahead helps us arrange a more personalised tour. The campus is about 25 km from Bengaluru city centre and the international airport.",
       },
       {
-        question: "Can my child switch boards — say from ICSE to CBSE?",
+        question: "Can my child switch boards - say from ICSE to CBSE?",
         answer:
           "Yes, students can switch boards at any grade except Grade 10 and Grade 12. Contact our admissions team for specific guidance based on your child's current grade.",
       },
@@ -218,7 +218,7 @@ export const admissionsPageContent = {
       {
         question: "Is the food vegetarian? How many meals per day?",
         answer:
-          "TACS is a vegetarian campus — no non-vegetarian food including eggs is served. Jain options are available at every meal. Students receive 6 meals per day: early morning, breakfast, mid-morning snack, lunch, evening snack and dinner — all cooked fresh in the school's own kitchen.",
+          "TACS is a vegetarian campus - no non-vegetarian food including eggs is served. Jain options are available at every meal. Students receive 6 meals per day: early morning, breakfast, mid-morning snack, lunch, evening snack and dinner - all cooked fresh in the school's own kitchen.",
       },
       {
         question: "When does the admissions process begin for the next academic year?",
@@ -230,7 +230,7 @@ export const admissionsPageContent = {
   ctaBand: {
     label: "Ready to apply?",
     title: "Take the first step today",
-    description: "Our admissions team responds within a day. Call, WhatsApp or email — we're here to help.",
+    description: "Our admissions team responds within a day. Call, WhatsApp or email - we're here to help.",
     phone: {
       label: siteConfig.contact.phoneDisplay,
       href: `tel:${siteConfig.contact.phone}`,

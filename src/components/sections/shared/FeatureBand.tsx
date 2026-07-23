@@ -17,7 +17,7 @@ export function FeatureBand({ title, description, chips, cta }: FeatureBandProps
           <h3 className="font-montserrat text-[clamp(1.1rem,2vw,1.4rem)] font-extrabold text-white">
             {title}
           </h3>
-          <p className="mt-2 max-w-[60ch] text-[0.9rem] text-white/65">{description}</p>
+          <p className="mt-2 max-w-[60ch] whitespace-pre-line text-[0.9rem] text-white/65">{description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {chips.map((chip) => (
               <Chip key={chip} variant="dark" className="text-[0.76rem]">

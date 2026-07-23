@@ -7,6 +7,7 @@ export { GallerySection } from "@/components/sections/home/GallerySection";
 export { AwardsSection } from "@/components/sections/home/AwardsSection";
 export { CampusSliderSection } from "@/components/sections/home/CampusSliderSection";
 export { FoundersSection } from "@/components/sections/home/FoundersSection";
+export { ParentTestimonialsSection } from "@/components/sections/home/ParentTestimonialsSection";
 export { NewsSection } from "@/components/sections/home/NewsSection";
 export { AdmissionsSection } from "@/components/sections/home/AdmissionsSection";
 export { EnquirySection } from "@/components/sections/home/EnquirySection";

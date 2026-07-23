@@ -17,7 +17,7 @@ export const coCurricularPageContent = {
     title: "Beyond the Classroom\nat",
     titleHighlight: "TACS",
     description:
-      "Sport, clubs, events and community service — built into every day, all year round.",
+      "Sport, clubs, events and community service - built into every day, all year round.",
     image: createImage(
       "/images/co-curricular/hero.png",
       remote.curriculum,
@@ -43,7 +43,7 @@ export const coCurricularPageContent = {
     label: "Our Philosophy",
     title: "At TACS, co-curricular is never an afterthought",
     paragraphs: [
-      "At most schools, activities get squeezed in after class — and dropped when exams arrive. At TACS, sport, clubs and events are in the timetable, every single day, because we know that who a child becomes outside the classroom shapes everything inside it.",
+      "At most schools, activities get squeezed in after class - and dropped when exams arrive. At TACS, sport, clubs and events are in the timetable, every single day, because we know that who a child becomes outside the classroom shapes everything inside it.",
     ],
     image: createImage(
       "/images/co-curricular/philosophy.png",
@@ -57,7 +57,7 @@ export const coCurricularPageContent = {
     label: "Sports",
     title: "90 minutes, every single day",
     description:
-      "Every student plays — not just the talented ones. Dedicated coaches, structured training and inter-house competitions make sport a serious, joyful part of every child's day.",
+      "Every student plays - not just the talented ones. Dedicated coaches, structured training and inter-house competitions make sport a serious, joyful part of every child's day.",
     tags: [
       "Basketball",
       "Football",
@@ -131,7 +131,7 @@ export const coCurricularPageContent = {
     ],
   },
   sportBand: {
-    title: "Sport is in the timetable — not optional, not cancelled for exams",
+    title: "Sport remains a core part of the timetable, even during exams.",
     description:
       "Residential life means sport happens every single day, with proper coaches and facilities.",
     cta: { label: "Book a campus visit", href: "/#enquiry" },
@@ -140,7 +140,7 @@ export const coCurricularPageContent = {
     label: "Clubs & Interest Groups",
     title: "Where curiosity becomes a skill",
     description:
-      "Faculty-mentored clubs that run weekly and deliver real outputs — papers, pitches, performances.",
+      "Faculty-mentored clubs that run weekly and deliver real outputs - papers, pitches, performances.",
     cards: [
       {
         number: "01",
@@ -200,7 +200,7 @@ export const coCurricularPageContent = {
     performingArts: {
       label: "Performing Arts & Language Heritage",
       description:
-        "Dance · Theatre · Music · Language & Heritage — celebrating expression and cultural identity on campus.",
+        "Dance · Theatre · Music · Language & Heritage - celebrating expression and cultural identity on campus.",
     },
   },
   events: {
@@ -218,42 +218,42 @@ export const coCurricularPageContent = {
         number: "02",
         title: "TEDx TACS",
         description:
-          "Student-organised — original ideas, bold opinions and inspiring personal stories from inside the campus community.",
+          "Student-organised - original ideas, bold opinions and inspiring personal stories from inside the campus community.",
         badge: "Ideas",
       },
       {
         number: "03",
         title: "Spic Macay",
         description:
-          "India's classical arts brought live to campus — music, dance and theatre performed by practising masters.",
+          "India's classical arts brought live to campus - music, dance and theatre performed by practising masters.",
         badge: "Culture",
       },
       {
         number: "04",
         title: "Annual Day",
         description:
-          "Performances, awards and showcases — the flagship celebration where the entire school community comes together.",
+          "Performances, awards and showcases - the flagship celebration where the entire school community comes together.",
         badge: "Community",
       },
       {
         number: "05",
         title: "Sports Day",
         description:
-          "Inter-house athletic competition, field events and team games — a full day of sport, pride and friendly rivalry.",
+          "Inter-house athletic competition, field events and team games - a full day of sport, pride and friendly rivalry.",
         badge: "Athletics",
       },
       {
         number: "06",
         title: "Festival Celebrations",
         description:
-          "Diwali, Ganesh Chaturthi, Independence Day, Teachers' Day — all celebrated on campus, together, every year.",
+          "Diwali, Ganesh Chaturthi, Independence Day, Teachers' Day - all celebrated on campus, together, every year.",
         badge: "Festivals",
       },
       {
         number: "07",
         title: "Inter-House & Inter-School Competitions",
         description:
-          "Sport, arts, quiz and academics — building competitive spirit, sportsmanship and house pride throughout the year.",
+          "Sport, arts, quiz and academics - building competitive spirit, sportsmanship and house pride throughout the year.",
         badge: "Competition",
       },
       {
@@ -307,7 +307,7 @@ export const coCurricularPageContent = {
       {
         icon: "wallet",
         title: "Financial Literacy",
-        description: "Budgeting, saving and understanding credit — taught practically, not theoretically.",
+        description: "Budgeting, saving and understanding credit - taught practically, not theoretically.",
       },
       {
         icon: "mic",
@@ -319,7 +319,7 @@ export const coCurricularPageContent = {
         icon: "chefHat",
         title: "Cooking & Nutrition",
         description:
-          "Students who can feed themselves are genuinely more independent — a real life skill.",
+          "Students who can feed themselves are genuinely more independent - a real life skill.",
       },
       {
         icon: "shieldCheck",
@@ -331,7 +331,7 @@ export const coCurricularPageContent = {
         icon: "trophy",
         title: "Leadership Roles",
         description:
-          "House captaincies, student council and the perfect system — real responsibility from Grade 8.",
+          "House captaincies, student council and the perfect system - real responsibility from Grade 8.",
       },
     ],
   },
@@ -339,7 +339,7 @@ export const coCurricularPageContent = {
     label: siteConfig.admissionsBadge,
     title: "See it for yourself",
     description:
-      "Visit campus and watch the afternoon in action — sport, clubs, creativity. Nothing beats being there.",
+      "Visit campus and watch the afternoon in action - sport, clubs, creativity. Nothing beats being there.",
     enquiry: { label: "Book a campus visit", href: "/#enquiry" },
     phone: {
       label: siteConfig.contact.phoneDisplay,

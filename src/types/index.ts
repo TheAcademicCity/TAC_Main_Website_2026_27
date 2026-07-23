@@ -80,6 +80,16 @@ export type NewsArticle = {
   href?: string;
 };
 
+export type ParentTestimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  image: import("@/types/images").SiteImage;
+  href: string;
+  /** Slightly zoom thumbnail to hide baked-in reel frame borders */
+  cropBorder?: boolean;
+};
+
 export type AdmissionStep = {
   number: string;
   title: string;

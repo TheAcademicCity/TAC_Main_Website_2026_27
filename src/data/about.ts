@@ -17,7 +17,7 @@ export const aboutPageContent = {
     title: "About",
     titleHighlight: "The Academic City",
     description:
-      "India's first career-oriented boarding school — where academic rigour, Indic values and real-world career preparation come together on one residential campus in Bengaluru.",
+      "India's first career-oriented boarding school - where academic rigour, Indic values and real-world career preparation come together on one residential campus in Bengaluru.",
     descriptionHighlights: ["India's first career-oriented boarding school"],
     image: createImage("/images/about/hero.png", remote.campus, "TACS Campus"),
     stats: [
@@ -36,9 +36,9 @@ export const aboutPageContent = {
     label: "Who We Are",
     title: "A hub of transformative learning",
     paragraphs: [
-      "The Academic City School (TACS) is India's first career-oriented boarding school — a CBSE residential institution in Nelamangala, Bengaluru for students from Grades 5 to 12.",
+      "The Academic City School (TACS) is India's first career-oriented boarding school - a CBSE residential institution in Nelamangala, Bengaluru for students from Grades 5 to 12.",
       "We were founded on a simple but radical belief: that 15 years of traditional education is not enough to prepare a child for the world they are entering. At TACS, we blend academic rigour with career exploration, Indic values with global perspective, and boarding-school structure with genuine warmth.",
-      "The result is a student who doesn't just pass exams — but leaves school knowing who they are, what they want, and how to get there.",
+      "The result is a student who doesn't just pass exams - but leaves school knowing who they are, what they want, and how to get there.",
     ],
     badge: "India's First Career-Oriented Boarding School",
     photos: [
@@ -78,14 +78,14 @@ export const aboutPageContent = {
     label: "Core Values",
     title: "What we stand for",
     description:
-      "Every decision at TACS — academic, pastoral, residential — traces back to these four foundations.",
+      "Every decision at TACS - academic, pastoral, residential - traces back to these four foundations.",
     tiles: [
       {
         icon: "briefcase",
         accent: "gold",
         title: "Career First",
         description:
-          "Every child should leave school knowing their direction. Career clarity isn't an afterthought — it's the entire architecture of our programme, from Grade 6.",
+          "Every child should leave school knowing their direction. Career clarity isn't an afterthought - it's the entire architecture of our programme, from Grade 6.",
       },
       {
         iconImage: createImage(
@@ -97,28 +97,28 @@ export const aboutPageContent = {
         accent: "emerald",
         title: "Indic Roots",
         description:
-          "Grounded in Indian ethos — respect, humility, mindfulness, community. Values lived every day in the boarding routine, not just talked about in assemblies.",
+          "Grounded in Indian ethos - respect, humility, mindfulness, community. Values lived every day in the boarding routine, not just talked about in assemblies.",
       },
       {
         icon: "users",
         accent: "violet",
         title: "Holistic Growth",
         description:
-          "Sport, arts, SUPW, co-curriculars and LEAP — because the person a child becomes outside the classroom shapes everything that happens inside it.",
+          "Sport, arts, SUPW, co-curriculars and LEAP - because the person a child becomes outside the classroom shapes everything that happens inside it.",
       },
       {
         icon: "shieldCheck",
         accent: "cyan",
         title: "Safe & Structured",
         description:
-          "A residential campus where every hour is purposeful, every child is supervised, and safety — physical and emotional — is never secondary to academics.",
+          "A residential campus where every hour is purposeful, every child is supervised, and safety - physical and emotional - is never secondary to academics.",
       },
     ],
   },
   campusBand: {
     title: "Bengaluru's only career-oriented residential school for Grades 5–12",
     description:
-      "More than a boarding school—a structured environment built around every student's future.",
+      "More than a boarding school - a structured environment built around every student's future.",
     cta: { label: "Explore Admissions", href: "/admissions" },
   },
   leadership: {
@@ -130,7 +130,7 @@ export const aboutPageContent = {
         role: "Founder & Chairman",
         messageLabel: "Founder's Message",
         quote:
-          "In today's fast-paced world, traditional pedagogy falls short. Addressing the 'need of the hour,' we blend career orientation with enriching schooling — helping students explore beyond conventional boundaries. Each child holds a unique potential; our mission is to identify and nurture this intrinsic essence, providing a foundation for lifelong growth.",
+          "In today's fast-paced world, traditional pedagogy falls short. Addressing the 'need of the hour,' we blend career orientation with enriching schooling - helping students explore beyond conventional boundaries. Each child holds a unique potential; our mission is to identify and nurture this intrinsic essence, providing a foundation for lifelong growth.",
         quoteHighlights: ["career orientation with enriching schooling"],
         body: "At TACS, we delve beyond the superficial, ensuring a smooth transition from school to the global stage. Join us in this exciting journey towards a well-rounded, future-ready education.",
         image: createImage("/images/about/sripal.png", remote.sripal, "Sripal Jain"),
@@ -141,7 +141,7 @@ export const aboutPageContent = {
         role: "Director",
         messageLabel: "Director's Message",
         quote:
-          "We blend academic excellence with enriching experiences that ignite student passion and guide them toward career success. Our boarding environment nurtures diversity, exploration and growth beyond textbooks — encouraging self-discovery, camaraderie and creativity.",
+          "We blend academic excellence with enriching experiences that ignite student passion and guide them towards career success. Our boarding environment nurtures diversity, exploration and growth beyond textbooks - encouraging self-discovery, camaraderie and creativity.",
         quoteHighlights: ["ignite student passion"],
         body: "We preserve the essence of schooling while aligning it with career-oriented goals. Join us on this inspiring educational journey.",
         image: createImage("/images/about/mahipal.png", remote.mahipal, "Mahipal Kawad"),

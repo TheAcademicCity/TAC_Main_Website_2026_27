@@ -14,7 +14,7 @@ export function BrandLogo({ priority = false, className }: BrandLogoProps) {
     <HomeLink
       href="/"
       className={className ?? "inline-flex shrink-0 items-center"}
-      aria-label={`${siteConfig.legalName} — go to home`}
+      aria-label={`${siteConfig.legalName} - go to home`}
     >
       <Image
         src={logo.src}

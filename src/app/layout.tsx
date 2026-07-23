@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | The Academic City School",
   },
   description:
-    "The Academic City School — a CBSE residential boarding school in Nelamangala, Bengaluru for Grades 5–12, where academics, Indic values, sport and early career discovery shape future-ready children.",
+    "The Academic City School - a CBSE residential boarding school in Nelamangala, Bengaluru for Grades 5–12, where academics, Indic values, sport and early career discovery shape future-ready children.",
 };
 
 export default function RootLayout({

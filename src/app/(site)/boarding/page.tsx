@@ -17,7 +17,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Boarding",
-  "Indic value-based boarding life at The Academic City School — safe, structured residential campus in Bengaluru.",
+  "Indic value-based boarding life at The Academic City School - safe, structured residential campus in Bengaluru.",
 );
 
 export default function BoardingPage() {

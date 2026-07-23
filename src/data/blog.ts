@@ -32,9 +32,9 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
       {
         month: "May 2025 · Issue #05",
         issue: "May 2025",
-        title: "Career Utsav 2025 — what students discovered about themselves",
+        title: "Career Utsav 2025 - what students discovered about themselves",
         description:
-          "Highlights from this year's TACS career fair — the conversations, the surprises, and why Grade 7 students already have a sense of direction.",
+          "Highlights from this year's TACS career fair - the conversations, the surprises, and why Grade 7 students already have a sense of direction.",
         tags: ["Career & LEAP", "Campus Life"],
         gradient: "linear-gradient(150deg,#7a4b00 0%,#c4880e 70%,#f6ab16 100%)",
         coverHeadline: "Career Utsav 2025",
@@ -46,7 +46,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
       {
         month: "April 2025 · Issue #04",
         issue: "April 2025",
-        title: "What parents worry about most — and what actually happens",
+        title: "What parents worry about most - and what actually happens",
         description:
           "Food, friendships, safety, homesickness. We asked TACS parents what they worried about before enrolling, and whether those worries came true.",
         tags: ["For Parents", "Boarding Life"],
@@ -67,7 +67,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         issue: "March 2025",
         title: "The first 30 days: how new boarders settle in at TACS",
         description:
-          "Homesickness is real — and short-lived for most. Here's what the first month looks like, and how dorm parents and house systems make the difference.",
+          "Homesickness is real - and short-lived for most. Here's what the first month looks like, and how dorm parents and house systems make the difference.",
         tags: ["For Parents", "Student Life"],
         gradient: "linear-gradient(150deg,#0f3d38 0%,#185850 60%,#2d945c 100%)",
         coverHeadline: "The First 30 Days",
@@ -79,9 +79,9 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
       {
         month: "February 2025 · Issue #02",
         issue: "February 2025",
-        title: "CBSE vs competitive exams — how TACS prepares students for both",
+        title: "CBSE vs competitive exams - how TACS prepares students for both",
         description:
-          "Structured preparation for JEE, NEET, NIFT and more — without sacrificing CBSE performance. How TACS makes both possible on one campus.",
+          "Structured preparation for JEE, NEET, NIFT and more - without sacrificing CBSE performance. How TACS makes both possible on one campus.",
         tags: ["Academics", "Exams"],
         gradient: "linear-gradient(150deg,#1a2830 0%,#2d6060 100%)",
         coverHeadline: "Academics + Competitive Exams",
@@ -95,7 +95,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         issue: "January 2025",
         title: "Why students who play sport daily get better grades",
         description:
-          "The research is clear — but seeing it in action is something else. How TACS's 90-minute daily sport block measurably impacts academic performance.",
+          "The research is clear - but seeing it in action is something else. How TACS's 90-minute daily sport block measurably impacts academic performance.",
         tags: ["Boarding Life", "Academics"],
         gradient: "linear-gradient(150deg,#0a2c28 0%,#185850 100%)",
         coverHeadline: "Sport & Academic Success",
@@ -114,7 +114,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         issue: "December 2024",
         title: "Year in review: what TACS students accomplished in 2024",
         description:
-          "From Career Utsav to MUN, from sporting achievements to CBSE results — a full picture of what a year at TACS looks like for students and parents.",
+          "From Career Utsav to MUN, from sporting achievements to CBSE results - a full picture of what a year at TACS looks like for students and parents.",
         tags: ["Campus Life", "Year in Review"],
         gradient: "linear-gradient(150deg,#6816a4 0%,#3d0d63 100%)",
         coverHeadline: "2024 Year in Review",
@@ -128,7 +128,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         issue: "November 2024",
         title: "How TACS builds emotional resilience in boarding students",
         description:
-          "Structured routines, dorm parents, circle time and counselling — the layered system that helps students grow emotionally, not just academically.",
+          "Structured routines, dorm parents, circle time and counselling - the layered system that helps students grow emotionally, not just academically.",
         tags: ["Boarding Life", "Wellbeing"],
         gradient: "linear-gradient(150deg,#c4880e 0%,#7a4b00 100%)",
         coverHeadline: "Emotional Resilience",
@@ -142,7 +142,7 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         issue: "October 2024",
         title: "What LEAP teaches Grade 9 students about making career decisions",
         description:
-          "The Explore phase of LEAP opens students to 600+ career options through workshops, panel discussions and self-assessment — changing how they think about the future.",
+          "The Explore phase of LEAP opens students to 600+ career options through workshops, panel discussions and self-assessment - changing how they think about the future.",
         tags: ["Career & LEAP", "Grade 9"],
         gradient: "linear-gradient(150deg,#185850 0%,#0f3d38 100%)",
         coverHeadline: "LEAP at Grade 9",
@@ -186,7 +186,7 @@ export const blogPageContent = {
         categoryLabel: "Student Life",
         title: "Digital Detox for Students – The Paradox of Unplugging to Connect Better",
         description:
-          "Screens are everywhere — classrooms, homes, leisure. How do residential schools build healthy balance between digital learning and real-life connection?",
+          "Screens are everywhere - classrooms, homes, leisure. How do residential schools build healthy balance between digital learning and real-life connection?",
         readTime: "5 min read",
         href: "https://theacademiccity.com/blog/digital-detox-for-students-the-paradox-of-unplugging-to-connect-better",
         image: createImage("/images/blog/post-digital.png", remote.boarding, ""),
@@ -198,7 +198,7 @@ export const blogPageContent = {
         categoryLabel: "Boarding Life",
         title: "Strong Bodies & Steady Minds: The Power of Sports in Student Life",
         description:
-          "Exercise improves health — but for children it goes deeper. How daily sport in residential schools builds resilience, emotional stability and academic focus.",
+          "Exercise improves health - but for children it goes deeper. How daily sport in residential schools builds resilience, emotional stability and academic focus.",
         readTime: "5 min read",
         href: "https://theacademiccity.com/blog/strong-bodies-steady-minds-the-power-of-sports-in-student-life",
         image: createImage("/images/blog/post-sports.png", remote.sports, ""),
@@ -290,7 +290,7 @@ export const blogPageContent = {
     sidebarCta: {
       label: siteConfig.admissionsBadge,
       description:
-        "Interested in TACS? Come visit campus or speak with our admissions team — no commitment, just a conversation.",
+        "Interested in TACS? Come visit campus or speak with our admissions team - no commitment, just a conversation.",
       href: "/admissions",
       buttonLabel: "Learn more",
     },

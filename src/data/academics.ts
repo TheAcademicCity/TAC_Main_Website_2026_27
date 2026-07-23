@@ -31,7 +31,7 @@ export const academicsPageContent = {
     label: "Core Delivery Framework — Academics",
     title: "Three pillars. Every lesson.\nEvery day.",
     description:
-      "A structured, concept-driven programme supported by personalised teaching and continuous assessment — so every child grows consistently.",
+      "A structured, concept-driven programme supported by personalised teaching and continuous assessment - so every child grows consistently.",
     pillars: [
       {
         number: "01",
@@ -80,17 +80,17 @@ export const academicsPageContent = {
     label: "Curriculum",
     title: "Built for understanding,\nnot just marks",
     description:
-      "Every subject is taught for depth — not rote recall. Students build genuine conceptual foundations and are encouraged to question, apply and think independently.",
+      "Every subject is taught for depth - not rote recall. Students build genuine conceptual foundations and are encouraged to question, apply and think independently.",
     features: [
       {
         title: "Concept-first, always",
         description:
-          "Topics taught through understanding before application — every student moves at the right pace.",
+          "Topics taught through understanding before application - every student moves at the right pace.",
       },
       {
         title: "Nightly supervised study",
         description:
-          "Evenings at TACS mean structured study with teachers on hand — a distinct advantage of boarding.",
+          "Evenings at TACS mean structured study with teachers on hand - a distinct advantage of boarding.",
       },
       {
         title: "Enrichment for high achievers",
@@ -105,7 +105,7 @@ export const academicsPageContent = {
         number: "01",
         icon: "brain",
         title: "Concept-First",
-        description: 'The "why" before the "how" — so knowledge sticks for life, not just the exam.',
+        description: 'The "why" before the "how" - so knowledge sticks for life, not just the exam.',
       },
       {
         number: "02",
@@ -118,34 +118,34 @@ export const academicsPageContent = {
         number: "03",
         icon: "lab",
         title: "Practical & Experiential",
-        description: "Labs, workshops and real-world problem sets — learning that is tactile and memorable.",
+        description: "Labs, workshops and real-world problem sets - learning that is tactile and memorable.",
       },
       {
         number: "04",
         icon: "sun",
         title: "Inquiry & Critical Thinking",
         description:
-          "Students are taught to question, debate and reason — skills that serve them long after school.",
+          "Students are taught to question, debate and reason - skills that serve them long after school.",
       },
     ],
   },
   progressionBand: {
     title: "Every child gets a Student Progression Plan",
-    description: "Tailored to their pace and goals — reviewed every term by their academic mentor.",
+    description: "Tailored to their pace and goals - reviewed every term by their academic mentor.",
     cta: { label: "Connect with us", href: "/#enquiry" },
   },
   gradeJourney: {
     label: "Grade Journey",
-    title: "Grade 5 to Grade 12 — a clear path",
+    title: "Grade 5 to Grade 12 - a clear path",
     description:
-      "Each phase has a deliberate purpose — building foundations, broadening horizons, then sharpening focus.",
+      "Each phase has a deliberate purpose - building foundations, broadening horizons, then sharpening focus.",
     steps: [
       {
         grades: "5–6",
         phase: "Foundation",
         title: "Building the base",
         description:
-          "Language, Maths, Science — Strong foundations in a nurturing, exploratory environment.",
+          "Language, Maths, Science - Strong foundations in a nurturing, exploratory environment.",
         chips: ["Core CBSE", "Curiosity-led"],
         accent: "emerald",
       },
@@ -154,7 +154,7 @@ export const academicsPageContent = {
         phase: "Middle",
         title: "Broadening & deepening",
         description:
-          "Subjects deepen. Students begin discovering what they love — strengths are spotted early.",
+          "Subjects deepen. Students begin discovering what they love - strengths are spotted early.",
         chips: ["Project learning", "Career exposure"],
         accent: "gold",
       },
@@ -162,7 +162,7 @@ export const academicsPageContent = {
         grades: "9–10",
         phase: "Exploration",
         title: "Board preparation",
-        description: "Full CBSE board prep —\nmock exams, analysis sessions,\nindividual tracking.",
+        description: "Full CBSE board prep  - \nmock exams, analysis sessions,\nindividual tracking.",
         chips: ["Mock tests", "1:1 mentoring"],
         accent: "gold",
       },
@@ -181,14 +181,14 @@ export const academicsPageContent = {
     label: "Assessment & Tracking",
     title: "No child falls through the cracks",
     description:
-      "A continuous system that identifies gaps early — and closes them before they become problems.",
+      "A continuous system that identifies gaps early - and closes them before they become problems.",
     communicationTitle: "How we communicate progress",
     communication: [
       {
         icon: "document",
         title: "Student Progression Plan (SPP)",
         description:
-          "Each child's personalised academic road map — reviewed termly, shared with parents.",
+          "Each child's personalised academic road map - reviewed termly, shared with parents.",
       },
       {
         icon: "users",
@@ -201,7 +201,7 @@ export const academicsPageContent = {
         tone: "gold",
         title: "Digital Report Cards",
         description:
-          "Subject-wise reports after each assessment, with teacher comments — accessible digitally.",
+          "Subject-wise reports after each assessment, with teacher comments - accessible digitally.",
       },
       {
         icon: "compass",
@@ -215,7 +215,7 @@ export const academicsPageContent = {
     label: "School Integrated Programme",
     title: "Focused preparation for the future",
     description:
-      "Stream + board prep + competitive exam support — structured from Day 1 of Grade 11.",
+      "Stream + board prep + competitive exam support - structured from Day 1 of Grade 11.",
     cta: { label: "Discuss your child's path", href: "/#enquiry" },
     cards: [
       {
@@ -246,7 +246,7 @@ export const academicsPageContent = {
         title: "Design, Architecture & Abroad",
         items: [
           "Portfolio building for NID / NIFT",
-          "Study abroad — SAT / IELTS",
+          "Study abroad - SAT / IELTS",
           "University shortlisting & applications",
         ],
       },
@@ -269,7 +269,7 @@ export const academicsPageContent = {
     label: siteConfig.admissionsBadge,
     title: "Ready to know more?",
     description:
-      "Talk to our admissions team — ask anything about curriculum, study hours, exam preparation or how we'll support your child specifically.",
+      "Talk to our admissions team - ask anything about curriculum, study hours, exam preparation or how we'll support your child specifically.",
     enquiry: { label: "Start your journey", href: "/#enquiry" },
     phone: {
       label: siteConfig.contact.phoneDisplay,

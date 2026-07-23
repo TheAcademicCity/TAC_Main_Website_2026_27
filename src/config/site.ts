@@ -19,7 +19,7 @@ export const siteConfig = {
     },
   },
   description:
-    "India's first career-oriented boarding school — where academics, Indic values and future-readiness grow together.",
+    "India's first career-oriented boarding school - where academics, Indic values and future-readiness grow together.",
   admissionsBadge: "Admissions Open 2026–27",
   utilityBar: {
     phone: "08047092273",

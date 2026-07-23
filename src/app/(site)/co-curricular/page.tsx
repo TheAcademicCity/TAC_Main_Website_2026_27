@@ -16,7 +16,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Co-curricular",
-  "Sports, clubs, events and community service at TACS — built into every day, not squeezed in after school.",
+  "Sports, clubs, events and community service at TACS - built into every day, not squeezed in after school.",
 );
 
 export default function CoCurricularPage() {

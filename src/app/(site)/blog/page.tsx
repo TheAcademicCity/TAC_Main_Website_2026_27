@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Blogs & Newsletters",
-  "Insights on boarding school life, career guidance, holistic education and parenting — from The Academic City School, Bengaluru.",
+  "Insights on boarding school life, career guidance, holistic education and parenting - from The Academic City School, Bengaluru.",
 );
 
 export default function BlogPage() {

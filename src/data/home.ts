@@ -10,6 +10,7 @@ import type {
   FounderProfile,
   GalleryTab,
   NewsArticle,
+  ParentTestimonial,
   PillarItem,
   StatItem,
 } from "@/types";
@@ -137,7 +138,7 @@ export const academicsContent = {
       label: "Academic Excellence",
       title: "A rigorous CBSE foundation, built for every child",
       description:
-        "Our Bengaluru campus follows the CBSE curriculum with a 1:10 student–teacher ratio and individualised Student Progression Plans — so every child moves at the right pace, builds genuine concept clarity and walks into Grades 11 and 12 fully prepared.",
+        "Our Bengaluru campus follows the CBSE curriculum with a 1:10 student–teacher ratio and individualised Student Progression Plans - so every child moves at the right pace, builds genuine concept clarity and walks into Grades 11 and 12 fully prepared.",
       image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "CBSE academics at TACS"),
       imageTag: "CBSE · Grades 5–12 · 1:10 Mentoring",
       chips: [],
@@ -147,7 +148,7 @@ export const academicsContent = {
       label: "Career-First Learning",
       title: "Helping every child discover the right path, early",
       description:
-        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 — covering engineering, medicine, law, design, CA, management and study abroad.",
+        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 - covering engineering, medicine, law, design, CA, management and study abroad.",
       image: createImage(
         "/images/home/academics/career.png",
         remote.pillars.career,
@@ -161,7 +162,7 @@ export const academicsContent = {
       label: "Sport & Life Readiness",
       title: "90 minutes of sport, every single day",
       description:
-        "Every student plays daily — with dedicated coaches for football, basketball, swimming, cricket, badminton and more. Talented athletes are nurtured from district to national level. Our Life Readiness programme adds first aid, cooking, financial literacy and public speaking.",
+        "Every student plays daily - with dedicated coaches for football, basketball, swimming, cricket, badminton and more. Talented athletes are nurtured from district to national level. Our Life Readiness programme adds first aid, cooking, financial literacy and public speaking.",
       image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports at TACS"),
       imageTag: "90 Min/Day · District to National",
       chips: ["Football", "Basketball", "Swimming", "Cricket", "Badminton", "Kho-Kho"],
@@ -171,16 +172,13 @@ export const academicsContent = {
   band: {
     title: "Focused preparation for Grades 11 & 12",
     description:
-      "Whether a student is aiming for engineering, medicine, law, design, architecture, CA, management or study abroad — we provide structured academic support so every aspiration has a clear plan behind it.",
+      "Whether a student is aiming for engineering, medicine, law, CA or management  - \nwe provide structured academic support so every aspiration has a clear plan behind it.",
     chips: [
       "Engineering",
       "Medicine",
       "Law",
-      "Design",
-      "Architecture",
       "CA",
       "Management",
-      "Study Abroad",
     ],
     cta: { label: "Enquire Now", href: "/#enquiry" },
   },
@@ -294,7 +292,7 @@ export const awardsContent = {
       ),
     },
     {
-      name: "University of Oxford — Best Emerging Residential School",
+      name: "University of Oxford - Best Emerging Residential School",
       year: "2024",
       width: 866,
       height: 361,
@@ -313,12 +311,12 @@ export const awardsContent = {
       image: createImage(
         "/images/home/awards/indo-arab-leaders-2024.png",
         "/images/home/awards/indo-arab-leaders-2024.png",
-        "Indo Arab Leaders Summit and Award 2024 — Best Promising Career Oriented Boarding School",
+        "Indo Arab Leaders Summit and Award 2024 - Best Promising Career Oriented Boarding School",
         false,
       ),
     },
     {
-      name: "Education Today — Dynamic School",
+      name: "Education Today - Dynamic School",
       year: "2024",
       width: 861,
       height: 369,
@@ -413,7 +411,7 @@ export const campusContent = {
       label: "Indore Campus",
       title: "A scenic campus in Madhya Pradesh",
       description:
-        "Located in Mohankheda Jain Tirth, Rajgarh (Dhar), the Indore campus offers the same TACS philosophy — structured boarding, strong academics and career-first learning — in the peaceful landscape of Madhya Pradesh.",
+        "Located in Mohankheda Jain Tirth, Rajgarh (Dhar), the Indore campus offers the same TACS philosophy - structured boarding, strong academics and career-first learning - in the peaceful landscape of Madhya Pradesh.",
       image: createImage("/images/home/campus/indore.png", remote.campus.indore, "TACS Indore"),
       facts: [
         {
@@ -447,7 +445,7 @@ export const foundersContent = {
   label: "The Visionaries",
   title: "The founders who built a different kind of school",
   description:
-    "A boarding school built on a bold belief — that schooling should prepare children for life, not just for exams.",
+    "A boarding school built on a bold belief - that schooling should prepare children for life, not just for exams.",
   profiles: [
     {
       name: "Sripal Jain",
@@ -481,6 +479,100 @@ export const foundersContent = {
       variant: "compact",
     },
   ] satisfies FounderProfile[],
+} as const;
+
+export const parentTestimonialsContent = {
+  label: "Student & Parent Voices",
+  title: "Hear from our students & parents",
+  description:
+    "Real stories from students and families - watch their journeys on Instagram.",
+  instagram: {
+    label: "Follow on Instagram",
+    href: "https://www.instagram.com/the_academic_city/",
+  },
+  testimonials: [
+    {
+      quote:
+        "From solving problems in class to finding my place in IIM-B's ecosystem - it's been a journey of small lessons and big realisations.",
+      name: "Ayush Jishnu",
+      role: "Batch 2024–25 · TACS Alumnus",
+      image: createImage(
+        "/images/home/parents/4.jpg",
+        "https://scontent.cdninstagram.com/v/t51.82787-15/624702316_18039957746722226_5002594383607632548_n.jpg",
+        "Ayush Jishnu sharing his TACS journey",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DUFV7xfjBYo/",
+    },
+    {
+      quote:
+        "A choice we're proud of. The supportive community has made a real difference in our journey.",
+      name: "Khushi Jain",
+      role: "Mother of Bhvya Jain · Grade 8",
+      image: createImage(
+        "/images/home/parents/1.jpg",
+        "https://scontent.cdninstagram.com/v/t51.71878-15/500455704_3692649974369900_162010336354179059_n.jpg",
+        "Khushi Jain, parent testimonial at The Academic City School",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DEodXoWJAPJ/",
+      cropBorder: true,
+    },
+    {
+      quote:
+        "I was nervous, but I trusted my effort and kept going. Seeing the result made everything feel worth it.",
+      name: "Poorv",
+      role: "Batch 2024–25 · CA Foundation cleared",
+      image: createImage(
+        "/images/home/parents/6.jpg",
+        "https://scontent.cdninstagram.com/v/t51.82787-15/623514789_18040064561722226_7284056305849129532_n.jpg",
+        "Poorv celebrating CA Foundation success at TACS",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DUHzRuCj_Cu/",
+    },
+    {
+      quote:
+        "Students don't just study - they thrive. Support, guidance, and a strong peer community make learning an exciting journey.",
+      name: "TACS Parent",
+      role: "Boarding school parent",
+      image: createImage(
+        "/images/home/parents/2.jpg",
+        "https://scontent.cdninstagram.com/v/t51.71878-15/503743634_737038415374807_5405998053289679768_n.jpg",
+        "Parent sharing their TACS boarding school experience",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DGcUfaBK7LW/",
+      cropBorder: true,
+    },
+    {
+      quote:
+        "Her dedication, consistency, and commitment to excellence have led to this remarkable achievement.",
+      name: "Akshara Pradita",
+      role: "Commerce student · CLAT success",
+      image: createImage(
+        "/images/home/parents/5.jpg",
+        "https://scontent.cdninstagram.com/v/t51.82787-15/649543784_18044538077722226_3460234397081180136_n.jpg",
+        "Akshara Pradita celebrating CLAT success at TACS",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DVu61RZjBq7/",
+    },
+    {
+      quote:
+        "Every child's journey is guided by principles of discipline, safety, and growth.",
+      name: "Mr. Shaji Nair",
+      role: "Parent · The Academic City School",
+      image: createImage(
+        "/images/home/parents/3.jpg",
+        "https://scontent.cdninstagram.com/v/t51.71878-15/504423612_1733025070757038_8238350201314377268_n.jpg",
+        "Mr. Shaji Nair, parent testimonial at The Academic City School",
+        false,
+      ),
+      href: "https://www.instagram.com/reel/DF4Sr-Su0k2/",
+      cropBorder: true,
+    },
+  ] satisfies ParentTestimonial[],
 } as const;
 
 export const newsContent = {
@@ -553,7 +645,7 @@ export const admissionsContent = {
       number: "02",
       title: "Campus Visit",
       description:
-        "Tour Nelamangala, meet our team and see boarding life first-hand — in person or virtually.",
+        "Tour Nelamangala, meet our team and see boarding life first-hand - in person or virtually.",
     },
     {
       number: "03",

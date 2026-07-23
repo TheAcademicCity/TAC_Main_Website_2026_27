@@ -50,12 +50,11 @@ export const boardingPageContent = {
     title: "Boarding Life at",
     titleHighlight: "TACS",
     description:
-      "Indic value-based residential living — structured, safe and genuinely nurturing. A second home where discipline, character and independence grow every day.",
+      "Indic value-based residential living - structured, safe and genuinely nurturing. A second home where discipline, character and independence grow every day.",
     image: createImage("/images/boarding/hero.png", remote.boarding, "Boarding at TACS"),
     stats: [
       { value: "24/7", label: "On-campus care" },
       { value: "6 Meals", label: "Daily, Veg & Jain" },
-      { value: "1 : 30", label: "Student-dorm parent ratio" },
       { value: "Indic", label: "Values at the core" },
     ],
   },
@@ -80,14 +79,14 @@ export const boardingPageContent = {
         icon: "leaf",
         title: "Indian Ethos",
         description:
-          "Rooted in respect, humility and gratitude. Students live the values of seva, discipline and mindfulness — every single day.",
+          "Rooted in respect, humility and gratitude. Students live the values of seva, discipline and mindfulness - every single day.",
       },
       {
         accent: "t2",
         icon: "sun",
         title: "Mindfulness Daily",
         description:
-          "Yoga, meditation and morning reflection — a structured start to every day that builds focus, calm and inner awareness.",
+          "Yoga, meditation and morning reflection - a structured start to every day that builds focus, calm and inner awareness.",
       },
       {
         accent: "t3",
@@ -108,28 +107,28 @@ export const boardingPageContent = {
         icon: "home",
         title: "Cultural Awareness",
         description:
-          "Festivals, performing arts and Indic heritage — students stay connected to tradition while building a global perspective.",
+          "Festivals, performing arts and Indic heritage - students stay connected to tradition while building a global perspective.",
       },
       {
         accent: "t6",
         icon: "heart",
         title: "Inner Growth",
         description:
-          "Character, confidence and clarity — the three outcomes every TACS boarding student carries forward into adult life.",
+          "Character, confidence and clarity - the three outcomes every TACS boarding student carries forward into adult life.",
       },
     ],
   },
   scheduleBand: {
     title: "A boarding school where every hour has a purpose",
-    description: "From 5:30 AM wake-up to 10:15 PM lights out — the structure is what makes the difference.",
+    description: "From 5:30 AM wake-up to 10:15 PM lights out - the structure is what makes the difference.",
     cta: { label: "Book a campus visit", href: "/#enquiry" },
   },
   dorm: {
     label: "Dorm Parents",
-    title: "One dedicated adult for every 30–35 students",
+    title: "One dedicated adult for every 10–15 students",
     paragraphs: [
       "Each student is assigned a dorm parent who acts as their primary caregiver, confidant and guide on campus. They supervise daily routines, address concerns immediately and are the single point of contact between students and school management.",
-      "This isn't just supervision — it's a relationship. Dorm parents know every student by name, temperament and circumstance. They show up when it matters.",
+      "This isn't just supervision - it's a relationship. Dorm parents know every student by name, temperament and circumstance. They show up when it matters.",
     ],
     quote:
       "Dorm parents are the one point of contact for anything that happens on campus. They are there for students through thick and thin.",
@@ -140,18 +139,18 @@ export const boardingPageContent = {
     ),
     keyItemsLabel: "Key things to remember",
     keyItems: [
-      { icon: "home", text: "Laundry twice every week" },
-      { icon: "phone", text: "Calling family twice a week" },
-      { icon: "droplet", text: "Personal hygiene schedule maintained" },
-      { icon: "users", text: "Circle time with dorm parents daily" },
-      { icon: "wallet", text: "Purchases only through Head of Pastoral Care" },
-      { icon: "document", text: "Outpass issued only by wardens" },
+      { icon: "home", text: "Fresh, clean laundry maintained for every student" },
+      { icon: "phone", text: "Regular family calls to stay connected" },
+      { icon: "droplet", text: "Personal hygiene routines supervised" },
+      { icon: "users", text: "Daily circle time with dorm parents" },
+      { icon: "wallet", text: "Staff oversee all student purchases" },
+      { icon: "document", text: "Outpasses issued only upon approval" },
     ],
   },
   schedule: {
     label: "Daily Schedule — Senior",
     title: "Every hour has a purpose",
-    description: "Two different schedules — structured weekdays and a relaxed, enriching Sunday.",
+    description: "Two different schedules - structured weekdays and a relaxed, enriching Sunday.",
     tabs: [
       { id: "weekday", label: "Weekday", rows: weekdaySchedule },
       { id: "sunday", label: "Sunday", rows: sundaySchedule },
@@ -161,7 +160,7 @@ export const boardingPageContent = {
     label: "Parent Communication",
     title: "You are always in the loop",
     description:
-      "Multiple structured channels — so parents are never out of touch with their child's life on campus.",
+      "Multiple structured channels - so parents are never out of touch with their child's life on campus.",
     cards: [
       {
         icon: "phone",
@@ -176,7 +175,7 @@ export const boardingPageContent = {
       {
         icon: "alert",
         title: "Emergency Line",
-        description: "Incident and sickness reporting — parents contacted immediately, no delays",
+        description: "Incident and sickness reporting - parents contacted immediately, no delays",
       },
       {
         icon: "coffee",
@@ -234,7 +233,7 @@ export const boardingPageContent = {
     label: "Discipline & Conduct",
     title: "Indiscipline will not be tolerated",
     description:
-      "A clear, transparent escalation protocol — students and parents know exactly what to expect.",
+      "A clear, transparent escalation protocol - students and parents know exactly what to expect.",
     banner: "INDISCIPLINE AND MISCONDUCT WILL NOT BE TOLERATED UNDER ANY CIRCUMSTANCES",
     steps: [
       {
@@ -259,7 +258,7 @@ export const boardingPageContent = {
         badge: "4th",
         violation: "Fourth Violation",
         title: "Termination",
-        description: "Termination from school on behavioural grounds — no exceptions",
+        description: "Termination from school on behavioural grounds - no exceptions",
       },
     ],
   },
@@ -279,12 +278,12 @@ export const boardingPageContent = {
         {
           icon: "heart",
           title: "Emotional Wellbeing",
-          description: "Trained counsellors available for every student — confidential and regular.",
+          description: "Trained counsellors available for every student - confidential and regular.",
         },
         {
           icon: "users",
           title: "House Parents Present Overnight",
-          description: "Resident wardens in every hostel — first point of contact after lights out.",
+          description: "Resident wardens in every hostel - first point of contact after lights out.",
         },
         {
           icon: "star",
@@ -310,13 +309,13 @@ export const boardingPageContent = {
           icon: "leaf",
           title: "Farm-fresh produce",
           description:
-            "Our campus farm contributes to the kitchen — students understand where food comes from.",
+            "Our campus farm contributes to the kitchen - students understand where food comes from.",
         },
         {
           icon: "heart",
           title: "Community dining",
           description:
-            "All meals eaten together — a daily ritual that builds connection and discipline.",
+            "All meals eaten together - a daily ritual that builds connection and discipline.",
         },
       ],
     },

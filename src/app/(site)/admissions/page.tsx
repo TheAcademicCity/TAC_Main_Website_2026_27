@@ -15,7 +15,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Admissions",
-  "Admissions at The Academic City School — enquire, visit campus, and join for Grades 5–12 boarding.",
+  "Admissions at The Academic City School - enquire, visit campus, and join for Grades 5–12 boarding.",
 );
 
 export default function AdmissionsPage() {

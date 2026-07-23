@@ -146,6 +146,14 @@
     box-shadow: 0 0 22px 3px rgb(74 222 128 / 0.3);
     transform: translateY(-2px);
   }
+
+  .parent-marquee-track {
+    animation: parent-marquee 42s linear infinite;
+  }
+
+  .parent-marquee-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes textblink {
@@ -205,6 +213,16 @@
   }
 }
 
+@keyframes parent-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes hero-call-cta-breathe {
   0%,
   100% {
@@ -232,5 +250,12 @@
   .reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .parent-marquee-track {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
   }
 }

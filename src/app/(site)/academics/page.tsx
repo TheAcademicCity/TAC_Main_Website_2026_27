@@ -14,7 +14,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Academics",
-  "CBSE academics at The Academic City School — concept-driven learning, 1:10 mentoring, structured assessment and career-aligned preparation for Grades 5–12.",
+  "CBSE academics at The Academic City School - concept-driven learning, 1:10 mentoring, structured assessment and career-aligned preparation for Grades 5–12.",
 );
 
 export default function AcademicsPage() {

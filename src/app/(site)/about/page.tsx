@@ -14,7 +14,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "About Us",
-  "About The Academic City School — India's first career-oriented boarding school in Bengaluru. Our vision, mission, leadership and what makes TACS different.",
+  "About The Academic City School - India's first career-oriented boarding school in Bengaluru. Our vision, mission, leadership and what makes TACS different.",
 );
 
 export default function AboutPage() {
