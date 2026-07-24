@@ -1,125 +1,232 @@
 import type { BoardingPolicyContent, BoardingPolicySlug } from "@/types/policies";
 
 export const boardingPolicies: Record<BoardingPolicySlug, BoardingPolicyContent> = {
-  "anti-bullying": {
-    slug: "anti-bullying",
-    title: "Anti-Bullying Policy",
+  "anti-bullying-ragging": {
+    slug: "anti-bullying-ragging",
+    title: "Anti-Bullying & Anti-Ragging Policy",
     metaDescription:
-      "The Academic City School anti-bullying policy - zero tolerance, reporting procedures, support and disciplinary action on campus.",
-    intro:
-      "The Academic City School is committed to providing a safe, respectful and inclusive boarding environment. Bullying in any form is unacceptable and will be addressed promptly and firmly.",
+      "The Academic City School anti-bullying and anti-ragging policy - zero tolerance, reporting procedures, disciplinary levels and committee responsibilities.",
+    subtitle:
+      "Applicable to all students, Grades V-XII | CBSE-affiliated residential school, Nelamangala, Bengaluru",
+    commitment:
+      "Every student at TACS has a right to learn, live and grow with dignity, in an environment free of fear, humiliation or intimidation. The School follows a Zero Tolerance approach to bullying, cyberbullying and ragging, in line with CBSE's 2015 Guidelines for Prevention of Bullying & Ragging in Schools and the NCPCR Manual on Safety & Security of Children in Schools.",
     sections: [
       {
+        type: "text",
         heading: "Scope",
         paragraphs: [
-          "This policy applies to all students, staff and visitors on campus and during any school-organised activity, including online conduct that affects members of the school community.",
-          "Bullying includes physical, verbal, social, emotional or cyber behaviour intended to hurt, intimidate or exclude another person.",
+          "This policy covers physical, verbal, social and cyberbullying, and any act of ragging, among students - on campus, in the residence, on school transport, at school events, and online where it involves TACS students, regardless of when the act occurs.",
         ],
       },
       {
-        heading: "Our Commitment",
+        type: "formBoxes",
+        heading: "What Counts as Bullying or Ragging",
+        boxes: [
+          {
+            title: "Physical",
+            description:
+              'Hitting, shoving, initiation "tasks," forced errands or humiliation of juniors by seniors',
+          },
+          {
+            title: "Verbal & Social",
+            description: "Name-calling, threats, mockery, exclusion, spreading rumours",
+          },
+          {
+            title: "Cyberbullying",
+            description: "Abusive messages, morphed images, humiliation on social media/group chats",
+          },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Prevention & Awareness",
         bullets: [
-          "Zero tolerance for bullying, harassment or intimidation.",
-          "Safe, confidential channels for students to report concerns.",
-          "Counselling and pastoral support for affected students.",
-          "Fair investigation and appropriate disciplinary action.",
-          "Regular awareness sessions on respect, empathy and digital citizenship.",
+          "A designated Anti-Bullying Committee - Principal/Vice-Principal, senior teacher, School Counsellor, Warden, and parent representative - as mandated by CBSE",
+          "Age-appropriate sessions on empathy, respect and digital citizenship, integrated into the curriculum and residential life",
+          'Clear "no bystander" culture - students are encouraged and supported to report, not ignore, what they witness',
+          "Close monitoring of senior-junior interactions in hostels during orientation weeks, when ragging risk is highest",
         ],
       },
       {
+        type: "bullets",
         heading: "Reporting Procedure",
-        paragraphs: [
-          "Students may report bullying to their class teacher, house parent, counsellor or any trusted staff member. Parents may report concerns directly to the pastoral care team or school management.",
-          "All reports are documented, investigated without delay and handled with sensitivity. Retaliation against anyone who reports in good faith is strictly prohibited.",
-        ],
-      },
-      {
-        heading: "Disciplinary Action",
-        paragraphs: [
-          "Confirmed incidents may result in counselling, written warnings, suspension or termination depending on severity and recurrence. The school reserves the right to involve parents and, where required, external authorities.",
-        ],
-      },
-    ],
-  },
-  "anti-ragging": {
-    slug: "anti-ragging",
-    title: "Anti-Ragging Policy",
-    metaDescription:
-      "The Academic City School anti-ragging policy - UGC-compliant zero tolerance, undertakings, reporting and disciplinary measures.",
-    intro:
-      "Ragging is strictly prohibited at The Academic City School in accordance with UGC regulations and applicable law. We maintain a ragging-free campus through clear rules, signed undertakings and active monitoring.",
-    sections: [
-      {
-        heading: "Definition",
-        paragraphs: [
-          "Ragging includes any conduct by a student, whether by words spoken or written, or by an act, that has the effect of teasing, treating or handling with rudeness a fresher or any other student.",
-          "It also covers indiscipline activities that cause annoyance, hardship or psychological harm, or ask a student to do something they would not ordinarily do.",
-        ],
-      },
-      {
-        heading: "Zero Tolerance",
         bullets: [
-          "Ragging in any form is prohibited on campus and in hostel premises.",
-          "All students and parents must sign the anti-ragging undertaking at admission.",
-          "Senior students are expected to mentor juniors - not intimidate them.",
-          "House parents and wardens monitor common areas, dorms and transitions closely.",
-          "Violations may be reported to the Anti-Ragging Committee immediately.",
+          "Any student, parent or staff member may report to a Class Teacher, Residential Warden, School Counsellor or any Anti-Bullying Committee member",
+          "A confidential drop-box/helpline is available for students who prefer not to report in person; anonymity is protected",
+          "Every complaint is acknowledged and investigated promptly by the Committee; retaliation against a complainant is itself treated as a serious offence",
         ],
       },
       {
-        heading: "Reporting & Response",
-        paragraphs: [
-          "Students may report ragging anonymously through the class teacher, house parent, counsellor or the school helpline. Parents and staff must report any suspected incident without delay.",
-          "Every complaint is investigated by the designated committee. Interim safety measures, including separation of involved students, may be taken during the inquiry.",
+        type: "levels",
+        heading: "Disciplinary Approach",
+        intro:
+          "Responses are graded, recorded, and reviewed by the Anti-Bullying Committee; the Principal holds final authority.",
+        levels: [
+          {
+            title: "Level 1 - First/minor instance",
+            description: "Warning, counselling for both parties, parents informed.",
+            severity: "default",
+          },
+          {
+            title: "Level 2 - Repeat/serious instance",
+            description:
+              "Committee review; parent meeting; loss of privileges/leadership roles; close monitoring.",
+            severity: "moderate",
+          },
+          {
+            title: "Level 3 - Severe/physical/ragging",
+            description:
+              "Suspension pending inquiry; may lead to rustication or expulsion; reported under POCSO/Juvenile Justice Act where applicable.",
+            severity: "severe",
+          },
         ],
       },
       {
-        heading: "Consequences",
-        paragraphs: [
-          "Confirmed ragging may lead to suspension, rustication or expulsion. The school may also inform parents and relevant authorities as required under law. No leniency is shown for ragging under any circumstances.",
+        type: "table",
+        heading: "Roles & Responsibilities",
+        rows: [
+          {
+            role: "Principal",
+            responsibility: "Final disciplinary authority; ensures CBSE and statutory compliance",
+          },
+          {
+            role: "Anti-Bullying Committee",
+            responsibility: "Receives, investigates and resolves complaints; recommends action",
+          },
+          {
+            role: "Counselling Team",
+            responsibility:
+              "Support for both the affected student and the student involved in the incident; awareness sessions",
+          },
+          {
+            role: "Residential Wardens",
+            responsibility:
+              "Vigilant senior-junior supervision in hostels; first point of report for boarders",
+          },
+          {
+            role: "Class Teachers",
+            responsibility: "Day-to-day observation of behavioural changes; prompt, sensitive escalation",
+          },
+          {
+            role: "Parents/Guardians",
+            responsibility:
+              "Reinforce respect and empathy at home; report concerns promptly; cooperate with the Committee",
+          },
+          {
+            role: "Students",
+            responsibility: "Treat peers with respect; do not stay a silent bystander; use reporting channels",
+          },
         ],
       },
     ],
+    helpline: {
+      label: "Confidential Reporting",
+      value: "Anti-Bullying Committee",
+      note: "Every report is acknowledged, investigated and kept confidential",
+    },
+    footer:
+      "This policy is reviewed annually by School Leadership and aligned with CBSE's Guidelines for Prevention of Bullying & Ragging in Schools (2015), the NCPCR Manual on Safety & Security of Children in Schools, the POCSO Act, 2012, and the Juvenile Justice (Care and Protection of Children) Act, 2015. For the complete policy document, please contact the school administration.",
   },
   "anti-narcotics": {
     slug: "anti-narcotics",
-    title: "Anti-Narcotics Policy",
+    title: "Anti-Narcotics & Substance Abuse Policy",
     metaDescription:
-      "The Academic City School anti-narcotics and substance policy - zero tolerance, campus checks, awareness and disciplinary action.",
-    intro:
-      "The Academic City School maintains a strict zero-tolerance policy on narcotics, alcohol, tobacco and any banned substances. A drug-free campus is essential to student safety, health and academic focus.",
+      "The Academic City School anti-narcotics and substance abuse policy - zero tolerance, prevention, reporting and disciplinary approach.",
+    subtitle:
+      "Applicable to all students, Grades V-XII | CBSE-affiliated residential school, Nelamangala, Bengaluru",
+    commitment:
+      "TACS maintains a strict Zero Tolerance policy toward tobacco, alcohol, narcotic drugs, psychotropic substances and related paraphernalia on campus and in residence - while ensuring every student is treated with care, confidentiality and access to counselling, in line with CBSE and Narcotics Control Bureau (NCB) guidelines.",
     sections: [
       {
-        heading: "Prohibited Substances",
+        type: "text",
+        heading: "Scope",
         paragraphs: [
-          "Students may not possess, use, distribute or be under the influence of narcotics, alcohol, tobacco, vaping products or any banned substance on campus or during school activities.",
-          "Prescription medicines may be administered only through the school clinic with valid documentation and parental consent.",
+          "This policy applies to all students at all times on the academic and residential campus, on school transport, and at any school-organised event, trip or activity, regardless of location.",
         ],
       },
       {
-        heading: "Prevention Measures",
+        type: "bullets",
+        heading: "Prevention & Awareness",
         bullets: [
-          "Periodic checks of rooms, bags and common areas by authorised staff.",
-          "Awareness programmes on substance abuse and healthy choices.",
-          "Counselling support for students at risk or in need of guidance.",
-          "Clear rules communicated to students and parents at enrolment.",
-          "Restricted entry procedures and luggage vetting at campus gates.",
+          "Age-appropriate awareness sessions integrated into the school curriculum and residential life programme",
+          'Participation in CBSE-NCB initiatives, including the annual "Say Yes to Life, No to Drugs" pledge',
+          "Visible display of the national MANAS-1933 helpline across campus",
+          "Annual parent orientation on warning signs and reporting channels",
         ],
       },
       {
-        heading: "If a Violation Occurs",
-        paragraphs: [
-          "Any suspected violation must be reported immediately to house parents, the medical team or school management. The school will conduct a fair inquiry and take appropriate action without delay.",
-          "Students found in violation may face suspension or termination. Parents will be informed immediately. Where required, external authorities may be notified in accordance with applicable law.",
+        type: "bullets",
+        heading: "Reporting Procedure",
+        bullets: [
+          "Any student, parent or staff member may report a concern to a Class Teacher, Residential Warden or School Counsellor",
+          "A confidential reporting channel is available for students who prefer not to report in person",
+          "In a medical emergency, the student's safety is addressed immediately, before any disciplinary process begins",
         ],
       },
       {
-        heading: "Support & Rehabilitation",
-        paragraphs: [
-          "Where appropriate and with parental consent, the school may recommend professional counselling or external support. Our priority remains the safety of the entire campus community.",
+        type: "levels",
+        heading: "Disciplinary Approach",
+        intro:
+          "Responses are graded and proportionate, and every case is recorded and reviewed by the Principal / Discipline Committee.",
+        levels: [
+          {
+            title: "Level 1 - First instance",
+            description: "Parent notified; mandatory counselling plan; no automatic suspension.",
+            severity: "default",
+          },
+          {
+            title: "Level 2 - Repeat instance",
+            description:
+              "Committee review; parent meeting; structured monitoring plan; loss of privileges.",
+            severity: "moderate",
+          },
+          {
+            title: "Level 3 - Possession / supply",
+            description:
+              "Principal referral; suspension pending investigation; may lead to dismissal, per applicable law.",
+            severity: "severe",
+          },
+        ],
+      },
+      {
+        type: "table",
+        heading: "Roles & Responsibilities",
+        rows: [
+          {
+            role: "Principal",
+            responsibility: "Final disciplinary authority; ensures compliance with CBSE and applicable law",
+          },
+          {
+            role: "Counselling Team",
+            responsibility: "Awareness programmes, confidential counselling, rehabilitation support",
+          },
+          {
+            role: "Residential Wardens",
+            responsibility:
+              "Campus safeguards (visitor, parcel & room checks); first point of report in hostels",
+          },
+          {
+            role: "Class Teachers",
+            responsibility: "Day-to-day observation; prompt, sensitive escalation of concerns",
+          },
+          {
+            role: "Parents/Guardians",
+            responsibility: "Reinforce the policy at home; cooperate with school support plans",
+          },
+          {
+            role: "Students",
+            responsibility: "Comply with the policy; report concerns through available channels",
+          },
         ],
       },
     ],
+    helpline: {
+      label: "National Narcotics Helpline (24/7)",
+      value: "MANAS 1933",
+      note: "For trafficking information, rehabilitation and counselling referrals",
+    },
+    footer:
+      "This policy is reviewed annually by School Leadership and aligned with CBSE circulars, NCPCR guidelines and the NDPS Act, 1985. For the complete policy document, please contact the school administration.",
   },
 };
 

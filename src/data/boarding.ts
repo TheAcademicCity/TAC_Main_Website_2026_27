@@ -239,26 +239,18 @@ export const boardingPageContent = {
       "Bullying, ragging and substance use are not tolerated. Read our policies below.",
     policies: [
       {
-        slug: "anti-bullying",
-        title: "Anti-Bullying Policy",
+        slug: "anti-bullying-ragging",
+        title: "Anti-Bullying & Anti-Ragging Policy",
         preview:
-          "A safe, respectful campus where bullying in any form is not tolerated - with clear reporting channels, counselling support and strict disciplinary action.",
+          "Zero tolerance for bullying, cyberbullying and ragging - with a dedicated committee, confidential reporting and graded disciplinary action aligned with CBSE guidelines.",
         icon: "shieldCheck",
         accent: "emerald",
       },
       {
-        slug: "anti-ragging",
-        title: "Anti-Ragging Policy",
-        preview:
-          "UGC-compliant zero tolerance for ragging. Signed undertakings, active monitoring and immediate disciplinary action including expulsion where required.",
-        icon: "users",
-        accent: "gold",
-      },
-      {
         slug: "anti-narcotics",
-        title: "Anti-Narcotics Policy",
+        title: "Anti-Narcotics & Substance Abuse Policy",
         preview:
-          "Zero tolerance for narcotics, alcohol and banned substances. Regular checks, awareness programmes and immediate action to maintain a drug-free campus.",
+          "Zero tolerance for tobacco, alcohol and narcotics on campus - with prevention programmes, confidential reporting and graded support and disciplinary action.",
         icon: "alert",
         accent: "violet",
       },

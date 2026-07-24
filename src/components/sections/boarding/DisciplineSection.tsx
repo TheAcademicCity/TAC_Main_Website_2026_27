@@ -31,7 +31,7 @@ export function DisciplineSection() {
         <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{discipline.description}</p>
       </RevealOnScroll>
 
-      <div className="mt-8 grid gap-5 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 lg:grid-cols-2">
         {discipline.policies.map((policy, index) => {
           const styles = accentStyles[policy.accent];
 
