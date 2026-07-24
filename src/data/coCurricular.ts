@@ -131,7 +131,7 @@ export const coCurricularPageContent = {
     ],
   },
   sportBand: {
-    title: "Sport remains a core part of the timetable, even during exams.",
+    title: "Sport remains a core part of the timetable.",
     description:
       "Residential life means sport happens every single day, with proper coaches and facilities.",
     cta: { label: "Book a campus visit", href: "/#enquiry" },

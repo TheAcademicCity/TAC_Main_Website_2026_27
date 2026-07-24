@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { boardingPageContent } from "@/data/boarding";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -45,6 +46,24 @@ export function CareSection() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-6 border-t border-line pt-6">
+              <p className="font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-slate">
+                {care.safety.medicalPartners.label}
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
+                {care.safety.medicalPartners.logos.map((logo) => (
+                  <Image
+                    key={logo.src}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width ?? 140}
+                    height={logo.height ?? 48}
+                    className="h-10 w-auto object-contain object-left"
+                  />
+                ))}
+              </div>
+            </div>
           </article>
         </RevealOnScroll>
 
@@ -86,6 +105,21 @@ export function CareSection() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-6 border-t border-line pt-6">
+              <p className="font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-slate">
+                {care.nutrition.foodPartner.label}
+              </p>
+              <div className="mt-4">
+                <Image
+                  src={care.nutrition.foodPartner.logo.src}
+                  alt={care.nutrition.foodPartner.logo.alt}
+                  width={care.nutrition.foodPartner.logo.width ?? 120}
+                  height={care.nutrition.foodPartner.logo.height ?? 48}
+                  className="h-10 w-auto object-contain object-left"
+                />
+              </div>
             </div>
           </article>
         </RevealOnScroll>

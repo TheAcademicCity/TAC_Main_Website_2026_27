@@ -5,10 +5,8 @@ import {
   ClaritySection,
   CriteriaSection,
   FaqSection,
-  OnlineBandSection,
   OverviewSection,
   ProcessSection,
-  ScholarshipsSection,
 } from "@/components/sections/admissions";
 import { PageSubnav } from "@/components/sections/shared/PageSubnav";
 import { createPageMetadata } from "@/components/layout/PagePlaceholder";
@@ -26,8 +24,6 @@ export default function AdmissionsPage() {
       <OverviewSection />
       <ProcessSection />
       <CriteriaSection />
-      <OnlineBandSection />
-      <ScholarshipsSection />
       <ClaritySection />
       <FaqSection />
       <AdmissionsCtaSection />

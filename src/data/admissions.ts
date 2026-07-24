@@ -26,7 +26,6 @@ export const admissionsPageContent = {
     { id: "overview", label: "Overview" },
     { id: "process", label: "Process" },
     { id: "criteria", label: "Criteria" },
-    { id: "scholarships", label: "Scholarships" },
     { id: "clarity", label: "Campus Visit" },
     { id: "faq", label: "FAQs" },
   ],
@@ -88,6 +87,9 @@ export const admissionsPageContent = {
         external: true,
       },
     ],
+    onlineNote: {
+      title: "Can't visit? Complete the entire process online.",
+    },
   },
   criteria: {
     label: "Admission Criteria",
@@ -117,42 +119,11 @@ export const admissionsPageContent = {
       },
     ],
   },
-  onlineBand: {
-    title: "Can't visit? Complete the entire process online.",
+  scholarship: {
+    title: "Merit-Based Scholarship",
     description:
-      "Application, entrance exam, career counselling, interaction with principal - everything can be done from home. Call us to get started.",
-    cta: {
-      label: siteConfig.contact.phoneDisplay,
-      href: `tel:${siteConfig.contact.phone}`,
-    },
-  },
-  scholarships: {
-    label: "Scholarships",
-    title: "Investing in the future of our students",
-    description:
-      "Merit-based scholarships on tuition fees are available for students who perform well in the entrance exam on the first attempt.",
-    slabs: [
-      { percent: "20%", range: "Score 95% and above" },
-      { percent: "15%", range: "Score 91–95%" },
-      { percent: "10%", range: "Score 85–90%" },
-      { percent: "5%", range: "Score 80–85%" },
-    ],
-    slabNote:
-      "Applicable on first-attempt entrance exam only. Valid on tuition fee for the duration of the student's enrolment, subject to conditions.",
-    sibling: {
-      title: "Sibling Fee Rebate",
-      description:
-        "A rebate of ₹25,000 on admission fee for families enrolling a second sibling at TACS. Both siblings must be enrolled for the rebate to apply.",
-    },
-    earlyBird: {
-      title: "Early Bird Advantage",
-      description:
-        "Apply before 15th December to unlock early bird scholarship benefits and secure your child's place ahead of the rush.",
-      deadline: "15th December",
-    },
-    contactNote: "Questions about scholarships?",
-    phoneHref: `tel:${siteConfig.contact.phone}`,
-    phoneDisplay: siteConfig.contact.phoneDisplay,
+      "Scholarships may be awarded to meritorious students based on their performance in the entrance examination. Eligibility and scholarship benefits will be decided by the school management and are subject to applicable terms and conditions.",
+    cta: { label: "Enquire now", href: "/#enquiry" },
   },
   clarity: {
     image: createImage(
@@ -191,6 +162,11 @@ export const admissionsPageContent = {
           "You can visit on any working day between 9 AM and 3:30 PM. No appointment is needed, but calling ahead helps us arrange a more personalised tour. The campus is about 25 km from Bengaluru city centre and the international airport.",
       },
       {
+        question: "What is the procedure for meeting the Principal?",
+        answer:
+          "Parents must request a prior appointment through the class teacher before meeting the Principal.",
+      },
+      {
         question: "Can my child switch boards - say from ICSE to CBSE?",
         answer:
           "Yes, students can switch boards at any grade except Grade 10 and Grade 12. Contact our admissions team for specific guidance based on your child's current grade.",
@@ -223,7 +199,7 @@ export const admissionsPageContent = {
       {
         question: "When does the admissions process begin for the next academic year?",
         answer:
-          "Admissions for the next academic year typically open in October. Applications for the Bengaluru campus close on 15th February, with an early bird deadline of 15th December for scholarship benefits.",
+          "Admissions for the next academic year typically open in October. Applications for the Bengaluru campus close on 15th February, with an early bird deadline of 15th December.",
       },
     ],
   },

@@ -60,17 +60,18 @@ export type BoardingPageContent = {
     description: string;
     steps: readonly { number: string; title: string; description: string }[];
     rules: readonly string[];
+    outingNote: string;
   };
   discipline: {
     label: string;
     title: string;
     description: string;
-    banner: string;
-    steps: readonly {
-      badge: string;
-      violation: string;
+    policies: readonly {
+      slug: import("@/types/policies").BoardingPolicySlug;
       title: string;
-      description: string;
+      preview: string;
+      icon: IconName;
+      accent: "emerald" | "gold" | "violet";
     }[];
   };
   care: {
@@ -80,12 +81,20 @@ export type BoardingPageContent = {
       title: string;
       description: string;
       items: readonly { icon: IconName; title: string; description: string }[];
+      medicalPartners: {
+        label: string;
+        logos: readonly { src: string; alt: string; width?: number; height?: number }[];
+      };
     };
     nutrition: {
       title: string;
       description: string;
       meals: readonly string[];
       items: readonly { icon: IconName; title: string; description: string }[];
+      foodPartner: {
+        label: string;
+        logo: { src: string; alt: string; width?: number; height?: number };
+      };
     };
   };
   gallery: {

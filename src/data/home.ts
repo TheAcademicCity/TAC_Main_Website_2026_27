@@ -564,7 +564,7 @@ export const parentTestimonialsContent = {
       name: "Mr. Shaji Nair",
       role: "Parent · The Academic City School",
       image: createImage(
-        "/images/home/parents/3.jpg",
+        "/images/home/parents/shaji-nair.jpg",
         "https://scontent.cdninstagram.com/v/t51.71878-15/504423612_1733025070757038_8238350201314377268_n.jpg",
         "Mr. Shaji Nair, parent testimonial at The Academic City School",
         false,

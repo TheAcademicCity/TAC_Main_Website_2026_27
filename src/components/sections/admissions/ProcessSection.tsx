@@ -57,26 +57,31 @@ export function ProcessSection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={2}>
-        <div className="mt-10 flex flex-wrap gap-3">
-          {process.actions.map((action) => (
-            <Button
-              key={action.label}
-              href={action.href}
-              external={action.external}
-              variant={action.variant === "gold" ? "gold" : "outline-white"}
-              className="px-7 py-3 text-[0.78rem]"
-            >
-              {action.label.includes("WhatsApp") ? (
-                <Icon name="whatsapp" className="h-3.5 w-3.5" />
-              ) : action.label.includes("Email") ? (
-                <Icon name="mail" className="h-3.5 w-3.5" />
-              ) : null}
-              {action.label}
-              {action.label === "Start your enquiry" ? (
-                <Icon name="arrow" className="h-3.5 w-3.5" />
-              ) : null}
-            </Button>
-          ))}
+        <div className="mt-12">
+          <h3 className="font-montserrat text-[clamp(1.05rem,1.8vw,1.25rem)] font-extrabold leading-snug text-white">
+            {process.onlineNote.title}
+          </h3>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {process.actions.map((action) => (
+              <Button
+                key={action.label}
+                href={action.href}
+                external={action.external}
+                variant={action.variant === "gold" ? "gold" : "outline-white"}
+                className="px-7 py-3 text-[0.78rem]"
+              >
+                {action.label.includes("WhatsApp") ? (
+                  <Icon name="whatsapp" className="h-3.5 w-3.5" />
+                ) : action.label.includes("Email") ? (
+                  <Icon name="mail" className="h-3.5 w-3.5" />
+                ) : null}
+                {action.label}
+                {action.label === "Start your enquiry" ? (
+                  <Icon name="arrow" className="h-3.5 w-3.5" />
+                ) : null}
+              </Button>
+            ))}
+          </div>
         </div>
       </RevealOnScroll>
     </Section>

@@ -28,6 +28,7 @@ export type AdmissionsPageContent = {
     description: string;
     steps: readonly { number: string; title: string; description: string; alt?: boolean }[];
     actions: readonly { label: string; href: string; variant: "gold" | "outline-white"; external?: boolean }[];
+    onlineNote: { title: string };
   };
   criteria: {
     label: string;
@@ -40,22 +41,10 @@ export type AdmissionsPageContent = {
       description: string;
     }[];
   };
-  onlineBand: {
+  scholarship: {
     title: string;
     description: string;
     cta: { label: string; href: string };
-  };
-  scholarships: {
-    label: string;
-    title: string;
-    description: string;
-    slabs: readonly { percent: string; range: string }[];
-    slabNote: string;
-    sibling: { title: string; description: string };
-    earlyBird: { title: string; description: string; deadline: string };
-    contactNote: string;
-    phoneHref: string;
-    phoneDisplay: string;
   };
   clarity: {
     image: SiteImage;

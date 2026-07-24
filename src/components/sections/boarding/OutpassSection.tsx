@@ -26,7 +26,7 @@ export function OutpassSection() {
         <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{outpass.description}</p>
       </RevealOnScroll>
 
-      <div className="mt-8 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="mt-8 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll delay={1}>
           <ol className="relative flex flex-col gap-8">
             <div
@@ -55,22 +55,28 @@ export function OutpassSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={2}>
-          <aside className="rounded-lg bg-forest-deep px-7 py-7">
-            <h3 className="font-montserrat text-[0.95rem] font-extrabold tracking-[0.04em] text-gold">
-              Rules &amp; Guidelines
-            </h3>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {outpass.rules.map((rule) => (
-                <li
-                  key={rule}
-                  className="flex items-start gap-2.5 text-[0.86rem] leading-relaxed text-white/72"
-                >
-                  <Icon name="checkCircle" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
-                  {rule}
-                </li>
-              ))}
-            </ul>
-          </aside>
+          <div className="flex flex-col">
+            <aside className="rounded-lg bg-forest-deep px-7 py-7">
+              <h3 className="font-montserrat text-[0.95rem] font-extrabold tracking-[0.04em] text-gold">
+                Rules &amp; Guidelines
+              </h3>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {outpass.rules.map((rule) => (
+                  <li
+                    key={rule}
+                    className="flex items-start gap-2.5 text-[0.86rem] leading-relaxed text-white/72"
+                  >
+                    <Icon name="checkCircle" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
+                    {rule}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+            <div className="hidden shrink-0 lg:block lg:h-10" aria-hidden />
+            <blockquote className="mt-5 border-l-[3px] border-gold pl-4 text-[0.86rem] font-bold italic leading-relaxed text-slate lg:mt-0">
+              {outpass.outingNote}
+            </blockquote>
+          </div>
         </RevealOnScroll>
       </div>
     </Section>

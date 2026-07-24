@@ -1,4 +1,5 @@
 import { admissionsPageContent } from "@/data/admissions";
+import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
@@ -42,7 +43,7 @@ function CriteriaCard({ card, index }: { card: CriteriaCard; index: number }) {
 }
 
 export function CriteriaSection() {
-  const { criteria } = admissionsPageContent;
+  const { criteria, scholarship } = admissionsPageContent;
 
   return (
     <Section id="criteria" background="paper">
@@ -63,6 +64,25 @@ export function CriteriaSection() {
           </RevealOnScroll>
         ))}
       </div>
+
+      <RevealOnScroll delay={2}>
+        <div className="mt-10 flex flex-wrap items-start justify-between gap-x-10 gap-y-5 rounded-lg bg-forest-deep p-7 sm:p-8">
+          <div className="max-w-[72ch]">
+            <h3 className="font-montserrat text-[clamp(1.05rem,1.8vw,1.25rem)] font-extrabold leading-snug text-white">
+              {scholarship.title}
+            </h3>
+            <p className="mt-1.5 text-[0.88rem] leading-relaxed text-white/70">{scholarship.description}</p>
+          </div>
+          <Button
+            href={scholarship.cta.href}
+            variant="gold"
+            className="shrink-0 self-center px-7 py-3 text-[0.78rem]"
+          >
+            {scholarship.cta.label}
+            <Icon name="arrow" className="h-3.5 w-3.5" />
+          </Button>
+        </div>
+      </RevealOnScroll>
     </Section>
   );
 }

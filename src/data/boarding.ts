@@ -140,7 +140,7 @@ export const boardingPageContent = {
     keyItemsLabel: "Key things to remember",
     keyItems: [
       { icon: "home", text: "Fresh, clean laundry maintained for every student" },
-      { icon: "phone", text: "Regular family calls to stay connected" },
+      { icon: "phone", text: " Scheduled family calls to stay connected" },
       { icon: "droplet", text: "Personal hygiene routines supervised" },
       { icon: "users", text: "Daily circle time with dorm parents" },
       { icon: "wallet", text: "Staff oversee all student purchases" },
@@ -193,7 +193,7 @@ export const boardingPageContent = {
     label: "Outpass Protocol",
     title: "Outings follow a clear, safety-first process",
     description:
-      "Every campus exit passes through multiple checkpoints, so students are always accounted for and safe.",
+      "Every campus exit, passes through multiple checkpoints, so students are always accounted for and safe.",
     steps: [
       {
         number: "1",
@@ -229,37 +229,38 @@ export const boardingPageContent = {
       "Emergency exits handled only with management approval.",
       "72 hours prior intimation mandatory for all outpass requests.",
     ],
+    outingNote:
+      "Student outing schedules are defined in advance and included in the annual calendar. Any outing beyond the scheduled dates will be permitted only in case of an emergency and with prior approval from the school.",
   },
   discipline: {
     label: "Discipline & Conduct",
-    title: "Indiscipline will not be tolerated",
+    title: "Clear policies. Zero tolerance.",
     description:
-      "A clear, transparent escalation protocol - students and parents know exactly what to expect.",
-    banner: "INDISCIPLINE AND MISCONDUCT WILL NOT BE TOLERATED UNDER ANY CIRCUMSTANCES",
-    steps: [
+      "Bullying, ragging and substance use are not tolerated. Read our policies below.",
+    policies: [
       {
-        badge: "1st",
-        violation: "First Violation",
-        title: "Corrective Action",
-        description: "Corrective measures + Counselling + Self-reflection exercise",
+        slug: "anti-bullying",
+        title: "Anti-Bullying Policy",
+        preview:
+          "A safe, respectful campus where bullying in any form is not tolerated - with clear reporting channels, counselling support and strict disciplinary action.",
+        icon: "shieldCheck",
+        accent: "emerald",
       },
       {
-        badge: "2nd",
-        violation: "Second Violation",
-        title: "Official Warning",
-        description: "Written warning + Corrective measures + Counselling + Self-reflection",
+        slug: "anti-ragging",
+        title: "Anti-Ragging Policy",
+        preview:
+          "UGC-compliant zero tolerance for ragging. Signed undertakings, active monitoring and immediate disciplinary action including expulsion where required.",
+        icon: "users",
+        accent: "gold",
       },
       {
-        badge: "3rd",
-        violation: "Third Violation",
-        title: "Suspension",
-        description: "Suspension + Corrective measures + External counselling as recommended",
-      },
-      {
-        badge: "4th",
-        violation: "Fourth Violation",
-        title: "Termination",
-        description: "Termination from school on behavioural grounds - no exceptions",
+        slug: "anti-narcotics",
+        title: "Anti-Narcotics Policy",
+        preview:
+          "Zero tolerance for narcotics, alcohol and banned substances. Regular checks, awareness programmes and immediate action to maintain a drug-free campus.",
+        icon: "alert",
+        accent: "violet",
       },
     ],
   },
@@ -292,6 +293,23 @@ export const boardingPageContent = {
           description: "Full campus surveillance, 24h security. No unauthorised entry or exit.",
         },
       ],
+      medicalPartners: {
+        label: "Medical partners",
+        logos: [
+          {
+            src: "/images/boarding/partners/nanohealth.png",
+            alt: "Assurance by NanoHealth",
+            width: 140,
+            height: 48,
+          },
+          {
+            src: "/images/boarding/partners/harsha-hospital.png",
+            alt: "Harsha Hospital",
+            width: 140,
+            height: 40,
+          },
+        ],
+      },
     },
     nutrition: {
       title: "Nutrition & Meals",
@@ -319,6 +337,15 @@ export const boardingPageContent = {
             "All meals eaten together - a daily ritual that builds connection and discipline.",
         },
       ],
+      foodPartner: {
+        label: "Nutrition partner",
+        logo: {
+          src: "/images/boarding/partners/swaad.png",
+          alt: "Swaad",
+          width: 120,
+          height: 48,
+        },
+      },
     },
   },
   gallery: {

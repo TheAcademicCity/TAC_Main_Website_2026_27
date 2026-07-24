@@ -1,27 +1,22 @@
 import { boardingPageContent } from "@/data/boarding";
+import { SiteLink } from "@/components/layout/SiteLink";
+import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
+import type { BoardingPageContent } from "@/types/boarding";
 
-const stepStyles = [
-  {
-    badge: "border-emerald bg-[#eef8f2] text-emerald",
-    violation: "text-emerald",
-  },
-  {
-    badge: "border-gold-dark bg-[#fff8eb] text-gold-dark",
-    violation: "text-gold-dark",
-  },
-  {
-    badge: "border-[#e06000] bg-[#fff3ea] text-[#e06000]",
-    violation: "text-[#e06000]",
-  },
-  {
-    badge: "border-red-600 bg-[#fef2f2] text-red-600",
-    violation: "text-red-600",
-  },
-] as const;
+type PolicyCard = BoardingPageContent["discipline"]["policies"][number];
+
+const accentStyles: Record<
+  PolicyCard["accent"],
+  { bar: string; iconBg: string; icon: string }
+> = {
+  emerald: { bar: "bg-emerald", iconBg: "bg-emerald/10", icon: "text-emerald" },
+  gold: { bar: "bg-gold", iconBg: "bg-gold/10", icon: "text-gold-dark" },
+  violet: { bar: "bg-violet", iconBg: "bg-violet/10", icon: "text-violet" },
+};
 
 export function DisciplineSection() {
   const { discipline } = boardingPageContent;
@@ -36,46 +31,38 @@ export function DisciplineSection() {
         <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{discipline.description}</p>
       </RevealOnScroll>
 
-      <RevealOnScroll delay={1}>
-        <div className="mt-8 rounded-lg bg-forest-deep px-7 py-4 text-center">
-          <p className="font-montserrat text-[0.88rem] font-bold tracking-[0.04em] text-white">
-            {discipline.banner}
-          </p>
-        </div>
-      </RevealOnScroll>
-
-      <div className="relative mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-[12%] right-[12%] top-10 z-0 hidden h-0.5 bg-gradient-to-r from-emerald via-gold to-red-600 lg:block"
-        />
-        {discipline.steps.map((step, index) => {
-          const styles = stepStyles[index] ?? stepStyles[0];
+      <div className="mt-8 grid gap-5 lg:grid-cols-3">
+        {discipline.policies.map((policy, index) => {
+          const styles = accentStyles[policy.accent];
 
           return (
-            <RevealOnScroll key={step.badge} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-              <article className="relative flex flex-col items-center px-4 text-center">
-                <div
-                  className={cn(
-                    "relative z-10 mb-5 grid h-20 w-20 place-items-center rounded-full border-2 font-montserrat text-[1.3rem] font-black",
-                    styles.badge,
-                  )}
-                >
-                  {step.badge}
+            <RevealOnScroll key={policy.slug} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
+              <SiteLink
+                href={`/boarding/policies/${policy.slug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]"
+              >
+                <span className={cn("h-1 w-full", styles.bar)} />
+                <div className="flex flex-1 flex-col p-7">
+                  <div
+                    className={cn(
+                      "mb-4 grid h-14 w-14 place-items-center rounded-lg",
+                      styles.iconBg,
+                    )}
+                  >
+                    <Icon name={policy.icon} className={cn("h-6 w-6", styles.icon)} />
+                  </div>
+                  <h3 className="font-montserrat text-[1rem] font-extrabold text-forest-deep">
+                    {policy.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[0.88rem] leading-relaxed text-slate">
+                    {policy.preview}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-1.5 group-hover:text-emerald">
+                    Read policy
+                    <Icon name="arrow" className="h-2.5 w-2.5" />
+                  </span>
                 </div>
-                <p
-                  className={cn(
-                    "mb-1.5 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-[0.14em]",
-                    styles.violation,
-                  )}
-                >
-                  {step.violation}
-                </p>
-                <h3 className="font-montserrat text-[0.95rem] font-extrabold text-forest-deep">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[0.82rem] leading-relaxed text-slate">{step.description}</p>
-              </article>
+              </SiteLink>
             </RevealOnScroll>
           );
         })}
