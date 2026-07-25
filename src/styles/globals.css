@@ -154,6 +154,10 @@
   .parent-marquee-track:hover {
     animation-play-state: paused;
   }
+
+  .gallery-marquee-track {
+    animation: gallery-marquee 120s linear infinite;
+  }
 }
 
 @keyframes textblink {
@@ -214,6 +218,16 @@
 }
 
 @keyframes parent-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gallery-marquee {
   from {
     transform: translateX(0);
   }

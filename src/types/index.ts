@@ -83,7 +83,10 @@ export type NewsArticle = {
 export type ParentTestimonial = {
   quote: string;
   name: string;
+  /** Line 2 under the name */
   role: string;
+  /** Line 3 under the role */
+  detail: string;
   image: import("@/types/images").SiteImage;
   href: string;
   /** Slightly zoom thumbnail to hide baked-in reel frame borders */
@@ -96,10 +99,27 @@ export type AdmissionStep = {
   description: string;
 };
 
+export type GalleryImageItem = {
+  kind?: "image";
+  label: string;
+  height?: number;
+  image?: import("@/types/images").SiteImage;
+};
+
+export type GalleryWordsItem = {
+  kind: "words";
+  /** Lines of copy shown in the word tile */
+  lines: readonly string[];
+  /** Optional line index rendered in brand gold */
+  accentLine?: number;
+};
+
+export type GalleryItem = GalleryImageItem | GalleryWordsItem;
+
 export type GalleryTab = {
   id: string;
   label: string;
-  items: Array<{ label: string; height: number; image?: import("@/types/images").SiteImage }>;
+  items: readonly GalleryItem[];
 };
 
 export type ContactLocation = {

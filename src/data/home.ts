@@ -8,7 +8,7 @@ import type {
   ContactLocation,
   FeatureRow,
   FounderProfile,
-  GalleryTab,
+  GalleryItem,
   NewsArticle,
   ParentTestimonial,
   PillarItem,
@@ -189,64 +189,70 @@ export const galleryContent = {
     label: "Follow on Instagram",
     href: "https://www.instagram.com/the_academic_city/",
   },
-  tabs: [
-    {
-      id: "campus",
-      label: "Campus",
-      items: [
-        { label: "Aerial Campus View", height: 280 },
-        { label: "Sports Arena", height: 200 },
-        { label: "Main Building", height: 340 },
-        { label: "Running Track", height: 220 },
-        { label: "Swimming Pool", height: 260 },
-        { label: "Hostel Block", height: 200 },
-        { label: "Farm & Goshala", height: 300 },
-        { label: "Dining Hall", height: 180 },
-      ],
-    },
-    {
-      id: "academics",
-      label: "Academics",
-      items: [
-        { label: "Smart Classroom", height: 260 },
-        { label: "Career Guidance Session", height: 320 },
-        { label: "Science Lab", height: 200 },
-        { label: "Library", height: 280 },
-        { label: "Investiture Ceremony", height: 220 },
-        { label: "Industry Interaction", height: 300 },
-        { label: "Psychometric Assessment", height: 180 },
-        { label: "Student Progression Plan", height: 240 },
-      ],
-    },
-    {
-      id: "extra",
-      label: "Extra-curriculars",
-      items: [
-        { label: "Basketball", height: 300 },
-        { label: "Dance Performance", height: 220 },
-        { label: "Theatre Production", height: 260 },
-        { label: "Art & Craft", height: 200 },
-        { label: "Football Match", height: 280 },
-        { label: "Music Class", height: 240 },
-        { label: "Cooking Class", height: 200 },
-        { label: "Sports Day", height: 320 },
-      ],
-    },
-    {
-      id: "boarding",
-      label: "Boarding Life",
-      items: [
-        { label: "Hostel Room", height: 260 },
-        { label: "Dining Experience", height: 200 },
-        { label: "Independence Day Celebration", height: 320 },
-        { label: "Ganesh Chaturthi", height: 220 },
-        { label: "Pastoral Care", height: 280 },
-        { label: "Teachers' Day", height: 200 },
-        { label: "Evening Study Hall", height: 240 },
-        { label: "Morning Assembly", height: 300 },
-      ],
-    },
-  ] satisfies GalleryTab[],
+  /** Flat 60-cell track — word tiles sprinkled through the sequence */
+  items: [
+    { label: "Aerial Campus View" },
+    { label: "Sports Arena" },
+    { kind: "words", lines: ["Spaces that", "shape futures"], accentLine: 1 },
+    { label: "Main Building" },
+    { label: "Running Track" },
+    { label: "Swimming Pool" },
+    { label: "Hostel Block" },
+    { label: "Smart Classroom" },
+    { kind: "words", lines: ["Green.", "Calm.", "Focused."], accentLine: 0 },
+    { label: "Farm & Goshala" },
+    { label: "Dining Hall" },
+    { label: "Campus Pathways" },
+    { label: "Science Lab" },
+    { label: "Library" },
+    { label: "Green Courtyard" },
+    { kind: "words", lines: ["Clarity before", "competition"], accentLine: 0 },
+    { label: "Admin Block" },
+    { label: "Career Guidance Session" },
+    { label: "Evening Campus" },
+    { label: "Investiture Ceremony" },
+    { label: "Industry Interaction" },
+    { kind: "words", lines: ["1:10", "mentoring"], accentLine: 0 },
+    { label: "Basketball" },
+    { label: "Psychometric Assessment" },
+    { label: "Dance Performance" },
+    { label: "Student Progression Plan" },
+    { label: "Theatre Production" },
+    { kind: "words", lines: ["Play.", "Perform.", "Belong."], accentLine: 1 },
+    { label: "Math Lab" },
+    { label: "Art & Craft" },
+    { label: "Computer Lab" },
+    { label: "Football Match" },
+    { label: "Music Class" },
+    { kind: "words", lines: ["Learn with", "purpose"], accentLine: 1 },
+    { label: "Mentor Session" },
+    { label: "Cooking Class" },
+    { label: "Project Showcase" },
+    { label: "Sports Day" },
+    { kind: "words", lines: ["Beyond the", "classroom"], accentLine: 0 },
+    { label: "Yoga Session" },
+    { label: "Hostel Room" },
+    { label: "Debate Club" },
+    { label: "Dining Experience" },
+    { label: "Swimming Practice" },
+    { kind: "words", lines: ["A home that", "builds character"], accentLine: 1 },
+    { label: "Cultural Fest" },
+    { label: "Independence Day Celebration" },
+    { label: "Ganesh Chaturthi" },
+    { label: "Pastoral Care" },
+    { kind: "words", lines: ["Cared for.", "Every hour."], accentLine: 0 },
+    { label: "Teachers' Day" },
+    { label: "Evening Study Hall" },
+    { label: "Morning Assembly" },
+    { label: "Lights Out Routine" },
+    { kind: "words", lines: ["Talent finds", "a stage"], accentLine: 1 },
+    { label: "Weekend Activities" },
+    { label: "Dorm Parent Time" },
+    { label: "Common Lounge" },
+    { kind: "words", lines: ["Routine.", "Warmth.", "Growth."], accentLine: 2 },
+    { label: "Outdoor Courts" },
+    { kind: "words", lines: ["Built for", "boarding life"], accentLine: 1 },
+  ] satisfies GalleryItem[],
 } as const;
 
 export const awardsContent = {
@@ -480,20 +486,16 @@ export const foundersContent = {
 } as const;
 
 export const parentTestimonialsContent = {
-  label: "Student & Parent Voices",
-  title: "Hear from our students & parents",
-  description:
-    "Real stories from students and families - watch their journeys on Instagram.",
-  instagram: {
-    label: "Follow on Instagram",
-    href: "https://www.instagram.com/the_academic_city/",
-  },
+  label: "Parent & Student Stories",
+  title: "Voices of",
+  titleHighlight: "The Academic City School",
   testimonials: [
     {
       quote:
         "From solving problems in class to finding my place in IIM-B's ecosystem - it's been a journey of small lessons and big realisations.",
       name: "Ayush Jishnu",
-      role: "Batch 2024–25 · TACS Alumnus",
+      role: "Batch of  '25",
+      detail: "TACS Alumnus",
       image: createImage(
         "/images/home/parents/4.jpg",
         "https://scontent.cdninstagram.com/v/t51.82787-15/624702316_18039957746722226_5002594383607632548_n.jpg",
@@ -506,7 +508,8 @@ export const parentTestimonialsContent = {
       quote:
         "A choice we're proud of. The supportive community has made a real difference in our journey.",
       name: "Khushi Jain",
-      role: "Mother of Bhvya Jain · Grade 8",
+      role: "Mother of Bhavya Jain",
+      detail: "Grade 8",
       image: createImage(
         "/images/home/parents/1.jpg",
         "https://scontent.cdninstagram.com/v/t51.71878-15/500455704_3692649974369900_162010336354179059_n.jpg",
@@ -520,7 +523,8 @@ export const parentTestimonialsContent = {
       quote:
         "I was nervous, but I trusted my effort and kept going. Seeing the result made everything feel worth it.",
       name: "Poorv",
-      role: "Batch 2024–25 · CA Foundation cleared",
+      role: "Batch of  '25",
+      detail: "CA Foundation cleared",
       image: createImage(
         "/images/home/parents/6.jpg",
         "https://scontent.cdninstagram.com/v/t51.82787-15/623514789_18040064561722226_7284056305849129532_n.jpg",
@@ -533,7 +537,8 @@ export const parentTestimonialsContent = {
       quote:
         "Students don't just study - they thrive. Support, guidance, and a strong peer community make learning an exciting journey.",
       name: "TACS Parent",
-      role: "Boarding school parent",
+      role: "Parent",
+      detail: "Boarding school",
       image: createImage(
         "/images/home/parents/2.jpg",
         "https://scontent.cdninstagram.com/v/t51.71878-15/503743634_737038415374807_5405998053289679768_n.jpg",
@@ -547,7 +552,8 @@ export const parentTestimonialsContent = {
       quote:
         "Her dedication, consistency, and commitment to excellence have led to this remarkable achievement.",
       name: "Akshara Pradita",
-      role: "Commerce student · CLAT success",
+      role: "Commerce student",
+      detail: "CLAT success",
       image: createImage(
         "/images/home/parents/5.jpg",
         "https://scontent.cdninstagram.com/v/t51.82787-15/649543784_18044538077722226_3460234397081180136_n.jpg",
@@ -560,7 +566,8 @@ export const parentTestimonialsContent = {
       quote:
         "Every child's journey is guided by principles of discipline, safety, and growth.",
       name: "Mr. Shaji Nair",
-      role: "Parent · The Academic City School",
+      role: "Parent",
+      detail: "The Academic City School",
       image: createImage(
         "/images/home/parents/shaji-nair.jpg",
         "https://scontent.cdninstagram.com/v/t51.71878-15/504423612_1733025070757038_8238350201314377268_n.jpg",
@@ -630,37 +637,37 @@ export const newsContent = {
 
 export const admissionsContent = {
   label: "Admissions 2026–27",
-  title: "Joining TACS is simple",
+  title: "We're With You in Every Step",
   subtitle: "Five clear steps from your first enquiry to welcoming your child to campus.",
   steps: [
     {
       number: "01",
-      title: "Enquire",
+      title: "Discover",
       description:
-        "Share a few details and the grade you're applying for. Our admissions team responds within a day.",
+        "Share your child's details and the grade you're applying for. Our team will reach out to you at the earliest.",
     },
     {
       number: "02",
-      title: "Campus Visit",
+      title: "Experience",
       description:
-        "Tour Nelamangala, meet our team and see boarding life first-hand - in person or virtually.",
+        "Visit our campus, meet our team and see boarding life first-hand - in person or virtually.",
     },
     {
       number: "03",
-      title: "Entrance Exam",
+      title: "Assessment",
       description:
-        "A simple age-appropriate assessment to help us understand your child's academic starting point.",
+        "A simple age-appropriate exam to help us understand your child's academic starting point.",
     },
     {
       number: "04",
       title: "Interaction",
       description:
-        "A warm conversation with your child to understand their interests, strengths and goals.",
+        "A warm conversation with you and your child to understand your child's interests, strengths, and aspirations.",
     },
     {
       number: "05",
-      title: "Enrolment",
-      description: "Complete the formalities and secure your child's place for the upcoming academic year.",
+      title: "Admission",
+      description: "Confirm your child's admission and get ready for an exciting academic journey ahead.",
     },
   ] satisfies AdmissionStep[],
   ctas: [
