@@ -1,0 +1,247 @@
+import { siteConfig } from "@/config/site";
+import type { AchievementsPageContent } from "@/types/achievements";
+
+export const achievementsPageContent = {
+  hero: {
+    eyebrow: "We Made It",
+    title: "Every Story.",
+    titleHighlight: "Every Proud Moment.",
+    description:
+      "Achievements across Science, Commerce, Design, Sports & the Arts — a record of the accomplishments and milestones that define the spirit of The Academic City School.",
+    ghostText: "Achievers",
+    stats: [
+      { value: "120+", label: "University admissions" },
+      { value: "99.96", label: "Highest JEE percentile" },
+      { value: "90+", label: "Medical college admissions" },
+      { value: "🥈🥇🥇", label: "National & inter-school medals" },
+    ],
+  },
+  subnav: [
+    { id: "academics", label: "Academics" },
+    { id: "jee", label: "JEE" },
+    { id: "neet", label: "NEET" },
+    { id: "commerce", label: "Commerce" },
+    { id: "sports", label: "Sports" },
+    { id: "arts", label: "Arts & Creativity" },
+  ],
+  starAchiever: {
+    featured: {
+      eyebrow: "⭐ Star Achiever · 2024–25",
+      name: "Radhna",
+      nameHighlight: "Mozika",
+      stat: "98.2",
+      statLabel: "JEE Percentile · National University of Singapore",
+      description:
+        "Among TACS's highest JEE scorers — earning a seat at NUS Singapore, one of Asia's top-ranked universities. A true benchmark of what the ALLEN-integrated programme can achieve.",
+      tags: ["Science Stream", "NUS Singapore"],
+    },
+    subHeading: "More remarkable science achievers",
+    subAchievers: [
+      { name: "Granth Agarwal", value: "96.12%", label: "JEE · 2024–25" },
+      { name: "Aami Rajiv", value: "NID", label: "93 NID CR 2024" },
+      { name: "Aditya Singh Bisht", value: "1560", label: "SAT Score / 1600" },
+      { name: "Olivia Majumder", value: "NIFT", label: "Qualified · 2023–24" },
+    ],
+    admissionsNote: {
+      value: "30+",
+      label: "Engineering college admissions including IIT Madras",
+    },
+  },
+  jee: {
+    chapter: "01",
+    label: "JEE Achievers",
+    title: "Engineering the future",
+    description:
+      "From IIT Madras to NUS Singapore — TACS students are cracking India's most competitive engineering entrances with percentiles that place them in the top fraction of the country.",
+    highlight: {
+      percentile: "98.2%",
+      name: "Radhna Mozika",
+      university: "National University of Singapore",
+      description:
+        "TACS's highest JEE scorer — admitted to NUS Singapore, Asia's #1-ranked university. Proof of what the ALLEN-integrated programme delivers when a student finds their path early.",
+    },
+    topRows: [
+      { name: "Shravan P Nikhil", batch: "Science · 2023–24 · IIT Madras", percentile: "99.96%" },
+      { name: "Ritwik Viswanathan", batch: "Science · 2023–24", percentile: "99.89%" },
+      { name: "Dhruva Reddy N", batch: "Science · 2023–24", percentile: "99.73%" },
+      { name: "Yash Thakur", batch: "Science · 2023–24", percentile: "99.71%" },
+      { name: "Aryan Pohkriyal", batch: "Science · 2023–24", percentile: "99.71%" },
+      { name: "Armman Roy", batch: "Science · 2023–24", percentile: "99.63%" },
+      { name: "Rishi Manjunath", batch: "Science · 2023–24", percentile: "99.56%" },
+      { name: "Pranav R", batch: "Science · 2023–24", percentile: "99.39%" },
+    ],
+    moreLabel: "More JEE qualifiers",
+    moreChips: [
+      { name: "Udisha Barnwal", percentile: "99.37%", batch: "Science · 2023–24" },
+      { name: "Tarun P", percentile: "99.36%", batch: "Science · 2023–24" },
+      { name: "Abhhay S Sharma", percentile: "99.31%", batch: "Science · 2023–24" },
+      { name: "Draksharapu Akshaya", percentile: "99.22%", batch: "Science · 2023–24" },
+      { name: "Saikirthan K", percentile: "99.16%", batch: "Science · 2023–24" },
+      { name: "Amitesh Das", percentile: "99.14%", batch: "Science · 2023–24" },
+      { name: "Namitha Jain", percentile: "93.02%", batch: "Science · 2024–25" },
+      { name: "Dhanishta Bhattachajee", percentile: "92.81%", batch: "Science · 2024–25" },
+      { name: "Dhritisha Bhattachajee", percentile: "89.3%", batch: "Science · 2024–25" },
+      { name: "Granth Agarwal", percentile: "96.12%", batch: "Science · 2024–25" },
+      { name: "Radhna Mozika", percentile: "98.2%", batch: "Science · NUS Singapore" },
+      { name: "Aami Rajiv", percentile: "NID ✓", batch: "93 NID CR 2024" },
+    ],
+  },
+  statsBand: [
+    { value: "120+", label: "Total university admissions across India & abroad" },
+    { value: "30+", label: "Engineering admissions including IIT Madras" },
+    { value: "90+", label: "Medical college admissions across India" },
+  ],
+  neet: {
+    chapter: "02",
+    label: "NEET Achievers",
+    title: "Healing the future",
+    description:
+      "TACS students are walking into CMC Vellore, Bangalore Medical College, RIMS and institutions across India. Over 90 medical admissions and counting.",
+    topCards: [
+      { score: "635", name: "Sujan", college: "Science · 2024–25" },
+      { score: "635", name: "Mallikarjun J", college: "Bangalore Medical College · 2023–24" },
+      { score: "635", name: "Hitha V Kote", college: "Science · 2023–24" },
+    ],
+    grid: [
+      { name: "R Varun Venkatesh", score: "604", college: "Kempegowda Institute of Medical Science", batch: "2023–24" },
+      { name: "Sakshi Kolagi", score: "592", college: "Raichur Institute of Medical Science", batch: "2023–24" },
+      { name: "Abigail Raman", score: "592", college: "Christian Medical College", batch: "2024–25" },
+      { name: "Mizba Jabeen Patel", score: "568", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Aneesha Seth", score: "556", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Suraj Bagadi", score: "559", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Shankar J D", score: "547", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Harish", score: "521", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Uday L H", score: "523", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Mallikarjun Indi", score: "489", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "S Shivacharan", score: "492", college: "Science · 2023–24", batch: "2023–24" },
+      { name: "Tejas R Hegde", score: "510", college: "Science · 2023–24", batch: "2023–24" },
+    ],
+  },
+  commerce: {
+    chapter: "03",
+    label: "Commerce Champions",
+    title: "Law, Finance & Management",
+    description:
+      "CLAT, CA Foundation, IIM and international qualifications — TACS commerce students are entering India's most competitive professional institutions.",
+    cards: [
+      { badge: "CLAT", badgeTone: "violet", achievement: "AIR 338", name: "Akshara", detail: "Commerce · 2025–26 · National Law School pathway" },
+      { badge: "CA Foundation", badgeTone: "gold", achievement: "1st Attempt", name: "Poorv Mittal", detail: "Commerce · 2024–25 · Christ University" },
+      { badge: "IIM Bangalore", badgeTone: "green", achievement: "BBA–DBE", name: "Ayush Jishnu", detail: "Commerce · 2024–25 · MESA Exam qualifier" },
+      { badge: "LNAT UK", badgeTone: "violet", achievement: "Qualified", name: "Lalithya", detail: "Commerce · 2025–26 · International law pathway" },
+      { badge: "BBA", badgeTone: "gold", achievement: "Decision Science", name: "Ayush", detail: "Commerce · 2025–26" },
+      { badge: "BBA", badgeTone: "green", achievement: "Admitted", name: "Harshit Agarwal", detail: "Commerce · 2024–25" },
+    ],
+  },
+  sports: {
+    chapter: "04",
+    label: "Sports & Athletic Achievers",
+    title: "On the court, in the pool, on the track",
+    description:
+      "TACS athletes represent at district, state and national level. They don't just play — they win. Sport at TACS is a core part of building character, resilience and teamwork.",
+    hero: {
+      medal: "🥈",
+      event: "CBSE Cluster Nationals · Javelin Throw",
+      title: "Silver Medal",
+      athlete: "Vijaya Raja Simha · Science · 2025–26",
+      description:
+        "Vijaya qualified for the CBSE Cluster Nationals and returned with a Silver Medal in Javelin Throw — one of the most competitive track & field events at the national school level.",
+    },
+    cards: [
+      {
+        icon: "🥇",
+        title: "3× Gold — Inter-school Swimming",
+        detail:
+          "Manas · Grade 9 · Three gold medals in a single inter-school swimming tournament. Dominant performance across strokes.",
+      },
+      {
+        icon: "🏊",
+        title: "National Level Swimming",
+        detail: "Ekalavya Nishad · Grade 10 · Represented TACS at national level swimming competitions.",
+      },
+      {
+        icon: "🏐",
+        title: "CBSE Clusters — Volleyball",
+        detail:
+          "Both boys and girls volleyball teams represented TACS at CBSE Cluster level competitions. Inter School Volleyball Tournament · 2nd August 2025.",
+      },
+    ],
+  },
+  arts: {
+    chapter: "05",
+    label: "Arts, Culture & Creativity",
+    title: "Expression without limits",
+    description:
+      "From science exhibitions to music bands, from wall paintings to published books — TACS students express, create and leave their mark everywhere they go.",
+    cards: [
+      {
+        icon: "🎸",
+        tag: "Music",
+        tagTone: "violet",
+        title: "Music Band — Runners-Up",
+        description:
+          "TACS's music band finished as Runners-Up at the Inter-school Fest — competing against schools across Bengaluru in live performance categories.",
+      },
+      {
+        icon: "🔬",
+        tag: "Science",
+        tagTone: "emerald",
+        title: "Inter-school Science Exhibition",
+        description:
+          "TACS students showcased original research and innovation projects at inter-school science exhibitions, demonstrating that curiosity extends well beyond the textbook.",
+      },
+      {
+        icon: "🖌️",
+        tag: "Visual Art",
+        tagTone: "gold",
+        title: "Drawing & Painting Awards",
+        description:
+          "Multiple award-winning artworks at drawing and painting competitions. TACS students also transformed campus walls into large-scale murals — turning everyday spaces into creative expressions.",
+      },
+    ],
+    author: {
+      icon: "📖",
+      title: "A Published Author\nAmong Us",
+      name: "Dhanistha Bhattacharjee",
+      detail: "Grade 11 · Science · TACS Bengaluru",
+      quote: "Writing this book has been an incredible journey. I'm excited to share my stories with the world.",
+      description:
+        "Writing a book at 16 — it happened at TACS. Dhanistha's published work is proof that academic excellence and creative voice can walk hand in hand.",
+      byline: "A TACS student · Published author",
+    },
+    designLabel: "Grade 11 Design Stream — NID & NIFT Aspirants",
+    designStudents: [
+      { icon: "🚲", name: "Raunak", project: "Uni Bike Project", target: "NID Aspirant" },
+      { icon: "⛵", name: "Shristi", project: "Leviathan Ship", target: "NIFT Aspirant" },
+      { icon: "🏛️", name: "John", project: "Japanese Architecture", target: "NID Aspirant" },
+      { icon: "🎨", name: "Poshika", project: "Inspired by Medusa", target: "NIFT Aspirant" },
+    ],
+  },
+  gratitude: {
+    label: "With Gratitude",
+    quote: "Every mark scored, every trophy lifted, every canvas painted — is a chapter in the story of",
+    quoteHighlight: "who our students are becoming.",
+    attribution: "Founder · The Academic City School",
+    description:
+      "Behind every rank, every medal and every acceptance letter there are teachers who believed, parents who trusted, and a community that never stopped pushing. This record of achievement is as much theirs as it is our students'.",
+    roles: [
+      { icon: "👩‍🏫", title: "Faculty Team" },
+      { icon: "🤝", title: "Academic Partners" },
+      { icon: "🏠", title: "Support Staff" },
+      { icon: "🎓", title: "Alumni" },
+      { icon: "👨‍👩‍👧", title: "Parents & Guardians" },
+      { icon: "🏛️", title: "Management" },
+    ],
+  },
+  ctaBand: {
+    label: "Admissions 2026–27",
+    title: "Your child's story starts here",
+    description:
+      "Join a school where academic excellence, creative expression and sporting achievement go hand in hand.",
+    enquiry: { label: "Apply now", href: "/admissions" },
+    phone: {
+      label: siteConfig.utilityBar.phoneDisplay,
+      href: `tel:${siteConfig.utilityBar.phone}`,
+    },
+    whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
+  },
+} as const satisfies AchievementsPageContent;

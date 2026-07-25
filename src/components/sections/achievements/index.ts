@@ -1,0 +1,10 @@
+export { AchievementsHeroSection } from "@/components/sections/achievements/AchievementsHeroSection";
+export { StarAchieverSection } from "@/components/sections/achievements/StarAchieverSection";
+export { JeeSection } from "@/components/sections/achievements/JeeSection";
+export { StatsBandSection } from "@/components/sections/achievements/StatsBandSection";
+export { NeetSection } from "@/components/sections/achievements/NeetSection";
+export { CommerceSection } from "@/components/sections/achievements/CommerceSection";
+export { SportsSection } from "@/components/sections/achievements/SportsSection";
+export { ArtsSection } from "@/components/sections/achievements/ArtsSection";
+export { GratitudeSection } from "@/components/sections/achievements/GratitudeSection";
+export { AchievementsCtaSection } from "@/components/sections/achievements/AchievementsCtaSection";

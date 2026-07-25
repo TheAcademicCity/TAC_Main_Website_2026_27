@@ -17,6 +17,7 @@ export const sitePages = {
   boarding: { path: "/boarding", label: "Boarding" },
   admissions: { path: "/admissions", label: "Admissions" },
   blog: { path: "/blog", label: "Blogs & Newsletters" },
+  achievements: { path: "/achievements", label: "Achievements" },
   enquiry: { path: "/#enquiry", label: "Enquiry" },
 } as const;
 
@@ -33,7 +34,14 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
-  { label: sitePages.blog.label, href: sitePages.blog.path },
+  {
+    label: "More",
+    href: sitePages.blog.path,
+    children: [
+      { label: sitePages.blog.label, href: sitePages.blog.path },
+      { label: sitePages.achievements.label, href: sitePages.achievements.path },
+    ],
+  },
   { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
 ];
 
@@ -44,7 +52,14 @@ export const mobileNavigation: NavItem[] = [
   { label: sitePages.coCurricular.label, href: sitePages.coCurricular.path },
   { label: sitePages.boarding.label, href: sitePages.boarding.path },
   { label: sitePages.admissions.label, href: sitePages.admissions.path },
-  { label: sitePages.blog.label, href: sitePages.blog.path },
+  {
+    label: "More",
+    href: sitePages.blog.path,
+    children: [
+      { label: sitePages.blog.label, href: sitePages.blog.path },
+      { label: sitePages.achievements.label, href: sitePages.achievements.path },
+    ],
+  },
   { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
 ];
 

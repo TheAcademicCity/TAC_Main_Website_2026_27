@@ -6,7 +6,7 @@ import { HomeLink } from "@/components/layout/HomeLink";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { mobileNavLinkClasses } from "@/components/layout/NavLink";
 import { cn } from "@/lib/utils";
-import { isHomeHref, isNavLinkActive } from "@/lib/scroll";
+import { isHomeHref, isNavDropdownActive, isNavLinkActive } from "@/lib/scroll";
 
 type MobileNavProps = {
   open: boolean;
@@ -26,7 +26,47 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     >
       {mobileNavigation.map((item) => {
         const variant = item.variant === "cta" ? "cta" : "default";
-        const active = variant === "default" && isNavLinkActive(item.href, pathname);
+        const hasChildren = Boolean(item.children?.length);
+        const active =
+          variant === "default" &&
+          (hasChildren ? isNavDropdownActive(item, pathname) : isNavLinkActive(item.href, pathname));
+
+        if (hasChildren) {
+          return (
+            <div key={item.label}>
+              <span
+                className={cn(
+                  mobileNavLinkClasses("default", undefined, active),
+                  "cursor-default border-b border-white/10",
+                )}
+              >
+                {item.label}
+              </span>
+              {item.children?.map((child) => {
+                const childActive = isNavLinkActive(child.href, pathname);
+                const LinkComponent = isHomeHref(child.href) ? HomeLink : SiteLink;
+
+                return (
+                  <LinkComponent
+                    key={child.label}
+                    href={child.href}
+                    onClick={onClose}
+                    className={cn(
+                      "block border-b border-white/6 py-3 pl-4 font-montserrat text-base font-semibold uppercase tracking-wide transition-all duration-200",
+                      childActive
+                        ? "border-gold/30 text-gold"
+                        : "text-white/65 hover:border-gold/30 hover:pl-5 hover:text-gold",
+                    )}
+                    aria-current={childActive ? "page" : undefined}
+                  >
+                    {child.label}
+                  </LinkComponent>
+                );
+              })}
+            </div>
+          );
+        }
+
         const className = mobileNavLinkClasses(variant, undefined, active);
         const LinkComponent = isHomeHref(item.href) ? HomeLink : SiteLink;
 
