@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { InstagramLogo } from "@/components/ui/InstagramLogo";
@@ -21,6 +22,7 @@ const widgetStackClassName =
   "fixed top-1/2 z-[80] flex -translate-y-1/2 flex-col overflow-hidden shadow-lg transition-opacity duration-300 ease-out";
 
 export function SideWidgets() {
+  const pathname = usePathname();
   const [hiddenNearFooter, setHiddenNearFooter] = useState(false);
   const { utilityBar, contact } = siteConfig;
 
@@ -40,6 +42,10 @@ export function SideWidgets() {
   }, []);
 
   const fadeClass = cn(hiddenNearFooter && "pointer-events-none opacity-0");
+
+  if (pathname === "/contact") {
+    return null;
+  }
 
   return (
     <>

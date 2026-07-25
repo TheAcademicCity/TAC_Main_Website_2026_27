@@ -9,6 +9,8 @@ type EnquiryPayload = {
   email: string;
   intent?: string;
   sourcePath?: string;
+  childName?: string;
+  message?: string;
 };
 
 function isValidEmail(value: string) {
@@ -58,10 +60,17 @@ export async function POST(request: Request) {
     selectclass,
     campus,
     email: email.trim(),
+    childName: body.childName?.trim() || undefined,
+    message: body.message?.trim() || undefined,
     Lead_Source_Category: "Digital Organic",
     Lead_Source: "Website",
     Lead_Sub_Source: body.sourcePath ?? "/",
-    Lead_Super_Sub_Source: body.intent === "brochure" ? "Brochure Download" : "General Enquiry",
+    Lead_Super_Sub_Source:
+      body.intent === "brochure"
+        ? "Brochure Download"
+        : body.intent === "contact"
+          ? "Contact Form"
+          : "General Enquiry",
   };
 
   // Placeholder for CRM integration — wire Zoho or another provider here when credentials are available.

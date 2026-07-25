@@ -15,7 +15,7 @@ export function BrandSplashScreen() {
 
   useLayoutEffect(() => {
     document.documentElement.dataset.splash = "pending";
-    document.body.style.overflow = "hidden";
+    document.body.style.setProperty("overflow", "hidden");
 
     // Start CSS animation after hydration so it is not interrupted mid-run.
     const startFrame = requestAnimationFrame(() => {
@@ -33,16 +33,19 @@ export function BrandSplashScreen() {
   useEffect(() => {
     if (!animateLogo) return;
 
+    const clearScrollLock = () => {
+      document.body.style.removeProperty("overflow");
+      document.documentElement.removeAttribute("data-splash");
+    };
+
     const goneTimer = window.setTimeout(() => {
       setPhase("gone");
-      document.body.style.overflow = "";
-      document.documentElement.removeAttribute("data-splash");
+      clearScrollLock();
     }, SPLASH_MS);
 
     return () => {
       window.clearTimeout(goneTimer);
-      document.body.style.overflow = "";
-      document.documentElement.removeAttribute("data-splash");
+      clearScrollLock();
     };
   }, [animateLogo]);
 

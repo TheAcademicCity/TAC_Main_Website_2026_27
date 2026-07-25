@@ -2,11 +2,9 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { flushSync } from "react-dom";
 import { campusContent } from "@/data/home";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { StatItem } from "@/components/sections/shared/StatItem";
-import { YouTubeVideoModal } from "@/components/sections/shared/YouTubeVideoModal";
 import { TabGroup } from "@/components/sections/shared/TabGroup";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { Button } from "@/components/ui/Button";
@@ -15,11 +13,10 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
-const AUTO_ROTATE_MS = 5000;
+const AUTO_ROTATE_MS = 8000;
 
 export function CampusSliderSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeVideo, setActiveVideo] = useState<{ youtubeId: string; title: string } | null>(null);
   const slides = campusContent.slides;
 
   const goToSlide = useCallback((index: number) => {
@@ -27,16 +24,12 @@ export function CampusSliderSection() {
   }, [slides.length]);
 
   useEffect(() => {
-    if (activeVideo) {
-      return;
-    }
-
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, AUTO_ROTATE_MS);
 
     return () => window.clearInterval(timer);
-  }, [activeVideo, slides.length]);
+  }, [slides.length]);
 
   return (
     <section id="campus" className="section-py-feature bg-paper">
@@ -179,17 +172,9 @@ export function CampusSliderSection() {
                     </Button>
                     {slide.campusVideo ? (
                       <Button
-                        type="button"
+                        href={slide.campusVideo.href}
                         variant="outline-white"
                         className="text-[0.82rem]"
-                        onClick={() => {
-                          flushSync(() => {
-                            setActiveVideo({
-                              youtubeId: slide.campusVideo!.youtubeId,
-                              title: slide.campusVideo!.label,
-                            });
-                          });
-                        }}
                       >
                         {slide.campusVideo.label}
                       </Button>
@@ -205,27 +190,13 @@ export function CampusSliderSection() {
               <TabGroup
                 tabs={slides.map((slide, index) => ({ id: String(index), label: slide.name }))}
                 activeId={String(activeIndex)}
-                onChange={(id) => {
-                  if (activeVideo) {
-                    return;
-                  }
-
-                  goToSlide(Number(id));
-                }}
+                onChange={(id) => goToSlide(Number(id))}
                 variant="panel"
               />
             </Container>
           </div>
         </div>
       </RevealOnScroll>
-
-      {activeVideo ? (
-        <YouTubeVideoModal
-          videoId={activeVideo.youtubeId}
-          title={activeVideo.title}
-          onClose={() => setActiveVideo(null)}
-        />
-      ) : null}
     </section>
   );
 }

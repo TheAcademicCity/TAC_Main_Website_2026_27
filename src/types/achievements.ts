@@ -1,4 +1,5 @@
-import type { PageSubnavItem } from "@/types/page";
+import type { HeroStat, PageSubnavItem } from "@/types/page";
+import type { SiteImage } from "@/types/images";
 
 export type AchievementsStat = {
   value: string;
@@ -13,12 +14,14 @@ export type StarAchiever = {
   statLabel: string;
   description: string;
   tags: readonly string[];
+  image: SiteImage;
 };
 
 export type SubAchiever = {
   name: string;
   value: string;
   label: string;
+  image: SiteImage;
 };
 
 export type JeeHighlight = {
@@ -97,12 +100,11 @@ export type GratRole = {
 
 export type AchievementsPageContent = {
   hero: {
-    eyebrow: string;
     title: string;
     titleHighlight: string;
     description: string;
-    ghostText: string;
-    stats: readonly AchievementsStat[];
+    image: SiteImage;
+    stats: readonly HeroStat[];
   };
   subnav: readonly PageSubnavItem[];
   starAchiever: {

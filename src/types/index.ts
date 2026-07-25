@@ -58,7 +58,7 @@ export type CampusSlide = {
   cta: { label: string; href: string };
   campusVideo?: {
     label: string;
-    youtubeId: string;
+    href: string;
   };
 };
 

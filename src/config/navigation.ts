@@ -18,6 +18,8 @@ export const sitePages = {
   admissions: { path: "/admissions", label: "Admissions" },
   blog: { path: "/blog", label: "Blogs & Newsletters" },
   achievements: { path: "/achievements", label: "Achievements" },
+  contact: { path: "/contact", label: "Contact Us" },
+  campus: { path: "/campus", label: "Campus" },
   enquiry: { path: "/#enquiry", label: "Enquiry" },
 } as const;
 
@@ -40,6 +42,7 @@ export const mainNavigation: NavItem[] = [
     children: [
       { label: sitePages.blog.label, href: sitePages.blog.path },
       { label: sitePages.achievements.label, href: sitePages.achievements.path },
+      { label: sitePages.contact.label, href: sitePages.contact.path },
     ],
   },
   { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
@@ -58,6 +61,7 @@ export const mobileNavigation: NavItem[] = [
     children: [
       { label: sitePages.blog.label, href: sitePages.blog.path },
       { label: sitePages.achievements.label, href: sitePages.achievements.path },
+      { label: sitePages.contact.label, href: sitePages.contact.path },
     ],
   },
   { label: "Apply Now", href: sitePages.enquiry.path, variant: "cta" },
@@ -80,7 +84,7 @@ export const footerNavigation = [
       { label: "How to Apply", href: sitePages.admissions.path },
       { label: "Boarding Life", href: sitePages.boarding.path },
       { label: "Awards", href: "/#awards" },
-      { label: "Contact Us", href: "/#contact" },
+      { label: "Contact Us", href: sitePages.contact.path },
     ],
   },
 ] as const;

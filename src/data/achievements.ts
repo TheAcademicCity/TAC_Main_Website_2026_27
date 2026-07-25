@@ -1,23 +1,35 @@
 import { siteConfig } from "@/config/site";
+import { createImage } from "@/lib/images";
 import type { AchievementsPageContent } from "@/types/achievements";
+
+const remote = {
+  sports: "https://theacademiccity.com/images/Home/nav/sports.png",
+  campus: "https://theacademiccity.com/images/homepage/campus/1.png",
+  studentFeatured: "/images/home/parents/4.jpg",
+  student1: "/images/home/parents/6.jpg",
+  student2: "/images/home/parents/5.jpg",
+  student3: "/images/home/parents/3.jpg",
+  student4: "/images/home/parents/2.jpg",
+} as const;
 
 export const achievementsPageContent = {
   hero: {
-    eyebrow: "We Made It",
     title: "Every Story.",
     titleHighlight: "Every Proud Moment.",
     description:
       "Achievements across Science, Commerce, Design, Sports & the Arts — a record of the accomplishments and milestones that define the spirit of The Academic City School.",
-    ghostText: "Achievers",
+    image: createImage(
+      "/images/achievements/hero.png",
+      remote.sports,
+      "TACS student achievements",
+    ),
     stats: [
-      { value: "120+", label: "University admissions" },
       { value: "99.96", label: "Highest JEE percentile" },
       { value: "90+", label: "Medical college admissions" },
-      { value: "🥈🥇🥇", label: "National & inter-school medals" },
+      { value: "50+", label: "National & inter-school medals" },
     ],
   },
   subnav: [
-    { id: "academics", label: "Academics" },
     { id: "jee", label: "JEE" },
     { id: "neet", label: "NEET" },
     { id: "commerce", label: "Commerce" },
@@ -34,13 +46,38 @@ export const achievementsPageContent = {
       description:
         "Among TACS's highest JEE scorers — earning a seat at NUS Singapore, one of Asia's top-ranked universities. A true benchmark of what the ALLEN-integrated programme can achieve.",
       tags: ["Science Stream", "NUS Singapore"],
+      image: createImage(
+        "/images/achievements/students/radhna.jpg",
+        remote.studentFeatured,
+        "Radhna Mozika",
+      ),
     },
     subHeading: "More remarkable science achievers",
     subAchievers: [
-      { name: "Granth Agarwal", value: "96.12%", label: "JEE · 2024–25" },
-      { name: "Aami Rajiv", value: "NID", label: "93 NID CR 2024" },
-      { name: "Aditya Singh Bisht", value: "1560", label: "SAT Score / 1600" },
-      { name: "Olivia Majumder", value: "NIFT", label: "Qualified · 2023–24" },
+      {
+        name: "Granth Agarwal",
+        value: "96.12%",
+        label: "JEE · 2024–25",
+        image: createImage("/images/achievements/students/granth.jpg", remote.student1, "Granth Agarwal"),
+      },
+      {
+        name: "Aami Rajiv",
+        value: "NID",
+        label: "93 NID CR 2024",
+        image: createImage("/images/achievements/students/aami.jpg", remote.student2, "Aami Rajiv"),
+      },
+      {
+        name: "Aditya Singh Bisht",
+        value: "1560",
+        label: "SAT Score / 1600",
+        image: createImage("/images/achievements/students/aditya.jpg", remote.student3, "Aditya Singh Bisht"),
+      },
+      {
+        name: "Olivia Majumder",
+        value: "NIFT",
+        label: "Qualified · 2023–24",
+        image: createImage("/images/achievements/students/olivia.jpg", remote.student4, "Olivia Majumder"),
+      },
     ],
     admissionsNote: {
       value: "30+",

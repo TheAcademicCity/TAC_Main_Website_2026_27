@@ -17,8 +17,6 @@ import type {
 
 const remote = {
   heroPoster: "https://theacademiccity.com/images/homepage/overview.png",
-  heroVideo:
-    "https://the-academic-city-boarding-school.s3.ap-south-1.amazonaws.com/Videos/Reel+4.mp4",
   pillars: {
     academics: "https://theacademiccity.com/images/Home/nav/academics.png",
     curriculum: "https://theacademiccity.com/images/Home/nav/curriculam.png",
@@ -48,9 +46,9 @@ const remote = {
 export const heroContent = {
   video: {
     src: "/videos/hero-reel.mp4",
-    fallbackSrc: remote.heroVideo,
+    fallbackSrc: "/videos/hero-reel.mp4",
     poster: createImage("/images/home/hero/poster.png", remote.heroPoster, "TACS Bengaluru campus"),
-    isPlaceholder: true,
+    isPlaceholder: false,
   } satisfies SiteVideo,
   title: "India's First",
   titleHighlight: "Career-Oriented",
@@ -402,7 +400,7 @@ export const campusContent = {
       cta: { label: "Book a Campus Visit", href: "/#contact" },
       campusVideo: {
         label: "View our campus",
-        youtubeId: "nh75X9a2e2g",
+        href: "/campus",
       },
     },
     {
@@ -436,7 +434,7 @@ export const campusContent = {
           },
         ],
       },
-      cta: { label: "Enquire about Indore", href: "mailto:Admission.mk@theacademiccity.com" },
+      cta: { label: "Enquire Now", href: "https://grjis.com/" },
     },
   ] satisfies CampusSlide[],
 } as const;
