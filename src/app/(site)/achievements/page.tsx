@@ -1,4 +1,7 @@
-import { AchievementsHeroSection } from "@/components/sections/achievements";
+import {
+  AchievementsCtaSection,
+  AchievementsHeroSection,
+} from "@/components/sections/achievements";
 import { GallerySection } from "@/components/sections/home";
 import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
@@ -12,6 +15,7 @@ export default function AchievementsPage() {
     <main id="top" tabIndex={-1} className="achievements-page outline-none">
       <AchievementsHeroSection />
       <GallerySection dense />
+      <AchievementsCtaSection />
     </main>
   );
 }

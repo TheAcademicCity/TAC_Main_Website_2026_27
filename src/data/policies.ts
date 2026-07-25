@@ -150,7 +150,6 @@ export const boardingPolicies: Record<BoardingPolicySlug, BoardingPolicyContent>
         bullets: [
           "Age-appropriate awareness sessions integrated into the school curriculum and residential life programme",
           'Participation in CBSE-NCB initiatives, including the annual "Say Yes to Life, No to Drugs" pledge',
-          "Visible display of the national MANAS-1933 helpline across campus",
           "Annual parent orientation on warning signs and reporting channels",
         ],
       },

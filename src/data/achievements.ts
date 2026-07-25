@@ -257,7 +257,7 @@ export const achievementsPageContent = {
     label: "With Gratitude",
     quote: "Every mark scored, every trophy lifted, every canvas painted — is a chapter in the story of",
     quoteHighlight: "who our students are becoming.",
-    attribution: "Founder · The Academic City School",
+    attribution: "The Academic City School",
     description:
       "Behind every rank, every medal and every acceptance letter there are teachers who believed, parents who trusted, and a community that never stopped pushing. This record of achievement is as much theirs as it is our students'.",
     roles: [

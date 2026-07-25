@@ -99,9 +99,18 @@ export type AdmissionStep = {
   description: string;
 };
 
+export type GalleryAchievementCategory =
+  | "JEE"
+  | "NEET"
+  | "SPORTS"
+  | "COMMERCE"
+  | "DESIGN";
+
 export type GalleryImageItem = {
   kind?: "image";
   label: string;
+  /** Achievement stream chip shown on the image tile */
+  category?: GalleryAchievementCategory;
   height?: number;
   image?: import("@/types/images").SiteImage;
 };

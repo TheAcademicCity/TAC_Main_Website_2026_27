@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Outfit } from "next/font/google";
+import { Montserrat, Outfit, Playfair_Display } from "next/font/google";
 import "@/styles/globals.css";
 
 const montserrat = Montserrat({
@@ -13,6 +13,14 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-outfit",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -31,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${outfit.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${outfit.variable} ${playfair.variable}`}
+    >
       <body className="font-outfit antialiased">{children}</body>
     </html>
   );
