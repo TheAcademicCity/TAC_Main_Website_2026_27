@@ -1,8 +1,8 @@
 import {
   AchievementsCtaSection,
+  AchievementsGallerySection,
   AchievementsHeroSection,
 } from "@/components/sections/achievements";
-import { GallerySection } from "@/components/sections/home";
 import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
@@ -14,7 +14,7 @@ export default function AchievementsPage() {
   return (
     <main id="top" tabIndex={-1} className="achievements-page outline-none">
       <AchievementsHeroSection />
-      <GallerySection dense />
+      <AchievementsGallerySection />
       <AchievementsCtaSection />
     </main>
   );

@@ -9,6 +9,7 @@ import type {
   FeatureRow,
   FounderProfile,
   GalleryItem,
+  GalleryTab,
   NewsArticle,
   ParentTestimonial,
   PillarItem,
@@ -189,7 +190,70 @@ export const galleryContent = {
     label: "Follow on Instagram",
     href: "https://www.instagram.com/the_academic_city/",
   },
-  /** Flat track — achievement word tiles sprinkled between categorised images */
+  tabs: [
+    {
+      id: "campus",
+      label: "Campus",
+      items: [
+        { label: "Aerial Campus View", height: 280 },
+        { label: "Sports Arena", height: 200 },
+        { label: "Main Building", height: 340 },
+        { label: "Running Track", height: 220 },
+        { label: "Swimming Pool", height: 260 },
+        { label: "Hostel Block", height: 200 },
+        { label: "Farm & Goshala", height: 300 },
+        { label: "Dining Hall", height: 180 },
+      ],
+    },
+    {
+      id: "academics",
+      label: "Academics",
+      items: [
+        { label: "Smart Classroom", height: 260 },
+        { label: "Career Guidance Session", height: 320 },
+        { label: "Science Lab", height: 200 },
+        { label: "Library", height: 280 },
+        { label: "Investiture Ceremony", height: 220 },
+        { label: "Industry Interaction", height: 300 },
+        { label: "Psychometric Assessment", height: 180 },
+        { label: "Student Progression Plan", height: 240 },
+      ],
+    },
+    {
+      id: "extra",
+      label: "Extra-curriculars",
+      items: [
+        { label: "Basketball", height: 300 },
+        { label: "Dance Performance", height: 220 },
+        { label: "Theatre Production", height: 260 },
+        { label: "Art & Craft", height: 200 },
+        { label: "Football Match", height: 280 },
+        { label: "Music Class", height: 240 },
+        { label: "Cooking Class", height: 200 },
+        { label: "Sports Day", height: 320 },
+      ],
+    },
+    {
+      id: "boarding",
+      label: "Boarding Life",
+      items: [
+        { label: "Hostel Room", height: 260 },
+        { label: "Dining Experience", height: 200 },
+        { label: "Independence Day Celebration", height: 320 },
+        { label: "Ganesh Chaturthi", height: 220 },
+        { label: "Pastoral Care", height: 280 },
+        { label: "Teachers' Day", height: 200 },
+        { label: "Evening Study Hall", height: 240 },
+        { label: "Morning Assembly", height: 300 },
+      ],
+    },
+  ] satisfies GalleryTab[],
+} as const;
+
+export const achievementsGalleryContent = {
+  label: "Life on Campus",
+  title: "A glimpse into everyday TACS",
+  /** Achievement stream chips on image tiles */
   items: [
     { label: "Aerial Campus View", category: "JEE" },
     { label: "Sports Arena", category: "SPORTS" },

@@ -128,7 +128,7 @@ export type GalleryItem = GalleryImageItem | GalleryWordsItem;
 export type GalleryTab = {
   id: string;
   label: string;
-  items: readonly GalleryItem[];
+  items: readonly GalleryImageItem[];
 };
 
 export type ContactLocation = {

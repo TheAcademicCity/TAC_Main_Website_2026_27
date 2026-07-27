@@ -1,4 +1,5 @@
 export { AchievementsHeroSection } from "@/components/sections/achievements/AchievementsHeroSection";
+export { AchievementsGallerySection } from "@/components/sections/achievements/AchievementsGallerySection";
 export { StarAchieverSection } from "@/components/sections/achievements/StarAchieverSection";
 export { JeeSection } from "@/components/sections/achievements/JeeSection";
 export { StatsBandSection } from "@/components/sections/achievements/StatsBandSection";
