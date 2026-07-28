@@ -1,5 +1,4 @@
 import { aboutPageContent } from "@/data/about";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
@@ -52,14 +51,9 @@ export function VisionMissionSection() {
                     card.accent === "vision" ? "border-t-4 border-gold" : "border-t-4 border-emerald",
                   )}
                 >
-                  <div
-                    className={cn(
-                      "mb-3 grid h-12 w-12 place-items-center rounded-[14px]",
-                      card.accent === "vision" ? "bg-gold/12 text-gold" : "bg-emerald/12 text-emerald",
-                    )}
-                  >
-                    <Icon name={card.icon} className="h-6 w-6" />
-                  </div>
+                  <span className="mb-3 block text-[2rem] leading-none" aria-hidden>
+                    {card.icon}
+                  </span>
                   <h2 className="font-montserrat text-[clamp(1.25rem,2vw,1.75rem)] font-black text-white">
                     {card.title}
                   </h2>

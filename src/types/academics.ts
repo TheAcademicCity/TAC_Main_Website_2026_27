@@ -6,7 +6,7 @@ export type { HeroStat, PageSubnavItem };
 export type CdfPillar = {
   number: string;
   title: string;
-  icon: "book" | "users" | "chart";
+  icon: string;
   accent: "emerald" | "gold" | "violet";
   items: readonly string[];
 };
@@ -18,7 +18,7 @@ export type CurriculumFeature = {
 
 export type ApproachCard = {
   number: string;
-  icon: "brain" | "users" | "lab" | "sun";
+  icon: string;
   title: string;
   description: string;
 };
@@ -33,14 +33,14 @@ export type GradeJourneyStep = {
 };
 
 export type AssessmentCommItem = {
-  icon: "document" | "users" | "chart" | "compass";
+  icon: string;
   tone?: "default" | "gold" | "violet";
   title: string;
   description: string;
 };
 
 export type StreamCard = {
-  icon: "wrench" | "stethoscope" | "scrollText" | "compass";
+  icon: string;
   title: string;
   items: readonly string[];
 };

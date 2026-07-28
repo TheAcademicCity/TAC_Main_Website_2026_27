@@ -25,6 +25,7 @@ export function ImageWithFallback({
   const [useFallback, setUseFallback] = useState(false);
   const src = useFallback ? image.fallbackSrc : image.src;
   const isRemote = src.startsWith("http");
+  const isSvg = src.endsWith(".svg");
 
   const sharedProps = {
     alt: image.alt,
@@ -36,7 +37,7 @@ export function ImageWithFallback({
       if (!useFallback) setUseFallback(true);
     },
     "data-placeholder": image.isPlaceholder ? "true" : undefined,
-    unoptimized: isRemote,
+    unoptimized: isRemote || isSvg,
   };
 
   if (fill) {

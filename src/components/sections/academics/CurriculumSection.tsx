@@ -72,8 +72,8 @@ export function CurriculumSection() {
               <span className="absolute right-4 top-3 font-montserrat text-[3rem] font-black leading-none text-forest/6">
                 {card.number}
               </span>
-              <span className="mb-3 grid h-[42px] w-[42px] place-items-center rounded-lg bg-forest/7">
-                <Icon name={card.icon} className="h-5 w-5 text-emerald" />
+              <span className="mb-3 grid h-[42px] w-[42px] place-items-center rounded-lg bg-forest/7 text-[1.35rem] leading-none">
+                <span aria-hidden>{card.icon}</span>
               </span>
               <h4 className="font-montserrat text-[0.94rem] font-extrabold text-forest-deep">
                 {card.title}

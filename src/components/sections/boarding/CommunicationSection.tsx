@@ -1,5 +1,4 @@
 import { boardingPageContent } from "@/data/boarding";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -21,8 +20,8 @@ export function CommunicationSection() {
         {communication.cards.map((card, index) => (
           <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
             <article className="h-full overflow-hidden rounded-lg border border-line bg-paper px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)]">
-              <div className="mx-auto mb-3.5 grid h-14 w-14 place-items-center rounded-full bg-forest/8">
-                <Icon name={card.icon} className="h-6 w-6 text-emerald" />
+              <div className="mx-auto mb-3.5 grid h-14 w-14 place-items-center rounded-full bg-forest/8 text-[1.55rem] leading-none">
+                <span aria-hidden>{card.icon}</span>
               </div>
               <h3 className="font-montserrat text-[0.92rem] font-extrabold text-forest-deep">
                 {card.title}

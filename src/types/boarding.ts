@@ -1,8 +1,5 @@
 import type { SiteImage } from "@/types/images";
 import type { HeroStat, PageSubnavItem } from "@/types/page";
-import type { Icon } from "@/components/ui/Icon";
-
-type IconName = Parameters<typeof Icon>[0]["name"];
 
 export type BoardingPageContent = {
   hero: {
@@ -19,7 +16,7 @@ export type BoardingPageContent = {
     description: string;
     tiles: readonly {
       accent: "t1" | "t2" | "t3" | "t4" | "t5" | "t6";
-      icon: IconName;
+      icon: string;
       title: string;
       description: string;
     }[];
@@ -36,7 +33,7 @@ export type BoardingPageContent = {
     image: SiteImage;
     quote: string;
     keyItemsLabel: string;
-    keyItems: readonly { icon: IconName; text: string }[];
+    keyItems: readonly { icon: string; text: string }[];
   };
   schedule: {
     label: string;
@@ -52,7 +49,7 @@ export type BoardingPageContent = {
     label: string;
     title: string;
     description: string;
-    cards: readonly { icon: IconName; title: string; description: string }[];
+    cards: readonly { icon: string; title: string; description: string }[];
   };
   outpass: {
     label: string;
@@ -70,7 +67,7 @@ export type BoardingPageContent = {
       slug: import("@/types/policies").BoardingPolicySlug;
       title: string;
       preview: string;
-      icon: IconName;
+      icon: string;
       accent: "emerald" | "gold" | "violet";
     }[];
   };
@@ -80,7 +77,7 @@ export type BoardingPageContent = {
     safety: {
       title: string;
       description: string;
-      items: readonly { icon: IconName; title: string; description: string }[];
+      items: readonly { icon: string; title: string; description: string }[];
       medicalPartners: {
         label: string;
         logos: readonly { src: string; alt: string; width?: number; height?: number }[];
@@ -90,7 +87,7 @@ export type BoardingPageContent = {
       title: string;
       description: string;
       meals: readonly string[];
-      items: readonly { icon: IconName; title: string; description: string }[];
+      items: readonly { icon: string; title: string; description: string }[];
       foodPartner: {
         label: string;
         logo: { src: string; alt: string; width?: number; height?: number };

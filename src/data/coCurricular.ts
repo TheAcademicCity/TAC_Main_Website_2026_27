@@ -299,36 +299,36 @@ export const coCurricularPageContent = {
     title: "Skills for life, not just school",
     cards: [
       {
-        icon: "squarePlus",
+        icon: "🏥",
         title: "First Aid & Safety",
         description:
           "Certified training so every student can respond confidently in an emergency.",
       },
       {
-        icon: "wallet",
+        icon: "💰",
         title: "Financial Literacy",
         description: "Budgeting, saving and understanding credit - taught practically, not theoretically.",
       },
       {
-        icon: "mic",
+        icon: "🎤",
         title: "Public Speaking",
         description:
           "Stage presence and structured argument, developed through regular practice in assemblies.",
       },
       {
-        icon: "chefHat",
+        icon: "👨‍🍳",
         title: "Cooking & Nutrition",
         description:
           "Students who can feed themselves are genuinely more independent - a real life skill.",
       },
       {
-        icon: "shieldCheck",
+        icon: "🏊",
         title: "Swimming",
         description:
           "A practical life skill that builds fitness, focus and essential water safety.",
       },
       {
-        icon: "trophy",
+        icon: "🏆",
         title: "Leadership Roles",
         description:
           "House captaincies, student council and the perfect system - real responsibility from Grade 8.",

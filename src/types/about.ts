@@ -1,8 +1,5 @@
 import type { SiteImage } from "@/types/images";
 import type { HeroStat, PageSubnavItem } from "@/types/page";
-import type { Icon } from "@/components/ui/Icon";
-
-type IconName = Parameters<typeof Icon>[0]["name"];
 
 export type AboutPageContent = {
   hero: {
@@ -30,28 +27,26 @@ export type AboutPageContent = {
       title: string;
       description: string;
       highlights: readonly string[];
-      icon: IconName;
+      icon: string;
     };
     mission: {
       label: string;
       title: string;
       description: string;
       highlights: readonly string[];
-      icon: IconName;
+      icon: string;
     };
   };
   values: {
     label: string;
     title: string;
     description: string;
-    tiles: readonly ({
+    tiles: readonly {
       accent: "gold" | "emerald" | "violet" | "cyan";
       title: string;
       description: string;
-    } & (
-      | { icon: IconName; iconImage?: never }
-      | { iconImage: SiteImage; icon?: never }
-    ))[];
+      icon: string;
+    }[];
   };
   campusBand: {
     title: string;

@@ -1,26 +1,16 @@
 import { academicsPageContent } from "@/data/academics";
 import { AssessmentCycleDiagram } from "@/components/sections/academics/AssessmentCycleDiagram";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { cn } from "@/lib/utils";
 import type { AssessmentCommItem } from "@/types/academics";
 
-const toneStyles = {
-  default: "text-emerald",
-  gold: "text-gold-dark",
-  violet: "text-violet",
-} as const;
-
 function CommItem({ item }: { item: AssessmentCommItem }) {
-  const tone = item.tone ?? "default";
-
   return (
     <div className="flex gap-3.5 rounded-lg border border-line bg-white p-4">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-paper">
-        <Icon name={item.icon} className={cn("h-[1.1rem] w-[1.1rem]", toneStyles[tone])} />
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-paper text-[1.2rem] leading-none">
+        <span aria-hidden>{item.icon}</span>
       </span>
       <div>
         <h5 className="font-montserrat text-[0.86rem] font-bold text-forest-deep">{item.title}</h5>

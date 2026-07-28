@@ -63,7 +63,7 @@ export const aboutPageContent = {
       description:
         "To be a centre of educational excellence that nurtures holistic growth, fostering an environment where every student can discover and develop their unique potential.",
       highlights: ["holistic growth", "discover and develop their unique potential"],
-      icon: "eye",
+      icon: "👁️",
     },
     mission: {
       label: "Mission",
@@ -71,7 +71,7 @@ export const aboutPageContent = {
       description:
         "To empower students with future-ready skills and character, preparing them to thrive in a rapidly evolving world while maintaining strong ethical values.",
       highlights: ["future-ready skills and character", "strong ethical values"],
-      icon: "targetArrow",
+      icon: "🎯",
     },
   },
   values: {
@@ -81,33 +81,28 @@ export const aboutPageContent = {
       "Every decision at TACS - academic, pastoral, residential - traces back to these four foundations.",
     tiles: [
       {
-        icon: "briefcase",
+        icon: "💼",
         accent: "gold",
         title: "Career First",
         description:
           "Every child should leave school knowing their direction. Career clarity isn't an afterthought - it's the entire architecture of our programme, from Grade 6.",
       },
       {
-        iconImage: createImage(
-          "/images/about/india-map-icon.svg",
-          "/images/about/india-map-icon.svg",
-          "India map outline",
-          false,
-        ),
+        icon: "👨‍👩‍👧‍👦",
         accent: "emerald",
         title: "Indic Roots",
         description:
           "Grounded in Indian ethos - respect, humility, mindfulness, community. Values lived every day in the boarding routine, not just talked about in assemblies.",
       },
       {
-        icon: "users",
+        icon: "🌱",
         accent: "violet",
         title: "Holistic Growth",
         description:
           "Sport, arts, SUPW, co-curriculars and LEAP - because the person a child becomes outside the classroom shapes everything that happens inside it.",
       },
       {
-        icon: "shieldCheck",
+        icon: "🛡️",
         accent: "cyan",
         title: "Safe & Structured",
         description:

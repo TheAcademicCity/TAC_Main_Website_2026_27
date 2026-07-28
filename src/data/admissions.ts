@@ -98,21 +98,21 @@ export const admissionsPageContent = {
     cards: [
       {
         number: "01 · Academic Foundation",
-        icon: "book",
+        icon: "📝",
         title: "Entrance Exam",
         description:
           "A consistent academic record and a good performance in our entrance assessment. The exam is age-appropriate and can be taken online or on campus - it measures starting point, not perfection.",
       },
       {
         number: "02 · Residential Fit",
-        icon: "users",
+        icon: "🤝",
         title: "Interview & Fit",
         description:
           "Students and parents who appreciate the value of residential education - its structure, community and independence. We assess suitability through a warm, conversational interaction.",
       },
       {
         number: "03 · Career Mindset",
-        icon: "compass",
+        icon: "🧭",
         title: "Career Inclination",
         description:
           "We prefer families who recognise the importance of early career exploration. Students who are open to discovering their aptitude and building a clear career path from an early age.",

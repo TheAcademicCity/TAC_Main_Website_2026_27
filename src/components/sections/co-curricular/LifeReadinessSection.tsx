@@ -1,5 +1,4 @@
 import { coCurricularPageContent } from "@/data/coCurricular";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -20,8 +19,8 @@ export function LifeReadinessSection() {
         {lifeReadiness.cards.map((card, index) => (
           <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
             <article className="h-full overflow-hidden rounded-lg border border-line bg-paper px-6 py-6 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)]">
-              <div className="mx-auto mb-3 grid h-[50px] w-[50px] place-items-center rounded-full border-[1.5px] border-line bg-white">
-                <Icon name={card.icon} className="h-5 w-5 text-emerald" />
+              <div className="mx-auto mb-3 grid h-[50px] w-[50px] place-items-center rounded-full border-[1.5px] border-line bg-white text-[1.55rem] leading-none">
+                <span aria-hidden>{card.icon}</span>
               </div>
               <h4 className="font-montserrat text-[0.93rem] font-extrabold text-forest-deep">
                 {card.title}

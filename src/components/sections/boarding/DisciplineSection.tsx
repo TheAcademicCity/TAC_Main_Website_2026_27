@@ -11,11 +11,11 @@ type PolicyCard = BoardingPageContent["discipline"]["policies"][number];
 
 const accentStyles: Record<
   PolicyCard["accent"],
-  { bar: string; iconBg: string; icon: string }
+  { bar: string; iconBg: string }
 > = {
-  emerald: { bar: "bg-emerald", iconBg: "bg-emerald/10", icon: "text-emerald" },
-  gold: { bar: "bg-gold", iconBg: "bg-gold/10", icon: "text-gold-dark" },
-  violet: { bar: "bg-violet", iconBg: "bg-violet/10", icon: "text-violet" },
+  emerald: { bar: "bg-emerald", iconBg: "bg-emerald/10" },
+  gold: { bar: "bg-gold", iconBg: "bg-gold/10" },
+  violet: { bar: "bg-violet", iconBg: "bg-violet/10" },
 };
 
 export function DisciplineSection() {
@@ -47,11 +47,11 @@ export function DisciplineSection() {
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
                   <div
                     className={cn(
-                      "mb-5 grid h-12 w-12 place-items-center rounded-lg",
+                      "mb-5 grid h-12 w-12 place-items-center rounded-lg text-[1.45rem] leading-none",
                       styles.iconBg,
                     )}
                   >
-                    <Icon name={policy.icon} className={cn("h-5 w-5", styles.icon)} />
+                    <span aria-hidden>{policy.icon}</span>
                   </div>
                   <h3 className="font-montserrat text-[1.05rem] font-extrabold leading-snug text-forest-deep">
                     {policy.title}

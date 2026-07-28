@@ -36,7 +36,7 @@ export const academicsPageContent = {
       {
         number: "01",
         title: "Academic Framework",
-        icon: "book",
+        icon: "📚",
         accent: "emerald",
         items: [
           "CBSE-aligned, concept-based curriculum",
@@ -49,7 +49,7 @@ export const academicsPageContent = {
       {
         number: "02",
         title: "Teaching & Support",
-        icon: "users",
+        icon: "👩‍🏫",
         accent: "gold",
         items: [
           "Student-centric, interactive classrooms",
@@ -62,7 +62,7 @@ export const academicsPageContent = {
       {
         number: "03",
         title: "Assessment & Tracking",
-        icon: "chart",
+        icon: "📊",
         accent: "violet",
         items: [
           "Continuous assessments + term exams",
@@ -103,26 +103,26 @@ export const academicsPageContent = {
     approach: [
       {
         number: "01",
-        icon: "brain",
+        icon: "🧠",
         title: "Concept-First",
         description: 'The "why" before the "how" - so knowledge sticks for life, not just the exam.',
       },
       {
         number: "02",
-        icon: "users",
+        icon: "🤝",
         title: "Personalised Mentoring",
         description:
           "1:10 ratio means every student has an academic mentor who tracks their progress closely.",
       },
       {
         number: "03",
-        icon: "lab",
+        icon: "🔬",
         title: "Practical & Experiential",
         description: "Labs, workshops and real-world problem sets - learning that is tactile and memorable.",
       },
       {
         number: "04",
-        icon: "sun",
+        icon: "💡",
         title: "Inquiry & Critical Thinking",
         description:
           "Students are taught to question, debate and reason - skills that serve them long after school.",
@@ -185,26 +185,26 @@ export const academicsPageContent = {
     communicationTitle: "How we communicate progress",
     communication: [
       {
-        icon: "document",
+        icon: "📋",
         title: "Student Progression Plan (SPP)",
         description:
           "Each child's personalised academic road map - reviewed termly, shared with parents.",
       },
       {
-        icon: "users",
+        icon: "💻",
         title: "ERP-Based Parent Connect",
         description:
           "Consistent communication beyond PTMs, with concerns shared promptly through the ERP.",
       },
       {
-        icon: "chart",
+        icon: "📈",
         tone: "gold",
         title: "Digital Report Cards",
         description:
           "Subject-wise reports after each assessment, with teacher comments - accessible digitally.",
       },
       {
-        icon: "compass",
+        icon: "🧭",
         tone: "violet",
         title: "Academic Mentor Reviews",
         description: "One-on-one sessions between each student and their mentor, every term.",
@@ -219,7 +219,7 @@ export const academicsPageContent = {
     cta: { label: "Discuss your child's path", href: "/#enquiry" },
     cards: [
       {
-        icon: "wrench",
+        icon: "⚙️",
         title: "Science — Engineering",
         items: [
           "Physics, Chemistry, Mathematics",
@@ -228,7 +228,7 @@ export const academicsPageContent = {
         ],
       },
       {
-        icon: "stethoscope",
+        icon: "🩺",
         title: "Science — Medical",
         items: [
           "Physics, Chemistry, Biology",
@@ -237,18 +237,9 @@ export const academicsPageContent = {
         ],
       },
       {
-        icon: "scrollText",
-        title: "Commerce & Humanities",
+        icon: "💼",
+        title: "Commerce",
         items: ["Accountancy, Economics, Business", "CUET preparation", "CA Foundation, CLAT pathways"],
-      },
-      {
-        icon: "compass",
-        title: "Design, Architecture & Abroad",
-        items: [
-          "Portfolio building for NID / NIFT",
-          "Study abroad - SAT / IELTS",
-          "University shortlisting & applications",
-        ],
       },
     ],
     partners: {

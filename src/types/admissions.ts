@@ -1,8 +1,5 @@
 import type { SiteImage } from "@/types/images";
 import type { PageSubnavItem } from "@/types/page";
-import type { Icon } from "@/components/ui/Icon";
-
-type IconName = Parameters<typeof Icon>[0]["name"];
 
 export type AdmissionsPageContent = {
   hero: {
@@ -36,7 +33,7 @@ export type AdmissionsPageContent = {
     description: string;
     cards: readonly {
       number: string;
-      icon: IconName;
+      icon: string;
       title: string;
       description: string;
     }[];

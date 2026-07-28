@@ -76,42 +76,42 @@ export const boardingPageContent = {
     tiles: [
       {
         accent: "t1",
-        icon: "leaf",
+        icon: "🪔",
         title: "Indian Ethos",
         description:
           "Rooted in respect, humility and gratitude. Students live the values of seva, discipline and mindfulness - every single day.",
       },
       {
         accent: "t2",
-        icon: "sun",
+        icon: "🧘",
         title: "Mindfulness Daily",
         description:
           "Yoga, meditation and morning reflection - a structured start to every day that builds focus, calm and inner awareness.",
       },
       {
         accent: "t3",
-        icon: "star",
+        icon: "💪",
         title: "Resilience",
         description:
           "Structured living builds grit. Students balance academics and character, developing self-leadership from Grade 5.",
       },
       {
         accent: "t4",
-        icon: "users",
+        icon: "👥",
         title: "Community Living",
         description:
           "Simple shared spaces, peer learning and the house system foster collaboration, empathy and genuine friendship.",
       },
       {
         accent: "t5",
-        icon: "home",
+        icon: "🎭",
         title: "Cultural Awareness",
         description:
           "Festivals, performing arts and Indic heritage - students stay connected to tradition while building a global perspective.",
       },
       {
         accent: "t6",
-        icon: "heart",
+        icon: "🌱",
         title: "Inner Growth",
         description:
           "Character, confidence and clarity - the three outcomes every TACS boarding student carries forward into adult life.",
@@ -139,12 +139,12 @@ export const boardingPageContent = {
     ),
     keyItemsLabel: "Key things to remember",
     keyItems: [
-      { icon: "home", text: "Fresh, clean laundry maintained for every student" },
-      { icon: "phone", text: " Scheduled family calls to stay connected" },
-      { icon: "droplet", text: "Personal hygiene routines supervised" },
-      { icon: "users", text: "Daily circle time with dorm parents" },
-      { icon: "wallet", text: "Staff oversee all student purchases" },
-      { icon: "document", text: "Outpasses issued only upon approval" },
+      { icon: "👕", text: "Fresh, clean laundry maintained for every student" },
+      { icon: "📞", text: " Scheduled family calls to stay connected" },
+      { icon: "🧼", text: "Personal hygiene routines supervised" },
+      { icon: "👥", text: "Daily circle time with dorm parents" },
+      { icon: "🛒", text: "Staff oversee all student purchases" },
+      { icon: "📋", text: "Outpasses issued only upon approval" },
     ],
   },
   schedule: {
@@ -163,27 +163,27 @@ export const boardingPageContent = {
       "Multiple structured channels - so parents are never out of touch with their child's life on campus.",
     cards: [
       {
-        icon: "phone",
+        icon: "📞",
         title: "Calling Schedule",
         description: "Twice a week for 15 mins + special occasions or sick time (5 mins)",
       },
       {
-        icon: "calendar",
+        icon: "📅",
         title: "Event Updates",
         description: "Daily / weekly reports, calls, circulars and WhatsApp group announcements",
       },
       {
-        icon: "alert",
+        icon: "🚨",
         title: "Emergency Line",
         description: "Incident and sickness reporting - parents contacted immediately, no delays",
       },
       {
-        icon: "coffee",
+        icon: "☕",
         title: "Coffee Evenings",
         description: "Class-wise Zoom / Google Meet sessions as per the academic calendar",
       },
       {
-        icon: "users",
+        icon: "💻",
         title: "ERP Parent Connect",
         description: "One portal for academics, wellbeing and reports - always up to date",
       },
@@ -243,7 +243,7 @@ export const boardingPageContent = {
         title: "Anti-Bullying & Anti-Ragging Policy",
         preview:
           "Zero tolerance for bullying, cyberbullying and ragging - with a dedicated committee, confidential reporting and graded disciplinary action aligned with CBSE guidelines.",
-        icon: "shieldCheck",
+        icon: "🛡️",
         accent: "emerald",
       },
       {
@@ -251,7 +251,7 @@ export const boardingPageContent = {
         title: "Anti-Narcotics & Substance Abuse Policy",
         preview:
           "Zero tolerance for tobacco, alcohol and narcotics on campus - with prevention programmes, confidential reporting and graded support and disciplinary action.",
-        icon: "alert",
+        icon: "🚫",
         accent: "violet",
       },
     ],
@@ -265,22 +265,22 @@ export const boardingPageContent = {
         "Round-the-clock care, safety and support to ensure every student feels secure and looked after.",
       items: [
         {
-          icon: "shieldCheck",
+          icon: "🏥",
           title: "24hr Medical Care",
           description: "On-call doctor and nurse on campus at all times. Clinic open round the clock.",
         },
         {
-          icon: "heart",
+          icon: "💬",
           title: "Emotional Wellbeing",
           description: "Professional counsellors available for every student - confidential and regular.",
         },
         {
-          icon: "users",
+          icon: "🏠",
           title: "Overnight Supervision by House Parents",
           description: "Resident wardens in every hostel - first point of contact after lights out.",
         },
         {
-          icon: "star",
+          icon: "📹",
           title: "CCTV & Gated Campus",
           description: "Full campus surveillance, 24h security. No unauthorised entry or exit.",
         },
@@ -317,13 +317,13 @@ export const boardingPageContent = {
       ],
       items: [
         {
-          icon: "leaf",
+          icon: "🥬",
           title: "Farm-fresh produce",
           description:
             "Our campus farm contributes to the kitchen - students understand where food comes from.",
         },
         {
-          icon: "heart",
+          icon: "🍽️",
           title: "Community dining",
           description:
             "All meals eaten together - a daily ritual that builds connection and discipline.",

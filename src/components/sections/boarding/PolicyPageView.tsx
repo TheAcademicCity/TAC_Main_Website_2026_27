@@ -163,13 +163,9 @@ export function PolicyPageView({ policy }: PolicyPageViewProps) {
         </Container>
       </section>
 
-      <Section background="white">
-        <div className="mx-auto max-w-[760px]">
-          <p className="font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-emerald">
-            The Academic City School · K2 Learning Group
-          </p>
-
-          <div className="mt-5 rounded-lg border-l-4 border-gold bg-paper px-5 py-4">
+      <Section background="white" className="!pt-6 sm:!pt-8">
+        <div className="max-w-[760px] text-left">
+          <div className="rounded-lg border-l-4 border-gold bg-paper px-5 py-4">
             <p className="text-[0.95rem] leading-[1.7] text-[#2b3438]">
               <strong className="font-montserrat font-bold text-forest-deep">
                 Our Commitment:
@@ -184,7 +180,7 @@ export function PolicyPageView({ policy }: PolicyPageViewProps) {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-3 rounded-lg bg-forest-deep px-5 py-5 text-white sm:grid-cols-[1.1fr_1fr] sm:items-center sm:gap-8 sm:px-6">
+          <div className="mt-10 flex flex-col gap-3 rounded-lg bg-forest-deep px-5 py-5 text-left text-white sm:px-6">
             <div>
               <p className="font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/55">
                 {policy.helpline.label}
@@ -193,7 +189,7 @@ export function PolicyPageView({ policy }: PolicyPageViewProps) {
                 {policy.helpline.value}
               </p>
             </div>
-            <p className="text-[0.88rem] leading-relaxed text-white/75 sm:text-right">
+            <p className="text-[0.88rem] leading-relaxed text-white/75">
               {policy.helpline.note}
             </p>
           </div>

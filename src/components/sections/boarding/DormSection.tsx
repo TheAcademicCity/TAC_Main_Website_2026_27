@@ -1,6 +1,5 @@
 import { boardingPageContent } from "@/data/boarding";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -13,8 +12,8 @@ function KeyItemList({ items }: { items: readonly KeyItem[] }) {
     <ul className="flex flex-col gap-2.5">
       {items.map((item) => (
         <li key={item.text} className="flex items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-forest/8">
-            <Icon name={item.icon} className="h-[1.05rem] w-[1.05rem] text-emerald" />
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-forest/8 text-[1.1rem] leading-none">
+            <span aria-hidden>{item.icon}</span>
           </span>
           <span className="text-[0.84rem] leading-snug text-slate">{item.text}</span>
         </li>

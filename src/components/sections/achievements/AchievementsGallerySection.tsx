@@ -170,6 +170,20 @@ function GalleryMagnify({
             {item.category}
           </span>
         ) : null}
+        {item.caption || item.detail ? (
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-forest-deep/90 via-forest-deep/55 to-transparent px-4 pb-3.5 pt-10">
+            {item.caption ? (
+              <span className="block font-montserrat text-[0.85rem] font-bold leading-snug text-white">
+                {item.caption}
+              </span>
+            ) : null}
+            {item.detail ? (
+              <span className="mt-0.5 block text-[0.72rem] font-medium leading-snug text-gold">
+                {item.detail}
+              </span>
+            ) : null}
+          </span>
+        ) : null}
       </div>
     </div>
   );
@@ -230,6 +244,20 @@ function ImageTile({
       {item.category ? (
         <span className="pointer-events-none absolute right-2.5 top-2.5 z-[2] rounded-full border border-white/35 bg-forest-deep/70 px-2.5 py-1 font-montserrat text-[0.58rem] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
           {item.category}
+        </span>
+      ) : null}
+      {item.caption || item.detail ? (
+        <span className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-forest-deep/90 via-forest-deep/55 to-transparent px-3 pb-2.5 pt-8">
+          {item.caption ? (
+            <span className="block font-montserrat text-[0.72rem] font-bold leading-snug text-white">
+              {item.caption}
+            </span>
+          ) : null}
+          {item.detail ? (
+            <span className="mt-0.5 block text-[0.62rem] font-medium leading-snug text-gold">
+              {item.detail}
+            </span>
+          ) : null}
         </span>
       ) : null}
       <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">

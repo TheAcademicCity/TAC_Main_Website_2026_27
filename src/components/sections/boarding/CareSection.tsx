@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { boardingPageContent } from "@/data/boarding";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -21,8 +20,8 @@ export function CareSection() {
         <RevealOnScroll delay={1}>
           <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-forest before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-forest/8">
-                <Icon name="shieldCheck" className="h-5 w-5 text-forest" />
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-forest/8 text-[1.35rem] leading-none">
+                <span aria-hidden>🛡️</span>
               </span>
               <h3 className="font-montserrat text-[1.05rem] font-extrabold text-forest-deep">
                 {care.safety.title}
@@ -36,7 +35,9 @@ export function CareSection() {
                   key={item.title}
                   className="flex items-start gap-2.5 rounded-lg border-l-[3px] border-forest bg-paper px-3.5 py-3"
                 >
-                  <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0 text-forest" />
+                  <span className="mt-0.5 shrink-0 text-[1.05rem] leading-none" aria-hidden>
+                    {item.icon}
+                  </span>
                   <div>
                     <h4 className="font-montserrat text-[0.85rem] font-bold text-forest-deep">
                       {item.title}
@@ -70,8 +71,8 @@ export function CareSection() {
         <RevealOnScroll delay={2}>
           <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gold before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gold/10">
-                <Icon name="heart" className="h-5 w-5 text-gold-dark" />
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gold/10 text-[1.35rem] leading-none">
+                <span aria-hidden>🥗</span>
               </span>
               <h3 className="font-montserrat text-[1.05rem] font-extrabold text-forest-deep">
                 {care.nutrition.title}
@@ -96,7 +97,9 @@ export function CareSection() {
                   key={item.title}
                   className="flex items-start gap-2.5 rounded-lg border-l-[3px] border-gold bg-paper px-3.5 py-3"
                 >
-                  <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0 text-gold-dark" />
+                  <span className="mt-0.5 shrink-0 text-[1.05rem] leading-none" aria-hidden>
+                    {item.icon}
+                  </span>
                   <div>
                     <h4 className="font-montserrat text-[0.85rem] font-bold text-forest-deep">
                       {item.title}

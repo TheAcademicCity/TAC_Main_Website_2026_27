@@ -111,6 +111,10 @@ export type GalleryImageItem = {
   label: string;
   /** Achievement stream chip shown on the image tile */
   category?: GalleryAchievementCategory;
+  /** Optional achiever name overlay (e.g. student card) */
+  caption?: string;
+  /** Optional secondary line under caption */
+  detail?: string;
   height?: number;
   image?: import("@/types/images").SiteImage;
 };

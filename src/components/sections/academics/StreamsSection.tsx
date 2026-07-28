@@ -33,12 +33,12 @@ export function StreamsSection() {
         </RevealOnScroll>
       </div>
 
-      <div className="relative z-[1] mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="relative z-[1] mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {streams.cards.map((card, index) => (
           <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
             <article className="h-full overflow-hidden rounded-lg border border-white/10 bg-white/6 p-5 transition-[background,transform] duration-300 hover:-translate-y-1 hover:bg-white/10">
-              <span className="mb-4 grid h-11 w-11 place-items-center rounded-lg bg-white/8">
-                <Icon name={card.icon} className="h-5 w-5 text-gold" />
+              <span className="mb-4 grid h-11 w-11 place-items-center rounded-lg bg-white/8 text-[1.45rem] leading-none">
+                <span aria-hidden>{card.icon}</span>
               </span>
               <h4 className="font-montserrat text-[0.95rem] font-bold text-white">{card.title}</h4>
               <ul className="mt-3 space-y-1.5">

@@ -99,7 +99,7 @@ export type CoCurricularPageContent = {
     label: string;
     title: string;
     cards: readonly {
-      icon: CoCurricularIcon;
+      icon: string;
       title: string;
       description: string;
     }[];

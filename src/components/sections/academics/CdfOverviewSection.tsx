@@ -1,5 +1,4 @@
 import { academicsPageContent } from "@/data/academics";
-import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -10,53 +9,20 @@ import type { CdfPillar } from "@/types/academics";
 const accentStyles = {
   emerald: {
     bar: "bg-emerald",
-    icon: "bg-emerald/10 text-emerald",
+    icon: "bg-emerald/10",
     dot: "bg-emerald",
   },
   gold: {
     bar: "bg-gold",
-    icon: "bg-gold/10 text-gold-dark",
+    icon: "bg-gold/10",
     dot: "bg-gold-dark",
   },
   violet: {
     bar: "bg-violet",
-    icon: "bg-violet/10 text-violet",
+    icon: "bg-violet/10",
     dot: "bg-violet",
   },
 } as const;
-
-const pillarIconSizeClass = "h-5 w-5 shrink-0";
-
-const pillarIconMasks = {
-  book: "/images/academics/icon-book.png",
-  users: "/images/academics/icon-teaching-support.png",
-} as const satisfies Partial<Record<CdfPillar["icon"], string>>;
-
-function MaskedPillarIcon({ src, className }: { src: string; className?: string }) {
-  return (
-    <span
-      aria-hidden
-      className={cn(
-        pillarIconSizeClass,
-        "bg-current [mask-position:center] [mask-repeat:no-repeat] [mask-size:122%]",
-        className,
-      )}
-      style={{
-        maskImage: `url("${src}")`,
-        WebkitMaskImage: `url("${src}")`,
-      }}
-    />
-  );
-}
-
-function PillarIcon({ icon, className }: { icon: CdfPillar["icon"]; className?: string }) {
-  const maskSrc = pillarIconMasks[icon as keyof typeof pillarIconMasks];
-  if (maskSrc) {
-    return <MaskedPillarIcon src={maskSrc} className={className} />;
-  }
-
-  return <Icon name={icon} className={cn(pillarIconSizeClass, className)} />;
-}
 
 function PillarCard({ pillar }: { pillar: CdfPillar }) {
   const styles = accentStyles[pillar.accent];
@@ -68,8 +34,8 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
         {pillar.number}
       </span>
       <div className="mb-4 flex items-center gap-3">
-        <span className={cn("grid h-11 w-11 place-items-center rounded-lg", styles.icon)}>
-          <PillarIcon icon={pillar.icon} />
+        <span className={cn("grid h-11 w-11 place-items-center rounded-lg text-[1.45rem] leading-none", styles.icon)}>
+          <span aria-hidden>{pillar.icon}</span>
         </span>
         <h3 className="font-montserrat text-base font-extrabold text-forest-deep">{pillar.title}</h3>
       </div>
