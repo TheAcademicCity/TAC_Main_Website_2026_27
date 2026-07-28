@@ -17,7 +17,7 @@ export const achievementsPageContent = {
     title: "Every Story.",
     titleHighlight: "Every Proud Moment.",
     description:
-      "Achievements across Science, Commerce, Design, Sports & the Arts — a record of the accomplishments and milestones that define the spirit of The Academic City School.",
+      "Achievements across Science, Commerce, Design, Sports & the Arts —\na record of the accomplishments and milestones that define the spirit of The Academic City School.",
     image: createImage(
       "/images/achievements/hero.png",
       remote.sports,

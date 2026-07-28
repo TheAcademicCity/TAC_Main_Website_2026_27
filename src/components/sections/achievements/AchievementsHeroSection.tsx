@@ -34,7 +34,7 @@ export function AchievementsHeroSection() {
         <h1 className="whitespace-pre-line font-montserrat text-[clamp(1.9rem,4.2vw,3.2rem)] font-black leading-[1.12] text-white">
           {hero.title} <em className="not-italic text-gold">{hero.titleHighlight}</em>
         </h1>
-        <p className="mt-3 max-w-[52ch] text-[clamp(0.93rem,1.4vw,1.04rem)] font-light leading-relaxed text-white/70">
+        <p className="mt-3 max-w-[90ch] whitespace-pre-line text-[clamp(0.93rem,1.4vw,1.04rem)] font-light leading-relaxed text-white/70">
           {hero.description}
         </p>
 

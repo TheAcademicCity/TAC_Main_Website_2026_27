@@ -16,7 +16,6 @@ import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
 import type { GalleryImageItem, GalleryItem, GalleryWordsItem } from "@/types";
 
-const ROW_SIZE = 20;
 const WORD_COLORS = ["text-emerald", "text-gold"] as const;
 
 type OriginRect = {
@@ -344,26 +343,16 @@ function separateWordCards(items: readonly GalleryItem[]): GalleryItem[] {
 }
 
 function splitIntoRows(items: readonly GalleryItem[]) {
-  const rows: GalleryItem[][] = [[], [], []];
   const spaced = separateWordCards(items);
-  const padded = [...spaced];
+  const rows: GalleryItem[][] = [[], [], []];
 
-  while (padded.length < ROW_SIZE * 3) {
-    const next = spaced[padded.length % spaced.length]!;
-    const prev = padded[padded.length - 1];
-    if (isWordsItem(next) && prev && isWordsItem(prev)) {
-      const imageFallback = spaced.find((item) => !isWordsItem(item));
-      padded.push(imageFallback ?? next);
-    } else {
-      padded.push(next);
-    }
-  }
+  // Round-robin once — never pad/repeat student cards (that caused
+  // Radhna/Olivia appearing twice within the same track).
+  spaced.forEach((item, index) => {
+    rows[index % 3]!.push(item);
+  });
 
-  for (let index = 0; index < ROW_SIZE * 3; index += 1) {
-    rows[index % 3]!.push(padded[index]!);
-  }
-
-  return rows.map((row) => separateWordCards(row).slice(0, ROW_SIZE));
+  return rows.map((row) => separateWordCards(row));
 }
 
 export function AchievementsGallerySection() {
@@ -372,10 +361,11 @@ export function AchievementsGallerySection() {
   const [rowA, rowB, rowC] = useMemo(() => splitIntoRows(items), [items]);
 
   return (
-    <Section id="gallery" className="overflow-hidden">
+    <Section id="gallery" className="overflow-hidden !pt-8 sm:!pt-10" spacing="compact">
       <SectionHeader
         label={achievementsGalleryContent.label}
         title={achievementsGalleryContent.title}
+        titleClassName="text-[clamp(1.35rem,2.4vw,1.85rem)]"
       />
 
       <RevealOnScroll delay={1}>

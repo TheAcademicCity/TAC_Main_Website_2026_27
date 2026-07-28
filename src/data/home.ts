@@ -252,7 +252,7 @@ export const galleryContent = {
 
 export const achievementsGalleryContent = {
   label: "Student Achievers",
-  title: "Every story. Every proud moment.",
+  title: "Recognizing Talent. Celebrating Success.",
   /** Achievement stream chips on image tiles */
   items: [
     {
@@ -264,6 +264,18 @@ export const achievementsGalleryContent = {
         "/images/achievements/students/radhna-mozika.png",
         "/images/achievements/students/radhna-mozika.png",
         "Radhna Mozika",
+        false,
+      ),
+    },
+    {
+      label: "Aryan Pohkriyal",
+      category: "JEE",
+      caption: "Aryan Pohkriyal (2024–25)",
+      detail: "Science: 99.71",
+      image: createImage(
+        "/images/achievements/students/aryan-pohkriyal.png",
+        "/images/achievements/students/aryan-pohkriyal.png",
+        "Aryan Pohkriyal",
         false,
       ),
     },
