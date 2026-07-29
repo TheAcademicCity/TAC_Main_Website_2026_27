@@ -8,6 +8,7 @@ import { useEnquiryModal } from "@/components/layout/EnquiryModalProvider";
 import { useThankYouModal } from "@/components/layout/ThankYouModalProvider";
 import { triggerFileDownload } from "@/lib/downloads";
 import { type EnquiryIntent } from "@/lib/enquiry";
+import { getTrackingParams } from "@/lib/tracking";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -93,6 +94,8 @@ export function EnquiryForm({
           ...form,
           intent: isBrochureIntent ? "brochure" : "general",
           sourcePath: window.location.pathname,
+          page_url: window.location.href,
+          ...getTrackingParams(searchParams),
         }),
       });
 

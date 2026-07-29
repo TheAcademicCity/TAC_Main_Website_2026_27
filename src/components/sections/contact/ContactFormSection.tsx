@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { contactPageContent } from "@/data/contact";
 import { Icon } from "@/components/ui/Icon";
+import { getTrackingParams } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
 type FormState = {
@@ -69,6 +70,8 @@ export function ContactFormSection() {
           message: formState.message,
           intent: "contact",
           sourcePath: "/contact",
+          page_url: window.location.href,
+          ...getTrackingParams(new URLSearchParams(window.location.search)),
         }),
       });
 
