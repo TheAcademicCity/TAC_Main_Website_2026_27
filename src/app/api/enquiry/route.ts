@@ -103,6 +103,7 @@ export async function POST(request: Request) {
       Preferred_Campus: campus,
       Class_Looking_For: selectclass,
       URL: pageUrl,
+      Message: body.message?.trim() || "NA",
       UTM_Source: clean(body.utm_source),
       UTM_Medium: clean(body.utm_medium),
       Ad_Group: clean(body.utm_campaign),

@@ -20,7 +20,6 @@ export type ContactPageContent = {
     title: string;
     description: string;
     note: string;
-    grades: readonly string[];
     submitLabel: string;
     successTitle: string;
     successDescription: string;
