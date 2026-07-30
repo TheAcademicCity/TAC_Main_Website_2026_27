@@ -1263,7 +1263,7 @@ export const enquiryContent = {
       "Class 11",
       "Class 12",
     ],
-    campuses: ["Bangalore", "Indore"],
+    campuses: ["Bengaluru", "Indore"],
   },
 } as const;
 
