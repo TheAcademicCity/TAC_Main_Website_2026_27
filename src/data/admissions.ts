@@ -138,7 +138,7 @@ export const admissionsPageContent = {
     ],
     visitCta: {
       label: "Schedule a visit",
-      href: `tel:${siteConfig.contact.phone}`,
+      href: "/#enquiry",
     },
     whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
   },
