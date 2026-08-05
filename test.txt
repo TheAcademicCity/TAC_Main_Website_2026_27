@@ -1,2 +1,3 @@
 test
 new account test
+new identity test
