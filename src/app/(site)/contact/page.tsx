@@ -27,10 +27,10 @@ export default function ContactPage() {
         className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full border-[36px] border-white/4"
       />
 
-      <Container className="relative z-[1] flex min-h-[calc(100svh-var(--site-nav-stack))] max-w-[1200px] flex-col px-[4vw] pt-2 pb-8 lg:pt-3 lg:pb-10">
+      <Container className="relative z-[1] flex min-h-[calc(100svh-var(--site-nav-stack))] max-w-[1200px] flex-col px-[4vw] pt-2 pb-6 lg:pt-3 lg:pb-8">
         <ContactPageHero />
 
-        <div className="mt-3 grid min-h-0 flex-1 gap-5 lg:mt-4 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+        <div className="mt-2 grid min-h-0 flex-1 gap-5 lg:mt-3 lg:grid-cols-2 lg:items-stretch lg:gap-6">
           <ContactFormSection />
           <ContactDetailsPanel />
         </div>

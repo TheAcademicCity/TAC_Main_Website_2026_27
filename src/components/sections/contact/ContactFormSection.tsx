@@ -28,10 +28,10 @@ const initialState: FormState = {
 };
 
 const fieldClassName =
-  "w-full rounded-md border border-line bg-white px-3 py-2 font-outfit text-[0.86rem] text-ink outline-none transition-[border-color] duration-200 placeholder:text-[#bdc8c4] focus:border-emerald focus:ring-2 focus:ring-emerald/15";
+  "w-full rounded-md border border-line bg-white px-2.5 py-1.5 font-outfit text-[0.82rem] text-ink outline-none transition-[border-color] duration-200 placeholder:text-[#bdc8c4] focus:border-emerald focus:ring-2 focus:ring-emerald/15";
 
 const labelClassName =
-  "font-montserrat text-[0.62rem] font-bold uppercase tracking-[0.12em] text-slate";
+  "font-montserrat text-[0.58rem] font-bold uppercase tracking-[0.12em] text-slate";
 
 export function ContactFormSection() {
   const { form } = contactPageContent;
@@ -85,7 +85,7 @@ export function ContactFormSection() {
 
   if (status === "success") {
     return (
-      <div className="flex h-full items-center justify-center rounded-xl bg-white p-6 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-8">
+      <div className="flex h-full items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-6">
         <div className="text-center">
           <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-emerald/10">
             <Icon name="checkCircle" className="h-5 w-5 text-emerald" strokeWidth={2} />
@@ -102,17 +102,17 @@ export function ContactFormSection() {
   }
 
   return (
-    <div className="h-full rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-6">
+    <div className="flex h-full flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-4">
       <div>
-        <h2 className="font-montserrat text-[clamp(1.2rem,1.9vw,1.5rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.05rem,1.6vw,1.25rem)] font-extrabold text-forest-deep">
           {form.title}
         </h2>
-        <p className="mt-0.5 text-[0.84rem] leading-snug text-slate">{form.description}</p>
+        <p className="mt-0.5 text-[0.78rem] leading-snug text-slate">{form.description}</p>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="mt-4 flex flex-col">
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="flex flex-col gap-1">
+      <form onSubmit={handleSubmit} noValidate className="mt-2.5 flex flex-1 flex-col gap-2">
+        <div className="grid gap-2 sm:grid-cols-2">
+          <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-fname" className={labelClassName}>
               Child&apos;s First Name *
             </label>
@@ -128,7 +128,7 @@ export function ContactFormSection() {
               className={fieldClassName}
             />
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-lname" className={labelClassName}>
               Child&apos;s Last Name *
             </label>
@@ -146,7 +146,7 @@ export function ContactFormSection() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-col gap-1">
+        <div className="flex flex-col gap-0.5">
           <label htmlFor="contact-mobile" className={labelClassName}>
             Mobile Number *
           </label>
@@ -163,8 +163,8 @@ export function ContactFormSection() {
           />
         </div>
 
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div className="flex flex-col gap-1">
+        <div className="grid gap-2 sm:grid-cols-2">
+          <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-class" className={labelClassName}>
               Class Looking For *
             </label>
@@ -188,7 +188,7 @@ export function ContactFormSection() {
               ))}
             </select>
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-campus" className={labelClassName}>
               Preferred Campus *
             </label>
@@ -214,7 +214,7 @@ export function ContactFormSection() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-col gap-1">
+        <div className="flex flex-col gap-0.5">
           <label htmlFor="contact-email" className={labelClassName}>
             Email Address *
           </label>
@@ -231,7 +231,7 @@ export function ContactFormSection() {
           />
         </div>
 
-        <div className="mt-3 flex flex-col gap-1">
+        <div className="flex min-h-0 flex-1 flex-col gap-0.5">
           <label htmlFor="contact-message" className={labelClassName}>
             Message
           </label>
@@ -242,27 +242,27 @@ export function ContactFormSection() {
             onChange={(event) => updateField("message", event.target.value)}
             placeholder="Any questions or details you'd like to share..."
             rows={2}
-            className={cn(fieldClassName, "h-14 resize-none")}
+            className={cn(fieldClassName, "min-h-[2.75rem] flex-1 resize-none")}
           />
         </div>
 
-        <div className="mt-4">
+        <div className="mt-auto pt-1">
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2.5 font-montserrat text-[0.78rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70"
+            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70"
           >
             {status === "submitting" ? "Sending..." : form.submitLabel}
             <Icon name="arrow" className="h-3.5 w-3.5" />
           </button>
 
           {errorMessage ? (
-            <p role="alert" className="mt-2 text-center text-[0.82rem] text-red-700">
+            <p role="alert" className="mt-1.5 text-center text-[0.78rem] text-red-700">
               {errorMessage}
             </p>
           ) : null}
 
-          <p className="mt-2 text-center text-[0.72rem] text-slate">{form.note}</p>
+          <p className="mt-1.5 text-center text-[0.68rem] text-slate">{form.note}</p>
         </div>
       </form>
     </div>
