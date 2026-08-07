@@ -29,7 +29,7 @@ export function EnquirySection() {
     <Section
       id="enquiry"
       background="paper"
-      className="section-py-compact relative overflow-hidden"
+      className="section-py-compact relative overflow-hidden !pt-[clamp(28px,3.5vw,44px)]"
     >
       <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-8">
         <div className="min-w-0">

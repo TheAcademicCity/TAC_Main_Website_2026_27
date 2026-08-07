@@ -10,7 +10,7 @@ type ContactBoxProps = {
 
 export function ContactBox({ title, address, phone, phoneHref, email }: ContactBoxProps) {
   return (
-    <div className="border border-white/10 bg-white/5 px-6 py-5">
+    <div className="rounded-lg border border-white/10 bg-white/5 px-6 py-5">
       <h5 className="mb-3 flex items-center gap-2 font-montserrat text-[0.74rem] font-bold uppercase tracking-widest text-gold">
         <Icon name="pin" className="h-4 w-4" />
         {title}

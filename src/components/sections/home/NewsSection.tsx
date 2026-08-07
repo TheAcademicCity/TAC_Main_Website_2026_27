@@ -7,7 +7,7 @@ export function NewsSection() {
   const delays: Array<0 | 1 | 2 | 3 | 4> = [0, 1, 2, 0, 1, 2];
 
   return (
-    <Section id="news" background="paper">
+    <Section id="news" background="white" className="!pt-[clamp(28px,3.5vw,44px)]">
       <SectionHeader
         label={newsContent.label}
         title={newsContent.title}

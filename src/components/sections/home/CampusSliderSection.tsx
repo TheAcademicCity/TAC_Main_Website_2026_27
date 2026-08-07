@@ -32,7 +32,7 @@ export function CampusSliderSection() {
   }, [slides.length]);
 
   return (
-    <section id="campus" className="section-py-feature bg-paper">
+    <section id="campus" className="section-py-feature bg-white !pt-[clamp(28px,3.5vw,44px)]">
       <Container>
         <SectionHeader
           label={campusContent.label}

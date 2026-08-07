@@ -6,7 +6,7 @@ import { getImageSrc } from "@/lib/images";
 
 export function AwardsSection() {
   return (
-    <section id="awards" className="section-py-compact relative overflow-hidden bg-white">
+    <section id="awards" className="section-py-compact relative overflow-hidden bg-paper !pt-[clamp(28px,3.5vw,44px)]">
       <Container>
         <SectionHeader
           label={awardsContent.label}

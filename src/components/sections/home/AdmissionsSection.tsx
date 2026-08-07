@@ -12,7 +12,7 @@ export function AdmissionsSection() {
     <Section
       id="admissions"
       background="forest-deep"
-      className="relative overflow-hidden before:pointer-events-none before:absolute before:-right-44 before:-top-44 before:h-[500px] before:w-[500px] before:rounded-full before:border-[60px] before:border-gold/6 after:pointer-events-none after:absolute after:-bottom-32 after:-left-32 after:h-[350px] after:w-[350px] after:rounded-full after:border-[40px] after:border-cyan/5"
+      className="relative overflow-hidden !pt-[clamp(28px,3.5vw,44px)] before:pointer-events-none before:absolute before:-right-44 before:-top-44 before:h-[500px] before:w-[500px] before:rounded-full before:border-[60px] before:border-gold/6 after:pointer-events-none after:absolute after:-bottom-32 after:-left-32 after:h-[350px] after:w-[350px] after:rounded-full after:border-[40px] after:border-cyan/5"
     >
       <SectionHeader
         label={admissionsContent.label}

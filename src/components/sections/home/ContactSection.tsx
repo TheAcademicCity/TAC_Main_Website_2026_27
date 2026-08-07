@@ -57,13 +57,16 @@ export function ContactSection() {
       </div>
 
       <RevealOnScroll>
-        <div className="mt-10 grid border-t border-white/8 lg:grid-cols-2">
-          {contactContent.locations.map((location) => (
+        <div className="mt-10 grid overflow-hidden rounded-lg border border-white/10 bg-white/5 lg:grid-cols-2">
+          {contactContent.locations.map((location, index) => (
             <MapEmbed
               key={location.title}
               title={location.title}
               mapLabel={location.mapLabel}
               embedUrl={location.mapEmbedUrl}
+              className={
+                index === 0 ? "border-b border-white/10 lg:border-b-0 lg:border-r" : undefined
+              }
             />
           ))}
         </div>

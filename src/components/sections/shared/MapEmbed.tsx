@@ -5,6 +5,7 @@ type MapEmbedProps = {
   title: string;
   mapLabel: string;
   embedUrl: string;
+  className?: string;
   iframeClassName?: string;
   headerClassName?: string;
   flexible?: boolean;
@@ -15,13 +16,14 @@ export function MapEmbed({
   title,
   mapLabel,
   embedUrl,
+  className,
   iframeClassName,
   headerClassName,
   flexible = false,
   hideHeader = false,
 }: MapEmbedProps) {
   return (
-    <div className={cn("flex flex-col", flexible && "min-h-0 flex-1")}>
+    <div className={cn("flex flex-col overflow-hidden", flexible && "min-h-0 flex-1", className)}>
       {!hideHeader ? (
         <div
           className={cn(

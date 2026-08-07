@@ -134,7 +134,7 @@ export function ParentTestimonialsSection() {
   };
 
   return (
-    <section id="parents" className="relative overflow-hidden bg-white py-[clamp(2rem,3.5vw,3rem)]">
+    <section id="parents" className="relative overflow-hidden bg-paper pt-[clamp(28px,3.5vw,44px)] pb-[clamp(2rem,3.5vw,3rem)]">
       <Container className="relative z-[1] max-w-[1200px]">
         <div className="mb-6">
           <span className="mb-2 inline-flex items-center gap-2 font-montserrat text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-emerald before:h-0.5 before:w-6 before:bg-gold before:content-['']">

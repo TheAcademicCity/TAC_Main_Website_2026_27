@@ -127,7 +127,7 @@ export function GallerySection() {
   }, [activeTab]);
 
   return (
-    <Section id="gallery">
+    <Section id="gallery" className="!pt-[clamp(28px,3.5vw,44px)]">
       <SectionHeader
         label={galleryContent.label}
         title={galleryContent.title}
