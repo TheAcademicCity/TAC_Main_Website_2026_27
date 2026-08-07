@@ -32,7 +32,7 @@ export function NewsletterSection() {
         className="pointer-events-none absolute bottom-[-30px] left-[30%] h-[160px] w-[160px] rounded-full border-[24px] border-gold/8"
       />
 
-      <Container className="relative z-[1] py-[clamp(3rem,6vw,5rem)]">
+      <Container className="relative z-[1] py-[clamp(28px,3.5vw,44px)]">
         <div className="grid items-end gap-12 lg:grid-cols-2">
           <RevealOnScroll>
             <div className="inline-flex flex-col border-l-[3px] border-gold pl-3.5">

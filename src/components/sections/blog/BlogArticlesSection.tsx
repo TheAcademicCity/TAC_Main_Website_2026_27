@@ -69,21 +69,23 @@ export function BlogArticlesSection() {
                 {articles.popularPosts.map((post) => (
                   <div
                     key={post.number}
-                    className="flex gap-3 border-b border-paper py-3 last:border-b-0"
+                    className="flex items-start gap-3 border-b border-paper py-3 last:border-b-0"
                   >
-                    <div className="w-7 shrink-0 text-center font-montserrat text-[1.3rem] font-black leading-none text-forest/15">
+                    <div className="w-7 shrink-0 text-right font-montserrat text-[0.84rem] font-black leading-snug tabular-nums text-forest/15">
                       {post.number}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <a
                         href={post.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[0.84rem] font-bold leading-snug text-forest-deep hover:text-emerald"
+                        className="block text-[0.84rem] font-bold leading-snug text-forest-deep hover:text-emerald"
                       >
                         {post.title}
                       </a>
-                      <span className="mt-0.5 block text-[0.74rem] text-slate">{post.meta}</span>
+                      <span className="mt-0.5 block text-[0.74rem] leading-snug text-slate">
+                        {post.meta}
+                      </span>
                     </div>
                   </div>
                 ))}
