@@ -8,7 +8,7 @@ export function ClaritySection() {
   const { clarity } = admissionsPageContent;
 
   return (
-    <section id="clarity" className="bg-white pb-[length:var(--section-py)]">
+    <section id="clarity" className="bg-white pb-[clamp(28px,3.5vw,44px)]">
       <RevealOnScroll>
         <div className="relative w-full min-h-[420px] overflow-hidden">
           <div className="absolute inset-0 bg-forest-deep">
