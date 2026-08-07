@@ -151,7 +151,7 @@ export function AssessmentCycleDiagram() {
     <svg
       viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
       xmlns="http://www.w3.org/2000/svg"
-      className="mx-auto h-auto w-full max-w-[640px] lg:max-w-none"
+      className="mx-auto h-auto w-full max-w-[640px] max-sm:min-w-[300px] lg:max-w-none"
       role="img"
       aria-label="Assessment cycle diagram showing continuous assessment, term exams, individual analysis, remediation and parent feedback feeding into the Student Progression Plan"
     >

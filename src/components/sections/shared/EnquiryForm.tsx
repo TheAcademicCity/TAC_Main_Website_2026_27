@@ -263,7 +263,10 @@ export function EnquiryForm({
         <Button
           type="submit"
           disabled={status === "submitting"}
-          className={compact ? "sm:min-w-[210px]" : "sm:min-w-[240px]"}
+          className={cn(
+            "w-full justify-center sm:w-auto",
+            compact ? "sm:min-w-[210px]" : "sm:min-w-[240px]",
+          )}
         >
           {status === "submitting" ? "Submitting..." : submitLabel}
         </Button>

@@ -38,7 +38,7 @@ export function CampusSliderSection() {
           label={campusContent.label}
           title={campusContent.title}
           centered
-          className="mb-10"
+          className="mb-6 md:mb-10"
         />
       </Container>
 
@@ -48,7 +48,7 @@ export function CampusSliderSection() {
             <div
               key={slide.id}
               className={cn(
-                "relative min-h-[580px]",
+                "relative min-h-[min(520px,100svh)] md:min-h-[580px]",
                 index === activeIndex ? "flex items-end" : "hidden",
               )}
               aria-hidden={index !== activeIndex}
@@ -58,19 +58,19 @@ export function CampusSliderSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.97)] via-[rgba(5,22,18,0.75)] to-[rgba(5,22,18,0.2)]" />
               </div>
 
-              <span className="absolute right-[4vw] top-5 z-[5] bg-gold px-3 py-1 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-widest text-forest-deep">
+              <span className="absolute right-4 top-5 z-[5] max-w-[calc(100%-2rem)] truncate bg-gold px-3 py-1 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-widest text-forest-deep sm:right-[4vw]">
                 {campusContent.badge}
               </span>
 
-              <Container className="relative z-[2] grid w-full items-end gap-8 pt-10 pb-[4.75rem] lg:grid-cols-[1fr_1fr] lg:gap-10 lg:pt-14">
+              <Container className="relative z-[2] grid w-full items-end gap-5 pt-10 pb-24 md:pb-[4.75rem] lg:grid-cols-[1fr_1fr] lg:gap-10 lg:pt-14">
                 <div className="self-end">
                   <p className="mb-2 inline-flex items-center gap-2 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.22em] text-gold before:h-0.5 before:w-7 before:bg-gold before:content-['']">
                     {slide.label}
                   </p>
-                  <h2 className="mb-3 font-montserrat text-[clamp(1.7rem,3.5vw,2.6rem)] font-black leading-tight text-white">
+                  <h2 className="mb-3 font-montserrat text-[clamp(1.55rem,6.5vw,2.6rem)] font-black leading-tight text-white">
                     {slide.title}
                   </h2>
-                  <p className="max-w-[44ch] text-[0.96rem] leading-relaxed text-white/70">
+                  <p className="max-w-[44ch] text-[0.92rem] leading-relaxed text-white/70 sm:text-[0.96rem]">
                     {slide.description}
                   </p>
                 </div>
@@ -92,32 +92,8 @@ export function CampusSliderSection() {
                         const [mealsFact, hostelsFact, curriculumFact] = otherFacts.slice(1);
 
                         return (
-                          <div className="grid w-max grid-cols-[auto_auto_auto] grid-rows-[1fr_1fr] items-stretch gap-2">
-                            {mealsFact ? (
-                              <StatItem
-                                key={mealsFact.label}
-                                item={mealsFact}
-                                variant="card"
-                                className="col-start-1 row-start-2 h-full"
-                              />
-                            ) : null}
-                            {hostelsFact ? (
-                              <StatItem
-                                key={hostelsFact.label}
-                                item={hostelsFact}
-                                variant="card"
-                                className="col-start-2 row-start-2 h-full"
-                              />
-                            ) : null}
-                            {curriculumFact ? (
-                              <StatItem
-                                key={curriculumFact.label}
-                                item={{ ...curriculumFact, featured: true }}
-                                variant="card"
-                                className="col-start-3 row-start-2 h-full w-full"
-                              />
-                            ) : null}
-                            <div className="col-span-2 col-start-1 row-start-1 h-full min-w-0">
+                          <div className="grid w-full max-w-full grid-cols-2 items-stretch gap-2 sm:w-max sm:grid-cols-[auto_auto_auto] sm:grid-rows-[1fr_1fr]">
+                            <div className="col-span-2 col-start-1 row-start-1 h-full min-w-0 sm:col-span-2">
                               {featuredFacts.map((fact) => (
                                 <StatItem key={fact.label} item={fact} variant="card" fill />
                               ))}
@@ -127,7 +103,31 @@ export function CampusSliderSection() {
                                 key={topCompanion.label}
                                 item={{ ...topCompanion, featured: true }}
                                 variant="card"
-                                className="col-start-3 row-start-1 h-full w-full"
+                                className="col-span-2 row-start-2 h-full w-full sm:col-span-1 sm:col-start-3 sm:row-start-1"
+                              />
+                            ) : null}
+                            {mealsFact ? (
+                              <StatItem
+                                key={mealsFact.label}
+                                item={mealsFact}
+                                variant="card"
+                                className="col-start-1 row-start-3 h-full sm:row-start-2"
+                              />
+                            ) : null}
+                            {hostelsFact ? (
+                              <StatItem
+                                key={hostelsFact.label}
+                                item={hostelsFact}
+                                variant="card"
+                                className="col-start-2 row-start-3 h-full sm:row-start-2"
+                              />
+                            ) : null}
+                            {curriculumFact ? (
+                              <StatItem
+                                key={curriculumFact.label}
+                                item={{ ...curriculumFact, featured: true }}
+                                variant="card"
+                                className="col-span-2 row-start-4 h-full w-full sm:col-span-1 sm:col-start-3 sm:row-start-2"
                               />
                             ) : null}
                           </div>
@@ -161,11 +161,11 @@ export function CampusSliderSection() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-3 self-start">
+                  <div className="flex w-full flex-col gap-3 self-stretch sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:self-start">
                     <Button
                       href={slide.cta.href}
                       external={slide.cta.href.startsWith("mailto:")}
-                      className="text-[0.82rem]"
+                      className="w-full justify-center text-[0.82rem] sm:w-auto"
                     >
                       {slide.cta.label}
                       <Icon name="arrow" className="h-3.5 w-3.5" />
@@ -174,7 +174,7 @@ export function CampusSliderSection() {
                       <Button
                         href={slide.campusVideo.href}
                         variant="outline-white"
-                        className="text-[0.82rem]"
+                        className="w-full justify-center text-[0.82rem] sm:w-auto"
                       >
                         {slide.campusVideo.label}
                       </Button>

@@ -23,7 +23,7 @@ export function AdmissionsSection() {
         className="relative z-10 [&_p]:text-white/65"
       />
 
-      <div className="relative z-10 mt-12 grid grid-cols-2 gap-0 lg:grid-cols-5">
+      <div className="relative z-10 mt-10 grid grid-cols-1 gap-0 sm:mt-12 sm:grid-cols-2 lg:grid-cols-5">
         {admissionsContent.steps.map((step, index) => (
           <div key={step.number} className="relative">
             {index < admissionsContent.steps.length - 1 ? (
@@ -37,13 +37,14 @@ export function AdmissionsSection() {
         ))}
       </div>
 
-      <div className="relative z-10 mt-11 flex flex-wrap gap-4">
+      <div className="relative z-10 mt-8 flex w-full flex-col gap-3 sm:mt-11 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
         {admissionsContent.ctas.map((cta) => (
           <Button
             key={cta.label}
             href={cta.href}
             external={"external" in cta ? cta.external : cta.href.startsWith("tel:")}
             variant={cta.variant === "gold" ? "gold" : "outline-white"}
+            className="w-full justify-center sm:w-auto"
           >
             {cta.label.includes("WhatsApp") ? (
               <Icon name="whatsapp" className="h-4 w-4" />

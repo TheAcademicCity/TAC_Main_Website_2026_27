@@ -12,18 +12,18 @@ export function GallerySection() {
     <Section id="gallery">
       <RevealOnScroll>
         <SectionLabel>{gallery.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
           {gallery.title}
         </h2>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-7 grid grid-cols-2 gap-1.5 md:grid-cols-4 md:grid-rows-[220px_180px]">
+        <div className="mt-5 grid grid-cols-2 gap-1.5 sm:mt-7 md:grid-cols-4 md:grid-rows-[220px_180px]">
           {gallery.items.map((item) => (
             <div
               key={item.label}
               className={cn(
-                "group relative min-h-[180px] overflow-hidden rounded-lg bg-forest-deep md:min-h-0",
+                "group relative min-h-[150px] overflow-hidden rounded-lg bg-forest-deep sm:min-h-[180px] md:min-h-0",
                 item.wide && "md:col-span-2",
               )}
             >
@@ -39,7 +39,7 @@ export function GallerySection() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,44,40,0.65)] via-transparent to-transparent"
               />
-              <div className="absolute bottom-3 left-3.5 z-[2] font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white">
+              <div className="absolute inset-x-0 bottom-0 z-[2] px-2.5 py-2.5 font-montserrat text-[0.65rem] font-bold uppercase tracking-[0.06em] text-white sm:inset-x-auto sm:bottom-3 sm:left-3.5 sm:px-0 sm:py-0 sm:text-[0.72rem] sm:tracking-[0.08em]">
                 {item.label}
               </div>
             </div>

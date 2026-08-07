@@ -17,11 +17,11 @@ export function AwardsSection() {
         />
 
         <RevealOnScroll>
-          <div className="grid w-full grid-cols-8 gap-1 sm:gap-2 md:gap-3">
+          <div className="grid w-full grid-cols-4 gap-2 sm:grid-cols-4 sm:gap-2 md:grid-cols-8 md:gap-3">
             {awardsContent.items.map((award) => (
               <div
                 key={award.name}
-                className="flex h-[clamp(3.25rem,7vw,5.5rem)] min-w-0 items-end justify-center"
+                className="flex h-[clamp(3.75rem,18vw,5.5rem)] min-w-0 items-end justify-center md:h-[clamp(3.25rem,7vw,5.5rem)]"
               >
                 <img
                   src={getImageSrc(award.image)}

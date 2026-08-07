@@ -9,8 +9,8 @@ type StepCardProps = {
 export function StepCard({ step, delay = 0 }: StepCardProps) {
   return (
     <RevealOnScroll delay={delay}>
-      <article className="relative z-[1] px-4 pb-8">
-        <div className="mb-5 grid h-11 w-11 place-items-center rounded-full bg-gold font-montserrat text-[0.95rem] font-black text-forest-deep">
+      <article className="relative z-[1] px-1 pb-6 sm:px-4 sm:pb-8">
+        <div className="mb-4 grid h-11 w-11 place-items-center rounded-full bg-gold font-montserrat text-[0.95rem] font-black text-forest-deep sm:mb-5">
           {step.number}
         </div>
         <h4 className="mb-2 text-[0.98rem] font-bold text-white">{step.title}</h4>

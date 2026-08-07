@@ -11,7 +11,7 @@ export function NewsSection() {
       <SectionHeader
         label={newsContent.label}
         title={newsContent.title}
-        className="mb-10"
+        className="mb-6 md:mb-10"
       />
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

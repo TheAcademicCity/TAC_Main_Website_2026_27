@@ -25,15 +25,15 @@ export function DisciplineSection() {
     <Section id="discipline">
       <RevealOnScroll>
         <SectionLabel>{discipline.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
           {discipline.title}
         </h2>
-        <p className="mt-3 max-w-[54ch] text-[0.96rem] leading-relaxed text-slate">
+        <p className="mt-3 max-w-[54ch] text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
           {discipline.description}
         </p>
       </RevealOnScroll>
 
-      <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
+      <div className="mt-6 grid items-stretch gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
         {discipline.policies.map((policy, index) => {
           const styles = accentStyles[policy.accent];
 
@@ -44,22 +44,22 @@ export function DisciplineSection() {
                 className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]"
               >
                 <span className={cn("h-1 w-full", styles.bar)} />
-                <div className="flex flex-1 flex-col p-7 sm:p-8">
+                <div className="flex flex-1 flex-col p-5 sm:p-8">
                   <div
                     className={cn(
-                      "mb-5 grid h-12 w-12 place-items-center rounded-lg text-[1.45rem] leading-none",
+                      "mb-4 grid h-11 w-11 place-items-center rounded-lg text-[1.3rem] leading-none sm:mb-5 sm:h-12 sm:w-12 sm:text-[1.45rem]",
                       styles.iconBg,
                     )}
                   >
                     <span aria-hidden>{policy.icon}</span>
                   </div>
-                  <h3 className="font-montserrat text-[1.05rem] font-extrabold leading-snug text-forest-deep">
+                  <h3 className="font-montserrat text-[1rem] font-extrabold leading-snug text-forest-deep sm:text-[1.05rem]">
                     {policy.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-[0.9rem] leading-relaxed text-slate">
+                  <p className="mt-2.5 flex-1 text-[0.88rem] leading-relaxed text-slate sm:mt-3 sm:text-[0.9rem]">
                     {policy.preview}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-2 group-hover:text-emerald">
+                  <span className="mt-5 inline-flex items-center gap-1.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-2 group-hover:text-emerald sm:mt-6">
                     Read policy
                     <Icon name="arrow" className="h-2.5 w-2.5" />
                   </span>

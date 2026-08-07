@@ -145,27 +145,31 @@ export function ParentTestimonialsSection() {
           </h2>
         </div>
 
-        <div className="relative flex items-center gap-4 sm:gap-5 lg:-mx-3 lg:gap-6 xl:-mx-5">
-          <ScrollArrow
-            direction="prev"
-            onClick={() => scrollByCard("prev")}
-            disabled={!canScrollPrev}
-          />
+        <div className="relative flex items-center gap-0 sm:gap-5 lg:-mx-3 lg:gap-6 xl:-mx-5">
+          <div className="hidden sm:block">
+            <ScrollArrow
+              direction="prev"
+              onClick={() => scrollByCard("prev")}
+              disabled={!canScrollPrev}
+            />
+          </div>
 
           <div
             ref={scrollerRef}
-            className="flex min-w-0 flex-1 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-4 flex min-w-0 flex-1 snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:gap-4 sm:px-0 [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map((testimonial) => (
               <ParentTestimonialCard key={testimonial.href} testimonial={testimonial} />
             ))}
           </div>
 
-          <ScrollArrow
-            direction="next"
-            onClick={() => scrollByCard("next")}
-            disabled={!canScrollNext}
-          />
+          <div className="hidden sm:block">
+            <ScrollArrow
+              direction="next"
+              onClick={() => scrollByCard("next")}
+              disabled={!canScrollNext}
+            />
+          </div>
         </div>
       </Container>
     </section>

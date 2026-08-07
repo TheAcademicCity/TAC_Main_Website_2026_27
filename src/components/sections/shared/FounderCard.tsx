@@ -13,7 +13,9 @@ export function FounderCard({ founder }: FounderCardProps) {
     <article
       className={cn(
         "group relative flex flex-col justify-end overflow-hidden bg-forest-deep",
-        isFeatured ? "min-h-[520px]" : "min-h-[255px]",
+        isFeatured
+          ? "min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]"
+          : "min-h-[220px] sm:min-h-[240px] lg:min-h-[255px]",
       )}
     >
       <div className="absolute inset-0">
@@ -35,7 +37,7 @@ export function FounderCard({ founder }: FounderCardProps) {
 
       <div className="absolute inset-0 z-[2] bg-gradient-to-t from-[rgba(5,22,18,0.95)] via-[rgba(5,22,18,0.45)] to-transparent" />
 
-      <div className={cn("relative z-[3]", isFeatured ? "p-7" : "p-5")}>
+      <div className={cn("relative z-[3]", isFeatured ? "p-5 sm:p-7" : "p-4 sm:p-5")}>
         <span className="inline-flex bg-gold px-2.5 py-0.5 font-montserrat text-[0.62rem] font-extrabold uppercase tracking-widest text-forest-deep">
           {founder.role}
         </span>

@@ -25,7 +25,7 @@ export function AboutHeroSection() {
   const { hero } = aboutPageContent;
 
   return (
-    <section className="relative flex min-h-[clamp(380px,52vh,500px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
+    <section className="relative flex min-h-[clamp(320px,48svh,500px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)] md:min-h-[clamp(380px,52vh,500px)]">
       <div className="absolute inset-0">
         <ImageWithFallback
           image={hero.image}
@@ -37,10 +37,10 @@ export function AboutHeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.97)] via-[rgba(5,22,18,0.65)] to-[rgba(5,22,18,0.15)]" />
       </div>
 
-      <Container className="relative z-[2] py-[clamp(2rem,4vw,3.5rem)]">
+      <Container className="relative z-[2] py-[clamp(1.5rem,4vw,3.5rem)]">
         <nav
           aria-label="Breadcrumb"
-          className="mb-3 flex items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50"
+          className="mb-2 flex flex-wrap items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50 sm:mb-3"
         >
           <SiteLink href="/" className="text-white/50 transition-colors hover:text-gold">
             Home
@@ -49,20 +49,23 @@ export function AboutHeroSection() {
           <span className="text-white/70">About Us</span>
         </nav>
 
-        <h1 className="font-montserrat text-[clamp(1.9rem,4.5vw,3.4rem)] font-black leading-[1.06] text-white">
-          {hero.title} <em className="not-italic text-gold">{hero.titleHighlight}</em>
+        <h1 className="font-montserrat text-[clamp(1.75rem,7vw,3.4rem)] font-black leading-[1.06] text-white md:text-[clamp(1.9rem,4.5vw,3.4rem)]">
+          {hero.title}{" "}
+          <em className="not-italic text-gold">{hero.titleHighlight}</em>
         </h1>
-        <p className="mt-3 max-w-[52ch] text-[clamp(0.93rem,1.4vw,1.05rem)] font-light leading-relaxed text-white/70">
+        <p className="mt-3 max-w-[52ch] text-[clamp(0.9rem,3.4vw,1.05rem)] font-light leading-relaxed text-white/70 md:text-[clamp(0.93rem,1.4vw,1.05rem)]">
           {highlightText(hero.description, hero.descriptionHighlights)}
         </p>
 
-        <dl className="mt-6 flex flex-wrap gap-10">
+        <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4 sm:mt-6 sm:flex sm:flex-wrap sm:gap-10">
           {hero.stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="font-montserrat text-[1.4rem] font-black leading-none text-gold">
+            <div key={stat.label} className="min-w-0">
+              <dt className="font-montserrat text-[clamp(1.15rem,5vw,1.4rem)] font-black leading-none text-gold sm:text-[1.4rem]">
                 {stat.value}
               </dt>
-              <dd className="mt-1 text-[0.74rem] font-medium text-white/55">{stat.label}</dd>
+              <dd className="mt-1 text-[0.72rem] font-medium text-white/55 sm:text-[0.74rem]">
+                {stat.label}
+              </dd>
             </div>
           ))}
         </dl>

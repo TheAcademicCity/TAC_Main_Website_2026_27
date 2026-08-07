@@ -34,7 +34,7 @@ function GalleryItemVisual({
         <ImageWithFallback
           image={item.image}
           fill
-          sizes="(max-width: 768px) 50vw, 25vw"
+          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           className="object-cover"
         />
       ) : (
@@ -131,6 +131,7 @@ export function GallerySection() {
       <SectionHeader
         label={galleryContent.label}
         title={galleryContent.title}
+        className="flex-col items-start gap-3 sm:flex-row sm:items-end sm:gap-4"
         action={
           <CtaLink href={galleryContent.instagram.href} external className="shrink-0">
             <InstagramLogo className="h-4 w-4 shrink-0" />
@@ -159,12 +160,12 @@ export function GallerySection() {
               key={`${activeTab}-${item.label}`}
               type="button"
               onClick={() => setSelectedItem(item)}
-              className="group relative mb-2 w-full break-inside-avoid overflow-hidden text-left"
-              style={{ minHeight: item.height }}
+              className="group relative mb-2 w-full break-inside-avoid overflow-hidden text-left min-h-[min(var(--tile-h),min(48vw,220px))] md:min-h-[var(--tile-h)]"
+              style={{ "--tile-h": `${item.height}px` } as CSSProperties}
               aria-label={`View ${item.label}`}
             >
               <GalleryItemVisual item={item} />
-              <span className="pointer-events-none absolute bottom-0 left-0 z-[2] px-4 py-3 font-montserrat text-[0.72rem] font-bold uppercase tracking-wider text-white/70">
+              <span className="pointer-events-none absolute bottom-0 left-0 z-[2] max-w-full truncate px-3 py-2.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-wider text-white/70 sm:px-4 sm:py-3 sm:text-[0.72rem]">
                 {item.label}
               </span>
               <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">

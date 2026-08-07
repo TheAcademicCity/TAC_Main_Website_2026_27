@@ -9,7 +9,7 @@ export function AdmissionsHeroSection() {
   const { hero } = admissionsPageContent;
 
   return (
-    <section className="relative flex min-h-[clamp(380px,52vh,500px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
+    <section className="relative flex min-h-[clamp(320px,48svh,500px)] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)] md:min-h-[clamp(380px,52vh,500px)]">
       <div className="absolute inset-0">
         <ImageWithFallback
           image={hero.image}
@@ -21,10 +21,10 @@ export function AdmissionsHeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.97)] via-[rgba(5,22,18,0.65)] to-[rgba(5,22,18,0.15)]" />
       </div>
 
-      <Container className="relative z-[2] py-[clamp(2rem,4vw,3.5rem)]">
+      <Container className="relative z-[2] py-[clamp(1.5rem,4vw,3.5rem)]">
         <nav
           aria-label="Breadcrumb"
-          className="mb-3 flex items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50"
+          className="mb-2 flex flex-wrap items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50 sm:mb-3"
         >
           <SiteLink href="/" className="text-white/50 transition-colors hover:text-gold">
             Home
@@ -33,24 +33,35 @@ export function AdmissionsHeroSection() {
           <span className="text-white/70">Admissions</span>
         </nav>
 
-        <h1 className="max-w-[18ch] font-montserrat text-[clamp(1.9rem,4.5vw,3.4rem)] font-black leading-[1.06] text-white">
-          {hero.title} <em className="not-italic text-gold">{hero.titleHighlight}</em>
+        <h1 className="max-w-[18ch] font-montserrat text-[clamp(1.75rem,7vw,3.4rem)] font-black leading-[1.06] text-white md:text-[clamp(1.9rem,4.5vw,3.4rem)]">
+          {hero.title}{" "}
+          {hero.titleHighlight ? (
+            <em className="not-italic text-gold">{hero.titleHighlight}</em>
+          ) : null}
         </h1>
 
-        <div className="mt-7 flex flex-wrap gap-3">
-          <Button href={hero.primaryCta.href} className="px-7 py-3 text-[0.78rem]">
+        <div className="mt-5 flex w-full max-w-sm flex-col gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap">
+          <Button
+            href={hero.primaryCta.href}
+            className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
+          >
             {hero.primaryCta.label}
             <Icon name="arrow" className="h-3.5 w-3.5" />
           </Button>
           <Button
             href={hero.phone.href}
             variant="outline-white"
-            className="hero-call-cta px-7 py-3 text-[0.78rem]"
+            className="hero-call-cta w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
           >
             <Icon name="phone" className="h-3.5 w-3.5" />
             {hero.phone.label}
           </Button>
-          <Button href={hero.whatsapp.href} external variant="outline-white" className="px-7 py-3 text-[0.78rem]">
+          <Button
+            href={hero.whatsapp.href}
+            external
+            variant="outline-white"
+            className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
+          >
             <Icon name="whatsapp" className="h-3.5 w-3.5" />
             {hero.whatsapp.label}
           </Button>

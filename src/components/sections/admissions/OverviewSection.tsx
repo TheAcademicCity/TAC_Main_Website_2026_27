@@ -11,9 +11,9 @@ export function OverviewSection() {
 
   return (
     <Section id="overview" background="white">
-      <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-stretch gap-7 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll className="h-full min-h-0">
-          <div className="relative h-full min-h-[320px] overflow-hidden rounded-lg bg-forest-deep">
+          <div className="relative h-full min-h-[220px] overflow-hidden rounded-lg bg-forest-deep sm:min-h-[320px]">
             <ImageWithFallback
               image={overview.image}
               fill
@@ -25,7 +25,7 @@ export function OverviewSection() {
 
         <RevealOnScroll delay={1} className="flex flex-col justify-center">
           <SectionLabel>{overview.label}</SectionLabel>
-          <h2 className="font-montserrat text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-forest-deep">
+          <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.4rem,2.5vw,2rem)]">
             {overview.title}
           </h2>
           {overview.paragraphs.map((paragraph) => {
@@ -34,7 +34,10 @@ export function OverviewSection() {
               : [paragraph, ""];
 
             return (
-              <p key={paragraph.slice(0, 40)} className="mt-3 text-[0.96rem] leading-relaxed text-slate">
+              <p
+                key={paragraph.slice(0, 40)}
+                className="mt-3 text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]"
+              >
                 {before}
                 {after !== "" ? (
                   <>
@@ -46,7 +49,10 @@ export function OverviewSection() {
             );
           })}
 
-          <Button href={overview.cta.href} className="mt-6 self-start px-7 py-3 text-[0.78rem]">
+          <Button
+            href={overview.cta.href}
+            className="mt-5 w-full justify-center self-stretch px-7 py-3 text-[0.78rem] sm:mt-6 sm:w-auto sm:self-start"
+          >
             {overview.cta.label}
             <Icon name="arrow" className="h-3.5 w-3.5" />
           </Button>

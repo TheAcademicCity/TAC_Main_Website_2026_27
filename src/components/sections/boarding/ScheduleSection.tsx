@@ -41,11 +41,11 @@ function ScheduleColumn({
 
 function ScheduleColumnHeader() {
   return (
-    <div className="grid grid-cols-[minmax(11.5rem,max-content)_1fr] bg-forest-deep">
-      <div className="whitespace-nowrap border-r border-white/15 px-4 py-2.5 font-montserrat text-[0.82rem] font-bold text-gold">
+    <div className="grid grid-cols-[minmax(0,7.25rem)_1fr] bg-forest-deep sm:grid-cols-[minmax(11.5rem,max-content)_1fr]">
+      <div className="border-r border-white/15 px-2.5 py-2 font-montserrat text-[0.72rem] font-bold text-gold sm:whitespace-nowrap sm:px-4 sm:py-2.5 sm:text-[0.82rem]">
         Time
       </div>
-      <div className="px-4 py-2.5 font-montserrat text-[0.86rem] font-semibold text-white/80">
+      <div className="px-2.5 py-2 font-montserrat text-[0.78rem] font-semibold text-white/80 sm:px-4 sm:py-2.5 sm:text-[0.86rem]">
         Activity
       </div>
     </div>
@@ -62,7 +62,7 @@ function ScheduleRow({
   return (
     <div
       className={cn(
-        "group relative grid grid-cols-[minmax(11.5rem,max-content)_1fr] bg-white transition-colors duration-200 hover:bg-forest/5",
+        "group relative grid grid-cols-[minmax(0,7.25rem)_1fr] bg-white transition-colors duration-200 hover:bg-forest/5 sm:grid-cols-[minmax(11.5rem,max-content)_1fr]",
         bordered && "border-t border-line",
       )}
     >
@@ -70,10 +70,10 @@ function ScheduleRow({
         aria-hidden
         className="absolute bottom-0 left-0 top-0 w-[3px] origin-left scale-x-0 bg-gold transition-transform duration-200 group-hover:scale-x-100"
       />
-      <div className="whitespace-nowrap border-r border-line px-4 py-2.5 font-montserrat text-[0.82rem] font-bold text-forest transition-colors duration-200 group-hover:text-forest-deep">
+      <div className="border-r border-line px-2.5 py-2 font-montserrat text-[0.7rem] font-bold leading-snug text-forest whitespace-normal transition-colors duration-200 group-hover:text-forest-deep sm:whitespace-nowrap sm:px-4 sm:py-2.5 sm:text-[0.82rem]">
         {row.time}
       </div>
-      <div className="px-4 py-2.5 text-[0.86rem] text-slate transition-colors duration-200 group-hover:text-forest-deep">
+      <div className="min-w-0 px-2.5 py-2 text-[0.8rem] leading-snug text-slate transition-colors duration-200 group-hover:text-forest-deep sm:px-4 sm:py-2.5 sm:text-[0.86rem]">
         {row.activity}
       </div>
     </div>
@@ -89,14 +89,16 @@ export function ScheduleSection() {
     <Section id="schedule" background="paper">
       <RevealOnScroll>
         <SectionLabel>{schedule.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
           {schedule.title}
         </h2>
-        <p className="mt-2 whitespace-nowrap text-[0.96rem] text-slate">{schedule.description}</p>
+        <p className="mt-2 max-w-[42ch] whitespace-normal text-[0.92rem] text-slate sm:max-w-none sm:text-[0.96rem] lg:whitespace-nowrap">
+          {schedule.description}
+        </p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-7 inline-flex overflow-hidden rounded-lg border-[1.5px] border-line">
+        <div className="mt-5 flex w-full overflow-hidden rounded-lg border-[1.5px] border-line sm:mt-7 sm:inline-flex sm:w-auto">
           {schedule.tabs.map((tab) => (
             <button
               key={tab.id}
@@ -105,7 +107,7 @@ export function ScheduleSection() {
               aria-selected={activeTab === tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "px-6 py-2.5 font-montserrat text-[0.78rem] font-bold uppercase tracking-[0.1em] transition-colors",
+                "flex-1 px-3 py-2.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] transition-colors sm:flex-none sm:px-6 sm:text-[0.78rem]",
                 activeTab === tab.id
                   ? "bg-forest-deep text-white"
                   : "bg-white text-slate hover:text-forest",

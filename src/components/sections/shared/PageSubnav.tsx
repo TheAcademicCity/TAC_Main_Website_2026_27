@@ -76,7 +76,7 @@ export function PageSubnav({ items }: PageSubnavProps) {
       className="sticky top-[var(--site-nav-stack)] z-[80] border-b-2 border-line bg-white shadow-[0_3px_16px_-8px_rgba(15,61,56,0.12)]"
       aria-label="Page sections"
     >
-      <div className="mx-auto flex w-[min(1200px,92vw)] overflow-x-auto scrollbar-none">
+      <div className="mx-auto flex w-full max-w-[1200px] overflow-x-auto px-4 scrollbar-none sm:w-[min(1200px,92vw)] sm:px-0">
         {items.map((item) => {
           const isActive = item.id === activeId;
 
@@ -85,7 +85,7 @@ export function PageSubnav({ items }: PageSubnavProps) {
               key={item.id}
               href={`#${item.id}`}
               className={cn(
-                "mb-[-2px] whitespace-nowrap px-5 py-3.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] transition-colors",
+                "mb-[-2px] shrink-0 whitespace-nowrap px-3 py-3 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] transition-colors sm:px-5 sm:py-3.5 sm:text-[0.72rem]",
                 isActive
                   ? "border-b-[5px] border-gold text-forest-deep"
                   : "border-b-[3px] border-transparent text-slate hover:text-forest",

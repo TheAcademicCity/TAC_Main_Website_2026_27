@@ -10,7 +10,7 @@ import { Section } from "@/components/ui/Section";
 export function ContactSection() {
   return (
     <Section id="contact" background="ink">
-      <div className="grid items-start gap-12 lg:grid-cols-2">
+      <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
         <RevealOnScroll>
           <SectionHeader
             label={contactContent.label}
@@ -21,13 +21,14 @@ export function ContactSection() {
             reveal={false}
             className="[&_p]:text-white/62"
           />
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row sm:flex-wrap">
             {contactContent.ctas.map((cta) => (
               <Button
                 key={cta.label}
                 href={cta.href}
                 external={"external" in cta ? cta.external : false}
                 variant={cta.variant === "gold" ? "gold" : "outline-white"}
+                className="w-full justify-center sm:w-auto"
               >
                 {cta.label === "Connect with us" ? (
                   <Icon name="phone" className="h-4 w-4" />

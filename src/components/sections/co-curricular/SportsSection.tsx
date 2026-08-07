@@ -9,35 +9,39 @@ export function SportsSection() {
 
   return (
     <Section id="sports" spacing="compact">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll>
           <SectionLabel>{sports.label}</SectionLabel>
-          <h2 className="font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold text-forest-deep">
+          <h2 className="font-montserrat text-[clamp(1.35rem,6vw,1.9rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.4rem,2.4vw,1.9rem)]">
             {sports.title}
           </h2>
-          <p className="mt-3 text-[0.96rem] leading-relaxed text-slate">{sports.description}</p>
+          <p className="mt-3 text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
+            {sports.description}
+          </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
             {sports.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-lg border-[1.5px] border-line bg-paper px-3 py-1.5 text-[0.82rem] font-semibold text-forest-deep"
+                className="rounded-lg border-[1.5px] border-line bg-paper px-2.5 py-1 text-[0.78rem] font-semibold text-forest-deep sm:px-3 sm:py-1.5 sm:text-[0.82rem]"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <div className="mt-5 grid grid-cols-3 gap-3">
+          <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
             {sports.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-line bg-paper px-3 py-3.5 text-center"
+                className="min-w-0 rounded-lg border border-line bg-paper px-1.5 py-3 text-center sm:px-3 sm:py-3.5"
               >
-                <div className="font-montserrat text-[1.3rem] font-black leading-none text-forest">
+                <div className="font-montserrat text-[clamp(0.95rem,4vw,1.3rem)] font-black leading-none text-forest">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-[0.72rem] text-slate">{stat.label}</div>
+                <div className="mt-1 text-[0.68rem] leading-snug text-slate sm:text-[0.72rem]">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -53,11 +57,13 @@ export function SportsSection() {
                 className="object-cover transition-transform duration-500 ease-out hover:scale-[1.04]"
               />
             </div>
-            <div className="bg-gold px-4 py-3">
-              <span className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-forest-deep">
-                {sports.imageTag}
-              </span>
-            </div>
+            {sports.imageTag ? (
+              <div className="bg-gold px-4 py-2.5 sm:py-3">
+                <span className="break-words font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-forest-deep">
+                  {sports.imageTag}
+                </span>
+              </div>
+            ) : null}
           </div>
         </RevealOnScroll>
       </div>

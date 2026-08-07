@@ -8,19 +8,22 @@ export function SportBandSection() {
   const { sportBand } = coCurricularPageContent;
 
   return (
-    <div className="bg-forest-deep py-5">
+    <div className="bg-forest-deep py-[clamp(28px,3.5vw,44px)]">
       <Container>
         <RevealOnScroll>
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div>
-              <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.2rem)] font-extrabold text-white">
+          <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
+            <div className="min-w-0 flex-1 text-center sm:text-left">
+              <h3 className="font-montserrat text-[clamp(1rem,4.5vw,1.2rem)] font-extrabold leading-snug text-white md:text-[clamp(1rem,1.8vw,1.2rem)]">
                 {sportBand.title}
               </h3>
-              <p className="mt-1 whitespace-nowrap text-[0.88rem] text-white/58">
+              <p className="mx-auto mt-1 max-w-[42ch] whitespace-normal text-[0.86rem] text-white/58 sm:mx-0 sm:max-w-none sm:text-[0.88rem] lg:whitespace-nowrap">
                 {sportBand.description}
               </p>
             </div>
-            <Button href={sportBand.cta.href} className="px-7 py-3 text-[0.78rem]">
+            <Button
+              href={sportBand.cta.href}
+              className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
+            >
               {sportBand.cta.label}
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </Button>

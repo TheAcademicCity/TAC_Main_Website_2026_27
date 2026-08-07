@@ -16,13 +16,13 @@ const iconNames = {
 } as const;
 
 const cardClassName =
-  "flex flex-col gap-2.5 rounded-lg border border-white/12 bg-white/6 p-4 transition-colors hover:border-white/22 hover:bg-white/8";
+  "flex flex-row items-start gap-3 rounded-lg border border-white/12 bg-white/6 p-3.5 transition-colors hover:border-white/22 hover:bg-white/8 sm:p-4";
 
 export function ContactDetailsPanel() {
   const { links, address } = contactPageContent;
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-2.5">
+    <div className="flex h-auto min-h-0 flex-col gap-2.5 lg:h-full">
       <div className="grid shrink-0 grid-cols-1 gap-2.5 sm:grid-cols-2">
         {links.map((link) => {
           const content = (
@@ -39,7 +39,9 @@ export function ContactDetailsPanel() {
                 <p className="font-montserrat text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/40">
                   {link.label}
                 </p>
-                <p className="text-[0.84rem] font-semibold leading-snug text-white">{link.value}</p>
+                <p className="break-words text-[0.84rem] font-semibold leading-snug text-white">
+                  {link.value}
+                </p>
                 {"sub" in link && link.sub ? (
                   <p className="mt-1 text-[0.7rem] leading-snug text-white/40">{link.sub}</p>
                 ) : null}
@@ -63,14 +65,14 @@ export function ContactDetailsPanel() {
         })}
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-white/12 bg-white/6">
+      <div className="flex min-h-[200px] flex-none flex-col overflow-hidden rounded-lg border border-white/12 bg-white/6 sm:min-h-[220px] lg:min-h-0 lg:flex-1">
         <MapEmbed
           title="Campus map"
           mapLabel={address.mapLabel}
           embedUrl={address.mapEmbedUrl}
           flexible
           hideHeader
-          iframeClassName="rounded-lg"
+          iframeClassName="rounded-lg max-lg:min-h-[200px] max-lg:h-[220px] max-lg:flex-none sm:max-lg:h-[240px] lg:min-h-[140px]"
         />
       </div>
     </div>

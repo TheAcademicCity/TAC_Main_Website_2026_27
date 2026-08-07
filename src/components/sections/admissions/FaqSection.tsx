@@ -20,13 +20,13 @@ export function FaqSection() {
     <Section id="faq" background="paper">
       <RevealOnScroll>
         <SectionLabel>{faq.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
           {faq.title}
         </h2>
       </RevealOnScroll>
 
       <RevealOnScroll delay={1}>
-        <div className="mt-8 flex flex-col gap-2.5">
+        <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:gap-2.5">
           {faq.items.map((item, index) => {
             const isOpen = openIndex === index;
 
@@ -42,16 +42,16 @@ export function FaqSection() {
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200 hover:bg-forest/[0.03]"
+                  className="flex w-full items-start justify-between gap-3 px-4 py-3.5 text-left transition-colors duration-200 hover:bg-forest/[0.03] sm:items-center sm:gap-4 sm:px-5 sm:py-4"
                   aria-expanded={isOpen}
                   onClick={() => toggleItem(index)}
                 >
-                  <span className="font-montserrat text-[0.9rem] font-bold leading-snug text-forest-deep transition-colors duration-200 group-hover:text-forest">
+                  <span className="min-w-0 font-montserrat text-[0.86rem] font-bold leading-snug text-forest-deep transition-colors duration-200 group-hover:text-forest sm:text-[0.9rem]">
                     {item.question}
                   </span>
                   <span
                     className={cn(
-                      "grid h-6 w-6 shrink-0 place-items-center rounded-full border-[1.5px] transition-[background,border-color,transform] duration-300",
+                      "mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border-[1.5px] transition-[background,border-color,transform] duration-300 sm:mt-0",
                       isOpen
                         ? "border-forest-deep bg-forest-deep"
                         : "border-line bg-paper group-hover:scale-110 group-hover:border-emerald group-hover:bg-emerald/10",
@@ -74,7 +74,7 @@ export function FaqSection() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-line px-5 pb-4 pt-1 text-[0.88rem] leading-relaxed text-slate">
+                    <div className="border-t border-line px-4 pb-3.5 pt-1 text-[0.86rem] leading-relaxed text-slate sm:px-5 sm:pb-4 sm:text-[0.88rem]">
                       {item.answer}
                     </div>
                   </div>

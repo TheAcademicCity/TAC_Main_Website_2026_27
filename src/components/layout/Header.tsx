@@ -17,7 +17,7 @@ export function Header() {
         id="hdr"
         className="fixed inset-x-0 top-[30px] z-[100] border-b border-white/8 bg-[rgba(10,44,40,0.97)] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
       >
-        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-4 px-[4vw] py-3">
+        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-4 px-4 py-3 sm:px-[4vw]">
           <BrandLogo priority />
 
           <nav className="hidden lg:block" aria-label="Main navigation">

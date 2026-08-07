@@ -10,7 +10,7 @@ export function AcademicsSection() {
       <SectionHeader
         label={academicsContent.label}
         title={academicsContent.title}
-        className="mb-10"
+        className="mb-6 md:mb-10"
       />
 
       <div className="flex flex-col">
@@ -18,7 +18,7 @@ export function AcademicsSection() {
           <div key={row.title}>
             <FeatureRowBlock row={row} />
             {index < academicsContent.rows.length - 1 ? (
-              <hr className="my-8 border-line lg:my-10" />
+              <hr className="my-6 border-line sm:my-8 lg:my-10" />
             ) : null}
           </div>
         ))}

@@ -12,7 +12,7 @@ type FeatureBandProps = {
 export function FeatureBand({ title, description, chips, cta }: FeatureBandProps) {
   return (
     <RevealOnScroll>
-      <div className="mt-12 grid items-center gap-8 rounded-lg bg-forest-deep p-8 lg:grid-cols-[1fr_auto]">
+      <div className="mt-10 grid items-center gap-6 rounded-lg bg-forest-deep p-5 sm:mt-12 sm:gap-8 sm:p-6 lg:grid-cols-[1fr_auto] lg:p-8">
         <div>
           <h3 className="font-montserrat text-[clamp(1.1rem,2vw,1.4rem)] font-extrabold text-white">
             {title}
@@ -26,7 +26,10 @@ export function FeatureBand({ title, description, chips, cta }: FeatureBandProps
             ))}
           </div>
         </div>
-        <Button href={cta.href} className="whitespace-nowrap px-6 py-3 text-[0.76rem]">
+        <Button
+          href={cta.href}
+          className="w-full justify-center px-6 py-3 text-[0.76rem] whitespace-normal sm:w-auto sm:whitespace-nowrap"
+        >
           {cta.label}
         </Button>
       </div>

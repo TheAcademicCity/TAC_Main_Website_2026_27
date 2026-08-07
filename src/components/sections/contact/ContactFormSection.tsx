@@ -85,7 +85,7 @@ export function ContactFormSection() {
 
   if (status === "success") {
     return (
-      <div className="flex h-full items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-6">
+      <div className="flex h-auto items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-6 lg:h-full">
         <div className="text-center">
           <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-emerald/10">
             <Icon name="checkCircle" className="h-5 w-5 text-emerald" strokeWidth={2} />
@@ -102,16 +102,16 @@ export function ContactFormSection() {
   }
 
   return (
-    <div className="flex h-full flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-4">
+    <div className="flex h-auto flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] sm:p-4 lg:h-full">
       <div>
-        <h2 className="font-montserrat text-[clamp(1.05rem,1.6vw,1.25rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.1rem,4.5vw,1.25rem)] font-extrabold text-forest-deep md:text-[clamp(1.05rem,1.6vw,1.25rem)]">
           {form.title}
         </h2>
         <p className="mt-0.5 text-[0.78rem] leading-snug text-slate">{form.description}</p>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="mt-2.5 flex flex-1 flex-col gap-2">
-        <div className="grid gap-2 sm:grid-cols-2">
+      <form onSubmit={handleSubmit} noValidate className="mt-2.5 flex flex-1 flex-col gap-2.5 sm:gap-2">
+        <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-2">
           <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-fname" className={labelClassName}>
               Child&apos;s First Name *
@@ -163,7 +163,7 @@ export function ContactFormSection() {
           />
         </div>
 
-        <div className="grid gap-2 sm:grid-cols-2">
+        <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-2">
           <div className="flex flex-col gap-0.5">
             <label htmlFor="contact-class" className={labelClassName}>
               Class Looking For *
@@ -242,15 +242,18 @@ export function ContactFormSection() {
             onChange={(event) => updateField("message", event.target.value)}
             placeholder="Any questions or details you'd like to share..."
             rows={2}
-            className={cn(fieldClassName, "min-h-[2.75rem] flex-1 resize-none")}
+            className={cn(
+              fieldClassName,
+              "min-h-[3.25rem] resize-none sm:min-h-[2.75rem] lg:flex-1",
+            )}
           />
         </div>
 
-        <div className="mt-auto pt-1">
+        <div className="mt-auto pt-1.5 sm:pt-1">
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70"
+            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2.5 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70 sm:py-2"
           >
             {status === "submitting" ? "Sending..." : form.submitLabel}
             <Icon name="arrow" className="h-3.5 w-3.5" />

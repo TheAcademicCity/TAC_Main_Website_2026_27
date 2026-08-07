@@ -13,7 +13,7 @@ export function FoundersSection() {
         label={foundersContent.label}
         title={foundersContent.title}
         description={foundersContent.description}
-        descriptionClassName="max-w-none whitespace-nowrap"
+        descriptionClassName="max-w-none whitespace-normal lg:whitespace-nowrap"
         centered
         className="mb-0 max-w-none"
       />

@@ -96,8 +96,17 @@
   }
 
   /* Inner pages — match home tightened section rhythm */
-  :is(.about-page, .academics-page, .boarding-page, .admissions-page, .blog-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+  :is(.home-page, .about-page, .academics-page, .boarding-page, .admissions-page, .blog-page, .co-curricular-page, .achievements-page, .campus-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
     padding-block: clamp(28px, 3.5vw, 44px);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
 
   .reveal.in {

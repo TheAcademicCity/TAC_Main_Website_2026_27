@@ -43,21 +43,26 @@ export function VisionMissionSection() {
         <div className="grid lg:grid-cols-[1fr_1px_1fr]">
           {cards.map((card, index) => (
             <div key={card.title} className="contents">
-              {index > 0 ? <div className="hidden bg-white/10 lg:block" aria-hidden /> : null}
+              {index > 0 ? (
+                <>
+                  <div className="mx-1 h-px bg-white/10 lg:hidden" aria-hidden />
+                  <div className="hidden bg-white/10 lg:block" aria-hidden />
+                </>
+              ) : null}
               <RevealOnScroll delay={index === 0 ? 0 : 1}>
                 <article
                   className={cn(
-                    "relative overflow-hidden px-[clamp(1.25rem,2.5vw,2rem)] py-[clamp(1.25rem,2.5vw,2rem)]",
+                    "relative overflow-hidden px-1 py-5 sm:px-[clamp(1.25rem,2.5vw,2rem)] sm:py-[clamp(1.25rem,2.5vw,2rem)]",
                     card.accent === "vision" ? "border-t-4 border-gold" : "border-t-4 border-emerald",
                   )}
                 >
-                  <span className="mb-3 block text-[2rem] leading-none" aria-hidden>
+                  <span className="mb-2.5 block text-[1.75rem] leading-none sm:mb-3 sm:text-[2rem]" aria-hidden>
                     {card.icon}
                   </span>
-                  <h2 className="font-montserrat text-[clamp(1.25rem,2vw,1.75rem)] font-black text-white">
+                  <h2 className="font-montserrat text-[clamp(1.2rem,5.5vw,1.75rem)] font-black text-white md:text-[clamp(1.25rem,2vw,1.75rem)]">
                     {card.title}
                   </h2>
-                  <p className="mt-2.5 text-[0.94rem] font-light leading-relaxed text-white/68">
+                  <p className="mt-2.5 text-[0.9rem] font-light leading-relaxed text-white/68 sm:text-[0.94rem]">
                     {highlightText(card.description, card.highlights)}
                   </p>
                 </article>

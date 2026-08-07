@@ -29,9 +29,9 @@ export function DormSection() {
 
   return (
     <Section id="dorm">
-      <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-stretch gap-7 lg:grid-cols-2 lg:gap-16">
         <RevealOnScroll className="flex h-full min-h-0">
-          <div className="group relative h-full w-full min-h-[320px] overflow-hidden rounded-2xl bg-forest-deep">
+          <div className="group relative h-full min-h-[240px] w-full overflow-hidden rounded-xl bg-forest-deep sm:min-h-[320px] sm:rounded-2xl">
             <ImageWithFallback
               image={dorm.image}
               fill
@@ -42,8 +42,8 @@ export function DormSection() {
               aria-hidden
               className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"
             />
-            <div className="absolute inset-x-0 bottom-0 z-[2] px-6 pb-6 pt-16 sm:px-7 sm:pb-7">
-              <blockquote className="border-l-[3px] border-gold pl-4 text-[0.92rem] italic leading-relaxed text-white/90">
+            <div className="absolute inset-x-0 bottom-0 z-[2] px-4 pb-4 pt-12 sm:px-7 sm:pb-7 sm:pt-16">
+              <blockquote className="border-l-[3px] border-gold pl-3 text-[0.88rem] italic leading-relaxed text-white/90 sm:pl-4 sm:text-[0.92rem]">
                 &ldquo;{dorm.quote}&rdquo;
               </blockquote>
             </div>
@@ -52,16 +52,19 @@ export function DormSection() {
 
         <RevealOnScroll delay={1} className="flex h-full min-h-0 flex-col">
           <SectionLabel>{dorm.label}</SectionLabel>
-          <h2 className="font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold text-forest-deep">
+          <h2 className="font-montserrat text-[clamp(1.35rem,6vw,1.9rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.4rem,2.4vw,1.9rem)]">
             {dorm.title}
           </h2>
           {dorm.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)} className="mt-3 text-[0.96rem] leading-relaxed text-slate">
+            <p
+              key={paragraph.slice(0, 32)}
+              className="mt-3 text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]"
+            >
               {paragraph}
             </p>
           ))}
 
-          <div className="mt-5 w-full rounded-lg border border-line bg-paper px-5 py-4">
+          <div className="mt-5 w-full rounded-lg border border-line bg-paper px-4 py-3.5 sm:px-5 sm:py-4">
             <p className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-forest-deep">
               {dorm.keyItemsLabel}
             </p>

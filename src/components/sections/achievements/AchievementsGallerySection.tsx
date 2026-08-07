@@ -66,7 +66,7 @@ function GalleryItemVisual({
         <ImageWithFallback
           image={item.image}
           fill
-          sizes="280px"
+          sizes="(max-width: 640px) 72vw, 240px"
           className="object-cover"
         />
       ) : (
@@ -115,8 +115,9 @@ function GalleryMagnify({
       return origin;
     }
 
-    const maxWidth = Math.min(window.innerWidth * 0.52, 420);
-    const maxHeight = window.innerHeight * 0.48;
+    const isNarrow = window.innerWidth < 640;
+    const maxWidth = Math.min(window.innerWidth * (isNarrow ? 0.9 : 0.52), isNarrow ? 360 : 420);
+    const maxHeight = window.innerHeight * (isNarrow ? 0.62 : 0.48);
     const aspect = origin.width / Math.max(origin.height, 1);
     let width = maxWidth;
     let height = width / aspect;
@@ -165,19 +166,19 @@ function GalleryMagnify({
       >
         <GalleryItemVisual item={item} className="h-full min-h-0" />
         {item.category ? (
-          <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-full border border-white/35 bg-forest-deep/70 px-2.5 py-1 font-montserrat text-[0.58rem] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+          <span className="pointer-events-none absolute right-2.5 top-2.5 z-[2] rounded-full border border-white/35 bg-forest-deep/70 px-2 py-1 font-montserrat text-[0.55rem] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm sm:right-3 sm:top-3 sm:px-2.5 sm:text-[0.58rem]">
             {item.category}
           </span>
         ) : null}
         {item.caption || item.detail ? (
-          <span className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-forest-deep/90 via-forest-deep/55 to-transparent px-4 pb-3.5 pt-10">
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-forest-deep/90 via-forest-deep/55 to-transparent px-3 pb-3 pt-8 sm:px-4 sm:pb-3.5 sm:pt-10">
             {item.caption ? (
-              <span className="block font-montserrat text-[0.85rem] font-bold leading-snug text-white">
+              <span className="block font-montserrat text-[0.8rem] font-bold leading-snug text-white sm:text-[0.85rem]">
                 {item.caption}
               </span>
             ) : null}
             {item.detail ? (
-              <span className="mt-0.5 block text-[0.72rem] font-medium leading-snug text-gold">
+              <span className="mt-0.5 block text-[0.68rem] font-medium leading-snug text-gold sm:text-[0.72rem]">
                 {item.detail}
               </span>
             ) : null}
@@ -194,7 +195,7 @@ function WordsTile({ item, seed }: { item: GalleryWordsItem; seed: number }) {
   const lineCount = lines.length;
 
   return (
-    <div className="@container flex h-full w-[min(72vw,260px)] shrink-0 items-center justify-center text-center [container-type:size] sm:w-[240px]">
+    <div className="@container flex h-full w-[min(68vw,240px)] shrink-0 items-center justify-center text-center [container-type:size] sm:w-[240px]">
       <p
         className={cn(
           "flex h-[70%] w-[70%] flex-col items-center justify-center font-playfair italic font-medium leading-[1.05] tracking-tight",
@@ -236,7 +237,7 @@ function ImageTile({
           height: rect.height,
         });
       }}
-      className="group relative h-full w-[min(72vw,260px)] shrink-0 overflow-hidden rounded-2xl text-left sm:w-[240px]"
+      className="group relative h-full w-[min(68vw,240px)] shrink-0 overflow-hidden rounded-xl text-left sm:w-[240px] sm:rounded-2xl"
       aria-label={`View ${item.label}`}
     >
       <GalleryItemVisual item={item} className="absolute inset-0 min-h-0" />
@@ -284,7 +285,7 @@ function TrackRow({
   return (
     <div className={cn("overflow-hidden", offsetClassName)}>
       <div
-        className="gallery-marquee-track flex h-[140px] w-max gap-2 sm:h-[160px]"
+        className="gallery-marquee-track flex h-[120px] w-max gap-1.5 sm:h-[160px] sm:gap-2"
         style={{ animationDelay: phaseDelay }}
       >
         {loopItems.map((item, index) => {
@@ -365,14 +366,14 @@ export function AchievementsGallerySection() {
       <SectionHeader
         label={achievementsGalleryContent.label}
         title={achievementsGalleryContent.title}
-        titleClassName="text-[clamp(1.35rem,2.4vw,1.85rem)]"
+        titleClassName="text-[clamp(1.3rem,5.5vw,1.85rem)] md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
       />
 
       <RevealOnScroll delay={1}>
-        <div className="relative left-1/2 mt-8 w-screen max-w-none -translate-x-1/2">
+        <div className="relative left-1/2 mt-6 w-screen max-w-none -translate-x-1/2 sm:mt-8">
           <div
             className={cn(
-              "flex flex-col gap-2 py-1",
+              "flex flex-col gap-1.5 py-1 sm:gap-2",
               magnify && "[&_.gallery-marquee-track]:[animation-play-state:paused]",
             )}
           >
@@ -383,13 +384,13 @@ export function AchievementsGallerySection() {
             />
             <TrackRow
               items={rowB}
-              offsetClassName="pl-12 sm:pl-20"
+              offsetClassName="pl-8 sm:pl-20"
               phaseDelay="-40s"
               onSelectImage={(item, origin) => setMagnify({ item, origin })}
             />
             <TrackRow
               items={rowC}
-              offsetClassName="pl-6 sm:pl-10"
+              offsetClassName="pl-4 sm:pl-10"
               phaseDelay="-80s"
               onSelectImage={(item, origin) => setMagnify({ item, origin })}
             />

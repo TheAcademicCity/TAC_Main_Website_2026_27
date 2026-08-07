@@ -20,13 +20,18 @@ export function AdmissionsCtaSection() {
           <SectionLabel centered tone="gold" className="justify-center">
             {ctaBand.label}
           </SectionLabel>
-          <h2 className="font-montserrat text-[clamp(1.6rem,3vw,2.4rem)] font-black text-white">
+          <h2 className="font-montserrat text-[clamp(1.45rem,6.5vw,2.4rem)] font-black leading-tight text-white md:text-[clamp(1.6rem,3vw,2.4rem)]">
             {ctaBand.title}
           </h2>
-          <p className="mx-auto mt-3 whitespace-nowrap text-[0.96rem] text-white/60">{ctaBand.description}</p>
+          <p className="mx-auto mt-3 max-w-[42ch] whitespace-normal px-1 text-[0.92rem] text-white/60 sm:max-w-none sm:text-[0.96rem] lg:whitespace-nowrap">
+            {ctaBand.description}
+          </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Button href={ctaBand.phone.href} className="px-7 py-3 text-[0.78rem]">
+          <div className="mx-auto mt-6 flex w-full max-w-sm flex-col items-stretch gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+            <Button
+              href={ctaBand.phone.href}
+              className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
+            >
               <Icon name="phone" className="h-3.5 w-3.5" />
               {ctaBand.phone.label}
             </Button>
@@ -34,7 +39,7 @@ export function AdmissionsCtaSection() {
               href={ctaBand.whatsapp.href}
               external
               variant="outline-white"
-              className="px-7 py-3 text-[0.78rem]"
+              className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
             >
               <Icon name="whatsapp" className="h-3.5 w-3.5" />
               {ctaBand.whatsapp.label}
@@ -43,7 +48,7 @@ export function AdmissionsCtaSection() {
               href={ctaBand.email.href}
               external
               variant="outline-white"
-              className="px-7 py-3 text-[0.78rem]"
+              className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
             >
               <Icon name="mail" className="h-3.5 w-3.5" />
               {ctaBand.email.label}

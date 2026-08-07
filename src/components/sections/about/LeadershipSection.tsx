@@ -33,12 +33,12 @@ export function LeadershipSection() {
     <Section id="leadership" background="white" spacing="compact">
       <RevealOnScroll>
         <SectionLabel>{leadership.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.35rem,2.2vw,1.75rem)] font-extrabold text-forest-deep">
+        <h2 className="font-montserrat text-[clamp(1.3rem,5.5vw,1.75rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.35rem,2.2vw,1.75rem)]">
           {leadership.title}
         </h2>
       </RevealOnScroll>
 
-      <div className="mt-6 overflow-hidden rounded-lg border border-line">
+      <div className="mt-5 overflow-hidden rounded-lg border border-line sm:mt-6">
         {leadership.leaders.map((leader, index) => (
           <RevealOnScroll key={leader.name} delay={Math.min(index, 2) as 0 | 1 | 2}>
             <article
@@ -50,14 +50,14 @@ export function LeadershipSection() {
             >
               <div
                 className={cn(
-                  "relative min-h-[260px] overflow-hidden bg-forest-deep lg:min-h-[280px]",
+                  "relative min-h-[200px] overflow-hidden bg-forest-deep sm:min-h-[260px] lg:min-h-[280px]",
                   leader.altLayout && "lg:order-2",
                 )}
               >
                 <ImageWithFallback
                   image={leader.image}
                   fill
-                  sizes="280px"
+                  sizes="(max-width: 1024px) 100vw, 280px"
                   className="object-cover object-[center_top]"
                 />
                 <div
@@ -68,31 +68,35 @@ export function LeadershipSection() {
                       : "bg-gradient-to-r from-transparent via-transparent to-[rgba(10,44,40,0.35)]",
                   )}
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(5,22,18,0.92)] to-transparent px-4 py-3">
-                  <div className="font-montserrat text-[0.98rem] font-extrabold text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(5,22,18,0.92)] to-transparent px-3 py-2.5 sm:px-4 sm:py-3">
+                  <div className="font-montserrat text-[0.92rem] font-extrabold text-white sm:text-[0.98rem]">
                     {leader.name}
                   </div>
-                  <div className="mt-0.5 text-[0.72rem] font-medium text-gold">{leader.role}</div>
+                  <div className="mt-0.5 text-[0.7rem] font-medium text-gold sm:text-[0.72rem]">
+                    {leader.role}
+                  </div>
                 </div>
               </div>
 
               <div
                 className={cn(
-                  "relative bg-white px-6 py-6 text-left lg:px-8 lg:py-7",
+                  "relative bg-white px-4 py-5 text-left sm:px-6 sm:py-6 lg:px-8 lg:py-7",
                   leader.altLayout && "lg:order-1",
                 )}
               >
                 <SectionLabel>{leader.messageLabel}</SectionLabel>
                 <div
                   aria-hidden
-                  className="font-montserrat text-4xl font-black leading-none text-forest/8"
+                  className="font-montserrat text-3xl font-black leading-none text-forest/8 sm:text-4xl"
                 >
                   &ldquo;
                 </div>
-                <blockquote className="mt-1.5 text-left text-[0.96rem] leading-relaxed text-slate">
+                <blockquote className="mt-1.5 text-left text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
                   {highlightText(leader.quote, leader.quoteHighlights)}
                 </blockquote>
-                <p className="mt-3 text-left text-[0.96rem] leading-relaxed text-slate">{leader.body}</p>
+                <p className="mt-3 text-left text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
+                  {leader.body}
+                </p>
               </div>
             </article>
           </RevealOnScroll>

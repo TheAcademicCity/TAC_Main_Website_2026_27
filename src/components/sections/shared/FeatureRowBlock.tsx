@@ -15,7 +15,7 @@ export function FeatureRowBlock({ row }: FeatureRowBlockProps) {
     <RevealOnScroll>
       <div
         className={cn(
-          "grid items-center gap-8 lg:grid-cols-2 lg:gap-16",
+          "grid items-center gap-6 lg:grid-cols-2 lg:gap-16",
           row.flipped && "[&>*:first-child]:lg:order-2",
         )}
       >
@@ -28,8 +28,8 @@ export function FeatureRowBlock({ row }: FeatureRowBlockProps) {
               className="transition-transform duration-500 ease-out group-hover:scale-[1.04]"
             />
           </div>
-          <div className="bg-gold px-5 py-2.5">
-            <span className="font-montserrat text-[0.76rem] font-extrabold uppercase tracking-wider text-forest-deep">
+          <div className="bg-gold px-4 py-2.5 sm:px-5">
+            <span className="break-words font-montserrat text-[0.72rem] font-extrabold uppercase tracking-wider text-forest-deep sm:text-[0.76rem]">
               {row.imageTag}
             </span>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { mobileNavigation } from "@/config/navigation";
 import { HomeLink } from "@/components/layout/HomeLink";
@@ -16,10 +17,19 @@ type MobileNavProps = {
 export function MobileNav({ open, onClose }: MobileNavProps) {
   const pathname = usePathname();
 
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
   return (
     <nav
       className={cn(
-        "fixed inset-0 z-[99] overflow-y-auto bg-forest-dark px-8 pb-12 pt-32 transition-transform duration-300 lg:hidden",
+        "fixed inset-0 z-[99] overflow-y-auto bg-forest-dark px-5 pb-12 pt-28 transition-transform duration-300 sm:px-8 sm:pt-32 lg:hidden",
         open ? "translate-x-0" : "translate-x-full",
       )}
       aria-hidden={!open}

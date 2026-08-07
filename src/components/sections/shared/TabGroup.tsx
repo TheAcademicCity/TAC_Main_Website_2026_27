@@ -27,6 +27,7 @@ export function TabGroup({
   return (
     <div
       className={cn(
+        "overflow-x-auto scrollbar-none",
         variant === "underline" && "flex border-b-2 border-line",
         variant === "panel" &&
           "flex border-t border-white/10 bg-[rgba(10,44,40,0.6)] backdrop-blur-md",
@@ -45,17 +46,17 @@ export function TabGroup({
             aria-selected={isActive}
             onClick={() => onChange(tab.id)}
             className={cn(
-              "font-montserrat text-[0.75rem] font-bold uppercase tracking-wider transition-colors",
+              "shrink-0 whitespace-nowrap font-montserrat text-[0.75rem] font-bold uppercase tracking-wider transition-colors",
               variant === "underline" &&
                 cn(
-                  "-mb-0.5 border-b-[3px] px-6 py-3.5",
+                  "-mb-0.5 border-b-[3px] px-4 py-3.5 sm:px-6",
                   isActive
                     ? "border-gold text-forest-deep"
                     : "border-transparent text-slate hover:text-forest",
                 ),
               variant === "panel" &&
                 cn(
-                  "flex-1 border-r border-white/10 px-4 py-3.5 last:border-r-0",
+                  "min-w-[7rem] flex-none border-r border-white/10 px-4 py-3.5 last:border-r-0 md:min-w-0 md:flex-1",
                   isActive
                     ? "bg-gold/8 text-gold"
                     : "text-white/55 hover:text-white/80",

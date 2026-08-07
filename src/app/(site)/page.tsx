@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <HashScrollOnLoad />
-      <main id="top" tabIndex={-1} className="outline-none">
+      <main id="top" tabIndex={-1} className="home-page outline-none">
       <HeroSection />
       <StatsBar />
       <PillarsSection />
