@@ -95,8 +95,8 @@
     padding-block: var(--section-py-feature);
   }
 
-  /* About page — match home tightened section rhythm */
-  .about-page :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+  /* Inner pages — match home tightened section rhythm */
+  :is(.about-page, .academics-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
     padding-block: clamp(28px, 3.5vw, 44px);
   }
 
