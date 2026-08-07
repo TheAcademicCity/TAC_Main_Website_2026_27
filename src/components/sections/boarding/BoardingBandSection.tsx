@@ -8,7 +8,7 @@ export function BoardingBandSection() {
   const { scheduleBand } = boardingPageContent;
 
   return (
-    <div className="bg-forest-deep py-7">
+    <div className="bg-forest-deep py-[clamp(28px,3.5vw,44px)]">
       <Container>
         <RevealOnScroll>
           <div className="flex flex-wrap items-center justify-between gap-6">

@@ -96,7 +96,7 @@
   }
 
   /* Inner pages — match home tightened section rhythm */
-  :is(.about-page, .academics-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+  :is(.about-page, .academics-page, .boarding-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
     padding-block: clamp(28px, 3.5vw, 44px);
   }
 

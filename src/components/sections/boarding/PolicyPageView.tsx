@@ -201,7 +201,7 @@ export function PolicyPageView({ policy }: PolicyPageViewProps) {
           <div className="mt-8">
             <Button
               href="/boarding#discipline"
-              variant="gold-outline"
+              variant="gold"
               className="px-6 py-3 text-[0.78rem]"
             >
               Back to boarding

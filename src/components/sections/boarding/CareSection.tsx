@@ -16,9 +16,9 @@ export function CareSection() {
         </h2>
       </RevealOnScroll>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <RevealOnScroll delay={1}>
-          <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-forest before:content-['']">
+      <div className="mt-8 grid items-stretch gap-6 lg:grid-cols-2">
+        <RevealOnScroll delay={1} className="h-full">
+          <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-forest before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-forest/8 text-[1.35rem] leading-none">
                 <span aria-hidden>🛡️</span>
@@ -48,7 +48,7 @@ export function CareSection() {
               ))}
             </div>
 
-            <div className="mt-6 border-t border-line pt-6">
+            <div className="mt-auto pt-6">
               <p className="font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-slate">
                 {care.safety.medicalPartners.label}
               </p>
@@ -68,8 +68,8 @@ export function CareSection() {
           </article>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={2}>
-          <article className="relative overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gold before:content-['']">
+        <RevealOnScroll delay={2} className="h-full">
+          <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white p-8 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gold before:content-['']">
             <div className="mb-5 flex items-center gap-3.5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gold/10 text-[1.35rem] leading-none">
                 <span aria-hidden>🥗</span>
@@ -110,7 +110,7 @@ export function CareSection() {
               ))}
             </div>
 
-            <div className="mt-6 border-t border-line pt-6">
+            <div className="mt-auto border-t border-line pt-6">
               <p className="font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.14em] text-slate">
                 {care.nutrition.foodPartner.label}
               </p>
