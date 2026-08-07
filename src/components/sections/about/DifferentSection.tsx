@@ -26,7 +26,10 @@ export function DifferentSection() {
                 sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-[rgba(5,22,18,0.62)] via-[rgba(5,22,18,0.38)] to-transparent" />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top_left,rgba(5,22,18,0.88)_0%,rgba(5,22,18,0.55)_28%,rgba(5,22,18,0.18)_48%,transparent_68%)]"
+              />
 
               <div className="relative flex h-full min-h-[clamp(180px,22vw,220px)] items-end justify-end p-5 sm:p-6">
                 <div className="w-[92%] text-right sm:w-[84%]">

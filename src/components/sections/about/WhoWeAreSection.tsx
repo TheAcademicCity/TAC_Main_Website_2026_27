@@ -37,30 +37,12 @@ export function WhoWeAreSection() {
 
   return (
     <Section id="about" background="white">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <RevealOnScroll>
-          <div className="grid grid-cols-2 items-stretch gap-2">
-            <PhotoTile
-              image={tall.image}
-              sizes="(max-width: 1024px) 50vw, 25vw"
-              className="aspect-[3/4]"
-            />
-
-            <div className="grid min-h-0 grid-rows-[2fr_3fr] gap-2">
-              <PhotoTile
-                image={compact.image}
-                sizes="(max-width: 1024px) 50vw, 25vw"
-              />
-              <PhotoTile
-                image={wide.image}
-                sizes="(max-width: 1024px) 50vw, 25vw"
-              />
-            </div>
-          </div>
+      <div className="grid gap-8 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:items-stretch lg:gap-x-16 lg:gap-y-3">
+        <RevealOnScroll className="lg:col-start-2 lg:row-start-1">
+          <SectionLabel>{whoWeAre.label}</SectionLabel>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={1}>
-          <SectionLabel>{whoWeAre.label}</SectionLabel>
+        <RevealOnScroll delay={1} className="lg:col-start-2 lg:row-start-2">
           <h2 className="font-montserrat text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-forest-deep">
             {whoWeAre.title}
           </h2>
@@ -69,6 +51,29 @@ export function WhoWeAreSection() {
               {paragraph}
             </p>
           ))}
+        </RevealOnScroll>
+
+        <RevealOnScroll className="min-h-[280px] lg:col-start-1 lg:row-start-2 lg:h-full lg:min-h-0">
+          <div className="grid h-full grid-cols-2 items-stretch gap-2">
+            <PhotoTile
+              image={tall.image}
+              sizes="(max-width: 1024px) 50vw, 25vw"
+              className="h-full min-h-[240px] lg:min-h-0"
+            />
+
+            <div className="grid h-full min-h-0 grid-rows-[2fr_3fr] gap-2">
+              <PhotoTile
+                image={compact.image}
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="h-full"
+              />
+              <PhotoTile
+                image={wide.image}
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="h-full"
+              />
+            </div>
+          </div>
         </RevealOnScroll>
       </div>
     </Section>

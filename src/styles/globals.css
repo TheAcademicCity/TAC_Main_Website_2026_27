@@ -95,6 +95,11 @@
     padding-block: var(--section-py-feature);
   }
 
+  /* About page — match home tightened section rhythm */
+  .about-page :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+    padding-block: clamp(28px, 3.5vw, 44px);
+  }
+
   .reveal.in {
     @apply translate-y-0 opacity-100;
   }

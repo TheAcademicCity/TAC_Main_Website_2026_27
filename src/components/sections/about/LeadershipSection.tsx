@@ -38,14 +38,14 @@ export function LeadershipSection() {
         </h2>
       </RevealOnScroll>
 
-      <div className="mt-6 flex flex-col">
+      <div className="mt-6 overflow-hidden rounded-lg border border-line">
         {leadership.leaders.map((leader, index) => (
           <RevealOnScroll key={leader.name} delay={Math.min(index, 2) as 0 | 1 | 2}>
             <article
               className={cn(
-                "grid overflow-hidden border border-line transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(15,61,56,0.15)] lg:grid-cols-[280px_1fr]",
+                "grid overflow-hidden bg-white transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(15,61,56,0.15)] lg:grid-cols-[280px_1fr]",
                 leader.altLayout && "lg:grid-cols-[1fr_280px]",
-                index > 0 && "border-t-0",
+                index < leadership.leaders.length - 1 && "border-b border-line",
               )}
             >
               <div

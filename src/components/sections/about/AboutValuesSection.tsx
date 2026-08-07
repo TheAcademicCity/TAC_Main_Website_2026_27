@@ -29,7 +29,7 @@ export function AboutValuesSection() {
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {values.tiles.map((tile, index) => (
           <RevealOnScroll key={tile.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-            <article className="relative h-full overflow-hidden border border-line bg-white px-6 py-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]">
+            <article className="relative h-full overflow-hidden rounded-lg border border-line bg-white px-6 py-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(15,61,56,0.18)]">
               <span className={cn("absolute inset-x-0 top-0 h-1", accentStyles[tile.accent])} />
               <span className="mb-4 block text-[2rem] leading-none" aria-hidden>
                 {tile.icon}
