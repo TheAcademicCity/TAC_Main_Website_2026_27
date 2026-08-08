@@ -1241,7 +1241,7 @@ export const admissionsContent = {
 
 export const enquiryContent = {
   label: "Enquire Now",
-  title: "Come, let's craft a happy future for your child",
+  title: "Come, let's craft a happy\nfuture for your child",
   subtitle:
     "Share your details and our admissions team will reach out with guidance on grades, campus visits and boarding.",
   brochureSubtitle:
@@ -1269,7 +1269,7 @@ export const enquiryContent = {
 
 export const contactContent = {
   label: "Get in Touch",
-  title: "Come, let's craft a happy future for your child",
+  title: "Talk to our\nadmissions team today!",
   subtitle: "Talk to our admissions team about grades, campus visits, fees and boarding.",
   ctas: [
     { label: "Connect with us", href: "tel:+919606488347", variant: "gold" as const },
@@ -1295,8 +1295,6 @@ export const contactContent = {
     {
       title: "Corporate Office",
       address: "#2, Krishna Rajendra Rd, Basavanagudi, Bengaluru, Karnataka 560004",
-      phone: "+91 96064 88347 (General)",
-      phoneHref: "tel:+919606488347",
       mapEmbedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5!2d77.5736803!3d12.9396443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15003b63c91b%3A0x15e056babff94fd0!2sK2%20Learning%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1741459200",
       mapLabel: "Basavanagudi, KA 560004",

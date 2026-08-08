@@ -3,7 +3,7 @@ import { Icon } from "@/components/ui/Icon";
 type ContactBoxProps = {
   title: string;
   address: string;
-      phone?: string;
+  phone?: string;
   phoneHref?: string;
   email?: string;
 };
@@ -16,21 +16,20 @@ export function ContactBox({ title, address, phone, phoneHref, email }: ContactB
         {title}
       </h5>
       <p className="break-words text-[0.9rem] leading-relaxed text-white/68">{address}</p>
-      {phone ? (
-        <a
-          href={phoneHref ?? "#"}
-          className="mt-2 block break-words text-[0.9rem] text-white/68 hover:text-cyan"
-        >
-          {phone}
-        </a>
-      ) : null}
-      {email ? (
-        <a
-          href={`mailto:${email}`}
-          className="block break-all text-[0.9rem] text-white/68 hover:text-cyan"
-        >
-          {email}
-        </a>
+      {phone || email ? (
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.9rem] text-white/68">
+          {phone ? (
+            <a href={phoneHref ?? "#"} className="whitespace-nowrap hover:text-cyan">
+              {phone}
+            </a>
+          ) : null}
+          {phone && email ? <span className="select-none text-white/35">|</span> : null}
+          {email ? (
+            <a href={`mailto:${email}`} className="break-all hover:text-cyan">
+              {email}
+            </a>
+          ) : null}
+        </div>
       ) : null}
     </div>
   );

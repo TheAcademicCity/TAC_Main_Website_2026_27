@@ -15,11 +15,9 @@ export function ContactSection() {
           <SectionHeader
             label={contactContent.label}
             title={contactContent.title}
-            description={contactContent.subtitle}
             labelTone="gold"
             titleLight
             reveal={false}
-            className="[&_p]:text-white/62"
           />
           <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row sm:flex-wrap">
             {contactContent.ctas.map((cta) => (

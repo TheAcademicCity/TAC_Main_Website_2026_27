@@ -193,7 +193,7 @@ export function EnquiryForm({
           required
           value={form.mobile}
           onChange={(event) => updateField("mobile", event.target.value)}
-          placeholder="+91 98765 43210"
+          placeholder="Enter your mobile number"
           className={inputClassName}
         />
       </div>

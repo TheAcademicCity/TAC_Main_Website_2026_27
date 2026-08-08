@@ -37,8 +37,7 @@ export function EnquirySection() {
             <SectionHeader
               label={enquiryContent.label}
               title={enquiryContent.title}
-              description={enquiryContent.subtitle}
-              className="mb-4 max-w-xl text-left [&_h2]:text-[clamp(1.25rem,2.2vw,1.7rem)] [&_p]:text-[0.86rem] [&_p]:leading-relaxed"
+              className="mb-4 max-w-xl text-left [&_h2]:text-[clamp(1.25rem,2.2vw,1.7rem)]"
             />
           </RevealOnScroll>
 

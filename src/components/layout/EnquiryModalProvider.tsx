@@ -117,7 +117,7 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
                 </p>
                 <h2
                   id={titleId}
-                  className="mt-0.5 font-montserrat text-[clamp(1rem,2vw,1.25rem)] font-extrabold text-forest-deep"
+                  className="mt-0.5 whitespace-pre-line font-montserrat text-[clamp(1rem,2vw,1.25rem)] font-extrabold text-forest-deep"
                 >
                   {enquiryContent.title}
                 </h2>
