@@ -60,7 +60,7 @@ export function ValuesSection() {
                 </p>
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute bottom-3 right-4 font-montserrat text-[2.75rem] font-black leading-none text-forest/6 sm:right-5 sm:text-[3.5rem]"
+                  className="pointer-events-none absolute right-4 top-4 font-montserrat text-[2.75rem] font-black leading-none text-forest/6 sm:right-5 sm:top-5 sm:text-[3.5rem]"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
