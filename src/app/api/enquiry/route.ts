@@ -221,10 +221,16 @@ export async function POST(request: Request) {
 
     const zohoCode = zohoPayload?.code?.toLowerCase();
     const nestedOutput = zohoPayload?.details?.output;
-    let nested: { code?: string; message?: string; id?: string; status?: string } | null = null;
+    type ZohoNestedOutput = {
+      code?: string;
+      message?: string;
+      id?: string;
+      status?: string;
+    };
+    let nested: ZohoNestedOutput | null = null;
     if (typeof nestedOutput === "string") {
       try {
-        nested = JSON.parse(nestedOutput) as typeof nested;
+        nested = JSON.parse(nestedOutput) as ZohoNestedOutput;
       } catch {
         nested = null;
       }

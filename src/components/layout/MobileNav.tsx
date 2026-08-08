@@ -62,7 +62,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                     href={child.href}
                     onClick={onClose}
                     className={cn(
-                      "block border-b border-white/6 py-3 pl-4 font-montserrat text-base font-semibold uppercase tracking-wide transition-all duration-200",
+                      "block border-b border-white/6 py-2 pl-4 font-montserrat text-xs font-semibold uppercase tracking-wide transition-all duration-200",
                       childActive
                         ? "border-gold/30 text-gold"
                         : "text-white/65 hover:border-gold/30 hover:pl-5 hover:text-gold",

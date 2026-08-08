@@ -41,6 +41,8 @@ type EnquiryFormProps = {
   formId?: string;
   className?: string;
   compact?: boolean;
+  /** Extra-tight layout for the mobile enquiry popup; desktop matches compact. */
+  dense?: boolean;
 };
 
 export function EnquiryForm({
@@ -48,22 +50,27 @@ export function EnquiryForm({
   formId = "enquiry-form",
   className,
   compact = false,
+  dense = false,
 }: EnquiryFormProps) {
   const searchParams = useSearchParams();
   const isBrochureIntent =
     intent === "brochure" || (!intent && searchParams.get("intent") === "brochure");
 
-  const inputClassName = compact
-    ? "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[0.9rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15"
-    : fieldClassName;
+  const inputClassName = dense
+    ? "w-full rounded border border-line bg-white px-2 py-1.5 text-[0.72rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-1 focus:ring-emerald/15 sm:rounded-lg sm:px-3.5 sm:py-2.5 sm:text-[0.9rem] sm:focus:ring-2"
+    : compact
+      ? "w-full rounded-md border border-line bg-white px-2.5 py-2 text-[0.8rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15 sm:rounded-lg sm:px-3.5 sm:py-2.5 sm:text-[0.9rem]"
+      : fieldClassName;
 
-  const fieldLabelClassName = compact
-    ? "mb-1 block font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.12em] text-forest"
-    : labelClassName;
+  const fieldLabelClassName = dense
+    ? "mb-0.5 block font-montserrat text-[0.52rem] font-bold uppercase tracking-[0.1em] text-forest sm:mb-1 sm:text-[0.68rem]"
+    : compact
+      ? "mb-0.5 block font-montserrat text-[0.6rem] font-bold uppercase tracking-[0.12em] text-forest sm:mb-1 sm:text-[0.68rem]"
+      : labelClassName;
 
-  const fieldGapClassName = compact ? "mt-4" : "mt-5";
-  const gridGapClassName = compact ? "gap-4" : "gap-5";
-  const formPaddingClassName = compact ? "p-4 sm:p-5" : "p-6 sm:p-8";
+  const fieldGapClassName = dense ? "mt-1.5 sm:mt-4" : compact ? "mt-2.5 sm:mt-4" : "mt-5";
+  const gridGapClassName = dense ? "gap-1.5 sm:gap-4" : compact ? "gap-2.5 sm:gap-4" : "gap-5";
+  const formPaddingClassName = dense ? "p-1.5 sm:p-5" : compact ? "p-2.5 sm:p-5" : "p-6 sm:p-8";
 
   const { closeEnquiryModal } = useEnquiryModal();
   const { showThankYouModal } = useThankYouModal();
@@ -137,8 +144,12 @@ export function EnquiryForm({
       {isBrochureIntent ? (
         <p
           className={cn(
-            "rounded-lg border-l-4 border-gold bg-paper px-4 py-3 text-[0.92rem] leading-relaxed text-slate",
-            compact ? "mb-4" : "mb-6",
+            "rounded-lg border-l-4 border-gold bg-paper leading-relaxed text-slate",
+            dense
+              ? "mb-2 px-2.5 py-1.5 text-[0.7rem] sm:mb-4 sm:px-4 sm:py-3 sm:text-[0.92rem]"
+              : compact
+                ? "mb-4 px-4 py-3 text-[0.92rem]"
+                : "mb-6 px-4 py-3 text-[0.92rem]",
           )}
         >
           {enquiryContent.brochureSubtitle}
@@ -259,13 +270,22 @@ export function EnquiryForm({
         />
       </div>
 
-      <div className={cn("flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between", compact ? "mt-5" : "mt-7")}>
+      <div
+        className={cn(
+          "flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-3",
+          dense ? "mt-2.5 gap-1.5 sm:mt-5" : compact ? "mt-3.5 gap-2 sm:mt-5" : "mt-7 gap-3",
+        )}
+      >
         <Button
           type="submit"
           disabled={status === "submitting"}
           className={cn(
             "w-full justify-center sm:w-auto",
-            compact ? "sm:min-w-[210px]" : "sm:min-w-[240px]",
+            dense
+              ? "min-h-0 rounded-md px-3 py-2 text-[0.62rem] sm:min-w-[210px] sm:rounded-lg sm:px-5 sm:py-3 sm:text-[0.78rem]"
+              : compact
+                ? "min-h-0 px-4 py-2.5 text-[0.72rem] sm:min-w-[210px] sm:px-5 sm:py-3 sm:text-[0.78rem]"
+                : "sm:min-w-[240px]",
           )}
         >
           {status === "submitting" ? "Submitting..." : submitLabel}

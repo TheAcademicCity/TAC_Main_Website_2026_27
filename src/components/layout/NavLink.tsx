@@ -71,7 +71,7 @@ export function mobileNavLinkClasses(
   active = false,
 ) {
   return cn(
-    "block border-b border-white/10 py-4 font-montserrat text-xl font-semibold uppercase tracking-wide transition-all duration-200",
+    "block border-b border-white/10 py-2.5 font-montserrat text-sm font-semibold uppercase tracking-wide transition-all duration-200",
     variant === "default" &&
       (active
         ? "border-gold/40 pl-2 text-gold"

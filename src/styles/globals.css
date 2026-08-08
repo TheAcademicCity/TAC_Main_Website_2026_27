@@ -117,6 +117,12 @@
     animation: textblink 1.4s ease-in-out infinite;
   }
 
+  @media (max-width: 767px) {
+    .hero-scroll-label {
+      animation: hero-swipe-up 1.6s ease-in-out infinite;
+    }
+  }
+
   .enquiry-modal-backdrop {
     animation: enquiry-modal-backdrop-in 240ms ease-out both;
   }
@@ -187,6 +193,19 @@
 
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes hero-swipe-up {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-0.45rem);
   }
 }
 

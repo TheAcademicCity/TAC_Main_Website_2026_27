@@ -97,7 +97,7 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
 
       {isOpen ? (
         <div
-          className="fixed inset-0 z-[220] flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[220] flex items-center justify-center p-2.5 sm:p-6"
           role="presentation"
           onClick={closeEnquiryModal}
         >
@@ -107,17 +107,17 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="enquiry-modal-panel relative z-[1] max-h-[min(88vh,820px)] w-full max-w-xl overflow-y-auto overflow-x-hidden rounded-2xl border border-line/80 bg-paper/98 shadow-[0_24px_64px_-28px_rgba(15,61,56,0.38)]"
+            className="enquiry-modal-panel relative z-[1] max-h-[min(92vh,820px)] w-full max-w-[17.5rem] overflow-y-auto overflow-x-hidden rounded-lg border border-line/80 bg-paper/98 shadow-[0_24px_64px_-28px_rgba(15,61,56,0.38)] sm:max-h-[min(88vh,820px)] sm:max-w-xl sm:rounded-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="sticky top-0 z-[1] flex items-start justify-between gap-3 border-b border-line/80 bg-paper/98 px-4 py-3.5 sm:px-5">
-              <div>
-                <p className="font-montserrat text-[0.64rem] font-extrabold uppercase tracking-[0.14em] text-emerald">
+            <div className="sticky top-0 z-[1] flex items-start justify-between gap-1.5 border-b border-line/80 bg-paper/98 px-2.5 py-2 sm:gap-3 sm:px-5 sm:py-3.5">
+              <div className="min-w-0">
+                <p className="font-montserrat text-[0.5rem] font-extrabold uppercase tracking-[0.12em] text-emerald sm:text-[0.64rem]">
                   {enquiryContent.label}
                 </p>
                 <h2
                   id={titleId}
-                  className="mt-0.5 whitespace-pre-line font-montserrat text-[clamp(1rem,2vw,1.25rem)] font-extrabold text-forest-deep"
+                  className="mt-0.5 whitespace-pre-line font-montserrat text-[0.78rem] font-extrabold leading-tight text-forest-deep sm:text-[clamp(1rem,2vw,1.25rem)] sm:leading-snug"
                 >
                   {enquiryContent.title}
                 </h2>
@@ -126,23 +126,26 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
               <button
                 type="button"
                 onClick={closeEnquiryModal}
-                className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald"
+                className="grid h-6 w-6 shrink-0 place-items-center rounded border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald sm:h-8 sm:w-8 sm:rounded-lg"
                 aria-label="Close enquiry form"
               >
-                <span aria-hidden className="text-[1.25rem] leading-none">
+                <span aria-hidden className="text-[1rem] leading-none sm:text-[1.25rem]">
                   ×
                 </span>
               </button>
             </div>
 
-            <div className="px-4 py-4 sm:px-5">
-              <p className="mb-4 text-[0.88rem] leading-relaxed text-slate">{enquiryContent.subtitle}</p>
+            <div className="px-2.5 py-2 sm:px-5 sm:py-4">
+              <p className="mb-4 hidden text-[0.88rem] leading-relaxed text-slate sm:mb-4 sm:block">
+                {enquiryContent.subtitle}
+              </p>
               <EnquiryForm
                 key={intent}
                 intent={intent}
                 formId="enquiry-form-modal"
                 compact
-                className="border-line/80 bg-white shadow-none !rounded-xl"
+                dense
+                className="border-line/80 bg-white shadow-none !rounded-md !p-1.5 sm:!rounded-xl sm:!p-5"
               />
             </div>
           </div>

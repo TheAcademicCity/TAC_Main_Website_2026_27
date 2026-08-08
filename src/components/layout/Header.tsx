@@ -38,27 +38,31 @@ export function Header() {
 
           <button
             type="button"
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border-[1.5px] border-white/30 transition-colors hover:border-white/60 hover:bg-white/5 lg:hidden"
+            className="relative flex h-11 w-11 items-center justify-center transition-colors hover:bg-white/5 lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
           >
             <span
               className={cn(
-                "h-[1.8px] w-5 bg-white transition-transform",
-                mobileOpen && "translate-y-[6.8px] rotate-45",
+                "absolute left-1/2 top-1/2 h-[1.8px] w-5 -translate-x-1/2 bg-white transition-[transform,opacity] duration-200",
+                mobileOpen
+                  ? "-translate-y-1/2 rotate-45"
+                  : "-translate-y-[calc(50%+6px)]",
               )}
             />
             <span
               className={cn(
-                "h-[1.8px] w-5 bg-white transition-opacity",
+                "absolute left-1/2 top-1/2 h-[1.8px] w-5 -translate-x-1/2 -translate-y-1/2 bg-white transition-opacity duration-200",
                 mobileOpen && "opacity-0",
               )}
             />
             <span
               className={cn(
-                "h-[1.8px] w-5 bg-white transition-transform",
-                mobileOpen && "-translate-y-[6.8px] -rotate-45",
+                "absolute left-1/2 top-1/2 h-[1.8px] w-5 -translate-x-1/2 bg-white transition-[transform,opacity] duration-200",
+                mobileOpen
+                  ? "-translate-y-1/2 -rotate-45"
+                  : "-translate-y-[calc(50%-6px)]",
               )}
             />
           </button>

@@ -55,13 +55,13 @@ export function StatItem({ item, variant = "bar", className, fill }: StatItemPro
   return (
     <div
       className={cn(
-        "flex flex-col items-center border-r border-white/10 px-3 py-5 text-center last:border-r-0 max-[600px]:nth-[2n]:border-r-0 sm:px-4 sm:py-6",
+        "flex flex-col items-center border-r-0 px-2 py-4 text-center sm:px-4 sm:py-6 lg:border-r lg:border-white/10 lg:last:border-r-0",
         className,
       )}
     >
       {/* Fixed-height value row keeps all stat values and labels aligned */}
-      <div className="flex min-h-[calc(2*clamp(1.1rem,4.5vw,2rem)*1.15)] w-full items-center justify-center px-1 min-[601px]:min-h-[clamp(1.4rem,2.2vw,2rem)]">
-        <span className="text-center font-montserrat text-[clamp(1.1rem,4.5vw,2rem)] font-black leading-[1.15] text-gold min-[601px]:text-[clamp(1.25rem,2vw,2rem)] min-[601px]:leading-none min-[601px]:whitespace-nowrap">
+      <div className="flex min-h-[calc(2*clamp(0.85rem,3.4vw,1.35rem)*1.15)] w-full items-center justify-center px-1 min-[601px]:min-h-[clamp(1.4rem,2.2vw,2rem)]">
+        <span className="text-center font-montserrat text-[clamp(0.85rem,3.4vw,1.35rem)] font-black leading-[1.15] text-gold min-[601px]:text-[clamp(1.25rem,2vw,2rem)] min-[601px]:leading-none min-[601px]:whitespace-nowrap">
           {item.value}
         </span>
       </div>

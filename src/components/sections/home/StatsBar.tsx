@@ -6,15 +6,17 @@ export function StatsBar() {
   return (
     <div id="about" className="bg-forest-deep">
       <Container>
-        <div className="grid grid-cols-2 items-stretch border-l border-white/10 min-[601px]:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-6 items-stretch lg:grid-cols-5 lg:border-l lg:border-white/10">
           {statsContent.map((item, index) => (
             <StatItem
               key={`${item.value}-${item.label}`}
               item={item}
               className={
-                index === statsContent.length - 1
-                  ? "max-[600px]:col-span-2 max-[600px]:border-r-0"
-                  : undefined
+                index < 3
+                  ? "col-span-2 lg:col-span-1"
+                  : index === 3
+                    ? "col-span-2 col-start-2 lg:col-span-1 lg:col-start-auto"
+                    : "col-span-2 lg:col-span-1"
               }
             />
           ))}

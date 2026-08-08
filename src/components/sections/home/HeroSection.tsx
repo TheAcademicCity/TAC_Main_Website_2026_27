@@ -61,7 +61,7 @@ export function HeroSection() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.82)] via-[rgba(5,22,18,0.38)] to-[rgba(5,22,18,0.12)]" />
 
-      <div className="relative z-[2] mt-auto pb-[clamp(4rem,10vh,8rem)] text-center text-white md:pb-[clamp(5.5rem,12vh,8rem)]">
+      <div className="relative z-[2] mt-auto pb-[clamp(6.75rem,19vh,10.5rem)] text-center text-white md:pb-[clamp(5.5rem,12vh,8rem)]">
         <Container>
           <h1 className="mx-auto max-w-[16ch] font-montserrat text-[clamp(2.1rem,9vw,4.8rem)] font-black leading-[1.04] text-white [text-shadow:0_2px_40px_rgba(0,0,0,0.4)] md:text-[clamp(2.6rem,6.5vw,4.8rem)]">
             <span className="block">{title}</span>
@@ -74,8 +74,9 @@ export function HeroSection() {
         </Container>
       </div>
 
-      <div className="pointer-events-none absolute bottom-3 left-1/2 z-[2] -translate-x-1/2 text-[0.68rem] uppercase tracking-[0.14em] text-white/40 md:bottom-5">
-        <span className="hero-scroll-label">Scroll</span>
+      <div className="pointer-events-none absolute bottom-5 left-1/2 z-[2] -translate-x-1/2 text-[0.68rem] uppercase tracking-[0.14em] text-white/40 md:bottom-5">
+        <span className="hero-scroll-label inline-block md:hidden">Swipe</span>
+        <span className="hero-scroll-label hidden md:inline-block">Scroll</span>
       </div>
     </section>
   );

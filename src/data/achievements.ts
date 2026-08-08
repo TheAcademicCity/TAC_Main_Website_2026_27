@@ -134,7 +134,7 @@ export const achievementsPageContent = {
       { score: "635", name: "Sujan", college: "Science · 2024–25" },
       { score: "635", name: "Mallikarjun J", college: "Bangalore Medical College · 2023–24" },
     ],
-    grid: [],
+    grid: [] as AchievementsPageContent["neet"]["grid"],
   },
   commerce: {
     chapter: "03",
