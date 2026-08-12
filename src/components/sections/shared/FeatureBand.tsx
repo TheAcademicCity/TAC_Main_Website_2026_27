@@ -22,11 +22,11 @@ export function FeatureBand({ title, description, chips, cta }: FeatureBandProps
           </p>
           <div className="mb-[18px] flex flex-wrap gap-2">
             {chips.map((chip) => (
-              <span
-                key={chip}
-                className="rounded-[20px] border border-white/20 bg-white/10 px-3 py-1.5 text-[0.68rem] font-semibold"
-              >
-                {chip}
+              <span key={chip} className="contents">
+                {chip === "CA" ? <span className="h-0 w-full basis-full" aria-hidden /> : null}
+                <span className="rounded-[20px] border border-white/20 bg-white/10 px-3 py-1.5 text-[0.68rem] font-semibold">
+                  {chip}
+                </span>
               </span>
             ))}
           </div>

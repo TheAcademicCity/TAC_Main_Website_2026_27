@@ -26,10 +26,18 @@ export function AcademicsSection() {
         background="paper"
         className="!pt-[clamp(28px,3.5vw,44px)] !pb-[clamp(28px,3.5vw,44px)] max-md:bg-white"
       >
+        {/* Mobile title */}
+        <SectionHeader
+          label="A Quick Insight"
+          title={"Academic Eminence.\nCareer Focus.\nHolistic Growth."}
+          className="mb-6 max-md:[&_h2]:whitespace-pre-line max-md:[&_h2]:text-[1.3rem] max-md:[&_span]:text-[0.62rem] md:hidden"
+        />
+
+        {/* Desktop title */}
         <SectionHeader
           label="A Quick Insight"
           title={academicsContent.title}
-          className="mb-6 max-md:[&_h2]:text-[1.3rem] max-md:[&_span]:text-[0.62rem] md:mb-10"
+          className="mb-10 hidden md:block"
         />
 
         {/* Mobile stack cards */}
@@ -39,30 +47,26 @@ export function AcademicsSection() {
               key={row.title}
               className="overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_-14px_rgba(36,48,55,0.25)]"
             >
-              <div
-                className={cn(
-                  "relative flex h-[150px] items-center justify-center overflow-hidden font-montserrat text-[0.8rem] font-bold tracking-[0.02em] text-white/90",
-                  mediaGradients[index] ?? mediaGradients[0],
-                )}
-              >
+              <div className="relative h-[150px] overflow-hidden bg-forest-deep">
                 {row.image ? (
                   <ImageWithFallback
                     image={row.image}
                     fill
                     sizes="100vw"
-                    className="object-cover opacity-50"
+                    className="object-cover"
                   />
-                ) : null}
-                <span className="relative z-[1] px-4 text-center uppercase">
-                  {row.imageTag ?? row.label}
-                </span>
+                ) : (
+                  <div className={cn("absolute inset-0", mediaGradients[index] ?? mediaGradients[0])} />
+                )}
               </div>
               <div className="px-[18px] pb-[18px] pt-4">
                 <p className="mb-1.5 font-outfit text-[0.62rem] font-bold uppercase tracking-[0.06em] text-emerald">
                   {row.label}
                 </p>
-                <h4 className="mb-1.5 font-montserrat text-[1rem] font-bold text-navy">
-                  {row.title.split(",")[0]}
+                <h4 className="mb-1.5 whitespace-pre-line font-montserrat text-[1rem] font-bold text-navy">
+                  {row.label === "Career-First Learning"
+                    ? "Helping every child discover\nthe right path"
+                    : row.title.split(",")[0]}
                 </h4>
                 <p className="mb-2.5 text-[0.78rem] leading-normal text-[#999]">{row.description}</p>
                 <div className="flex flex-wrap gap-1.5">

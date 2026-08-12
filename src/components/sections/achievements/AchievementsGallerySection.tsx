@@ -195,7 +195,7 @@ function WordsTile({ item, seed }: { item: GalleryWordsItem; seed: number }) {
   const lineCount = lines.length;
 
   return (
-    <div className="@container flex h-full w-[min(68vw,240px)] shrink-0 items-center justify-center text-center [container-type:size] sm:w-[240px]">
+    <div className="@container flex h-full w-[min(64vw,220px)] shrink-0 items-center justify-center text-center [container-type:size] md:w-[240px]">
       <p
         className={cn(
           "flex h-[70%] w-[70%] flex-col items-center justify-center font-playfair italic font-medium leading-[1.05] tracking-tight",
@@ -237,7 +237,7 @@ function ImageTile({
           height: rect.height,
         });
       }}
-      className="group relative h-full w-[min(68vw,240px)] shrink-0 overflow-hidden rounded-xl text-left sm:w-[240px] sm:rounded-2xl"
+      className="group relative h-full w-[min(64vw,220px)] shrink-0 overflow-hidden rounded-[14px] text-left md:w-[240px] md:rounded-2xl"
       aria-label={`View ${item.label}`}
     >
       <GalleryItemVisual item={item} className="absolute inset-0 min-h-0" />
@@ -285,7 +285,7 @@ function TrackRow({
   return (
     <div className={cn("overflow-hidden", offsetClassName)}>
       <div
-        className="gallery-marquee-track flex h-[120px] w-max gap-1.5 sm:h-[160px] sm:gap-2"
+        className="gallery-marquee-track flex h-[112px] w-max gap-1.5 md:h-[160px] md:gap-2"
         style={{ animationDelay: phaseDelay }}
       >
         {loopItems.map((item, index) => {
@@ -362,18 +362,24 @@ export function AchievementsGallerySection() {
   const [rowA, rowB, rowC] = useMemo(() => splitIntoRows(items), [items]);
 
   return (
-    <Section id="gallery" className="overflow-hidden !pt-8 sm:!pt-10" spacing="compact">
+    <Section
+      id="gallery"
+      className="overflow-hidden max-md:!bg-white max-md:!py-[34px] md:!pt-10"
+      spacing="compact"
+      containerClassName="max-md:!px-5"
+    >
       <SectionHeader
         label={achievementsGalleryContent.label}
         title={achievementsGalleryContent.title}
-        titleClassName="text-[clamp(1.3rem,5.5vw,1.85rem)] md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
+        labelClassName="max-md:!mb-2 max-md:before:hidden max-md:!text-[0.62rem] max-md:!tracking-[0.14em] max-md:!text-emerald"
+        titleClassName="max-md:!text-[1.25rem] max-md:!font-extrabold max-md:!leading-[1.28] max-md:!tracking-[-0.01em] max-md:!text-navy md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
       />
 
       <RevealOnScroll delay={1}>
-        <div className="relative left-1/2 mt-6 w-screen max-w-none -translate-x-1/2 sm:mt-8">
+        <div className="relative left-1/2 mt-5 w-screen max-w-none -translate-x-1/2 md:mt-8">
           <div
             className={cn(
-              "flex flex-col gap-1.5 py-1 sm:gap-2",
+              "flex flex-col gap-1.5 py-1 md:gap-2",
               magnify && "[&_.gallery-marquee-track]:[animation-play-state:paused]",
             )}
           >
@@ -384,13 +390,13 @@ export function AchievementsGallerySection() {
             />
             <TrackRow
               items={rowB}
-              offsetClassName="pl-8 sm:pl-20"
+              offsetClassName="pl-6 md:pl-20"
               phaseDelay="-40s"
               onSelectImage={(item, origin) => setMagnify({ item, origin })}
             />
             <TrackRow
               items={rowC}
-              offsetClassName="pl-4 sm:pl-10"
+              offsetClassName="pl-3 md:pl-10"
               phaseDelay="-80s"
               onSelectImage={(item, origin) => setMagnify({ item, origin })}
             />

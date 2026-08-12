@@ -10,44 +10,53 @@ export function BlogArticlesSection() {
   const { articles } = blogPageContent;
 
   return (
-    <Section id="articles" background="paper">
+    <Section
+      id="articles"
+      background="paper"
+      className="max-md:!bg-off-white max-md:!py-[34px]"
+      containerClassName="max-md:!px-5"
+    >
       <RevealOnScroll>
-        <SectionLabel>{articles.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
+        <SectionLabel className="max-md:!mb-2 max-md:before:hidden max-md:!text-[0.62rem] max-md:!tracking-[0.14em] max-md:!text-emerald">
+          {articles.label}
+        </SectionLabel>
+        <h2 className="font-montserrat text-[1.25rem] font-extrabold leading-[1.28] tracking-[-0.01em] text-navy md:text-[clamp(1.5rem,2.6vw,2rem)] md:leading-tight md:tracking-normal md:text-forest-deep">
           {articles.title}
         </h2>
       </RevealOnScroll>
 
-      <div className="mt-6 grid items-start gap-7 sm:mt-10 lg:grid-cols-[1fr_360px] lg:gap-10">
+      <div className="mt-5 grid items-start gap-7 md:mt-10 lg:grid-cols-[1fr_360px] lg:gap-10">
         <div>
-          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+          <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 md:gap-6">
             {articles.posts.map((post, index) => (
               <RevealOnScroll key={post.href} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
                 <a
                   href={post.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-18px_rgba(15,61,56,0.18)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[16px] border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-18px_rgba(15,61,56,0.18)] md:rounded-lg"
                 >
-                  <div className="relative aspect-video overflow-hidden bg-forest-deep">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-forest-deep md:aspect-video">
                     <div className="absolute inset-0" style={{ background: post.gradient }} />
                     <ImageWithFallback
                       image={post.image}
                       fill
-                      sizes="(min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-4 sm:p-5">
-                    <h3 className="text-[0.94rem] font-extrabold leading-snug text-forest-deep sm:text-[0.97rem]">
+                  <div className="flex flex-1 flex-col p-3.5 md:p-5">
+                    <h3 className="text-[0.875rem] font-extrabold leading-snug text-navy md:text-[0.97rem] md:text-forest-deep">
                       {post.title}
                     </h3>
-                    <p className="mt-2 flex-1 text-[0.82rem] leading-relaxed text-slate">
+                    <p className="mt-1.5 flex-1 text-[0.75rem] leading-relaxed text-[#999] md:mt-2 md:text-[0.82rem] md:text-slate">
                       {post.description}
                     </p>
-                    <div className="mt-3 flex items-center justify-between gap-3 sm:mt-4">
-                      <span className="text-[0.74rem] text-slate">{post.readTime}</span>
-                      <span className="inline-flex shrink-0 items-center gap-1 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-1.5 group-hover:text-emerald">
+                    <div className="mt-2.5 flex items-center justify-between gap-3 md:mt-4">
+                      <span className="text-[0.6875rem] text-[#999] md:text-[0.74rem] md:text-slate">
+                        {post.readTime}
+                      </span>
+                      <span className="inline-flex shrink-0 items-center gap-1 font-montserrat text-[0.625rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-1.5 group-hover:text-emerald md:text-[0.68rem]">
                         Read
                         <Icon name="arrow" className="h-2.5 w-2.5" />
                       </span>
@@ -59,17 +68,18 @@ export function BlogArticlesSection() {
           </div>
         </div>
 
-        <aside className="flex flex-col gap-4 sm:gap-6 lg:sticky lg:top-[calc(var(--site-nav-stack)+1.5rem)]">
+        {/* Sidebar: desktop only */}
+        <aside className="hidden flex-col gap-6 md:flex lg:sticky lg:top-[calc(var(--site-nav-stack)+1.5rem)]">
           <RevealOnScroll>
             <div className="overflow-hidden rounded-lg border border-line bg-white">
-              <div className="bg-forest-deep px-4 py-3 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-gold sm:px-5 sm:py-3.5">
+              <div className="bg-forest-deep px-5 py-3.5 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-gold">
                 Popular Reads
               </div>
-              <div className="px-4 py-2 sm:px-5">
+              <div className="px-5 py-2">
                 {articles.popularPosts.map((post) => (
                   <div
                     key={post.number}
-                    className="flex items-start gap-2.5 border-b border-paper py-3 last:border-b-0 sm:gap-3"
+                    className="flex items-start gap-3 border-b border-paper py-3 last:border-b-0"
                   >
                     <div className="w-7 shrink-0 text-right font-montserrat text-[0.84rem] font-black leading-snug tabular-nums text-forest/15">
                       {post.number}
@@ -94,7 +104,7 @@ export function BlogArticlesSection() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={1}>
-            <div className="rounded-lg bg-forest-deep p-5 sm:p-6">
+            <div className="rounded-lg bg-forest-deep p-6">
               <div className="font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-gold">
                 {articles.sidebarCta.label}
               </div>
@@ -103,7 +113,7 @@ export function BlogArticlesSection() {
               </p>
               <Button
                 href={articles.sidebarCta.href}
-                className="mt-4 w-full justify-center px-5 py-2.5 text-[0.72rem] sm:w-auto"
+                className="mt-4 justify-center px-5 py-2.5 text-[0.72rem]"
               >
                 {articles.sidebarCta.buttonLabel}
                 <Icon name="arrow" className="h-3.5 w-3.5" />

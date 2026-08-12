@@ -84,6 +84,16 @@ const icons = {
       <path d="M9 11h1.5M12 11h1.5M15 11h1.5M9 14h1.5M12 14h1.5M15 14h1.5" />
     </>
   ),
+  school: (
+    <>
+      <path d="M14 22v-4a2 2 0 0 0-4 0v4" />
+      <path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2" />
+      <path d="M18 5v17" />
+      <path d="m4 6 8-4 8 4" />
+      <path d="M12 12v4" />
+      <path d="M10 14h4" />
+    </>
+  ),
   trophy: (
     <>
       <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" />

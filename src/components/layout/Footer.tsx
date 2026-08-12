@@ -12,8 +12,8 @@ export function Footer() {
     <footer className="bg-navy text-[0.87rem] text-mist md:bg-[#061c19] md:text-white/55">
       {/* Mobile mock footer */}
       <div className="px-5 pb-6 pt-8 md:hidden">
-        <p className="font-montserrat text-[1.05rem] font-extrabold text-white">TACS</p>
-        <p className="mt-2 max-w-[36ch] text-[0.72rem] leading-relaxed text-light-grey text-[#c3c3c3]">
+        <BrandLogo className="[&_img]:h-8 [&_img]:w-auto" />
+        <p className="mt-3 max-w-[36ch] text-[0.72rem] leading-relaxed text-light-grey text-[#c3c3c3]">
           {siteConfig.description}
         </p>
         <div className="mt-4 flex gap-2.5">

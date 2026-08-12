@@ -86,42 +86,110 @@ export function ScheduleSection() {
   const activeRows = schedule.tabs.find((tab) => tab.id === activeTab)?.rows ?? [];
 
   return (
-    <Section id="schedule" background="paper">
-      <RevealOnScroll>
-        <SectionLabel>{schedule.label}</SectionLabel>
-        <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.5rem,2.6vw,2rem)]">
-          {schedule.title}
-        </h2>
-        <p className="mt-2 max-w-[42ch] whitespace-normal text-[0.92rem] text-slate sm:max-w-none sm:text-[0.96rem] lg:whitespace-nowrap">
-          {schedule.description}
-        </p>
-      </RevealOnScroll>
+    <Section
+      id="schedule"
+      background="paper"
+      className="max-md:!bg-off-white max-md:!py-[34px]"
+      containerClassName="max-md:!px-5"
+    >
+      {/* Mobile */}
+      <div className="md:hidden">
+        <RevealOnScroll>
+          <SectionLabel className="!mb-2 before:hidden !text-[0.62rem] !tracking-[0.14em] !text-emerald">
+            {schedule.label}
+          </SectionLabel>
+          <h2 className="font-montserrat text-[1.25rem] font-extrabold leading-[1.28] tracking-[-0.01em] text-navy">
+            {schedule.title}
+          </h2>
+          <p className="mt-1.5 mb-4 text-[0.78125rem] leading-normal text-[#999]">
+            {schedule.description}
+          </p>
+        </RevealOnScroll>
 
-      <RevealOnScroll delay={1}>
-        <div className="mt-5 flex w-full overflow-hidden rounded-lg border-[1.5px] border-line sm:mt-7 sm:inline-flex sm:w-auto">
-          {schedule.tabs.map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={cn(
-                "flex-1 px-3 py-2.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] transition-colors sm:flex-none sm:px-6 sm:text-[0.78rem]",
-                activeTab === tab.id
-                  ? "bg-forest-deep text-white"
-                  : "bg-white text-slate hover:text-forest",
-              )}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+        <RevealOnScroll delay={1}>
+          <div className="mb-4 flex gap-2">
+            {schedule.tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={cn(
+                  "flex-1 rounded-[30px] px-3 py-2.5 font-outfit text-[0.8125rem] font-bold normal-case tracking-normal transition-colors",
+                  activeTab === tab.id
+                    ? "bg-navy text-white"
+                    : "border border-off-white bg-white text-[#666]",
+                )}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-        <div role="tabpanel" aria-label={`${activeTab} schedule`} className="mt-4">
-          <ScheduleGrid rows={activeRows} />
-        </div>
-      </RevealOnScroll>
+          <div
+            role="tabpanel"
+            aria-label={`${activeTab} schedule`}
+            className="overflow-hidden rounded-[16px] border border-off-white bg-white"
+          >
+            {activeRows.map((row, index) => (
+              <div
+                key={`${row.time}-${row.activity}`}
+                className={cn(
+                  "flex items-start gap-3 px-3.5 py-3",
+                  index > 0 && "border-t border-off-white",
+                )}
+              >
+                <span className="w-[5.75rem] shrink-0 font-montserrat text-[0.6875rem] font-bold leading-snug text-forest">
+                  {row.time}
+                </span>
+                <span className="min-w-0 text-[0.75rem] leading-snug text-[#666]">
+                  {row.activity}
+                </span>
+              </div>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:block">
+        <RevealOnScroll>
+          <SectionLabel>{schedule.label}</SectionLabel>
+          <h2 className="font-montserrat text-[clamp(1.5rem,2.6vw,2rem)] font-extrabold leading-tight text-forest-deep">
+            {schedule.title}
+          </h2>
+          <p className="mt-2 max-w-[42ch] whitespace-normal text-[0.92rem] text-slate sm:max-w-none sm:text-[0.96rem] lg:whitespace-nowrap">
+            {schedule.description}
+          </p>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={1}>
+          <div className="mt-5 flex w-full overflow-hidden rounded-lg border-[1.5px] border-line sm:mt-7 sm:inline-flex sm:w-auto">
+            {schedule.tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={cn(
+                  "flex-1 px-3 py-2.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] transition-colors sm:flex-none sm:px-6 sm:text-[0.78rem]",
+                  activeTab === tab.id
+                    ? "bg-forest-deep text-white"
+                    : "bg-white text-slate hover:text-forest",
+                )}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          <div role="tabpanel" aria-label={`${activeTab} schedule`} className="mt-4">
+            <ScheduleGrid rows={activeRows} />
+          </div>
+        </RevealOnScroll>
+      </div>
     </Section>
   );
 }

@@ -13,22 +13,25 @@ export function BrochureBanner() {
   return (
     <>
       {/* Mobile mock card */}
-      <div className="bg-off-white px-5 pb-8 pt-0 md:hidden">
-        <div className="flex items-center gap-3.5 rounded-[18px] border border-off-white bg-white p-4 shadow-[0_10px_24px_-16px_rgba(0,0,0,0.2)]">
-          <div className="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-[14px] bg-gradient-to-br from-gold to-[#b9770f] text-[1.25rem]">
-            📘
+      <div className="bg-off-white px-5 py-6 md:hidden">
+        <div className="grid grid-cols-[52px_minmax(0,1fr)] items-start gap-x-3.5 rounded-[18px] border border-off-white bg-white p-4 shadow-[0_10px_24px_-16px_rgba(0,0,0,0.2)]">
+          <div
+            className="grid h-[52px] w-[52px] place-items-center rounded-[14px] bg-[#fdece0] text-[1.75rem] leading-none"
+            aria-hidden
+          >
+            🏫
           </div>
-          <div className="min-w-0">
-            <h4 className="mb-0.5 font-montserrat text-[0.875rem] font-bold text-navy">
+          <div className="min-w-0 pt-0.5">
+            <h4 className="font-montserrat text-[0.875rem] font-bold leading-[1.3] text-navy">
               Discover Everything TACS Has to Offer
             </h4>
-            <p className="mb-2 text-[0.72rem] leading-snug text-[#999]">
+            <p className="mt-1 text-[0.72rem] leading-[1.4] text-[#999]">
               Download our school brochure — academics, campus life and co-curriculars.
             </p>
             <button
               type="button"
               onClick={() => openEnquiryModal("brochure")}
-              className="font-outfit text-[0.72rem] font-bold text-forest"
+              className="mt-2.5 font-outfit text-[0.72rem] font-bold leading-none text-forest"
             >
               Download Brochure →
             </button>

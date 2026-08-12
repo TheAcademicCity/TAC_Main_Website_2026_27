@@ -29,7 +29,15 @@ export function ContactSection() {
                 href={location.phoneHref}
                 className="mt-1.5 block text-[0.78rem] font-semibold text-forest"
               >
-                {location.phone.replace(" (Admissions)", "")}
+                {location.phone.replace(/\s*\(Admissions(?: Only)?\)/i, "")}
+              </a>
+            ) : null}
+            {location.email ? (
+              <a
+                href={`mailto:${location.email}`}
+                className="mt-1 block break-all text-[0.78rem] font-semibold text-forest"
+              >
+                {location.email}
               </a>
             ) : null}
             {location.mapEmbedUrl ? (

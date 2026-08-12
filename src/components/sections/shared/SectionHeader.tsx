@@ -10,6 +10,7 @@ type SectionHeaderProps = {
   description?: string;
   descriptionClassName?: string;
   titleClassName?: string;
+  labelClassName?: string;
   centered?: boolean;
   labelTone?: "emerald" | "gold";
   titleLight?: boolean;
@@ -25,6 +26,7 @@ export function SectionHeader({
   description,
   descriptionClassName,
   titleClassName,
+  labelClassName,
   centered = false,
   labelTone = "emerald",
   titleLight = false,
@@ -42,7 +44,7 @@ export function SectionHeader({
       )}
     >
       <div className={cn(centered && "mx-auto")}>
-        <SectionLabel centered={centered} tone={labelTone}>
+        <SectionLabel centered={centered} tone={labelTone} className={labelClassName}>
           {label}
         </SectionLabel>
         <SectionTitle

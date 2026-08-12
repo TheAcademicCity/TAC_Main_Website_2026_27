@@ -127,96 +127,128 @@ export function GallerySection() {
   }, [activeTab]);
 
   return (
-    <Section id="gallery" className="!pt-[clamp(28px,3.5vw,44px)]">
-      <SectionHeader
-        label={galleryContent.label}
-        title={galleryContent.title}
-        className="flex-col items-start gap-3 sm:flex-row sm:items-end sm:gap-4"
-        action={
-          <CtaLink href={galleryContent.instagram.href} external className="shrink-0">
-            <InstagramLogo className="h-4 w-4 shrink-0" />
-            {galleryContent.instagram.label}
-          </CtaLink>
-        }
-      />
-
-      <RevealOnScroll>
-        <TabGroup
-          tabs={galleryContent.tabs.map(({ id, label }) => ({ id, label }))}
-          activeId={activeTab}
-          onChange={setActiveTab}
-          className="mt-8 max-md:mt-3.5"
-        />
-      </RevealOnScroll>
-
-      {/* Mobile bento */}
-      <div className="mt-3.5 grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 md:hidden">
-        {activeItems.slice(0, 6).map((item, index) => {
-          const spanClass =
-            [
-              "col-start-1 row-span-2",
-              "col-start-2 row-span-1",
-              "col-start-2 row-span-1",
-              "col-start-1 row-span-1",
-              "col-start-2 row-span-2",
-              "col-start-1 row-span-1",
-            ][index] ?? "col-span-1";
-
-          return (
-            <button
-              key={`bento-${activeTab}-${item.label}`}
-              type="button"
-              onClick={() => setSelectedItem(item)}
-              className={cn(
-                "relative flex items-end overflow-hidden rounded-[14px] p-2.5 text-left",
-                spanClass,
-              )}
-              aria-label={`View ${item.label}`}
-            >
-              <GalleryItemVisual item={item} />
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/55" />
-              <span className="relative z-[2] font-outfit text-[0.65rem] font-bold text-white">
-                {item.label}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-      <p className="mt-3 text-center font-outfit text-[0.72rem] font-bold text-forest md:hidden">
-        <a href={galleryContent.instagram.href} target="_blank" rel="noopener noreferrer">
-          View Full Gallery on Instagram →
-        </a>
-      </p>
-
-      {/* Desktop masonry */}
-      <RevealOnScroll delay={1} className="hidden md:block">
-        <div
-          className="mt-6 columns-2 gap-2 md:columns-3 xl:columns-4"
-          role="tabpanel"
-          aria-label={`${activeTab} gallery`}
-        >
-          {activeItems.map((item) => (
-            <button
-              key={`${activeTab}-${item.label}`}
-              type="button"
-              onClick={() => setSelectedItem(item)}
-              className="group relative mb-2 w-full break-inside-avoid overflow-hidden text-left min-h-[min(var(--tile-h),min(48vw,220px))] md:min-h-[var(--tile-h)]"
-              style={{ "--tile-h": `${item.height}px` } as CSSProperties}
-              aria-label={`View ${item.label}`}
-            >
-              <GalleryItemVisual item={item} />
-              <span className="pointer-events-none absolute bottom-0 left-0 z-[2] max-w-full truncate px-3 py-2.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-wider text-white/70 sm:px-4 sm:py-3 sm:text-[0.72rem]">
-                {item.label}
-              </span>
-              <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-                <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-white text-white">
-                  <Icon name="zoom" className="h-5 w-5" />
-                </span>
-              </span>
-            </button>
-          ))}
+    <Section id="gallery" className="!pt-[clamp(28px,3.5vw,44px)] max-md:!px-0">
+      {/* Mobile header + pill tabs + bento */}
+      <div className="md:hidden">
+        <div className="px-5">
+          <SectionHeader
+            label={galleryContent.label}
+            title="A Glimpse Into Everyday TACS"
+            className="mb-3.5 max-md:[&_h2]:text-[1.3rem] max-md:[&_span]:text-[0.62rem]"
+            labelClassName="before:hidden !tracking-[0.14em] !text-emerald"
+          />
         </div>
-      </RevealOnScroll>
+
+        <div className="scrollbar-none mb-3.5 flex gap-2 overflow-x-auto px-5">
+          {galleryContent.tabs.map((tab) => {
+            const isActive = tab.id === activeTab;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={cn(
+                  "shrink-0 rounded-[20px] px-3.5 py-2 font-outfit text-[0.75rem] font-semibold",
+                  isActive ? "bg-forest text-white" : "bg-off-white text-charcoal",
+                )}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 px-5">
+          {activeItems.slice(0, 6).map((item, index) => {
+            const spanClass =
+              [
+                "col-start-1 row-span-2",
+                "col-start-2 row-start-1",
+                "col-start-2 row-start-2",
+                "col-start-1 row-start-3",
+                "col-start-2 row-start-3 row-span-2",
+                "col-start-1 row-start-4",
+              ][index] ?? "col-span-1";
+
+            return (
+              <button
+                key={`bento-${activeTab}-${item.label}`}
+                type="button"
+                onClick={() => setSelectedItem(item)}
+                className={cn(
+                  "relative h-full w-full overflow-hidden rounded-[14px] border border-line text-left",
+                  spanClass,
+                )}
+                aria-label={`View ${item.label}`}
+              >
+                <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
+                <span className="absolute bottom-2.5 left-2.5 z-[2] font-outfit text-[0.65625rem] font-bold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.65)]">
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <p className="mt-3 text-center font-outfit text-[0.72rem] font-bold text-forest">
+          <a href={galleryContent.instagram.href} target="_blank" rel="noopener noreferrer">
+            View Full Gallery on Instagram →
+          </a>
+        </p>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:block">
+        <SectionHeader
+          label={galleryContent.label}
+          title={galleryContent.title}
+          className="flex-col items-start gap-3 sm:flex-row sm:items-end sm:gap-4"
+          action={
+            <CtaLink href={galleryContent.instagram.href} external className="shrink-0">
+              <InstagramLogo className="h-4 w-4 shrink-0" />
+              {galleryContent.instagram.label}
+            </CtaLink>
+          }
+        />
+
+        <RevealOnScroll>
+          <TabGroup
+            tabs={galleryContent.tabs.map(({ id, label }) => ({ id, label }))}
+            activeId={activeTab}
+            onChange={setActiveTab}
+            className="mt-8"
+          />
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={1}>
+          <div
+            className="mt-6 columns-2 gap-2 md:columns-3 xl:columns-4"
+            role="tabpanel"
+            aria-label={`${activeTab} gallery`}
+          >
+            {activeItems.map((item) => (
+              <button
+                key={`${activeTab}-${item.label}`}
+                type="button"
+                onClick={() => setSelectedItem(item)}
+                className="group relative mb-2 w-full break-inside-avoid overflow-hidden text-left min-h-[min(var(--tile-h),min(48vw,220px))] md:min-h-[var(--tile-h)]"
+                style={{ "--tile-h": `${item.height}px` } as CSSProperties}
+                aria-label={`View ${item.label}`}
+              >
+                <GalleryItemVisual item={item} />
+                <span className="pointer-events-none absolute bottom-0 left-0 z-[2] max-w-full truncate px-3 py-2.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-wider text-white/70 sm:px-4 sm:py-3 sm:text-[0.72rem]">
+                  {item.label}
+                </span>
+                <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                  <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-white text-white">
+                    <Icon name="zoom" className="h-5 w-5" />
+                  </span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </div>
 
       {selectedItem ? (
         <GalleryLightbox item={selectedItem} onClose={() => setSelectedItem(null)} />

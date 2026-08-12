@@ -38,20 +38,20 @@ export function CampusSliderSection() {
           label={campusContent.label}
           title="Two Campuses. One Philosophy."
           centered
-          className="mb-6 max-md:text-left max-md:[&_h2]:text-[1.3rem] md:mb-10"
+          className="mb-6 max-md:mb-4 max-md:text-left max-md:[&_h2]:text-[1.3rem] max-md:[&_span]:before:hidden max-md:[&_span]:text-[0.62rem] max-md:[&_span]:tracking-[0.14em] max-md:[&_span]:text-emerald md:mb-10"
         />
       </Container>
 
       {/* Mobile toggle + card */}
       <Container className="md:hidden">
-        <div className="mb-[18px] flex rounded-[30px] bg-off-white p-1">
+        <div className="mb-4 flex rounded-[30px] bg-off-white p-1">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
               onClick={() => goToSlide(index)}
               className={cn(
-                "flex-1 rounded-[26px] py-2.5 font-outfit text-[0.78rem] font-bold",
+                "flex-1 rounded-[26px] py-2.5 font-outfit text-[0.78rem] font-bold transition-colors",
                 index === activeIndex ? "bg-forest text-white" : "bg-transparent text-charcoal",
               )}
             >
@@ -59,29 +59,79 @@ export function CampusSliderSection() {
             </button>
           ))}
         </div>
+
         {slides[activeIndex] ? (
-          <div className="relative overflow-hidden rounded-[20px] bg-gradient-to-br from-forest-deep to-forest p-[22px] text-white">
-            <h4 className="mb-1.5 font-montserrat text-[1.125rem] font-bold">
-              {slides[activeIndex].title}
-            </h4>
-            <p className="mb-3.5 text-[0.78rem] leading-normal text-mist">
-              {slides[activeIndex].description}
-            </p>
-            <div className="mb-4 grid grid-cols-2 gap-2.5">
-              {slides[activeIndex].facts
-                .filter((f) => !f.featured)
-                .slice(0, 4)
-                .map((fact) => (
-                  <div key={fact.label} className="rounded-[10px] bg-white/8 px-2.5 py-2">
-                    <b className="block font-montserrat text-[0.78rem]">{fact.value}</b>
-                    <span className="text-[0.62rem] text-mist">{fact.label}</span>
-                  </div>
-                ))}
+          <article className="overflow-hidden rounded-[22px] border border-forest/15 bg-gradient-to-br from-forest-deep via-forest to-[#0a2e29] text-white shadow-[0_18px_44px_-22px_rgba(14,57,52,0.6)]">
+            <div className="relative h-[148px] overflow-hidden">
+              <ImageWithFallback
+                image={slides[activeIndex].image}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/40 to-transparent"
+                aria-hidden
+              />
             </div>
-            <Button href={slides[activeIndex].cta.href} className="w-full justify-center rounded-[30px]">
-              {slides[activeIndex].cta.label}
-            </Button>
-          </div>
+
+            <div className="px-5 pb-5 pt-4">
+              <h4 className="mb-1.5 font-montserrat text-[1.125rem] font-bold leading-snug tracking-tight">
+                {slides[activeIndex].title}
+              </h4>
+              <p className="mb-4 text-[0.78rem] leading-relaxed text-white/72">
+                {slides[activeIndex].description}
+              </p>
+
+              <div className="mb-4 grid grid-cols-2 gap-2">
+                {slides[activeIndex].facts
+                  .filter((f) => !f.featured)
+                  .slice(0, 4)
+                  .map((fact) => (
+                    <div
+                      key={fact.label}
+                      className="rounded-[12px] border border-white/10 bg-white/[0.07] px-2.5 py-2.5"
+                    >
+                      <b className="block font-montserrat text-[0.78rem] leading-snug text-white">
+                        {fact.value}
+                      </b>
+                      <span className="mt-0.5 block text-[0.62rem] leading-snug text-white/60">
+                        {fact.label}
+                      </span>
+                    </div>
+                  ))}
+              </div>
+
+              <div className="mb-4 rounded-[14px] border border-white/12 bg-white/[0.06] px-3.5 py-3.5">
+                <p className="mb-3 font-outfit text-[0.6rem] font-bold uppercase tracking-[0.1em] text-white">
+                  {slides[activeIndex].academicPartners.label}
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
+                  {slides[activeIndex].academicPartners.logos.map((logo) => (
+                    <Image
+                      key={logo.src}
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.width ?? 140}
+                      height={logo.height ?? 40}
+                      className={cn(
+                        "h-7 w-auto max-w-[140px] object-contain",
+                        "className" in logo ? logo.className : undefined,
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <Button
+                href={slides[activeIndex].cta.href}
+                external={slides[activeIndex].cta.href.startsWith("http")}
+                className="w-full justify-center rounded-[30px] py-3.5 font-outfit text-[0.8125rem] font-bold normal-case tracking-normal"
+              >
+                {slides[activeIndex].cta.label}
+              </Button>
+            </div>
+          </article>
         ) : null}
       </Container>
 

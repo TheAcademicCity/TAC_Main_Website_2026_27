@@ -63,15 +63,19 @@ export function HeroSection() {
 
       {/* Mobile mock hero */}
       <div className="relative z-[2] flex flex-1 flex-col px-5 pt-[var(--site-nav-stack)] text-white md:hidden">
-        <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <h1 className="font-montserrat text-[1.875rem] font-extrabold leading-[1.18] tracking-[-0.01em]">
-            <span className="block">{title}</span>
-            <span className="block text-gold">{titleHighlight}</span>
-            <span className="block">{titleSuffix}</span>
-          </h1>
-          <h2 className="mt-3 whitespace-nowrap font-outfit text-[0.8rem] font-medium leading-snug text-mist sm:text-[0.875rem]">
-            Instilling 21st Century Skills | Nelamangala, Bengaluru
-          </h2>
+        <div className="flex flex-1 flex-col items-center text-center">
+          <div className="flex-[4]" aria-hidden />
+          <div>
+            <h1 className="font-montserrat text-[1.875rem] font-extrabold leading-[1.18] tracking-[-0.01em]">
+              <span className="block">{title}</span>
+              <span className="block text-gold">{titleHighlight}</span>
+              <span className="block">{titleSuffix}</span>
+            </h1>
+            <h2 className="mt-3 whitespace-nowrap font-outfit text-[0.8rem] font-medium leading-snug text-mist sm:text-[0.875rem]">
+              Instilling 21st Century Skills | Nelamangala, Bengaluru
+            </h2>
+          </div>
+          <div className="flex-[0.65]" aria-hidden />
         </div>
         <div className="flex justify-center gap-2.5 pb-5">
           {mobileChips.map((chip) => (
