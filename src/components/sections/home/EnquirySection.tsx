@@ -1,5 +1,8 @@
+"use client";
+
 import { Suspense } from "react";
 import { enquiryContent } from "@/data/home";
+import { useEnquiryModal } from "@/components/layout/EnquiryModalProvider";
 import { EnquiryForm } from "@/components/sections/shared/EnquiryForm";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
@@ -25,13 +28,33 @@ function EnquiryFormFallback() {
 }
 
 export function EnquirySection() {
+  const { openEnquiryModal } = useEnquiryModal();
+
   return (
     <Section
       id="enquiry"
       background="paper"
-      className="section-py-compact relative overflow-hidden !pt-[clamp(28px,3.5vw,44px)]"
+      className="section-py-compact relative overflow-hidden !pt-[clamp(28px,3.5vw,44px)] max-md:!bg-white"
     >
-      <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-8">
+      {/* Mobile violet CTA card */}
+      <div className="rounded-[22px] bg-gradient-to-br from-violet to-[#3d0d63] px-[22px] py-[26px] text-center text-white md:hidden">
+        <h3 className="mb-2 font-montserrat text-[1.2rem] font-bold">
+          Craft a Happy Future for Your Child
+        </h3>
+        <p className="mb-[18px] text-[0.78rem] text-[#e6d3f2]">
+          Talk to our admissions team today — we&apos;ll guide you through every step.
+        </p>
+        <button
+          type="button"
+          onClick={() => openEnquiryModal("general")}
+          className="block w-full rounded-[30px] bg-gold px-5 py-3.5 font-outfit text-[0.8rem] font-bold text-navy"
+        >
+          Start Your Journey
+        </button>
+      </div>
+
+      {/* Desktop form + image */}
+      <div className="hidden items-stretch gap-6 md:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-8">
         <div className="min-w-0">
           <RevealOnScroll>
             <SectionHeader
@@ -48,10 +71,7 @@ export function EnquirySection() {
           </RevealOnScroll>
         </div>
 
-        <RevealOnScroll
-          delay={2}
-          className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-0"
-        >
+        <RevealOnScroll delay={2} className="relative min-h-[180px] sm:min-h-[220px] lg:min-h-0">
           <div className="absolute inset-0 overflow-hidden rounded-lg">
             <ImageWithFallback
               image={enquiryContent.image}

@@ -145,11 +145,51 @@ export function GallerySection() {
           tabs={galleryContent.tabs.map(({ id, label }) => ({ id, label }))}
           activeId={activeTab}
           onChange={setActiveTab}
-          className="mt-8"
+          className="mt-8 max-md:mt-3.5"
         />
       </RevealOnScroll>
 
-      <RevealOnScroll delay={1}>
+      {/* Mobile bento */}
+      <div className="mt-3.5 grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 md:hidden">
+        {activeItems.slice(0, 6).map((item, index) => {
+          const spanClass =
+            [
+              "col-start-1 row-span-2",
+              "col-start-2 row-span-1",
+              "col-start-2 row-span-1",
+              "col-start-1 row-span-1",
+              "col-start-2 row-span-2",
+              "col-start-1 row-span-1",
+            ][index] ?? "col-span-1";
+
+          return (
+            <button
+              key={`bento-${activeTab}-${item.label}`}
+              type="button"
+              onClick={() => setSelectedItem(item)}
+              className={cn(
+                "relative flex items-end overflow-hidden rounded-[14px] p-2.5 text-left",
+                spanClass,
+              )}
+              aria-label={`View ${item.label}`}
+            >
+              <GalleryItemVisual item={item} />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/55" />
+              <span className="relative z-[2] font-outfit text-[0.65rem] font-bold text-white">
+                {item.label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      <p className="mt-3 text-center font-outfit text-[0.72rem] font-bold text-forest md:hidden">
+        <a href={galleryContent.instagram.href} target="_blank" rel="noopener noreferrer">
+          View Full Gallery on Instagram →
+        </a>
+      </p>
+
+      {/* Desktop masonry */}
+      <RevealOnScroll delay={1} className="hidden md:block">
         <div
           className="mt-6 columns-2 gap-2 md:columns-3 xl:columns-4"
           role="tabpanel"

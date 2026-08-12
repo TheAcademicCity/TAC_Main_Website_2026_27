@@ -73,10 +73,30 @@ export function PageSubnav({ items }: PageSubnavProps) {
   return (
     <nav
       ref={navRef}
-      className="sticky top-[var(--site-nav-stack)] z-[80] border-b-2 border-line bg-white shadow-[0_3px_16px_-8px_rgba(15,61,56,0.12)]"
+      className="sticky top-[var(--site-nav-stack)] z-[80] border-b border-off-white bg-white md:border-b-2 md:border-line md:shadow-[0_3px_16px_-8px_rgba(15,61,56,0.12)]"
       aria-label="Page sections"
     >
-      <div className="mx-auto flex w-full max-w-[1200px] overflow-x-auto px-4 scrollbar-none sm:w-[min(1200px,92vw)] sm:px-0">
+      {/* Mobile jump chips */}
+      <div className="flex gap-2 overflow-x-auto px-5 py-3.5 scrollbar-none md:hidden">
+        {items.map((item) => {
+          const isActive = item.id === activeId;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={cn(
+                "shrink-0 rounded-[20px] px-3.5 py-1.5 font-outfit text-[0.68rem] font-semibold",
+                isActive ? "bg-forest text-white" : "bg-off-white text-charcoal",
+              )}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      {/* Desktop underline tabs */}
+      <div className="mx-auto hidden w-full max-w-[1200px] overflow-x-auto px-4 scrollbar-none md:flex sm:w-[min(1200px,92vw)] sm:px-0">
         {items.map((item) => {
           const isActive = item.id === activeId;
 
@@ -85,7 +105,7 @@ export function PageSubnav({ items }: PageSubnavProps) {
               key={item.id}
               href={`#${item.id}`}
               className={cn(
-                "mb-[-2px] shrink-0 whitespace-nowrap px-3 py-3 font-montserrat text-[0.68rem] font-bold uppercase tracking-[0.1em] transition-colors sm:px-5 sm:py-3.5 sm:text-[0.72rem]",
+                "mb-[-2px] shrink-0 whitespace-nowrap px-5 py-3.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] transition-colors",
                 isActive
                   ? "border-b-[5px] border-gold text-forest-deep"
                   : "border-b-[3px] border-transparent text-slate hover:text-forest",

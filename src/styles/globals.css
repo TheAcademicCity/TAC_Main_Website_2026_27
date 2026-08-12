@@ -10,6 +10,10 @@
   --color-violet: #6816a4;
   --color-cyan: #6fdcef;
   --color-ink: #1a2830;
+  --color-navy: #243037;
+  --color-charcoal: #433e42;
+  --color-mist: #d3ddde;
+  --color-off-white: #ececec;
   --color-slate: #5a6a72;
   --color-line: #dce8e4;
   --color-paper: #f4f8f6;
@@ -23,13 +27,24 @@
   /* Fixed utility bar + main header — keep in sync with Header / PageSubnav */
   --site-utility-height: 30px;
   --site-header-height: 72px;
-  --site-nav-stack: calc(var(--site-utility-height) + var(--site-header-height));
+  --site-ribbon-height: 0px;
+  --site-nav-stack: calc(var(--site-utility-height) + var(--site-header-height) + var(--site-ribbon-height));
+  --site-mobile-action-height: 0px;
 
   /* Section vertical rhythm — tune sitewide spacing here */
   --section-py: clamp(48px, 6vw, 82px);
   --section-py-compact: clamp(26px, 3.5vw, 46px);
   --section-py-band: clamp(40px, 5vw, 66px);
   --section-py-feature: clamp(42px, 5.5vw, 72px);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-utility-height: 0px;
+    --site-header-height: 58px;
+    --site-ribbon-height: 32px;
+    --site-mobile-action-height: 72px;
+  }
 }
 
 @layer base {
@@ -47,6 +62,7 @@
 
   body {
     @apply overflow-x-hidden bg-white text-ink;
+    padding-bottom: var(--site-mobile-action-height);
   }
 
   html[data-splash="pending"] body {

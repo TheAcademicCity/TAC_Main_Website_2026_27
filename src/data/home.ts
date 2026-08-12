@@ -51,10 +51,18 @@ export const heroContent = {
     poster: createImage("/images/home/hero/poster.png", remote.heroPoster, "TACS Bengaluru campus"),
     isPlaceholder: false,
   } satisfies SiteVideo,
+  eyebrow: "Bengaluru · Nelamangala",
   title: "India's First",
   titleHighlight: "Career-Oriented",
   titleSuffix: "Boarding School",
   subtitle: "Instilling 21st Century Skills · Bengaluru, Nelamangala",
+  mobileSubtitle:
+    "Instilling 21st-century skills through a CBSE foundation, Indic values and 600+ career paths — from Grade 5 to 12.",
+  mobileChips: [
+    { value: "5–12", label: "Grades" },
+    { value: "600+", label: "Career Paths" },
+    { value: "2", label: "Campuses" },
+  ],
 } as const;
 
 export const statsContent: StatItem[] = [

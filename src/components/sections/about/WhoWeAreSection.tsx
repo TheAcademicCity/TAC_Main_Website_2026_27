@@ -36,14 +36,56 @@ export function WhoWeAreSection() {
   if (!tall || !compact || !wide) return null;
 
   return (
-    <Section id="about" background="white">
-      <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:items-stretch lg:gap-x-16 lg:gap-y-3">
+    <Section
+      id="about"
+      background="white"
+      className="max-md:!py-[34px]"
+      containerClassName="max-md:!px-5"
+    >
+      {/* Mobile */}
+      <div className="md:hidden">
+        <RevealOnScroll>
+          <SectionLabel className="!mb-2 before:hidden !text-[0.62rem] !tracking-[0.14em] !text-emerald">
+            {whoWeAre.label}
+          </SectionLabel>
+          <h2 className="font-montserrat text-[1.3rem] font-extrabold leading-[1.28] tracking-[-0.01em] text-navy">
+            {whoWeAre.title}
+          </h2>
+          {whoWeAre.paragraphs.map((paragraph) => (
+            <p
+              key={paragraph.slice(0, 32)}
+              className="mt-3 text-[0.8125rem] leading-[1.65] text-charcoal"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </RevealOnScroll>
+
+        <div className="scrollbar-none mt-[18px] -mx-5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5">
+          {whoWeAre.photos.map((photo) => (
+            <div
+              key={photo.image.alt}
+              className="relative h-[150px] w-[200px] shrink-0 snap-start overflow-hidden rounded-[14px] bg-forest-deep"
+            >
+              <ImageWithFallback
+                image={photo.image}
+                fill
+                sizes="200px"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden gap-6 sm:gap-8 md:grid lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:items-stretch lg:gap-x-16 lg:gap-y-3">
         <RevealOnScroll className="lg:col-start-2 lg:row-start-1">
           <SectionLabel>{whoWeAre.label}</SectionLabel>
         </RevealOnScroll>
 
         <RevealOnScroll delay={1} className="lg:col-start-2 lg:row-start-2">
-          <h2 className="font-montserrat text-[clamp(1.35rem,6vw,2rem)] font-extrabold leading-tight text-forest-deep md:text-[clamp(1.4rem,2.5vw,2rem)]">
+          <h2 className="font-montserrat text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold leading-tight text-forest-deep">
             {whoWeAre.title}
           </h2>
           {whoWeAre.paragraphs.map((paragraph) => (

@@ -29,7 +29,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   return (
     <nav
       className={cn(
-        "fixed inset-0 z-[99] overflow-y-auto bg-forest-dark px-5 pb-12 pt-28 transition-transform duration-300 sm:px-8 sm:pt-32 lg:hidden",
+        "fixed inset-0 z-[99] overflow-y-auto bg-forest-dark px-5 pb-12 pt-[calc(var(--site-nav-stack)+1.25rem)] transition-transform duration-300 sm:px-8 md:pt-28 lg:hidden",
         open ? "translate-x-0" : "translate-x-full",
       )}
       aria-hidden={!open}

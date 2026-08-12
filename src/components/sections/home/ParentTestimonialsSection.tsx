@@ -134,18 +134,37 @@ export function ParentTestimonialsSection() {
   };
 
   return (
-    <section id="parents" className="relative overflow-hidden bg-paper pt-[clamp(28px,3.5vw,44px)] pb-[clamp(2rem,3.5vw,3rem)]">
+    <section id="parents" className="relative overflow-hidden bg-paper pt-[clamp(28px,3.5vw,44px)] pb-[clamp(2rem,3.5vw,3rem)] max-md:bg-off-white">
       <Container className="relative z-[1] max-w-[1200px]">
         <div className="mb-6">
           <span className="mb-2 inline-flex items-center gap-2 font-montserrat text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-emerald before:h-0.5 before:w-6 before:bg-gold before:content-['']">
             {label}
           </span>
-          <h2 className="mt-1 font-montserrat text-[clamp(1.5rem,2.8vw,2.2rem)] font-black leading-tight text-forest-deep">
+          <h2 className="mt-1 font-montserrat text-[clamp(1.5rem,2.8vw,2.2rem)] font-black leading-tight text-forest-deep max-md:text-[1.3rem]">
             {title} <em className="not-italic text-emerald">{titleHighlight}</em>
           </h2>
         </div>
 
-        <div className="relative flex items-center gap-0 sm:gap-5 lg:-mx-3 lg:gap-6 xl:-mx-5">
+        {/* Mobile stacked cards */}
+        <div className="flex flex-col gap-3.5 md:hidden">
+          {testimonials.slice(0, 2).map((testimonial) => (
+            <blockquote
+              key={testimonial.href}
+              className="rounded-[18px] border-l-[3px] border-gold bg-white p-5 shadow-[0_8px_24px_-14px_rgba(0,0,0,0.2)]"
+            >
+              <p className="mb-3 text-[0.84rem] italic leading-normal text-navy">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <p className="font-montserrat text-[0.75rem] font-bold text-forest">{testimonial.name}</p>
+              <p className="text-[0.68rem] text-[#999]">
+                {testimonial.role}
+                {testimonial.detail ? ` · ${testimonial.detail}` : ""}
+              </p>
+            </blockquote>
+          ))}
+        </div>
+
+        <div className="relative hidden items-center gap-0 sm:gap-5 md:flex lg:-mx-3 lg:gap-6 xl:-mx-5">
           <div className="hidden sm:block">
             <ScrollArrow
               direction="prev"

@@ -8,12 +8,12 @@ export function SportBandSection() {
   const { sportBand } = coCurricularPageContent;
 
   return (
-    <div className="bg-forest-deep py-[clamp(28px,3.5vw,44px)]">
+    <div className="hidden bg-forest-deep py-[clamp(28px,3.5vw,44px)] md:block">
       <Container>
         <RevealOnScroll>
           <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1 text-center sm:text-left">
-              <h3 className="font-montserrat text-[clamp(1rem,4.5vw,1.2rem)] font-extrabold leading-snug text-white md:text-[clamp(1rem,1.8vw,1.2rem)]">
+              <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.2rem)] font-extrabold leading-snug text-white">
                 {sportBand.title}
               </h3>
               <p className="mx-auto mt-1 max-w-[42ch] whitespace-normal text-[0.86rem] text-white/58 sm:mx-0 sm:max-w-none sm:text-[0.88rem] lg:whitespace-nowrap">

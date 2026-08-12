@@ -8,12 +8,12 @@ export function ProgressionBandSection() {
   const { progressionBand } = academicsPageContent;
 
   return (
-    <div className="bg-forest-deep py-[clamp(28px,3.5vw,44px)]">
+    <div className="hidden bg-forest-deep py-[clamp(28px,3.5vw,44px)] md:block">
       <Container>
         <RevealOnScroll>
           <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1 text-center sm:text-left">
-              <h3 className="font-montserrat text-[clamp(1rem,4.5vw,1.3rem)] font-extrabold leading-snug text-white md:text-[clamp(1rem,1.8vw,1.3rem)]">
+              <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.3rem)] font-extrabold leading-snug text-white">
                 {progressionBand.title}
               </h3>
               <p className="mx-auto mt-1 max-w-[42ch] whitespace-normal text-[0.88rem] text-white/60 sm:mx-0 sm:max-w-none sm:text-[0.9rem] lg:whitespace-nowrap">

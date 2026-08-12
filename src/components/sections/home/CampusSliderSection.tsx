@@ -36,13 +36,56 @@ export function CampusSliderSection() {
       <Container>
         <SectionHeader
           label={campusContent.label}
-          title={campusContent.title}
+          title="Two Campuses. One Philosophy."
           centered
-          className="mb-6 md:mb-10"
+          className="mb-6 max-md:text-left max-md:[&_h2]:text-[1.3rem] md:mb-10"
         />
       </Container>
 
-      <RevealOnScroll>
+      {/* Mobile toggle + card */}
+      <Container className="md:hidden">
+        <div className="mb-[18px] flex rounded-[30px] bg-off-white p-1">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => goToSlide(index)}
+              className={cn(
+                "flex-1 rounded-[26px] py-2.5 font-outfit text-[0.78rem] font-bold",
+                index === activeIndex ? "bg-forest text-white" : "bg-transparent text-charcoal",
+              )}
+            >
+              {slide.name}
+            </button>
+          ))}
+        </div>
+        {slides[activeIndex] ? (
+          <div className="relative overflow-hidden rounded-[20px] bg-gradient-to-br from-forest-deep to-forest p-[22px] text-white">
+            <h4 className="mb-1.5 font-montserrat text-[1.125rem] font-bold">
+              {slides[activeIndex].title}
+            </h4>
+            <p className="mb-3.5 text-[0.78rem] leading-normal text-mist">
+              {slides[activeIndex].description}
+            </p>
+            <div className="mb-4 grid grid-cols-2 gap-2.5">
+              {slides[activeIndex].facts
+                .filter((f) => !f.featured)
+                .slice(0, 4)
+                .map((fact) => (
+                  <div key={fact.label} className="rounded-[10px] bg-white/8 px-2.5 py-2">
+                    <b className="block font-montserrat text-[0.78rem]">{fact.value}</b>
+                    <span className="text-[0.62rem] text-mist">{fact.label}</span>
+                  </div>
+                ))}
+            </div>
+            <Button href={slides[activeIndex].cta.href} className="w-full justify-center rounded-[30px]">
+              {slides[activeIndex].cta.label}
+            </Button>
+          </div>
+        ) : null}
+      </Container>
+
+      <RevealOnScroll className="hidden md:block">
         <div className="relative w-full overflow-hidden">
           {slides.map((slide, index) => (
             <div
