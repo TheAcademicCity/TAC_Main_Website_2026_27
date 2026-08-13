@@ -17,7 +17,7 @@ export function ProcessSection() {
       background="forest-deep"
       className={cn(
         "relative overflow-hidden",
-        "max-md:!bg-off-white max-md:!py-[34px] max-md:before:hidden max-md:after:hidden",
+        "max-md:!bg-off-white max-md:!pt-4 max-md:!pb-3 max-md:before:hidden max-md:after:hidden",
         "before:pointer-events-none before:absolute before:-right-44 before:-top-44 before:h-[500px] before:w-[500px] before:rounded-full before:border-[60px] before:border-gold/6 after:pointer-events-none after:absolute after:-bottom-32 after:-left-32 after:h-[350px] after:w-[350px] after:rounded-full after:border-[40px] after:border-cyan/5",
       )}
       containerClassName="max-md:!px-5"

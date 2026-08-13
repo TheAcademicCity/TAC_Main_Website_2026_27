@@ -20,7 +20,7 @@ export function FaqSection() {
     <Section
       id="faq"
       background="paper"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-2 max-md:!pb-3"
       containerClassName="max-md:!px-5"
     >
       <RevealOnScroll>

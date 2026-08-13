@@ -57,7 +57,7 @@ export function CriteriaSection() {
     <Section
       id="criteria"
       background="paper"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-2 max-md:!pb-3"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -74,35 +74,29 @@ export function CriteriaSection() {
           </p>
         </RevealOnScroll>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="flex flex-col gap-3">
           {criteria.cards.map((card, index) => {
             const styles = cardStyles[index] ?? cardStyles[0];
+            const mobileTitle = card.number.includes(" · ")
+              ? card.number.split(" · ")[1]
+              : card.title;
+
             return (
               <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-                <article
-                  className={cn(
-                    "rounded-2xl border border-off-white bg-white p-4 shadow-[0_8px_20px_-14px_rgba(0,0,0,0.15)]",
-                    index === 2 && "col-span-2",
-                  )}
-                >
+                <article className="relative w-full rounded-2xl border border-off-white bg-white p-4 pr-[4.5rem] shadow-[0_8px_20px_-14px_rgba(0,0,0,0.15)]">
                   <div
                     className={cn(
-                      "mb-2.5 flex h-9 w-9 items-center justify-center rounded-[10px] text-base",
+                      "absolute right-3.5 top-3.5 flex h-12 w-12 items-center justify-center rounded-[14px] text-[1.5rem] leading-none",
                       styles.badge,
                     )}
                     aria-hidden
                   >
                     {card.icon}
                   </div>
-                  <p className="mb-1 font-montserrat text-[0.5625rem] font-bold uppercase tracking-[0.06em] text-[#999]">
-                    {card.number}
-                  </p>
-                  <h5 className="mb-1.5 font-montserrat text-[0.8125rem] font-bold text-navy">
-                    {card.title}
+                  <h5 className="mb-1.5 font-montserrat text-[0.875rem] font-bold text-navy">
+                    {mobileTitle}
                   </h5>
-                  <p className="line-clamp-4 text-[0.6875rem] leading-[1.5] text-[#999]">
-                    {card.description}
-                  </p>
+                  <p className="text-[0.6875rem] leading-[1.5] text-[#999]">{card.description}</p>
                 </article>
               </RevealOnScroll>
             );

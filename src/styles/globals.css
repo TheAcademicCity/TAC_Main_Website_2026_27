@@ -122,9 +122,9 @@
     padding-bottom: clamp(28px, 3.5vw, 44px);
   }
 
-  /* Boarding — tighter top spacing on mobile only */
+  /* Boarding + Admissions — tighter top spacing on mobile only */
   @media (max-width: 767px) {
-    .boarding-page :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+    :is(.boarding-page, .admissions-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
       padding-top: 1rem;
       padding-bottom: 1.75rem;
     }

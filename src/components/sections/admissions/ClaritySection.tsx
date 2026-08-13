@@ -10,7 +10,7 @@ export function ClaritySection() {
   return (
     <section id="clarity" className="bg-white md:pb-[clamp(28px,3.5vw,44px)]">
       {/* Mobile — navy card */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-2 pb-4 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[18px] bg-[linear-gradient(150deg,var(--color-navy),var(--color-charcoal))] px-[22px] py-[22px] text-center text-white">
             <h4 className="font-montserrat text-base font-bold leading-[1.4]">
