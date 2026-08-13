@@ -10,11 +10,10 @@ import { cn } from "@/lib/utils";
 
 export function NewsletterSection() {
   const { newsletter } = blogPageContent;
-  const [page, setPage] = useState(1);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const currentIssues = newsletter.pages.find((p) => p.page === page)?.issues ?? newsletter.pages[0].issues;
+  const currentIssues = newsletter.pages.flatMap((p) => p.issues);
 
   function handleSubscribe() {
     if (!email.includes("@")) return;
@@ -90,7 +89,7 @@ export function NewsletterSection() {
           </div>
 
           {/* Mobile: horizontal snap */}
-          <div className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-1 md:hidden">
+          <div className="scrollbar-none flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1 md:hidden">
             {currentIssues.map((issue) => (
               <article
                 key={issue.month}
@@ -152,23 +151,6 @@ export function NewsletterSection() {
             ))}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-1.5 md:mt-6">
-            {newsletter.pages.map((p) => (
-              <button
-                key={p.page}
-                type="button"
-                onClick={() => setPage(p.page)}
-                className={cn(
-                  "grid h-9 w-9 place-items-center rounded-[10px] border-[1.5px] font-montserrat text-[0.75rem] font-bold transition-colors md:h-10 md:w-10 md:rounded-lg md:text-[0.82rem]",
-                  page === p.page
-                    ? "border-gold bg-gold text-forest-deep"
-                    : "border-white/20 bg-white/6 text-white/55 hover:border-white/40 hover:bg-white/12 hover:text-white",
-                )}
-              >
-                {p.page}
-              </button>
-            ))}
-          </div>
         </div>
       </Container>
     </section>

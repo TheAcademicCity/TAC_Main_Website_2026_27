@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { blogPageContent } from "@/data/blog";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { Button } from "@/components/ui/Button";
@@ -5,9 +8,16 @@ import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { cn } from "@/lib/utils";
+
+const PAGE_SIZE = 5;
 
 export function BlogArticlesSection() {
   const { articles } = blogPageContent;
+  const [page, setPage] = useState(1);
+
+  const totalPages = Math.max(1, Math.ceil(articles.posts.length / PAGE_SIZE));
+  const pagePosts = articles.posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   return (
     <Section
@@ -28,7 +38,7 @@ export function BlogArticlesSection() {
       <div className="mt-5 grid items-start gap-7 md:mt-10 lg:grid-cols-[1fr_360px] lg:gap-10">
         <div>
           <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 md:gap-6">
-            {articles.posts.map((post, index) => (
+            {pagePosts.map((post, index) => (
               <RevealOnScroll key={post.href} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
                 <a
                   href={post.href}
@@ -66,6 +76,26 @@ export function BlogArticlesSection() {
               </RevealOnScroll>
             ))}
           </div>
+
+          {totalPages > 1 ? (
+            <div className="mt-5 flex flex-wrap items-center gap-1.5 md:mt-7">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+                <button
+                  key={pageNumber}
+                  type="button"
+                  onClick={() => setPage(pageNumber)}
+                  className={cn(
+                    "grid h-9 w-9 place-items-center rounded-[10px] border-[1.5px] font-montserrat text-[0.75rem] font-bold transition-colors md:h-10 md:w-10 md:rounded-lg md:text-[0.82rem]",
+                    page === pageNumber
+                      ? "border-gold bg-gold text-forest-deep"
+                      : "border-line bg-white text-slate hover:border-forest/30 hover:text-forest",
+                  )}
+                >
+                  {pageNumber}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         {/* Sidebar: desktop only */}
