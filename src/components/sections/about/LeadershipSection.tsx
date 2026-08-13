@@ -55,7 +55,7 @@ export function LeadershipSection() {
       id="leadership"
       background="white"
       spacing="compact"
-      className="max-md:!py-[34px]"
+      className="!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}

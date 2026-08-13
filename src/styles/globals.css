@@ -112,8 +112,14 @@
   }
 
   /* Inner pages — match home tightened section rhythm */
-  :is(.home-page, .about-page, .academics-page, .boarding-page, .admissions-page, .blog-page, .co-curricular-page, .achievements-page, .campus-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+  :is(.home-page, .academics-page, .boarding-page, .admissions-page, .blog-page, .co-curricular-page, .achievements-page, .campus-page) :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
     padding-block: clamp(28px, 3.5vw, 44px);
+  }
+
+  /* About — tighter top spacing under subnav / between sections */
+  .about-page :is(.section-py, .section-py-compact, .section-py-band, .section-py-feature) {
+    padding-top: 1rem;
+    padding-bottom: clamp(28px, 3.5vw, 44px);
   }
 
   .scrollbar-none {

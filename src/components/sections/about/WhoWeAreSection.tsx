@@ -39,7 +39,7 @@ export function WhoWeAreSection() {
     <Section
       id="about"
       background="white"
-      className="max-md:!py-[34px]"
+      className="!pt-4 max-md:!pb-7 md:!pb-[clamp(28px,3.5vw,44px)]"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -61,7 +61,7 @@ export function WhoWeAreSection() {
           ))}
         </RevealOnScroll>
 
-        <div className="scrollbar-none mt-[18px] -mx-5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5">
+        <div className="scrollbar-none mt-[18px] flex snap-x snap-mandatory gap-2.5 overflow-x-auto">
           {whoWeAre.photos.map((photo) => (
             <div
               key={photo.image.alt}

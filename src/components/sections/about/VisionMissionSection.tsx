@@ -47,7 +47,7 @@ export function VisionMissionSection() {
   return (
     <section id="vision" className="relative overflow-hidden">
       {/* Mobile */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-4 pb-7 md:hidden">
         <RevealOnScroll>
           <SectionLabel className="!mb-2 before:hidden !text-[0.62rem] !tracking-[0.14em] !text-emerald">
             Vision & Mission

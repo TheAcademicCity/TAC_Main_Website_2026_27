@@ -11,12 +11,12 @@ export function AboutCtaSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Mobile */}
-      <div className="bg-white px-5 py-[34px] md:hidden">
+      <div className="bg-white px-5 pt-4 pb-7 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[20px] bg-[linear-gradient(160deg,var(--color-forest-deep),var(--color-forest))] px-5 py-6 text-center text-white">
             <h3 className="font-montserrat text-[1.1875rem] font-bold">{ctaBand.title}</h3>
             <p className="mt-2 text-[0.78125rem] leading-normal text-mist">
-              Walk the dormitories, meet the team, watch a day in action.
+              Meet the team, watch a day in action.
             </p>
             <div className="mt-1.5 mb-[18px] inline-block rounded-[20px] bg-white/12 px-3.5 py-1.5 text-[0.6875rem] font-semibold">
               Open Mon–Sat · 9 AM – 3:30 PM

@@ -10,7 +10,7 @@ export function AboutCampusBandSection() {
   return (
     <>
       {/* Mobile */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-4 pb-7 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[18px] bg-[linear-gradient(150deg,var(--color-navy),var(--color-charcoal))] px-[22px] py-[22px] text-center text-white">
             <h4 className="font-montserrat text-base font-bold leading-[1.4]">
@@ -31,7 +31,7 @@ export function AboutCampusBandSection() {
       </div>
 
       {/* Desktop */}
-      <div className="hidden bg-forest-deep py-[clamp(28px,3.5vw,44px)] md:block">
+      <div className="hidden bg-forest-deep pt-4 pb-[clamp(28px,3.5vw,44px)] md:block">
         <Container>
           <RevealOnScroll>
             <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">

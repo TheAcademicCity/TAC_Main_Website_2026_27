@@ -21,7 +21,7 @@ export function NewsSection() {
         {newsContent.articles.map((article) => (
           <article
             key={article.title}
-            className="w-[150px] shrink-0 snap-start rounded-2xl bg-white p-4 shadow-[0_8px_20px_-12px_rgba(0,0,0,0.18)]"
+            className="w-[150px] shrink-0 snap-start rounded-2xl border border-line bg-white p-4 shadow-[0_8px_20px_-12px_rgba(0,0,0,0.18)]"
           >
             <div className="mb-2 flex items-baseline gap-1 text-forest">
               <b className="font-montserrat text-[1.25rem] font-extrabold">{article.day}</b>
