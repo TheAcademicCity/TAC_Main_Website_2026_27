@@ -46,7 +46,9 @@ export function BoardingHeroSection() {
               className="min-w-0 flex-1 rounded-[14px] border border-white/20 bg-white/10 px-3 py-2.5"
             >
               <b className="block font-montserrat text-[0.9375rem] font-bold text-white">{stat.value}</b>
-              <span className="text-[0.5625rem] uppercase tracking-[0.03em] text-mist">{stat.label}</span>
+              <span className="text-[0.5625rem] uppercase tracking-[0.03em] text-mist">
+                {stat.label === "Values at the core" ? "Values at core" : stat.label}
+              </span>
             </div>
           ))}
         </div>

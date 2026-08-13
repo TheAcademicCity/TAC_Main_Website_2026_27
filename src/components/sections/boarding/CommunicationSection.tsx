@@ -9,7 +9,7 @@ export function CommunicationSection() {
   return (
     <Section
       id="communication"
-      className="max-md:!bg-white max-md:!py-[34px]"
+      className="max-md:!bg-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -27,19 +27,33 @@ export function CommunicationSection() {
         </RevealOnScroll>
 
         <div className="grid grid-cols-2 gap-2.5">
-          {communication.cards.map((card, index) => (
-            <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-              <article className="rounded-[16px] border border-off-white bg-off-white p-3.5">
-                <div className="mb-2 text-lg" aria-hidden>
-                  {card.icon}
-                </div>
-                <h5 className="mb-1 font-montserrat text-[0.75rem] font-bold leading-snug text-navy">
-                  {card.title}
-                </h5>
-                <p className="text-[0.65625rem] leading-[1.45] text-[#999]">{card.description}</p>
-              </article>
-            </RevealOnScroll>
-          ))}
+          {communication.cards.map((card, index) => {
+            const isFullWidth = index === communication.cards.length - 1;
+
+            return (
+              <RevealOnScroll
+                key={card.title}
+                delay={Math.min(index, 3) as 0 | 1 | 2 | 3}
+                className={isFullWidth ? "col-span-2" : undefined}
+              >
+                <article
+                  className={
+                    isFullWidth
+                      ? "rounded-[16px] border border-off-white bg-off-white p-3.5 text-center"
+                      : "rounded-[16px] border border-off-white bg-off-white p-3.5"
+                  }
+                >
+                  <div className="mb-2 text-lg" aria-hidden>
+                    {card.icon}
+                  </div>
+                  <h5 className="mb-1 font-montserrat text-[0.75rem] font-bold leading-snug text-navy">
+                    {card.title}
+                  </h5>
+                  <p className="text-[0.65625rem] leading-[1.45] text-[#999]">{card.description}</p>
+                </article>
+              </RevealOnScroll>
+            );
+          })}
         </div>
       </div>
 

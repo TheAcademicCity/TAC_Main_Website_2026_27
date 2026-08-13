@@ -20,7 +20,7 @@ export function OutpassSection() {
     <Section
       id="outpass"
       background="paper"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -37,24 +37,37 @@ export function OutpassSection() {
           </p>
         </RevealOnScroll>
 
-        <div className="relative mb-5 pl-[26px]">
+        <div className="mb-5 flex flex-col">
           {outpass.steps.map((step, index) => {
             const isLast = index === outpass.steps.length - 1;
+            const isBeforeLast = index === outpass.steps.length - 2;
             return (
-              <div key={step.title} className={isLast ? "relative" : "relative pb-[18px]"}>
-                <div className="absolute left-[-26px] top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-forest text-[0.5625rem] font-extrabold text-white">
-                  {step.number === "✓" ? "✓" : index + 1}
+              <div
+                key={step.title}
+                className={cn(
+                  "flex gap-3",
+                  !isLast && (isBeforeLast ? "min-h-[3.15rem]" : "min-h-[3.75rem]"),
+                )}
+              >
+                <div className="flex w-5 shrink-0 flex-col items-center self-stretch">
+                  <span
+                    className={cn(
+                      "relative z-[1] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[0.5625rem] font-extrabold",
+                      isLast ? "bg-emerald text-white" : "bg-forest text-white",
+                    )}
+                  >
+                    {step.number === "✓" ? "✓" : index + 1}
+                  </span>
+                  {!isLast ? (
+                    <span className="w-0.5 flex-1 bg-mist" aria-hidden />
+                  ) : null}
                 </div>
-                {!isLast ? (
-                  <div
-                    className="absolute left-[-17px] top-5 h-[calc(100%)] w-0.5 bg-mist"
-                    aria-hidden
-                  />
-                ) : null}
-                <h5 className="mb-0.5 font-montserrat text-[0.8125rem] font-bold text-navy">
-                  {step.title}
-                </h5>
-                <p className="text-[0.6875rem] leading-[1.45] text-[#999]">{step.description}</p>
+                <div className="min-w-0 flex-1">
+                  <h5 className="mb-0.5 font-montserrat text-[0.8125rem] font-bold text-navy">
+                    {step.title}
+                  </h5>
+                  <p className="text-[0.6875rem] leading-[1.45] text-[#999]">{step.description}</p>
+                </div>
               </div>
             );
           })}

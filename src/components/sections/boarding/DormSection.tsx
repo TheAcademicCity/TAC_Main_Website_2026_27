@@ -28,7 +28,7 @@ export function DormSection() {
   const rightKeyItems = dorm.keyItems.slice(3, 6);
 
   return (
-    <Section id="dorm" className="max-md:!py-[34px]" containerClassName="max-md:!px-5">
+    <Section id="dorm" className="max-md:!pt-4 max-md:!pb-7" containerClassName="max-md:!px-5">
       {/* Mobile */}
       <div className="md:hidden">
         <RevealOnScroll>

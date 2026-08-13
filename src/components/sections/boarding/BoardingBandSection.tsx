@@ -10,7 +10,7 @@ export function BoardingBandSection() {
   return (
     <>
       {/* Mobile */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-4 pb-7 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[18px] bg-[linear-gradient(150deg,var(--color-navy),var(--color-charcoal))] px-[22px] py-[22px] text-center text-white">
             <h4 className="font-montserrat text-base font-bold leading-[1.4]">
