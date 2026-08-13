@@ -1,5 +1,4 @@
 import { academicsPageContent } from "@/data/academics";
-import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -10,17 +9,14 @@ import type { CdfPillar } from "@/types/academics";
 const accentStyles = {
   emerald: {
     bar: "bg-emerald",
-    icon: "bg-emerald/10",
     dot: "bg-emerald",
   },
   gold: {
     bar: "bg-gold",
-    icon: "bg-gold/10",
     dot: "bg-gold-dark",
   },
   violet: {
     bar: "bg-violet",
-    icon: "bg-violet/10",
     dot: "bg-violet",
   },
 } as const;
@@ -40,19 +36,9 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
       <span className="absolute right-4 top-3 font-montserrat text-[1.85rem] font-black leading-none text-forest/7 sm:right-5 sm:top-4 sm:text-[2.08rem]">
         {pillar.number}
       </span>
-      <div className="mb-3 flex items-center gap-3 sm:mb-4">
-        <span
-          className={cn(
-            "grid h-10 w-10 shrink-0 place-items-center rounded-lg text-[1.3rem] leading-none sm:h-11 sm:w-11 sm:text-[1.45rem]",
-            styles.icon,
-          )}
-        >
-          <span aria-hidden>{pillar.icon}</span>
-        </span>
-        <h3 className="pr-8 font-montserrat text-[0.98rem] font-extrabold text-forest-deep sm:text-base">
-          {pillar.title}
-        </h3>
-      </div>
+      <h3 className="mb-3 pr-8 font-montserrat text-[0.98rem] font-extrabold text-forest-deep sm:mb-4 sm:text-base">
+        {pillar.title}
+      </h3>
       <ul className="space-y-2">
         {pillar.items.map((item) => (
           <li
@@ -69,13 +55,13 @@ function PillarCard({ pillar }: { pillar: CdfPillar }) {
 }
 
 export function CdfOverviewSection() {
-  const { overview, curriculum } = academicsPageContent;
+  const { overview } = academicsPageContent;
 
   return (
     <Section
       id="overview"
       background="white"
-      className="max-md:!py-[34px]"
+      className="max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -92,7 +78,7 @@ export function CdfOverviewSection() {
           </p>
         </RevealOnScroll>
 
-        <div className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-1.5">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-3.5 overflow-x-auto pb-1.5">
           {overview.pillars.map((pillar, index) => (
             <article
               key={pillar.title}
@@ -101,13 +87,8 @@ export function CdfOverviewSection() {
                 mobileGradients[index] ?? mobileGradients[0],
               )}
             >
-              <div className="mb-3 flex items-center gap-2.5">
-                <span className="font-montserrat text-[1.375rem] font-extrabold text-white/40">
-                  {pillar.number}
-                </span>
-                <span className="text-[1.25rem]" aria-hidden>
-                  {pillar.icon}
-                </span>
+              <div className="mb-3 font-montserrat text-[1.375rem] font-extrabold text-white/40">
+                {pillar.number}
               </div>
               <h3 className="mb-2.5 font-montserrat text-[0.9375rem] font-bold">{pillar.title}</h3>
               <ul>
@@ -125,15 +106,6 @@ export function CdfOverviewSection() {
               </ul>
             </article>
           ))}
-        </div>
-
-        <div className="relative mt-4 h-[150px] overflow-hidden rounded-2xl bg-forest-deep">
-          <ImageWithFallback
-            image={curriculum.image}
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
         </div>
       </div>
 

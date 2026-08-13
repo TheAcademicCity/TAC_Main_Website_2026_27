@@ -11,7 +11,7 @@ export function AcademicsCtaSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Mobile */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-4 pb-7 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[20px] bg-[linear-gradient(160deg,var(--color-forest-deep),var(--color-forest))] px-5 py-6 text-center text-white">
             <h3 className="font-montserrat text-[1.1875rem] font-bold">{ctaBand.title}</h3>
@@ -23,14 +23,14 @@ export function AcademicsCtaSection() {
               <Button
                 href={ctaBand.enquiry.href}
                 variant="gold"
-                className="flex-1 justify-center rounded-[30px] px-2.5 py-3 font-outfit text-[0.8125rem] font-bold normal-case tracking-normal text-navy"
+                className="min-w-0 flex-[1.1] justify-center rounded-[30px] px-3 py-2.5 font-outfit text-[0.8125rem] font-bold normal-case tracking-normal text-navy"
               >
-                Start Journey
+                Apply
               </Button>
               <Button
                 href={ctaBand.phone.href}
                 variant="outline-white"
-                className="flex-1 justify-center rounded-[30px] border-[1.5px] border-white/50 px-2.5 py-3 font-outfit text-[0.75rem] font-semibold normal-case tracking-normal"
+                className="min-w-0 flex-1 justify-center rounded-[30px] border-[1.5px] border-white/50 px-2.5 py-2.5 font-outfit text-[0.75rem] font-semibold normal-case tracking-normal"
               >
                 Call
               </Button>
@@ -38,7 +38,7 @@ export function AcademicsCtaSection() {
                 href={ctaBand.whatsapp.href}
                 external
                 variant="outline-white"
-                className="flex-1 justify-center rounded-[30px] border-[1.5px] border-white/50 px-2.5 py-3 font-outfit text-[0.75rem] font-semibold normal-case tracking-normal"
+                className="min-w-0 flex-1 justify-center rounded-[30px] border-[1.5px] border-white/50 px-2.5 py-2.5 font-outfit text-[0.75rem] font-semibold normal-case tracking-normal"
               >
                 WhatsApp
               </Button>

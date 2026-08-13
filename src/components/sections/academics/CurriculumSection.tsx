@@ -31,7 +31,7 @@ export function CurriculumSection() {
     <Section
       id="curriculum"
       background="paper"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -50,18 +50,24 @@ export function CurriculumSection() {
 
         <div className="mb-[18px] grid grid-cols-2 gap-2.5">
           {mobileTeachCards.map((card, index) => (
-            <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-              <article className="rounded-[14px] border border-off-white bg-white p-3.5 shadow-[0_6px_16px_-12px_rgba(0,0,0,0.15)]">
-                <div className="mb-1 font-montserrat text-[0.625rem] font-bold text-gold">
-                  {card.number}
-                </div>
-                <div className="mb-1.5 text-base" aria-hidden>
+            <RevealOnScroll
+              key={card.title}
+              delay={Math.min(index, 3) as 0 | 1 | 2 | 3}
+              className="h-full"
+            >
+              <article className="flex aspect-square flex-col rounded-[16px] border border-line bg-white p-3.5 shadow-[0_6px_16px_-12px_rgba(0,0,0,0.12)]">
+                <div
+                  className="mb-2.5 grid h-9 w-9 place-items-center rounded-[10px] bg-forest/8 text-[1.05rem] leading-none"
+                  aria-hidden
+                >
                   {card.icon}
                 </div>
-                <h5 className="mb-1 font-montserrat text-[0.75rem] font-bold leading-snug text-navy">
+                <h5 className="font-montserrat text-[0.75rem] font-bold leading-snug tracking-tight text-navy">
                   {card.title}
                 </h5>
-                <p className="text-[0.65625rem] leading-[1.45] text-[#999]">{card.description}</p>
+                <p className="mt-1.5 line-clamp-3 text-[0.625rem] leading-[1.45] text-[#999]">
+                  {card.description}
+                </p>
               </article>
             </RevealOnScroll>
           ))}
@@ -146,18 +152,17 @@ export function CurriculumSection() {
 
         <div className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
           {curriculum.approach.map((card, index) => (
-            <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-              <article className="relative h-full overflow-hidden rounded-lg border border-line bg-white p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)] sm:p-5">
-                <span className="absolute right-3 top-2 font-montserrat text-[2.5rem] font-black leading-none text-forest/6 sm:right-4 sm:top-3 sm:text-[3rem]">
-                  {card.number}
-                </span>
+            <RevealOnScroll key={card.title} delay={Math.min(index, 3) as 0 | 1 | 2 | 3} className="h-full">
+              <article className="flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(15,61,56,0.18)] sm:p-5 xl:aspect-square">
                 <span className="mb-3 grid h-[38px] w-[38px] place-items-center rounded-lg bg-forest/7 text-[1.25rem] leading-none sm:h-[42px] sm:w-[42px] sm:text-[1.35rem]">
                   <span aria-hidden>{card.icon}</span>
                 </span>
-                <h4 className="pr-8 font-montserrat text-[0.92rem] font-extrabold text-forest-deep sm:text-[0.94rem]">
+                <h4 className="font-montserrat text-[0.92rem] font-extrabold text-forest-deep sm:text-[0.94rem]">
                   {card.title}
                 </h4>
-                <p className="mt-2 text-[0.84rem] leading-relaxed text-slate">{card.description}</p>
+                <p className="mt-2 line-clamp-4 text-[0.84rem] leading-relaxed text-slate">
+                  {card.description}
+                </p>
               </article>
             </RevealOnScroll>
           ))}

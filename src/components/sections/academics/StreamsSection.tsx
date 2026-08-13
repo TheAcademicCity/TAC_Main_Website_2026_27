@@ -13,7 +13,18 @@ const streamGradients = [
   "bg-[linear-gradient(150deg,var(--color-charcoal),#241f22)]",
 ] as const;
 
-const partnerChipLabels = ["ALLEN", "Trisha Classes"] as const;
+const mobilePartnerLogos = [
+  {
+    src: "/images/home/campus/partners/allen-color.png",
+    alt: "Allen Career Institute",
+    className: "h-6 w-auto max-w-[100px] object-contain",
+  },
+  {
+    src: "/images/home/campus/partners/trisha-classes-onlight.png",
+    alt: "Trisha Classes",
+    className: "h-6 w-auto max-w-[108px] object-contain",
+  },
+] as const;
 
 export function StreamsSection() {
   const { streams } = academicsPageContent;
@@ -22,7 +33,7 @@ export function StreamsSection() {
     <Section
       id="streams"
       background="forest-deep"
-      className="relative overflow-hidden pb-10 max-md:!bg-white max-md:!py-[34px] max-md:pb-[34px]"
+      className="relative overflow-hidden pb-10 max-md:!bg-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       <div
@@ -44,7 +55,7 @@ export function StreamsSection() {
           </p>
         </RevealOnScroll>
 
-        <div className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-1.5">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-3.5 overflow-x-auto pb-1.5">
           {streams.cards.map((card, index) => (
             <article
               key={card.title}
@@ -71,14 +82,16 @@ export function StreamsSection() {
         <p className="mt-[18px] text-[0.65625rem] font-semibold text-[#999]">
           {streams.partners.label}
         </p>
-        <div className="mt-2 flex gap-2.5">
-          {partnerChipLabels.map((label) => (
-            <div
-              key={label}
-              className="rounded-lg bg-navy px-3.5 py-2 text-[0.6875rem] font-bold text-white"
-            >
-              {label}
-            </div>
+        <div className="mt-2.5 flex flex-wrap items-center gap-3">
+          {mobilePartnerLogos.map((logo) => (
+            <Image
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              width={160}
+              height={48}
+              className={logo.className}
+            />
           ))}
         </div>
       </div>

@@ -4,6 +4,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { cn } from "@/lib/utils";
 import type { AssessmentCommItem } from "@/types/academics";
 
 const cycleSteps = [
@@ -50,7 +51,7 @@ export function AssessmentSection() {
     <Section
       id="assessment"
       background="paper"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -67,38 +68,31 @@ export function AssessmentSection() {
           </p>
         </RevealOnScroll>
 
-        <div className="relative mb-[22px] pl-[26px]">
+        <div className="mb-[22px]">
           {cycleSteps.map((step, index) => {
             const isLast = index === cycleSteps.length - 1;
             return (
-              <div key={step.title} className={isLast ? "relative" : "relative pb-[22px]"}>
-                <div className="absolute left-[-26px] top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-forest text-[0.5625rem] font-extrabold text-white">
-                  {index + 1}
+              <div key={step.title} className="flex gap-3">
+                <div className="flex w-5 shrink-0 flex-col items-center self-stretch">
+                  <span className="relative z-[1] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest text-[0.5625rem] font-extrabold text-white">
+                    {index + 1}
+                  </span>
+                  {!isLast ? (
+                    <span className="-mt-2.5 w-0.5 flex-1 bg-mist" aria-hidden />
+                  ) : null}
                 </div>
-                {!isLast ? (
-                  <div
-                    className="absolute left-[-17px] top-5 h-[calc(100%)] w-0.5 bg-mist"
-                    aria-hidden
-                  />
-                ) : (
-                  <div
-                    className="absolute left-[-17px] top-5 h-4 w-0.5 bg-[repeating-linear-gradient(180deg,var(--color-gold)_0_4px,transparent_4px_8px)]"
-                    aria-hidden
-                  />
-                )}
-                <h5 className="mb-0.5 font-montserrat text-[0.8125rem] font-bold text-navy">
-                  {step.title}
-                </h5>
-                <p className="text-[0.6875rem] text-[#999]">{step.description}</p>
+                <div className={cn("min-w-0 flex-1", !isLast && "pb-5")}>
+                  <h5 className="mb-0.5 font-montserrat text-[0.8125rem] font-bold leading-snug text-navy">
+                    {step.title}
+                  </h5>
+                  <p className="text-[0.6875rem] text-[#999]">{step.description}</p>
+                </div>
               </div>
             );
           })}
         </div>
-        <p className="mb-6 ml-[26px] text-[0.65625rem] font-bold text-gold">
-          ↻ Feeds back into the Student Progression Plan
-        </p>
 
-        <h3 className="mb-3.5 font-montserrat text-[0.9375rem] font-extrabold text-navy">
+        <h3 className="mb-3.5 mt-6 font-montserrat text-[0.9375rem] font-extrabold text-navy">
           How We Communicate Progress
         </h3>
         <div className="grid grid-cols-2 gap-2.5">

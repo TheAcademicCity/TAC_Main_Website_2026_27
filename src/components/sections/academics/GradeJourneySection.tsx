@@ -78,7 +78,7 @@ export function GradeJourneySection() {
     <Section
       id="progression"
       background="white"
-      className="max-md:!py-[34px]"
+      className="max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -95,7 +95,7 @@ export function GradeJourneySection() {
           </p>
         </RevealOnScroll>
 
-        <div className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-1.5">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-3.5 overflow-x-auto pb-1.5">
           {gradeJourney.steps.map((step, index) => (
             <article
               key={step.grades}
