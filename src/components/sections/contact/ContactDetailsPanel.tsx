@@ -22,7 +22,7 @@ export function ContactDetailsPanel() {
   const { links, address } = contactPageContent;
 
   return (
-    <div className="flex h-auto min-h-0 flex-col gap-2.5 max-md:gap-3 lg:h-full">
+    <div className="flex h-auto min-h-0 w-full flex-col gap-2.5 max-md:gap-3 max-md:self-start lg:h-full">
       <div className="grid shrink-0 grid-cols-1 gap-2.5 max-md:gap-3 md:grid-cols-2">
         {links.map((link) => {
           const content = (

@@ -28,7 +28,7 @@ export function BlogPageHeader() {
             Home
           </SiteLink>
           <span aria-hidden>›</span>
-          <span className="text-emerald md:text-white/70">Blogs & Newsletters</span>
+          <span className="text-gold">Blogs & Newsletters</span>
         </nav>
 
         <h1 className="font-montserrat text-[1.5625rem] font-extrabold leading-[1.2] text-white md:text-[clamp(2rem,4.5vw,3.2rem)] md:font-black md:leading-[1.06]">

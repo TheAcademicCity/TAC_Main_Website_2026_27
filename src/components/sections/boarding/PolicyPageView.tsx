@@ -151,7 +151,7 @@ export function PolicyPageView({ policy }: PolicyPageViewProps) {
               Boarding
             </SiteLink>
             <span aria-hidden>›</span>
-            <span className="text-white/70">{policy.title}</span>
+            <span className="text-gold">{policy.title}</span>
           </nav>
 
           <h1 className="max-w-[22ch] font-montserrat text-[clamp(1.8rem,3.5vw,2.6rem)] font-black leading-[1.15] text-white">

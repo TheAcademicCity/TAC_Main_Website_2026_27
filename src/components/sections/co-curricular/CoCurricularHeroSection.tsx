@@ -35,7 +35,7 @@ export function CoCurricularHeroSection() {
             Home
           </SiteLink>
           <span aria-hidden>›</span>
-          <span className="text-emerald md:text-white/70">Co-curricular</span>
+          <span className="text-gold">Co-curricular</span>
         </nav>
 
         <h1 className="font-montserrat text-[1.5rem] font-extrabold leading-[1.2] text-white md:whitespace-pre-line md:text-[clamp(1.9rem,4.2vw,3.2rem)] md:font-black md:leading-[1.12]">

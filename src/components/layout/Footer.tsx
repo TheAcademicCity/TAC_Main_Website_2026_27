@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-navy text-[0.87rem] text-mist md:bg-[#061c19] md:text-white/55">
       {/* Mobile mock footer */}
-      <div className="px-5 pb-6 pt-8 md:hidden">
+      <div className="px-5 pb-6 !pt-8 md:hidden">
         <BrandLogo className="[&_img]:h-8 [&_img]:w-auto" />
         <p className="mt-3 max-w-[36ch] text-[0.72rem] leading-relaxed text-light-grey text-[#c3c3c3]">
           {siteConfig.description}

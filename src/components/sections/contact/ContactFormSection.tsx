@@ -28,7 +28,7 @@ const initialState: FormState = {
 };
 
 const fieldClassName =
-  "w-full rounded-md border border-line bg-white px-2.5 py-1.5 font-outfit text-[0.82rem] text-ink outline-none transition-[border-color] duration-200 placeholder:text-[#bdc8c4] focus:border-emerald focus:ring-2 focus:ring-emerald/15 max-md:rounded-xl max-md:px-3 max-md:py-2 max-md:text-[0.8rem]";
+  "w-full rounded-md border border-line bg-white px-2.5 py-1.5 font-outfit text-[0.82rem] text-ink outline-none transition-[border-color] duration-200 placeholder:text-[#bdc8c4] focus:border-emerald focus:ring-2 focus:ring-emerald/15 max-md:rounded-xl max-md:px-3 max-md:py-1.5 max-md:text-[0.8rem]";
 
 const labelClassName =
   "font-montserrat text-[0.58rem] font-bold uppercase tracking-[0.12em] text-slate max-md:text-[0.56rem]";
@@ -85,7 +85,7 @@ export function ContactFormSection() {
 
   if (status === "success") {
     return (
-      <div className="flex h-auto items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] sm:p-6 lg:h-full">
+      <div className="flex h-auto items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] sm:p-6">
         <div className="text-center">
           <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-emerald/10">
             <Icon name="checkCircle" className="h-5 w-5 text-emerald" strokeWidth={2} />
@@ -102,18 +102,18 @@ export function ContactFormSection() {
   }
 
   return (
-    <div className="flex h-auto flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] max-md:p-4 sm:p-4 lg:h-full">
+    <div className="flex h-auto flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] max-md:p-3.5 sm:p-4">
       <div>
-        <h2 className="font-montserrat text-[clamp(1.1rem,4.5vw,1.25rem)] font-extrabold text-forest-deep max-md:text-[1.15rem] max-md:text-navy md:text-[clamp(1.05rem,1.6vw,1.25rem)]">
+        <h2 className="font-montserrat text-[clamp(1.1rem,4.5vw,1.25rem)] font-extrabold text-forest-deep max-md:text-[1.1rem] max-md:text-navy md:text-[clamp(1.05rem,1.6vw,1.25rem)]">
           {form.title}
         </h2>
-        <p className="mt-0.5 text-[0.78rem] leading-snug text-slate">{form.description}</p>
+        <p className="mt-0.5 text-[0.78rem] leading-snug text-slate max-md:text-[0.72rem]">{form.description}</p>
       </div>
 
       <form
         onSubmit={handleSubmit}
         noValidate
-        className="mt-2.5 flex flex-1 flex-col gap-2.5 max-md:mt-3 max-md:gap-2 sm:gap-2"
+        className="mt-2 flex flex-col gap-2 max-md:mt-2 max-md:gap-1.5 sm:gap-2"
       >
         <div className="grid gap-2.5 max-md:gap-2 sm:grid-cols-2 sm:gap-2">
           <div className="flex flex-col gap-0.5">
@@ -235,7 +235,7 @@ export function ContactFormSection() {
           />
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col gap-0.5">
+        <div className="flex flex-col gap-0.5">
           <label htmlFor="contact-message" className={labelClassName}>
             Message
           </label>
@@ -246,18 +246,15 @@ export function ContactFormSection() {
             onChange={(event) => updateField("message", event.target.value)}
             placeholder="Any questions or details you'd like to share..."
             rows={2}
-            className={cn(
-              fieldClassName,
-              "min-h-[3.25rem] resize-none sm:min-h-[2.75rem] lg:flex-1",
-            )}
+            className={cn(fieldClassName, "min-h-[2.5rem] resize-none max-md:min-h-[2.25rem]")}
           />
         </div>
 
-        <div className="mt-auto pt-1.5 max-md:pt-2 sm:pt-1">
+        <div className="pt-1 max-md:pt-1.5 sm:pt-1">
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2.5 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70 max-md:rounded-[30px] max-md:bg-gold max-md:py-3 max-md:font-outfit max-md:text-[0.8rem] max-md:font-bold max-md:normal-case max-md:tracking-normal max-md:text-navy max-md:hover:bg-[#e09d10] md:py-2"
+            className="flex w-full items-center justify-center gap-2 rounded-md bg-forest-deep px-4 py-2.5 font-montserrat text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-white transition-colors hover:bg-forest disabled:opacity-70 max-md:rounded-[30px] max-md:bg-gold max-md:py-2.5 max-md:font-outfit max-md:text-[0.8rem] max-md:font-bold max-md:normal-case max-md:tracking-normal max-md:text-navy max-md:hover:bg-[#e09d10] md:py-2"
           >
             {status === "submitting" ? "Sending..." : form.submitLabel}
             <Icon name="arrow" className="h-3.5 w-3.5" />

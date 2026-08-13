@@ -16,21 +16,21 @@ export default function ContactPage() {
     <main
       id="top"
       tabIndex={-1}
-      className="contact-page relative box-border min-h-[100svh] overflow-x-hidden bg-forest-deep pt-[var(--site-nav-stack)] outline-none lg:h-[100svh] lg:max-h-[100svh] lg:overflow-hidden"
+      className="contact-page relative box-border min-h-0 overflow-x-clip bg-forest-deep pt-[var(--site-nav-stack)] outline-none max-md:pb-0 lg:h-[100svh] lg:max-h-[100svh] lg:min-h-[100svh] lg:overflow-hidden"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-20 h-56 w-56 rounded-full border-[32px] border-white/4 sm:h-72 sm:w-72 sm:border-[40px]"
+        className="pointer-events-none absolute -right-24 top-20 hidden h-56 w-56 rounded-full border-[32px] border-white/4 sm:h-72 sm:w-72 sm:border-[40px] md:block"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full border-[28px] border-white/4 sm:h-64 sm:w-64 sm:border-[36px]"
+        className="pointer-events-none absolute -bottom-24 -left-16 hidden h-48 w-48 rounded-full border-[28px] border-white/4 sm:h-64 sm:w-64 sm:border-[36px] md:block"
       />
 
-      <Container className="relative z-[1] flex h-full min-h-[calc(100svh-var(--site-nav-stack))] max-w-[1200px] flex-col px-4 pt-2 pb-5 max-md:px-5 max-md:pt-3 max-md:pb-8 sm:px-[4vw] sm:pb-6 lg:min-h-0 lg:pt-3 lg:pb-6">
+      <Container className="relative z-[1] flex max-w-[1200px] flex-col px-4 pt-2 pb-2 max-md:px-5 max-md:pt-3 max-md:pb-4 sm:px-[4vw] md:pb-6 lg:h-full lg:min-h-[calc(100svh-var(--site-nav-stack))] lg:pt-3 lg:pb-6">
         <ContactPageHero />
 
-        <div className="mt-2 grid min-h-0 flex-1 gap-4 max-md:mt-3.5 max-md:gap-3.5 sm:gap-5 lg:mt-3 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+        <div className="mt-2 grid gap-4 max-md:mt-3.5 max-md:gap-3.5 max-md:items-start sm:gap-5 lg:mt-3 lg:min-h-0 lg:flex-1 lg:grid-cols-2 lg:items-stretch lg:gap-6">
           <ContactFormSection />
           <ContactDetailsPanel />
         </div>

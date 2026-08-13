@@ -49,7 +49,7 @@ export function AboutHeroSection() {
             Home
           </SiteLink>
           <span aria-hidden>›</span>
-          <span className="text-emerald md:text-white/70">About Us</span>
+          <span className="text-gold">About Us</span>
         </nav>
 
         <h1 className="font-montserrat text-[1.625rem] font-extrabold leading-[1.2] text-white md:text-[clamp(1.9rem,4.5vw,3.4rem)] md:leading-[1.06]">

@@ -30,7 +30,7 @@ export function AdmissionsHeroSection() {
             Home
           </SiteLink>
           <span aria-hidden>›</span>
-          <span className="text-emerald md:text-white/70">Admissions</span>
+          <span className="text-gold">Admissions</span>
         </nav>
 
         <h1 className="max-w-[18ch] font-montserrat text-[1.625rem] font-extrabold leading-[1.2] text-white md:text-[clamp(1.9rem,4.5vw,3.4rem)] md:font-black md:leading-[1.06]">
