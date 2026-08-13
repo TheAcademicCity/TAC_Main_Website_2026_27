@@ -67,7 +67,7 @@ function GalleryItemVisual({
           image={item.image}
           fill
           sizes="(max-width: 640px) 72vw, 240px"
-          className="object-cover"
+          className="object-cover max-md:object-[center_top] md:object-center"
         />
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(111,220,239,0.15),transparent_60%)]" />
@@ -285,7 +285,7 @@ function TrackRow({
   return (
     <div className={cn("overflow-hidden", offsetClassName)}>
       <div
-        className="gallery-marquee-track flex h-[112px] w-max gap-1.5 md:h-[160px] md:gap-2"
+        className="gallery-marquee-track flex h-[140px] w-max gap-1.5 md:h-[160px] md:gap-2"
         style={{ animationDelay: phaseDelay }}
       >
         {loopItems.map((item, index) => {
@@ -364,7 +364,7 @@ export function AchievementsGallerySection() {
   return (
     <Section
       id="gallery"
-      className="overflow-hidden max-md:!bg-white max-md:!py-[34px] md:!pt-10"
+      className="overflow-hidden max-md:!bg-white max-md:!pt-4 max-md:!pb-2 md:!pt-10"
       spacing="compact"
       containerClassName="max-md:!px-5"
     >
@@ -372,7 +372,7 @@ export function AchievementsGallerySection() {
         label={achievementsGalleryContent.label}
         title={achievementsGalleryContent.title}
         labelClassName="max-md:!mb-2 max-md:before:hidden max-md:!text-[0.62rem] max-md:!tracking-[0.14em] max-md:!text-emerald"
-        titleClassName="max-md:!text-[1.25rem] max-md:!font-extrabold max-md:!leading-[1.28] max-md:!tracking-[-0.01em] max-md:!text-navy md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
+        titleClassName="whitespace-pre-line max-md:!text-[1.25rem] max-md:!font-extrabold max-md:!leading-[1.28] max-md:!tracking-[-0.01em] max-md:!text-navy md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
       />
 
       <RevealOnScroll delay={1}>

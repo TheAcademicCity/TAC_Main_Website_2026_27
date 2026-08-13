@@ -11,7 +11,7 @@ export function AchievementsCtaSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Mobile */}
-      <div className="bg-off-white px-5 py-[34px] md:hidden">
+      <div className="bg-off-white px-5 pt-4 pb-4 md:hidden">
         <RevealOnScroll>
           <div className="rounded-[20px] bg-[linear-gradient(160deg,var(--color-forest-deep),var(--color-forest))] px-5 py-6 text-center text-white">
             <h3 className="font-montserrat text-[1.1875rem] font-bold">{ctaBand.title}</h3>

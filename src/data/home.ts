@@ -388,7 +388,7 @@ export const galleryContent = {
 
 export const achievementsGalleryContent = {
   label: "Student Achievers",
-  title: "Recognizing Talent. Celebrating Success.",
+  title: "Recognizing Talent.\nCelebrating Success.",
   /** Achievement stream chips on image tiles */
   items: [
     {
