@@ -5,7 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const mobileStats = [
-  { value: "90 min", label: "Daily Sport" },
   { value: "District→National", label: "Talent Path" },
   { value: "Expert", label: "Coach / Sport" },
 ] as const;
@@ -17,7 +16,7 @@ export function SportsSection() {
     <Section
       id="sports"
       spacing="compact"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -35,14 +34,16 @@ export function SportsSection() {
           </p>
 
           <div className="mb-[18px] flex flex-wrap gap-1.5">
-            {sports.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-[20px] border border-off-white bg-white px-3 py-1.5 text-[0.6875rem] font-semibold text-charcoal"
-              >
-                {tag}
-              </span>
-            ))}
+            {sports.tags
+              .filter((tag) => tag !== "Swimming")
+              .map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-[20px] border border-off-white bg-white px-3 py-1.5 text-[0.6875rem] font-semibold text-charcoal"
+                >
+                  {tag}
+                </span>
+              ))}
           </div>
 
           <div className="mb-4 flex gap-2.5">

@@ -46,7 +46,7 @@ export function EventsSection() {
       id="events"
       background="paper"
       spacing="compact"
-      className="max-md:!bg-white max-md:!py-[34px]"
+      className="max-md:!bg-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
@@ -62,7 +62,7 @@ export function EventsSection() {
 
         <div
           ref={deckRef}
-          className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-1.5"
+          className="scrollbar-none flex snap-x snap-mandatory gap-3.5 overflow-x-auto pb-1.5"
         >
           {events.items.map((item) => (
             <article

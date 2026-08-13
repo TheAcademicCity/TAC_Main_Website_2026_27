@@ -10,7 +10,7 @@ export function LifeReadinessSection() {
     <Section
       id="life-ready"
       spacing="compact"
-      className="max-md:!py-[34px]"
+      className="max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}

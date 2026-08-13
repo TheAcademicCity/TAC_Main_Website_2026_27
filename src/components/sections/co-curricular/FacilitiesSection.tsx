@@ -23,7 +23,7 @@ export function FacilitiesSection() {
       id="facilities"
       background="paper"
       spacing="compact"
-      className="max-md:!bg-white max-md:!py-[34px] md:pt-0"
+      className="max-md:!bg-white max-md:!pt-4 max-md:!pb-7 md:pt-0"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}

@@ -20,7 +20,7 @@ export function ClubsSection() {
     <Section
       id="clubs"
       spacing="compact"
-      className="max-md:!bg-off-white max-md:!py-[34px]"
+      className="max-md:!bg-off-white max-md:!pt-4 max-md:!pb-7"
       containerClassName="max-md:!px-5"
     >
       {/* Mobile */}
