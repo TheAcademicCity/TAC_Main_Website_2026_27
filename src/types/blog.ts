@@ -7,7 +7,10 @@ export type BlogPost = {
   categoryLabel: string;
   title: string;
   description: string;
-  readTime: string;
+  /** Seeded read count shown at feature launch (10k–25k). */
+  baseReads: number;
+  /** Fixed weekly bump applied from the reads epoch (50–70). */
+  weeklyIncrease: number;
   href: string;
   image: SiteImage;
   gradient: string;

@@ -8,9 +8,10 @@ import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { formatBlogReads } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 4;
 
 export function BlogArticlesSection() {
   const { articles } = blogPageContent;
@@ -64,7 +65,7 @@ export function BlogArticlesSection() {
                     </p>
                     <div className="mt-2.5 flex items-center justify-between gap-3 md:mt-4">
                       <span className="text-[0.6875rem] text-[#999] md:text-[0.74rem] md:text-slate">
-                        {post.readTime}
+                        {formatBlogReads(post.baseReads, post.weeklyIncrease)}
                       </span>
                       <span className="inline-flex shrink-0 items-center gap-1 font-montserrat text-[0.625rem] font-bold uppercase tracking-[0.1em] text-forest transition-all group-hover:gap-1.5 group-hover:text-emerald md:text-[0.68rem]">
                         Read

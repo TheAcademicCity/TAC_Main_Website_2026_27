@@ -146,7 +146,7 @@ export const academicsContent = {
       title: "A rigorous CBSE foundation, built for every child",
       description:
         "Our Bengaluru campus follows the CBSE curriculum with a 1:10 student–teacher ratio and individualised Student Progression Plans - so every child moves at the right pace, builds genuine concept clarity and walks into Grades 11 and 12 fully prepared.",
-      image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "CBSE academics at TACS"),
+      image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "CBSE academics at TACS", false),
       imageTag: "CBSE · Grades 5–12 · 1:10 Mentoring",
       chips: [],
       cta: { label: "Explore Academics", href: "/academics", size: "lg" },
@@ -1063,6 +1063,7 @@ export const campusContent = {
         "/images/home/campus/bengaluru.png",
         remote.campus.bengaluru,
         "TACS Bengaluru",
+        false,
       ),
       facts: [
         {
@@ -1105,7 +1106,7 @@ export const campusContent = {
       title: "A scenic campus in Madhya Pradesh",
       description:
         "Located in Mohankheda Jain Tirth, Rajgarh (Dhar), the Indore campus offers the same TACS philosophy - structured boarding, strong academics and career-first learning - in the peaceful landscape of Madhya Pradesh.",
-      image: createImage("/images/home/campus/indore.png", remote.campus.indore, "TACS Indore"),
+      image: createImage("/images/home/campus/indore.png", remote.campus.indore, "TACS Indore", false),
       facts: [
         {
           value: "Student Progression Plan",

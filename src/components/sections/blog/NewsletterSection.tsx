@@ -13,7 +13,7 @@ export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const currentIssues = newsletter.pages.flatMap((p) => p.issues);
+  const currentIssues = newsletter.pages.flatMap((p) => p.issues).slice(0, 3);
 
   function handleSubscribe() {
     if (!email.includes("@")) return;

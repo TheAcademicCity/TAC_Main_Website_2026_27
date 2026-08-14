@@ -102,15 +102,9 @@ function GalleryLightbox({
 
         <div className="relative min-h-[min(52vh,420px)] max-h-[72vh] w-full">
           <GalleryItemVisual item={item} className="min-h-[min(52vh,420px)] max-h-[72vh]" />
-        </div>
-
-        <div className="border-t border-line/60 px-5 py-4">
-          <p
-            id={titleId}
-            className="font-montserrat text-[0.78rem] font-bold uppercase tracking-wider text-forest-deep"
-          >
+          <span id={titleId} className="sr-only">
             {item.label}
-          </p>
+          </span>
         </div>
       </div>
     </div>
@@ -182,9 +176,6 @@ export function GallerySection() {
                 aria-label={`View ${item.label}`}
               >
                 <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
-                <span className="absolute bottom-2.5 left-2.5 z-[2] font-outfit text-[0.65625rem] font-bold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.65)]">
-                  {item.label}
-                </span>
               </button>
             );
           })}
@@ -236,9 +227,6 @@ export function GallerySection() {
                 aria-label={`View ${item.label}`}
               >
                 <GalleryItemVisual item={item} />
-                <span className="pointer-events-none absolute bottom-0 left-0 z-[2] max-w-full truncate px-3 py-2.5 font-montserrat text-[0.68rem] font-bold uppercase tracking-wider text-white/70 sm:px-4 sm:py-3 sm:text-[0.72rem]">
-                  {item.label}
-                </span>
                 <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
                   <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-white text-white">
                     <Icon name="zoom" className="h-5 w-5" />

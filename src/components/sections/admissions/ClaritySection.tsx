@@ -53,7 +53,7 @@ export function ClaritySection() {
             </div>
 
             <div className="relative z-[1] flex min-h-[420px] flex-col items-center justify-end px-[4vw] py-[clamp(1.5rem,4vw,3.5rem)] text-center">
-              <h3 className="max-w-[22ch] font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold leading-tight text-white">
+              <h3 className="max-w-[22ch] font-montserrat text-[clamp(1.4rem,2.4vw,1.9rem)] font-extrabold leading-tight text-white md:max-w-none md:whitespace-nowrap">
                 {clarity.heading}
               </h3>
               <div className="mt-2 max-w-none text-[0.94rem] leading-relaxed text-white/65">
