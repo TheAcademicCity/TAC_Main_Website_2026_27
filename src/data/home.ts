@@ -261,7 +261,12 @@ export const galleryContent = {
         {
           label: "Career Guidance Session",
           height: 320,
-          image: createImage("/images/home/academics/career.png", remote.pillars.career, "Career Guidance Session"),
+          image: createImage(
+            "/images/home/pillars/career.png",
+            remote.pillars.career,
+            "Career Guidance Session",
+            false,
+          ),
         },
         {
           label: "Science Lab",
@@ -291,12 +296,22 @@ export const galleryContent = {
         {
           label: "Industry Interaction",
           height: 300,
-          image: createImage("/images/home/pillars/career.png", remote.pillars.career, "Industry Interaction"),
+          image: createImage(
+            "/images/home/pillars/career.png",
+            remote.pillars.career,
+            "Industry Interaction",
+            false,
+          ),
         },
         {
           label: "Psychometric Assessment",
           height: 180,
-          image: createImage("/images/home/academics/career.png", remote.pillars.career, "Psychometric Assessment"),
+          image: createImage(
+            "/images/home/pillars/career.png",
+            remote.pillars.career,
+            "Psychometric Assessment",
+            false,
+          ),
         },
         {
           label: "Student Progression Plan",
@@ -1201,7 +1216,7 @@ export const parentTestimonialsContent = {
       role: "Batch of  '25",
       detail: "TACS Alumnus",
       image: createImage(
-        "/images/home/parents/4.jpg",
+        "/images/home/parents/ayush-jishnu.png",
         "https://scontent.cdninstagram.com/v/t51.82787-15/624702316_18039957746722226_5002594383607632548_n.jpg",
         "Ayush Jishnu sharing his TACS journey",
         false,
@@ -1215,13 +1230,12 @@ export const parentTestimonialsContent = {
       role: "Mother of Bhavya Jain",
       detail: "Grade 8",
       image: createImage(
-        "/images/home/parents/1.jpg",
+        "/images/home/parents/khushi-jain.png",
         "https://scontent.cdninstagram.com/v/t51.71878-15/500455704_3692649974369900_162010336354179059_n.jpg",
         "Khushi Jain, parent testimonial at The Academic City School",
         false,
       ),
       href: "https://www.instagram.com/reel/DEodXoWJAPJ/",
-      cropBorder: true,
     },
     {
       quote:
@@ -1230,7 +1244,7 @@ export const parentTestimonialsContent = {
       role: "Batch of  '25",
       detail: "CA Foundation cleared",
       image: createImage(
-        "/images/home/parents/6.jpg",
+        "/images/home/parents/poorv.png",
         "https://scontent.cdninstagram.com/v/t51.82787-15/623514789_18040064561722226_7284056305849129532_n.jpg",
         "Poorv celebrating CA Foundation success at TACS",
         false,
@@ -1244,13 +1258,12 @@ export const parentTestimonialsContent = {
       role: "Parent",
       detail: "Boarding school",
       image: createImage(
-        "/images/home/parents/2.jpg",
+        "/images/home/parents/tacs-parent.png",
         "https://scontent.cdninstagram.com/v/t51.71878-15/503743634_737038415374807_5405998053289679768_n.jpg",
         "Parent sharing their TACS boarding school experience",
         false,
       ),
       href: "https://www.instagram.com/reel/DGcUfaBK7LW/",
-      cropBorder: true,
     },
     {
       quote:
@@ -1259,27 +1272,12 @@ export const parentTestimonialsContent = {
       role: "Commerce student",
       detail: "CLAT success",
       image: createImage(
-        "/images/home/parents/5.jpg",
+        "/images/home/parents/akshara-pradita.png",
         "https://scontent.cdninstagram.com/v/t51.82787-15/649543784_18044538077722226_3460234397081180136_n.jpg",
         "Akshara Pradita celebrating CLAT success at TACS",
         false,
       ),
       href: "https://www.instagram.com/reel/DVu61RZjBq7/",
-    },
-    {
-      quote:
-        "Every child's journey is guided by principles of discipline, safety, and growth.",
-      name: "Mr. Shaji Nair",
-      role: "Parent",
-      detail: "The Academic City School",
-      image: createImage(
-        "/images/home/parents/shaji-nair.jpg",
-        "https://scontent.cdninstagram.com/v/t51.71878-15/504423612_1733025070757038_8238350201314377268_n.jpg",
-        "Mr. Shaji Nair, parent testimonial at The Academic City School",
-        false,
-      ),
-      href: "https://www.instagram.com/reel/DF4Sr-Su0k2/",
-      cropBorder: true,
     },
   ] satisfies ParentTestimonial[],
 } as const;

@@ -17,7 +17,7 @@ export const aboutPageContent = {
     title: "About",
     titleHighlight: "The Academic City",
     description:
-      "India's first career-oriented boarding school - where academic rigour, Indic values and real-world career preparation come together on one residential campus in Bengaluru.",
+      "India's first career-oriented boarding school - where academic rigour, Indic values, and real-world career preparation come together across our premier residential campuses.",
     descriptionHighlights: ["India's first career-oriented boarding school"],
     image: createImage("/images/about/hero.png", remote.campus, "TACS Campus"),
     stats: [
