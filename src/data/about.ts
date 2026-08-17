@@ -43,16 +43,37 @@ export const aboutPageContent = {
     badge: "India's First Career-Oriented Boarding School",
     photos: [
       {
-        image: createImage("/images/about/who-1.png", remote.career, "TACS students"),
+        // Microscope — strong focal subject for the tall left tile
+        image: createImage(
+          "/images/about/who-1.png",
+          remote.career,
+          "Students examining a specimen under a microscope",
+          false,
+        ),
         variant: "tall",
+        objectClassName: "object-[center_40%]",
       },
       {
-        image: createImage("/images/about/who-2.png", remote.campus, "TACS campus"),
+        // Computer lab — bright colour punch in the compact tile
+        image: createImage(
+          "/images/about/who-2.png",
+          remote.campus,
+          "Student working in the computer lab",
+          false,
+        ),
         variant: "compact",
+        objectClassName: "object-[70%_center]",
       },
       {
-        image: createImage("/images/about/who-3.png", remote.boarding, "Boarding life"),
+        // Outdoor class — needs width for the group scene
+        image: createImage(
+          "/images/about/who-3.png",
+          remote.boarding,
+          "Outdoor classroom session on campus",
+          false,
+        ),
         variant: "wide",
+        objectClassName: "object-[center_45%]",
       },
     ],
   },
@@ -152,25 +173,45 @@ export const aboutPageContent = {
         title: "Career Guidance from Grade 6",
         description:
           "Develop career clarity early through expert guidance,\nassessments, workshops and industry exposure.",
-        image: createImage("/images/about/different-1.png", remote.career, "Career guidance at TACS"),
+        image: createImage(
+          "/images/about/different-1.png",
+          remote.career,
+          "Career guidance at TACS",
+          false,
+        ),
       },
       {
         title: "Exam Preparation On Campus",
         description:
           "Prepare for NEET, JEE, NIFT, CLAT\nand NID with expert guidance on campus.",
-        image: createImage("/images/about/different-2.png", remote.academics, "Exam preparation at TACS"),
+        image: createImage(
+          "/images/about/different-2.png",
+          remote.academics,
+          "Exam preparation at TACS",
+          false,
+        ),
       },
       {
         title: "Indic Value-Based Boarding",
         description:
           "Yoga, meditation and community living nurture discipline,\nstrong values and a sense of belonging.",
-        image: createImage("/images/about/different-3.png", remote.boarding, "Boarding life at TACS"),
+        image: createImage(
+          "/images/about/different-3.png",
+          remote.boarding,
+          "Boarding life at TACS",
+          false,
+        ),
       },
       {
         title: "Six Nutritious Meals Daily",
         description:
           "Six fresh, nutritionist-planned vegetarian meals are\nserved daily, with Jain options available.",
-        image: createImage("/images/about/different-6.png", remote.agri, "Nutritious meals at TACS"),
+        image: createImage(
+          "/images/about/different-6.png",
+          remote.agri,
+          "Nutritious meals at TACS",
+          false,
+        ),
       },
     ],
   },

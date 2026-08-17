@@ -10,19 +10,25 @@ function PhotoTile({
   image,
   sizes,
   className,
+  objectClassName,
 }: {
   image: SiteImage;
   sizes: string;
   className?: string;
+  objectClassName?: string;
 }) {
   return (
-    <div className={cn("relative min-h-0 overflow-hidden rounded-lg bg-forest-deep", className)}>
+    <div className={cn("relative min-h-0 overflow-hidden rounded-xl bg-forest-deep", className)}>
       <ImageWithFallback
         image={image}
         fill
         sizes={sizes}
-        className="object-cover transition-transform duration-500 hover:scale-105"
+        className={cn(
+          "object-cover transition-transform duration-700 ease-out hover:scale-[1.04]",
+          objectClassName ?? "object-center",
+        )}
       />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-deep/25 via-transparent to-transparent opacity-60" />
     </div>
   );
 }
@@ -65,20 +71,20 @@ export function WhoWeAreSection() {
           {whoWeAre.photos.map((photo) => (
             <div
               key={photo.image.alt}
-              className="relative h-[150px] w-[200px] shrink-0 snap-start overflow-hidden rounded-[14px] bg-forest-deep"
+              className="relative h-[168px] w-[220px] shrink-0 snap-start overflow-hidden rounded-[14px] bg-forest-deep"
             >
               <ImageWithFallback
                 image={photo.image}
                 fill
-                sizes="200px"
-                className="object-cover"
+                sizes="220px"
+                className={cn("object-cover", photo.objectClassName ?? "object-center")}
               />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Desktop */}
+      {/* Desktop — asymmetric collage: tall left, stacked right */}
       <div className="hidden gap-6 sm:gap-8 md:grid lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:items-stretch lg:gap-x-16 lg:gap-y-3">
         <RevealOnScroll className="lg:col-start-2 lg:row-start-1">
           <SectionLabel>{whoWeAre.label}</SectionLabel>
@@ -98,23 +104,26 @@ export function WhoWeAreSection() {
           ))}
         </RevealOnScroll>
 
-        <RevealOnScroll className="min-h-[200px] sm:min-h-[280px] lg:col-start-1 lg:row-start-2 lg:h-full lg:min-h-0">
-          <div className="grid h-full grid-cols-2 items-stretch gap-1.5 sm:gap-2">
+        <RevealOnScroll className="min-h-[220px] sm:min-h-[320px] lg:col-start-1 lg:row-start-2 lg:h-full lg:min-h-0">
+          <div className="grid h-full grid-cols-[1.15fr_0.85fr] items-stretch gap-2 sm:gap-2.5">
             <PhotoTile
               image={tall.image}
-              sizes="(max-width: 1024px) 50vw, 25vw"
-              className="h-full min-h-[160px] sm:min-h-[240px] lg:min-h-0"
+              objectClassName={tall.objectClassName}
+              sizes="(max-width: 1024px) 50vw, 28vw"
+              className="h-full min-h-[180px] sm:min-h-[280px] lg:min-h-0"
             />
 
-            <div className="grid h-full min-h-0 grid-rows-[2fr_3fr] gap-1.5 sm:gap-2">
+            <div className="grid h-full min-h-0 grid-rows-[1.1fr_1.6fr] gap-2 sm:gap-2.5">
               <PhotoTile
                 image={compact.image}
-                sizes="(max-width: 1024px) 50vw, 25vw"
+                objectClassName={compact.objectClassName}
+                sizes="(max-width: 1024px) 40vw, 20vw"
                 className="h-full"
               />
               <PhotoTile
                 image={wide.image}
-                sizes="(max-width: 1024px) 50vw, 25vw"
+                objectClassName={wide.objectClassName}
+                sizes="(max-width: 1024px) 40vw, 20vw"
                 className="h-full"
               />
             </div>

@@ -19,6 +19,7 @@ export type AboutPageContent = {
     photos: readonly {
       image: SiteImage;
       variant: "tall" | "compact" | "wide";
+      objectClassName?: string;
     }[];
   };
   visionMission: {

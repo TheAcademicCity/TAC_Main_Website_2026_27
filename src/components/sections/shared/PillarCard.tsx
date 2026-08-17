@@ -73,7 +73,7 @@ export function PillarCard({ pillar, imageClassName }: PillarCardProps) {
             image={pillar.image}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover object-center"
+            className={cn("object-cover", pillar.imageObjectClassName ?? "object-center")}
           />
         </div>
         <div

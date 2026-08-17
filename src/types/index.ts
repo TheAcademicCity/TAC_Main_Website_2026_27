@@ -22,6 +22,8 @@ export type PillarItem = {
   description: string;
   image: import("@/types/images").SiteImage;
   accent: "emerald" | "gold" | "forest" | "violet";
+  /** Optional object-position override for the pillar photo crop. */
+  imageObjectClassName?: string;
 };
 
 export type FeatureRow = {

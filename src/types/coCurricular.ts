@@ -68,6 +68,7 @@ export type CoCurricularPageContent = {
       image: SiteImage;
       gradient: string;
       hero?: boolean;
+      imageObjectClassName?: string;
     }[];
     performingArts: {
       label: string;

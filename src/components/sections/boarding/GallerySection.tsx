@@ -39,7 +39,7 @@ export function GallerySection() {
                   image={item.image}
                   fill
                   sizes="240px"
-                  className="object-cover"
+                  className={cn("object-cover", item.imageObjectClassName ?? "object-center")}
                 />
                 <div
                   aria-hidden
@@ -78,7 +78,10 @@ export function GallerySection() {
                     image={item.image}
                     fill
                     sizes="(min-width: 768px) 25vw, 50vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.06]"
+                    className={cn(
+                      "object-cover transition duration-500 group-hover:scale-[1.06]",
+                      item.imageObjectClassName ?? "object-center",
+                    )}
                   />
                 </div>
                 <div

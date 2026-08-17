@@ -72,7 +72,7 @@ export function DifferentSection() {
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top_left,rgba(5,22,18,0.88)_0%,rgba(5,22,18,0.55)_28%,rgba(5,22,18,0.18)_48%,transparent_68%)]"
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top_left,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.72)_22%,rgba(0,0,0,0.38)_42%,rgba(0,0,0,0.12)_58%,transparent_72%)]"
                 />
 
                 <div className="relative flex h-full min-h-[clamp(180px,22vw,220px)] items-end justify-end p-4 sm:p-6">
@@ -80,7 +80,7 @@ export function DifferentSection() {
                     <h4 className="font-montserrat text-[0.92rem] font-extrabold text-white sm:text-[0.96rem]">
                       {card.title}
                     </h4>
-                    <p className="mt-1.5 whitespace-pre-line text-[0.8rem] leading-snug text-white/72 sm:text-[0.82rem]">
+                    <p className="mt-1.5 whitespace-pre-line text-[0.8rem] leading-snug text-white/85 sm:text-[0.82rem]">
                       {card.description}
                     </p>
                   </div>

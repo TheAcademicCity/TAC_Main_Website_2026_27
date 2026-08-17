@@ -97,7 +97,12 @@ export type BoardingPageContent = {
   gallery: {
     label: string;
     title: string;
-    items: readonly { label: string; image: SiteImage; wide?: boolean }[];
+    items: readonly {
+      label: string;
+      image: SiteImage;
+      wide?: boolean;
+      imageObjectClassName?: string;
+    }[];
   };
   ctaBand: {
     label: string;

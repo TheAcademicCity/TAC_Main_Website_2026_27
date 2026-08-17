@@ -136,6 +136,7 @@ export const boardingPageContent = {
       "/images/boarding/dorm-parent.png",
       remote.boarding,
       "Dorm parent with students at TACS",
+      false,
     ),
     keyItemsLabel: "Key things to remember",
     keyItems: [
@@ -346,24 +347,40 @@ export const boardingPageContent = {
     items: [
       {
         label: "Campus Life",
-        image: createImage("/images/boarding/gallery-campus.png", remote.campus1, "Campus"),
+        image: createImage(
+          "/images/boarding/gallery-campus.png",
+          remote.campus1,
+          "Campus",
+          false,
+        ),
         wide: true,
       },
       {
         label: "Morning Sport",
-        image: createImage("/images/boarding/gallery-sport.png", remote.sports, "Morning sport"),
+        image: createImage(
+          "/images/boarding/gallery-sport.png",
+          remote.sports,
+          "Morning sport",
+          false,
+        ),
       },
       {
         label: "Hostel Life",
-        image: createImage("/images/boarding/gallery-hostel.png", remote.boarding, "Hostel"),
+        image: createImage(
+          "/images/boarding/gallery-hostel.png",
+          remote.boarding,
+          "Hostel",
+          false,
+        ),
+        imageObjectClassName: "object-[24%_center]",
       },
       {
         label: "Farm & Nature",
-        image: createImage("/images/boarding/gallery-farm.png", remote.agri, "Farm"),
+        image: createImage("/images/boarding/gallery-farm.png", remote.agri, "Farm", false),
       },
       {
         label: "Evening Study",
-        image: createImage("/images/boarding/gallery-study.png", remote.career, "Study"),
+        image: createImage("/images/boarding/gallery-study.png", remote.career, "Study", false),
       },
       {
         label: "Campus at Evening",

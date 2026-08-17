@@ -77,7 +77,7 @@ export function EnquirySection() {
               image={enquiryContent.image}
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
+              className="object-cover object-[18%_center]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/35 via-transparent to-transparent" />
           </div>

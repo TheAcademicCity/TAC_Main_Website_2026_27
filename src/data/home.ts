@@ -90,6 +90,7 @@ export const pillarsContent = {
         "/images/home/pillars/academics.png",
         remote.pillars.academics,
         "Academics",
+        false,
       ),
       accent: "emerald",
     },
@@ -103,6 +104,7 @@ export const pillarsContent = {
         "/images/home/pillars/curriculum.png",
         remote.pillars.curriculum,
         "Co-curricular",
+        false,
       ),
       accent: "gold",
     },
@@ -112,8 +114,9 @@ export const pillarsContent = {
       tagline: "Discipline, values and self-leadership",
       description:
         "Separate AC hostels, pastoral care, 24-hour doctor on-call and home-like celebrations create a safe, joyful home away from home, shaped by Indic values and structured living.",
-      image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Boarding life"),
+      image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Boarding life", false),
       accent: "forest",
+      imageObjectClassName: "object-[32%_center]",
     },
     {
       number: "04",
@@ -121,7 +124,7 @@ export const pillarsContent = {
       tagline: "Early, continuous career discovery",
       description:
         'From Grade 5 to 12, students explore 600+ career options through industry interactions, psychometric assessments and expert mentoring - turning the daunting "what next?" into a confident, clear answer.',
-      image: createImage("/images/home/pillars/career.png", remote.pillars.career, "Career orientation"),
+      image: createImage("/images/home/pillars/career.png", remote.pillars.career, "Career orientation", false),
       accent: "violet",
     },
   ] satisfies PillarItem[],
@@ -157,9 +160,10 @@ export const academicsContent = {
       description:
         "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 - covering engineering, medicine, law, design, CA, management and study abroad.",
       image: createImage(
-        "/images/home/academics/career.png",
+        "/images/home/pillars/career.png",
         remote.pillars.career,
         "Career guidance",
+        false,
       ),
       imageTag: "Grades 6 - 12 · 600+ Career Paths",
       chips: ["600+ Career Options", "Psychometric Tests", "Industry Mentors", "LEAP Programmes"],
@@ -170,7 +174,7 @@ export const academicsContent = {
       title: "90 minutes of sport, every single day",
       description:
         "Every student plays daily - with dedicated coaches for football, basketball, swimming, cricket, badminton and more. Talented athletes are nurtured from district to national level. Our Life Readiness programme adds first aid, cooking, financial literacy and public speaking.",
-      image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports at TACS"),
+      image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports at TACS", false),
       imageTag: "90 Min/Day · District to National",
       chips: ["Football", "Basketball", "Swimming", "Cricket", "Badminton", "Kho-Kho"],
       cta: { label: "Explore Campus Life", href: "/boarding" },
@@ -262,12 +266,22 @@ export const galleryContent = {
         {
           label: "Science Lab",
           height: 200,
-          image: createImage("/images/home/pillars/academics.png", remote.pillars.academics, "Science Lab"),
+          image: createImage(
+            "/images/home/gallery/science-lab.png",
+            remote.pillars.academics,
+            "Science Lab",
+            false,
+          ),
         },
         {
           label: "Library",
           height: 280,
-          image: createImage("/images/home/pillars/curriculum.png", remote.pillars.curriculum, "Library"),
+          image: createImage(
+            "/images/home/gallery/library.png",
+            remote.pillars.curriculum,
+            "Library",
+            false,
+          ),
         },
         {
           label: "Investiture Ceremony",
@@ -1387,6 +1401,7 @@ export const enquiryContent = {
     "/images/home/enquiry/campus-visit.png",
     remote.campus.bengaluru,
     "Visit The Academic City campus",
+    false,
   ),
   fields: {
     grades: [
