@@ -49,6 +49,19 @@ export type AboutPageContent = {
       icon: string;
     }[];
   };
+  principalDesk: {
+    label: string;
+    title: string;
+    paragraphs: readonly string[];
+    closing: string;
+    signature: {
+      name: string;
+      qualifications: string;
+      role: string;
+      school: string;
+    };
+    image: SiteImage;
+  };
   campusBand: {
     title: string;
     description: string;

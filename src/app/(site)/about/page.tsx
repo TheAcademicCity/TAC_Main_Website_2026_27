@@ -4,6 +4,7 @@ import {
   AboutCtaSection,
   AboutHeroSection,
   AboutValuesSection,
+  PrincipalDeskSection,
   DifferentSection,
   LeadershipSection,
   VisionMissionSection,
@@ -25,6 +26,7 @@ export default function AboutPage() {
       <WhoWeAreSection />
       <VisionMissionSection />
       <AboutValuesSection />
+      <PrincipalDeskSection />
       <AboutCampusBandSection />
       <LeadershipSection />
       <DifferentSection />

@@ -137,7 +137,6 @@ export const brochureContent = {
   description:
     "Download our school brochure for a complete guide to academics, campus life and co-curriculars.",
   cta: { label: "Download Brochure", href: "/?intent=brochure#enquiry" },
-  background: createImage("/images/home/brochure/overview.png", remote.heroPoster, ""),
 } as const;
 
 export const academicsContent = {

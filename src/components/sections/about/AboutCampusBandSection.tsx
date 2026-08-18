@@ -31,22 +31,22 @@ export function AboutCampusBandSection() {
       </div>
 
       {/* Desktop */}
-      <div className="hidden bg-forest-deep pt-4 pb-[clamp(28px,3.5vw,44px)] md:block">
+      <div className="hidden bg-forest-deep py-[clamp(28px,3.5vw,44px)] md:block">
         <Container>
           <RevealOnScroll>
-            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
-              <div className="min-w-0 flex-1 text-center sm:text-left">
+            <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto] lg:gap-8">
+              <div className="flex min-w-0 flex-col justify-center text-center lg:text-left">
                 <h3 className="font-montserrat text-[clamp(1rem,1.8vw,1.3rem)] font-extrabold leading-snug text-white">
                   {campusBand.title}
                 </h3>
-                <p className="mx-auto mt-1 max-w-[42ch] text-[0.88rem] leading-snug text-white/60 sm:mx-0 sm:max-w-none sm:text-[0.9rem]">
+                <p className="mx-auto mt-1 max-w-[42ch] text-[0.88rem] leading-snug text-white/60 lg:mx-0 lg:max-w-none lg:text-[0.9rem]">
                   {campusBand.description}
                 </p>
               </div>
               <Button
                 href={campusBand.cta.href}
                 variant="gold"
-                className="w-full justify-center px-7 py-3 text-[0.78rem] sm:w-auto"
+                className="w-full justify-center justify-self-center px-7 py-3 text-[0.78rem] lg:w-auto lg:justify-self-auto"
               >
                 {campusBand.cta.label}
                 <Icon name="arrow" className="h-3.5 w-3.5" />

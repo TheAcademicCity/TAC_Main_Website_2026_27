@@ -131,6 +131,29 @@ export const aboutPageContent = {
       },
     ],
   },
+  principalDesk: {
+    label: "From the Principal's Desk",
+    title: "A welcome from our Principal",
+    paragraphs: [
+      "Welcome to The Academic City School, Bangalore, a premier residential school committed to providing an enriching and transformative educational experience.",
+      "At TACS, we believe that education is not confined to the classroom. Our residential environment provides students with opportunities to learn, grow, develop independence, build strong values, and cultivate lifelong friendships. We strive to create a nurturing and disciplined atmosphere where every child feels secure, valued, and motivated to excel.",
+      "Our focus is on academic excellence, character formation, leadership, life skills, sports, creativity, and holistic development. With dedicated educators and a strong pastoral care system, we aim to prepare our students not only for successful careers but also for responsible and compassionate citizenship.",
+      "At The Academic City School, Bangalore, every day is an opportunity to learn, explore, discover, and become a better version of oneself.",
+    ],
+    closing: "Warm regards,",
+    signature: {
+      name: "A. N. Manikandan",
+      qualifications: "M.A. | B.Ed. | PGDCA (C.S.) | B.Sc.(Hons)",
+      role: "Principal",
+      school: "The Academic City School, Bangalore",
+    },
+    image: createImage(
+      "/images/about/principal.png",
+      remote.academics,
+      "A. N. Manikandan, Principal of The Academic City School, Bangalore",
+      false,
+    ),
+  },
   campusBand: {
     title: "Bengaluru's only career-oriented residential school for Grades 5–12",
     description:
