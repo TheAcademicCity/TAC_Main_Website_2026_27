@@ -1,4 +1,5 @@
 import { SiteLink } from "@/components/layout/SiteLink";
+import { PageHeroBackdrop } from "@/components/sections/shared/PageHeroBackdrop";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -134,8 +135,9 @@ function PolicySectionBlock({ section }: { section: PolicySection }) {
 export function PolicyPageView({ policy }: PolicyPageViewProps) {
   return (
     <main id="top" tabIndex={-1} className="boarding-policy-page outline-none">
-      <section className="bg-forest-deep pt-[var(--site-nav-stack)]">
-        <Container className="py-[clamp(2rem,4vw,3rem)]">
+      <section className="relative overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
+        <PageHeroBackdrop gradient="compact" />
+        <Container className="relative z-[1] py-[clamp(2rem,4vw,3rem)]">
           <nav
             aria-label="Breadcrumb"
             className="mb-4 flex flex-wrap items-center gap-2 font-montserrat text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/50"

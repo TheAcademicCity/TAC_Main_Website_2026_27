@@ -75,7 +75,7 @@ export const coCurricularPageContent = {
       { value: "District", label: "to National" },
       { value: "Expert", label: "Coach per sport" },
     ],
-    image: createImage("/images/co-curricular/sports.png", remote.sports, "Sports at TACS", false),
+    image: createImage("/images/co-curricular/sports.png", remote.sports, "Volleyball at TACS", false),
     imageTag: "",
   },
   facilities: {
@@ -89,6 +89,7 @@ export const coCurricularPageContent = {
           "/images/co-curricular/facilities-track.png",
           remote.campus,
           "Athletic track and sports ground",
+          false,
         ),
         wide: true,
         tall: true,
@@ -100,6 +101,7 @@ export const coCurricularPageContent = {
           "/images/co-curricular/facilities-basketball.png",
           remote.sports,
           "Basketball court",
+          false,
         ),
       },
       {
@@ -109,6 +111,7 @@ export const coCurricularPageContent = {
           "/images/co-curricular/facilities-pool.png",
           remote.boarding,
           "Swimming pool",
+          false,
         ),
       },
       {
@@ -118,6 +121,7 @@ export const coCurricularPageContent = {
           "/images/co-curricular/facilities-indoor.png",
           remote.curriculum,
           "Indoor sports hall",
+          false,
         ),
       },
       {
@@ -126,7 +130,8 @@ export const coCurricularPageContent = {
         image: createImage(
           "/images/co-curricular/facilities-grounds.png",
           remote.agri,
-          "Open grounds",
+          "Football and cricket ground",
+          false,
         ),
       },
     ],

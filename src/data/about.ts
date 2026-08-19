@@ -65,15 +65,15 @@ export const aboutPageContent = {
         objectClassName: "object-[70%_center]",
       },
       {
-        // Outdoor class — needs width for the group scene
+        // Physics lab — wide tile, bottom right
         image: createImage(
           "/images/about/who-3.png",
           remote.boarding,
-          "Outdoor classroom session on campus",
+          "Students conducting a physics experiment in the science lab at TACS",
           false,
         ),
         variant: "wide",
-        objectClassName: "object-[center_45%]",
+        objectClassName: "object-[center_40%]",
       },
     ],
   },
@@ -172,7 +172,7 @@ export const aboutPageContent = {
           "In today's fast-paced world, traditional pedagogy falls short. Addressing the 'need of the hour,' we blend career orientation with enriching schooling - helping students explore beyond conventional boundaries. Each child holds a unique potential; our mission is to identify and nurture this intrinsic essence, providing a foundation for lifelong growth.",
         quoteHighlights: ["career orientation with enriching schooling"],
         body: "At TACS, we delve beyond the superficial, ensuring a smooth transition from school to the global stage. Join us in this exciting journey towards a well-rounded, future-ready education.",
-        image: createImage("/images/about/sripal.png", remote.sripal, "Sripal Jain"),
+        image: createImage("/images/about/sripal.png", remote.sripal, "Sripal Jain", false),
         altLayout: false,
       },
       {
@@ -183,7 +183,7 @@ export const aboutPageContent = {
           "We blend academic excellence with enriching experiences that ignite student passion and guide them towards career success. Our boarding environment nurtures diversity, exploration and growth beyond textbooks - encouraging self-discovery, camaraderie and creativity.",
         quoteHighlights: ["ignite student passion"],
         body: "We preserve the essence of schooling while aligning it with career-oriented goals. Join us on this inspiring educational journey.",
-        image: createImage("/images/about/mahipal.png", remote.mahipal, "Mahipal Kawad"),
+        image: createImage("/images/about/mahipal.png", remote.mahipal, "Mahipal Kawad", false),
         altLayout: true,
       },
     ],

@@ -1,5 +1,5 @@
 import { blogPageContent } from "@/data/blog";
-import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
+import { PageHeroBackdrop } from "@/components/sections/shared/PageHeroBackdrop";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Container } from "@/components/ui/Container";
 
@@ -8,16 +8,7 @@ export function BlogPageHeader() {
 
   return (
     <section className="relative flex min-h-[300px] items-end overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)] md:min-h-[clamp(360px,50vh,480px)]">
-      <div className="absolute inset-0">
-        <ImageWithFallback
-          image={header.image}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[center_35%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(14,57,52,0.25)] to-[rgba(9,38,35,0.9)] md:bg-gradient-to-t md:from-[rgba(5,22,18,0.96)] md:via-[rgba(5,22,18,0.65)] md:to-[rgba(5,22,18,0.22)]" />
-      </div>
+      <PageHeroBackdrop />
 
       <Container className="relative z-[2] px-5 py-[26px] md:py-[clamp(1.5rem,4vw,3.5rem)]">
         <nav

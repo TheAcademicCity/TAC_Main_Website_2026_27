@@ -1447,7 +1447,7 @@ export const foundersContent = {
       role: "Founder",
       quote:
         "We built this school because we believed every child deserves to know not just what to learn, but why - and where it leads. Career discovery isn't a post-school thought; it should be woven into every single year of a child's education.",
-      image: createImage("/images/home/founders/sripal.png", remote.founders.sripal, "Sripal Jain"),
+      image: createImage("/images/home/founders/sripal.png", remote.founders.sripal, "Sripal Jain", false),
       initials: "SJ",
       variant: "featured",
     },
@@ -1469,6 +1469,7 @@ export const foundersContent = {
         "/images/home/founders/mahipal.png",
         remote.founders.mahipal,
         "Mahipal Kawad",
+        false,
       ),
       initials: "MK",
       variant: "compact",

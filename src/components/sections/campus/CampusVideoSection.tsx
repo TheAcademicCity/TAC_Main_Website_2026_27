@@ -1,4 +1,5 @@
 import { campusPageContent } from "@/data/campus";
+import { PageHeroBackdrop } from "@/components/sections/shared/PageHeroBackdrop";
 import { Container } from "@/components/ui/Container";
 
 export function CampusVideoSection() {
@@ -6,7 +7,8 @@ export function CampusVideoSection() {
   const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1`;
 
   return (
-    <section className="relative bg-forest-deep pt-[var(--site-nav-stack)]">
+    <section className="relative overflow-hidden bg-forest-deep pt-[var(--site-nav-stack)]">
+      <PageHeroBackdrop gradient="compact" />
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 top-24 h-72 w-72 rounded-full border-[40px] border-white/4"

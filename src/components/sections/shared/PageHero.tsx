@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-import type { SiteImage } from "@/types/images";
-import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
+import { PageHeroBackdrop } from "@/components/sections/shared/PageHeroBackdrop";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
@@ -9,12 +8,11 @@ type PageHeroProps = {
   label: string;
   title: string;
   description?: string;
-  image?: SiteImage;
   children?: ReactNode;
   className?: string;
 };
 
-export function PageHero({ label, title, description, image, children, className }: PageHeroProps) {
+export function PageHero({ label, title, description, children, className }: PageHeroProps) {
   return (
     <section
       className={cn(
@@ -22,14 +20,7 @@ export function PageHero({ label, title, description, image, children, className
         className,
       )}
     >
-      {image ? (
-        <>
-          <div className="absolute inset-0">
-            <ImageWithFallback image={image} fill priority sizes="100vw" className="object-cover" />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(5,22,18,0.92)] via-[rgba(5,22,18,0.78)] to-[rgba(5,22,18,0.55)]" />
-        </>
-      ) : null}
+      <PageHeroBackdrop gradient="horizontal" />
 
       <Container className="relative z-[1] py-[clamp(3.5rem,8vw,5.5rem)]">
         <SectionLabel tone="gold">{label}</SectionLabel>

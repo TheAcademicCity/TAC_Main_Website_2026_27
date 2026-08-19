@@ -75,7 +75,12 @@ export const academicsPageContent = {
     ],
   },
   curriculum: {
-    image: createImage("/images/academics/classroom.png", remote.hero, "Classroom at TACS", false),
+    image: createImage(
+      "/images/academics/curriculum.png",
+      remote.hero,
+      "Outdoor learning at TACS",
+      false,
+    ),
     imageTag: "",
     label: "Curriculum",
     title: "Built for understanding,\nnot just marks",
