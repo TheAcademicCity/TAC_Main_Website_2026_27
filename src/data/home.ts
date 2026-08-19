@@ -207,44 +207,222 @@ export const galleryContent = {
       label: "Campus",
       items: [
         {
-          label: "Aerial Campus View",
-          height: 280,
-          image: createImage("/images/home/campus/bengaluru.png", remote.campus.bengaluru, "Aerial Campus View"),
+          label: "Reading Room",
+          height: 260,
+          image: createImage(
+            "/images/home/gallery/campus-1.png",
+            remote.pillars.curriculum,
+            "Students reading in the campus library at TACS",
+            false,
+          ),
         },
         {
-          label: "Sports Arena",
+          label: "Outdoor Learning",
+          height: 320,
+          image: createImage(
+            "/images/home/gallery/campus-2.png",
+            remote.pillars.academics,
+            "Teacher leading an outdoor learning session on campus at TACS",
+            false,
+          ),
+        },
+        {
+          label: "School Garden",
           height: 200,
-          image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports Arena"),
+          image: createImage(
+            "/images/home/gallery/campus-3.png",
+            remote.pillars.boarding,
+            "Students working in the school garden at TACS",
+            false,
+          ),
         },
         {
-          label: "Main Building",
-          height: 340,
-          image: createImage("/images/home/brochure/overview.png", remote.heroPoster, "Main Building"),
-        },
-        {
-          label: "Running Track",
+          label: "Campus Dining",
           height: 220,
-          image: createImage("/images/home/campus/indore.png", remote.campus.indore, "Running Track"),
+          image: createImage(
+            "/images/home/gallery/campus-4.png",
+            remote.pillars.boarding,
+            "A meal served in the campus dining hall at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Badminton",
+          height: 300,
+          image: createImage(
+            "/images/home/gallery/campus-5.png",
+            remote.pillars.sports,
+            "Students playing badminton on campus at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Volleyball",
+          height: 280,
+          image: createImage(
+            "/images/home/gallery/campus-6.png",
+            remote.pillars.sports,
+            "Students playing volleyball on the campus courts at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Science Lab",
+          height: 200,
+          image: createImage(
+            "/images/home/gallery/campus-7.png",
+            remote.pillars.academics,
+            "Students using a microscope in the campus science lab at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Adventure Sports",
+          height: 240,
+          image: createImage(
+            "/images/home/gallery/campus-8.png",
+            remote.pillars.sports,
+            "Students enjoying adventure sports on campus at TACS",
+            false,
+          ),
+        },
+      ],
+    },
+    {
+      id: "infrastructure",
+      label: "Infrastructure",
+      layout: "featured-grid",
+      items: [
+        {
+          label: "Campus Aerial View",
+          wide: true,
+          height: 576,
+          image: createImage(
+            "/images/home/gallery/infrastructure-aerial.png",
+            remote.campus.bengaluru,
+            "Aerial view of The Academic City School campus in Bengaluru",
+            false,
+          ),
+        },
+        {
+          label: "Outdoor Amphitheater",
+          height: 200,
+          image: createImage(
+            "/images/home/gallery/infrastructure-1.png",
+            remote.campus.bengaluru,
+            "Outdoor amphitheater at The Academic City School campus",
+            false,
+          ),
+        },
+        {
+          label: "Chemistry Lab",
+          height: 260,
+          image: createImage(
+            "/images/home/gallery/infrastructure-2.png",
+            remote.pillars.academics,
+            "Chemistry laboratory at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Hostel Rooms",
+          height: 220,
+          image: createImage(
+            "/images/home/gallery/infrastructure-3.png",
+            remote.pillars.boarding,
+            "Modern hostel rooms at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Physics Lab",
+          height: 240,
+          image: createImage(
+            "/images/home/gallery/infrastructure-4.png",
+            remote.pillars.academics,
+            "Physics laboratory at TACS",
+            false,
+          ),
         },
         {
           label: "Swimming Pool",
+          height: 320,
+          image: createImage(
+            "/images/home/gallery/infrastructure-5.png",
+            remote.pillars.sports,
+            "Swimming pool at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Montessori Lab",
+          height: 180,
+          image: createImage(
+            "/images/home/gallery/infrastructure-6.png",
+            remote.pillars.academics,
+            "Montessori learning lab at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Biology Lab",
           height: 260,
-          image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Swimming Pool"),
+          image: createImage(
+            "/images/home/gallery/infrastructure-7.png",
+            remote.pillars.academics,
+            "Biology laboratory at TACS",
+            false,
+          ),
         },
         {
-          label: "Hostel Block",
+          label: "Academic Blocks",
           height: 200,
-          image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Hostel Block"),
+          image: createImage(
+            "/images/home/gallery/infrastructure-8.png",
+            remote.campus.bengaluru,
+            "Academic blocks at TACS campus",
+            false,
+          ),
         },
         {
-          label: "Farm & Goshala",
+          label: "Goshala",
           height: 300,
-          image: createImage("/images/home/campus/bengaluru.png", remote.campus.bengaluru, "Farm & Goshala"),
+          image: createImage(
+            "/images/home/gallery/infrastructure-9.png",
+            remote.pillars.boarding,
+            "Goshala and campus farm at TACS",
+            false,
+          ),
         },
         {
           label: "Dining Hall",
+          height: 220,
+          image: createImage(
+            "/images/home/gallery/infrastructure-10.png",
+            remote.pillars.boarding,
+            "Dining hall at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Art Studio",
           height: 180,
-          image: createImage("/images/home/pillars/curriculum.png", remote.pillars.curriculum, "Dining Hall"),
+          image: createImage(
+            "/images/home/gallery/infrastructure-11.png",
+            remote.pillars.curriculum,
+            "Art studio at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Smart Classroom",
+          height: 280,
+          image: createImage(
+            "/images/home/gallery/infrastructure-12.png",
+            remote.pillars.academics,
+            "Smart classroom at TACS",
+            false,
+          ),
         },
       ],
     },
@@ -253,17 +431,32 @@ export const galleryContent = {
       label: "Academics",
       items: [
         {
-          label: "Smart Classroom",
-          height: 260,
-          image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "Smart Classroom"),
+          label: "Interactive Teaching",
+          height: 180,
+          image: createImage(
+            "/images/home/gallery/academics-5.png",
+            remote.pillars.academics,
+            "Teacher leading an interactive classroom session at TACS",
+            false,
+          ),
         },
         {
-          label: "Career Guidance Session",
+          label: "Smart Classroom",
+          height: 260,
+          image: createImage(
+            "/images/home/gallery/academics-1.png",
+            remote.pillars.academics,
+            "Students learning together in a smart classroom at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Classroom Learning",
           height: 320,
           image: createImage(
-            "/images/home/pillars/career.png",
-            remote.pillars.career,
-            "Career Guidance Session",
+            "/images/home/gallery/academics-2.png",
+            remote.pillars.academics,
+            "Student taking notes during classroom learning at TACS",
             false,
           ),
         },
@@ -271,9 +464,9 @@ export const galleryContent = {
           label: "Science Lab",
           height: 200,
           image: createImage(
-            "/images/home/gallery/science-lab.png",
+            "/images/home/gallery/academics-3.png",
             remote.pillars.academics,
-            "Science Lab",
+            "Students using a microscope in the science lab at TACS",
             false,
           ),
         },
@@ -281,41 +474,41 @@ export const galleryContent = {
           label: "Library",
           height: 280,
           image: createImage(
-            "/images/home/gallery/library.png",
+            "/images/home/gallery/academics-7.png",
             remote.pillars.curriculum,
-            "Library",
+            "Students browsing books in the TACS library",
             false,
           ),
         },
         {
-          label: "Investiture Ceremony",
+          label: "Academic Focus",
           height: 220,
-          image: createImage("/images/home/news/1.png", remote.news.n1, "Investiture Ceremony"),
+          image: createImage(
+            "/images/home/gallery/academics-4.png",
+            remote.pillars.academics,
+            "Student focused on learning in the classroom at TACS",
+            false,
+          ),
         },
         {
-          label: "Industry Interaction",
+          label: "Chemistry Lab",
           height: 300,
           image: createImage(
-            "/images/home/pillars/career.png",
-            remote.pillars.career,
-            "Industry Interaction",
+            "/images/home/gallery/academics-6.png",
+            remote.pillars.academics,
+            "Students conducting a chemistry experiment at TACS",
             false,
           ),
         },
         {
-          label: "Psychometric Assessment",
-          height: 180,
-          image: createImage(
-            "/images/home/pillars/career.png",
-            remote.pillars.career,
-            "Psychometric Assessment",
-            false,
-          ),
-        },
-        {
-          label: "Student Progression Plan",
+          label: "Classroom Session",
           height: 240,
-          image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "Student Progression Plan"),
+          image: createImage(
+            "/images/home/gallery/academics-8.png",
+            remote.pillars.academics,
+            "Teacher addressing students during a classroom session at TACS",
+            false,
+          ),
         },
       ],
     },
@@ -324,44 +517,84 @@ export const galleryContent = {
       label: "Extra-curriculars",
       items: [
         {
-          label: "Basketball",
-          height: 300,
-          image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Basketball"),
-        },
-        {
-          label: "Dance Performance",
-          height: 220,
-          image: createImage("/images/home/news/2.png", remote.news.n2, "Dance Performance"),
-        },
-        {
-          label: "Theatre Production",
-          height: 260,
-          image: createImage("/images/home/news/3.png", remote.news.n3, "Theatre Production"),
-        },
-        {
           label: "Art & Craft",
-          height: 200,
-          image: createImage("/images/home/pillars/curriculum.png", remote.pillars.curriculum, "Art & Craft"),
-        },
-        {
-          label: "Football Match",
-          height: 280,
-          image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Football Match"),
+          height: 300,
+          image: createImage(
+            "/images/home/gallery/extra-1.png",
+            remote.pillars.curriculum,
+            "Students sketching during an art and craft session at TACS",
+            false,
+          ),
         },
         {
           label: "Music Class",
-          height: 240,
-          image: createImage("/images/home/news/4.png", remote.news.n4, "Music Class"),
+          height: 220,
+          image: createImage(
+            "/images/home/gallery/extra-3.png",
+            remote.pillars.curriculum,
+            "Students learning keyboard and guitar in music class at TACS",
+            false,
+          ),
         },
         {
-          label: "Cooking Class",
+          label: "Fine Arts",
+          height: 260,
+          image: createImage(
+            "/images/home/gallery/extra-2.png",
+            remote.pillars.curriculum,
+            "Students practising portrait drawing in the fine arts studio at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Painting",
           height: 200,
-          image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Cooking Class"),
+          image: createImage(
+            "/images/home/gallery/extra-5.png",
+            remote.pillars.curriculum,
+            "Student painting during an art session at TACS",
+            false,
+          ),
         },
         {
-          label: "Sports Day",
+          label: "Dahi Handi",
+          height: 280,
+          image: createImage(
+            "/images/home/gallery/extra-6.png",
+            remote.pillars.sports,
+            "Students celebrating Dahi Handi on campus at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Reading Corner",
+          height: 240,
+          image: createImage(
+            "/images/home/gallery/extra-8.png",
+            remote.pillars.curriculum,
+            "Student reading in the campus library at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Kannada Rajyotsava",
           height: 320,
-          image: createImage("/images/home/news/5.png", remote.news.n5, "Sports Day"),
+          image: createImage(
+            "/images/home/gallery/extra-7.png",
+            remote.pillars.curriculum,
+            "Traditional dance performance during Kannada Rajyotsava at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Music Practice",
+          height: 200,
+          image: createImage(
+            "/images/home/gallery/extra-4.png",
+            remote.pillars.curriculum,
+            "Students practising music in the campus studio at TACS",
+            false,
+          ),
         },
       ],
     },
@@ -370,44 +603,84 @@ export const galleryContent = {
       label: "Boarding Life",
       items: [
         {
-          label: "Hostel Room",
+          label: "Pastoral Care",
           height: 260,
-          image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Hostel Room"),
+          image: createImage(
+            "/images/home/gallery/boarding-1.png",
+            remote.pillars.boarding,
+            "Pastoral care staff supporting students at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Campus Corridors",
+          height: 200,
+          image: createImage(
+            "/images/home/gallery/boarding-2.png",
+            remote.pillars.boarding,
+            "Students in the hostel corridors at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Hostel Study",
+          height: 320,
+          image: createImage(
+            "/images/home/gallery/boarding-3.png",
+            remote.pillars.boarding,
+            "Students studying together in a hostel room at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Student Community",
+          height: 220,
+          image: createImage(
+            "/images/home/gallery/boarding-4.png",
+            remote.pillars.boarding,
+            "Students socialising together on campus at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Evening Campus Life",
+          height: 280,
+          image: createImage(
+            "/images/home/gallery/boarding-5.png",
+            remote.pillars.boarding,
+            "Students spending time together on campus in the evening at TACS",
+            false,
+          ),
+        },
+        {
+          label: "Outdoor Activities",
+          height: 300,
+          image: createImage(
+            "/images/home/gallery/boarding-6.png",
+            remote.pillars.boarding,
+            "Students enjoying outdoor activities on campus at TACS",
+            false,
+          ),
         },
         {
           label: "Dining Experience",
-          height: 200,
-          image: createImage("/images/home/pillars/curriculum.png", remote.pillars.curriculum, "Dining Experience"),
-        },
-        {
-          label: "Independence Day Celebration",
-          height: 320,
-          image: createImage("/images/home/news/1.png", remote.news.n1, "Independence Day Celebration"),
-        },
-        {
-          label: "Ganesh Chaturthi",
-          height: 220,
-          image: createImage("/images/home/news/2.png", remote.news.n2, "Ganesh Chaturthi"),
-        },
-        {
-          label: "Pastoral Care",
-          height: 280,
-          image: createImage("/images/home/pillars/boarding.png", remote.pillars.boarding, "Pastoral Care"),
-        },
-        {
-          label: "Teachers' Day",
-          height: 200,
-          image: createImage("/images/home/news/3.png", remote.news.n3, "Teachers' Day"),
-        },
-        {
-          label: "Evening Study Hall",
           height: 240,
-          image: createImage("/images/home/academics/cbse.png", remote.pillars.academics, "Evening Study Hall"),
+          image: createImage(
+            "/images/home/gallery/boarding-7.png",
+            remote.pillars.boarding,
+            "Students in the dining hall at TACS",
+            false,
+          ),
         },
         {
-          label: "Morning Assembly",
-          height: 300,
-          image: createImage("/images/home/news/6.png", remote.news.n6, "Morning Assembly"),
+          label: "Hostel Life",
+          height: 180,
+          image: createImage(
+            "/images/home/gallery/boarding-8.png",
+            remote.pillars.boarding,
+            "Dorm parent interacting with students in the hostel at TACS",
+            false,
+          ),
         },
       ],
     },
@@ -1078,7 +1351,7 @@ export const awardsContent = {
 export const campusContent = {
   label: "Our Campuses",
   title: "Two campuses. One philosophy.",
-  badge: "Admissions Open 2026–27",
+  badge: "Admissions Open 2027–28",
   slides: [
     {
       id: "bengaluru",
@@ -1337,7 +1610,7 @@ export const newsContent = {
 } as const;
 
 export const admissionsContent = {
-  label: "Admissions 2026–27",
+  label: "Admissions 2027–28",
   title: "We're With You in Every Step",
   subtitle: "Five clear steps from your first enquiry to welcoming your child to campus.",
   steps: [

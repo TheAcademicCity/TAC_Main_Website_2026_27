@@ -11,16 +11,18 @@ import { InstagramLogo } from "@/components/ui/InstagramLogo";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
-import type { GalleryImageItem } from "@/types";
+import type { GalleryImageItem, GalleryTab } from "@/types";
 
 function GalleryItemVisual({
   item,
   className,
   style,
+  sizes = "(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw",
 }: {
   item: GalleryImageItem;
   className?: string;
   style?: CSSProperties;
+  sizes?: string;
 }) {
   return (
     <div
@@ -34,13 +36,90 @@ function GalleryItemVisual({
         <ImageWithFallback
           image={item.image}
           fill
-          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className="object-cover"
+          sizes={sizes}
+          className={cn("object-cover", item.imageObjectClassName ?? "object-center")}
         />
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(111,220,239,0.15),transparent_60%)]" />
       )}
     </div>
+  );
+}
+
+function GalleryTileButton({
+  item,
+  onSelect,
+  className,
+  style,
+  sizes,
+  uniformGrid = false,
+  hero = false,
+  fillCell = false,
+}: {
+  item: GalleryImageItem;
+  onSelect: (item: GalleryImageItem) => void;
+  className?: string;
+  style?: CSSProperties;
+  sizes?: string;
+  uniformGrid?: boolean;
+  hero?: boolean;
+  fillCell?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(item)}
+      className={cn(
+        "group relative w-full overflow-hidden text-left",
+        fillCell
+          ? "h-full min-h-0"
+          : hero
+            ? "aspect-[16/9]"
+            : uniformGrid
+              ? "min-h-[90px] md:min-h-0 md:h-full"
+              : "min-h-[min(var(--tile-h),min(48vw,220px))] md:min-h-[var(--tile-h)]",
+        className,
+      )}
+      style={style}
+      aria-label={`View ${item.label}`}
+    >
+      <GalleryItemVisual item={item} sizes={sizes} />
+      <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+        <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-white text-white">
+          <Icon name="zoom" className="h-5 w-5" />
+        </span>
+      </span>
+    </button>
+  );
+}
+
+function GalleryLightboxImage({ item }: { item: GalleryImageItem }) {
+  const image = item.image;
+  const [src, setSrc] = useState(image?.src ?? "");
+
+  useEffect(() => {
+    setSrc(image?.src ?? "");
+  }, [image?.src]);
+
+  if (!image) {
+    return (
+      <div className="min-h-[min(52vh,420px)] min-w-[min(80vw,640px)] bg-gradient-to-br from-forest-deep to-forest" />
+    );
+  }
+
+  return (
+    // Native img preserves each asset's intrinsic dimensions in the lightbox.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={image.alt}
+      className="block h-auto max-h-[85vh] w-auto max-w-[min(calc(100vw-2rem),100%)] object-contain"
+      onError={() => {
+        if (image.fallbackSrc && src !== image.fallbackSrc) {
+          setSrc(image.fallbackSrc);
+        }
+      }}
+    />
   );
 }
 
@@ -86,7 +165,7 @@ function GalleryLightbox({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="gallery-lightbox-panel relative z-[1] w-full max-w-4xl overflow-hidden rounded-2xl border border-white/25 bg-white/90 shadow-[0_32px_80px_-24px_rgba(10,44,40,0.45)] backdrop-blur-xl"
+        className="gallery-lightbox-panel relative z-[1] w-fit max-w-[min(calc(100vw-2rem),100%)] overflow-hidden rounded-2xl border border-white/25 bg-white/90 shadow-[0_32px_80px_-24px_rgba(10,44,40,0.45)] backdrop-blur-xl"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -100,13 +179,123 @@ function GalleryLightbox({
           </span>
         </button>
 
-        <div className="relative min-h-[min(52vh,420px)] max-h-[72vh] w-full">
-          <GalleryItemVisual item={item} className="min-h-[min(52vh,420px)] max-h-[72vh]" />
-          <span id={titleId} className="sr-only">
-            {item.label}
-          </span>
+        <GalleryLightboxImage item={item} />
+        <span id={titleId} className="sr-only">
+          {item.label}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedGridGallery({
+  tab,
+  onSelect,
+}: {
+  tab: GalleryTab;
+  onSelect: (item: GalleryImageItem) => void;
+}) {
+  const [featured, ...supporting] = tab.items;
+  const besideHero = supporting.slice(0, 4);
+  const masonryItems = supporting.slice(4);
+
+  const besideHeroSlots = [
+    "col-start-4 row-start-1",
+    "col-start-5 row-start-1",
+    "col-start-4 row-start-2",
+    "col-start-5 row-start-2",
+  ] as const;
+
+  return (
+    <>
+      {/* Mobile */}
+      <div className="px-5 md:hidden">
+        {featured ? (
+          <GalleryTileButton
+            item={featured}
+            onSelect={onSelect}
+            hero
+            className="mb-2 overflow-hidden rounded-[14px] border border-line"
+            sizes="100vw"
+          />
+        ) : null}
+        <div className="columns-2 gap-2">
+          {supporting.map((item) => (
+            <GalleryTileButton
+              key={`${tab.id}-${item.label}`}
+              item={item}
+              onSelect={onSelect}
+              className="mb-2 break-inside-avoid overflow-hidden rounded-[14px] border border-line"
+              style={{ "--tile-h": `${item.height ?? 220}px` } as CSSProperties}
+              sizes="50vw"
+            />
+          ))}
         </div>
       </div>
+
+      {/* Desktop — fixed hero block on top, uneven masonry below */}
+      <div
+        className="hidden md:flex md:flex-col md:gap-2"
+        role="tabpanel"
+        aria-label={`${tab.id} gallery`}
+      >
+        <div className="grid grid-cols-5 grid-rows-[clamp(188px,20vw,220px)_clamp(188px,20vw,220px)] gap-2">
+          {featured ? (
+            <GalleryTileButton
+              item={featured}
+              onSelect={onSelect}
+              fillCell
+              className="col-span-3 row-span-2 row-start-1 col-start-1"
+              sizes="(min-width: 768px) 60vw, 100vw"
+            />
+          ) : null}
+          {besideHero.map((item, index) => (
+            <GalleryTileButton
+              key={`${tab.id}-${item.label}`}
+              item={item}
+              onSelect={onSelect}
+              fillCell
+              className={besideHeroSlots[index]}
+              sizes="(min-width: 768px) 20vw, 50vw"
+            />
+          ))}
+        </div>
+        {masonryItems.length ? (
+          <MasonryGallery tabId={tab.id} items={masonryItems} onSelect={onSelect} embedded />
+        ) : null}
+      </div>
+    </>
+  );
+}
+
+function MasonryGallery({
+  tabId,
+  items,
+  onSelect,
+  embedded = false,
+}: {
+  tabId: string;
+  items: readonly GalleryImageItem[];
+  onSelect: (item: GalleryImageItem) => void;
+  embedded?: boolean;
+}) {
+  return (
+    <div
+      className="columns-2 gap-2 md:columns-3 xl:columns-4"
+      {...(!embedded && {
+        role: "tabpanel" as const,
+        "aria-label": `${tabId} gallery`,
+      })}
+    >
+      {items.map((item) => (
+        <GalleryTileButton
+          key={`${tabId}-${item.label}`}
+          item={item}
+          onSelect={onSelect}
+          className="mb-2 break-inside-avoid"
+          style={{ "--tile-h": `${item.height ?? 220}px` } as CSSProperties}
+        />
+      ))}
     </div>
   );
 }
@@ -114,7 +303,9 @@ function GalleryLightbox({
 export function GallerySection() {
   const [activeTab, setActiveTab] = useState(galleryContent.tabs[0]?.id ?? "campus");
   const [selectedItem, setSelectedItem] = useState<GalleryImageItem | null>(null);
-  const activeItems = galleryContent.tabs.find((tab) => tab.id === activeTab)?.items ?? [];
+  const activeTabContent = galleryContent.tabs.find((tab) => tab.id === activeTab);
+  const activeItems = activeTabContent?.items ?? [];
+  const isFeaturedGrid = activeTabContent?.layout === "featured-grid";
 
   useEffect(() => {
     setSelectedItem(null);
@@ -122,7 +313,7 @@ export function GallerySection() {
 
   return (
     <Section id="gallery" className="!pt-[clamp(28px,3.5vw,44px)] max-md:!px-0">
-      {/* Mobile header + pill tabs + bento */}
+      {/* Mobile header + pill tabs + gallery */}
       <div className="md:hidden">
         <div className="px-5">
           <SectionHeader
@@ -152,34 +343,38 @@ export function GallerySection() {
           })}
         </div>
 
-        <div className="grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 px-5">
-          {activeItems.slice(0, 6).map((item, index) => {
-            const spanClass =
-              [
-                "col-start-1 row-span-2",
-                "col-start-2 row-start-1",
-                "col-start-2 row-start-2",
-                "col-start-1 row-start-3",
-                "col-start-2 row-start-3 row-span-2",
-                "col-start-1 row-start-4",
-              ][index] ?? "col-span-1";
+        {isFeaturedGrid && activeTabContent ? (
+          <FeaturedGridGallery tab={activeTabContent} onSelect={setSelectedItem} />
+        ) : (
+          <div className="grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 px-5">
+            {activeItems.slice(0, 6).map((item, index) => {
+              const spanClass =
+                [
+                  "col-start-1 row-span-2",
+                  "col-start-2 row-start-1",
+                  "col-start-2 row-start-2",
+                  "col-start-1 row-start-3",
+                  "col-start-2 row-start-3 row-span-2",
+                  "col-start-1 row-start-4",
+                ][index] ?? "col-span-1";
 
-            return (
-              <button
-                key={`bento-${activeTab}-${item.label}`}
-                type="button"
-                onClick={() => setSelectedItem(item)}
-                className={cn(
-                  "relative h-full w-full overflow-hidden rounded-[14px] border border-line text-left",
-                  spanClass,
-                )}
-                aria-label={`View ${item.label}`}
-              >
-                <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <button
+                  key={`bento-${activeTab}-${item.label}`}
+                  type="button"
+                  onClick={() => setSelectedItem(item)}
+                  className={cn(
+                    "relative h-full w-full overflow-hidden rounded-[14px] border border-line text-left",
+                    spanClass,
+                  )}
+                  aria-label={`View ${item.label}`}
+                >
+                  <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         <p className="mt-3 text-center font-outfit text-[0.72rem] font-bold text-forest">
           <a href={galleryContent.instagram.href} target="_blank" rel="noopener noreferrer">
@@ -212,28 +407,12 @@ export function GallerySection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={1}>
-          <div
-            className="mt-6 columns-2 gap-2 md:columns-3 xl:columns-4"
-            role="tabpanel"
-            aria-label={`${activeTab} gallery`}
-          >
-            {activeItems.map((item) => (
-              <button
-                key={`${activeTab}-${item.label}`}
-                type="button"
-                onClick={() => setSelectedItem(item)}
-                className="group relative mb-2 w-full break-inside-avoid overflow-hidden text-left min-h-[min(var(--tile-h),min(48vw,220px))] md:min-h-[var(--tile-h)]"
-                style={{ "--tile-h": `${item.height}px` } as CSSProperties}
-                aria-label={`View ${item.label}`}
-              >
-                <GalleryItemVisual item={item} />
-                <span className="pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(10,44,40,0.6)] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-                  <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-white text-white">
-                    <Icon name="zoom" className="h-5 w-5" />
-                  </span>
-                </span>
-              </button>
-            ))}
+          <div className="mt-6">
+            {isFeaturedGrid && activeTabContent ? (
+              <FeaturedGridGallery tab={activeTabContent} onSelect={setSelectedItem} />
+            ) : (
+              <MasonryGallery tabId={activeTab} items={activeItems} onSelect={setSelectedItem} />
+            )}
           </div>
         </RevealOnScroll>
       </div>

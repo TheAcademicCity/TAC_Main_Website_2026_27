@@ -118,6 +118,10 @@ export type GalleryImageItem = {
   /** Optional secondary line under caption */
   detail?: string;
   height?: number;
+  /** Span two columns in featured-grid gallery layouts */
+  wide?: boolean;
+  /** Optional object-position override for the gallery photo crop */
+  imageObjectClassName?: string;
   image?: import("@/types/images").SiteImage;
 };
 
@@ -134,6 +138,8 @@ export type GalleryItem = GalleryImageItem | GalleryWordsItem;
 export type GalleryTab = {
   id: string;
   label: string;
+  /** Masonry columns (default) or a grid with optional wide hero tiles */
+  layout?: "masonry" | "featured-grid";
   items: readonly GalleryImageItem[];
 };
 

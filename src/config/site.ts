@@ -20,7 +20,7 @@ export const siteConfig = {
   },
   description:
     "India's first career-oriented boarding school - where academics, Indic values and future-readiness grow together.",
-  admissionsBadge: "Admissions Open 2026–27",
+  admissionsBadge: "Admissions Open 2027–28",
   utilityBar: {
     phone: "08047092273",
     phoneDisplay: "080-47092273",

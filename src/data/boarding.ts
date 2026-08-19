@@ -384,7 +384,12 @@ export const boardingPageContent = {
       },
       {
         label: "Campus at Evening",
-        image: createImage("/images/boarding/gallery-evening.png", remote.campus2, "Evening campus"),
+        image: createImage(
+          "/images/boarding/gallery-evening.png",
+          remote.campus2,
+          "Evening campus",
+          false,
+        ),
         wide: true,
       },
     ],

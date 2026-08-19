@@ -252,7 +252,7 @@ export const achievementsPageContent = {
     ],
   },
   ctaBand: {
-    label: "Admissions 2026–27",
+    label: "Admissions 2027–28",
     title: "Your child's story starts here",
     description:
       "Join a school where academic excellence, creative expression and sporting achievement go hand in hand.",

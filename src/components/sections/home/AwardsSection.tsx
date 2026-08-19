@@ -3,10 +3,14 @@ import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { getImageSrc } from "@/lib/images";
+import { cn } from "@/lib/utils";
+
+const mobileCenteredAwardNames = new Set([
+  "University of Oxford - Best Emerging Residential School",
+  "Education Today - Dynamic School",
+]);
 
 export function AwardsSection() {
-  const marqueeItems = [...awardsContent.items, ...awardsContent.items];
-
   return (
     <section
       id="awards"
@@ -21,30 +25,17 @@ export function AwardsSection() {
           className="mb-8 max-md:mb-[18px] max-md:text-left max-md:[&_h2]:text-[1.3rem] sm:mb-10"
         />
 
-        {/* Mobile marquee chips */}
-        <div className="-mx-4 overflow-hidden md:hidden">
-          <div className="flex w-max gap-3 px-5 [animation:gallery-marquee_22s_linear_infinite]">
-            {marqueeItems.map((award, index) => (
-              <div
-                key={`${award.name}-${index}`}
-                className="w-[150px] shrink-0 rounded-[14px] border border-off-white bg-white px-4 py-3.5 shadow-[0_6px_18px_-10px_rgba(0,0,0,0.15)]"
-              >
-                <div className="font-montserrat text-[0.68rem] font-bold text-gold">{award.year}</div>
-                <div className="mt-1 text-[0.72rem] font-semibold leading-snug text-navy">
-                  {award.name}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop logo grid */}
-        <RevealOnScroll className="hidden md:block">
+        <RevealOnScroll>
           <div className="grid w-full grid-cols-4 gap-2 sm:grid-cols-4 sm:gap-2 md:grid-cols-8 md:gap-3">
             {awardsContent.items.map((award) => (
               <div
                 key={award.name}
-                className="flex h-[clamp(3.75rem,18vw,5.5rem)] min-w-0 items-end justify-center md:h-[clamp(3.25rem,7vw,5.5rem)]"
+                className={cn(
+                  "flex h-[clamp(3.75rem,18vw,5.5rem)] min-w-0 justify-center md:h-[clamp(3.25rem,7vw,5.5rem)]",
+                  mobileCenteredAwardNames.has(award.name)
+                    ? "items-center md:items-end"
+                    : "items-end",
+                )}
               >
                 <img
                   src={getImageSrc(award.image)}
