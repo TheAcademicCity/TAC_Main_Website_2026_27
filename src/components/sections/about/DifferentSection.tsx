@@ -3,6 +3,7 @@ import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallbac
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { cn } from "@/lib/utils";
 
 export function DifferentSection() {
   const { different } = aboutPageContent;
@@ -34,7 +35,7 @@ export function DifferentSection() {
                     image={card.image}
                     fill
                     sizes="100px"
-                    className="object-cover"
+                    className={cn("object-cover", card.imageObjectClassName ?? "object-center")}
                   />
                 </div>
                 <div className="flex-1 p-3.5">
@@ -68,7 +69,10 @@ export function DifferentSection() {
                   image={card.image}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={cn(
+                    "object-cover transition-transform duration-500 group-hover:scale-105",
+                    card.imageObjectClassName ?? "object-center",
+                  )}
                 />
                 <div
                   aria-hidden

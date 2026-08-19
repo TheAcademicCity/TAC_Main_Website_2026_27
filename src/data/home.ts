@@ -461,22 +461,22 @@ export const galleryContent = {
           ),
         },
         {
-          label: "Science Lab",
-          height: 200,
-          image: createImage(
-            "/images/home/gallery/academics-3.png",
-            remote.pillars.academics,
-            "Students using a microscope in the science lab at TACS",
-            false,
-          ),
-        },
-        {
           label: "Library",
           height: 280,
           image: createImage(
             "/images/home/gallery/academics-7.png",
             remote.pillars.curriculum,
             "Students browsing books in the TACS library",
+            false,
+          ),
+        },
+        {
+          label: "Science Lab",
+          height: 200,
+          image: createImage(
+            "/images/home/gallery/academics-3.png",
+            remote.pillars.academics,
+            "Students using a microscope in the science lab at TACS",
             false,
           ),
         },
@@ -517,12 +517,12 @@ export const galleryContent = {
       label: "Extra-curriculars",
       items: [
         {
-          label: "Art & Craft",
-          height: 300,
+          label: "Reading Corner",
+          height: 240,
           image: createImage(
-            "/images/home/gallery/extra-1.png",
+            "/images/home/gallery/extra-8.png",
             remote.pillars.curriculum,
-            "Students sketching during an art and craft session at TACS",
+            "Student reading in the campus library at TACS",
             false,
           ),
         },
@@ -567,12 +567,12 @@ export const galleryContent = {
           ),
         },
         {
-          label: "Reading Corner",
-          height: 240,
+          label: "Art & Craft",
+          height: 300,
           image: createImage(
-            "/images/home/gallery/extra-8.png",
+            "/images/home/gallery/extra-1.png",
             remote.pillars.curriculum,
-            "Student reading in the campus library at TACS",
+            "Students sketching during an art and craft session at TACS",
             false,
           ),
         },
@@ -603,22 +603,13 @@ export const galleryContent = {
       label: "Boarding Life",
       items: [
         {
-          label: "Pastoral Care",
-          height: 260,
+          label: "Hostel Life",
+          height: 180,
+          imageObjectClassName: "object-[12%_center]",
           image: createImage(
-            "/images/home/gallery/boarding-1.png",
+            "/images/home/gallery/boarding-8.png",
             remote.pillars.boarding,
-            "Pastoral care staff supporting students at TACS",
-            false,
-          ),
-        },
-        {
-          label: "Campus Corridors",
-          height: 200,
-          image: createImage(
-            "/images/home/gallery/boarding-2.png",
-            remote.pillars.boarding,
-            "Students in the hostel corridors at TACS",
+            "Dorm parent interacting with students in the hostel at TACS",
             false,
           ),
         },
@@ -633,6 +624,16 @@ export const galleryContent = {
           ),
         },
         {
+          label: "Evening Campus Life",
+          height: 280,
+          image: createImage(
+            "/images/home/gallery/boarding-5.png",
+            remote.pillars.boarding,
+            "Students spending time together on campus in the evening at TACS",
+            false,
+          ),
+        },
+        {
           label: "Student Community",
           height: 220,
           image: createImage(
@@ -643,12 +644,13 @@ export const galleryContent = {
           ),
         },
         {
-          label: "Evening Campus Life",
-          height: 280,
+          label: "Campus Corridors",
+          height: 200,
+          imageObjectClassName: "object-[48%_52%]",
           image: createImage(
-            "/images/home/gallery/boarding-5.png",
+            "/images/home/gallery/boarding-2.png",
             remote.pillars.boarding,
-            "Students spending time together on campus in the evening at TACS",
+            "Students in the hostel corridors at TACS",
             false,
           ),
         },
@@ -673,12 +675,12 @@ export const galleryContent = {
           ),
         },
         {
-          label: "Hostel Life",
-          height: 180,
+          label: "Pastoral Care",
+          height: 260,
           image: createImage(
-            "/images/home/gallery/boarding-8.png",
+            "/images/home/gallery/boarding-1.png",
             remote.pillars.boarding,
-            "Dorm parent interacting with students in the hostel at TACS",
+            "Pastoral care staff supporting students at TACS",
             false,
           ),
         },

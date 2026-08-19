@@ -5,14 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
-const clubMediaStyles = [
-  { icon: "💡", className: "bg-[linear-gradient(150deg,var(--color-forest),#0c322c)]" },
-  { icon: "📰", className: "bg-[linear-gradient(150deg,var(--color-violet),#3d0d63)]" },
-  { icon: "🎨", className: "bg-[linear-gradient(150deg,var(--color-gold),#b9770f)]" },
-  { icon: "👨‍🍳", className: "bg-[linear-gradient(150deg,var(--color-charcoal),#241f22)]" },
-  { icon: "🌱", className: "bg-[linear-gradient(150deg,var(--color-emerald),#0c2b27)]" },
-] as const;
-
 export function ClubsSection() {
   const { clubs } = coCurricularPageContent;
 
@@ -38,46 +30,54 @@ export function ClubsSection() {
         </RevealOnScroll>
 
         <div className="grid grid-cols-2 gap-2.5">
-          {clubs.cards.map((card, index) => {
-            const media = clubMediaStyles[index] ?? clubMediaStyles[0];
-            return (
-              <article
-                key={card.tag}
-                className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_20px_-14px_rgba(0,0,0,0.2)]"
-              >
+          {clubs.cards.map((card) => (
+            <article
+              key={card.tag}
+              className="relative overflow-hidden rounded-2xl bg-forest-deep shadow-[0_8px_20px_-14px_rgba(0,0,0,0.2)]"
+            >
+              <div className="relative aspect-[4/3]">
+                <ImageWithFallback
+                  image={card.image}
+                  fill
+                  sizes="50vw"
+                  className={cn("object-cover", card.imageObjectClassName ?? "object-center")}
+                />
                 <div
-                  className={cn(
-                    "flex h-[90px] items-center justify-center text-[1.375rem] text-white",
-                    media.className,
-                  )}
                   aria-hidden
-                >
-                  {media.icon}
-                </div>
-                <div className="p-2.5">
-                  <h5 className="mb-0.5 font-montserrat text-[0.75rem] font-bold text-navy">
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.88)] via-[rgba(5,22,18,0.35)] to-transparent"
+                />
+                <div className="absolute inset-x-0 bottom-0 z-[1] p-2.5">
+                  <h5 className="mb-0.5 font-montserrat text-[0.75rem] font-bold text-white">
                     {card.tag}
                   </h5>
-                  <p className="text-[0.65625rem] leading-[1.4] text-[#999]">{card.title}</p>
+                  <p className="text-[0.65625rem] leading-[1.4] text-white/80">{card.title}</p>
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
 
-          <article className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_20px_-14px_rgba(0,0,0,0.2)]">
-            <div
-              className="flex h-[90px] items-center justify-center bg-[linear-gradient(150deg,var(--color-cyan),#1a7d92)] text-[1.375rem] text-white"
-              aria-hidden
-            >
-              🎭
-            </div>
-            <div className="p-2.5">
-              <h5 className="mb-0.5 font-montserrat text-[0.75rem] font-bold text-navy">
-                Performing Arts & Heritage
-              </h5>
-              <p className="text-[0.65625rem] leading-[1.4] text-[#999]">
-                Dance. Theatre. Music. Language.
-              </p>
+          <article className="relative overflow-hidden rounded-2xl bg-forest-deep shadow-[0_8px_20px_-14px_rgba(0,0,0,0.2)]">
+            <div className="relative aspect-[4/3]">
+              {clubs.performingArts.mobileImage ? (
+                <ImageWithFallback
+                  image={clubs.performingArts.mobileImage}
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-center"
+                />
+              ) : null}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.88)] via-[rgba(5,22,18,0.35)] to-transparent"
+              />
+              <div className="absolute inset-x-0 bottom-0 z-[1] p-2.5">
+                <h5 className="mb-0.5 font-montserrat text-[0.75rem] font-bold text-white">
+                  {clubs.performingArts.mobileLabel ?? clubs.performingArts.label}
+                </h5>
+                <p className="text-[0.65625rem] leading-[1.4] text-white/80">
+                  {clubs.performingArts.mobileSubtitle ?? "Dance. Theatre. Music."}
+                </p>
+              </div>
             </div>
           </article>
         </div>

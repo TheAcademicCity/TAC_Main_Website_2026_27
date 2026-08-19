@@ -69,10 +69,6 @@ export function CampusSliderSection() {
                 sizes="100vw"
                 className="object-cover"
               />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/40 to-transparent"
-                aria-hidden
-              />
             </div>
 
             <div className="px-5 pb-5 pt-4">
@@ -148,7 +144,6 @@ export function CampusSliderSection() {
             >
               <div className="absolute inset-0 bg-forest-deep">
                 <ImageWithFallback image={slide.image} fill sizes="100vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,22,18,0.97)] via-[rgba(5,22,18,0.75)] to-[rgba(5,22,18,0.2)]" />
               </div>
 
               <span className="absolute right-4 top-5 z-[5] max-w-[calc(100%-2rem)] truncate bg-gold px-3 py-1 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-widest text-forest-deep sm:right-[4vw]">

@@ -73,6 +73,9 @@ export type CoCurricularPageContent = {
     performingArts: {
       label: string;
       description: string;
+      mobileLabel?: string;
+      mobileSubtitle?: string;
+      mobileImage?: import("@/types/images").SiteImage;
     };
   };
   events: {

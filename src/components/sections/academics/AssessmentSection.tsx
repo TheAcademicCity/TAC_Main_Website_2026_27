@@ -61,7 +61,7 @@ export function AssessmentSection() {
             {assessment.label}
           </SectionLabel>
           <h2 className="font-montserrat text-[1.25rem] font-extrabold leading-[1.28] tracking-[-0.01em] text-navy">
-            No Child Falls Through the Cracks
+            {assessment.title}
           </h2>
           <p className="mt-1.5 mb-5 text-[0.78125rem] leading-[1.55] text-[#999]">
             {assessment.description}

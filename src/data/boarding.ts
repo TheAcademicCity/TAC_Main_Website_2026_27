@@ -138,6 +138,7 @@ export const boardingPageContent = {
       "Dorm parent with students at TACS",
       false,
     ),
+    imageObjectClassName: "object-[center_12%]",
     keyItemsLabel: "Key things to remember",
     keyItems: [
       { icon: "👕", text: "Fresh, clean laundry maintained for every student" },

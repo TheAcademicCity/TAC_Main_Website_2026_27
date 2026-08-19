@@ -31,6 +31,7 @@ export type BoardingPageContent = {
     title: string;
     paragraphs: readonly string[];
     image: SiteImage;
+    imageObjectClassName?: string;
     quote: string;
     keyItemsLabel: string;
     keyItems: readonly { icon: string; text: string }[];

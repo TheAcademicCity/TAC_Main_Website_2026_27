@@ -218,6 +218,7 @@ export const aboutPageContent = {
         title: "Indic Value-Based Boarding",
         description:
           "Yoga, meditation and community living nurture discipline,\nstrong values and a sense of belonging.",
+        imageObjectClassName: "object-[6%_center]",
         image: createImage(
           "/images/about/different-3.png",
           remote.boarding,

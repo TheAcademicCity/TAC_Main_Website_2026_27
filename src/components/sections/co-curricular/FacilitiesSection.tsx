@@ -8,10 +8,10 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
 const bentoClasses = [
-  "col-start-1 row-span-2",
+  "col-start-1 row-start-1",
+  "col-start-1 row-start-2 row-span-2",
   "col-start-2 row-start-1",
   "col-start-2 row-start-2",
-  "col-start-1 row-start-3",
   "col-start-2 row-start-3",
 ] as const;
 
@@ -85,7 +85,7 @@ export function FacilitiesSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={1}>
-          <div className="mt-5 grid grid-cols-2 gap-1.5 sm:mt-7 md:grid-cols-4 md:grid-rows-[220px_220px]">
+          <div className="mt-5 grid grid-cols-2 gap-1.5 sm:mt-7 md:grid-cols-4 md:grid-rows-[185px_275px]">
             {facilities.items.map((item) => (
               <div
                 key={item.label}

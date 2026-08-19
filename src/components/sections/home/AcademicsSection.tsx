@@ -47,7 +47,7 @@ export function AcademicsSection() {
               key={row.title}
               className="overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_-14px_rgba(36,48,55,0.25)]"
             >
-              <div className="relative h-[150px] overflow-hidden bg-forest-deep">
+              <div className="relative aspect-[3/2] overflow-hidden bg-forest-deep">
                 {row.image ? (
                   <ImageWithFallback
                     image={row.image}

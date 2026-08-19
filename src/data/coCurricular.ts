@@ -92,6 +92,16 @@ export const coCurricularPageContent = {
           false,
         ),
         wide: true,
+      },
+      {
+        label: "Indoor Sports Hall",
+        icon: "trophy",
+        image: createImage(
+          "/images/co-curricular/facilities-indoor.png",
+          remote.curriculum,
+          "Indoor sports hall",
+          false,
+        ),
         tall: true,
       },
       {
@@ -111,16 +121,6 @@ export const coCurricularPageContent = {
           "/images/co-curricular/facilities-pool.png",
           remote.boarding,
           "Swimming pool",
-          false,
-        ),
-      },
-      {
-        label: "Indoor Sports Hall",
-        icon: "trophy",
-        image: createImage(
-          "/images/co-curricular/facilities-indoor.png",
-          remote.curriculum,
-          "Indoor sports hall",
           false,
         ),
       },
@@ -210,8 +210,16 @@ export const coCurricularPageContent = {
     ],
     performingArts: {
       label: "Performing Arts & Language Heritage",
+      mobileLabel: "Performing Arts",
+      mobileSubtitle: "Dance. Theatre. Music.",
       description:
         "Dance · Theatre · Music · Language & Heritage - celebrating expression and cultural identity on campus.",
+      mobileImage: createImage(
+        "/images/co-curricular/club-performing-arts.png",
+        remote.curriculum,
+        "Students practising music in the performing arts room at TACS",
+        false,
+      ),
     },
   },
   events: {

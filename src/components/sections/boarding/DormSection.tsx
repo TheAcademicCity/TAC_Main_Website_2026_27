@@ -3,6 +3,7 @@ import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallbac
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { cn } from "@/lib/utils";
 import type { BoardingPageContent } from "@/types/boarding";
 
 type KeyItem = BoardingPageContent["dorm"]["keyItems"][number];
@@ -46,7 +47,7 @@ export function DormSection() {
               image={dorm.image}
               fill
               sizes="100vw"
-              className="object-cover"
+              className={cn("object-cover", dorm.imageObjectClassName ?? "object-center")}
             />
             <div
               aria-hidden
@@ -94,7 +95,10 @@ export function DormSection() {
               image={dorm.image}
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+              className={cn(
+                "object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]",
+                dorm.imageObjectClassName ?? "object-center",
+              )}
             />
             <div
               aria-hidden

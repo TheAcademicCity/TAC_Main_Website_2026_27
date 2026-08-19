@@ -88,6 +88,7 @@ export type AboutPageContent = {
       title: string;
       description: string;
       image: SiteImage;
+      imageObjectClassName?: string;
     }[];
   };
   ctaBand: {

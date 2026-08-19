@@ -184,7 +184,7 @@ export const academicsPageContent = {
   },
   assessment: {
     label: "Assessment & Tracking",
-    title: "No child falls through the cracks",
+    title: "Nurturing the Potential in Every Child",
     description:
       "A continuous system that identifies gaps early - and closes them before they become problems.",
     communicationTitle: "How we communicate progress",
