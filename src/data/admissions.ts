@@ -130,6 +130,7 @@ export const admissionsPageContent = {
       "/images/home/campus/bengaluru.png",
       remote.bengaluru,
       "TACS Bengaluru",
+      false,
     ),
     heading: "Visit campus. Ask everything.",
     description: [

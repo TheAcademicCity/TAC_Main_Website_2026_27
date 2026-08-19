@@ -33,6 +33,7 @@ export function PageHeroBackdrop({
         priority={priority}
         sizes="100vw"
         className="object-cover scale-[1.04]"
+        unoptimized
         style={{ objectPosition }}
       />
       <div className="absolute inset-0 bg-forest-deep/28 backdrop-blur-[6px] backdrop-saturate-[1.08]" />

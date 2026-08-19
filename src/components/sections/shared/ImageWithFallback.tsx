@@ -26,6 +26,7 @@ export function ImageWithFallback({
   const src = useFallback ? image.fallbackSrc : image.src;
   const isRemote = src.startsWith("http");
   const isSvg = src.endsWith(".svg");
+  const isLocalPublicImage = src.startsWith("/images/");
 
   const sharedProps = {
     alt: image.alt,
@@ -34,10 +35,12 @@ export function ImageWithFallback({
       className,
     ),
     onError: () => {
-      if (!useFallback) setUseFallback(true);
+      if (!useFallback && image.isPlaceholder !== false && image.fallbackSrc) {
+        setUseFallback(true);
+      }
     },
     "data-placeholder": image.isPlaceholder ? "true" : undefined,
-    unoptimized: isRemote || isSvg,
+    unoptimized: isRemote || isSvg || isLocalPublicImage,
   };
 
   if (fill) {
