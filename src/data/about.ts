@@ -12,7 +12,7 @@ const remote = {
   mahipal: "https://theacademiccity.com/images/homepage/visionary/2.png",
 } as const;
 
-export const aboutPageContent = {
+export const aboutPageContent: AboutPageContent = {
   hero: {
     title: "About",
     titleHighlight: "The Academic City",
@@ -251,4 +251,4 @@ export const aboutPageContent = {
     },
     whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
   },
-} as const satisfies AboutPageContent;
+};

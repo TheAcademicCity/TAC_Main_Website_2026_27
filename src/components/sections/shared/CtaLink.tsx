@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SiteLink } from "@/components/layout/SiteLink";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
