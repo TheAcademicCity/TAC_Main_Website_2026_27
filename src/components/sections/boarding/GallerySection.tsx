@@ -4,12 +4,16 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
+import type { CSSProperties } from "react";
 import type { SiteImage } from "@/types/images";
+
+const mobileMasonryHeights = [240, 220, 200, 260] as const;
 
 function MobileGalleryTile({
   item,
   className,
   sizes = "50vw",
+  style,
 }: {
   item: {
     label: string;
@@ -18,6 +22,7 @@ function MobileGalleryTile({
   };
   className?: string;
   sizes?: string;
+  style?: CSSProperties;
 }) {
   return (
     <div
@@ -25,6 +30,7 @@ function MobileGalleryTile({
         "relative overflow-hidden rounded-[14px] border border-line bg-gradient-to-br from-forest-deep to-forest",
         className,
       )}
+      style={style}
     >
       <ImageWithFallback
         image={item.image}
@@ -39,12 +45,8 @@ function MobileGalleryTile({
 export function GallerySection() {
   const { gallery } = boardingPageContent;
   const [featuredItem, ...supportingItems] = gallery.items;
+  const mobileMasonryItems = supportingItems.filter((item) => !item.wide);
   const mobileFooterItem = supportingItems.find((item) => item.wide);
-  const mobileGridItems = supportingItems.filter((item) => !item.wide);
-  const morningSport = mobileGridItems[0];
-  const hostelLife = mobileGridItems[1];
-  const farmNature = mobileGridItems[2];
-  const eveningStudy = mobileGridItems[3];
 
   return (
     <Section
@@ -72,28 +74,19 @@ export function GallerySection() {
                 className="mb-2 aspect-[16/9]"
               />
             ) : null}
-            <div className="grid grid-cols-2 grid-rows-[220px_200px_280px] gap-2">
-              {morningSport ? (
+            <div className="columns-2 gap-2">
+              {mobileMasonryItems.map((item, index) => (
                 <MobileGalleryTile
-                  item={morningSport}
-                  className="col-start-1 row-start-1 min-h-0"
+                  key={item.label}
+                  item={item}
+                  className="mb-2 break-inside-avoid min-h-[min(var(--tile-h),min(48vw,220px))]"
+                  style={
+                    {
+                      "--tile-h": `${mobileMasonryHeights[index] ?? 220}px`,
+                    } as CSSProperties
+                  }
                 />
-              ) : null}
-              {hostelLife ? (
-                <MobileGalleryTile
-                  item={hostelLife}
-                  className="col-start-2 row-start-1 row-span-2 min-h-0"
-                />
-              ) : null}
-              {farmNature ? (
-                <MobileGalleryTile item={farmNature} className="col-start-1 row-start-2 min-h-0" />
-              ) : null}
-              {eveningStudy ? (
-                <MobileGalleryTile
-                  item={eveningStudy}
-                  className="col-start-1 row-start-3 min-h-0"
-                />
-              ) : null}
+              ))}
             </div>
             {mobileFooterItem ? (
               <MobileGalleryTile
