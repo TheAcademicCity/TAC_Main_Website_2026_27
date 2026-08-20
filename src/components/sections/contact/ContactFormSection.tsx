@@ -85,7 +85,7 @@ export function ContactFormSection() {
 
   if (status === "success") {
     return (
-      <div className="flex h-auto items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] sm:p-6">
+      <div className="flex h-auto items-center justify-center rounded-xl bg-white p-5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] sm:p-6 lg:self-start lg:w-full">
         <div className="text-center">
           <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-emerald/10">
             <Icon name="checkCircle" className="h-5 w-5 text-emerald" strokeWidth={2} />
@@ -102,7 +102,7 @@ export function ContactFormSection() {
   }
 
   return (
-    <div className="flex h-auto flex-col rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] max-md:p-3.5 sm:p-4">
+    <div className="flex h-auto w-full flex-col self-start rounded-xl bg-white p-3.5 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.45)] max-md:rounded-[20px] max-md:p-3.5 sm:p-4 lg:w-full lg:self-start">
       <div>
         <h2 className="font-montserrat text-[clamp(1.1rem,4.5vw,1.25rem)] font-extrabold text-forest-deep max-md:text-[1.1rem] max-md:text-navy md:text-[clamp(1.05rem,1.6vw,1.25rem)]">
           {form.title}

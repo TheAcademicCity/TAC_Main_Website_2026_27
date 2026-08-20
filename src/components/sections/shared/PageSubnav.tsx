@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { PageSubnavItem } from "@/types/page";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +29,24 @@ function getActiveSectionId(items: readonly PageSubnavItem[], marker: number) {
 
 export function PageSubnav({ items }: PageSubnavProps) {
   const navRef = useRef<HTMLElement>(null);
+  const mobileScrollerRef = useRef<HTMLDivElement>(null);
+  const mobileLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const lastMobileScrolledActiveIdRef = useRef(items[0]?.id ?? "");
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
+
+  const scrollMobileLinkIntoView = useCallback((index: number, behavior: ScrollBehavior = "smooth") => {
+    const scroller = mobileScrollerRef.current;
+    const link = mobileLinkRefs.current[index];
+    if (!scroller || !link || window.matchMedia("(min-width: 768px)").matches) return;
+
+    const targetLeft = link.offsetLeft - scroller.clientWidth / 2 + link.offsetWidth / 2;
+    scroller.scrollTo({ left: Math.max(0, targetLeft), behavior });
+  }, []);
+
+  useEffect(() => {
+    lastMobileScrolledActiveIdRef.current = items[0]?.id ?? "";
+    mobileLinkRefs.current = [];
+  }, [items]);
 
   useEffect(() => {
     const nav = navRef.current;
@@ -70,6 +87,21 @@ export function PageSubnav({ items }: PageSubnavProps) {
     };
   }, [items]);
 
+  useEffect(() => {
+    if (activeId === lastMobileScrolledActiveIdRef.current) return;
+
+    const index = items.findIndex((item) => item.id === activeId);
+    if (index < 0) return;
+
+    lastMobileScrolledActiveIdRef.current = activeId;
+    scrollMobileLinkIntoView(index);
+  }, [activeId, items, scrollMobileLinkIntoView]);
+
+  const handleMobileLinkClick = (index: number, itemId: string) => {
+    lastMobileScrolledActiveIdRef.current = itemId;
+    scrollMobileLinkIntoView(index);
+  };
+
   return (
     <nav
       ref={navRef}
@@ -77,13 +109,20 @@ export function PageSubnav({ items }: PageSubnavProps) {
       aria-label="Page sections"
     >
       {/* Mobile jump chips */}
-      <div className="flex gap-2 overflow-x-auto px-5 py-3.5 scrollbar-none md:hidden">
-        {items.map((item) => {
+      <div
+        ref={mobileScrollerRef}
+        className="flex gap-2 overflow-x-auto px-5 py-3.5 scrollbar-none md:hidden"
+      >
+        {items.map((item, index) => {
           const isActive = item.id === activeId;
           return (
             <a
               key={item.id}
+              ref={(node) => {
+                mobileLinkRefs.current[index] = node;
+              }}
               href={`#${item.id}`}
+              onClick={() => handleMobileLinkClick(index, item.id)}
               className={cn(
                 "shrink-0 rounded-[20px] px-3.5 py-1.5 font-outfit text-[0.68rem] font-semibold",
                 isActive ? "bg-forest text-white" : "bg-off-white text-charcoal",

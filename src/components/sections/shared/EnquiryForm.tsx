@@ -57,20 +57,20 @@ export function EnquiryForm({
     intent === "brochure" || (!intent && searchParams.get("intent") === "brochure");
 
   const inputClassName = dense
-    ? "w-full rounded border border-line bg-white px-2 py-1.5 text-[0.72rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-1 focus:ring-emerald/15 sm:rounded-lg sm:px-3.5 sm:py-2.5 sm:text-[0.9rem] sm:focus:ring-2"
+    ? "w-full rounded-md border border-line bg-white px-2.5 py-2 text-[0.78rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-1 focus:ring-emerald/15 sm:rounded-lg sm:px-3.5 sm:py-2.5 sm:text-[0.9rem] sm:focus:ring-2"
     : compact
       ? "w-full rounded-md border border-line bg-white px-2.5 py-2 text-[0.8rem] text-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-slate/45 focus:border-emerald focus:ring-2 focus:ring-emerald/15 sm:rounded-lg sm:px-3.5 sm:py-2.5 sm:text-[0.9rem]"
       : fieldClassName;
 
   const fieldLabelClassName = dense
-    ? "mb-0.5 block font-montserrat text-[0.52rem] font-bold uppercase tracking-[0.1em] text-forest sm:mb-1 sm:text-[0.68rem]"
+    ? "mb-0.5 block font-montserrat text-[0.58rem] font-bold uppercase tracking-[0.1em] text-forest sm:mb-1 sm:text-[0.68rem]"
     : compact
       ? "mb-0.5 block font-montserrat text-[0.6rem] font-bold uppercase tracking-[0.12em] text-forest sm:mb-1 sm:text-[0.68rem]"
       : labelClassName;
 
-  const fieldGapClassName = dense ? "mt-1.5 sm:mt-4" : compact ? "mt-2.5 sm:mt-4" : "mt-5";
-  const gridGapClassName = dense ? "gap-1.5 sm:gap-4" : compact ? "gap-2.5 sm:gap-4" : "gap-5";
-  const formPaddingClassName = dense ? "p-1.5 sm:p-5" : compact ? "p-2.5 sm:p-5" : "p-6 sm:p-8";
+  const fieldGapClassName = dense ? "mt-2 sm:mt-4" : compact ? "mt-2.5 sm:mt-4" : "mt-5";
+  const gridGapClassName = dense ? "gap-2 sm:gap-4" : compact ? "gap-2.5 sm:gap-4" : "gap-5";
+  const formPaddingClassName = dense ? "p-2.5 sm:p-5" : compact ? "p-2.5 sm:p-5" : "p-6 sm:p-8";
 
   const { closeEnquiryModal } = useEnquiryModal();
   const { showThankYouModal } = useThankYouModal();
@@ -282,7 +282,7 @@ export function EnquiryForm({
           className={cn(
             "w-full justify-center sm:w-auto",
             dense
-              ? "min-h-0 rounded-md px-3 py-2 text-[0.62rem] sm:min-w-[210px] sm:rounded-lg sm:px-5 sm:py-3 sm:text-[0.78rem]"
+              ? "min-h-0 rounded-md px-3.5 py-2.5 text-[0.7rem] sm:min-w-[210px] sm:rounded-lg sm:px-5 sm:py-3 sm:text-[0.78rem]"
               : compact
                 ? "min-h-0 px-4 py-2.5 text-[0.72rem] sm:min-w-[210px] sm:px-5 sm:py-3 sm:text-[0.78rem]"
                 : "sm:min-w-[240px]",

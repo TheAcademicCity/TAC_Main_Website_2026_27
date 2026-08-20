@@ -37,7 +37,12 @@ export const admissionsPageContent = {
       "TACS offers a career-oriented residential education from Grades 5 to 12 - blending academic rigour, Indic values and real-world skills in a safe, structured boarding environment.",
       "Admissions are open now. The entire process can be completed online - application, entrance exam, interaction - or you are most welcome to visit us in Nelamangala any day from 9 AM to 6 PM.",
     ],
-    image: createImage("/images/admissions/overview-1.png", remote.career, "Students at TACS", false),
+    image: createImage(
+      "/images/admissions/overview-1.png",
+      remote.career,
+      "Students in school uniform gathered on outdoor bleachers during a school assembly at TACS",
+      false,
+    ),
     cta: { label: "Book your visit today!", href: "/#enquiry" },
   },
   process: {

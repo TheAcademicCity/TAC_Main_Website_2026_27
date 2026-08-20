@@ -7,6 +7,14 @@ import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
+const desktopFacilitySlots = [
+  "md:col-span-2 md:col-start-1 md:row-start-1",
+  "md:col-start-4 md:row-start-1 md:row-span-2",
+  "md:col-start-3 md:row-start-1",
+  "md:col-start-1 md:row-start-2",
+  "md:col-span-2 md:col-start-2 md:row-start-2",
+] as const;
+
 const bentoClasses = [
   "col-start-1 row-start-1",
   "col-start-1 row-start-2 row-span-2",
@@ -85,14 +93,13 @@ export function FacilitiesSection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={1}>
-          <div className="mt-5 grid grid-cols-2 gap-1.5 sm:mt-7 md:grid-cols-4 md:grid-rows-[185px_275px]">
-            {facilities.items.map((item) => (
+          <div className="mt-5 grid grid-cols-2 gap-1.5 sm:mt-7 md:grid-cols-4 md:grid-rows-[220px_220px] md:gap-3">
+            {facilities.items.map((item, index) => (
               <div
                 key={item.label}
                 className={cn(
-                  "group relative min-h-[150px] overflow-hidden rounded-lg bg-forest-deep sm:min-h-[180px] md:min-h-0",
-                  item.wide && "md:col-span-2",
-                  item.tall && "md:row-span-2",
+                  "group relative min-h-[150px] overflow-hidden rounded-lg bg-forest-deep sm:min-h-[180px] md:min-h-0 md:h-full",
+                  desktopFacilitySlots[index],
                 )}
               >
                 <div className="absolute inset-0">
@@ -100,7 +107,10 @@ export function FacilitiesSection() {
                     image={item.image}
                     fill
                     sizes="(min-width: 768px) 25vw, 50vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.06] group-hover:brightness-[0.85]"
+                    className={cn(
+                      "object-cover transition duration-500 group-hover:scale-[1.06] group-hover:brightness-[0.85]",
+                      index === 1 && "object-[center_12%]",
+                    )}
                   />
                 </div>
                 <div

@@ -72,34 +72,44 @@ export function LeadershipSection() {
         <div className="space-y-[18px]">
           {leadership.leaders.map((leader, index) => (
             <RevealOnScroll key={leader.name} delay={Math.min(index, 2) as 0 | 1 | 2}>
-              <article className="overflow-hidden rounded-[20px] bg-white shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)]">
-                <div className="flex items-center gap-3 px-[18px] pt-[18px]">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-gold">
-                    <ImageWithFallback
-                      image={leader.image}
-                      fill
-                      sizes="56px"
-                      className="object-cover object-[center_top]"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-montserrat text-[0.9375rem] font-bold text-navy">
-                      {leader.name}
-                    </div>
-                    <div className="text-[0.6875rem] font-semibold text-emerald">{leader.role}</div>
-                  </div>
-                </div>
-                <div className="px-[18px] pb-[18px] pt-3.5">
-                  <span
-                    className="mb-1.5 block font-montserrat text-[2.375rem] leading-[0.4] text-gold"
+              <article className="relative overflow-hidden rounded-[20px] bg-white shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)]">
+                <div className="relative px-[18px] py-[18px]">
+                  <div
                     aria-hidden
+                    className="pointer-events-none absolute right-3 top-0 font-montserrat text-[4.5rem] font-black leading-none text-forest/[0.05]"
                   >
                     &ldquo;
-                  </span>
-                  <p className="mb-2.5 text-[0.84375rem] italic leading-[1.55] text-navy">
+                  </div>
+
+                  <figure
+                    className={cn(
+                      "mb-2 mt-1 w-[132px]",
+                      leader.altLayout ? "float-right ml-3.5" : "float-left mr-3.5",
+                    )}
+                  >
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-md border-2 border-gold shadow-[0_10px_24px_-14px_rgba(0,0,0,0.35)]">
+                      <ImageWithFallback
+                        image={leader.image}
+                        fill
+                        sizes="132px"
+                        className="object-cover object-[center_top]"
+                      />
+                    </div>
+                  </figure>
+
+                  <p className="relative text-[0.84375rem] italic leading-[1.55] text-navy">
                     {highlightText(leader.quote, leader.quoteHighlights)}
                   </p>
-                  <p className="text-[0.75rem] leading-[1.55] text-[#999]">{leader.body}</p>
+                  <p className="relative mt-2.5 text-[0.75rem] leading-[1.55] text-[#999]">
+                    {leader.body}
+                  </p>
+
+                  <footer className="clear-both mt-4 border-t border-line/80 pt-3">
+                    <div className="font-montserrat text-[0.8125rem] font-bold leading-snug text-navy">
+                      {leader.name}
+                    </div>
+                    <div className="text-[0.625rem] font-semibold text-emerald">{leader.role}</div>
+                  </footer>
                 </div>
               </article>
             </RevealOnScroll>

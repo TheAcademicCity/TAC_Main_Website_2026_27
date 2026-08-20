@@ -4,9 +4,47 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
+import type { SiteImage } from "@/types/images";
+
+function MobileGalleryTile({
+  item,
+  className,
+  sizes = "50vw",
+}: {
+  item: {
+    label: string;
+    image: SiteImage;
+    imageObjectClassName?: string;
+  };
+  className?: string;
+  sizes?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "relative overflow-hidden rounded-[14px] border border-line bg-gradient-to-br from-forest-deep to-forest",
+        className,
+      )}
+    >
+      <ImageWithFallback
+        image={item.image}
+        fill
+        sizes={sizes}
+        className={cn("object-cover", item.imageObjectClassName ?? "object-center")}
+      />
+    </div>
+  );
+}
 
 export function GallerySection() {
   const { gallery } = boardingPageContent;
+  const [featuredItem, ...supportingItems] = gallery.items;
+  const mobileFooterItem = supportingItems.find((item) => item.wide);
+  const mobileGridItems = supportingItems.filter((item) => !item.wide);
+  const morningSport = mobileGridItems[0];
+  const hostelLife = mobileGridItems[1];
+  const farmNature = mobileGridItems[2];
+  const eveningStudy = mobileGridItems[3];
 
   return (
     <Section
@@ -26,30 +64,44 @@ export function GallerySection() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={1}>
-          <div className="scrollbar-none mt-4 flex snap-x snap-mandatory gap-2.5 overflow-x-auto pb-1">
-            {gallery.items.map((item) => (
-              <div
-                key={item.label}
-                className={cn(
-                  "relative h-[150px] shrink-0 snap-start overflow-hidden rounded-[14px] bg-forest-deep",
-                  item.wide ? "w-[240px]" : "w-[170px]",
-                )}
-              >
-                <ImageWithFallback
-                  image={item.image}
-                  fill
-                  sizes="240px"
-                  className={cn("object-cover", item.imageObjectClassName ?? "object-center")}
+          <div className="mt-4">
+            {featuredItem ? (
+              <MobileGalleryTile
+                item={featuredItem}
+                sizes="100vw"
+                className="mb-2 aspect-[16/9]"
+              />
+            ) : null}
+            <div className="grid grid-cols-2 grid-rows-[220px_200px_280px] gap-2">
+              {morningSport ? (
+                <MobileGalleryTile
+                  item={morningSport}
+                  className="col-start-1 row-start-1 min-h-0"
                 />
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,44,40,0.7)] via-transparent to-transparent"
+              ) : null}
+              {hostelLife ? (
+                <MobileGalleryTile
+                  item={hostelLife}
+                  className="col-start-2 row-start-1 row-span-2 min-h-0"
                 />
-                <span className="absolute bottom-2.5 left-2.5 z-[2] font-montserrat text-[0.625rem] font-bold uppercase tracking-[0.06em] text-white">
-                  {item.label}
-                </span>
-              </div>
-            ))}
+              ) : null}
+              {farmNature ? (
+                <MobileGalleryTile item={farmNature} className="col-start-1 row-start-2 min-h-0" />
+              ) : null}
+              {eveningStudy ? (
+                <MobileGalleryTile
+                  item={eveningStudy}
+                  className="col-start-1 row-start-3 min-h-0"
+                />
+              ) : null}
+            </div>
+            {mobileFooterItem ? (
+              <MobileGalleryTile
+                item={mobileFooterItem}
+                sizes="100vw"
+                className="mt-2 aspect-[16/9] w-full"
+              />
+            ) : null}
           </div>
         </RevealOnScroll>
       </div>

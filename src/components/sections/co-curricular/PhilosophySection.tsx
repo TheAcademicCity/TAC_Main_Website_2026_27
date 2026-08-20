@@ -19,16 +19,13 @@ export function PhilosophySection() {
       {/* Mobile */}
       <div className="md:hidden">
         <RevealOnScroll>
-          <p className="mb-2 font-montserrat text-[0.625rem] font-bold uppercase tracking-[0.1em] text-violet">
-            {philosophy.imageTag}
-          </p>
           <SectionLabel className="!mb-2 before:hidden !text-[0.62rem] !tracking-[0.14em] !text-emerald">
             {philosophy.label}
           </SectionLabel>
           <h2 className="mb-4 font-montserrat text-[1.25rem] font-extrabold leading-[1.28] tracking-[-0.01em] text-navy">
             Co-curricular Is Never an Afterthought
           </h2>
-          <div className="relative mb-4 h-[170px] overflow-hidden rounded-2xl bg-forest-deep">
+          <div className="relative mb-4 h-[210px] overflow-hidden rounded-2xl bg-forest-deep">
             <ImageWithFallback
               image={philosophy.image}
               fill

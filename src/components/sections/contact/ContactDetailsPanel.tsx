@@ -22,7 +22,7 @@ export function ContactDetailsPanel() {
   const { links, address } = contactPageContent;
 
   return (
-    <div className="flex h-auto min-h-0 w-full flex-col gap-2.5 max-md:gap-3 max-md:self-start lg:h-full">
+    <div className="flex h-auto w-full flex-col gap-2.5 max-md:gap-3 max-md:self-start lg:h-full lg:min-h-0">
       <div className="grid shrink-0 grid-cols-1 gap-2.5 max-md:gap-3 md:grid-cols-2">
         {links.map((link) => {
           const content = (
@@ -67,14 +67,14 @@ export function ContactDetailsPanel() {
         })}
       </div>
 
-      <div className="flex min-h-[200px] flex-none flex-col overflow-hidden rounded-lg border border-white/12 bg-white/6 max-md:rounded-2xl sm:min-h-[220px] lg:min-h-0 lg:flex-1">
+      <div className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-white/12 bg-white/6 max-md:min-h-[200px] max-md:rounded-2xl sm:max-lg:min-h-[220px] lg:min-h-0 lg:flex-1">
         <MapEmbed
           title="Campus map"
           mapLabel={address.mapLabel}
           embedUrl={address.mapEmbedUrl}
           flexible
           hideHeader
-          iframeClassName="rounded-lg max-md:rounded-2xl max-lg:min-h-[200px] max-lg:h-[220px] max-lg:flex-none sm:max-lg:h-[240px] lg:min-h-[140px]"
+          iframeClassName="rounded-lg max-md:rounded-2xl max-lg:min-h-[200px] max-lg:h-[220px] sm:max-lg:h-[240px] lg:h-full lg:min-h-0"
         />
       </div>
     </div>

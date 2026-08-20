@@ -15,7 +15,7 @@ function PrincipalArticle() {
         className="h-1 bg-forest-deep"
       />
 
-      <div className="relative px-5 py-6 md:px-8 md:py-8">
+      <div className="relative px-5 pb-4 pt-3 md:px-8 md:py-8">
         <div
           aria-hidden
           className="pointer-events-none absolute right-4 top-2 font-montserrat text-[5rem] font-black leading-none text-forest/[0.04] md:right-8 md:text-[7rem]"
@@ -23,12 +23,12 @@ function PrincipalArticle() {
           &ldquo;
         </div>
 
-        <figure className="float-left mr-4 mb-3 mt-4 w-[118px] sm:mr-5 sm:mb-4 sm:mt-5 sm:w-[140px] md:mr-7 md:mb-5 md:mt-6 md:w-[200px] lg:w-[220px]">
+        <figure className="float-left mr-3.5 mb-3 mt-1.5 w-[96px] sm:mr-5 sm:mb-4 sm:w-[140px] md:mr-7 md:mb-5 md:mt-6 md:w-[200px] lg:w-[220px]">
           <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-black shadow-[0_12px_32px_-14px_rgba(0,0,0,0.5)] ring-1 ring-black/10">
             <ImageWithFallback
               image={image}
               fill
-              sizes="(max-width: 768px) 140px, 220px"
+              sizes="(max-width: 639px) 96px, (max-width: 768px) 140px, 220px"
               objectFit="contain"
               className="object-contain object-center"
             />
@@ -46,14 +46,16 @@ function PrincipalArticle() {
           ))}
         </div>
 
-        <footer className="clear-both mt-7 border-t border-line pt-5 md:mt-8 md:pt-6">
-          <p className="text-[0.8125rem] italic text-slate md:text-[0.92rem]">{closing}</p>
-          <p className="mt-3 font-montserrat text-[0.9rem] font-extrabold leading-snug text-forest-deep md:text-[1.02rem]">
+        <footer className="clear-both mt-4 border-t border-line pt-3 md:mt-8 md:pt-6">
+          <p className="text-[0.8125rem] italic leading-snug text-slate md:text-[0.92rem]">{closing}</p>
+          <p className="mt-1.5 font-montserrat text-[0.875rem] font-extrabold leading-snug text-forest-deep md:mt-3 md:text-[1.02rem]">
             {signature.name}{" "}
             <span className="font-semibold text-slate">{signature.qualifications}</span>
           </p>
-          <p className="mt-0.5 text-[0.72rem] text-slate md:text-[0.82rem]">{signature.role}</p>
-          <p className="text-[0.72rem] text-slate md:text-[0.82rem]">{signature.school}</p>
+          <p className="mt-px text-[0.7rem] leading-snug text-slate md:mt-0.5 md:text-[0.82rem]">
+            {signature.role}
+          </p>
+          <p className="text-[0.7rem] leading-snug text-slate md:text-[0.82rem]">{signature.school}</p>
         </footer>
       </div>
     </article>
