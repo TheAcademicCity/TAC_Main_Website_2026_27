@@ -146,6 +146,11 @@ export function CampusSliderSection() {
                 <ImageWithFallback image={slide.image} fill sizes="100vw" />
               </div>
 
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/95 via-black/60 to-black/10"
+              />
+
               <span className="absolute right-4 top-5 z-[5] max-w-[calc(100%-2rem)] truncate bg-gold px-3 py-1 font-montserrat text-[0.68rem] font-extrabold uppercase tracking-widest text-forest-deep sm:right-[4vw]">
                 {campusContent.badge}
               </span>

@@ -1,4 +1,5 @@
 import { newsContent } from "@/data/home";
+import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { NewsCard } from "@/components/sections/shared/NewsCard";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { Section } from "@/components/ui/Section";
@@ -16,19 +17,30 @@ export function NewsSection() {
         />
       </div>
 
-      {/* Mobile event row */}
-      <div className="scrollbar-none flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 md:hidden">
+      {/* Mobile 2×3 grid */}
+      <div className="grid grid-cols-2 gap-3 px-5 md:hidden">
         {newsContent.articles.map((article) => (
           <article
             key={article.title}
-            className="w-[150px] shrink-0 snap-start rounded-2xl border border-line bg-white p-4 shadow-[0_8px_20px_-12px_rgba(0,0,0,0.18)]"
+            className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_8px_20px_-12px_rgba(0,0,0,0.18)]"
           >
-            <div className="mb-2 flex items-baseline gap-1 text-forest">
-              <b className="font-montserrat text-[1.25rem] font-extrabold">{article.day}</b>
-              <span className="text-[0.68rem] font-semibold uppercase">{article.month}</span>
+            <div className="relative aspect-[16/10] bg-forest-deep">
+              <ImageWithFallback
+                image={article.image}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover"
+              />
+              <div className="absolute left-1.5 top-1.5 bg-gold px-1 py-px text-center font-montserrat text-[0.36rem] font-extrabold leading-tight text-forest-deep">
+                <b className="block text-[0.6rem]">{article.day}</b>
+                {article.month}
+              </div>
             </div>
-            <h5 className="mb-1 font-montserrat text-[0.78rem] font-bold text-navy">{article.title}</h5>
-            <p className="text-[0.65rem] leading-snug text-[#999]">{article.excerpt}</p>
+            <div className="p-2.5">
+              <h5 className="font-montserrat text-[0.72rem] font-bold leading-snug text-navy">
+                {article.title}
+              </h5>
+            </div>
           </article>
         ))}
       </div>

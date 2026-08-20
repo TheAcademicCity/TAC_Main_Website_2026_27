@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from "react";
 import { galleryContent } from "@/data/home";
 import { CtaLink } from "@/components/sections/shared/CtaLink";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
@@ -188,6 +188,95 @@ function GalleryLightbox({
   );
 }
 
+function MobileFeaturedGrid({
+  tab,
+  onSelect,
+}: {
+  tab: GalleryTab;
+  onSelect: (item: GalleryImageItem) => void;
+}) {
+  const [featured, ...supporting] = tab.items;
+
+  return (
+    <>
+      {featured ? (
+        <GalleryTileButton
+          item={featured}
+          onSelect={onSelect}
+          hero
+          className="mb-2 overflow-hidden rounded-[14px] border border-line"
+          sizes="100vw"
+        />
+      ) : null}
+      <div className="columns-2 gap-2">
+        {supporting.map((item) => (
+          <GalleryTileButton
+            key={`${tab.id}-${item.label}`}
+            item={item}
+            onSelect={onSelect}
+            className="mb-2 break-inside-avoid overflow-hidden rounded-[14px] border border-line"
+            style={{ "--tile-h": `${item.height ?? 220}px` } as CSSProperties}
+            sizes="50vw"
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
+function MobileBentoGrid({
+  tab,
+  onSelect,
+}: {
+  tab: GalleryTab;
+  onSelect: (item: GalleryImageItem) => void;
+}) {
+  return (
+    <div className="grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2">
+      {tab.items.slice(0, 6).map((item, index) => {
+        const spanClass =
+          [
+            "col-start-1 row-span-2",
+            "col-start-2 row-start-1",
+            "col-start-2 row-start-2",
+            "col-start-1 row-start-3",
+            "col-start-2 row-start-3 row-span-2",
+            "col-start-1 row-start-4",
+          ][index] ?? "col-span-1";
+
+        return (
+          <button
+            key={`bento-${tab.id}-${item.label}`}
+            type="button"
+            onClick={() => onSelect(item)}
+            className={cn(
+              "relative h-full w-full overflow-hidden rounded-[14px] border border-line text-left",
+              spanClass,
+            )}
+            aria-label={`View ${item.label}`}
+          >
+            <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function MobileGalleryPanel({
+  tab,
+  onSelect,
+}: {
+  tab: GalleryTab;
+  onSelect: (item: GalleryImageItem) => void;
+}) {
+  if (tab.layout === "featured-grid") {
+    return <MobileFeaturedGrid tab={tab} onSelect={onSelect} />;
+  }
+
+  return <MobileBentoGrid tab={tab} onSelect={onSelect} />;
+}
+
 function FeaturedGridGallery({
   tab,
   onSelect,
@@ -207,38 +296,11 @@ function FeaturedGridGallery({
   ] as const;
 
   return (
-    <>
-      {/* Mobile */}
-      <div className="px-5 md:hidden">
-        {featured ? (
-          <GalleryTileButton
-            item={featured}
-            onSelect={onSelect}
-            hero
-            className="mb-2 overflow-hidden rounded-[14px] border border-line"
-            sizes="100vw"
-          />
-        ) : null}
-        <div className="columns-2 gap-2">
-          {supporting.map((item) => (
-            <GalleryTileButton
-              key={`${tab.id}-${item.label}`}
-              item={item}
-              onSelect={onSelect}
-              className="mb-2 break-inside-avoid overflow-hidden rounded-[14px] border border-line"
-              style={{ "--tile-h": `${item.height ?? 220}px` } as CSSProperties}
-              sizes="50vw"
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop — fixed hero block on top, uneven masonry below */}
-      <div
-        className="hidden md:flex md:flex-col md:gap-2"
-        role="tabpanel"
-        aria-label={`${tab.id} gallery`}
-      >
+    <div
+      className="hidden md:flex md:flex-col md:gap-2"
+      role="tabpanel"
+      aria-label={`${tab.id} gallery`}
+    >
         <div className="grid grid-cols-5 grid-rows-[clamp(188px,20vw,220px)_clamp(188px,20vw,220px)] gap-2">
           {featured ? (
             <GalleryTileButton
@@ -263,8 +325,7 @@ function FeaturedGridGallery({
         {masonryItems.length ? (
           <MasonryGallery tabId={tab.id} items={masonryItems} onSelect={onSelect} embedded />
         ) : null}
-      </div>
-    </>
+    </div>
   );
 }
 
@@ -303,13 +364,139 @@ function MasonryGallery({
 export function GallerySection() {
   const [activeTab, setActiveTab] = useState(galleryContent.tabs[0]?.id ?? "campus");
   const [selectedItem, setSelectedItem] = useState<GalleryImageItem | null>(null);
+  const mobileScrollerRef = useRef<HTMLDivElement>(null);
+  const mobileTabNavRef = useRef<HTMLDivElement>(null);
+  const mobileTabButtonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const mobilePanelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const lastMobileTabIndexRef = useRef(0);
+  const isProgrammaticMobileScrollRef = useRef(false);
+  const programmaticScrollTimerRef = useRef<number | null>(null);
+  const [mobilePanelHeights, setMobilePanelHeights] = useState<number[]>([]);
+  const [mobileHeightIndex, setMobileHeightIndex] = useState(0);
+  const [isMobileGalleryAnimating, setIsMobileGalleryAnimating] = useState(false);
   const activeTabContent = galleryContent.tabs.find((tab) => tab.id === activeTab);
+  const activeMobilePanelHeight = mobilePanelHeights[mobileHeightIndex];
   const activeItems = activeTabContent?.items ?? [];
   const isFeaturedGrid = activeTabContent?.layout === "featured-grid";
+
+  const scrollMobileTabIntoView = useCallback((index: number, behavior: ScrollBehavior = "smooth") => {
+    const button = mobileTabButtonRefs.current[index];
+    const nav = mobileTabNavRef.current;
+    if (!button || !nav) return;
+
+    const targetLeft = button.offsetLeft - nav.clientWidth / 2 + button.offsetWidth / 2;
+    nav.scrollTo({ left: Math.max(0, targetLeft), behavior });
+  }, []);
+
+  const finishProgrammaticMobileScroll = useCallback((index: number) => {
+    if (programmaticScrollTimerRef.current !== null) {
+      window.clearTimeout(programmaticScrollTimerRef.current);
+      programmaticScrollTimerRef.current = null;
+    }
+
+    isProgrammaticMobileScrollRef.current = false;
+    setIsMobileGalleryAnimating(false);
+    setMobileHeightIndex(index);
+    lastMobileTabIndexRef.current = index;
+  }, []);
 
   useEffect(() => {
     setSelectedItem(null);
   }, [activeTab]);
+
+  useEffect(() => {
+    const observers = mobilePanelRefs.current.map((node, index) => {
+      if (!node) return null;
+
+      const observer = new ResizeObserver(() => {
+        const height = node.getBoundingClientRect().height;
+        setMobilePanelHeights((prev) => {
+          if (prev[index] === height) return prev;
+          const next = [...prev];
+          next[index] = height;
+          return next;
+        });
+      });
+
+      observer.observe(node);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = mobileScrollerRef.current;
+    if (!el) return;
+
+    const onScroll = () => {
+      if (isProgrammaticMobileScrollRef.current) {
+        const index = lastMobileTabIndexRef.current;
+        const targetLeft = index * el.clientWidth;
+        if (Math.abs(el.scrollLeft - targetLeft) <= 2) {
+          finishProgrammaticMobileScroll(index);
+        }
+        return;
+      }
+
+      const index = Math.round(el.scrollLeft / el.clientWidth);
+      const tab = galleryContent.tabs[index];
+      if (!tab) return;
+
+      if (index !== lastMobileTabIndexRef.current) {
+        lastMobileTabIndexRef.current = index;
+        scrollMobileTabIntoView(index);
+      }
+
+      setActiveTab(tab.id);
+      setMobileHeightIndex(index);
+    };
+
+    const onScrollEnd = () => {
+      if (!isProgrammaticMobileScrollRef.current) return;
+      finishProgrammaticMobileScroll(lastMobileTabIndexRef.current);
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    el.addEventListener("scrollend", onScrollEnd);
+
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      el.removeEventListener("scrollend", onScrollEnd);
+    };
+  }, [finishProgrammaticMobileScroll, scrollMobileTabIntoView]);
+
+  useEffect(
+    () => () => {
+      if (programmaticScrollTimerRef.current !== null) {
+        window.clearTimeout(programmaticScrollTimerRef.current);
+      }
+    },
+    [],
+  );
+
+  const handleMobileTabSelect = (tabId: string) => {
+    const index = galleryContent.tabs.findIndex((tab) => tab.id === tabId);
+    const el = mobileScrollerRef.current;
+    if (!el || index < 0 || index === lastMobileTabIndexRef.current) return;
+
+    if (programmaticScrollTimerRef.current !== null) {
+      window.clearTimeout(programmaticScrollTimerRef.current);
+    }
+
+    isProgrammaticMobileScrollRef.current = true;
+    setIsMobileGalleryAnimating(true);
+    lastMobileTabIndexRef.current = index;
+    setActiveTab(tabId);
+    scrollMobileTabIntoView(index);
+    el.scrollTo({ left: index * el.clientWidth, behavior: "smooth" });
+
+    programmaticScrollTimerRef.current = window.setTimeout(() => {
+      finishProgrammaticMobileScroll(index);
+    }, 450);
+  };
 
   return (
     <Section id="gallery" className="!pt-[clamp(28px,3.5vw,44px)] max-md:!px-0">
@@ -324,14 +511,17 @@ export function GallerySection() {
           />
         </div>
 
-        <div className="scrollbar-none mb-3.5 flex gap-2 overflow-x-auto px-5">
-          {galleryContent.tabs.map((tab) => {
+        <div ref={mobileTabNavRef} className="scrollbar-none mb-3.5 flex gap-2 overflow-x-auto px-5">
+          {galleryContent.tabs.map((tab, index) => {
             const isActive = tab.id === activeTab;
             return (
               <button
                 key={tab.id}
+                ref={(node) => {
+                  mobileTabButtonRefs.current[index] = node;
+                }}
                 type="button"
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleMobileTabSelect(tab.id)}
                 className={cn(
                   "shrink-0 rounded-[20px] px-3.5 py-2 font-outfit text-[0.75rem] font-semibold",
                   isActive ? "bg-forest text-white" : "bg-off-white text-charcoal",
@@ -343,38 +533,31 @@ export function GallerySection() {
           })}
         </div>
 
-        {isFeaturedGrid && activeTabContent ? (
-          <FeaturedGridGallery tab={activeTabContent} onSelect={setSelectedItem} />
-        ) : (
-          <div className="grid grid-cols-[1.3fr_1fr] grid-rows-[repeat(4,90px)] gap-2 px-5">
-            {activeItems.slice(0, 6).map((item, index) => {
-              const spanClass =
-                [
-                  "col-start-1 row-span-2",
-                  "col-start-2 row-start-1",
-                  "col-start-2 row-start-2",
-                  "col-start-1 row-start-3",
-                  "col-start-2 row-start-3 row-span-2",
-                  "col-start-1 row-start-4",
-                ][index] ?? "col-span-1";
-
-              return (
-                <button
-                  key={`bento-${activeTab}-${item.label}`}
-                  type="button"
-                  onClick={() => setSelectedItem(item)}
-                  className={cn(
-                    "relative h-full w-full overflow-hidden rounded-[14px] border border-line text-left",
-                    spanClass,
-                  )}
-                  aria-label={`View ${item.label}`}
-                >
-                  <GalleryItemVisual item={item} className="absolute inset-0 h-full w-full" />
-                </button>
-              );
-            })}
+        <div
+          className="overflow-hidden"
+          style={
+            !isMobileGalleryAnimating && activeMobilePanelHeight
+              ? { height: activeMobilePanelHeight }
+              : undefined
+          }
+        >
+          <div
+            ref={mobileScrollerRef}
+            className="scrollbar-none flex snap-x snap-mandatory items-start overflow-x-auto"
+          >
+            {galleryContent.tabs.map((tab, index) => (
+              <div
+                key={tab.id}
+                ref={(node) => {
+                  mobilePanelRefs.current[index] = node;
+                }}
+                className="w-full shrink-0 snap-start px-5"
+              >
+                <MobileGalleryPanel tab={tab} onSelect={setSelectedItem} />
+              </div>
+            ))}
           </div>
-        )}
+        </div>
 
         <p className="mt-3 text-center font-outfit text-[0.72rem] font-bold text-forest">
           <a href={galleryContent.instagram.href} target="_blank" rel="noopener noreferrer">

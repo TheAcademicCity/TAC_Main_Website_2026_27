@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { pillarsContent } from "@/data/home";
+import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { PillarCard } from "@/components/sections/shared/PillarCard";
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { Section } from "@/components/ui/Section";
@@ -21,13 +22,6 @@ function pillarImageRadius(index: number, total: number) {
     !isFirst && !isLast && "lg:rounded-none",
   );
 }
-
-const mobileCardGradients = [
-  "bg-gradient-to-br from-forest to-[#0c322c]",
-  "bg-gradient-to-br from-violet to-[#3d0d63]",
-  "bg-gradient-to-br from-charcoal to-[#241f22]",
-  "bg-gradient-to-br from-emerald to-[#155c37]",
-] as const;
 
 const mobileTitles = ["Academics", "Co-curricular", "Boarding Life", "Career Orientation"] as const;
 
@@ -81,15 +75,19 @@ export function PillarsSection() {
           {pillarsContent.items.map((pillar, index) => (
             <article
               key={pillar.number}
-              className={cn(
-                "flex min-h-[210px] w-[240px] shrink-0 snap-start flex-col justify-between rounded-[20px] px-[18px] py-[22px] text-white",
-                mobileCardGradients[index] ?? mobileCardGradients[0],
-              )}
+              className="relative flex min-h-[210px] w-[240px] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] text-white"
             >
-              <div className="font-montserrat text-[1.875rem] font-extrabold text-white/35">
-                {pillar.number}
-              </div>
-              <div>
+              <ImageWithFallback
+                image={pillar.image}
+                fill
+                sizes="240px"
+                className={cn("object-cover", pillar.imageObjectClassName ?? "object-center")}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/92 via-black/55 to-black/20"
+              />
+              <div className="relative z-[1] mt-auto px-[18px] pb-[22px]">
                 <h3 className="mb-1.5 font-montserrat text-[1rem] font-bold">
                   {mobileTitles[index] ?? pillar.title}
                 </h3>

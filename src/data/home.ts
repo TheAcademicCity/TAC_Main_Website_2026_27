@@ -1396,7 +1396,7 @@ export const campusContent = {
           },
         ],
       },
-      cta: { label: "Book a Campus Visit", href: "/#contact" },
+      cta: { label: "Book a Campus Visit", href: "/#enquiry" },
       campusVideo: {
         label: "View our campus",
         href: "/campus",

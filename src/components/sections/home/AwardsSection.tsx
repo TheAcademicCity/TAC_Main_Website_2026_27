@@ -10,6 +10,22 @@ const mobileCenteredAwardNames = new Set([
   "Education Today - Dynamic School",
 ]);
 
+const mobileAwardImageSrc: Partial<Record<string, string>> = {
+  "Education Leaders Awards": "/images/home/awards/education-leaders-2024-mobile.png",
+};
+
+const mobileNudgedUpAwardNames = new Set([
+  "21CL ISLE Awards Bengaluru",
+  "Brainfeed Top 500 Schools of India",
+]);
+
+const mobileScaledAwardNames = new Set([
+  "21CL ISLE Awards Bengaluru",
+  "India School Merit Awards",
+  "Brainfeed Top 500 Schools of India",
+  "QS I-GAUGE Institution of Happiness",
+]);
+
 export function AwardsSection() {
   return (
     <section
@@ -33,20 +49,35 @@ export function AwardsSection() {
                 className={cn(
                   "flex h-[clamp(3.75rem,18vw,5.5rem)] min-w-0 justify-center md:h-[clamp(3.25rem,7vw,5.5rem)]",
                   mobileCenteredAwardNames.has(award.name)
-                    ? "items-center md:items-end"
-                    : "items-end",
+                    ? "items-center"
+                    : "items-end md:items-center",
                 )}
               >
-                <img
-                  src={getImageSrc(award.image)}
-                  alt={award.image.alt}
-                  title={`${award.name} (${award.year})`}
-                  width={award.width}
-                  height={award.height}
-                  className="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture
+                  className={cn(
+                    "flex max-h-full max-w-full items-end justify-center md:items-center",
+                    mobileScaledAwardNames.has(award.name) &&
+                      "max-md:origin-bottom max-md:scale-[0.78]",
+                  )}
+                >
+                  {mobileAwardImageSrc[award.name] ? (
+                    <source media="(max-width: 767px)" srcSet={mobileAwardImageSrc[award.name]} />
+                  ) : null}
+                  <img
+                    src={getImageSrc(award.image)}
+                    alt={award.image.alt}
+                    title={`${award.name} (${award.year})`}
+                    width={award.width}
+                    height={award.height}
+                    className={cn(
+                      "max-h-full max-w-full object-contain",
+                      award.name === "Education Leaders Awards" && "max-md:translate-y-1.5",
+                      mobileNudgedUpAwardNames.has(award.name) && "max-md:-translate-y-2",
+                    )}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             ))}
           </div>
