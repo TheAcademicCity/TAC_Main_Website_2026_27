@@ -19,7 +19,7 @@ export function AboutCtaSection() {
               Meet the team, watch a day in action.
             </p>
             <div className="mt-1.5 mb-[18px] inline-block rounded-[20px] bg-white/12 px-3.5 py-1.5 text-[0.6875rem] font-semibold">
-              Open Mon–Sat · 9 AM – 3:30 PM
+              Open Mon–Sat · 9 AM – 6 PM
             </div>
             <div className="flex gap-2">
               <Button

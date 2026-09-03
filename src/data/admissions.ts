@@ -165,7 +165,7 @@ export const admissionsPageContent = {
       {
         question: "When can we visit the campus?",
         answer:
-          "You can visit on any working day between 9 AM and 3:30 PM. No appointment is needed, but calling ahead helps us arrange a more personalised tour. The campus is about 25 km from Bengaluru city centre and the international airport.",
+          "You can visit on any working day between 9 AM and 6 PM. No appointment is needed, but calling ahead helps us arrange a more personalised tour. The campus is about 25 km from Bengaluru city centre and the international airport.",
       },
       {
         question: "What is the procedure for meeting the Principal?",

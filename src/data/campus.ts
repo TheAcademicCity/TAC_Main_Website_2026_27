@@ -7,7 +7,7 @@ export const campusPageContent = {
   description:
     "Take a look around our Nelamangala campus — classrooms, hostels, sports and the spaces where students learn, live and grow.",
   video: {
-    youtubeId: "nh75X9a2e2g",
+    youtubeId: "GNA4LAdz4AM",
     title: "TACS Bengaluru campus tour",
   },
 } as const satisfies CampusPageContent;

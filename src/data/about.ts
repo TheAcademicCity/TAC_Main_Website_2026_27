@@ -243,7 +243,7 @@ export const aboutPageContent: AboutPageContent = {
     label: "Come see for yourself",
     title: "Visit the TACS campus",
     description:
-      "Walk the dormitories, meet the team, watch a day in action. Campus open Mon–Sat, 9 AM to 3:30 PM.",
+      "Walk the dormitories, meet the team, watch a day in action. Campus open Mon–Sat, 9 AM to 6 PM.",
     enquiry: { label: "Start your application", href: "/#enquiry" },
     phone: {
       label: siteConfig.utilityBar.phoneDisplay,

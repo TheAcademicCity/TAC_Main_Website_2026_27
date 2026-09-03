@@ -371,8 +371,9 @@ export function AchievementsGallerySection() {
       <SectionHeader
         label={achievementsGalleryContent.label}
         title={achievementsGalleryContent.title}
-        labelClassName="max-md:!mb-2 max-md:before:hidden max-md:!text-[0.62rem] max-md:!tracking-[0.14em] max-md:!text-emerald"
-        titleClassName="whitespace-pre-line max-md:!text-[1.25rem] max-md:!font-extrabold max-md:!leading-[1.28] max-md:!tracking-[-0.01em] max-md:!text-navy md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
+        centered
+        labelClassName="max-md:!mb-2 max-md:before:hidden max-md:!justify-center max-md:!text-[0.62rem] max-md:!tracking-[0.14em] max-md:!text-emerald md:!justify-center"
+        titleClassName="text-center max-md:!text-[1.25rem] max-md:!font-extrabold max-md:!leading-[1.28] max-md:!tracking-[-0.01em] max-md:!text-navy md:text-[clamp(1.35rem,2.4vw,1.85rem)]"
       />
 
       <RevealOnScroll delay={1}>

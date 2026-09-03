@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/components/layout/PagePlaceholder";
 
 export const metadata = createPageMetadata(
   "Contact Us",
-  "Contact The Academic City School, Bengaluru — call, WhatsApp, email or send a message. Campus visits Mon–Sat, 9 AM – 3:30 PM.",
+  "Contact The Academic City School, Bengaluru — call, WhatsApp, email or send a message. Campus visits Mon–Sat, 9 AM - 6 PM.",
 );
 
 export default function ContactPage() {
