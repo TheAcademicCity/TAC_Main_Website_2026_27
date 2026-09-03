@@ -157,7 +157,7 @@ export const academicsContent = {
       label: "Career-First Learning",
       title: "Helping every child discover the right path, early",
       description:
-        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 - covering engineering, medicine, law, design, CA, management and study abroad.",
+        "Students explore over 600 career options through industry workshops and psychometric assessments from Grade 6 onwards. Structured preparation is available for Grades 11 & 12 - covering engineering, medicine, law, CA and management.",
       image: createImage(
         "/images/home/pillars/career.png",
         remote.pillars.career,

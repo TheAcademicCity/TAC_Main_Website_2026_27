@@ -144,7 +144,7 @@ export const boardingPageContent = {
       { icon: "👕", text: "Fresh, clean laundry maintained for every student" },
       { icon: "📞", text: " Scheduled family calls to stay connected" },
       { icon: "🧼", text: "Personal hygiene routines supervised" },
-      { icon: "👥", text: "Daily circle time with dorm parents" },
+      { icon: "🚶", text: "Daily circle time with dorm parents" },
       { icon: "🛒", text: "Staff oversee all student purchases" },
       { icon: "📋", text: "Outpasses issued only upon approval" },
     ],

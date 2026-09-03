@@ -206,7 +206,7 @@ export const aboutPageContent: AboutPageContent = {
       {
         title: "Exam Preparation On Campus",
         description:
-          "Prepare for NEET, JEE, NIFT, CLAT\nand NID with expert guidance on campus.",
+          "Prepare for NEET, JEE and CLAT with\n expert guidance on campus.",
         image: createImage(
           "/images/about/different-2.png",
           remote.academics,
