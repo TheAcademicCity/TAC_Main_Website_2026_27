@@ -7,6 +7,7 @@ import {
   CommunicationSection,
   DisciplineSection,
   DormSection,
+  GadgetFreeBandSection,
   GallerySection,
   OutpassSection,
   ScheduleSection,
@@ -29,6 +30,7 @@ export default function BoardingPage() {
       <BoardingBandSection />
       <DormSection />
       <ScheduleSection />
+      <GadgetFreeBandSection />
       <CommunicationSection />
       <OutpassSection />
       <DisciplineSection />

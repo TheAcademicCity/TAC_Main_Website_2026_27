@@ -77,7 +77,7 @@ export const pillarsContent = {
   label: "Our Core Delivery Framework",
   title: "Four Pillars that Shape Every Child",
   description:
-    "Every day at TACS follows one deliberate path - from academic clarity, to creative growth, to a values-led boarding life, to a clear career direction.",
+    "At TACS, every day is shaped around the student - helping them grow stronger in academics, discover what they enjoy,\nlearn to live with responsibility and gradually understand where their strengths can take them.",
   watermark: ["CORE", "DELIVERY", "FRAMEWORK"],
   items: [
     {
@@ -172,7 +172,7 @@ export const academicsContent = {
       label: "Sport & Life Readiness",
       title: "90 minutes of sport, every single day",
       description:
-        "Every student plays daily - with dedicated coaches for football, basketball, swimming, cricket, badminton and more. Talented athletes are nurtured from district to national level. Our Life Readiness programme adds first aid, cooking, financial literacy and public speaking.",
+        "Every student plays every day, with dedicated coaching across football, basketball, swimming, cricket, badminton and more. Talented athletes are supported from district to national levels. Beyond sport, our Life Readiness Programme equips students with essential everyday skills like first aid, cooking, financial literacy and public speaking.",
       image: createImage("/images/home/academics/sports.png", remote.pillars.sports, "Sports at TACS", false),
       imageTag: "90 Min/Day · District to National",
       chips: ["Football", "Basketball", "Swimming", "Cricket", "Badminton", "Kho-Kho"],
@@ -1663,9 +1663,16 @@ export const admissionsContent = {
   ],
 } as const;
 
+export const admissionsTimedPopupContent = {
+  label: "Admissions 2027–28 • Seats filling soon",
+  title: "Still wondering if TACS is right for your child?",
+  subtitle:
+    "Let's help you find out. Speak with our admissions team, plan a campus visit and experience residential life at TACS firsthand.",
+} as const;
+
 export const enquiryContent = {
   label: "Enquire Now",
-  title: "Come, let's craft a happy\nfuture for your child",
+  title: "Come, let's craft a happy future for your child",
   subtitle:
     "Share your details and our admissions team will reach out with guidance on grades, campus visits and boarding.",
   brochureSubtitle:

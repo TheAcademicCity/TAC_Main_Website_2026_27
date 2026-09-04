@@ -5,6 +5,7 @@ export { FacilitiesSection } from "./FacilitiesSection";
 export { SportBandSection } from "./SportBandSection";
 export { ClubsSection } from "./ClubsSection";
 export { EventsSection } from "./EventsSection";
+export { CoCurricularGallerySection } from "./CoCurricularGallerySection";
 export { SupwSection } from "./SupwSection";
 export { LifeReadinessSection } from "./LifeReadinessSection";
 export { CoCurricularCtaSection } from "./CoCurricularCtaSection";

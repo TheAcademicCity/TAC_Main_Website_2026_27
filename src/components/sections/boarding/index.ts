@@ -1,6 +1,6 @@
 export { BoardingHeroSection } from "./BoardingHeroSection";
 export { ValuesSection } from "./ValuesSection";
-export { BoardingBandSection } from "./BoardingBandSection";
+export { BoardingBandSection, GadgetFreeBandSection } from "./BoardingBandSection";
 export { DormSection } from "./DormSection";
 export { ScheduleSection } from "./ScheduleSection";
 export { CommunicationSection } from "./CommunicationSection";

@@ -2,6 +2,7 @@ import { coCurricularPageContent } from "@/data/coCurricular";
 import {
   ClubsSection,
   CoCurricularCtaSection,
+  CoCurricularGallerySection,
   CoCurricularHeroSection,
   EventsSection,
   FacilitiesSection,
@@ -26,8 +27,9 @@ export default function CoCurricularPage() {
       <PageSubnav items={coCurricularPageContent.subnav} />
       <PhilosophySection />
       <SportsSection />
-      <FacilitiesSection />
+      <CoCurricularGallerySection />
       <SportBandSection />
+      <FacilitiesSection />
       <ClubsSection />
       <EventsSection />
       <SupwSection />

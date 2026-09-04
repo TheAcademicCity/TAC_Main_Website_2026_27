@@ -38,7 +38,7 @@ export const aboutPageContent: AboutPageContent = {
     paragraphs: [
       "The Academic City School (TACS) is India's first career-oriented boarding school - a CBSE residential institution in Nelamangala, Bengaluru for students from Grades 5 to 12.",
       "We were founded on a simple but radical belief: that 15 years of traditional education is not enough to prepare a child for the world they are entering. At TACS, we blend academic rigour with career exploration, Indic values with global perspective, and boarding-school structure with genuine warmth.",
-      "The result is a student who doesn't just pass exams - but leaves school knowing who they are, what they want, and how to get there.",
+      "The result is a student who leaves with more than academic success - with a stronger sense of self, clear direction and confidence to move forward.",
     ],
     badge: "India's First Career-Oriented Boarding School",
     photos: [
@@ -206,7 +206,7 @@ export const aboutPageContent: AboutPageContent = {
       {
         title: "Exam Preparation On Campus",
         description:
-          "Prepare for NEET, JEE and CLAT with\n expert guidance on campus.",
+          "Prepare for NEET, JEE, IPMAT and CLAT with\n expert guidance on campus.",
         image: createImage(
           "/images/about/different-2.png",
           remote.academics,

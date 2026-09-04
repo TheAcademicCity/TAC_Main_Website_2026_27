@@ -26,6 +26,11 @@ export type BoardingPageContent = {
     description: string;
     cta: { label: string; href: string };
   };
+  gadgetFreeBand: {
+    title: string;
+    description: string;
+    cta: { label: string; href: string };
+  };
   dorm: {
     label: string;
     title: string;

@@ -123,6 +123,12 @@ export const boardingPageContent = {
     description: "From 5:30 AM wake-up to 10:15 PM lights out - the structure is what makes the difference.",
     cta: { label: "Book a campus visit", href: "/#enquiry" },
   },
+  gadgetFreeBand: {
+    title: "More Life. Less Screen.",
+    description:
+      "Students spend their days learning, playing, talking and building real friendships,\nwith supervised internet access only when needed.",
+    cta: { label: "Book a campus visit", href: "/#enquiry" },
+  },
   dorm: {
     label: "Dorm Parents",
     title: "One dedicated adult for every 10–15 students",

@@ -88,6 +88,17 @@ export type CoCurricularPageContent = {
       badge: string;
     }[];
   };
+  gallery: {
+    label: string;
+    title: string;
+    instagram: { label: string; href: string };
+    items: readonly {
+      label: string;
+      height?: number;
+      image: SiteImage;
+      imageObjectClassName?: string;
+    }[];
+  };
   supw: {
     label: string;
     title: string;

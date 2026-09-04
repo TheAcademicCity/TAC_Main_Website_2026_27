@@ -10,6 +10,7 @@ type MapEmbedProps = {
   headerClassName?: string;
   flexible?: boolean;
   hideHeader?: boolean;
+  hideMapLabel?: boolean;
 };
 
 export function MapEmbed({
@@ -21,6 +22,7 @@ export function MapEmbed({
   headerClassName,
   flexible = false,
   hideHeader = false,
+  hideMapLabel = false,
 }: MapEmbedProps) {
   return (
     <div className={cn("flex flex-col overflow-hidden", flexible && "min-h-0 flex-1", className)}>
@@ -36,9 +38,11 @@ export function MapEmbed({
           <h5 className="min-w-0 truncate font-montserrat text-[0.72rem] font-bold uppercase tracking-widest text-gold">
             {title}
           </h5>
-          <span className="ml-auto shrink-0 text-[0.72rem] text-white/50 sm:text-[0.78rem]">
-            {mapLabel}
-          </span>
+          {!hideMapLabel ? (
+            <span className="ml-auto shrink-0 text-[0.72rem] text-white/50 sm:text-[0.78rem]">
+              {mapLabel}
+            </span>
+          ) : null}
         </div>
       ) : null}
       <iframe

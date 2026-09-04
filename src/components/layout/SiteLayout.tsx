@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { AdmissionsRibbon } from "@/components/layout/AdmissionsRibbon";
 import { BrandSplashScreen } from "@/components/layout/BrandSplashScreen";
+import { AdmissionsTimedPopup } from "@/components/layout/AdmissionsTimedPopup";
 import { EnquiryModalProvider } from "@/components/layout/EnquiryModalProvider";
 import { ThankYouModalProvider } from "@/components/layout/ThankYouModalProvider";
 import { Footer } from "@/components/layout/Footer";
@@ -17,6 +18,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <ThankYouModalProvider>
       <EnquiryModalProvider>
+        <AdmissionsTimedPopup />
         <BrandSplashScreen />
         <UtilityBar />
         <Header />

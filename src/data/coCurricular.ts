@@ -33,6 +33,7 @@ export const coCurricularPageContent = {
   subnav: [
     { id: "overview", label: "Overview" },
     { id: "sports", label: "Sports" },
+    { id: "gallery", label: "Gallery" },
     { id: "facilities", label: "Facilities" },
     { id: "clubs", label: "Clubs" },
     { id: "events", label: "Events" },
@@ -281,6 +282,96 @@ export const coCurricularPageContent = {
         description:
           "National-level participation representing TACS against schools across Karnataka and beyond at CBSE cluster rounds.",
         badge: "CBSE",
+      },
+    ],
+  },
+  gallery: {
+    label: "Find Your Stage",
+    title: "A space to create, perform and express",
+    instagram: {
+      label: "Follow",
+      href: "https://www.instagram.com/the_academic_city/",
+    },
+    items: [
+      {
+        label: "Daily Sport",
+        height: 280,
+        image: createImage(
+          "/images/co-curricular/sports.png",
+          remote.sports,
+          "Students playing sport at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Basketball",
+        height: 240,
+        image: createImage(
+          "/images/co-curricular/facilities-basketball.png",
+          remote.sports,
+          "Basketball at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Swimming",
+        height: 260,
+        image: createImage(
+          "/images/co-curricular/facilities-pool.png",
+          remote.sports,
+          "Swimming pool at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Performing Arts",
+        height: 300,
+        image: createImage(
+          "/images/co-curricular/club-performing-arts.png",
+          remote.curriculum,
+          "Performing arts at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Athletics Track",
+        height: 220,
+        image: createImage(
+          "/images/co-curricular/facilities-track.png",
+          remote.campus,
+          "Athletic track at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Indoor Sports",
+        height: 200,
+        image: createImage(
+          "/images/co-curricular/facilities-indoor.png",
+          remote.curriculum,
+          "Indoor sports hall at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Design Club",
+        height: 240,
+        image: createImage(
+          "/images/co-curricular/club-design.png",
+          remote.curriculum,
+          "Design club at TACS",
+          false,
+        ),
+      },
+      {
+        label: "Culinary Arts",
+        height: 220,
+        image: createImage(
+          "/images/co-curricular/club-culinary.png",
+          remote.curriculum,
+          "Culinary club at TACS",
+          false,
+        ),
       },
     ],
   },

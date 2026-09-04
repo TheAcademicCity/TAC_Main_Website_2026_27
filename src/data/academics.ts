@@ -244,7 +244,7 @@ export const academicsPageContent = {
       {
         icon: "💼",
         title: "Commerce",
-        items: ["Accountancy, Economics, Business", "CUET preparation", "CA Foundation, CLAT pathways"],
+        items: ["Accountancy, Economics, Business", "IPMAT preparation", "CA Foundation, CLAT pathways"],
       },
     ],
     partners: {

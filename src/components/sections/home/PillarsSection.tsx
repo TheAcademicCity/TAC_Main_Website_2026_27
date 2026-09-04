@@ -58,8 +58,9 @@ export function PillarsSection() {
           label={pillarsContent.label}
           title={pillarsContent.title}
           description={pillarsContent.description}
+          descriptionClassName="max-md:max-w-[320px] md:max-w-[105ch]"
           reveal={false}
-          className="mb-2 max-md:[&_h2]:text-[1.3rem] max-md:[&_p]:mb-0 max-md:[&_p]:max-w-[320px] max-md:[&_p]:text-[0.8rem] max-md:[&_span]:text-[0.62rem] [&_p]:text-[1rem] [&_p]:leading-relaxed"
+          className="mb-2 max-md:[&_h2]:text-[1.3rem] max-md:[&_p]:mb-0 max-md:[&_p]:text-[0.8rem] max-md:[&_span]:text-[0.62rem] [&_p]:whitespace-pre-line [&_p]:text-[1rem] [&_p]:leading-relaxed"
         />
         <p className="mb-4 text-[0.8rem] leading-normal text-[#999] md:hidden">
           Swipe through the deliberate path every TACS student follows — daily.

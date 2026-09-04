@@ -9,12 +9,16 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { enquiryContent } from "@/data/home";
+import { admissionsTimedPopupContent, enquiryContent } from "@/data/home";
 import { EnquiryForm } from "@/components/sections/shared/EnquiryForm";
+import { markAdmissionsPopupSeen } from "@/lib/admissions-popup";
 import { type EnquiryIntent } from "@/lib/enquiry";
+import { cn } from "@/lib/utils";
+
+export type EnquiryModalVariant = "default" | "timed";
 
 type EnquiryModalContextValue = {
-  openEnquiryModal: (intent?: EnquiryIntent) => void;
+  openEnquiryModal: (intent?: EnquiryIntent, variant?: EnquiryModalVariant) => void;
   closeEnquiryModal: () => void;
 };
 
@@ -47,16 +51,23 @@ type EnquiryModalProviderProps = {
 export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [intent, setIntent] = useState<EnquiryIntent>("general");
+  const [variant, setVariant] = useState<EnquiryModalVariant>("default");
   const titleId = useId();
 
-  const openEnquiryModal = useCallback((nextIntent: EnquiryIntent = "general") => {
-    setIntent(nextIntent);
-    setIsOpen(true);
-    clearEnquiryUrl();
-  }, []);
+  const openEnquiryModal = useCallback(
+    (nextIntent: EnquiryIntent = "general", nextVariant: EnquiryModalVariant = "default") => {
+      setIntent(nextIntent);
+      setVariant(nextVariant);
+      setIsOpen(true);
+      markAdmissionsPopupSeen();
+      clearEnquiryUrl();
+    },
+    [],
+  );
 
   const closeEnquiryModal = useCallback(() => {
     setIsOpen(false);
+    setVariant("default");
   }, []);
 
   useEffect(() => {
@@ -91,6 +102,16 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
     };
   }, [closeEnquiryModal, isOpen]);
 
+  const modalContent =
+    variant === "timed" && intent === "general"
+      ? admissionsTimedPopupContent
+      : {
+          label: enquiryContent.label,
+          title: enquiryContent.title,
+          subtitle:
+            intent === "brochure" ? enquiryContent.brochureSubtitle : enquiryContent.subtitle,
+        };
+
   return (
     <EnquiryModalContext.Provider value={{ openEnquiryModal, closeEnquiryModal }}>
       {children}
@@ -110,42 +131,48 @@ export function EnquiryModalProvider({ children }: EnquiryModalProviderProps) {
             className="enquiry-modal-panel relative z-[1] max-h-[min(94vh,820px)] w-full max-w-[min(calc(100vw-1.5rem),23rem)] overflow-y-auto overflow-x-hidden rounded-xl border border-line/80 bg-paper/98 shadow-[0_24px_64px_-28px_rgba(15,61,56,0.38)] sm:max-h-[min(88vh,820px)] sm:max-w-xl sm:rounded-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="sticky top-0 z-[1] flex items-start justify-between gap-2 border-b border-line/80 bg-paper/98 px-3.5 py-2.5 sm:gap-3 sm:px-5 sm:py-3.5">
-              <div className="min-w-0">
-                <p className="font-montserrat text-[0.56rem] font-extrabold uppercase tracking-[0.12em] text-emerald sm:text-[0.64rem]">
-                  {enquiryContent.label}
-                </p>
-                <h2
-                  id={titleId}
-                  className="mt-0.5 whitespace-pre-line font-montserrat text-[0.88rem] font-extrabold leading-snug text-forest-deep sm:text-[clamp(1rem,2vw,1.25rem)] sm:leading-snug"
+            <div className="sticky top-0 z-[1] bg-paper/98 px-3.5 pt-2.5 pb-3 sm:px-5 sm:pt-3.5 sm:pb-4">
+              <div className="flex items-start justify-between gap-2 sm:gap-3">
+                <div className="min-w-0">
+                  <p className="font-montserrat text-[0.56rem] font-extrabold uppercase tracking-[0.12em] text-emerald sm:text-[0.64rem]">
+                    {modalContent.label}
+                  </p>
+                  <h2
+                    id={titleId}
+                    className="mt-0.5 font-montserrat text-[0.88rem] font-extrabold leading-snug text-forest-deep sm:text-[clamp(1rem,2vw,1.25rem)] sm:leading-snug"
+                  >
+                    {modalContent.title}
+                  </h2>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={closeEnquiryModal}
+                  className="grid h-7 w-7 shrink-0 place-items-center rounded-md border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald sm:h-8 sm:w-8 sm:rounded-lg"
+                  aria-label="Close enquiry form"
                 >
-                  {enquiryContent.title}
-                </h2>
+                  <span aria-hidden className="text-[1rem] leading-none sm:text-[1.25rem]">
+                    ×
+                  </span>
+                </button>
               </div>
 
-              <button
-                type="button"
-                onClick={closeEnquiryModal}
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-md border border-line bg-white/90 text-forest transition-colors hover:border-emerald hover:text-emerald sm:h-8 sm:w-8 sm:rounded-lg"
-                aria-label="Close enquiry form"
+              <p
+                className={cn(
+                  "mt-2 text-[0.84rem] leading-relaxed text-slate sm:text-[0.88rem]",
+                  variant === "default" && "hidden sm:block",
+                )}
               >
-                <span aria-hidden className="text-[1rem] leading-none sm:text-[1.25rem]">
-                  ×
-                </span>
-              </button>
-            </div>
-
-            <div className="px-3.5 py-3 sm:px-5 sm:py-4">
-              <p className="mb-4 hidden text-[0.88rem] leading-relaxed text-slate sm:mb-4 sm:block">
-                {enquiryContent.subtitle}
+                {modalContent.subtitle}
               </p>
+
               <EnquiryForm
-                key={intent}
+                key={`${intent}-${variant}`}
                 intent={intent}
                 formId="enquiry-form-modal"
                 compact
                 dense
-                className="border-line/80 bg-white shadow-none !rounded-lg !p-2.5 sm:!rounded-xl sm:!p-5"
+                className="mt-3 border-line/80 bg-white shadow-none !rounded-lg !p-2.5 sm:mt-4 sm:!rounded-xl sm:!p-5"
               />
             </div>
           </div>

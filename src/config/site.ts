@@ -64,12 +64,6 @@ export const siteConfig = {
   sideTabs: [
     { label: "Latest Updates", href: "/#news" },
     {
-      label: "Reels",
-      href: "https://www.instagram.com/the_academic_city/",
-      external: true,
-      icon: "instagram",
-    },
-    {
       label: "Newsletters",
       href: "/blog",
     },

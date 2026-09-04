@@ -1,3 +1,5 @@
+import type { ContactLocation } from "@/types";
+
 export type ContactLink = {
   type: "phone" | "whatsapp" | "email" | "location";
   label: string;
@@ -12,10 +14,7 @@ export type ContactPageContent = {
   title: string;
   titleHighlight: string;
   links: readonly ContactLink[];
-  address: {
-    mapEmbedUrl: string;
-    mapLabel: string;
-  };
+  locations: readonly ContactLocation[];
   form: {
     title: string;
     description: string;
