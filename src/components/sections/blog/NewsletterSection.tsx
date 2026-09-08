@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { blogPageContent, newsletterMailto } from "@/data/blog";
+import { blogPageContent, newsletterIssueHref } from "@/data/blog";
+import type { NewsletterIssue } from "@/types/blog";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { Icon } from "@/components/ui/Icon";
 import { Container } from "@/components/ui/Container";
@@ -18,6 +19,13 @@ export function NewsletterSection() {
   function handleSubscribe() {
     if (!email.includes("@")) return;
     setSubscribed(true);
+  }
+
+  function issueLinkProps(issue: NewsletterIssue) {
+    const href = newsletterIssueHref(issue);
+    return issue.pdfHref
+      ? { href, target: "_blank", rel: "noopener noreferrer" }
+      : { href };
   }
 
   return (
@@ -110,7 +118,7 @@ export function NewsletterSection() {
                   </div>
                 </div>
                 <a
-                  href={newsletterMailto(issue.mailSubject)}
+                  {...issueLinkProps(issue)}
                   className="flex items-center justify-center gap-2 border-t border-white/10 bg-white/8 px-3 py-2.5 font-montserrat text-[0.6875rem] font-bold uppercase tracking-[0.1em] text-white/75 transition-colors hover:bg-gold hover:text-forest-deep"
                 >
                   Read this issue
@@ -140,7 +148,7 @@ export function NewsletterSection() {
                     </div>
                   </div>
                   <a
-                    href={newsletterMailto(issue.mailSubject)}
+                    {...issueLinkProps(issue)}
                     className="flex items-center justify-center gap-2 border-t border-white/10 bg-white/8 px-4 py-3.5 font-montserrat text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white/75 transition-colors hover:bg-gold hover:text-forest-deep"
                   >
                     Read this issue

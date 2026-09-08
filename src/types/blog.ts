@@ -29,6 +29,8 @@ export type NewsletterIssue = {
   coverTagBg: string;
   coverImage: SiteImage;
   mailSubject: string;
+  /** When set, "Read this issue" opens the PDF instead of a mailto link. */
+  pdfHref?: string;
 };
 
 export type PopularPost = {

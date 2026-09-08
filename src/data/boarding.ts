@@ -124,9 +124,9 @@ export const boardingPageContent = {
     cta: { label: "Book a campus visit", href: "/#enquiry" },
   },
   gadgetFreeBand: {
-    title: "More Life. Less Screen.",
+    title: "A Distraction-Free Campus.",
     description:
-      "Students spend their days learning, playing, talking and building real friendships,\nwith supervised internet access only when needed.",
+      "See how a screen-free campus helps your child stay focused on academics while making more time\nfor sports, conversations and real friendships.",
     cta: { label: "Book a campus visit", href: "/#enquiry" },
   },
   dorm: {

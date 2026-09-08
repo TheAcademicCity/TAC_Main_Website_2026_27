@@ -11,6 +11,13 @@ const remote = {
   campus: "https://theacademiccity.com/images/homepage/campus/1.png",
 } as const;
 
+const newsletterDownloads = {
+  mayJune2026:
+    "/downloads/Patashala Patrika Issue 1  Month of May-June 2026_compressed.pdf",
+  july2026:
+    "/downloads/Patashala Patrika Issue 2  Month of July 2026_compressed.pdf",
+} as const;
+
 const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
   {
     page: 1,
@@ -30,18 +37,44 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
         mailSubject: "June 2025",
       },
       {
-        month: "May 2025 · Issue #05",
-        issue: "May 2025",
-        title: "Career Utsav 2025 - what students discovered about themselves",
+        month: "July 2026 · Issue #02",
+        issue: "July 2026",
+        title: "Patashala Patrika — stories from campus this July",
         description:
-          "Highlights from this year's TACS career fair - the conversations, the surprises, and why Grade 7 students already have a sense of direction.",
-        tags: ["Career & LEAP", "Campus Life"],
+          "The people, events, achievements and memories that shaped our school community in July — from Grandparents Day to everyday life at TACS.",
+        tags: ["Campus Life", "For Parents"],
+        gradient: "linear-gradient(150deg,#0f3d38 0%,#185850 60%,#2d945c 100%)",
+        coverHeadline: "Patashala Patrika",
+        coverTag: "July 2026",
+        coverTagBg: "#c4880e",
+        coverImage: createImage(
+          "/images/blog/nl-july.png",
+          remote.campus,
+          "Patashala Patrika — July 2026 issue",
+          false,
+        ),
+        mailSubject: "July 2026",
+        pdfHref: newsletterDownloads.july2026,
+      },
+      {
+        month: "June 2026 · Issue #01",
+        issue: "June 2026",
+        title: "Patashala Patrika — the first edition from May and June",
+        description:
+          "Our inaugural issue capturing campus life, student voices and the moments that marked the start of Patashala Patrika at TACS.",
+        tags: ["Campus Life", "For Parents"],
         gradient: "linear-gradient(150deg,#7a4b00 0%,#c4880e 70%,#f6ab16 100%)",
-        coverHeadline: "Career Utsav 2025",
-        coverTag: "Career & LEAP",
+        coverHeadline: "Patashala Patrika",
+        coverTag: "May–June 2026",
         coverTagBg: "#0f3d38",
-        coverImage: createImage("/images/blog/nl-may.png", remote.career, ""),
-        mailSubject: "May 2025",
+        coverImage: createImage(
+          "/images/blog/nl-june-2026.png",
+          remote.career,
+          "Patashala Patrika — June 2026 issue",
+          false,
+        ),
+        mailSubject: "June 2026",
+        pdfHref: newsletterDownloads.mayJune2026,
       },
       {
         month: "April 2025 · Issue #04",
@@ -241,3 +274,6 @@ export const blogPageContent = {
 
 export const newsletterMailto = (subject: string) =>
   `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Patashala Patrika - ${subject} Issue`)}`;
+
+export const newsletterIssueHref = (issue: NewsletterIssue) =>
+  issue.pdfHref ?? newsletterMailto(issue.mailSubject);

@@ -29,7 +29,7 @@ export const academicsPageContent = {
   ],
   overview: {
     label: "Core Delivery Framework — Academics",
-    title: "Three pillars. Every lesson.\nEvery day.",
+    title: "Three layers of learning. Every lesson.\nEvery day.",
     description:
       "A structured, concept-driven programme supported by personalised teaching and continuous assessment - so every child grows consistently.",
     pillars: [
