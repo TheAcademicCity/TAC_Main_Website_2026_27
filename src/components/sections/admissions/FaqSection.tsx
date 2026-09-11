@@ -8,6 +8,11 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
+import type { FaqKnowMoreLink } from "@/types/admissions";
+
+function getKnowMoreLabel(knowMore: FaqKnowMoreLink) {
+  return knowMore.label ?? "Click here to know more";
+}
 
 export function FaqSection() {
   const { faq } = admissionsPageContent;
@@ -89,7 +94,7 @@ export function FaqSection() {
                           href={item.knowMore.href}
                           className="mt-2 inline-block font-montserrat text-[0.75rem] font-semibold text-[#2563eb] transition-colors hover:text-[#1d4ed8] hover:underline md:text-[0.88rem]"
                         >
-                          {item.knowMore.label ?? "Click here to know more"}
+                          {getKnowMoreLabel(item.knowMore)}
                         </SiteLink>
                       ) : null}
                     </div>

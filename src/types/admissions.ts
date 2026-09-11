@@ -1,6 +1,11 @@
 import type { SiteImage } from "@/types/images";
 import type { PageSubnavItem } from "@/types/page";
 
+export type FaqKnowMoreLink = {
+  href: string;
+  label?: string;
+};
+
 export type AdmissionsPageContent = {
   hero: {
     title: string;
@@ -56,7 +61,7 @@ export type AdmissionsPageContent = {
     items: readonly {
       question: string;
       answer: string;
-      knowMore?: { href: string; label?: string };
+      knowMore?: FaqKnowMoreLink;
     }[];
   };
   ctaBand: {
