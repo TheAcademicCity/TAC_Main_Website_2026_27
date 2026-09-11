@@ -53,7 +53,11 @@ export type AdmissionsPageContent = {
   faq: {
     label: string;
     title: string;
-    items: readonly { question: string; answer: string }[];
+    items: readonly {
+      question: string;
+      answer: string;
+      knowMore?: { href: string; label?: string };
+    }[];
   };
   ctaBand: {
     label: string;

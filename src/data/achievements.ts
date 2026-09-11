@@ -256,7 +256,7 @@ export const achievementsPageContent = {
     title: "Your child's story starts here",
     description:
       "Join a school where academic excellence, creative expression and sporting achievement go hand in hand.",
-    enquiry: { label: "Apply now", href: "/admissions" },
+    enquiry: { label: "Enquire Now", href: "/#enquiry" },
     phone: {
       label: siteConfig.utilityBar.phoneDisplay,
       href: `tel:${siteConfig.utilityBar.phone}`,

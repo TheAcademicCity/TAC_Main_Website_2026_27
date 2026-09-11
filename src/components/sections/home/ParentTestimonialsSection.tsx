@@ -5,6 +5,7 @@ import { parentTestimonialsContent } from "@/data/home";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import { InstagramLogo } from "@/components/ui/InstagramLogo";
 import type { ParentTestimonial } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -143,11 +144,24 @@ export function ParentTestimonialsSection() {
               <p className="mb-3 text-[0.84rem] italic leading-normal text-navy">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
-              <p className="font-montserrat text-[0.75rem] font-bold text-forest">{testimonial.name}</p>
-              <p className="text-[0.68rem] text-[#999]">
-                {testimonial.role}
-                {testimonial.detail ? ` · ${testimonial.detail}` : ""}
-              </p>
+              <div className="flex items-end justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="font-montserrat text-[0.75rem] font-bold text-forest">{testimonial.name}</p>
+                  <p className="text-[0.68rem] text-[#999]">
+                    {testimonial.role}
+                    {testimonial.detail ? ` · ${testimonial.detail}` : ""}
+                  </p>
+                </div>
+                <a
+                  href={testimonial.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0"
+                  aria-label={`Watch ${testimonial.name}'s story on Instagram`}
+                >
+                  <InstagramLogo className="h-6 w-6" />
+                </a>
+              </div>
             </blockquote>
           ))}
         </div>

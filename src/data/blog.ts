@@ -12,6 +12,8 @@ const remote = {
 } as const;
 
 const newsletterDownloads = {
+  august2026:
+    "/downloads/Patashala Patrika Issue 3  Month of Aug 2026_compressed.pdf",
   mayJune2026:
     "/downloads/Patashala Patrika Issue 1  Month of May-June 2026_compressed.pdf",
   july2026:
@@ -23,18 +25,24 @@ const newsletterPages: { page: number; issues: NewsletterIssue[] }[] = [
     page: 1,
     issues: [
       {
-        month: "June 2025 · Issue #06",
-        issue: "June 2025",
-        title: "How do boarding school students manage stress before exams?",
+        month: "August 2026 · Issue #03",
+        issue: "August 2026",
+        title: "Patashala Patrika — stories from campus this August",
         description:
-          "A behind-the-scenes look at how the TACS evening prep schedule, study habits and pastoral care combine to keep students calm and focused.",
-        tags: ["Boarding Life", "Academics"],
-        gradient: "linear-gradient(150deg,#0a3028 0%,#185850 60%,#2d945c 100%)",
-        coverHeadline: "Managing Exam Stress",
-        coverTag: "Boarding Life · Academics",
+          "Highlights from another month at TACS — student achievements, campus events and the moments that brought our community together in August.",
+        tags: ["Campus Life", "For Parents"],
+        gradient: "linear-gradient(150deg,#6816a4 0%,#3d0d63 60%,#9040c8 100%)",
+        coverHeadline: "Patashala Patrika",
+        coverTag: "August 2026",
         coverTagBg: "#2d945c",
-        coverImage: createImage("/images/blog/nl-june.png", remote.academics, ""),
-        mailSubject: "June 2025",
+        coverImage: createImage(
+          "/images/blog/nl-august.png",
+          remote.campus,
+          "Patashala Patrika — August 2026 issue",
+          false,
+        ),
+        mailSubject: "August 2026",
+        pdfHref: newsletterDownloads.august2026,
       },
       {
         month: "July 2026 · Issue #02",

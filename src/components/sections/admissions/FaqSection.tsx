@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { admissionsPageContent } from "@/data/admissions";
+import { SiteLink } from "@/components/layout/SiteLink";
 import { Icon } from "@/components/ui/Icon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Section } from "@/components/ui/Section";
@@ -82,7 +83,15 @@ export function FaqSection() {
                 >
                   <div className="overflow-hidden">
                     <div className="border-t border-line px-3.5 pb-3 pt-1 text-[0.75rem] leading-relaxed text-[#999] md:px-5 md:pb-4 md:text-[0.88rem] md:text-slate">
-                      {item.answer}
+                      <p>{item.answer}</p>
+                      {item.knowMore ? (
+                        <SiteLink
+                          href={item.knowMore.href}
+                          className="mt-2 inline-block font-montserrat text-[0.75rem] font-semibold text-[#2563eb] transition-colors hover:text-[#1d4ed8] hover:underline md:text-[0.88rem]"
+                        >
+                          {item.knowMore.label ?? "Click here to know more"}
+                        </SiteLink>
+                      ) : null}
                     </div>
                   </div>
                 </div>

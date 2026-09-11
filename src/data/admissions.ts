@@ -143,7 +143,7 @@ export const admissionsPageContent = {
       "and get all your questions answered in person when you visit us any day between 9 AM and 6 PM.",
     ],
     visitCta: {
-      label: "Schedule a visit",
+      label: "Book a campus visit",
       href: "/#enquiry",
     },
     whatsapp: { label: "WhatsApp", href: siteConfig.contact.whatsapp },
@@ -155,57 +155,66 @@ export const admissionsPageContent = {
       {
         question: "Can I complete the entire admission process online?",
         answer:
-          "Yes - application, entrance exam, career counselling and the interaction with the principal can all be completed online. You never need to visit campus to complete admissions, though we encourage you to.",
+          "Absolutely! The entire admission process at The Academic City School, Bengaluru, can be completed online, including the application, entrance exam, career counselling and Principal interaction. A campus visit is not required, but we would love to welcome you to experience our residential school in Bengaluru in person.",
+        knowMore: { href: "#process" },
       },
       {
         question: "Is TACS a fully residential school? Are there day boarders?",
         answer:
-          "TACS is exclusively residential. We do not offer day boarding or week boarding. All students live on campus throughout the term.",
+          "Great question! TACS is a fully residential CBSE boarding school in Nelamangala, Bengaluru, where every student lives on campus for the entire term. We don't offer day boarding or week boarding, only full-time residential learning. We'd love to have you visit our campus!",
+        knowMore: { href: "/boarding" },
       },
       {
         question: "When can we visit the campus?",
         answer:
-          "You can visit on any working day between 9 AM and 6 PM. No appointment is needed, but calling ahead helps us arrange a more personalised tour. The campus is about 25 km from Bengaluru city centre and the international airport.",
+          "You're welcome to visit us any working day between 9 AM and 6 PM, no appointment needed. That said, calling ahead helps us plan a more personalised tour just for you. Our campus is conveniently located about 25 km from Bengaluru city centre and the international airport.",
+        knowMore: { href: "#clarity" },
       },
       {
         question: "What is the procedure for meeting the Principal?",
         answer:
-          "Parents must request a prior appointment through the class teacher before meeting the Principal.",
+          "We're always happy to facilitate a meeting with our Principal. To help us schedule this properly, we'd request parents to arrange a prior appointment through your child's class teacher, who will coordinate a convenient time for you both.",
       },
       {
         question: "Can my child switch boards - say from ICSE to CBSE?",
         answer:
-          "Yes, students can switch boards at any grade except Grade 10 and Grade 12. Contact our admissions team for specific guidance based on your child's current grade.",
+          "Absolutely, switching from ICSE to CBSE is quite common, and we're happy to support your child through it. Students can make the switch at any grade level except Grade 10 and Grade 12, since these are board exam years. Do reach out to our admissions team, and we'll guide you based on your child's current grade.",
+        knowMore: { href: "/academics" },
       },
       {
-        question: "My child has special needs. Can TACS support them?",
+        question: "What is the fee structure at The Academic City School?",
         answer:
-          "TACS is equipped to provide support for students with certain special needs. Please contact us directly to discuss your child's specific requirements so we can assess how best to support them.",
+          "Happy to help with that! Annual fees at TACS, our CBSE residential boarding school in Nelamangala, Bengaluru, typically range between ₹5 lakh and ₹6.5 lakh, depending on the grade. This covers tuition, boarding, meals and campus facilities. For an exact quote based on your child's grade, do reach out to our admissions team.",
+        knowMore: { href: "/#enquiry" },
       },
       {
         question: "Does the school provide pickup from the airport or railway station?",
         answer:
-          "Yes, with prior notice the school arranges pickup and drop from Bengaluru airport and railway stations at the start and end of each term.",
+          "Absolutely! With a little advance notice, we're happy to arrange pickup and drop for your child from both Bengaluru airport and railway stations at the start and end of each term.",
+        knowMore: { href: "/#contact" },
       },
       {
         question: "What is the school's policy on gadgets and internet?",
         answer:
-          "Personal gadgets are not allowed on campus. Students may use the school's supervised internet at specified times. Packages and couriers may be sent to school and are checked before handover.",
+          "To keep our students focused and safe, personal gadgets aren't permitted on campus. They do get access to supervised internet at specified times for schoolwork and staying in touch. Do note that any packages or couriers sent to school are checked before being handed over to your child.",
       },
       {
         question: "How does the school handle medical emergencies?",
         answer:
-          "TACS has a full-time nursing staff on campus and tie-ups with specialist hospitals nearby. Medicines are administered only with a valid prescription and parental consent. Parents are contacted immediately in any medical situation.",
+          "Your child's health and safety are always a top priority for us. TACS has full-time nursing staff on campus, along with tie-ups with specialist hospitals nearby for any advanced care needed. Medicines are given only with a valid prescription and your consent, and we make it a point to contact parents immediately in any medical situation.",
+        knowMore: { href: "/boarding#care" },
       },
       {
         question: "Is the food vegetarian? How many meals per day?",
         answer:
-          "TACS is a vegetarian campus - no non-vegetarian food including eggs is served. Jain options are available at every meal. Students receive 6 meals per day: early morning, breakfast, mid-morning snack, lunch, evening snack and dinner - all cooked fresh in the school's own kitchen.",
+          "Yes, TACS is a fully vegetarian campus, and no non-vegetarian food, including eggs, is served. We also offer Jain options at every meal for those who prefer them. Your child will enjoy 6 wholesome meals a day, early morning, breakfast, mid-morning snack, lunch, evening snack and dinner, all cooked fresh in our own kitchen.",
+        knowMore: { href: "/boarding#care" },
       },
       {
         question: "When does the admissions process begin for the next academic year?",
         answer:
-          "Admissions for the next academic year typically open in October. Applications for the Bengaluru campus close on 15th February, with an early bird deadline of 15th December.",
+          "Great question! Admissions for the next academic year typically open in October, and seats at our Bengaluru campus fill up fast. We'd strongly encourage you to apply early by 15th December to make the most of our early bird deadline before spots run out.",
+        knowMore: { href: "#process" },
       },
     ],
   },

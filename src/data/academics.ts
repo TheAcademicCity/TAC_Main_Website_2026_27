@@ -29,7 +29,7 @@ export const academicsPageContent = {
   ],
   overview: {
     label: "Core Delivery Framework — Academics",
-    title: "Three layers of learning. Every lesson.\nEvery day.",
+    title: "Three layers of learning.",
     description:
       "A structured, concept-driven programme supported by personalised teaching and continuous assessment - so every child grows consistently.",
     pillars: [
@@ -137,7 +137,7 @@ export const academicsPageContent = {
   progressionBand: {
     title: "Every child gets a Student Progression Plan",
     description: "Tailored to their pace and goals - reviewed every term by their academic mentor.",
-    cta: { label: "Connect with us", href: "/#enquiry" },
+    cta: { label: "Enquire Now", href: "/#enquiry" },
   },
   gradeJourney: {
     label: "Grade Journey",
@@ -221,7 +221,7 @@ export const academicsPageContent = {
     title: "Focused preparation for the future",
     description:
       "Stream + board prep + competitive exam support - structured from Day 1 of Grade 11.",
-    cta: { label: "Discuss your child's path", href: "/#enquiry" },
+    cta: { label: "Enquire Now", href: "/#enquiry" },
     cards: [
       {
         icon: "⚙️",
@@ -266,7 +266,7 @@ export const academicsPageContent = {
     title: "Ready to know more?",
     description:
       "Talk to our admissions team - ask anything about curriculum, study hours, exam preparation or how we'll support your child specifically.",
-    enquiry: { label: "Start your journey", href: "/#enquiry" },
+    enquiry: { label: "Book a campus visit", href: "/#enquiry" },
     phone: {
       label: siteConfig.contact.phoneDisplay,
       href: `tel:${siteConfig.contact.phone}`,

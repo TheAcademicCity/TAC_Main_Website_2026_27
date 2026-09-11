@@ -24,7 +24,7 @@ export function AchievementsCtaSection() {
                 variant="gold"
                 className="flex-1 justify-center rounded-[30px] px-2.5 py-3 font-outfit text-[0.8125rem] font-bold normal-case tracking-normal text-navy"
               >
-                Apply
+                Enquire
               </Button>
               <Button
                 href={ctaBand.phone.href}
