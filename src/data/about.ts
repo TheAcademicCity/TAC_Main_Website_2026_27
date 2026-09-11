@@ -136,9 +136,8 @@ export const aboutPageContent: AboutPageContent = {
     title: "A welcome from our Principal",
     paragraphs: [
       "Welcome to The Academic City School, Bangalore, a premier residential school committed to providing an enriching and transformative educational experience.",
-      "At TACS, we believe that education is not confined to the classroom. Our residential environment provides students with opportunities to learn, grow, develop independence, build strong values, and cultivate lifelong friendships. We strive to create a nurturing and disciplined atmosphere where every child feels secure, valued, and motivated to excel.",
-      "Our focus is on academic excellence, character formation, leadership, life skills, sports, creativity, and holistic development. With dedicated educators and a strong pastoral care system, we aim to prepare our students not only for successful careers but also for responsible and compassionate citizenship.",
-      "At The Academic City School, Bangalore, every day is an opportunity to learn, explore, discover, and become a better version of oneself.",
+      "At TACS, we have created a residential learning environment where students are encouraged to think independently, discover their strengths, and grow with confidence. Beyond academics, we focus on character, leadership, life skills, creativity, sports, and values that prepare students for the opportunities and challenges of the future.",
+      "With dedicated educators, strong pastoral care, and a nurturing campus culture, we ensure every child feels supported, valued, and inspired to become the best version of themselves.",
     ],
     closing: "Warm regards,",
     signature: {
@@ -168,10 +167,16 @@ export const aboutPageContent: AboutPageContent = {
         name: "Sripal Jain",
         role: "Founder & Chairman",
         messageLabel: "Founder's Message",
-        quote:
-          "In today's fast-paced world, traditional pedagogy falls short. Addressing the 'need of the hour,' we blend career orientation with enriching schooling - helping students explore beyond conventional boundaries. Each child holds a unique potential; our mission is to identify and nurture this intrinsic essence, providing a foundation for lifelong growth.",
-        quoteHighlights: ["career orientation with enriching schooling"],
-        body: "At TACS, we delve beyond the superficial, ensuring a smooth transition from school to the global stage. Join us in this exciting journey towards a well-rounded, future-ready education.",
+        paragraphs: [
+          "When we started TACS, we had one thought in mind: every child deserves an education that prepares them for more than just examinations.",
+          "Over the years, we saw that students often had academic knowledge but lacked the guidance, exposure and confidence needed to make the right choices for their future.",
+          "This inspired us to create a school where academics, career guidance, values and life skills come together. A place where students are encouraged to discover their strengths, follow their aspirations and grow into confident individuals.",
+          "At TACS, we are committed to building an environment where every child feels supported, valued and prepared for the journey ahead.",
+        ],
+        quoteHighlights: [
+          "more than just examinations",
+          "academics, career guidance, values and life skills",
+        ],
         image: createImage("/images/about/sripal.png", remote.sripal, "Sripal Jain", false),
         altLayout: false,
       },
@@ -179,10 +184,16 @@ export const aboutPageContent: AboutPageContent = {
         name: "Mahipal Kawad",
         role: "Director",
         messageLabel: "Director's Message",
-        quote:
-          "We blend academic excellence with enriching experiences that ignite student passion and guide them towards career success. Our boarding environment nurtures diversity, exploration and growth beyond textbooks - encouraging self-discovery, camaraderie and creativity.",
-        quoteHighlights: ["ignite student passion"],
-        body: "We preserve the essence of schooling while aligning it with career-oriented goals. Join us on this inspiring educational journey.",
+        paragraphs: [
+          "Every child who walks into TACS brings a unique story, a different dream and unlimited potential.",
+          "Our responsibility is not just to educate them, but to understand them, guide them and provide an environment where they can grow with confidence.",
+          "Through our classrooms, boarding life, mentoring and everyday experiences, we strive to create a community where students learn independence, develop meaningful relationships and discover their true capabilities.",
+          "For us, the greatest achievement is seeing students leave TACS not only as successful individuals, but as responsible, confident and compassionate human beings.",
+        ],
+        quoteHighlights: [
+          "unique story, a different dream and unlimited potential",
+          "responsible, confident and compassionate human beings",
+        ],
         image: createImage("/images/about/mahipal.png", remote.mahipal, "Mahipal Kawad", false),
         altLayout: true,
       },

@@ -72,7 +72,23 @@ export type CoCurricularPageContent = {
     }[];
     performingArts: {
       label: string;
+      titleLines: readonly [string, string];
       description: string;
+      musicPartners: {
+        label: string;
+        logos: readonly {
+          src: string;
+          alt: string;
+          width?: number;
+          height?: number;
+        }[];
+        mobileLogos: readonly {
+          src: string;
+          alt: string;
+          width?: number;
+          height?: number;
+        }[];
+      };
       mobileLabel?: string;
       mobileSubtitle?: string;
       mobileImage?: import("@/types/images").SiteImage;

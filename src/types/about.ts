@@ -74,9 +74,8 @@ export type AboutPageContent = {
       name: string;
       role: string;
       messageLabel: string;
-      quote: string;
+      paragraphs: readonly string[];
       quoteHighlights: readonly string[];
-      body: string;
       image: SiteImage;
       altLayout?: boolean;
     }[];

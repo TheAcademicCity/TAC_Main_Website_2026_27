@@ -97,12 +97,16 @@ export function LeadershipSection() {
                     </div>
                   </figure>
 
-                  <p className="relative text-[0.84375rem] italic leading-[1.55] text-navy">
-                    {highlightText(leader.quote, leader.quoteHighlights)}
-                  </p>
-                  <p className="relative mt-2.5 text-[0.75rem] leading-[1.55] text-[#999]">
-                    {leader.body}
-                  </p>
+                  <div className="relative space-y-2.5">
+                    {leader.paragraphs.map((paragraph) => (
+                      <p
+                        key={paragraph.slice(0, 40)}
+                        className="text-[0.84375rem] leading-[1.55] text-navy"
+                      >
+                        {highlightText(paragraph, leader.quoteHighlights)}
+                      </p>
+                    ))}
+                  </div>
 
                   <footer className="clear-both mt-4 border-t border-line/80 pt-3">
                     <div className="font-montserrat text-[0.8125rem] font-bold leading-snug text-navy">
@@ -179,12 +183,16 @@ export function LeadershipSection() {
                   >
                     &ldquo;
                   </div>
-                  <blockquote className="mt-1.5 text-left text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
-                    {highlightDesktop(leader.quote, leader.quoteHighlights)}
-                  </blockquote>
-                  <p className="mt-3 text-left text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]">
-                    {leader.body}
-                  </p>
+                  <div className="mt-1.5 space-y-3">
+                    {leader.paragraphs.map((paragraph) => (
+                      <p
+                        key={paragraph.slice(0, 40)}
+                        className="text-left text-[0.92rem] leading-relaxed text-slate sm:text-[0.96rem]"
+                      >
+                        {highlightDesktop(paragraph, leader.quoteHighlights)}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </article>
             </RevealOnScroll>

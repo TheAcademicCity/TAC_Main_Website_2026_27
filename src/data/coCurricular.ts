@@ -211,10 +211,30 @@ export const coCurricularPageContent = {
     ],
     performingArts: {
       label: "Performing Arts & Language Heritage",
+      titleLines: ["Performing Arts &", "Language Heritage"],
       mobileLabel: "Performing Arts",
       mobileSubtitle: "Dance. Theatre. Music.",
       description:
-        "Dance · Theatre · Music · Language & Heritage - celebrating expression and cultural identity on campus.",
+        "Dance · Theatre · Music · Language & Heritage — celebrating expression and cultural identity on campus.",
+      musicPartners: {
+        label: "Music Partner",
+        logos: [
+          {
+            src: "/images/co-curricular/torrins.png",
+            alt: "Torrins Academy of Music",
+            width: 168,
+            height: 48,
+          },
+        ],
+        mobileLogos: [
+          {
+            src: "/images/co-curricular/blacktorrinslogo.png",
+            alt: "Torrins Academy of Music",
+            width: 140,
+            height: 40,
+          },
+        ],
+      },
       mobileImage: createImage(
         "/images/co-curricular/club-performing-arts.png",
         remote.curriculum,

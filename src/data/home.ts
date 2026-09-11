@@ -69,8 +69,8 @@ export const statsContent: StatItem[] = [
   { value: "Grades 5–12", label: "Residential boarding" },
   { value: "CBSE", label: "NCERT curriculum" },
   { value: "600+", label: "Career paths explored" },
-  { value: "Indore", label: "Mohankheda campus" },
   { value: "Bengaluru", label: "Nelamangala campus" },
+  { value: "Indore", label: "Mohankheda campus" },
 ];
 
 export const pillarsContent = {

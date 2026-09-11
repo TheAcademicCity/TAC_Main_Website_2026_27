@@ -6,7 +6,7 @@ export function StatsBar() {
   return (
     <div id="about" className="hidden bg-forest-deep md:block">
       <Container>
-        <div className="grid grid-cols-6 items-stretch lg:grid-cols-5 lg:border-l lg:border-white/10">
+        <div className="grid grid-cols-6 items-stretch lg:grid-cols-5">
           {statsContent.map((item, index) => (
             <StatItem
               key={`${item.value}-${item.label}`}

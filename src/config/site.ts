@@ -67,5 +67,6 @@ export const siteConfig = {
       label: "Newsletters",
       href: "/blog",
     },
+    { label: "FAQs", href: "/admissions#faq", variant: "gold" },
   ],
 } as const;

@@ -11,8 +11,22 @@ import { Icon } from "@/components/ui/Icon";
 import { getGmailComposeUrl } from "@/lib/email";
 import { cn } from "@/lib/utils";
 
-const sideTabClassName =
-  "flex rotate-180 items-center bg-forest-deep px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition-colors [text-orientation:mixed] [writing-mode:vertical-rl] hover:bg-emerald";
+const sideTabBaseClassName =
+  "flex rotate-180 items-center px-2.5 py-3.5 font-montserrat text-[0.7rem] font-bold uppercase tracking-[0.14em] transition-colors [text-orientation:mixed] [writing-mode:vertical-rl]";
+
+const sideTabClassName = cn(
+  sideTabBaseClassName,
+  "bg-forest-deep text-white hover:bg-emerald",
+);
+
+const sideTabGoldClassName = cn(
+  sideTabBaseClassName,
+  "bg-gold text-forest-deep hover:bg-[#e09d10]",
+);
+
+function getSideTabClassName(tab: (typeof siteConfig.sideTabs)[number]) {
+  return "variant" in tab && tab.variant === "gold" ? sideTabGoldClassName : sideTabClassName;
+}
 
 function SideTabDivider() {
   return <div className="h-px w-full shrink-0 bg-[#2D945C]" aria-hidden />;
@@ -65,22 +79,23 @@ export function SideWidgets() {
         aria-hidden={hiddenNearFooter}
       >
         {siteConfig.sideTabs.map((tab, index) => {
+          const tabClassName = getSideTabClassName(tab);
           const tabNode =
             "external" in tab && tab.external ? (
               <a
                 href={tab.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={sideTabClassName}
+                className={tabClassName}
               >
                 {tab.label}
               </a>
             ) : "download" in tab && tab.download ? (
-              <a href={tab.href} download={tab.download} className={sideTabClassName}>
+              <a href={tab.href} download={tab.download} className={tabClassName}>
                 {tab.label}
               </a>
             ) : (
-              <SiteLink href={tab.href} className={sideTabClassName}>
+              <SiteLink href={tab.href} className={tabClassName}>
                 {tab.label}
               </SiteLink>
             );

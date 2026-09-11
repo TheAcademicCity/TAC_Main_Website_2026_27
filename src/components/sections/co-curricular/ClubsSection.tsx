@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { coCurricularPageContent } from "@/data/coCurricular";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -81,6 +82,26 @@ export function ClubsSection() {
             </div>
           </article>
         </div>
+
+        <RevealOnScroll>
+          <div className="mt-4 text-center">
+            <p className="font-montserrat text-[0.5625rem] font-bold uppercase tracking-[0.14em] text-[#999]">
+              {clubs.performingArts.musicPartners.label}
+            </p>
+            <div className="mt-1 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              {clubs.performingArts.musicPartners.mobileLogos.map((logo) => (
+                <Image
+                  key={logo.src}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={220}
+                  height={64}
+                  className="h-12 w-auto max-w-[220px] object-contain"
+                />
+              ))}
+            </div>
+          </div>
+        </RevealOnScroll>
       </div>
 
       {/* Desktop */}
@@ -150,13 +171,42 @@ export function ClubsSection() {
             ))}
           </div>
 
-          <div className="mt-1.5 flex flex-col gap-2 rounded-lg bg-ink px-4 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-7 sm:px-7 sm:py-5">
-            <span className="font-montserrat text-[0.7rem] font-extrabold uppercase tracking-[0.14em] text-gold whitespace-normal sm:whitespace-nowrap">
-              {clubs.performingArts.label}
-            </span>
-            <span className="flex-1 text-[0.86rem] text-white/60 sm:text-[0.88rem]">
-              {clubs.performingArts.description}
-            </span>
+          <div className="mt-1.5 overflow-hidden rounded-[12px] bg-ink px-4 py-2.5 sm:px-5 sm:py-3">
+            <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-0">
+              <div className="w-fit shrink-0 border-b border-white/12 pb-2 text-center sm:border-b-0 sm:border-r sm:pb-0 sm:pr-3">
+                <h3 className="font-montserrat text-[0.72rem] font-extrabold uppercase leading-[1.18] tracking-[0.1em] text-gold lg:text-[0.76rem]">
+                  {clubs.performingArts.titleLines[0]}
+                  <br />
+                  {clubs.performingArts.titleLines[1]}
+                </h3>
+              </div>
+
+              <div className="w-fit shrink-0 border-b border-white/12 pb-2 text-center sm:border-b-0 sm:border-r sm:px-3 sm:pb-0">
+                <p className="text-[0.8rem] leading-[1.4] text-white/72 sm:whitespace-nowrap lg:text-[0.84rem]">
+                  {clubs.performingArts.description}
+                </p>
+              </div>
+
+              <div className="w-fit shrink-0 text-center sm:pl-3">
+                <div className="rounded-[10px] border border-white/12 bg-white/[0.06] px-3 py-2">
+                  <p className="mb-1 font-outfit text-[0.58rem] font-bold uppercase tracking-[0.1em] text-white/80">
+                    {clubs.performingArts.musicPartners.label}
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                    {clubs.performingArts.musicPartners.logos.map((logo) => (
+                      <Image
+                        key={logo.src}
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={logo.width ?? 168}
+                        height={logo.height ?? 48}
+                        className="h-7 w-auto max-w-[148px] object-contain sm:h-8"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </RevealOnScroll>
       </div>
