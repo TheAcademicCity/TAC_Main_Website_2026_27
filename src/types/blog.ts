@@ -60,9 +60,6 @@ export type BlogPageContent = {
   articles: {
     label: string;
     title: string;
-    posts: readonly BlogPost[];
-    externalBlogUrl: string;
-    popularPosts: readonly PopularPost[];
     sidebarCta: {
       label: string;
       description: string;

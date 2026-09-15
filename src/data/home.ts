@@ -1565,7 +1565,7 @@ export const newsContent = {
       title: "National Sports Day",
       excerpt:
         "Fitness challenges and sportsmanship celebrated in honour of hockey legend Major Dhyan Chand's inspiring legacy.",
-      image: createImage("/images/home/news/1.png", remote.news.n1, "National Sports Day"),
+      image: createImage("/images/home/news/1.png", remote.news.n1, "National Sports Day", false),
       day: "29",
       month: "Aug",
     },
@@ -1573,7 +1573,7 @@ export const newsContent = {
       title: "Independence Day",
       excerpt:
         "Flag-hoisting, house-wise march past and vibrant cultural performances celebrating unity and national pride.",
-      image: createImage("/images/home/news/3.png", remote.news.n3, "Independence Day"),
+      image: createImage("/images/home/news/3.png", remote.news.n3, "Independence Day", false),
       day: "15",
       month: "Aug",
     },
@@ -1581,7 +1581,7 @@ export const newsContent = {
       title: "Ganesh Chaturthi",
       excerpt:
         "Decorations, traditional music and a student-led prayer ceremony filled with joy and cultural spirit.",
-      image: createImage("/images/home/news/5.png", remote.news.n5, "Ganesh Chaturthi"),
+      image: createImage("/images/home/news/5.png", remote.news.n5, "Ganesh Chaturthi", false),
       day: "07",
       month: "Sep",
     },
@@ -1589,7 +1589,7 @@ export const newsContent = {
       title: "Cooking Classes",
       excerpt:
         "Teamwork, time management and nutrition explored as students cooked diverse cuisines together.",
-      image: createImage("/images/home/news/2.png", remote.news.n2, "Cooking Classes"),
+      image: createImage("/images/home/news/2.png", remote.news.n2, "Cooking Classes", false),
       day: "21",
       month: "Aug",
     },
@@ -1597,7 +1597,7 @@ export const newsContent = {
       title: "Teachers' Day",
       excerpt:
         "Students expressed their gratitude through performances, surprise tributes and thoughtful gifts for mentors.",
-      image: createImage("/images/home/news/4.png", remote.news.n4, "Teachers' Day"),
+      image: createImage("/images/home/news/4.png", remote.news.n4, "Teachers' Day", false),
       day: "05",
       month: "Sep",
     },
@@ -1605,7 +1605,7 @@ export const newsContent = {
       title: "Investiture Ceremony",
       excerpt:
         "Student council took its oath to lead with integrity and responsibility for a thriving school community.",
-      image: createImage("/images/home/news/6.png", remote.news.n6, "Investiture Ceremony"),
+      image: createImage("/images/home/news/6.png", remote.news.n6, "Investiture Ceremony", false),
       day: "05",
       month: "Aug",
     },

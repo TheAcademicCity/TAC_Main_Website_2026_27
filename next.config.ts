@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "api.theacademiccity.com",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
         hostname: "the-academic-city-boarding-school.s3.ap-south-1.amazonaws.com",
       },
       {

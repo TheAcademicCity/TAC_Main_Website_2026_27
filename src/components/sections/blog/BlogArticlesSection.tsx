@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { blogPageContent } from "@/data/blog";
 import { ImageWithFallback } from "@/components/sections/shared/ImageWithFallback";
@@ -10,15 +11,21 @@ import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { formatBlogReads } from "@/lib/blog";
 import { cn } from "@/lib/utils";
+import type { BlogPost, PopularPost } from "@/types/blog";
 
 const PAGE_SIZE = 4;
 
-export function BlogArticlesSection() {
+type BlogArticlesSectionProps = {
+  posts: readonly BlogPost[];
+  popularPosts: readonly PopularPost[];
+};
+
+export function BlogArticlesSection({ posts, popularPosts }: BlogArticlesSectionProps) {
   const { articles } = blogPageContent;
   const [page, setPage] = useState(1);
 
-  const totalPages = Math.max(1, Math.ceil(articles.posts.length / PAGE_SIZE));
-  const pagePosts = articles.posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+  const pagePosts = posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   return (
     <Section
@@ -38,13 +45,17 @@ export function BlogArticlesSection() {
 
       <div className="mt-5 grid items-start gap-7 md:mt-10 lg:grid-cols-[1fr_360px] lg:gap-10">
         <div>
+          {posts.length === 0 ? (
+            <p className="rounded-lg border border-line bg-white px-5 py-8 text-center text-[0.88rem] text-slate">
+              New posts are on their way — check back soon.
+            </p>
+          ) : null}
+
           <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 md:gap-6">
             {pagePosts.map((post, index) => (
               <RevealOnScroll key={post.href} delay={Math.min(index, 3) as 0 | 1 | 2 | 3}>
-                <a
+                <Link
                   href={post.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group flex h-full flex-col overflow-hidden rounded-[16px] border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-18px_rgba(15,61,56,0.18)] md:rounded-lg"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-forest-deep md:aspect-video">
@@ -73,7 +84,7 @@ export function BlogArticlesSection() {
                       </span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </RevealOnScroll>
             ))}
           </div>
@@ -107,7 +118,7 @@ export function BlogArticlesSection() {
                 Popular Reads
               </div>
               <div className="px-5 py-2">
-                {articles.popularPosts.map((post) => (
+                {popularPosts.map((post) => (
                   <div
                     key={post.number}
                     className="flex items-start gap-3 border-b border-paper py-3 last:border-b-0"
@@ -116,14 +127,12 @@ export function BlogArticlesSection() {
                       {post.number}
                     </div>
                     <div className="min-w-0">
-                      <a
+                      <Link
                         href={post.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="block text-[0.84rem] font-bold leading-snug text-forest-deep hover:text-emerald"
                       >
                         {post.title}
-                      </a>
+                      </Link>
                       <span className="mt-0.5 block text-[0.74rem] leading-snug text-slate">
                         {post.meta}
                       </span>
